@@ -1,0 +1,19 @@
+{
+    "book": "Duo Parva",
+    "title": "Also Chapter Name",
+    "verses": [
+        {
+            "text": "namastubhyam",
+            "word-by-word": [
+                [
+                    "namah",
+                    "Bowing"
+                ],
+                [
+                    "tai",
+                    "to you"
+                ]
+            ]
+        }
+    ]
+}

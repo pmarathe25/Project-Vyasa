@@ -1,18 +1,7 @@
 import { graphql } from 'gatsby'
 import * as React from 'react'
 import Layout from '../../components/layout'
-import { transliterate } from '../../util/transliterator'
-
-
-const Verse = ({ text, word_by_word }) => {
-    const trie = require("../../../content/generated/transliteration_rulesets/devanagari.json");
-
-    return (
-        <p>
-            {transliterate(text, trie)}
-        </p>
-    )
-}
+import Verse from '../../components/verse'
 
 const BlogPost = ({ data }) => {
     return (
