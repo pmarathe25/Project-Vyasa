@@ -5,24 +5,22 @@ function transliterate(text, trie) {
 
     let output = "";
     let cur_dict = sequence_map;
-    let cur_sequence = ""; // For debugging purposes
-    for (let ch of text) {
-        cur_sequence += ch;
-        if (ch in cur_dict) {
-            cur_dict = cur_dict[ch]
-        }
-        else if ("" in cur_dict) {
-            cur_sequence = "";
-            output += cur_dict[""];
-            cur_dict = sequence_map[ch];
+    for (let idx = 0; idx < text.length; ++idx) {
+        let cur_char = text[idx];
+        let next_char = text[idx + 1];
+
+        if (cur_char in cur_dict) {
+            cur_dict = cur_dict[cur_char]
         }
         else {
-            throw new Error("Sequence not found in trie: " + cur_sequence);
+            // Append unknown character as they are.
+            output += cur_char;
         }
-    }
-    // Special handling for last letter
-    if ("" in cur_dict) {
-        output += cur_dict[""];
+
+        if (!(next_char in cur_dict) && "" in cur_dict) {
+            output += cur_dict[""];
+            cur_dict = sequence_map;
+        }
     }
 
     for (let rule_name in rules) {
