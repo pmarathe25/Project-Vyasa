@@ -12,12 +12,14 @@
     "start": "gatsby develop",
     "build": "gatsby build",
     "serve": "gatsby serve",
-    "clean": "gatsby clean"
+    "clean": "gatsby clean",
+    "test": "jest"
   },
   "dependencies": {
     "gatsby": "^4.6.0",
     "gatsby-source-filesystem": "^4.6.0",
     "gatsby-transformer-json": "^4.6.0",
+    "jest": "^27.4.7",
     "react": "^17.0.1",
     "react-dom": "^17.0.1"
   }
