@@ -9,7 +9,7 @@ SCRIPTS_DIR = os.path.realpath(os.path.join(os.path.dirname(__file__), os.path.p
 
 
 @pytest.mark.parametrize(
-    "sequence_map,expected_trie",
+    "sequence_map,expected_ruleset",
     [
         # 1-layer trie
         (
@@ -174,7 +174,7 @@ SCRIPTS_DIR = os.path.realpath(os.path.join(os.path.dirname(__file__), os.path.p
         ),
     ],
 )
-def test_build_trie(sequence_map, expected_trie):
+def test_build_transliteration_ruleset(sequence_map, expected_ruleset):
     inp = tempfile.NamedTemporaryFile("w+", suffix=".json")
     json.dump(sequence_map, inp)
     inp.flush()
@@ -182,13 +182,13 @@ def test_build_trie(sequence_map, expected_trie):
     out_dir = tempfile.TemporaryDirectory()
     out_file = os.path.join(out_dir.name, "trie.json")
 
-    build_trie = os.path.join(SCRIPTS_DIR, "build_trie.py")
+    build_transliteration_ruleset = os.path.join(SCRIPTS_DIR, "build_transliteration_ruleset.py")
 
-    cmd = ["python3", build_trie, inp.name, "-o", out_file]
+    cmd = ["python3", build_transliteration_ruleset, inp.name, "-o", out_file]
     print(f"Running command: {' '.join(cmd)}")
     status = sp.run(cmd)
-    assert status.returncode == 0, f"Error in {build_trie}"
+    assert status.returncode == 0, f"Error in {build_transliteration_ruleset}"
 
     trie = json.load(open(out_file))
 
-    assert trie == expected_trie
+    assert trie == expected_ruleset

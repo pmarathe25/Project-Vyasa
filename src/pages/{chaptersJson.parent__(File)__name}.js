@@ -5,7 +5,7 @@ import { transliterate } from '../util/transliterator'
 
 
 const Verse = ({ text, word_by_word }) => {
-    const trie = require("../../build/devanagari_trie.json");
+    const trie = require("../../content/generated/transliteration_rulesets/devanagari.json");
 
     return (
         <p>
@@ -16,9 +16,9 @@ const Verse = ({ text, word_by_word }) => {
 
 const BlogPost = ({ data }) => {
     return (
-        <Layout pageTitle={data.contentJson.title}>
+        <Layout pageTitle={data.chaptersJson.title}>
             {
-                data.contentJson.verses.map(node =>
+                data.chaptersJson.verses.map(node =>
                     <Verse text={node.text} word_by_word={node.word_by_word} />
                 )
             }
@@ -28,7 +28,7 @@ const BlogPost = ({ data }) => {
 
 export const query = graphql`
 query ($id: String) {
-    contentJson(id: {eq: $id}) {
+    chaptersJson(id: {eq: $id}) {
         id
         title
         verses {

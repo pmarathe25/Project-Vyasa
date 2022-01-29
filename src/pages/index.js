@@ -7,7 +7,7 @@ const IndexPage = ({ data }) => {
     return (
         <Layout pageTitle="Project Vyasa">
             {
-                data.allContentJson.nodes.map(node => (
+                data.allChaptersJson.nodes.map(node => (
                     <Link to={`/${node.parent.name}`}>
                         {node.title}
                     </Link>
@@ -20,7 +20,7 @@ const IndexPage = ({ data }) => {
 
 export const query = graphql`
 query {
-    allContentJson {
+    allChaptersJson {
         nodes {
             title
             id

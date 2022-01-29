@@ -1,24 +1,30 @@
 SOURCE_DIR := src
-BUILD_DIR := build
 SCRIPTS_DIR := scripts
-RAW_CONTENT_DIR := raw_content
 
-TRIES := $(patsubst $(RAW_CONTENT_DIR)/%.json,$(BUILD_DIR)/%_trie.json,$(wildcard $(RAW_CONTENT_DIR)/*.json))
+RAW_CONTENT_DIR := content/raw
+RAW_RULE_SET_DIR := $(RAW_CONTENT_DIR)/transliteration_rulesets
 
-all: $(TRIES)
+GEN_CONTENT_DIR := content/generated
+GEN_RULE_SET_DIR := $(GEN_CONTENT_DIR)/transliteration_rulesets
 
-$(BUILD_DIR):
+BUILD_RULE_SET_SCRIPT := $(SCRIPTS_DIR)/build_transliteration_ruleset.py
+
+GEN_RULE_SETS := $(patsubst $(RAW_RULE_SET_DIR)/%.json,$(GEN_RULE_SET_DIR)/%.json,$(wildcard $(RAW_RULE_SET_DIR)/*.json))
+
+all: $(GEN_RULE_SETS)
+
+$(GEN_RULE_SET_DIR):
 	mkdir -p $@
 
-$(BUILD_DIR)/%_trie.json: $(RAW_CONTENT_DIR)/%.json $(SCRIPTS_DIR)/build_trie.py | $(BUILD_DIR)
-	python3 $(SCRIPTS_DIR)/build_trie.py $< -o $@
+$(GEN_RULE_SET_DIR)/%.json: $(RAW_RULE_SET_DIR)/%.json $(BUILD_RULE_SET_SCRIPT) | $(GEN_RULE_SET_DIR)
+	python3 $(BUILD_RULE_SET_SCRIPT) $< -o $@
 
-launch: $(TRIES)
+launch: $(GEN_RULE_SETS)
 	gatsby develop
 
-test:
+test: $(GEN_RULE_SETS)
 	python3 -m pytest tests/ -vv
 	npm test
 
 clean:
-	rm -rf $(BUILD_DIR)
+	rm -rf $(GEN_RULE_SET_DIR)
