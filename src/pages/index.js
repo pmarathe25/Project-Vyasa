@@ -6,13 +6,18 @@ import toUrl from '../util/util'
 const IndexPage = ({ data }) => {
     return (
         <Layout pageTitle="Project Vyasa">
-            {
-                data.allChaptersJson.nodes.map(node => (
-                    <Link to={toUrl(`${node.book}/${node.parent.name}`)}>
-                        {node.title}
-                    </Link>
-                ))
-            }
+            <ol>
+
+                {
+                    data.allChaptersJson.nodes.map(node => (
+                        <li>
+                            <Link to={toUrl(`${node.book}/`)}>
+                                {node.book}
+                            </Link>
+                        </li>
+                    ))
+                }
+            </ol>
         </Layout >
     )
 }
@@ -25,12 +30,6 @@ query {
             title
             book
             id
-            parent {
-                ... on File {
-                  id
-                  name
-                }
-              }
         }
     }
 }
