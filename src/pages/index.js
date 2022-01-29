@@ -1,7 +1,6 @@
-import { graphql } from 'gatsby'
+import { graphql, Link } from 'gatsby'
 import * as React from 'react'
 import Layout from '../components/layout'
-import ChapterPage from './chapter'
 
 
 const IndexPage = ({ data }) => {
@@ -9,7 +8,9 @@ const IndexPage = ({ data }) => {
         <Layout pageTitle="Project Vyasa">
             {
                 data.allContentJson.nodes.map(node => (
-                    <ChapterPage verses={node.verses}></ChapterPage>
+                    <Link to={`/${node.parent.name}`}>
+                        {node.title}
+                    </Link>
                 ))
             }
         </Layout >
@@ -21,12 +22,14 @@ export const query = graphql`
 query {
     allContentJson {
         nodes {
-            verses {
-                word_by_word
-                text
-            }
             title
             id
+            parent {
+                ... on File {
+                  id
+                  name
+                }
+              }
         }
     }
 }
