@@ -17,6 +17,7 @@
   },
   "dependencies": {
     "gatsby": "^4.6.0",
+    "gatsby-plugin-anchor-links": "^1.2.1",
     "gatsby-source-filesystem": "^4.6.0",
     "gatsby-transformer-json": "^4.6.0",
     "jest": "^27.4.7",

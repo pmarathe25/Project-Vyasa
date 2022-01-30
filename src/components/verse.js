@@ -3,11 +3,11 @@ import { useTransliterate } from './transliterationHook';
 import { verseText } from "./verse.module.css"
 
 
-const Verse = ({ text, wordByWord }) => {
+const Verse = ({ num, text, wordByWord }) => {
     text = useTransliterate(text);
 
     return (
-        <p className={verseText}>
+        <p className={verseText} id={`verse_${num}`}>
             {text}
         </p>
     )

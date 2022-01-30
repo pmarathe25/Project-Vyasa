@@ -1,36 +1,61 @@
-import { graphql, Link, useStaticQuery } from 'gatsby'
+import { graphql, useStaticQuery } from 'gatsby'
 import * as React from 'react'
 import toUrl from '../util/util'
 import { menuBar, menuBarButton } from "./sidebar.module.css"
 import { Collapsible } from './collapsible'
+import { AnchorLink } from 'gatsby-plugin-anchor-links'
 
 
-const BookDropDown = ({ location, book, chapters }) => {
-    const bookURL = toUrl(`/${book}/`);
-
+const DropDown = (props) => {
     const [open, setOpen] = React.useState(false);
 
     return (
-        <li key={book}>
+        <li key={props.sectionTitle}>
             <button className={menuBarButton} onClick={() => setOpen(!open)}>
-                <Link to={bookURL}>
-                    {book}
-                </Link>
+                <AnchorLink to={props.sectionURL}>
+                    {props.sectionTitle}
+                </AnchorLink>
             </button>
-            <Collapsible isOpen={open || location.pathname.includes(bookURL)}>
-                <ul>
-                    {
-                        chapters.map(chapter => (
-                            <li key={chapter.title}>
-                                <Link to={toUrl(`/${book}/${chapter.title}`)}>
-                                    {chapter.title}
-                                </Link>
-                            </li>
-                        ))
-                    }
-                </ul>
+            <Collapsible isOpen={open || props.location.pathname.includes(props.sectionURL)}>
+                {props.children}
             </Collapsible>
         </li>
+    )
+}
+
+const VerseDropDown = ({ location, book, chapterTitle, verses }) => {
+    const chapterURL = toUrl(`/${book}/${chapterTitle}`);
+
+    return (
+        <DropDown location={location} sectionTitle={chapterTitle} sectionURL={chapterURL}>
+            <ul>
+                {
+                    verses.map(verse => (
+                        <li>
+                            <AnchorLink to={`${chapterURL}/#verse_${verse.num}`}>
+                                Verse {verse.num}
+                            </AnchorLink>
+                        </li>
+                    ))
+                }
+
+            </ul>
+        </DropDown>
+    )
+
+}
+
+const BookDropDown = ({ location, book, chapters }) => {
+    return (
+        <DropDown location={location} sectionTitle={book} sectionURL={toUrl(`/${book}/`)}>
+            <ul>
+                {
+                    chapters.map(chapter => (
+                        <VerseDropDown location={location} book={book} chapterTitle={chapter.title} verses={chapter.verses} />
+                    ))
+                }
+            </ul>
+        </DropDown>
     )
 }
 
@@ -42,6 +67,9 @@ export const SideBar = ({ location }) => {
             nodes {
               book
               title
+              verses {
+                  num
+              }
             }
             fieldValue
           }
