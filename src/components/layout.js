@@ -4,22 +4,27 @@ import {
     container,
     heading, navLinkItem, navLinks, navLinkText, siteTitle
 } from './layout.module.css'
+import { TranslitModeContext } from './translitModeContext'
 
 
-const TransliterationModeSelect = ({ value, setValue }) => {
+const TransliterationModeSelect = () => {
+    // 0: Devanagari, 1: IAST
     return (
-        <div>
-            <button onClick={() => { setValue(0) }} style={{ opacity: value === 0 ? 1.0 : 0.6 }}>
-                Devanagari
-            </button>
-            <button onClick={() => { setValue(1) }} style={{ opacity: value === 1 ? 1.0 : 0.6 }}>
-                IAST
-            </button>
-        </div >
+        <TranslitModeContext.Consumer>
+            {({ mode, setMode }) =>
+                <div>
+                    <button onClick={() => { setMode(0) }} style={{ opacity: mode === 0 ? 1.0 : 0.6 }}>
+                        Devanagari
+                    </button>
+                    <button onClick={() => { setMode(1) }} style={{ opacity: mode === 1 ? 1.0 : 0.6 }}>
+                        IAST
+                    </button>
+                </div >
+            }
+        </TranslitModeContext.Consumer>
     )
 }
 
-export const TranslitModeContext = React.createContext(0);
 
 
 const Layout = ({ pageTitle, children }) => {
@@ -32,14 +37,12 @@ const Layout = ({ pageTitle, children }) => {
       }
     }`)
 
-    // 0: Devanagari, 1: IAST
-    const [translitMode, setTranslitMode] = React.useState(0);
 
     return (
         <div className={container}>
             <title>{pageTitle} | {data.site.siteMetadata.title} </title>
             <header className={siteTitle}>{data.site.siteMetadata.title}</header>
-            <TransliterationModeSelect value={translitMode} setValue={setTranslitMode} />
+            <TransliterationModeSelect />
             <nav>
                 <ul className={navLinks}>
                     <li className={navLinkItem}>
@@ -51,9 +54,7 @@ const Layout = ({ pageTitle, children }) => {
             </nav>
             <main>
                 <h1 className={heading}>{pageTitle}</h1>
-                <TranslitModeContext.Provider value={translitMode}>
-                    {children}
-                </TranslitModeContext.Provider>
+                {children}
             </main>
         </div >
     )
