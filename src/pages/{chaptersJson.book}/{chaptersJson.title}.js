@@ -8,7 +8,7 @@ const BlogPost = ({ data }) => {
         <Layout pageTitle={data.chaptersJson.title}>
             {
                 data.chaptersJson.verses.map(node =>
-                    <Verse text={node.text} word_by_word={node.word_by_word} />
+                    <Verse text={node.text} wordByWord={node.wordByWord} />
                 )
             }
         </Layout>
@@ -22,7 +22,7 @@ query ($id: String) {
         title
         verses {
             text
-            word_by_word
+            wordByWord
         }
     }
   }  

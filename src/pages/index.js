@@ -7,7 +7,6 @@ const IndexPage = ({ data }) => {
     return (
         <Layout pageTitle="Project Vyasa">
             <ol>
-
                 {
                     data.allChaptersJson.nodes.map(node => (
                         <li>

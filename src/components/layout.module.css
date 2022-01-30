@@ -1,11 +1,11 @@
 .container {
     margin: auto;
-    max-width: 500px;
+    max-width: 750px;
     font-family: sans-serif;
   }
 
   .heading {
-    color: rebeccapurple;
+    color: rgb(155, 194, 206);
   }
 
   .nav-links {
@@ -19,13 +19,13 @@
   }
 
   .nav-link-text {
-    color: black;
+    color: rgb(189, 189, 189);
   }
 
 
   .site-title {
     font-size: 3rem;
-    color: gray;
+    color: rgb(194, 194, 194);
     font-weight: 700;
     margin: 3rem 0;
   }

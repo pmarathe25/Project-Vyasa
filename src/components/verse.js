@@ -3,7 +3,7 @@ import { transliterate } from '../util/transliterator';
 import { verseText } from "./verse.module.css"
 
 
-const Verse = ({ text, word_by_word }) => {
+const Verse = ({ text, wordByWord }) => {
     const trie = require("../../content/generated/transliteration_rulesets/devanagari.json");
 
     return (
