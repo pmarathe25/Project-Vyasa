@@ -3,9 +3,9 @@ import * as React from 'react'
 import Layout from '../../components/layout'
 import toUrl from '../../util/util'
 
-const ChapterIndex = ({ data, pageContext }) => {
+const ChapterIndex = ({ location, data, pageContext }) => {
     return (
-        <Layout pageTitle={pageContext.book}>
+        <Layout location={location} pageTitle={pageContext.book}>
             {
                 data.allChaptersJson.nodes.map(node => (
                     <Link to={toUrl(`${node.title}`)}>

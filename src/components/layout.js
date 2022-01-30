@@ -7,7 +7,7 @@ import { TransliterationModeSelect } from './translitModeSelect'
 import { SideBar } from './sidebar'
 
 
-const Layout = ({ pageTitle, children }) => {
+const Layout = ({ location, pageTitle, children }) => {
     const data = useStaticQuery(graphql`
         query {
         site {
@@ -28,7 +28,7 @@ const Layout = ({ pageTitle, children }) => {
                     <TransliterationModeSelect />
                 </nav>
             </header>
-            <SideBar></SideBar>
+            <SideBar location={location}></SideBar>
             <main className={content}>
                 <h1 className={heading}>{pageTitle}</h1>
                 {children}

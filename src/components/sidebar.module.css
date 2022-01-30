@@ -1,0 +1,23 @@
+.menu-bar-button {
+    background: #35343400;
+    border-color: rgba(0, 0, 0, 0);
+    padding: 8px 10px;
+    width: 100%;
+    color: #c5c5c5;
+    text-decoration: none;
+    text-align: left;
+}
+
+.menu-bar-button:hover {
+    transition: all 0.2s ease-in-out;
+    background: rgb(87, 87, 87);
+}
+
+.menu-bar {
+    width: 20%;
+    position: fixed;
+    height: auto;
+    z-index: 1;
+    align-self: left;
+    list-style-type: none;
+}

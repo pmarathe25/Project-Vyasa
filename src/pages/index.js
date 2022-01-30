@@ -3,9 +3,9 @@ import * as React from 'react'
 import Layout from '../components/layout'
 import toUrl from '../util/util'
 
-const Index = ({ data }) => {
+const Index = ({ location, data }) => {
     return (
-        <Layout pageTitle="Project Vyasa">
+        <Layout location={location} pageTitle="Project Vyasa">
             <ol>
                 {
                     data.allChaptersJson.nodes.map(node => (
