@@ -3,7 +3,7 @@ import * as React from 'react'
 import Layout from '../../components/layout'
 import Verse from '../../components/verse'
 
-const BlogPost = ({ data }) => {
+const Chapter = ({ data }) => {
     return (
         <Layout pageTitle={data.chaptersJson.title}>
             {
@@ -28,4 +28,4 @@ query ($id: String) {
   }  
 `
 
-export default BlogPost;
+export default Chapter;

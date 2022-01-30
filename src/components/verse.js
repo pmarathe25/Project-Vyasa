@@ -1,14 +1,20 @@
 import * as React from 'react'
 import { transliterate } from '../util/transliterator';
 import { verseText } from "./verse.module.css"
+import { TranslitModeContext } from './layout';
 
 
 const Verse = ({ text, wordByWord }) => {
-    const trie = require("../../content/generated/transliteration_rulesets/devanagari.json");
+
+    const mode = React.useContext(TranslitModeContext);
+    const devanagari = require("../../content/generated/transliteration_rulesets/devanagari.json");
+    const iast = require("../../content/generated/transliteration_rulesets/iast.json");
+
+    const translitRuleset = mode ? iast : devanagari;
 
     return (
         <p className={verseText}>
-            {transliterate(text, trie)}
+            {transliterate(text, translitRuleset)}
         </p>
     )
 }

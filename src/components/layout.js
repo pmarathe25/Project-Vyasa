@@ -5,6 +5,23 @@ import {
     heading, navLinkItem, navLinks, navLinkText, siteTitle
 } from './layout.module.css'
 
+
+const TransliterationModeSelect = ({ value, setValue }) => {
+    return (
+        <div>
+            <button onClick={() => { setValue(0) }} style={{ opacity: value === 0 ? 1.0 : 0.6 }}>
+                Devanagari
+            </button>
+            <button onClick={() => { setValue(1) }} style={{ opacity: value === 1 ? 1.0 : 0.6 }}>
+                IAST
+            </button>
+        </div >
+    )
+}
+
+export const TranslitModeContext = React.createContext(0);
+
+
 const Layout = ({ pageTitle, children }) => {
     const data = useStaticQuery(graphql`
     query {
@@ -15,10 +32,14 @@ const Layout = ({ pageTitle, children }) => {
       }
     }`)
 
+    // 0: Devanagari, 1: IAST
+    const [translitMode, setTranslitMode] = React.useState(0);
+
     return (
         <div className={container}>
             <title>{pageTitle} | {data.site.siteMetadata.title} </title>
             <header className={siteTitle}>{data.site.siteMetadata.title}</header>
+            <TransliterationModeSelect value={translitMode} setValue={setTranslitMode} />
             <nav>
                 <ul className={navLinks}>
                     <li className={navLinkItem}>
@@ -30,9 +51,11 @@ const Layout = ({ pageTitle, children }) => {
             </nav>
             <main>
                 <h1 className={heading}>{pageTitle}</h1>
-                {children}
+                <TranslitModeContext.Provider value={translitMode}>
+                    {children}
+                </TranslitModeContext.Provider>
             </main>
-        </div>
+        </div >
     )
 }
 
