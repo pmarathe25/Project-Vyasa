@@ -4,16 +4,18 @@ import {
     container, content, heading, navLinkItem, topBar
 } from './layout.module.css'
 import { TransliterationModeSelect } from './translitModeSelect'
+import { SideBar } from './sidebar'
+
 
 const Layout = ({ pageTitle, children }) => {
     const data = useStaticQuery(graphql`
-    query {
-      site {
-        siteMetadata {
-          title
+        query {
+        site {
+            siteMetadata {
+            title
+            }
         }
-      }
-    }`)
+        }`)
 
     return (
         <div className={container}>
@@ -26,6 +28,7 @@ const Layout = ({ pageTitle, children }) => {
                     <TransliterationModeSelect />
                 </nav>
             </header>
+            <SideBar></SideBar>
             <main className={content}>
                 <h1 className={heading}>{pageTitle}</h1>
                 {children}
