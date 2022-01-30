@@ -1,6 +1,8 @@
 html, body {
     background-color: rgb(58, 61, 71);
     color:rgb(230, 230, 230);
+    margin: 0;
+    padding: 0;
 }
 
 a:link {
