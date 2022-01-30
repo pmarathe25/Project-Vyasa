@@ -3,13 +3,13 @@ import * as React from 'react'
 import Layout from '../components/layout'
 import toUrl from '../util/util'
 
-const IndexPage = ({ data }) => {
+const Index = ({ data }) => {
     return (
         <Layout pageTitle="Project Vyasa">
             <ol>
                 {
                     data.allChaptersJson.nodes.map(node => (
-                        <li>
+                        <li key={node.book}>
                             <Link to={toUrl(`${node.book}/`)}>
                                 {node.book}
                             </Link>
@@ -34,4 +34,4 @@ query {
 }
 `
 
-export default IndexPage
+export default Index

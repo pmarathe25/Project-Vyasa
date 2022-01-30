@@ -1,7 +1,6 @@
-
-function transliterate(text, trie) {
-    let sequence_map = trie["sequence_map"];
-    let rules = trie["rules"];
+function transliterate(text, translitRuleset) {
+    let sequence_map = translitRuleset["sequence_map"];
+    let rules = translitRuleset["rules"];
 
     let output = "";
     let cur_dict = sequence_map;

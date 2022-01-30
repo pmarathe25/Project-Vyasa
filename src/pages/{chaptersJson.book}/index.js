@@ -3,7 +3,7 @@ import * as React from 'react'
 import Layout from '../../components/layout'
 import toUrl from '../../util/util'
 
-const IndexPage = ({ data }) => {
+const ChapterIndex = ({ data }) => {
 
 
     return (
@@ -32,4 +32,4 @@ query ($book: String) {
 `
 
 
-export default IndexPage
+export default ChapterIndex
