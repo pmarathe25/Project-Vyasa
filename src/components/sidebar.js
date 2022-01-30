@@ -5,19 +5,6 @@ import { menuBar, menuBarButton } from "./sidebar.module.css"
 import { Collapsible } from './collapsible'
 
 
-// export const SideBarStateContext = React.createContext({ state: {}, setState: () => { } });
-
-// export const SideBarStateContextProvider = (props) => {
-//     const [state, setState] = React.useState({});
-
-//     return (
-//         <SideBarStateContext.Provider value={{ state: state, setState: setState }}>
-//             {props.children}
-//         </SideBarStateContext.Provider>
-//     )
-// }
-
-
 const BookDropDown = ({ location, book, chapters }) => {
     const bookURL = toUrl(`/${book}/`);
 
@@ -30,7 +17,7 @@ const BookDropDown = ({ location, book, chapters }) => {
                     {book}
                 </Link>
             </button>
-            <Collapsible isOpen={open}>
+            <Collapsible isOpen={open || location.pathname.includes(bookURL)}>
                 <ul>
                     {
                         chapters.map(chapter => (
