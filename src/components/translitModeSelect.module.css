@@ -1,0 +1,17 @@
+.mode-select-button {
+    border-radius: 4px;
+    background: #353434;
+    border-color: rgba(0, 0, 0, 0);
+    padding: 8px 10px;
+    color: #c5c5c5;
+    text-decoration: none;
+}
+
+.mode-select-button:hover {
+    transition: all 0.2s ease-in-out;
+    background: rgb(87, 87, 87);
+}
+
+.translit-mode-select {
+    align-self: right;
+}

@@ -3,11 +3,9 @@ import * as React from 'react'
 import Layout from '../../components/layout'
 import toUrl from '../../util/util'
 
-const ChapterIndex = ({ data }) => {
-
-
+const ChapterIndex = ({ data, pageContext }) => {
     return (
-        <Layout pageTitle="Project Vyasa">
+        <Layout pageTitle={pageContext.book}>
             {
                 data.allChaptersJson.nodes.map(node => (
                     <Link to={toUrl(`${node.title}`)}>
@@ -18,8 +16,6 @@ const ChapterIndex = ({ data }) => {
         </Layout >
     )
 }
-
-
 
 export const query = graphql`
 query ($book: String) {

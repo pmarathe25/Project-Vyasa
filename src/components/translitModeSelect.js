@@ -1,4 +1,5 @@
 import React from "react";
+import { modeSelectButton, translitModeSelect } from "./translitModeSelect.module.css"
 
 export const TranslitModeContext = React.createContext({ mode: 0, setMode: () => { } });
 
@@ -17,11 +18,11 @@ export const TransliterationModeSelect = () => {
     return (
         <TranslitModeContext.Consumer>
             {({ mode, setMode }) =>
-                <div>
-                    <button onClick={() => { setMode(0) }} style={{ opacity: mode === 0 ? 1.0 : 0.6 }}>
+                <div className={translitModeSelect}>
+                    <button className={modeSelectButton} onClick={() => { setMode(0) }} style={{ opacity: mode === 0 ? 1.0 : 0.4 }}>
                         Devanagari
                     </button>
-                    <button onClick={() => { setMode(1) }} style={{ opacity: mode === 1 ? 1.0 : 0.6 }}>
+                    <button className={modeSelectButton} onClick={() => { setMode(1) }} style={{ opacity: mode === 1 ? 1.0 : 0.4 }}>
                         IAST
                     </button>
                 </div >

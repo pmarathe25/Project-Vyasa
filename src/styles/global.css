@@ -1,3 +1,20 @@
 html, body {
-    background-color: rgb(41, 45, 56);
+    background-color: rgb(58, 61, 71);
+    color:rgb(230, 230, 230);
 }
+
+a:link {
+    color:rgb(238, 238, 238);
+}
+
+a:visited {
+    color:rgb(189, 187, 187);
+}
+
+a:hover {
+    color:rgb(245, 226, 226);
+}
+
+a:active {
+    color:rgb(230, 230, 230);
+} 
