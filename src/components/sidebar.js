@@ -26,11 +26,14 @@ const DropDown = (props) => {
 
     return (
         <li key={props.sectionTitle} className={sideBarItem}>
-            <Collapsible isOpen={() => { return open || props.location.pathname.includes(props.sectionURL); }} setOpen={setOpen} heading={
-                < SideBarLink to={props.sectionURL} depth={props.depth}>
-                    {props.sectionTitle}
-                </SideBarLink>
-            }>
+            <Collapsible
+                isOpen={() => { return open || props.location.pathname.includes(props.sectionURL); }}
+                setOpen={setOpen}
+                heading={
+                    < SideBarLink to={props.sectionURL} depth={props.depth}>
+                        {props.sectionTitle}
+                    </SideBarLink>
+                }>
                 {props.children}
             </Collapsible>
         </li >
