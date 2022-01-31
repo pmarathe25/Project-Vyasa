@@ -1,4 +1,27 @@
 .verse-text {
     font-size: 30px;
-    color: rgb(228, 219, 205);
+    color: rgb(252, 251, 250);
+}
+
+.word-by-word-button {
+    border-radius: 1px;
+    background: #201f1f;
+    border-color: rgba(0, 0, 0, 0);
+    padding: 8px 10px;
+    color: #f0f0f0;
+    text-decoration: none;
+    width: 100%;
+    display: block;
+    height: max-content;
+    
+}
+
+.word-by-word-button:hover {
+    transition: all 0.2s ease-in-out;
+    background: rgba(87, 87, 87, 0.452);
+}
+
+.stacked {
+    width: 250px;
+    float: left;
 }
