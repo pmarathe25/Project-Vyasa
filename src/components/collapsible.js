@@ -11,7 +11,7 @@ export const Collapsible = (props) => {
             <button className={collapsibleButton} onClick={() => props.setOpen(!props.isOpen())} style={{ display: "flex" }}>
                 {props.isOpen() ? <MdKeyboardArrowDown style={arrowStyle} /> : <MdKeyboardArrowRight style={arrowStyle} />}
                 {props.heading}
-                <div style={{ width: "40%", height: "100%" }} />
+                <div style={{ width: "20%", height: "100%" }} />
             </button>
 
             {

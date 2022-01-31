@@ -18,7 +18,7 @@
 
 .word-by-word-button:hover {
     transition: all 0.2s ease-in-out;
-    background: rgba(87, 87, 87, 0.452);
+    background: rgba(73, 73, 73, 0.795);
 }
 
 .stacked {

@@ -37,9 +37,7 @@ const Verse = ({ num, text, wordByWord }) => {
                     text
                 }
             </div>
-            {/* Word By Word */}
         </button >
-        // </div>
     )
 }
 
