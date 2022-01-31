@@ -1,7 +1,7 @@
 import { graphql, useStaticQuery } from 'gatsby'
 import * as React from 'react'
 import toUrl from '../util/util'
-import { sideBar, sideBarButton, sideBarLink, sideBarItem } from "./sidebar.module.css"
+import { sideBar, sideBarLink, sideBarItem } from "./sidebar.module.css"
 import { Collapsible } from './collapsible'
 import { AnchorLink } from 'gatsby-plugin-anchor-links'
 import { useTransliterate } from "./transliterationHook"
@@ -21,19 +21,16 @@ const SideBarLink = (props) => {
     )
 }
 
-// TODO: Refactor Collapsible component to include the title button!
 const DropDown = (props) => {
     const [open, setOpen] = React.useState(false);
 
     return (
         <li key={props.sectionTitle} className={sideBarItem}>
-            <button className={sideBarButton} onClick={() => setOpen(!open)} style={{ display: "flex" }}>
-                <SideBarLink to={props.sectionURL} depth={props.depth}>
+            <Collapsible isOpen={() => { return open || props.location.pathname.includes(props.sectionURL); }} setOpen={setOpen} heading={
+                < SideBarLink to={props.sectionURL} depth={props.depth}>
                     {props.sectionTitle}
                 </SideBarLink>
-                <div style={{ width: "40%", height: "100%" }} />
-            </button>
-            <Collapsible isOpen={open || props.location.pathname.includes(props.sectionURL)}>
+            }>
                 {props.children}
             </Collapsible>
         </li >
