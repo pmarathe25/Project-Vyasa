@@ -1,19 +1,27 @@
-.menu-bar-button {
+.side-bar-button {
     background: #35343400;
     border-color: rgba(0, 0, 0, 0);
-    padding: 8px 10px;
+    padding: 4px 4px;
     width: 100%;
     color: #c5c5c5;
     text-decoration: none;
     text-align: left;
 }
 
-.menu-bar-button:hover {
+.side-bar-button:hover {
     transition: all 0.2s ease-in-out;
     background: rgb(87, 87, 87);
 }
 
-.menu-bar {
+.side-bar-link {
+    text-decoration: none;
+}
+
+.side-bar-item {
+    list-style-type: none;
+}
+
+.side-bar {
     width: 20%;
     position: fixed;
     height: auto;

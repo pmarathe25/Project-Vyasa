@@ -1,25 +1,42 @@
 import { graphql, useStaticQuery } from 'gatsby'
 import * as React from 'react'
 import toUrl from '../util/util'
-import { menuBar, menuBarButton } from "./sidebar.module.css"
+import { sideBar, sideBarButton, sideBarLink, sideBarItem } from "./sidebar.module.css"
 import { Collapsible } from './collapsible'
 import { AnchorLink } from 'gatsby-plugin-anchor-links'
+import { useTransliterate } from "./transliterationHook"
 
 
+const SideBarLink = (props) => {
+    const fontSize = 22 - (props.depth * 4);
+
+    return (
+        <AnchorLink to={props.to} className={sideBarLink} >
+            <div style={{ display: "flex" }}>
+                <div style={{ fontSize: fontSize }}>
+                    {props.children}
+                </div>
+            </div>
+        </AnchorLink >
+    )
+}
+
+// TODO: Refactor Collapsible component to include the title button!
 const DropDown = (props) => {
     const [open, setOpen] = React.useState(false);
 
     return (
-        <li key={props.sectionTitle}>
-            <button className={menuBarButton} onClick={() => setOpen(!open)}>
-                <AnchorLink to={props.sectionURL}>
+        <li key={props.sectionTitle} className={sideBarItem}>
+            <button className={sideBarButton} onClick={() => setOpen(!open)} style={{ display: "flex" }}>
+                <SideBarLink to={props.sectionURL} depth={props.depth}>
                     {props.sectionTitle}
-                </AnchorLink>
+                </SideBarLink>
+                <div style={{ width: "40%", height: "100%" }} />
             </button>
             <Collapsible isOpen={open || props.location.pathname.includes(props.sectionURL)}>
                 {props.children}
             </Collapsible>
-        </li>
+        </li >
     )
 }
 
@@ -27,14 +44,14 @@ const VerseDropDown = ({ location, book, chapterTitle, verses }) => {
     const chapterURL = toUrl(`/${book}/${chapterTitle}`);
 
     return (
-        <DropDown location={location} sectionTitle={chapterTitle} sectionURL={chapterURL}>
+        <DropDown location={location} sectionTitle={chapterTitle} sectionURL={chapterURL} depth={1}>
             <ul>
                 {
                     verses.map(verse => (
-                        <li>
-                            <AnchorLink to={`${chapterURL}/#verse_${verse.num}`}>
+                        <li key={verse.num} className={sideBarItem}>
+                            <SideBarLink to={`${chapterURL}/#verse_${verse.num}`}>
                                 Verse {verse.num}
-                            </AnchorLink>
+                            </SideBarLink>
                         </li>
                     ))
                 }
@@ -46,8 +63,10 @@ const VerseDropDown = ({ location, book, chapterTitle, verses }) => {
 }
 
 const BookDropDown = ({ location, book, chapters }) => {
+    const translitBookName = useTransliterate(book);
+
     return (
-        <DropDown location={location} sectionTitle={book} sectionURL={toUrl(`/${book}/`)}>
+        <DropDown location={location} sectionTitle={translitBookName} sectionURL={toUrl(`/${book}/`)} depth={0}>
             <ul>
                 {
                     chapters.map(chapter => (
@@ -78,7 +97,7 @@ export const SideBar = ({ location }) => {
     `);
 
     return (
-        <ul className={menuBar}>
+        <ul className={sideBar}>
             {
                 data.allChaptersJson.group.map(group =>
                     <BookDropDown location={location} book={group.fieldValue} chapters={group.nodes} />
