@@ -2,109 +2,118 @@ import { graphql, useStaticQuery } from 'gatsby'
 import * as React from 'react'
 import toUrl from '../util/util'
 import { sideBarLink, sideBarItem } from "./sidebar.module.css"
-import { Collapsible } from './collapsible'
 import { AnchorLink } from 'gatsby-plugin-anchor-links'
 import { useTransliterate } from "./transliterationHook"
+import { Accordion } from 'react-bootstrap'
 
 
 const SideBarLink = (props) => {
-    const fontSize = 22 - (props.depth * 4);
-
     return (
-        <AnchorLink to={props.to} className={sideBarLink} >
-            <div style={{ display: "flex" }}>
-                <div style={{ fontSize: fontSize }}>
-                    <p className={sideBarLink}>
-                        {props.children}
-
-                    </p>
-                </div>
-            </div>
-        </AnchorLink >
-    )
-}
-
-const DropDown = (props) => {
-    const [open, setOpen] = React.useState(false);
-
-    return (
-        <li key={props.sectionTitle} className={sideBarItem}>
-            <Collapsible
-                isOpen={() => { return open || props.location.pathname.includes(props.sectionURL); }}
-                setOpen={setOpen}
-                heading={
-                    < SideBarLink to={props.sectionURL} depth={props.depth}>
-                        {props.sectionTitle}
-                    </SideBarLink>
-                }>
+        <AnchorLink to={props.to}>
+            <p className={sideBarLink}>
                 {props.children}
-            </Collapsible>
-        </li >
+            </p>
+        </AnchorLink>
+    );
+}
+
+// A per-chapter accordion item that expands all constituent verses
+const VersesAccordion = ({ baseURL, chapter }) => {
+    const translitChapterName = useTransliterate(chapter.title);
+    const chapterURL = toUrl(`${baseURL}/${chapter.title}`);
+
+    return (
+        <Accordion.Item eventKey={chapter.title}>
+            <Accordion.Header>
+                <SideBarLink to={chapterURL}>
+                    {translitChapterName}
+                </SideBarLink>
+            </Accordion.Header>
+            <Accordion.Body>
+                <ul>
+                    {
+                        chapter.verses.map(verse =>
+                            <li key={verse.num} className={sideBarItem}>
+                                <SideBarLink to={`${chapterURL}/#verse_${verse.num}`}>
+                                    Verse {verse.num}
+                                </SideBarLink>
+                            </li>)
+                    }
+                </ul>
+            </Accordion.Body>
+        </Accordion.Item>
     )
 }
 
-const VerseDropDown = ({ location, book, chapterTitle, verses }) => {
-    const chapterURL = toUrl(`/${book}/${chapterTitle}`);
+// A per-book accordion item that expands all constituent chapters
+const ChaptersAccordion = ({ book, activeChapter }) => {
+    const translitBookName = useTransliterate(book.fieldValue);
+    const bookURL = toUrl(`/${book.fieldValue}`);
 
     return (
-        <DropDown location={location} sectionTitle={chapterTitle} sectionURL={chapterURL} depth={1}>
-            <ul>
-                {
-                    verses.map(verse => (
-                        <li key={verse.num} className={sideBarItem}>
-                            <SideBarLink to={`${chapterURL}/#verse_${verse.num}`}>
-                                Verse {verse.num}
-                            </SideBarLink>
-                        </li>
-                    ))
-                }
-            </ul>
-        </DropDown>
-    )
-}
-
-const BookDropDown = ({ location, book, chapters }) => {
-    const translitBookName = useTransliterate(book);
-
-    return (
-        <DropDown location={location} sectionTitle={translitBookName} sectionURL={toUrl(`/${book}/`)} depth={0}>
-            <ul>
-                {
-                    chapters.map(chapter => (
-                        <VerseDropDown location={location} book={book} chapterTitle={chapter.title} verses={chapter.verses} />
-                    ))
-                }
-            </ul>
-        </DropDown>
+        <Accordion.Item eventKey={book.fieldValue}>
+            <Accordion.Header>
+                <SideBarLink to={bookURL}>
+                    {translitBookName}
+                </SideBarLink>
+            </Accordion.Header>
+            <Accordion.Body>
+                <Accordion defaultActiveKey={activeChapter} alwaysOpen={true}>
+                    {
+                        book.nodes.map(chapter =>
+                        (
+                            <VersesAccordion baseURL={bookURL} chapter={chapter} />
+                        )
+                        )
+                    }
+                </Accordion>
+            </Accordion.Body>
+        </Accordion.Item>
     )
 }
 
 export const SideBar = ({ location }) => {
     const data = useStaticQuery(graphql`
-    query {
-        allChaptersJson {
-          group(field: book) {
-            nodes {
-              book
-              title
-              verses {
-                  num
-              }
+        query {
+            allChaptersJson {
+                group(field: book) {
+                    nodes {
+                        book
+                        title
+                        verses {
+                            num
+                        }
+                    }
+                    fieldValue
+                }
             }
-            fieldValue
-          }
         }
-      }
     `);
 
+    // Active book/chapter should match the eventKeys in the Accordion items.
+    let activeBook;
+    let activeChapter;
+    for (let book of data.allChaptersJson.group) {
+        if (location.pathname.includes(toUrl(book.fieldValue))) {
+            activeBook = book.fieldValue;
+            for (let chapter of book.nodes) {
+                if (location.pathname.includes(toUrl(chapter.title))) {
+                    activeChapter = chapter.title;
+                    break;
+                }
+            }
+            break;
+        }
+    }
+
     return (
-        <ul>
+        <Accordion defaultActiveKey={activeBook} alwaysOpen={true}>
             {
-                data.allChaptersJson.group.map(group =>
-                    <BookDropDown location={location} book={group.fieldValue} chapters={group.nodes} />
+                data.allChaptersJson.group.map(book =>
+                    <ChaptersAccordion book={book} activeChapter={activeChapter} />
                 )
             }
-        </ul>
+        </Accordion>
     )
 }
 
