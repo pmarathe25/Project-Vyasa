@@ -8,7 +8,7 @@ const Chapter = ({ location, data }) => {
         <Layout location={location} pageTitle={data.chaptersJson.title}>
             {
                 data.chaptersJson.verses.map(node =>
-                    <Verse num={node.num} text={node.text} wordByWord={node.wordByWord} />
+                    <Verse num={node.num} text={node.text} wordByWord={node.wordByWord} translation={node.translation} />
                 )
             }
         </Layout>
@@ -24,6 +24,7 @@ query ($id: String) {
             num
             text
             wordByWord
+            translation
         }
     }
   }  

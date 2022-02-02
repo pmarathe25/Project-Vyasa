@@ -18,3 +18,8 @@
     transition: all 0.2s ease-in-out;
     background: rgba(107, 107, 107, 0.795);
 }
+
+.translation-accordion {
+    background: rgb(84, 84, 85);
+    color: white;
+}
