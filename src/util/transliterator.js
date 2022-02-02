@@ -1,25 +1,34 @@
 function transliterate(text, translitRuleset) {
-    let sequence_map = translitRuleset["sequence_map"];
+    let sequenceMap = translitRuleset["sequence_map"];
     let rules = translitRuleset["rules"];
 
     text = text.toLowerCase();
     let output = "";
-    let cur_dict = sequence_map;
+    let curDict = sequenceMap;
+    let curSequence = "";
     for (let idx = 0; idx < text.length; ++idx) {
-        let cur_char = text[idx];
-        let next_char = text[idx + 1];
+        let curChar = text[idx];
+        let nextChar = text[idx + 1];
 
-        if (cur_char in cur_dict) {
-            cur_dict = cur_dict[cur_char]
+        if (curChar in curDict) {
+            curDict = curDict[curChar]
+            curSequence += curChar;
         }
         else {
             // Append unknown character as they are.
-            output += cur_char;
+            output += curChar;
         }
 
-        if (!(next_char in cur_dict) && "" in cur_dict) {
-            output += cur_dict[""];
-            cur_dict = sequence_map;
+        if (!(nextChar in curDict)) {
+            if ("" in curDict) {
+                output += curDict[""];
+                curDict = sequenceMap;
+            }
+            else {
+                // Unrecognized sequence, so append as-is
+                output += curSequence;
+            }
+            curSequence = "";
         }
     }
 
