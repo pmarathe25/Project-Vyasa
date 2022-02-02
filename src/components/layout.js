@@ -5,6 +5,7 @@ import {
 } from './layout.module.css'
 import { TransliterationModeSelect } from './translitModeSelect'
 import { SideBar } from './sidebar'
+import { Navbar, Container } from 'react-bootstrap'
 
 
 const Layout = ({ location, pageTitle, children }) => {
@@ -20,15 +21,18 @@ const Layout = ({ location, pageTitle, children }) => {
     return (
         <div className={container}>
             <title>{pageTitle} | {data.site.siteMetadata.title} </title>
-            <header>
-                <nav className={topBar}>
-                    <Link to="/" className={navLinkItem}>
-                        Project Vyasa
-                    </Link>
+            <Navbar bg="dark" variant="dark" fixed="top" expand={false}>
+                <Container>
+                    <Navbar.Brand>
+                        <Link to="/" className={navLinkItem}>
+                            Project Vyasa
+                        </Link>
+                    </Navbar.Brand>
                     <TransliterationModeSelect />
-                </nav>
-            </header>
-            <SideBar location={location}></SideBar>
+                    <Navbar.Toggle aria-controls="offcanvasNavbar" />
+                    <SideBar location={location}></SideBar>
+                </Container>
+            </Navbar>
             <main className={content}>
                 <h1 className={heading}>{pageTitle}</h1>
                 {children}

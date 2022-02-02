@@ -5,6 +5,7 @@ import { sideBar, sideBarLink, sideBarItem } from "./sidebar.module.css"
 import { Collapsible } from './collapsible'
 import { AnchorLink } from 'gatsby-plugin-anchor-links'
 import { useTransliterate } from "./transliterationHook"
+import { Navbar, Offcanvas } from 'react-bootstrap'
 
 
 const SideBarLink = (props) => {
@@ -96,14 +97,28 @@ export const SideBar = ({ location }) => {
       }
     `);
 
+
     return (
-        <ul className={sideBar}>
-            {
-                data.allChaptersJson.group.map(group =>
-                    <BookDropDown location={location} book={group.fieldValue} chapters={group.nodes} />
-                )
-            }
-        </ul>
+
+        <Navbar.Offcanvas
+            id="offcanvasNavbar"
+            aria-labelledby="offcanvasNavbarLabel"
+            placement="end"
+            backdrop={false}
+            scroll={true}
+        >
+            <Offcanvas.Header closeButton>
+            </Offcanvas.Header >
+            <Offcanvas.Body>
+                <ul>
+                    {
+                        data.allChaptersJson.group.map(group =>
+                            <BookDropDown location={location} book={group.fieldValue} chapters={group.nodes} />
+                        )
+                    }
+                </ul>
+            </Offcanvas.Body>
+        </Navbar.Offcanvas>
     )
 }
 
