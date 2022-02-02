@@ -1,7 +1,12 @@
 .side-bar-link {
-    color: rgb(88, 88, 88);
+    color: rgb(241, 241, 241);
 }
 
-.side-bar-item {
+.verse-link {
     list-style-type: none;
+}
+
+.side-bar-accordion {
+    background: rgb(84, 84, 85);
+    color: white;
 }

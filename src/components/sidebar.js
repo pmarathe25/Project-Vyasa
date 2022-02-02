@@ -1,7 +1,7 @@
 import { graphql, useStaticQuery } from 'gatsby'
 import * as React from 'react'
 import toUrl from '../util/util'
-import { sideBarLink, sideBarItem } from "./sidebar.module.css"
+import { sideBarLink, verseLink, sideBarAccordion } from "./sidebar.module.css"
 import { AnchorLink } from 'gatsby-plugin-anchor-links'
 import { useTransliterate } from "./transliterationHook"
 import { Accordion } from 'react-bootstrap'
@@ -23,17 +23,17 @@ const VersesAccordion = ({ baseURL, chapter }) => {
     const chapterURL = toUrl(`${baseURL}/${chapter.title}`);
 
     return (
-        <Accordion.Item eventKey={chapter.title}>
-            <Accordion.Header>
+        <Accordion.Item eventKey={chapter.title} className={sideBarAccordion}>
+            <Accordion.Header className={sideBarAccordion}>
                 <SideBarLink to={chapterURL}>
                     {translitChapterName}
                 </SideBarLink>
             </Accordion.Header>
-            <Accordion.Body>
+            <Accordion.Body className={sideBarAccordion}>
                 <ul>
                     {
                         chapter.verses.map(verse =>
-                            <li key={verse.num} className={sideBarItem}>
+                            <li key={verse.num} className={verseLink}>
                                 <SideBarLink to={`${chapterURL}/#verse_${verse.num}`}>
                                     Verse {verse.num}
                                 </SideBarLink>
@@ -51,13 +51,13 @@ const ChaptersAccordion = ({ book, activeChapter }) => {
     const bookURL = toUrl(`/${book.fieldValue}`);
 
     return (
-        <Accordion.Item eventKey={book.fieldValue}>
-            <Accordion.Header>
+        <Accordion.Item eventKey={book.fieldValue} className={sideBarAccordion}>
+            <Accordion.Header className={sideBarAccordion}>
                 <SideBarLink to={bookURL}>
                     {translitBookName}
                 </SideBarLink>
             </Accordion.Header>
-            <Accordion.Body>
+            <Accordion.Body className={sideBarAccordion}>
                 <Accordion defaultActiveKey={activeChapter} alwaysOpen={true} flush>
                     {
                         book.nodes.map(chapter =>
@@ -107,7 +107,7 @@ export const SideBar = ({ location }) => {
     }
 
     return (
-        <Accordion defaultActiveKey={activeBook} alwaysOpen={true} flush>
+        <Accordion defaultActiveKey={activeBook} alwaysOpen={true} flush >
             {
                 data.allChaptersJson.group.map(book =>
                     <ChaptersAccordion book={book} activeChapter={activeChapter} />

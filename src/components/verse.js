@@ -65,7 +65,7 @@ const VerseText = ({ num, text, wordByWord }) => {
 const Verse = ({ num, text, wordByWord, translation }) => {
     return (
         <Accordion variant="dark" className={translationAccordion} flush>
-            <AccordionItem eventKey={num} className={translationAccordion}>
+            <AccordionItem variant="dark" eventKey={num} className={translationAccordion}>
                 <Accordion.Header variant="dark" className={translationAccordion}>
                     <VerseText num={num} text={text} wordByWord={wordByWord} />
                 </Accordion.Header>

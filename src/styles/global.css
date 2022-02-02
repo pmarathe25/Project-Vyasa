@@ -44,14 +44,14 @@ a:active {
 
 .accordion-button:not(.collapsed) {
     color: white;
-    background: rgb(53, 53, 53);
+    background: rgb(57, 57, 57);
 }
 
 .accordion-button::after {
-    background-color: rgb(182, 182, 182);
-    border-radius: 8px;
-    box-shadow: 2px 2px 2px 2px rgb(43, 35, 51);
-    background-size: 30px;
-    width: 30px;
-    height: 30px;
+    background-color: rgba(255, 255, 255, 0.514);
+    border-radius: 3px;
+    box-shadow: 1px 1px 2px 2px rgb(43, 35, 51);
+    background-size: 24px;
+    width: 24px;
+    height: 24px;
 }

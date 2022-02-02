@@ -26,3 +26,13 @@
   padding-top: 10px;
   max-width: 80%;
 }
+
+.nav-side-bar {
+  background: rgb(78, 97, 156);
+}
+
+.nav-side-bar-toggle {
+  border-width: 2px;
+  background:rgb(73, 95, 160);
+  border-radius: 2px;
+}

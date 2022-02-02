@@ -3,7 +3,7 @@ import * as React from 'react'
 import { Breadcrumb, BreadcrumbItem, Container, Navbar, Offcanvas } from 'react-bootstrap'
 import { titleCaseFromUrl } from '../util/util'
 import {
-    container, content, navLinkItem
+    container, content, navLinkItem, navSideBar, navSideBarToggle
 } from './layout.module.css'
 import { SideBar } from './sidebar'
 import { TransliterationModeSelect } from './translitModeSelect'
@@ -49,13 +49,19 @@ const Layout = ({ location, pageTitle, children }) => {
                         </Link>
                     </Navbar.Brand>
                     <TransliterationModeSelect />
-                    <Navbar.Toggle aria-controls="offcanvasNavbar" />
+                    <Navbar.Toggle aria-controls="offcanvasNavbar" className={navSideBarToggle}>
+                        All Verses
+                    </Navbar.Toggle>
 
                     <Navbar.Offcanvas
-                        id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel" placement="end" backdrop={false} scroll={true}>
-                        <Offcanvas.Header closeButton>
-                        </Offcanvas.Header >
-                        <Offcanvas.Body>
+                        id="offcanvasNavbar"
+                        variant="dark"
+                        aria-labelledby="offcanvasNavbarLabel"
+                        placement="end"
+                        scroll={true}
+                    >
+                        <Offcanvas.Header closeButton className={navSideBar} />
+                        <Offcanvas.Body variant="dark" className={navSideBar}>
                             <SideBar location={location}></SideBar>
                         </Offcanvas.Body >
                     </Navbar.Offcanvas >
