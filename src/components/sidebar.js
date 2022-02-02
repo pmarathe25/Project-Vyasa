@@ -58,7 +58,7 @@ const ChaptersAccordion = ({ book, activeChapter }) => {
                 </SideBarLink>
             </Accordion.Header>
             <Accordion.Body>
-                <Accordion defaultActiveKey={activeChapter} alwaysOpen={true}>
+                <Accordion defaultActiveKey={activeChapter} alwaysOpen={true} flush>
                     {
                         book.nodes.map(chapter =>
                         (
@@ -107,7 +107,7 @@ export const SideBar = ({ location }) => {
     }
 
     return (
-        <Accordion defaultActiveKey={activeBook} alwaysOpen={true}>
+        <Accordion defaultActiveKey={activeBook} alwaysOpen={true} flush>
             {
                 data.allChaptersJson.group.map(book =>
                     <ChaptersAccordion book={book} activeChapter={activeChapter} />

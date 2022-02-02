@@ -2,7 +2,7 @@ import { graphql, Link, useStaticQuery } from 'gatsby'
 import * as React from 'react'
 import { Container, Navbar, Offcanvas } from 'react-bootstrap'
 import {
-    container, content, heading, navLinkItem
+    container, content, navLinkItem
 } from './layout.module.css'
 import { SideBar } from './sidebar'
 import { TransliterationModeSelect } from './translitModeSelect'
@@ -39,11 +39,9 @@ const Layout = ({ location, pageTitle, children }) => {
                             <SideBar location={location}></SideBar>
                         </Offcanvas.Body >
                     </Navbar.Offcanvas >
-
                 </Container>
             </Navbar>
             <main className={content}>
-                <h1 className={heading}>{pageTitle}</h1>
                 {children}
             </main>
         </div >

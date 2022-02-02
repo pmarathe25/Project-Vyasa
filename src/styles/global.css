@@ -6,6 +6,12 @@ html, body {
     margin-top: 50px;
 }
 
+p {
+    color: white;
+    padding: 0;
+    margin: 0;
+}
+
 a:link {
     color:rgb(238, 238, 238);
 }
@@ -21,3 +27,12 @@ a:hover {
 a:active {
     color:rgb(230, 230, 230);
 } 
+
+.list-group-item-dark {
+    background-color: rgb(85, 89, 104);
+}
+
+.list-group-item-dark:hover {
+    background-color: rgb(111, 117, 136);
+    cursor: pointer;
+}
