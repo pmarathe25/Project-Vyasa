@@ -1,11 +1,11 @@
 import { graphql, Link, useStaticQuery } from 'gatsby'
 import * as React from 'react'
+import { Container, Navbar, Offcanvas } from 'react-bootstrap'
 import {
-    container, content, heading, navLinkItem, topBar
+    container, content, heading, navLinkItem
 } from './layout.module.css'
-import { TransliterationModeSelect } from './translitModeSelect'
 import { SideBar } from './sidebar'
-import { Navbar, Container } from 'react-bootstrap'
+import { TransliterationModeSelect } from './translitModeSelect'
 
 
 const Layout = ({ location, pageTitle, children }) => {
@@ -30,7 +30,16 @@ const Layout = ({ location, pageTitle, children }) => {
                     </Navbar.Brand>
                     <TransliterationModeSelect />
                     <Navbar.Toggle aria-controls="offcanvasNavbar" />
-                    <SideBar location={location}></SideBar>
+
+                    <Navbar.Offcanvas
+                        id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel" placement="end" backdrop={false} scroll={true}>
+                        <Offcanvas.Header closeButton>
+                        </Offcanvas.Header >
+                        <Offcanvas.Body>
+                            <SideBar location={location}></SideBar>
+                        </Offcanvas.Body >
+                    </Navbar.Offcanvas >
+
                 </Container>
             </Navbar>
             <main className={content}>

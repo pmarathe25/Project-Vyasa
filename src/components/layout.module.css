@@ -24,22 +24,6 @@
   background: rgb(87, 87, 87);
 }
 
-.top-bar {
-  background: #3e3f47;
-  display: flex;
-  justify-content: space-evenly;
-  padding: 20% ;
-  padding-top: 0;
-  padding-bottom: 0;
-  vertical-align: center;
-  z-index: 5050;
-  box-shadow: 0px 3px 5px #1d1d1d;
-  height: 50px;
-  position: fixed;
-  top: 0;
-  width: 100%;
-}
-
 .content {
   margin: auto;
   margin-top: 50px;

@@ -1,21 +1,8 @@
 .side-bar-link {
     text-decoration: none;
+    color: rgb(88, 88, 88);
 }
 
 .side-bar-item {
     list-style-type: none;
-}
-
-.side-bar {
-    width: 17%;
-    position: fixed;
-    height: 100%;
-    z-index: 1;
-    align-self: left;
-    list-style-type: none;
-    background-color: rgb(56, 56, 56);
-    margin-top: 0;
-    padding-top: 10px;
-    padding-left: 5px;
-    box-shadow: 2px 2px 5px #1d1d1d;
 }
