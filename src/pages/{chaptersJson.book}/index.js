@@ -10,7 +10,7 @@ const ChapterIndex = ({ location, data, pageContext }) => {
             <ListGroup>
                 {
                     data.allChaptersJson.nodes.map(node => (
-                        <Link to={toUrl(`${node.title}`)}>
+                        <Link to={toUrl(node.title)}>
                             <ListGroupItem variant="dark" eventKey={node.title}>
                                 <p>{node.title}</p>
                             </ListGroupItem>
