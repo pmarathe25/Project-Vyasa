@@ -1,12 +1,12 @@
 import { graphql, Link, useStaticQuery } from 'gatsby'
 import * as React from 'react'
-import { Container, Navbar, Offcanvas } from 'react-bootstrap'
+import { Breadcrumb, BreadcrumbItem, Container, Navbar, Offcanvas } from 'react-bootstrap'
+import { titleCaseFromUrl } from '../util/util'
 import {
     container, content, navLinkItem
 } from './layout.module.css'
 import { SideBar } from './sidebar'
 import { TransliterationModeSelect } from './translitModeSelect'
-
 
 const Layout = ({ location, pageTitle, children }) => {
     const data = useStaticQuery(graphql`
@@ -17,6 +17,26 @@ const Layout = ({ location, pageTitle, children }) => {
             }
         }
         }`)
+
+    let breadcrumbs = [
+        <BreadcrumbItem>
+            <Link to="/">
+                Home
+            </Link>
+        </BreadcrumbItem>
+    ];
+    let curPath = "/";
+    for (let pathElement of location.pathname.split("/").slice(1)) {
+        curPath += pathElement;
+        breadcrumbs.push(
+            <BreadcrumbItem>
+                <Link to={curPath}>
+                    {titleCaseFromUrl(pathElement)}
+                </Link>
+            </BreadcrumbItem>
+        );
+        curPath += "/";
+    }
 
     return (
         <div className={container}>
@@ -42,6 +62,9 @@ const Layout = ({ location, pageTitle, children }) => {
                 </Container>
             </Navbar>
             <main className={content}>
+                <Breadcrumb>
+                    {breadcrumbs}
+                </Breadcrumb>
                 {children}
             </main>
         </div >
