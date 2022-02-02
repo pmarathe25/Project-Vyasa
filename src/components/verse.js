@@ -1,6 +1,8 @@
 import * as React from 'react'
 import { useTransliterate } from './transliterationHook';
 import { verseText, wordByWordButton } from "./verse.module.css"
+import { Col, Container, Row, ToggleButton } from 'react-bootstrap';
+
 
 const WordAndDefinition = ({ word, definition }) => {
     word = useTransliterate(word);
@@ -9,14 +11,14 @@ const WordAndDefinition = ({ word, definition }) => {
     console.log(definition);
 
     return (
-        <div className="stacked">
+        <Col>
             <p style={{ padding: 0 }}>
                 {word}
             </p>
             <p style={{ fontStyle: "italic", padding: 0 }}>
                 {definition}
             </p>
-        </div>
+        </Col>
     )
 }
 
@@ -25,19 +27,35 @@ const Verse = ({ num, text, wordByWord }) => {
     const [showWordByWord, setShowWordByWord] = React.useState(false);
 
     return (
-        <button className={wordByWordButton} onClick={() => { setShowWordByWord(!showWordByWord) }}
-            style={{ opacity: showWordByWord ? 1.0 : 0.4 }}>
-            <div className={verseText} id={`verse_${num}`} style={{ display: "flex", justifyContent: "space-around" }}>
-                {showWordByWord
-                    ?
-                    wordByWord.map(([word, definition]) =>
-                        < WordAndDefinition word={word} definition={definition} />
-                    )
-                    :
-                    text
-                }
-            </div>
-        </button >
+        <Container fluid>
+            <Row>
+                <Col xxl={1}>
+                    <ToggleButton
+                        id={"toggle-word-by-word-" + num}
+                        type="checkbox"
+                        variant="outline-dark"
+                        className={wordByWordButton}
+                        checked={showWordByWord}
+                        value="1"
+                        onChange={(e) => { setShowWordByWord(e.currentTarget.checked) }}>
+                        {
+                            showWordByWord ? "Show Sanskrit Text" : "Translate"}
+                    </ToggleButton>
+                </Col>
+                <Col xxl={0}>
+                    <div className={verseText} id={`verse_${num}`} style={{ display: "flex", justifyContent: "space-around" }}>
+                        {showWordByWord
+                            ?
+                            wordByWord.map(([word, definition]) =>
+                                < WordAndDefinition word={word} definition={definition} />
+                            )
+                            :
+                            text
+                        }
+                    </div>
+                </Col>
+            </Row>
+        </Container >
     )
 }
 
