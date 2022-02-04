@@ -1,6 +1,6 @@
 import { graphql, Link, useStaticQuery } from 'gatsby'
 import * as React from 'react'
-import { Breadcrumb, BreadcrumbItem, Container, Navbar, Offcanvas } from 'react-bootstrap'
+import { Breadcrumb, Container, Navbar, Offcanvas } from 'react-bootstrap'
 import { titleCaseFromUrl } from '../util/util'
 import {
     container, content, navLinkItem, navSideBar, navSideBarToggle
@@ -19,22 +19,26 @@ const Layout = ({ location, pageTitle, children }) => {
         }
         }`)
 
+
+    let breadcrumbStyle = {
+        fontSize: "18px"
+    };
     let breadcrumbs = [
-        <BreadcrumbItem>
-            <Link to="/">
+        <Breadcrumb.Item style={breadcrumbStyle}>
+            <Link to="/" >
                 Home
             </Link>
-        </BreadcrumbItem>
+        </Breadcrumb.Item>
     ];
     let curPath = "/";
     for (let pathElement of location.pathname.split("/").slice(1)) {
         curPath += pathElement;
         breadcrumbs.push(
-            <BreadcrumbItem>
-                <Link to={curPath}>
+            <Breadcrumb.Item style={breadcrumbStyle}>
+                <Link to={curPath} >
                     {titleCaseFromUrl(pathElement)}
                 </Link>
-            </BreadcrumbItem>
+            </Breadcrumb.Item>
         );
         curPath += "/";
     }
