@@ -6,6 +6,7 @@ import {
     container, content, navLinkItem, navSideBar, navSideBarToggle
 } from './layout.module.css'
 import { SideBar } from './sidebar'
+import { useTransliterate } from './transliterationHook'
 import { TransliterationModeSelect } from './translitModeSelect'
 
 const Layout = ({ location, pageTitle, children }) => {
@@ -47,7 +48,7 @@ const Layout = ({ location, pageTitle, children }) => {
                 <Container>
                     <Navbar.Brand>
                         <Link to="/" className={navLinkItem}>
-                            Project Vyasa
+                            Project {useTransliterate("vyaasa")}
                         </Link>
                     </Navbar.Brand>
                     <TransliterationModeSelect />
