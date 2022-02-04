@@ -50,14 +50,19 @@ const Layout = ({ location, pageTitle, children }) => {
             <title>{pageTitle} | {data.site.siteMetadata.title} </title>
             <Navbar bg="dark" variant="dark" fixed="top" expand={false}>
                 <Container>
-                    <Navbar.Brand>
+                    <Navbar.Brand style={{ margin: 0 }}>
                         <Link to="/" className={navLinkItem}>
                             Project {useTransliterate("vyaasa")}
                         </Link>
                     </Navbar.Brand>
                     <TransliterationModeSelect />
-                    <Navbar.Toggle aria-controls="offcanvasNavbar" className={navSideBarToggle} onClick={() => setSideBarExpanded(true)}>
-                        <p style={{ fontVariant: "small-caps" }}>
+                    <Navbar.Toggle
+                        aria-controls="offcanvasNavbar"
+                        className={navSideBarToggle}
+                        onClick={() => setSideBarExpanded(true)}
+                        style={{ width: "10%", minWidth: "80px" }}
+                    >
+                        <p style={{ fontVariant: "small-caps", fontSize: "18px" }}>
                             All Verses
                         </p>
                     </Navbar.Toggle>
