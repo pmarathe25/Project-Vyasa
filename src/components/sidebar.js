@@ -1,16 +1,16 @@
 import { graphql, useStaticQuery } from 'gatsby'
-import * as React from 'react'
-import toUrl from '../util/util'
-import { sideBarLink, verseLink, sideBarAccordion } from "./sidebar.module.css"
 import { AnchorLink } from 'gatsby-plugin-anchor-links'
+import * as React from 'react'
+import { Accordion, ListGroup } from 'react-bootstrap'
+import toUrl from '../util/util'
+import { sideBarAccordion, sideBarLink, verseLink } from "./sidebar.module.css"
 import { useTransliterate } from "./transliterationHook"
-import { Accordion } from 'react-bootstrap'
 
 
 const SideBarLink = (props) => {
     return (
-        <AnchorLink to={props.to} onAnchorLinkClick={() => { props.setSideBarExpanded(false) }}>
-            <p className={sideBarLink}>
+        <AnchorLink to={props.to} className={props.useClass} onAnchorLinkClick={() => { props.setSideBarExpanded(false) }}>
+            <p className={props.useClass}>
                 {props.children}
             </p>
         </AnchorLink>
@@ -25,7 +25,7 @@ const VersesAccordion = ({ baseURL, chapter, setSideBarExpanded }) => {
     return (
         <Accordion.Item eventKey={chapter.title} className={sideBarAccordion}>
             <Accordion.Header className={sideBarAccordion}>
-                <SideBarLink to={chapterURL} setSideBarExpanded={setSideBarExpanded}>
+                <SideBarLink to={chapterURL} setSideBarExpanded={setSideBarExpanded} useClass={sideBarLink}>
                     {translitChapterName}
                 </SideBarLink>
             </Accordion.Header>
@@ -33,11 +33,13 @@ const VersesAccordion = ({ baseURL, chapter, setSideBarExpanded }) => {
                 <ul>
                     {
                         chapter.verses.map(verse =>
-                            <li key={verse.num} className={verseLink}>
-                                <SideBarLink to={`${chapterURL}/#verse_${verse.num}`} setSideBarExpanded={setSideBarExpanded}>
-                                    Verse {verse.num}
-                                </SideBarLink>
-                            </li>)
+                            <ListGroup>
+                                <ListGroup.Item eventKey={verse.num} variant="dark">
+                                    <SideBarLink to={`${chapterURL}/#verse_${verse.num}`} setSideBarExpanded={setSideBarExpanded} useClass={verseLink}>
+                                        Verse {verse.num}
+                                    </SideBarLink>
+                                </ListGroup.Item>
+                            </ListGroup>)
                     }
                 </ul>
             </Accordion.Body>
@@ -53,7 +55,7 @@ const ChaptersAccordion = ({ book, activeChapter, setSideBarExpanded }) => {
     return (
         <Accordion.Item eventKey={book.fieldValue} className={sideBarAccordion}>
             <Accordion.Header className={sideBarAccordion}>
-                <SideBarLink to={bookURL} setSideBarExpanded={setSideBarExpanded}>
+                <SideBarLink to={bookURL} setSideBarExpanded={setSideBarExpanded} useClass={sideBarLink}>
                     {translitBookName}
                 </SideBarLink>
             </Accordion.Header>

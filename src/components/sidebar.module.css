@@ -1,9 +1,10 @@
 .side-bar-link {
-    color: rgb(241, 241, 241);
+    color: white;
+    text-decoration: underline rgb(214, 214, 214);
 }
 
 .verse-link {
-    list-style-type: none;
+    text-decoration: none;
 }
 
 .side-bar-accordion {

@@ -53,7 +53,9 @@ const Layout = ({ location, pageTitle, children }) => {
                     </Navbar.Brand>
                     <TransliterationModeSelect />
                     <Navbar.Toggle aria-controls="offcanvasNavbar" className={navSideBarToggle} onClick={() => setSideBarExpanded(true)}>
-                        All Verses
+                        <p style={{ fontVariant: "small-caps" }}>
+                            All Verses
+                        </p>
                     </Navbar.Toggle>
 
                     <Navbar.Offcanvas

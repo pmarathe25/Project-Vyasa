@@ -29,28 +29,31 @@ a:active {
 } 
 
 .list-group-item-dark {
-    background-color: rgb(85, 89, 104);
+    background-color: rgb(85, 89, 87);
 }
 
 .list-group-item-dark:hover {
-    background-color: rgb(111, 117, 136);
+    background-color: rgb(111, 117, 116);
     cursor: pointer;
 }
 
 .accordion-button {
     color: white;
-    background: rgb(70, 70, 70);
+    background: rgb(95, 121, 145);
 }
 
 .accordion-button:not(.collapsed) {
     color: white;
-    background: rgb(57, 57, 57);
+    background: rgb(119, 162, 202);
+}
+
+.accordion-button:hover {
+    color: white;
+    background: rgb(106, 145, 180);
 }
 
 .accordion-button::after {
-    background-color: rgba(255, 255, 255, 0.514);
     border-radius: 3px;
-    box-shadow: 1px 1px 2px 2px rgb(43, 35, 51);
     background-size: 24px;
     width: 24px;
     height: 24px;

@@ -1,6 +1,6 @@
 import { graphql, Link } from 'gatsby'
 import * as React from 'react'
-import { ListGroup, ListGroupItem } from 'react-bootstrap'
+import { ListGroup } from 'react-bootstrap'
 import Layout from '../components/layout'
 import toUrl from '../util/util'
 
@@ -10,10 +10,10 @@ const Index = ({ location, data }) => {
             <ListGroup>
                 {
                     data.allChaptersJson.nodes.map(node => (
-                        <Link to={toUrl(node.book)}>
-                            <ListGroupItem variant="dark" eventKey={node.book}>
+                        <Link to={toUrl(node.book)} style={{ textDecoration: "none" }}>
+                            <ListGroup.Item variant="dark" eventKey={node.book}>
                                 <p>{node.book}</p>
-                            </ListGroupItem>
+                            </ListGroup.Item>
                         </Link>
                     ))
                 }
