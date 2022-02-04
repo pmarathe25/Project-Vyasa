@@ -1,15 +1,35 @@
-import * as React from 'react'
+import * as React from 'react';
+import { Button, Col, Collapse, Tab, Tabs } from 'react-bootstrap';
 import { useTransliterate } from './transliterationHook';
-import { verseText, wordByWordButton, translationAccordion } from "./verse.module.css"
-import { Accordion, Col, Container, Row, ToggleButton } from 'react-bootstrap';
-import AccordionItem from 'react-bootstrap/esm/AccordionItem';
+import { verseText, verseTextTab } from "./verse.module.css";
 
+
+const Translation = ({ translation }) => {
+    const [open, setOpen] = React.useState(false);
+
+    return (
+        <div>
+            <div style={{ width: "max-content", margin: "auto", padding: 0 }}>
+                <Button size="sm"
+                    onClick={() => { setOpen(!open) }}
+                    aria-controls="collapsed-translation-text"
+                    aria-expanded={open}
+                    style={{ borderRadius: "25px" }}
+                >
+                    Show Translation
+                </Button>
+            </div>
+            <Collapse in={open}>
+                <p className={verseText}>
+                    {translation}
+                </p>
+            </Collapse>
+        </div>
+    )
+}
 
 const WordAndDefinition = ({ word, definition }) => {
     word = useTransliterate(word);
-
-    console.log(word);
-    console.log(definition);
 
     return (
         <Col>
@@ -25,55 +45,38 @@ const WordAndDefinition = ({ word, definition }) => {
 
 const VerseText = ({ num, text, wordByWord }) => {
     text = useTransliterate(text);
-    const [showWordByWord, setShowWordByWord] = React.useState(false);
+    const [key, setKey] = React.useState("text");
 
     return (
-        <Container fluid>
-            <Row>
-                <Col xxl={2}>
-                    <ToggleButton
-                        id={"toggle-word-by-word-" + num}
-                        type="checkbox"
-                        variant="outline-dark"
-                        className={wordByWordButton}
-                        checked={showWordByWord}
-                        value="1"
-                        onChange={(e) => { setShowWordByWord(e.currentTarget.checked) }}>
-                        {
-                            showWordByWord ? "Show Sanskrit Text" : "Word-by-word Analysis"}
-                    </ToggleButton>
-                </Col>
-                <Col xxl={0}>
-                    <div className={verseText} id={`verse_${num}`} style={{ display: "flex", justifyContent: "space-around" }}>
-                        {showWordByWord
-                            ?
-                            wordByWord.map(([word, definition]) =>
-                                < WordAndDefinition word={word} definition={definition} />
-                            )
-                            :
-                            text
-                        }
-                    </div>
-                </Col>
-            </Row>
-            <Row>
-            </Row>
-        </Container >
+        <Tabs id={"verse-text-tabs-" + num} defaultActiveKey="text" activeKey={key} onSelect={(k) => setKey(k)}
+            style={{ borderBottom: "1px solid rgb(80, 80, 80)", marginBottom: "4px" }}
+        >
+            <Tab eventKey="text" title="Sanskrit Text" tabClassName={verseTextTab}>
+                <p className={verseText}>
+                    {text}
+                </p>
+            </Tab>
+            <Tab eventKey="word-by-word" title="Word-by-word Translation" tabClassName={verseTextTab}>
+                <div className={verseText} style={{ display: "flex" }}>
+
+                    {wordByWord.map(([word, definition]) =>
+                        <WordAndDefinition word={word} definition={definition} />
+                    )}
+                </div>
+            </Tab>
+        </Tabs>
     )
 }
 
 const Verse = ({ num, text, wordByWord, translation }) => {
     return (
-        <Accordion variant="dark" className={translationAccordion} flush>
-            <AccordionItem variant="dark" eventKey={num} className={translationAccordion}>
-                <Accordion.Header variant="dark" className={translationAccordion}>
-                    <VerseText num={num} text={text} wordByWord={wordByWord} />
-                </Accordion.Header>
-                <Accordion.Body variant="dark" className={translationAccordion}>
-                    <p>{translation}</p>
-                </Accordion.Body>
-            </AccordionItem>
-        </Accordion>
+        <div style={{
+            borderBottom: "2px solid rgb(80, 80, 80)", borderTop: "0px",
+            borderRadius: "8px", paddingBottom: "5px", marginBottom: "5px"
+        }}>
+            <VerseText num={num} text={text} wordByWord={wordByWord} />
+            <Translation translation={translation} />
+        </div>
     )
 }
 

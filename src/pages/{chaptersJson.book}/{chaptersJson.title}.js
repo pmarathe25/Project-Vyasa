@@ -8,7 +8,9 @@ const Chapter = ({ location, data }) => {
         <Layout location={location} pageTitle={data.chaptersJson.title}>
             {
                 data.chaptersJson.verses.map(node =>
-                    <Verse num={node.num} text={node.text} wordByWord={node.wordByWord} translation={node.translation} />
+                    <div style={{ paddingBottom: "20px" }}>
+                        <Verse num={node.num} text={node.text} wordByWord={node.wordByWord} translation={node.translation} />
+                    </div>
                 )
             }
         </Layout>
