@@ -70,7 +70,7 @@ const VerseText = ({ num, text, wordByWord }) => {
 
 const Verse = ({ num, text, wordByWord, translation }) => {
     return (
-        <div style={{
+        <div id={`verse_${num}`} style={{
             borderBottom: "2px solid rgb(80, 80, 80)", borderTop: "0px",
             borderRadius: "8px", paddingBottom: "5px", marginBottom: "5px"
         }}>

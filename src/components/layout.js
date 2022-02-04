@@ -38,6 +38,8 @@ const Layout = ({ location, pageTitle, children }) => {
         curPath += "/";
     }
 
+    const [sideBarExpanded, setSideBarExpanded] = React.useState(false);
+
     return (
         <div className={container}>
             <title>{pageTitle} | {data.site.siteMetadata.title} </title>
@@ -49,7 +51,7 @@ const Layout = ({ location, pageTitle, children }) => {
                         </Link>
                     </Navbar.Brand>
                     <TransliterationModeSelect />
-                    <Navbar.Toggle aria-controls="offcanvasNavbar" className={navSideBarToggle}>
+                    <Navbar.Toggle aria-controls="offcanvasNavbar" className={navSideBarToggle} onClick={() => setSideBarExpanded(true)}>
                         All Verses
                     </Navbar.Toggle>
 
@@ -59,10 +61,12 @@ const Layout = ({ location, pageTitle, children }) => {
                         aria-labelledby="offcanvasNavbarLabel"
                         placement="end"
                         scroll={true}
+                        show={sideBarExpanded}
+                        onHide={() => setSideBarExpanded(false)}
                     >
-                        <Offcanvas.Header closeButton className={navSideBar} />
+                        <Offcanvas.Header closeButton className={navSideBar} onClick={() => setSideBarExpanded(false)} />
                         <Offcanvas.Body variant="dark" className={navSideBar}>
-                            <SideBar location={location}></SideBar>
+                            <SideBar location={location} setSideBarExpanded={setSideBarExpanded}></SideBar>
                         </Offcanvas.Body >
                     </Navbar.Offcanvas >
                 </Container>

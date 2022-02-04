@@ -9,7 +9,7 @@ import { Accordion } from 'react-bootstrap'
 
 const SideBarLink = (props) => {
     return (
-        <AnchorLink to={props.to}>
+        <AnchorLink to={props.to} onAnchorLinkClick={() => { props.setSideBarExpanded(false) }}>
             <p className={sideBarLink}>
                 {props.children}
             </p>
@@ -18,14 +18,14 @@ const SideBarLink = (props) => {
 }
 
 // A per-chapter accordion item that expands all constituent verses
-const VersesAccordion = ({ baseURL, chapter }) => {
+const VersesAccordion = ({ baseURL, chapter, setSideBarExpanded }) => {
     const translitChapterName = useTransliterate(chapter.title);
     const chapterURL = toUrl(`${baseURL}/${chapter.title}`);
 
     return (
         <Accordion.Item eventKey={chapter.title} className={sideBarAccordion}>
             <Accordion.Header className={sideBarAccordion}>
-                <SideBarLink to={chapterURL}>
+                <SideBarLink to={chapterURL} setSideBarExpanded={setSideBarExpanded}>
                     {translitChapterName}
                 </SideBarLink>
             </Accordion.Header>
@@ -34,7 +34,7 @@ const VersesAccordion = ({ baseURL, chapter }) => {
                     {
                         chapter.verses.map(verse =>
                             <li key={verse.num} className={verseLink}>
-                                <SideBarLink to={`${chapterURL}/#verse_${verse.num}`}>
+                                <SideBarLink to={`${chapterURL}/#verse_${verse.num}`} setSideBarExpanded={setSideBarExpanded}>
                                     Verse {verse.num}
                                 </SideBarLink>
                             </li>)
@@ -46,14 +46,14 @@ const VersesAccordion = ({ baseURL, chapter }) => {
 }
 
 // A per-book accordion item that expands all constituent chapters
-const ChaptersAccordion = ({ book, activeChapter }) => {
+const ChaptersAccordion = ({ book, activeChapter, setSideBarExpanded }) => {
     const translitBookName = useTransliterate(book.fieldValue);
     const bookURL = toUrl(`/${book.fieldValue}`);
 
     return (
         <Accordion.Item eventKey={book.fieldValue} className={sideBarAccordion}>
             <Accordion.Header className={sideBarAccordion}>
-                <SideBarLink to={bookURL}>
+                <SideBarLink to={bookURL} setSideBarExpanded={setSideBarExpanded}>
                     {translitBookName}
                 </SideBarLink>
             </Accordion.Header>
@@ -62,7 +62,7 @@ const ChaptersAccordion = ({ book, activeChapter }) => {
                     {
                         book.nodes.map(chapter =>
                         (
-                            <VersesAccordion baseURL={bookURL} chapter={chapter} />
+                            <VersesAccordion baseURL={bookURL} chapter={chapter} setSideBarExpanded={setSideBarExpanded} />
                         )
                         )
                     }
@@ -72,7 +72,7 @@ const ChaptersAccordion = ({ book, activeChapter }) => {
     )
 }
 
-export const SideBar = ({ location }) => {
+export const SideBar = ({ location, setSideBarExpanded }) => {
     const data = useStaticQuery(graphql`
         query {
             allChaptersJson {
@@ -107,10 +107,10 @@ export const SideBar = ({ location }) => {
     }
 
     return (
-        <Accordion defaultActiveKey={activeBook} alwaysOpen={true} flush >
+        <Accordion defaultActiveKey={activeBook} alwaysOpen={true} flush>
             {
                 data.allChaptersJson.group.map(book =>
-                    <ChaptersAccordion book={book} activeChapter={activeChapter} />
+                    <ChaptersAccordion book={book} activeChapter={activeChapter} setSideBarExpanded={setSideBarExpanded} />
                 )
             }
         </Accordion>
