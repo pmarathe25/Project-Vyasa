@@ -25,6 +25,11 @@ def transliteration_ruleset():
 @pytest.mark.parametrize(
     "words,expected_output",
     [
+        # Visarga
+        (
+            ["tata:", "aiva"],
+            "tata aiva",
+        ),
         # Vowels
         (
             ["ca", "aiva"],

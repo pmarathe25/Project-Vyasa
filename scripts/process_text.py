@@ -78,10 +78,11 @@ def build_sandhied_text(words, translit_ruleset):
     VOICED_CONSONANTS = keys_of("voiced-consonants", "voiced-retroflex-consonants")
     CONSONANTS = UNVOICED_CONSONANTS + VOICED_CONSONANTS + keys_of("nasal-consonants", "sibilants")
     SEMI_VOWELS = keys_of("semi-vowels")
+    ALL_VOICED = VOICED_CONSONANTS + VOWELS + SEMI_VOWELS
 
     # Format: (first_word_condition, second_word_condition, change strategy)
     # Order matters because applying one sandhi may invalidate another!
-    SANDHI_CONDITIONS = [
+    PRE_MERGE_SANDHI = [
         # Special rules for m
         (matches(["m"]), matches(VOWELS, invert=True), replace_final("m", ".")),
         # Special rules for t
@@ -90,35 +91,50 @@ def build_sandhied_text(words, translit_ruleset):
         (matches(["t"]), matches(keys_of("unvoiced-retroflex-consonants")), make_retroflex),
         (matches(["t"]), matches(keys_of("voiced-retroflex-consonants")), compose(make_voiced, make_retroflex)),
         # Unvoiced -> Voiced
-        (matches(UNVOICED_CONSONANTS), matches(VOICED_CONSONANTS + VOWELS + SEMI_VOWELS), make_voiced),
+        (matches(UNVOICED_CONSONANTS), matches(ALL_VOICED), make_voiced),
     ]
 
-    index = 0
-    # Use a dummy "word" to avoid edge case handling
-    words += ["  "]
-    while index < len(words):
-        for trailing_cond, leading_cond, strat in SANDHI_CONDITIONS:
-            if trailing_cond(words[index], mode="ends") and leading_cond(words[index + 1], mode="starts"):
-                words[index], words[index + 1] = strat(words[index], words[index + 1])
-        index += 1
-
-    # Next we do a second pass to merge words
-    MERGE_CONDITIONS = [
-        (matches(VOWELS), matches(VOWELS)),
-        (matches(CONSONANTS), matches(VOWELS)),
-        (matches(CONSONANTS), matches(CONSONANTS)),
+    POST_MERGE_SANDHI = [
+        # Visarga rules
+        (matches(["aa:"]), matches(ALL_VOICED), replace_final("aa:", "aa")),
+        (matches(["a:"]), matches(VOWELS), replace_final("a:", "a")),
+        (matches(["a:"]), matches(ALL_VOICED), replace_final("a:", "au")),
     ]
-    merged = []
-    index = 0
-    while index < len(words):
-        merged.append(words[index])
-        for trailing_cond, leading_cond in MERGE_CONDITIONS:
-            if trailing_cond(words[index], mode="ends") and leading_cond(words[index + 1], mode="starts"):
-                merged[-1] += words.pop(index + 1)
-                continue
-        index += 1
 
-    return " ".join(merged).strip()
+    def apply_sandhi(words, conditions):
+        index = 0
+        # Use a dummy "word" to avoid edge case handling
+        words += ["  "]
+        while index < len(words):
+            for trailing_cond, leading_cond, strat in conditions:
+                if trailing_cond(words[index], mode="ends") and leading_cond(words[index + 1], mode="starts"):
+                    words[index], words[index + 1] = strat(words[index], words[index + 1])
+            index += 1
+        return words
+
+    def apply_merge(words):
+        # Next we do a second pass to merge words
+        MERGE_CONDITIONS = [
+            (matches(VOWELS), matches(VOWELS)),
+            (matches(CONSONANTS), matches(VOWELS)),
+            (matches(CONSONANTS), matches(CONSONANTS)),
+        ]
+        merged = []
+        index = 0
+        while index < len(words):
+            merged.append(words[index])
+            for trailing_cond, leading_cond in MERGE_CONDITIONS:
+                if trailing_cond(words[index], mode="ends") and leading_cond(words[index + 1], mode="starts"):
+                    merged[-1] += words.pop(index + 1)
+                    continue
+            index += 1
+        return merged
+
+    words = apply_sandhi(words, PRE_MERGE_SANDHI)
+    words = apply_merge(words)
+    words = apply_sandhi(words, POST_MERGE_SANDHI)
+
+    return " ".join(words).strip()
 
 
 def get_mtime(path):
