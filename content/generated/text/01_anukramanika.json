@@ -1,1 +1,95 @@
-{"book": "Aadi Parva", "chapter": "Anukramanika Parva", "verses": [{"num": 0, "text": "naaraayan<a. namaskr>tya nara. caaiva narauttamam\ndaivii. sarasvatii. caaiva tatau jayamudiirayait", "translation": "Having thus bowed to Narayana and Nara, the best man, and the \ngoddess Sarasvati, one should proclaim victory.", "wordByWord": [[["naaraayan<a.", "Narayana", "naaraayan<a", "acc m sing"], ["namaskr>tya", "having bowed (to)", "namah-!kr>", "abs"], ["nara.", "Nara (lit. \"man\")", "nara", "acc m sing"], ["ca", "and", "ca", "indc"], ["aiva", "just so", "aiva", "indc"], ["nara-uttamam", "the best man", "nara+uttama", "acc m sing"]], [["daivii.", "the goddess", "daivii", "acc f sing"], ["sarasvatii.", "Sarasvati", "sarasvatii", "acc f sing"], ["ca", "and", "ca", "indc"], ["aiva", "just so", "aiva", "indc"], ["tatau", "thus", "tatah", "indc"], ["jayam", "victory", "jaya", "acc m sing"], ["udiirayait", "(let one) proclaim", "ud-!iir", "3 sing pres act caus pot"]]]}]}
+{
+    "book": "Aadi Parva",
+    "chapter": "Anukramanika Parva",
+    "verses": [
+        {
+            "num": 0,
+            "text": "naaraayan<a. namaskr>tya nara. caaiva narauttamam\ndaiviim sarasvatiim caaiva tatau jayamudiirayait",
+            "translation": "Having thus bowed to Narayana and Nara, the best man, and the \ngoddess Sarasvati, one should proclaim victory.",
+            "wordByWord": [
+                [
+                    [
+                        "naaraayan<a.",
+                        "Narayana",
+                        "naaraayan<a",
+                        "acc m sing"
+                    ],
+                    [
+                        "namaskr>tya",
+                        "having bowed (to)",
+                        "namah-\u221a!kr>",
+                        "abs"
+                    ],
+                    [
+                        "nara.",
+                        "Nara (lit. \"man\")",
+                        "nara",
+                        "acc m sing"
+                    ],
+                    [
+                        "ca",
+                        "and",
+                        "ca",
+                        "indc"
+                    ],
+                    [
+                        "aiva",
+                        "just so",
+                        "aiva",
+                        "indc"
+                    ],
+                    [
+                        "narauttamam",
+                        "the best man",
+                        "nara+uttama",
+                        "acc m sing"
+                    ]
+                ],
+                [
+                    [
+                        "daiviim",
+                        "the goddess",
+                        "daivii",
+                        "acc f sing"
+                    ],
+                    [
+                        "sarasvatiim",
+                        "Sarasvati",
+                        "sarasvatii",
+                        "acc f sing"
+                    ],
+                    [
+                        "ca",
+                        "and",
+                        "ca",
+                        "indc"
+                    ],
+                    [
+                        "aiva",
+                        "just so",
+                        "aiva",
+                        "indc"
+                    ],
+                    [
+                        "tatau",
+                        "thus",
+                        "tatah",
+                        "indc"
+                    ],
+                    [
+                        "jayam",
+                        "victory",
+                        "jaya",
+                        "acc m sing"
+                    ],
+                    [
+                        "udiirayait",
+                        "(let one) proclaim",
+                        "ud-\u221aiir",
+                        "3 sing pres act caus pot"
+                    ]
+                ]
+            ]
+        }
+    ]
+}

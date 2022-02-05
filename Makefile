@@ -32,7 +32,7 @@ $(GEN_RULE_SET_DIR)/%.json: $(RAW_RULE_SET_DIR)/%.json $(BUILD_RULE_SET_SCRIPT) 
 # to a flattened output structure, so we'll manage timestamps within the script.
 # This rule will trigger for *every* output file when *any* input file is touched.
 $(GEN_CHAPTERS_DIR)/%.json: $(RAW_CHAPTERS) $(PROCESS_TEXT_SCRIPT) | $(GEN_CHAPTERS_DIR)
-	@ python3 $(PROCESS_TEXT_SCRIPT) $< -o $@
+	@ python3 $(PROCESS_TEXT_SCRIPT) $< -o $@ --transliteration-ruleset $(RAW_RULE_SET_DIR)/devanagari.json
 
 launch: $(GEN_RULE_SETS) $(GEN_CHAPTERS)
 	gatsby develop
