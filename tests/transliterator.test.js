@@ -7,7 +7,8 @@ test.each([
     ["rrrr", "rrrr"],
     ["dharma", "धर्म"],
     ["dharma karma", "धर्म कर्म"],
-    ["vr>n^iitai", "वृणीते"],
+    ["dharma\nkarma", "धर्म\nकर्म"],
+    ["vr>n<iitai", "वृणीते"],
     ["yaugas~cittavr>ttiniraudha:", "योगश्चित्तवृत्तिनिरोधः"],
 ])('basic', (orig, expected) => {
     let ruleset = require("../content/generated/transliteration_rulesets/devanagari.json");
