@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { Button, Col, Collapse, Tab, Tabs } from 'react-bootstrap';
+import { Button, Col, Collapse, Row, Tab, Tabs } from 'react-bootstrap';
 import { useTransliterate } from './transliterationHook';
 import { verseText, verseTextTab } from "./verse.module.css";
 
@@ -33,10 +33,10 @@ const WordAndDefinition = ({ word, definition }) => {
 
     return (
         <Col>
-            <p >
+            <p>
                 {word}
             </p>
-            <p style={{ fontStyle: "italic" }}>
+            <p style={{ fontStyle: "italic", fontSize: "20px", color: "rgb(175, 175, 175)" }}>
                 {definition}
             </p>
         </Col>
@@ -57,14 +57,21 @@ const VerseText = ({ num, text, wordByWord }) => {
                 </p>
             </Tab>
             <Tab eventKey="word-by-word" title="Word-by-word Translation" tabClassName={verseTextTab}>
-                <div className={verseText} style={{ display: "flex" }}>
-
-                    {wordByWord.map(([word, definition]) =>
-                        <WordAndDefinition word={word} definition={definition} />
+                <div className={verseText} >
+                    {wordByWord.map(line =>
+                        <Row style={{
+                            width: "fit-content", margin: "auto"
+                        }}>
+                            {
+                                line.map(([word, definition]) =>
+                                    <WordAndDefinition word={word} definition={definition} />
+                                )
+                            }
+                        </Row>
                     )}
                 </div>
             </Tab>
-        </Tabs>
+        </Tabs >
     )
 }
 

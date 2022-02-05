@@ -1,7 +1,9 @@
 .verse-text {
-    font-size: 25px;
+    font-size: 26px;
     color: rgb(252, 251, 250);
     padding-bottom: 5px;
+    white-space: pre-wrap;
+    text-align: center;
 }
 
 .verse-text-tab {

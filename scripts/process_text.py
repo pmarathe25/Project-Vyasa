@@ -57,12 +57,13 @@ def main():
 
     contents = open(args.input_file).read().split("\n\n")
     for index, (verse_text, word_by_word, translation) in enumerate(chunks(contents, 3)):
+        word_by_word_sections = word_by_word.split("\n-\n")
         processed["verses"].append(
             {
                 "num": index,
                 "text": verse_text,
                 "translation": translation,
-                "wordByWord": list(map(parse_word_grammar, word_by_word.split("\n"))),
+                "wordByWord": [list(map(parse_word_grammar, section.split("\n"))) for section in word_by_word_sections],
             }
         )
 

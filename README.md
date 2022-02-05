@@ -17,6 +17,14 @@ word1 (base-form, parts of speech) literal translation
 Sections should be separated by a single blank line. 
 *Importantly, there cannot be any blank lines within a section!*
 
+If the word-by-word translation should be split on multiple lines, split the section
+with a line containing a single `-`. For example:
+```
+word0 (base-form, parts of speech) literal translation
+-
+word1 (base-form, parts of speech) literal translation
+```
+
 Any sanskrit text must use a special transliteration format that the front-end can 
 ingest and convert into either Devanagari or IAST. See the [transliteration](#transliteration)
 section for details.
