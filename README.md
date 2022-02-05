@@ -13,7 +13,11 @@ word1 (base-form, parts of speech) literal translation
 
 <Translation>
 ```
-Any sanskrit text uses a special transliteration format that the front-end can 
+
+Sections should be separated by a single blank line. 
+*Importantly, there cannot be any blank lines within a section!*
+
+Any sanskrit text must use a special transliteration format that the front-end can 
 ingest and convert into either Devanagari or IAST. See the [transliteration](#transliteration)
 section for details.
 
@@ -43,7 +47,7 @@ Some common syntax:
 
 ### Parts Of Speech
 
-Parts of speech are order invariant and are provided in abbreviated form. 
+The `"parts of speech"` field is order invariant and should be provided in abbreviated form. 
 The abbreviations are as follows:
 
 - `indc`: Indeclinable

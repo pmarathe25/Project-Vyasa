@@ -19,11 +19,11 @@ const SideBarLink = (props) => {
 
 // A per-chapter accordion item that expands all constituent verses
 const VersesAccordion = ({ baseURL, chapter, setSideBarExpanded }) => {
-    const translitChapterName = useTransliterate(chapter.title);
-    const chapterURL = toUrl(`${baseURL}/${chapter.title}`);
+    const translitChapterName = useTransliterate(chapter.chapter);
+    const chapterURL = toUrl(`${baseURL}/${chapter.chapter}`);
 
     return (
-        <Accordion.Item eventKey={chapter.title} className={sideBarAccordion}>
+        <Accordion.Item eventKey={chapter.chapter} className={sideBarAccordion}>
             <Accordion.Header className={sideBarAccordion}>
                 <SideBarLink to={chapterURL} setSideBarExpanded={setSideBarExpanded} useClass={sideBarLink}>
                     {translitChapterName}
@@ -81,7 +81,7 @@ export const SideBar = ({ location, setSideBarExpanded }) => {
                 group(field: book) {
                     nodes {
                         book
-                        title
+                        chapter
                         verses {
                             num
                         }
@@ -99,8 +99,8 @@ export const SideBar = ({ location, setSideBarExpanded }) => {
         if (location.pathname.includes(toUrl(book.fieldValue))) {
             activeBook = book.fieldValue;
             for (let chapter of book.nodes) {
-                if (location.pathname.includes(toUrl(chapter.title))) {
-                    activeChapter = chapter.title;
+                if (location.pathname.includes(toUrl(chapter.chapter))) {
+                    activeChapter = chapter.chapter;
                     break;
                 }
             }

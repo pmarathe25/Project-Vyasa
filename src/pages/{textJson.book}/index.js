@@ -10,9 +10,9 @@ const ChapterIndex = ({ location, data, pageContext }) => {
             <ListGroup>
                 {
                     data.allTextJson.nodes.map(node => (
-                        <Link to={toUrl(node.title)} style={{ textDecoration: "none" }}>
-                            <ListGroup.Item variant="dark" eventKey={node.title}>
-                                <p>{node.title}</p>
+                        <Link to={toUrl(node.chapter)} style={{ textDecoration: "none" }}>
+                            <ListGroup.Item variant="dark" eventKey={node.chapter}>
+                                <p>{node.chapter}</p>
                             </ListGroup.Item>
                         </Link>
                     ))
@@ -26,7 +26,7 @@ export const query = graphql`
 query ($book: String) {
     allTextJson(filter: {book: {eq: $book}}) {
       nodes {
-        title
+        chapter
       }
     }
   }

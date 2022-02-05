@@ -5,11 +5,11 @@ import Verse from '../../components/verse'
 
 const Chapter = ({ location, data }) => {
     return (
-        <Layout location={location} pageTitle={data.textJson.title}>
+        <Layout location={location} pageTitle={data.textJson.chapter}>
             {
-                data.textJson.verses.map(node =>
+                data.textJson.verses.map((node, index) =>
                     <div style={{ paddingBottom: "20px" }}>
-                        <Verse num={node.num} text={node.text} wordByWord={node.wordByWord} translation={node.translation} />
+                        <Verse num={index} text={node.text} wordByWord={node.wordByWord} translation={node.translation} />
                     </div>
                 )
             }
@@ -21,9 +21,8 @@ export const query = graphql`
 query ($id: String) {
     textJson(id: {eq: $id}) {
         id
-        title
+        chapter
         verses {
-            num
             text
             wordByWord
             translation

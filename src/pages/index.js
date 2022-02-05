@@ -27,7 +27,6 @@ export const query = graphql`
 query {
     allTextJson {
         nodes {
-            title
             book
             id
         }
