@@ -7,8 +7,8 @@ def main():
     parser = argparse.ArgumentParser(
         description="Uses an input file of mappings of Roman letter sequences to devanagari to build a ruleset for transliteration"
     )
-    parser.add_argument("input_file", help="The input JSON file containing the mapping")
-    parser.add_argument("-o", "--output", required=True, help="The output JSON file in which to save the ruleset.")
+    parser.add_argument("input_file", help="Path to input JSON file containing the mapping")
+    parser.add_argument("-o", "--output", required=True, help="Path to output JSON file in which to save the ruleset.")
 
     args, _ = parser.parse_known_args()
 
