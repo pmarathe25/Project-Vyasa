@@ -99,6 +99,7 @@ def build_sandhied_text(words, translit_ruleset):
         (matches(["aa:"]), matches(ALL_VOICED), replace_final("aa:", "aa")),
         (matches(["a:"]), matches(VOWELS), replace_final("a:", "a")),
         (matches(["a:"]), matches(ALL_VOICED), replace_final("a:", "au")),
+        (matches([":"]), matches(ALL_VOICED), replace_final(":", "r")),
     ]
 
     def apply_sandhi(words, conditions):

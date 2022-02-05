@@ -34,6 +34,10 @@ def transliteration_ruleset():
             ["tata:", "gam"],
             "tatau gam",
         ),
+        (
+            ["pati:", "gam"],
+            "patir gam",
+        ),
         # Vowels
         (
             ["ca", "aiva"],
