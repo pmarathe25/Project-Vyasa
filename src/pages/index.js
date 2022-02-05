@@ -4,17 +4,25 @@ import { ListGroup } from 'react-bootstrap'
 import Layout from '../components/layout'
 import toUrl from '../util/util'
 
+const BookLink = ({ book }) => {
+    return (
+        <Link to={toUrl(book)} style={{ textDecoration: "none" }}>
+            <ListGroup.Item variant="dark" eventKey={book}>
+                <p style={{ fontSize: "20px" }}>
+                    {book}
+                </p>
+            </ListGroup.Item>
+        </Link>
+    )
+}
+
 const Index = ({ location, data }) => {
     return (
         <Layout location={location} pageTitle="Project Vyasa">
             <ListGroup>
                 {
                     data.allTextJson.nodes.map(node => (
-                        <Link to={toUrl(node.book)} style={{ textDecoration: "none" }}>
-                            <ListGroup.Item variant="dark" eventKey={node.book}>
-                                <p>{node.book}</p>
-                            </ListGroup.Item>
-                        </Link>
+                        <BookLink book={node.book} />
                     ))
                 }
             </ListGroup>

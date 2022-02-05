@@ -1,6 +1,7 @@
 .side-bar-link {
     color: white;
     text-decoration: underline rgb(214, 214, 214);
+    font-size: 20px;
 }
 
 .verse-link {
@@ -10,4 +11,5 @@
 .side-bar-accordion {
     background: rgb(84, 84, 85);
     color: white;
+    font-size: 18px;
 }

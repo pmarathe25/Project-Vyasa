@@ -6,12 +6,19 @@ The input file structure is: `text/{book}/{chapter}.txt`.
 
 The format of each file is:
 ```
+<Verse [start]-[end]>
+
 word0 (base-form, parts of speech) literal translation
 word1 (base-form, parts of speech) literal translation
 
 <Translation>
 
-... (next verse)
+word0 (base-form, parts of speech) literal translation
+word1 (base-form, parts of speech) literal translation
+
+<Translation>
+
+... (other verses)
 ```
 
 Sections should be separated by a single blank line. 

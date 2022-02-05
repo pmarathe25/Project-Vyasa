@@ -243,6 +243,11 @@ def main():
     if os.path.exists(args.output) and get_mtime(args.input_file) <= get_mtime(args.output):
         return
 
+    translit_ruleset = json.load(open(args.transliteration_ruleset))
+    contents = open(args.input_file).read().strip()
+    header, _, contents = contents.partition("\n\n")
+    contents = contents.split("\n\n")
+
     book = extract_title(os.path.dirname(args.input_file))
     chapter = extract_title(os.path.splitext(os.path.basename(args.input_file))[0])
     processed = {
@@ -250,9 +255,6 @@ def main():
         "chapter": chapter,
         "verses": [],
     }
-
-    translit_ruleset = json.load(open(args.transliteration_ruleset))
-    contents = open(args.input_file).read().strip().split("\n\n")
 
     # Parses input file according to format outlined in README.
     # To have the front-end handle newlines, we need a bit of weirdness in the word-by-word

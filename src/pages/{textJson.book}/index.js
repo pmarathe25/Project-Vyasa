@@ -4,17 +4,25 @@ import { ListGroup } from 'react-bootstrap'
 import Layout from '../../components/layout'
 import toUrl from '../../util/util'
 
+const ChapterLink = ({ chapter }) => {
+    return (
+        <Link to={toUrl(chapter)} style={{ textDecoration: "none" }}>
+            <ListGroup.Item variant="dark" eventKey={chapter}>
+                <p style={{ fontSize: "20px" }}>
+                    {chapter}
+                </p>
+            </ListGroup.Item>
+        </Link>
+    )
+}
+
 const ChapterIndex = ({ location, data, pageContext }) => {
     return (
         <Layout location={location} pageTitle={pageContext.book}>
             <ListGroup>
                 {
                     data.allTextJson.nodes.map(node => (
-                        <Link to={toUrl(node.chapter)} style={{ textDecoration: "none" }}>
-                            <ListGroup.Item variant="dark" eventKey={node.chapter}>
-                                <p>{node.chapter}</p>
-                            </ListGroup.Item>
-                        </Link>
+                        <ChapterLink chapter={node.chapter} />
                     ))
                 }
             </ListGroup>
