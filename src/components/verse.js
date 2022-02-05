@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { Button, Col, Collapse, Row, Tab, Tabs } from 'react-bootstrap';
+import { Button, Col, Collapse, Popover, Row, Tab, Tabs, OverlayTrigger } from 'react-bootstrap';
 import { useTransliterate } from './transliterationHook';
 import { verseText, verseTextTab } from "./verse.module.css";
 
@@ -28,14 +28,34 @@ const Translation = ({ translation }) => {
     )
 }
 
-const WordAndDefinition = ({ word, definition }) => {
+const WordAndDefinition = ({ word, definition, root, parts_of_speech }) => {
     word = useTransliterate(word);
+    root = useTransliterate(root);
 
     return (
         <Col>
-            <p>
-                {word}
-            </p>
+            <OverlayTrigger
+                trigger="hover"
+                placement="top"
+                overlay={
+                    <Popover style={{ backgroundColor: "black", color: "white" }}>
+                        <Popover.Body>
+                            <Col>
+                                <p style={{ fontSize: "20px" }}>
+                                    {root}
+                                </p>
+                                <p style={{ fontSize: "16px" }}>
+                                    {parts_of_speech}
+                                </p>
+                            </Col>
+                        </Popover.Body>
+                    </Popover>
+                }
+            >
+                <p>
+                    {word}
+                </p>
+            </OverlayTrigger>
             <p style={{ fontStyle: "italic", fontSize: "20px", color: "rgb(175, 175, 175)" }}>
                 {definition}
             </p>
@@ -63,8 +83,8 @@ const VerseText = ({ num, text, wordByWord }) => {
                             width: "fit-content", margin: "auto"
                         }}>
                             {
-                                line.map(([word, definition]) =>
-                                    <WordAndDefinition word={word} definition={definition} />
+                                line.map(([word, definition, root, parts_of_speech]) =>
+                                    <WordAndDefinition word={word} definition={definition} root={root} parts_of_speech={parts_of_speech} />
                                 )
                             }
                         </Row>

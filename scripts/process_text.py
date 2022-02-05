@@ -209,19 +209,19 @@ def main():
     # of lines (i.e. list of lists). Then the front-end can render each list in a separate HTML element.
     for index, (word_by_word, translation) in enumerate(chunks(contents, 2)):
         word_by_word_sections = []
-        word_lines = []
+        to_sandhi_word_lines = []
         for section in word_by_word.split("\n-\n"):
             word_by_word_sections.append([])
-            word_lines.append([])
+            to_sandhi_word_lines.append([])
             for line in section.split("\n"):
                 word, meaning, root, parts_of_speech = parse_word_grammar(line)
-                word_lines[-1].append(word)
+                to_sandhi_word_lines[-1].append(word)
                 word_by_word_sections[-1].append([word, meaning, root, parts_of_speech])
 
         processed["verses"].append(
             {
                 "num": index,
-                "text": "\n".join(build_sandhied_text(line, translit_ruleset) for line in word_lines),
+                "text": "\n".join(build_sandhied_text(line, translit_ruleset) for line in to_sandhi_word_lines),
                 "translation": translation,
                 "wordByWord": word_by_word_sections,
             }
