@@ -25,9 +25,46 @@ def transliteration_ruleset():
 @pytest.mark.parametrize(
     "words,expected_output",
     [
+        # Vowels
         (
             ["ca", "aiva"],
             "caaiva",
+        ),
+        # Special 'm' rules
+        (
+            ["naram", "ca"],
+            "nara. ca",
+        ),
+        # Special 't' rules
+        (
+            ["tat", "ca"],
+            "tacca",
+        ),
+        (
+            ["tat", "ja"],
+            "tajja",
+        ),
+        (
+            ["tat", "t<a"],
+            "tat<t<a",
+        ),
+        (
+            ["tat", "d<a"],
+            "tad<d<a",
+        ),
+        # Consonant + Vowel
+        (
+            ["naram", "aiva"],
+            "naramaiva",
+        ),
+        # Unvoiced + Voiced
+        (
+            ["tat", "aiva"],
+            "tadaiva",
+        ),
+        (
+            ["tat", "gam"],
+            "tadgam",
         ),
     ],
 )

@@ -18,32 +18,104 @@ def build_sandhied_text(words, translit_ruleset):
     Returns:
         str: The sandhied text.
     """
-    sequence_map = translit_ruleset["sequence_map"]
+    SEQUENCE_MAP = translit_ruleset["sequence_map"]
 
-    def is_vowel(letter):
-        return letter in sequence_map["vowels"]
+    def keys_of(*cat_names):
+        keys = []
+        for cat_name in cat_names:
+            keys.extend(SEQUENCE_MAP[cat_name].keys())
+        return keys
 
-    def is_consonant(letter):
-        return letter in sequence_map["consonants"]
+    VOICED_MAKER_MAP = {
+        unvoiced: voiced
+        for unvoiced, voiced in zip(
+            keys_of("unvoiced-consonants", "unvoiced-retroflex-consonants"),
+            keys_of("voiced-consonants", "voiced-retroflex-consonants"),
+        )
+    }
 
+    def compose(*funcs):
+        def new_func(cur, nxt):
+            for func in funcs:
+                cur, nxt = func(cur, nxt)
+            return cur, nxt
+
+        return new_func
+
+    def make_voiced(cur, nxt):
+        for unvoiced, voiced in VOICED_MAKER_MAP.items():
+            if cur.endswith(unvoiced):
+                cur = cur[: -len(unvoiced)] + voiced
+                return cur, nxt
+        return cur, nxt
+
+    def make_retroflex(cur, nxt):
+        return cur + "<", nxt
+
+    def replace_final(pat, replace_with):
+        def replace_final_impl(cur, nxt):
+            assert cur.endswith(pat)
+            cur = cur[: -len(pat)] + replace_with
+            return cur, nxt
+
+        return replace_final_impl
+
+    def matches(patterns, invert=False):
+        def matches_impl(word, mode):
+            if not word.strip():
+                return False
+
+            func = word.endswith if mode == "ends" else word.startswith
+            for pat in patterns:
+                if func(pat):
+                    return not invert
+            return invert
+
+        return matches_impl
+
+    VOWELS = keys_of("vowels")
+    UNVOICED_CONSONANTS = keys_of("unvoiced-consonants", "unvoiced-retroflex-consonants")
+    VOICED_CONSONANTS = keys_of("voiced-consonants", "voiced-retroflex-consonants")
+    CONSONANTS = UNVOICED_CONSONANTS + VOICED_CONSONANTS + keys_of("nasal-consonants", "sibilants")
+    SEMI_VOWELS = keys_of("semi-vowels")
+
+    # Format: (first_word_condition, second_word_condition, change strategy)
+    # Order matters because applying one sandhi may invalidate another!
+    SANDHI_CONDITIONS = [
+        # Special rules for m
+        (matches(["m"]), matches(VOWELS, invert=True), replace_final("m", ".")),
+        # Special rules for t
+        (matches(["t"]), matches(["c"]), replace_final("t", "c")),
+        (matches(["t"]), matches(["j"]), replace_final("t", "j")),
+        (matches(["t"]), matches(keys_of("unvoiced-retroflex-consonants")), make_retroflex),
+        (matches(["t"]), matches(keys_of("voiced-retroflex-consonants")), compose(make_voiced, make_retroflex)),
+        # Unvoiced -> Voiced
+        (matches(UNVOICED_CONSONANTS), matches(VOICED_CONSONANTS + VOWELS + SEMI_VOWELS), make_voiced),
+    ]
+
+    index = 0
+    # Use a dummy "word" to avoid edge case handling
+    words += ["  "]
+    while index < len(words):
+        for trailing_cond, leading_cond, strat in SANDHI_CONDITIONS:
+            if trailing_cond(words[index], mode="ends") and leading_cond(words[index + 1], mode="starts"):
+                words[index], words[index + 1] = strat(words[index], words[index + 1])
+        index += 1
+
+    # Next we do a second pass to merge words
+    MERGE_CONDITIONS = [
+        (matches(VOWELS), matches(VOWELS)),
+        (matches(CONSONANTS), matches(VOWELS)),
+        (matches(CONSONANTS), matches(CONSONANTS)),
+    ]
     merged = []
     index = 0
     while index < len(words):
-        cur = words[index]
-        # Use a dummy "word" to avoid edge case handling
-        next = words[index + 1] if index + 1 < len(words) else "  "
-
-        def merge(cur, next):
-            nonlocal index
-            merged.append(cur + next)
-            index += 1
-
-        if is_vowel(cur[-1]) and is_vowel(next[0]):
-            merge(cur, next)
-        elif is_consonant(cur[-1]) and is_vowel(next[0]):
-            merge(cur, next)
-        else:
-            merged.append(cur)
+        merged.append(words[index])
+        for trailing_cond, leading_cond in MERGE_CONDITIONS:
+            if trailing_cond(words[index], mode="ends") and leading_cond(words[index + 1], mode="starts"):
+                merged[-1] += words.pop(index + 1)
+                continue
         index += 1
 
     return " ".join(merged).strip()
