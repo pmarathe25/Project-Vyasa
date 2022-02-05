@@ -49,7 +49,7 @@ nara gacchati
 The corresponding content file would look like this:
 ```
 nara (nara, nom m sing) man
-gacchati (!gam, 3 sing pres)
+gacchati (gam, 3 sing pres)
 
 The man goes
 ```
