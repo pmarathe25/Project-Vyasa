@@ -19,6 +19,8 @@ Sections should be separated by a single blank line.
 
 Each word should appear on a separate line, in non-*sandhi*ed form.
 The `process_text.py` script will generate *sandhi*ed text based on the word-by-word input.
+**NOTE: The script is currently only implemented for the most common sandhi.**
+**That means in some cases, it will not apply sandhi - fortunately, adding new rules is easy!**
 
 If the word-by-word translation should be split on multiple lines, split the section
 with a line containing a single `-`. For example:
@@ -57,15 +59,16 @@ Some common syntax:
 The `"parts of speech"` field is order invariant and should be provided in abbreviated form. 
 The abbreviations are as follows:
 
-- `indc`: Indeclinable
-- `abs`: Absolutive
+- `nom/voc/acc/inst/dat/abl/gen/loc`: Nominative/Vocative/Accusative/Instrumental/Dative/Ablative/Genitive/Locative case
+- `m/f/n`: Masculine/Feminine/Neuter gender
 - `1/2/3`: 1st/2nd/3rd person
 - `sing/du/pl`: Singular/Dual/Plural number
-- `m/f/n`: Masculine/Feminine/Neuter gender
 - `pres/perf/imp/fut`: Present/Perfect/Imperfect/Future tense
 - `act/pass/mid`: Active/Passive/Middle voice
-- `ind/pot`: Indicative/Potential mood
 - `caus/des`: Causative/Desiderative
+- `ind/pot`: Indicative/Potential mood
+- `abs`: Absolutive
+- `indc`: Indeclinable
 
 ## Transliteration 
 

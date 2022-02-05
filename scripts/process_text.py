@@ -2,6 +2,7 @@
 import argparse
 import json
 import os
+from collections import OrderedDict
 
 
 def build_sandhied_text(words, translit_ruleset):
@@ -138,6 +139,56 @@ def build_sandhied_text(words, translit_ruleset):
     return " ".join(words).strip()
 
 
+# Follow a consistent ordering for every word
+PARTS_OF_SPEECH_MAPPING = OrderedDict(
+    [
+        ("nom", "nominative"),
+        ("voc", "vocative"),
+        ("acc", "accusative"),
+        ("inst", "instrumental"),
+        ("dat", "dative"),
+        ("abl", "ablative"),
+        ("gen", "genitive"),
+        ("loc", "locative"),
+        ("m", "masculine"),
+        ("f", "feminine"),
+        ("n", "neuter"),
+        ("1", "first person"),
+        ("2", "second person"),
+        ("3", "third person"),
+        ("sing", "singular"),
+        ("du", "dual"),
+        ("pl", "plural"),
+        ("pres", "present"),
+        ("perf", "perfect"),
+        ("imp", "imperfect"),
+        ("fut", "future"),
+        ("act", "active"),
+        ("pass", "passive"),
+        ("mid", "middle"),
+        ("ind", "indicative"),
+        ("pot", "potential"),
+        ("caus", "causative"),
+        ("des", "desiderative"),
+        ("abs", "absolutive"),
+        ("indc", "indeclinable"),
+    ]
+)
+
+
+def process_parts_of_speech(parts_of_speech):
+    new_parts = []
+    for part in parts_of_speech.strip().split(" "):
+        if part not in PARTS_OF_SPEECH_MAPPING:
+            raise RuntimeError(
+                "Unknown part of speech: {:}\nNote: Valid parts of speech are: {:}".format(
+                    part, list(PARTS_OF_SPEECH_MAPPING.keys())
+                )
+            )
+        new_parts.append(PARTS_OF_SPEECH_MAPPING[part])
+    return " ".join(new_parts).title()
+
+
 def get_mtime(path):
     return os.stat(path).st_mtime
 
@@ -163,7 +214,7 @@ def parse_word_grammar(line):
         last_dash = root.rfind("-") + 1
         root = root[:last_dash] + "√" + root[last_dash:]
 
-    return strip([word, meaning, root, parts_of_speech])
+    return strip([word, meaning, root, process_parts_of_speech(parts_of_speech)])
 
 
 def extract_title(str):
@@ -220,7 +271,7 @@ def main():
 
         processed["verses"].append(
             {
-                "num": index,
+                "num": index + 1,
                 "text": "\n".join(build_sandhied_text(line, translit_ruleset) for line in to_sandhi_word_lines),
                 "translation": translation,
                 "wordByWord": word_by_word_sections,

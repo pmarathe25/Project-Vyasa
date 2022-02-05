@@ -38,7 +38,7 @@ const WordAndDefinition = ({ word, definition, root, parts_of_speech }) => {
                 trigger="hover"
                 placement="top"
                 overlay={
-                    <Popover style={{ backgroundColor: "black", color: "white" }}>
+                    <Popover style={{ backgroundColor: "rgb(13, 100, 233)" }}>
                         <Popover.Body>
                             <Col>
                                 <p style={{ fontSize: "20px" }}>
