@@ -9,7 +9,7 @@ const Index = ({ location, data }) => {
         <Layout location={location} pageTitle="Project Vyasa">
             <ListGroup>
                 {
-                    data.allChaptersJson.nodes.map(node => (
+                    data.allTextJson.nodes.map(node => (
                         <Link to={toUrl(node.book)} style={{ textDecoration: "none" }}>
                             <ListGroup.Item variant="dark" eventKey={node.book}>
                                 <p>{node.book}</p>
@@ -25,7 +25,7 @@ const Index = ({ location, data }) => {
 
 export const query = graphql`
 query {
-    allChaptersJson {
+    allTextJson {
         nodes {
             title
             book

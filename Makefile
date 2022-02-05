@@ -3,11 +3,11 @@ SCRIPTS_DIR := scripts
 
 RAW_CONTENT_DIR := content/raw
 RAW_RULE_SET_DIR := $(RAW_CONTENT_DIR)/transliteration_rulesets
-RAW_CHAPTERS_DIR := $(RAW_CONTENT_DIR)/chapters
+RAW_CHAPTERS_DIR := $(RAW_CONTENT_DIR)/text
 
 GEN_CONTENT_DIR := content/generated
 GEN_RULE_SET_DIR := $(GEN_CONTENT_DIR)/transliteration_rulesets
-GEN_CHAPTERS_DIR := $(GEN_CONTENT_DIR)/chapters
+GEN_CHAPTERS_DIR := $(GEN_CONTENT_DIR)/text
 
 BUILD_RULE_SET_SCRIPT := $(SCRIPTS_DIR)/build_transliteration_ruleset.py
 PROCESS_TEXT_SCRIPT := $(SCRIPTS_DIR)/process_text.py

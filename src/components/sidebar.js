@@ -77,7 +77,7 @@ const ChaptersAccordion = ({ book, activeChapter, setSideBarExpanded }) => {
 export const SideBar = ({ location, setSideBarExpanded }) => {
     const data = useStaticQuery(graphql`
         query {
-            allChaptersJson {
+            allTextJson {
                 group(field: book) {
                     nodes {
                         book
@@ -95,7 +95,7 @@ export const SideBar = ({ location, setSideBarExpanded }) => {
     // Active book/chapter should match the eventKeys in the Accordion items.
     let activeBook;
     let activeChapter;
-    for (let book of data.allChaptersJson.group) {
+    for (let book of data.allTextJson.group) {
         if (location.pathname.includes(toUrl(book.fieldValue))) {
             activeBook = book.fieldValue;
             for (let chapter of book.nodes) {
@@ -111,7 +111,7 @@ export const SideBar = ({ location, setSideBarExpanded }) => {
     return (
         <Accordion defaultActiveKey={activeBook} alwaysOpen={true} flush>
             {
-                data.allChaptersJson.group.map(book =>
+                data.allTextJson.group.map(book =>
                     <ChaptersAccordion book={book} activeChapter={activeChapter} setSideBarExpanded={setSideBarExpanded} />
                 )
             }
