@@ -30,6 +30,10 @@ def transliteration_ruleset():
             ["tata:", "aiva"],
             "tata aiva",
         ),
+        (
+            ["tata:", "gam"],
+            "tatau gam",
+        ),
         # Vowels
         (
             ["ca", "aiva"],
@@ -176,23 +180,23 @@ def build_expected(verses_text, translations, word_lists):
 )
 def test_process_text(content, expected_output):
     in_dir = tempfile.TemporaryDirectory(suffix="_example")
-    inp = tempfile.NamedTemporaryFile("w+", dir=in_dir.name, suffix="_example.txt")
-    inp.write(dedent(content))
-    inp.flush()
+    with tempfile.NamedTemporaryFile("w+", dir=in_dir.name, suffix="_example.txt") as inp:
+        inp.write(dedent(content))
+        inp.flush()
 
-    expected_output["book"] = "Example Parva"
-    expected_output["chapter"] = "Example Parva"
+        expected_output["book"] = "Example Parva"
+        expected_output["chapter"] = "Example Parva"
 
-    out_dir = tempfile.TemporaryDirectory()
-    out_file = os.path.join(out_dir.name, "processed.json")
+        out_dir = tempfile.TemporaryDirectory()
+        out_file = os.path.join(out_dir.name, "processed.json")
 
-    process_text = os.path.join(SCRIPTS_DIR, "process_text.py")
+        process_text = os.path.join(SCRIPTS_DIR, "process_text.py")
 
-    cmd = ["python3", process_text, inp.name, "-o", out_file, "-r", TRANSLITERATION_RULESET]
-    print(f"Running command: {' '.join(cmd)}")
-    status = sp.run(cmd)
-    assert status.returncode == 0, f"Error in {process_text}"
+        cmd = ["python3", process_text, inp.name, "-o", out_file, "-r", TRANSLITERATION_RULESET]
+        print(f"Running command: {' '.join(cmd)}")
+        status = sp.run(cmd)
+        assert status.returncode == 0, f"Error in {process_text}"
 
-    output = json.load(open(out_file))
+        output = json.load(open(out_file))
 
-    assert output == expected_output
+        assert output == expected_output
