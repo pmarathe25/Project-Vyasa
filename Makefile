@@ -54,4 +54,4 @@ test: $(GEN_RULE_SETS)
 	npm test
 
 clean:
-	rm -rf $(GEN_RULE_SET_DIR)
+	rm -rf $(GEN_CONTENT_DIR)
