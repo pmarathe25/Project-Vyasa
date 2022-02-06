@@ -36,7 +36,7 @@ def transliteration_ruleset():
         ),
         (
             ["pati:", "gam"],
-            "patir gam",
+            "patirgam",
         ),
         # Vowels
         (
@@ -117,7 +117,7 @@ def build_expected(verses_text, translations, word_lists):
     for index, (text, translation, word_list) in enumerate(zip(verses_text, translations, word_lists)):
         verses.append(
             {
-                "num": index,
+                "num": index + 1,
                 "text": text,
                 "translation": translation,
                 "wordByWord": word_list,
@@ -133,6 +133,8 @@ def build_expected(verses_text, translations, word_lists):
         # Basic
         (
             """
+            Verse 1-1
+
             ca (ca, indc) and
             aiva (aiva, indc) just so
 
@@ -146,8 +148,8 @@ def build_expected(verses_text, translations, word_lists):
                     [
                         # Line 1
                         [
-                            ["ca", "and", "ca", "indc"],
-                            ["aiva", "just so", "aiva", "indc"],
+                            ["ca", "and", "ca", "Indeclinable"],
+                            ["aiva", "just so", "aiva", "Indeclinable"],
                         ]
                     ]
                 ],
@@ -156,6 +158,8 @@ def build_expected(verses_text, translations, word_lists):
         # Multi-line - no sandhi should happen
         (
             """
+            Verse 1-1
+
             ca (ca, indc) and
             -
             aiva (aiva, indc) just so
@@ -170,11 +174,11 @@ def build_expected(verses_text, translations, word_lists):
                     [
                         # Line 1
                         [
-                            ["ca", "and", "ca", "indc"],
+                            ["ca", "and", "ca", "Indeclinable"],
                         ],
                         # Line 2
                         [
-                            ["aiva", "just so", "aiva", "indc"],
+                            ["aiva", "just so", "aiva", "Indeclinable"],
                         ],
                     ]
                 ],

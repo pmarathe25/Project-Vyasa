@@ -61,14 +61,32 @@ def build_sandhied_text(words, translit_ruleset):
 
         return replace_final_impl
 
-    def matches(patterns, invert=False):
+    def matches(patterns, invert=False, unless_next_to=None):
+        """
+        Builds a function that will match a particular pattern in a word.
+
+        Args:
+            patterns (List[str]):
+                    A list of patterns to match
+            invert (bool):
+                    Whether to invert the check, i.e. check if the patterns do *not* match.
+            unless_next_to (List[str]):
+                    A list of adjacent strings that should invalidate matches.
+                    For example, to match a visarga that is not adjacent to `a`,
+                    (either before or after, depending on `mode`), use `unless_next_to=['a']`.
+        """
+        unless_next_to = unless_next_to or []
+
         def matches_impl(word, mode):
+            def concat(word, other):
+                return other + word if mode == "ends" else word + other
+
             if not word.strip():
                 return False
 
             func = word.endswith if mode == "ends" else word.startswith
             for pat in patterns:
-                if func(pat):
+                if func(pat) and not any(func(concat(pat, adj)) for adj in unless_next_to):
                     return not invert
             return invert
 
@@ -93,6 +111,8 @@ def build_sandhied_text(words, translit_ruleset):
         (matches(["t"]), matches(keys_of("voiced-retroflex-consonants")), compose(make_voiced, make_retroflex)),
         # Unvoiced -> Voiced
         (matches(UNVOICED_CONSONANTS), matches(ALL_VOICED), make_voiced),
+        # Visarga sandhi not including a: or aa:
+        (matches([":"], unless_next_to=["a", "aa"]), matches(ALL_VOICED), replace_final(":", "r")),
     ]
 
     POST_MERGE_SANDHI = [
@@ -100,7 +120,6 @@ def build_sandhied_text(words, translit_ruleset):
         (matches(["aa:"]), matches(ALL_VOICED), replace_final("aa:", "aa")),
         (matches(["a:"]), matches(VOWELS), replace_final("a:", "a")),
         (matches(["a:"]), matches(ALL_VOICED), replace_final("a:", "au")),
-        (matches([":"]), matches(ALL_VOICED), replace_final(":", "r")),
     ]
 
     def apply_sandhi(words, conditions):
@@ -119,7 +138,7 @@ def build_sandhied_text(words, translit_ruleset):
         MERGE_CONDITIONS = [
             (matches(VOWELS), matches(VOWELS)),
             (matches(CONSONANTS), matches(VOWELS)),
-            (matches(CONSONANTS), matches(CONSONANTS)),
+            (matches(CONSONANTS + SEMI_VOWELS), matches(CONSONANTS + SEMI_VOWELS)),
         ]
         merged = []
         index = 0
