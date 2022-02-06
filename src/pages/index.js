@@ -22,7 +22,7 @@ const Index = ({ location, data }) => {
             <ListGroup>
                 {
                     data.allTextJson.nodes.map(node => (
-                        <BookLink book={node.book} />
+                        <BookLink key={node.book} book={node.book} />
                     ))
                 }
             </ListGroup>

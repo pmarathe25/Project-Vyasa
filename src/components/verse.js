@@ -41,7 +41,7 @@ const RootMeanings = ({ root }) => {
         <div>
             {
                 translitRoots.map((rootPar, index) =>
-                    <div style={{ disply: "flex" }}>
+                    <div style={{ disply: "flex" }} key={index}>
                         <p style={{ fontSize: "20px" }}>
                             {rootPar}
                         </p>
@@ -101,13 +101,13 @@ const VerseText = ({ num, text, wordByWord }) => {
             </Tab>
             <Tab eventKey="word-by-word" title="Word-by-word Translation" tabClassName={verseTextTab}>
                 <div className={verseText} >
-                    {wordByWord.map(line =>
-                        <Row style={{
+                    {wordByWord.map((line, index) =>
+                        <Row key={index} style={{
                             width: "fit-content", margin: "auto"
                         }}>
                             {
-                                line.map(([word, definition, root, parts_of_speech]) =>
-                                    <WordAndDefinition word={word} definition={definition} root={root} parts_of_speech={parts_of_speech} />
+                                line.map(([word, definition, root, parts_of_speech], wordIndex) =>
+                                    <WordAndDefinition key={word + wordIndex} word={word} definition={definition} root={root} parts_of_speech={parts_of_speech} />
                                 )
                             }
                         </Row>

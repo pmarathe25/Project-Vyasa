@@ -24,20 +24,16 @@ const Layout = ({ location, pageTitle, children }) => {
         fontSize: "18px"
     };
     let breadcrumbs = [
-        <Breadcrumb.Item style={breadcrumbStyle}>
-            <Link to="/" >
-                Home
-            </Link>
+        <Breadcrumb.Item key="/" linkProps={{ "to": "/" }} linkAs={Link} style={breadcrumbStyle}>
+            Home
         </Breadcrumb.Item>
     ];
     let curPath = "/";
     for (let pathElement of location.pathname.split("/").slice(1)) {
         curPath += pathElement;
         breadcrumbs.push(
-            <Breadcrumb.Item style={breadcrumbStyle}>
-                <Link to={curPath} >
-                    {titleCaseFromUrl(pathElement)}
-                </Link>
+            <Breadcrumb.Item key={"nested" + curPath} linkProps={{ "to": curPath }} linkAs={Link} style={breadcrumbStyle}>
+                {titleCaseFromUrl(pathElement)}
             </Breadcrumb.Item>
         );
         curPath += "/";

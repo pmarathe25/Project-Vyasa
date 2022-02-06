@@ -22,7 +22,7 @@ const ChapterIndex = ({ location, data, pageContext }) => {
             <ListGroup>
                 {
                     data.allTextJson.nodes.map(node => (
-                        <ChapterLink chapter={node.chapter} />
+                        <ChapterLink key={node.chapter} chapter={node.chapter} />
                     ))
                 }
             </ListGroup>
