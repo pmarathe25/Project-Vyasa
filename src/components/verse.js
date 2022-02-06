@@ -1,8 +1,9 @@
 import * as React from 'react';
-import { Button, Col, Collapse, Popover, Row, Tab, Tabs, OverlayTrigger } from 'react-bootstrap';
+import { Button, Col, Collapse, OverlayTrigger, Popover, Row, Tab, Tabs } from 'react-bootstrap';
 import { useTransliterate } from './transliterationHook';
 import { verseText, verseTextTab } from "./verse.module.css";
 
+const allWordsDict = require("../../content/generated/dictionary/all_words.json");
 
 const Translation = ({ translation }) => {
     const [open, setOpen] = React.useState(false);
@@ -28,22 +29,44 @@ const Translation = ({ translation }) => {
     )
 }
 
+const RootMeanings = ({ root }) => {
+    let rootDefs = [];
+    let translitRoots = useTransliterate(root).split("+");
+    let rootComponents = root.split("+");
+    for (let rootComp of rootComponents) {
+        rootDefs.push(allWordsDict[rootComp]);
+    }
+
+    return (
+        <div>
+            {
+                translitRoots.map((rootPar, index) =>
+                    <div style={{ disply: "flex" }}>
+                        <p style={{ fontSize: "20px" }}>
+                            {rootPar}
+                        </p>
+                        <p>
+                            {rootDefs[index] ? " " + rootDefs[index] : ""}
+                        </p>
+                    </div>
+                )
+            }
+        </div>
+    )
+}
+
 const WordAndDefinition = ({ word, definition, root, parts_of_speech }) => {
     word = useTransliterate(word);
-    root = useTransliterate(root);
 
     return (
         <Col>
             <OverlayTrigger
-                trigger="hover"
                 placement="top"
                 overlay={
                     <Popover style={{ backgroundColor: "rgb(13, 100, 233)" }}>
                         <Popover.Body>
                             <Col>
-                                <p style={{ fontSize: "20px" }}>
-                                    {root}
-                                </p>
+                                <RootMeanings root={root} />
                                 <p style={{ fontSize: "16px" }}>
                                     {parts_of_speech}
                                 </p>
