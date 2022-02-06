@@ -20,13 +20,28 @@ def main():
         if os.path.exists(args.output) and get_mtime(args.output) > get_mtime(path):
             continue
 
+        def add(word, meanings):
+            nonlocal out_dict
+            out_dict[word.strip()] = meanings
+
+        def handle_verb(line):
+            word, _, meanings = line.partition(" ")
+            if "-" in word:
+                last_dash = word.rfind("-") + 1
+                word = word[:last_dash] + "√" + word[last_dash:]
+            add(word, meanings)
+
+        def handle_nominal(line):
+            word, _, rest = line.partition("(")
+            gender, _, meanings = rest.partition(")")
+            add(word, "({:}.) {:}".format(gender, meanings))
+
         with open(path, "r") as f:
             for line in filter(lambda x: x, f.readlines()):
-                word, _, meanings = line.partition(" ")
-                if "-" in word:
-                    last_dash = word.rfind("-") + 1
-                    word = word[:last_dash] + "√" + word[last_dash:]
-                out_dict[word] = meanings
+                if "(" not in line:
+                    handle_verb(line)
+                else:
+                    handle_nominal(line)
 
     json.dump(out_dict, open(args.output, "w"))
 

@@ -6,7 +6,7 @@ The input file structure is: `text/{book}/{chapter}.txt`.
 
 The format of each file is:
 ```
-<Verse [start]-[end]>
+Verse <first verse number>-<last verse number>
 
 word0 (base-form, parts of speech) literal translation
 word1 (base-form, parts of speech) literal translation
@@ -18,7 +18,7 @@ word1 (base-form, parts of speech) literal translation
 
 <Translation>
 
-... (other verses)
+... (more verses)
 ```
 
 Sections should be separated by a single blank line. 
@@ -67,7 +67,6 @@ The `"parts of speech"` field is order invariant and should be provided in abbre
 The abbreviations are as follows:
 
 - `nom/voc/acc/inst/dat/abl/gen/loc`: Nominative/Vocative/Accusative/Instrumental/Dative/Ablative/Genitive/Locative case
-- `m/f/n`: Masculine/Feminine/Neuter gender
 - `1/2/3`: 1st/2nd/3rd person
 - `sing/du/pl`: Singular/Dual/Plural number
 - `pres/perf/imp/fut`: Present/Perfect/Imperfect/Future tense
@@ -76,6 +75,21 @@ The abbreviations are as follows:
 - `ind/pot`: Indicative/Potential mood
 - `abs`: Absolutive
 - `indc`: Indeclinable
+
+## Dictionary
+
+This project also includes a miniature (as of this writing) dictionary. 
+The dictionary format is:
+```
+word (optional gender) [meanings...]
+... (more words)
+```
+
+For example:
+```
+namas-kr> to bow, to pay homage
+nara (m) man
+```
 
 ## Transliteration 
 

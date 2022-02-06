@@ -41,11 +41,11 @@ const RootMeanings = ({ root }) => {
         <div>
             {
                 translitRoots.map((rootPar, index) =>
-                    <div style={{ disply: "flex" }} key={index}>
-                        <p style={{ fontSize: "20px" }}>
+                    <div style={{ display: "flex" }} key={index}>
+                        <p style={{ fontSize: "20px", paddingRight: "10px" }}>
                             {rootPar}
                         </p>
-                        <p>
+                        <p style={{ top: "50%", marginTop: "auto", marginBottom: "auto" }}>
                             {rootDefs[index] ? " " + rootDefs[index] : ""}
                         </p>
                     </div>
