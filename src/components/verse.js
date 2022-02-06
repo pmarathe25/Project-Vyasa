@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { Button, Col, Collapse, OverlayTrigger, Popover, Row, Tab, Tabs } from 'react-bootstrap';
 import { useTransliterate } from './transliterationHook';
-import { verseText, verseTextTab } from "./verse.module.css";
+import { verseText, translationText, verseTextTab } from "./verse.module.css";
 
 const allWordsDict = require("../../content/generated/dictionary/all_words.json");
 
@@ -21,7 +21,7 @@ const Translation = ({ translation }) => {
                 </Button>
             </div>
             <Collapse in={open}>
-                <p className={verseText}>
+                <p className={translationText}>
                     {translation}
                 </p>
             </Collapse>
