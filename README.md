@@ -41,9 +41,9 @@ Verse Text:
 
 ![Verse Text](./_resources/example_verse_text.png)
 
-Word by word translation:
+Word by word breakdown and translation:
 
-![Word-by-word Translation](./_resources/example_word_by_word.png)
+![Word-by-word Breakdown And Translation](./_resources/example_word_by_word.png)
 
 And finally, grammatical analysis in the form of a pop-out that appears on hover:
 
