@@ -21,7 +21,14 @@ export const TransliterationModeSelect = () => {
     return (
         <TranslitModeContext.Consumer>
             {({ mode, setMode }) =>
-                <ToggleButtonGroup type="radio" name="options" defaultValue={mode} onChange={(val) => { setMode(val) }} vertical={false}>
+                <ToggleButtonGroup
+                    type="radio"
+                    name="options"
+                    defaultValue={mode}
+                    onChange={(val) => { setMode(val) }}
+                    vertical={false}
+                    style={{ marginLeft: "15px", marginRight: "15px" }}
+                >
                     <ToggleButton id="translit-select-dev" value={0}>
                         <p style={{ fontSize: (mode === 1 ? "16px" : "18px") }}>
                             {devanagari}

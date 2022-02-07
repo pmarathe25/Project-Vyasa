@@ -6,8 +6,10 @@ export function toUrl(str) {
 // Converts a string converted by `toUrl` to title case
 export function titleCaseFromUrl(str) {
     let titleCase = [];
-    for (let word of str.split("-")) {
-        titleCase.push(word.charAt(0).toUpperCase() + word.slice(1));
+    for (let substr of str.split("-")) {
+        for (let word of substr.split("_")) {
+            titleCase.push(word.charAt(0).toUpperCase() + word.slice(1));
+        }
     }
     return titleCase.join(" ");
 }

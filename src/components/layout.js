@@ -1,9 +1,9 @@
 import { graphql, Link, useStaticQuery } from 'gatsby'
 import * as React from 'react'
-import { Breadcrumb, Container, Navbar, Offcanvas } from 'react-bootstrap'
-import { titleCaseFromUrl } from '../util/util'
+import { Breadcrumb, Container, Navbar, Offcanvas, Row } from 'react-bootstrap'
+import { toUrl, titleCaseFromUrl } from '../util/util'
 import {
-    container, content, navLinkItem, navSideBar, navSideBarToggle
+    container, content, brandLink, navSideBar, navSideBarToggle
 } from './layout.module.css'
 import { SideBar } from './sidebar'
 import { useTransliterate } from './transliterationHook'
@@ -46,11 +46,14 @@ const Layout = ({ location, pageTitle, children }) => {
             <title>{pageTitle} | {data.site.siteMetadata.title} </title>
             <Navbar bg="dark" variant="dark" fixed="top" expand={false}>
                 <Container style={{ justifyContent: "space-around" }}>
-                    <Navbar.Brand style={{ margin: 0, padding: 0 }}>
-                        <Link to="/" className={navLinkItem}>
+                    <Row style={{ display: "flex" }}>
+                        <Link to="/" className={brandLink} style={{ width: "fit-content" }}>
                             Project {useTransliterate("vyaasa")}
                         </Link>
-                    </Navbar.Brand>
+                        <Link to={toUrl("/how_to_use")} style={{ width: "fit-content", margin: "auto" }}>
+                            How To Use
+                        </Link>
+                    </Row>
                     <TransliterationModeSelect />
                     <Navbar.Toggle
                         aria-controls="offcanvasNavbar"
