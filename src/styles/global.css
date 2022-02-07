@@ -39,17 +39,17 @@ a:active {
 
 .accordion-button {
     color: white;
-    background: rgb(95, 121, 145);
+    background: rgb(61, 102, 139);
 }
 
 .accordion-button:not(.collapsed) {
     color: white;
-    background: rgb(119, 162, 202);
+    background: rgb(100, 153, 202);
 }
 
 .accordion-button:hover {
     color: white;
-    background: rgb(106, 145, 180);
+    background: rgb(91, 138, 179);
 }
 
 .accordion-button::after {

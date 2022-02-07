@@ -4,7 +4,6 @@ import * as React from 'react'
 import { Accordion, ListGroup } from 'react-bootstrap'
 import toUrl from '../util/util'
 import { sideBarAccordion, sideBarLink, verseLink } from "./sidebar.module.css"
-import { useTransliterate } from "./transliterationHook"
 
 
 const SideBarLink = (props) => {
@@ -19,14 +18,13 @@ const SideBarLink = (props) => {
 
 // A per-chapter accordion item that expands all constituent verses
 const VersesAccordion = ({ baseURL, chapter, setSideBarExpanded }) => {
-    const translitChapterName = useTransliterate(chapter.chapter);
     const chapterURL = toUrl(`${baseURL}/${chapter.chapter}`);
 
     return (
         <Accordion.Item eventKey={chapter.chapter} className={sideBarAccordion}>
             <Accordion.Header className={sideBarAccordion}>
                 <SideBarLink to={chapterURL} setSideBarExpanded={setSideBarExpanded} useClass={sideBarLink}>
-                    {translitChapterName}
+                    {chapter.chapter}
                 </SideBarLink>
             </Accordion.Header>
             <Accordion.Body className={sideBarAccordion}>
@@ -49,14 +47,13 @@ const VersesAccordion = ({ baseURL, chapter, setSideBarExpanded }) => {
 
 // A per-book accordion item that expands all constituent chapters
 const ChaptersAccordion = ({ book, activeChapter, setSideBarExpanded }) => {
-    const translitBookName = useTransliterate(book.fieldValue);
     const bookURL = toUrl(`/${book.fieldValue}`);
 
     return (
         <Accordion.Item eventKey={book.fieldValue} className={sideBarAccordion}>
             <Accordion.Header className={sideBarAccordion}>
                 <SideBarLink to={bookURL} setSideBarExpanded={setSideBarExpanded} useClass={sideBarLink}>
-                    {translitBookName}
+                    {book.fieldValue}
                 </SideBarLink>
             </Accordion.Header>
             <Accordion.Body className={sideBarAccordion}>
