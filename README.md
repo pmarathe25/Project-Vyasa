@@ -1,54 +1,209 @@
-<p align="center">
-  <a href="https://www.gatsbyjs.com/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter">
-    <img alt="Gatsby" src="https://www.gatsbyjs.com/Gatsby-Monogram.svg" width="60" />
-  </a>
-</p>
-<h1 align="center">
-  Gatsby minimal starter
-</h1>
+# Project Vyasa
 
-## 🚀 Quick start
+## Table Of Contents
 
-1.  **Create a Gatsby site.**
+- [Introduction](#introduction)
+  - [An Example](#an-example)
+- [Set Up](#set-up)
+- [Content Format](#content-format)
+  - [Base Form](#base-form)
+  - [Parts Of Speech](#parts-of-speech)
+- [Dictionary Format](#dictionary-format)
+- [Transliteration Methodology](#transliteration-methodology)
 
-    Use the Gatsby CLI to create a new site, specifying the minimal starter.
 
-    ```shell
-    # create a new Gatsby site using the minimal starter
-    npm init gatsby
-    ```
+## Introduction
 
-2.  **Start developing.**
+Welcome to Project Vyasa!
 
-    Navigate into your new site’s directory and start it up.
+The goal of this project is to provide a high-quality Sanskrit-English reader 
+for the Mahabharata in a modern web interface.
 
-    ```shell
-    cd my-gatsby-site/
-    npm run develop
-    ```
+Many excellent resources are freely available online 
+(like [wisdomlib](https://www.wisdomlib.org/hinduism/book/mahabharata-sanskrit)!)
+but I've yet to find one that has all the following properties: 
+- Word-by-word translation
+- Detailed and accurate grammatical explanation with word-level granularity
+- A minimal, easy-to-navigate, and clean web interface
 
-3.  **Open the code and start customizing!**
+Having stated the goal, it is equally important to mention that it is *not* the aim
+of this project to provide anything more than a literally correct translation; 
+for a translation that considers the broader cultural, historical, and philosophical 
+context, you will need to look elsewhere!
 
-    Your site is now running at http://localhost:8000!
+### An Example
 
-    Edit `src/pages/index.js` to see your site update in real-time!
+Without further ado, here's an example of what the final product looks like.
+*Note that although the screenshots here use Devanagari exclusively, the frontend*
+*is also capable of rendering IAST with the push of a button!*
 
-4.  **Learn more**
+Verse Text:
 
-    - [Documentation](https://www.gatsbyjs.com/docs/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter)
+![Verse Text](./_resources/example_verse_text.png)
 
-    - [Tutorials](https://www.gatsbyjs.com/tutorial/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter)
+Word by word breakdown and translation:
 
-    - [Guides](https://www.gatsbyjs.com/tutorial/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter)
+![Word-by-word Breakdown And Translation](./_resources/example_word_by_word.png)
 
-    - [API Reference](https://www.gatsbyjs.com/docs/api-reference/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter)
+And finally, grammatical analysis in the form of a pop-out that appears on hover:
 
-    - [Plugin Library](https://www.gatsbyjs.com/plugins?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter)
+![Grammatical Analysis Pop-out](./_resources/example_pop_out.png)
 
-    - [Cheat Sheet](https://www.gatsbyjs.com/docs/cheat-sheet/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter)
 
-## 🚀 Quick start (Gatsby Cloud)
+## Set Up
 
-Deploy this starter with one click on [Gatsby Cloud](https://www.gatsbyjs.com/cloud/):
+To set up this repository for local development, you will need to:
 
-[<img src="https://www.gatsbyjs.com/deploynow.svg" alt="Deploy to Gatsby Cloud">](https://www.gatsbyjs.com/dashboard/deploynow?url=https://github.com/gatsbyjs/gatsby-starter-minimal)
+1. [Install `npm`](https://docs.npmjs.com/downloading-and-installing-node-js-and-npm)
+
+2. Install required packages:
+  ```
+  npm i
+  ```
+
+3. Launch the web server:
+  ```
+  make launch
+  ```
+
+At this point, you should be able to navigate to http://localhost:8000/ in your 
+browser to view your local copy site.
+
+
+## Content Format
+
+The content for each chapter is stored in separate text file: `content/text/{book}/{chapter}.txt`.
+
+The format of each file is:
+```
+<first verse number>-<last verse number>
+
+word0 (base-form, parts of speech) literal translation
+word1 (base-form, parts of speech) literal translation
+...
+
+<Translation>
+
+word0 (base-form, parts of speech) literal translation
+word1 (base-form, parts of speech) literal translation
+...
+
+<Translation>
+
+... (more verses)
+```
+
+The format must conform to the following rules:
+
+- Sections must be separated by a single blank line. 
+
+- There must not be any blank lines within a section
+
+- Each set of words belonging to a single verse must be grouped into a single section, 
+  and the corresponding complete translation must be in a subsequent section.
+
+- Each word of the verse text must appear on a separate line, in non-*sandhi*ed form
+  and followed by its root, parts of speech, and a literal translation.
+
+  The [`process_text.py`](./scripts/process_text.py) script can generate verse text with 
+  *sandhi* applied based on the word-by-word input. As of this writing, the script only 
+  handles the most common cases. Fortunately, adding new rules is easy! 
+  Thus, if *sandhi* is not properly applied, the script will need to be updated.
+
+- If the verse text needs to be split on more than one line, use a line containing a 
+  single dash, `-`, to mark where the line break must be. For example:
+  ```
+  word0 (base-form, parts of speech) literal translation
+  -
+  word1 (base-form, parts of speech) literal translation
+  ```
+
+- Any Sanskrit text must use a special transliteration format that the front-end can 
+  ingest and convert into either Devanagari or IAST. 
+  See the [transliteration](#transliteration-methodology) section for details.
+
+For example, consider the following example input text, given here in IAST:
+```
+nara gacchati
+```
+
+The corresponding content file would look like this:
+```
+nara (nara, nom sing) man
+gacchati (gam, 3 sing pres act ind) goes
+
+The man goes.
+```
+*Note: although it looks similar in this case, this transliteration format is* not *IAST!*
+
+More detail on the fields in parentheses is provided in the following sections.
+
+### Base Form
+
+The `"base-form"` field should be either the verbal root or noun stem (depending on the word) 
+written in our [special transliteration format](#transliteration-methodology).
+Some common syntax rules to consider:
+
+- Compounds must be split using plus signs, i.e. `+`. For example: `bahu+vriihi`.
+  This allows the frontend to split them up and provide definitions for each consituent word
+  in a pop-out bubble.
+
+- Pre-verbs must be separated from their roots by dashes, i.e. `-`. For example: `ava-gam`.
+
+### Parts Of Speech
+
+The `"parts of speech"` field is order invariant and must be provided in 
+abbreviated form as a space-separated list. 
+Valid entries are as follows:
+
+- `nom/voc/acc/inst/dat/abl/gen/loc`: Nominative/Vocative/Accusative/Instrumental/Dative/Ablative/Genitive/Locative case
+- `1/2/3`: 1st/2nd/3rd person
+- `sing/du/pl`: Singular/Dual/Plural number
+- `pres/perf/imp/fut`: Present/Perfect/Imperfect/Future tense
+- `act/pass/mid`: Active/Passive/Middle voice
+- `caus/des`: Causative/Desiderative
+- `ind/pot`: Indicative/Potential mood
+- `abs`: Absolutive
+- `indc`: Indeclinable
+
+
+## Dictionary Format
+
+This project also includes a miniature (as of this writing) dictionary. 
+The dictionary format is:
+```
+word (optional gender/function) [meanings...]
+... (more words)
+```
+
+For example:
+```
+namas-kr> to bow, to pay homage
+nara (m) man
+uttama (adj) highest, best
+```
+
+*Note: In the real codebase, unlike in this example, words are split*
+*into separate files based on their first letter.*
+
+
+## Transliteration Methodology
+
+The goal of the special transliteration format used here is to be friendly 
+to English keyboards and quick to type. The general principles are:
+
+- Double a vowel to lengthen it: `i` -> `इ/i`, `ii` -> `ई/ī`.
+- Compound vowels are preserved in their original form: `ai` -> `ए/e`.
+  This is a departure from typical conventions but makes it easier to 
+  break and/or apply *sandhi*.
+- `>` indicates vocalic sounds: `r` -> `र्/r` but `r>` -> `ऋ/ṛ`
+- `^` indicates velar sounds: `n` -> `न्/n` but `n^` -> `ङ्/ṅ`
+- `~` indicates palatal sounds: `s` -> `स्/s` but `s~` -> `श्/ś`
+- `<` indicates retroflex sounds: `t` -> `त्/t` but `t<` -> `ट्/ṭ`
+- Special symbols include:
+  - `.` which maps to anusvara, i.e. `ं/ṃ`
+  - `'` which maps to avagraha, i.e. `ऽ/'`
+  - `:` which maps to visarga, i.e. `ः/ḥ`
+
+The specifics of the format can be found under 
+[`content/raw/transliteration_rulesets/`](./content/raw/transliteration_rulesets/)

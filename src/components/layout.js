@@ -1,6 +1,6 @@
 import { graphql, Link, useStaticQuery } from 'gatsby'
 import * as React from 'react'
-import { Breadcrumb, BreadcrumbItem, Container, Navbar, Offcanvas } from 'react-bootstrap'
+import { Breadcrumb, Container, Navbar, Offcanvas } from 'react-bootstrap'
 import { titleCaseFromUrl } from '../util/util'
 import {
     container, content, navLinkItem, navSideBar, navSideBarToggle
@@ -19,22 +19,22 @@ const Layout = ({ location, pageTitle, children }) => {
         }
         }`)
 
+
+    let breadcrumbStyle = {
+        fontSize: "18px"
+    };
     let breadcrumbs = [
-        <BreadcrumbItem>
-            <Link to="/">
-                Home
-            </Link>
-        </BreadcrumbItem>
+        <Breadcrumb.Item key="/" linkProps={{ "to": "/" }} linkAs={Link} style={breadcrumbStyle}>
+            Home
+        </Breadcrumb.Item>
     ];
     let curPath = "/";
     for (let pathElement of location.pathname.split("/").slice(1)) {
         curPath += pathElement;
         breadcrumbs.push(
-            <BreadcrumbItem>
-                <Link to={curPath}>
-                    {titleCaseFromUrl(pathElement)}
-                </Link>
-            </BreadcrumbItem>
+            <Breadcrumb.Item key={"nested" + curPath} linkProps={{ "to": curPath }} linkAs={Link} style={breadcrumbStyle}>
+                {titleCaseFromUrl(pathElement)}
+            </Breadcrumb.Item>
         );
         curPath += "/";
     }
@@ -45,15 +45,22 @@ const Layout = ({ location, pageTitle, children }) => {
         <div className={container}>
             <title>{pageTitle} | {data.site.siteMetadata.title} </title>
             <Navbar bg="dark" variant="dark" fixed="top" expand={false}>
-                <Container>
-                    <Navbar.Brand>
+                <Container style={{ justifyContent: "space-around" }}>
+                    <Navbar.Brand style={{ margin: 0, padding: 0 }}>
                         <Link to="/" className={navLinkItem}>
                             Project {useTransliterate("vyaasa")}
                         </Link>
                     </Navbar.Brand>
                     <TransliterationModeSelect />
-                    <Navbar.Toggle aria-controls="offcanvasNavbar" className={navSideBarToggle} onClick={() => setSideBarExpanded(true)}>
-                        All Verses
+                    <Navbar.Toggle
+                        aria-controls="offcanvasNavbar"
+                        className={navSideBarToggle}
+                        onClick={() => setSideBarExpanded(true)}
+                        style={{ width: "10%", minWidth: "80px" }}
+                    >
+                        <p style={{ fontVariant: "small-caps", fontSize: "18px" }}>
+                            All Verses
+                        </p>
                     </Navbar.Toggle>
 
                     <Navbar.Offcanvas

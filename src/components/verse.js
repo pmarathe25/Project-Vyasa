@@ -1,8 +1,9 @@
 import * as React from 'react';
-import { Button, Col, Collapse, Tab, Tabs } from 'react-bootstrap';
+import { Button, Col, Collapse, OverlayTrigger, Popover, Row, Tab, Tabs } from 'react-bootstrap';
 import { useTransliterate } from './transliterationHook';
-import { verseText, verseTextTab } from "./verse.module.css";
+import { verseText, translationText, verseTextTab } from "./verse.module.css";
 
+const allWordsDict = require("../../content/generated/dictionary/all_words.json");
 
 const Translation = ({ translation }) => {
     const [open, setOpen] = React.useState(false);
@@ -20,7 +21,7 @@ const Translation = ({ translation }) => {
                 </Button>
             </div>
             <Collapse in={open}>
-                <p className={verseText}>
+                <p className={translationText}>
                     {translation}
                 </p>
             </Collapse>
@@ -28,15 +29,57 @@ const Translation = ({ translation }) => {
     )
 }
 
-const WordAndDefinition = ({ word, definition }) => {
+const RootMeanings = ({ root }) => {
+    let rootDefs = [];
+    let translitRoots = useTransliterate(root).split("+");
+    let rootComponents = root.split("+");
+    for (let rootComp of rootComponents) {
+        rootDefs.push(allWordsDict[rootComp]);
+    }
+
+    return (
+        <div>
+            {
+                translitRoots.map((rootPar, index) =>
+                    <div style={{ display: "flex" }} key={index}>
+                        <p style={{ fontSize: "20px", paddingRight: "10px" }}>
+                            {rootPar}
+                        </p>
+                        <p style={{ top: "50%", marginTop: "auto", marginBottom: "auto" }}>
+                            {rootDefs[index] ? " " + rootDefs[index] : ""}
+                        </p>
+                    </div>
+                )
+            }
+        </div>
+    )
+}
+
+const WordAndDefinition = ({ word, definition, root, parts_of_speech }) => {
     word = useTransliterate(word);
 
     return (
         <Col>
-            <p >
-                {word}
-            </p>
-            <p style={{ fontStyle: "italic" }}>
+            <OverlayTrigger
+                placement="top"
+                overlay={
+                    <Popover style={{ backgroundColor: "rgb(13, 100, 233)" }}>
+                        <Popover.Body>
+                            <Col>
+                                <RootMeanings root={root} />
+                                <p style={{ fontSize: "16px" }}>
+                                    {parts_of_speech}
+                                </p>
+                            </Col>
+                        </Popover.Body>
+                    </Popover>
+                }
+            >
+                <p>
+                    {word}
+                </p>
+            </OverlayTrigger>
+            <p style={{ fontStyle: "italic", fontSize: "20px", color: "rgb(175, 175, 175)" }}>
                 {definition}
             </p>
         </Col>
@@ -57,14 +100,21 @@ const VerseText = ({ num, text, wordByWord }) => {
                 </p>
             </Tab>
             <Tab eventKey="word-by-word" title="Word-by-word Translation" tabClassName={verseTextTab}>
-                <div className={verseText} style={{ display: "flex" }}>
-
-                    {wordByWord.map(([word, definition]) =>
-                        <WordAndDefinition word={word} definition={definition} />
+                <div className={verseText} >
+                    {wordByWord.map((line, index) =>
+                        <Row key={index} style={{
+                            width: "fit-content", margin: "auto"
+                        }}>
+                            {
+                                line.map(([word, definition, root, parts_of_speech], wordIndex) =>
+                                    <WordAndDefinition key={word + wordIndex} word={word} definition={definition} root={root} parts_of_speech={parts_of_speech} />
+                                )
+                            }
+                        </Row>
                     )}
                 </div>
             </Tab>
-        </Tabs>
+        </Tabs >
     )
 }
 

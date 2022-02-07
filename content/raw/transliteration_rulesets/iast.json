@@ -11,51 +11,67 @@
             "i": "i",
             "ii": "ī",
             "u": "u",
-            "uu": "ū",
+            "uu": "ū"
+        },
+        "vocalic": {
             "r>": "ṛ",
             "rr>": "ṝ",
             "l>": "ḷ",
-            "ll>": "ḹ",
+            "ll>": "ḹ"
+        },
+        "compound-vowels": {
             "ai": "e",
             "aai": "ai",
             "au": "o",
             "aau": "au"
         },
-        "consonants": {
+        "unvoiced-consonants": {
             "k": "k",
             "kh": "kh",
-            "g": "g",
-            "gh": "gh",
-            "n<": "ṅ",
             "c": "c",
             "ch": "ch",
-            "j": "j",
-            "jh": "jh",
-            "n~": "ñ",
-            "t^": "ṭ",
-            "th^": "ṭh",
-            "d^": "ḍ",
-            "dh^": "ḍh",
-            "n^": "ṇ",
             "t": "t",
             "th": "th",
+            "p": "p",
+            "ph": "ph"
+        },
+        "unvoiced-retroflex-consonants": {
+            "t<": "ṭ",
+            "th<": "ṭh"
+        },
+        "voiced-consonants": {
+            "g": "g",
+            "gh": "gh",
+            "j": "j",
+            "jh": "jh",
             "d": "d",
             "dh": "dh",
-            "n": "n",
-            "p": "p",
-            "ph": "ph",
             "b": "b",
-            "bh": "bh",
-            "m": "m",
+            "bh": "bh"
+        },
+        "voiced-retroflex-consonants": {
+            "d<": "ḍ",
+            "dh<": "ḍh"
+        },
+        "nasal-consonants": {
+            "n^": "ṅ",
+            "n~": "ñ",
+            "n<": "ṇ",
+            "n": "n",
+            "m": "m"
+        },
+        "sibilants": {
+            "s~": "ś",
+            "s<": "ṣ",
+            "s": "s",
+            "h": "h"
+        },
+        "semi-vowels": {
             "y": "y",
             "r": "r",
             "l": "l",
-            "l^": "l̥",
-            "v": "v",
-            "s~": "ś",
-            "s^": "ṣ",
-            "s": "s",
-            "h": "h"
+            "l<": "l̥",
+            "v": "v"
         }
     },
     "rules": {}
