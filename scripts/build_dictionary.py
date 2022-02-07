@@ -15,7 +15,7 @@ def main():
 
     args, _ = parser.parse_known_args()
 
-    out_dict = {}
+    out_dict = json.load(open(args.output)) if os.path.exists(args.output) else {}
     for path in glob.iglob(os.path.join(args.base_dir, "*.txt")):
         if os.path.exists(args.output) and get_mtime(args.output) > get_mtime(path):
             continue
@@ -33,8 +33,8 @@ def main():
 
         def handle_nominal(line):
             word, _, rest = line.partition("(")
-            gender, _, meanings = rest.partition(")")
-            add(word, "({:}.) {:}".format(gender, meanings))
+            detail, _, meanings = rest.partition(")")
+            add(word, "({:}.) {:}".format(detail, meanings))
 
         with open(path, "r") as f:
             for line in filter(lambda x: x, f.readlines()):
