@@ -61,7 +61,7 @@ def build_sandhied_text(words, translit_ruleset):
 
         return replace_final_impl
 
-    def matches(patterns, invert=False, unless_next_to=None):
+    def matches(patterns, invert=False, but_not=None):
         """
         Builds a function that will match a particular pattern in a word.
 
@@ -70,23 +70,20 @@ def build_sandhied_text(words, translit_ruleset):
                     A list of patterns to match
             invert (bool):
                     Whether to invert the check, i.e. check if the patterns do *not* match.
-            unless_next_to (List[str]):
-                    A list of adjacent strings that should invalidate matches.
-                    For example, to match a visarga that is not adjacent to `a`,
-                    (either before or after, depending on `mode`), use `unless_next_to=['a']`.
+            but_not (List[str]):
+                    A list of strings that should disqualify a match when present.
+                    For example, to match a visarga that is not preceded by `a`
+                    use `matches([":"], but_not=["a:"])`.
         """
-        unless_next_to = unless_next_to or []
+        but_not = but_not or []
 
         def matches_impl(word, mode):
-            def concat(word, other):
-                return other + word if mode == "ends" else word + other
-
             if not word.strip():
                 return False
 
             func = word.endswith if mode == "ends" else word.startswith
             for pat in patterns:
-                if func(pat) and not any(func(concat(pat, adj)) for adj in unless_next_to):
+                if func(pat) and not any(func(exc_pat) for exc_pat in but_not):
                     return not invert
             return invert
 
@@ -112,7 +109,7 @@ def build_sandhied_text(words, translit_ruleset):
         # Unvoiced -> Voiced
         (matches(UNVOICED_CONSONANTS), matches(ALL_VOICED), make_voiced),
         # Visarga sandhi not including a: or aa:
-        (matches([":"], unless_next_to=["a", "aa"]), matches(ALL_VOICED), replace_final(":", "r")),
+        (matches([":"], but_not=["a:", "aa:"]), matches(ALL_VOICED), replace_final(":", "r")),
     ]
 
     POST_MERGE_SANDHI = [
@@ -272,6 +269,8 @@ def main():
         "verses": [],
     }
 
+    start_verse, end_verse = map(int, header.split("-"))
+
     # Parses input file according to format outlined in README.
     # To have the front-end handle newlines, we need a bit of weirdness in the word-by-word
     # translation - specifically, instead of just having a list of words for each verse, we have to have a list
@@ -289,12 +288,15 @@ def main():
 
         processed["verses"].append(
             {
-                "num": index + 1,
+                "num": start_verse + index,
                 "text": "\n".join(build_sandhied_text(line, translit_ruleset) for line in to_sandhi_word_lines),
                 "translation": translation,
                 "wordByWord": word_by_word_sections,
             }
         )
+    assert start_verse + index == end_verse, "Expected to see verses {:}-{:} but only received {:} verses".format(
+        start_verse, end_verse, index + 1
+    )
 
     os.makedirs(os.path.dirname(args.output), exist_ok=True)
     print("Writing to: {:}".format(args.output))

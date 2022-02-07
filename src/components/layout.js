@@ -45,8 +45,8 @@ const Layout = ({ location, pageTitle, children }) => {
         <div className={container}>
             <title>{pageTitle} | {data.site.siteMetadata.title} </title>
             <Navbar bg="dark" variant="dark" fixed="top" expand={false}>
-                <Container>
-                    <Navbar.Brand style={{ margin: 0 }}>
+                <Container style={{ justifyContent: "space-around" }}>
+                    <Navbar.Brand style={{ margin: 0, padding: 0 }}>
                         <Link to="/" className={navLinkItem}>
                             Project {useTransliterate("vyaasa")}
                         </Link>

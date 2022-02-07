@@ -1,4 +1,4 @@
-Verse 1-1
+1-1
 
 naaraayan<am (naaraayan<a, acc sing) Narayana
 namaskr>tya (namas-kr>, abs) having bowed (to)
@@ -15,5 +15,5 @@ tata: (tata:, indc) thus
 jayam (jaya, acc sing) victory
 udiirayait (ud-iir, 3 sing pres act caus pot) (let one) proclaim
 
-Having thus bowed to Narayana and Nara, the best man, and the 
-goddess Sarasvati, one should proclaim victory.
+Having bowed to Narayana and Nara, the best man, 
+and the goddess Sarasvati, one should thus proclaim victory.

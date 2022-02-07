@@ -1,45 +1,126 @@
 # Project Vyasa
 
+## Table Of Contents
+
+- [Introduction](#introduction)
+  - [An Example](#an-example)
+- [Set Up](#set-up)
+- [Content Format](#content-format)
+  - [Base Form](#base-form)
+  - [Parts Of Speech](#parts-of-speech)
+- [Dictionary Format](#dictionary-format)
+- [Transliteration Methodology](#transliteration-methodology)
+
+
+## Introduction
+
+Welcome to Project Vyasa!
+
+The goal of this project is to provide a high-quality Sanskrit-English reader 
+for the Mahabharata in a modern web interface.
+
+Many excellent resources are freely available online 
+(like [wisdomlib](https://www.wisdomlib.org/hinduism/book/mahabharata-sanskrit)!)
+but I've yet to find one that has all the following properties: 
+- Word-by-word translation
+- Detailed and accurate grammatical explanation with word-level granularity
+- A minimal, easy-to-navigate, and clean web interface
+
+Having stated the goal, it is equally important to mention that it is *not* the aim
+of this project to provide anything more than a literally correct translation; 
+for a translation that considers the broader cultural, historical, and philosophical 
+context, you will need to look elsewhere!
+
+### An Example
+
+Without further ado, here's an example of what the final product looks like.
+*Note that although the screenshots here use Devanagari exclusively, the frontend*
+*is also capable of rendering IAST with the push of a button!*
+
+Verse Text:
+
+![Verse Text](./_resources/example_verse_text.png)
+
+Word by word translation:
+
+![Word-by-word Translation](./_resources/example_word_by_word.png)
+
+And finally, grammatical analysis in the form of a pop-out that appears on hover:
+
+![Grammatical Analysis Pop-out](./_resources/example_pop_out.png)
+
+
+## Set Up
+
+To set up this repository for local development, you will need to:
+
+1. [Install `npm`](https://docs.npmjs.com/downloading-and-installing-node-js-and-npm)
+
+2. Install required packages:
+  ```
+  npm i
+  ```
+
+3. Launch the web server:
+  ```
+  make launch
+  ```
+
+At this point, you should be able to navigate to http://localhost:8000/ in your 
+browser to view your local copy site.
+
+
 ## Content Format
 
-The input file structure is: `text/{book}/{chapter}.txt`.
+The content for each chapter is stored in separate text file: `content/text/{book}/{chapter}.txt`.
 
 The format of each file is:
 ```
-Verse <first verse number>-<last verse number>
+<first verse number>-<last verse number>
 
 word0 (base-form, parts of speech) literal translation
 word1 (base-form, parts of speech) literal translation
+...
 
 <Translation>
 
 word0 (base-form, parts of speech) literal translation
 word1 (base-form, parts of speech) literal translation
+...
 
 <Translation>
 
 ... (more verses)
 ```
 
-Sections should be separated by a single blank line. 
-*Importantly, there cannot be any blank lines within a section!*
+The format must conform to the following rules:
 
-Each word should appear on a separate line, in non-*sandhi*ed form.
-The `process_text.py` script will generate *sandhi*ed text based on the word-by-word input.
-**NOTE: The script is currently only implemented for the most common sandhi.**
-**That means in some cases, it will not apply sandhi - fortunately, adding new rules is easy!**
+- Sections must be separated by a single blank line. 
 
-If the word-by-word translation should be split on multiple lines, split the section
-with a line containing a single `-`. For example:
-```
-word0 (base-form, parts of speech) literal translation
--
-word1 (base-form, parts of speech) literal translation
-```
+- There must not be any blank lines within a section
 
-Any sanskrit text must use a special transliteration format that the front-end can 
-ingest and convert into either Devanagari or IAST. See the [transliteration](#transliteration)
-section for details.
+- Each set of words belonging to a single verse must be grouped into a single section, 
+  and the corresponding complete translation must be in a subsequent section.
+
+- Each word of the verse text must appear on a separate line, in non-*sandhi*ed form
+  and followed by its root, parts of speech, and a literal translation.
+
+  The [`process_text.py`](./scripts/process_text.py) script can generate verse text with 
+  *sandhi* applied based on the word-by-word input. As of this writing, the script only 
+  handles the most common cases. Fortunately, adding new rules is easy! 
+  Thus, if *sandhi* is not properly applied, the script will need to be updated.
+
+- If the verse text needs to be split on more than one line, use a line containing a 
+  single dash, `-`, to mark where the line break must be. For example:
+  ```
+  word0 (base-form, parts of speech) literal translation
+  -
+  word1 (base-form, parts of speech) literal translation
+  ```
+
+- Any Sanskrit text must use a special transliteration format that the front-end can 
+  ingest and convert into either Devanagari or IAST. 
+  See the [transliteration](#transliteration-methodology) section for details.
 
 For example, consider the following example input text, given here in IAST:
 ```
@@ -48,23 +129,32 @@ nara gacchati
 
 The corresponding content file would look like this:
 ```
-nara (nara, nom m sing) man
-gacchati (gam, 3 sing pres)
+nara (nara, nom sing) man
+gacchati (gam, 3 sing pres act ind) goes
 
-The man goes
+The man goes.
 ```
+*Note: although it looks similar in this case, this transliteration format is* not *IAST!*
+
+More detail on the fields in parentheses is provided in the following sections.
+
 ### Base Form
 
-The `"base-form"` field should be either the verbal root or noun stem, depending on the word.
-Some common syntax:
+The `"base-form"` field should be either the verbal root or noun stem (depending on the word) 
+written in our [special transliteration format](#transliteration-methodology).
+Some common syntax rules to consider:
 
-- Compounds should be separated by plus signs, i.e. `+`. For example: `bahu+vriihi`.
-- Pre-verbs should be separated from their roots by dashes, i.e. `-`. For example: `ava-gam`.
+- Compounds must be split using plus signs, i.e. `+`. For example: `bahu+vriihi`.
+  This allows the frontend to split them up and provide definitions for each consituent word
+  in a pop-out bubble.
+
+- Pre-verbs must be separated from their roots by dashes, i.e. `-`. For example: `ava-gam`.
 
 ### Parts Of Speech
 
-The `"parts of speech"` field is order invariant and should be provided in abbreviated form. 
-The abbreviations are as follows:
+The `"parts of speech"` field is order invariant and must be provided in 
+abbreviated form as a space-separated list. 
+Valid entries are as follows:
 
 - `nom/voc/acc/inst/dat/abl/gen/loc`: Nominative/Vocative/Accusative/Instrumental/Dative/Ablative/Genitive/Locative case
 - `1/2/3`: 1st/2nd/3rd person
@@ -76,12 +166,13 @@ The abbreviations are as follows:
 - `abs`: Absolutive
 - `indc`: Indeclinable
 
-## Dictionary
+
+## Dictionary Format
 
 This project also includes a miniature (as of this writing) dictionary. 
 The dictionary format is:
 ```
-word (optional gender) [meanings...]
+word (optional gender/function) [meanings...]
 ... (more words)
 ```
 
@@ -89,12 +180,17 @@ For example:
 ```
 namas-kr> to bow, to pay homage
 nara (m) man
+uttama (adj) highest, best
 ```
 
-## Transliteration 
+*Note: In the real codebase, unlike in this example, words are split*
+*into separate files based on their first letter.*
+
+
+## Transliteration Methodology
 
 The goal of the special transliteration format used here is to be friendly 
-to English keyboards and quick to type. Some of the general principles are:
+to English keyboards and quick to type. The general principles are:
 
 - Double a vowel to lengthen it: `i` -> `इ/i`, `ii` -> `ई/ī`.
 - Compound vowels are preserved in their original form: `ai` -> `ए/e`.
@@ -108,3 +204,6 @@ to English keyboards and quick to type. Some of the general principles are:
   - `.` which maps to anusvara, i.e. `ं/ṃ`
   - `'` which maps to avagraha, i.e. `ऽ/'`
   - `:` which maps to visarga, i.e. `ः/ḥ`
+
+The specifics of the format can be found under 
+[`generated/raw/transliteration_rulesets`](./generated/raw/transliteration_rulesets)

@@ -133,7 +133,7 @@ def build_expected(verses_text, translations, word_lists):
         # Basic
         (
             """
-            Verse 1-1
+            1-1
 
             ca (ca, indc) and
             aiva (aiva, indc) just so
@@ -158,7 +158,7 @@ def build_expected(verses_text, translations, word_lists):
         # Multi-line - no sandhi should happen
         (
             """
-            Verse 1-1
+            1-1
 
             ca (ca, indc) and
             -

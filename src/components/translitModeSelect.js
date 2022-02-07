@@ -23,12 +23,12 @@ export const TransliterationModeSelect = () => {
             {({ mode, setMode }) =>
                 <ToggleButtonGroup type="radio" name="options" defaultValue={mode} onChange={(val) => { setMode(val) }} vertical={false}>
                     <ToggleButton id="translit-select-dev" value={0}>
-                        <p style={{ fontSize: "20px" }}>
+                        <p style={{ fontSize: (mode === 1 ? "16px" : "18px") }}>
                             {devanagari}
                         </p>
                     </ToggleButton>
                     <ToggleButton id="translit-select-iast" value={1}>
-                        <p style={{ fontSize: "20px" }}>
+                        <p style={{ fontSize: "16px" }}>
                             IAST
                         </p>
                     </ToggleButton>
