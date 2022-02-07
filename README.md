@@ -206,4 +206,4 @@ to English keyboards and quick to type. The general principles are:
   - `:` which maps to visarga, i.e. `ः/ḥ`
 
 The specifics of the format can be found under 
-[`generated/raw/transliteration_rulesets`](./generated/raw/transliteration_rulesets)
+[`content/raw/transliteration_rulesets/`](./content/raw/transliteration_rulesets/)
