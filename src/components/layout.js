@@ -47,7 +47,7 @@ const Layout = ({ location, pageTitle, children }) => {
             <Navbar bg="dark" variant="dark" fixed="top" expand={false}>
                 <Container style={{ justifyContent: "space-around" }}>
                     <Row style={{ display: "flex" }}>
-                        <Link to="/" className={brandLink} style={{ width: "fit-content" }}>
+                        <Link to="/" className={brandLink} style={{ width: "fit-content", minWidth: "175px" }}>
                             Project {useTransliterate("vyaasa")}
                         </Link>
                         <Link to={toUrl("/about")} style={{ width: "fit-content", margin: "auto" }}>
