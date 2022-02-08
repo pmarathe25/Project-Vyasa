@@ -1,10 +1,7 @@
-import { graphql, Link } from 'gatsby'
-import * as React from 'react'
-import { ListGroup } from 'react-bootstrap'
-import Layout from '../components/layout'
-import { useTransliterate } from '../components/transliterationHook'
-import toUrl from '../util/util'
+import { Link } from 'gatsby'
 import { StaticImage } from 'gatsby-plugin-image'
+import * as React from 'react'
+import Layout from '../components/layout'
 
 const About = ({ location }) => {
     const headerStyle = {
