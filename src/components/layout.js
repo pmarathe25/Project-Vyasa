@@ -50,8 +50,8 @@ const Layout = ({ location, pageTitle, children }) => {
                         <Link to="/" className={brandLink} style={{ width: "fit-content" }}>
                             Project {useTransliterate("vyaasa")}
                         </Link>
-                        <Link to={toUrl("/how_to_use")} style={{ width: "fit-content", margin: "auto" }}>
-                            How To Use
+                        <Link to={toUrl("/about")} style={{ width: "fit-content", margin: "auto" }}>
+                            About
                         </Link>
                     </Row>
                     <TransliterationModeSelect />

@@ -5,6 +5,8 @@ module.exports = {
   plugins: [
     `gatsby-transformer-json`,
     `gatsby-plugin-anchor-links`,
+    `gatsby-plugin-image`,
+    `gatsby-plugin-sharp`,
     {
       resolve: "gatsby-source-filesystem",
       options: {

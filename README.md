@@ -39,15 +39,15 @@ Without further ado, here's an example of what the final product looks like.
 
 Verse Text:
 
-![Verse Text](./_resources/example_verse_text.png)
+![Verse Text](./src/images/example_verse_text.png)
 
 Word by word breakdown and translation:
 
-![Word-by-word Breakdown And Translation](./_resources/example_word_by_word.png)
+![Word-by-word Breakdown And Translation](./src/images/example_word_by_word.png)
 
 And finally, grammatical analysis in the form of a pop-out that appears on hover:
 
-![Grammatical Analysis Pop-out](./_resources/example_pop_out.png)
+![Grammatical Analysis Pop-out](./src/images/example_pop_out.png)
 
 
 ## Set Up
@@ -61,7 +61,12 @@ To set up this repository for local development, you will need to:
   npm i
   ```
 
-3. Launch the web server:
+3. Install the Gatsby CLI client:
+  ```
+  npm i -g gatsby-cli
+  ```
+
+4. Launch the web server:
   ```
   make launch
   ```
