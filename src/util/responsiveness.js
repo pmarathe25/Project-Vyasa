@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 
 function getWindowWidth() {
-    return (window.innerWidth);
+    return (window ? window.innerWidth : 0);
 }
 
 // Whether we are likely on a mobile device
@@ -13,6 +13,7 @@ export default function useIsMobile() {
             setWidth(getWindowWidth());
         }
 
+        handleResize();
         window.addEventListener('resize', handleResize);
         return () => window.removeEventListener('resize', handleResize);
     }, []);
