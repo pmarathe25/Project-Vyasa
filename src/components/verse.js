@@ -9,7 +9,7 @@ const Translation = ({ translation }) => {
     const [open, setOpen] = React.useState(false);
 
     return (
-        <div>
+        <>
             <div style={{ width: "max-content", margin: "auto", padding: 0 }}>
                 <Button size="sm"
                     onClick={() => { setOpen(!open) }}
@@ -25,7 +25,7 @@ const Translation = ({ translation }) => {
                     {translation}
                 </p>
             </Collapse>
-        </div>
+        </>
     )
 }
 
@@ -38,7 +38,7 @@ const RootMeanings = ({ root }) => {
     }
 
     return (
-        <div>
+        <>
             {
                 translitRoots.map((rootPar, index) =>
                     <div style={{ display: "flex" }} key={index}>
@@ -51,7 +51,7 @@ const RootMeanings = ({ root }) => {
                     </div>
                 )
             }
-        </div>
+        </>
     )
 }
 

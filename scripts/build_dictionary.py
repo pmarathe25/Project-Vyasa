@@ -31,10 +31,6 @@ def main():
             nonlocal out_dict
             out_dict[word.strip()] = meanings.strip()
 
-        def handle_other(line):
-            word, _, meanings = line.partition(" ")
-            add(word, meanings)
-
         def handle_verb(line):
             word, _, meanings = line.partition(" ")
             word = word.replace("!", "√")
@@ -50,14 +46,20 @@ def main():
             add(word, "({:}) {:}".format(detail, meanings))
 
         with open(path, "r") as f:
-            for line in filter(lambda x: x, f.readlines()):
+            for line_num, line in enumerate(f.readlines()):
+                if not line:
+                    continue
                 tokens = [x for x in line.split(" ") if x]
                 if "!" in tokens[0]:
                     handle_verb(line)
                 elif "(" in tokens[1]:
                     handle_nominal(line)
                 else:
-                    handle_other(line)
+                    raise RuntimeError(
+                        "Error on line: {:} in: {:}. Did you forget to mark a verb root or include "
+                        "additional information about a noun/adj/indeclinable?"
+                        "\nNote: Line was: {:}".format(line_num, path, line)
+                    )
 
     print("Writing dictionary to: {:}".format(args.output))
     json.dump(out_dict, open(args.output, "w"))
