@@ -135,7 +135,7 @@ nara gacchati
 The corresponding content file would look like this:
 ```
 nara (nara, nom sing) man
-gacchati (gam, 3 sing pres act ind) goes
+gacchati (!gam, 3 sing pres act ind) goes
 
 The man goes.
 ```
