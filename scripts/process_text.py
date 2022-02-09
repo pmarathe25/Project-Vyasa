@@ -185,17 +185,19 @@ PARTS_OF_SPEECH_MAPPING = OrderedDict(
         ("des", "desiderative"),
         ("abs", "absolutive"),
         ("indc", "indeclinable"),
+        ("part", "participle"),
     ]
 )
 
 
-def process_parts_of_speech(parts_of_speech):
+def process_parts_of_speech(parts_of_speech, verse_num, line_num):
     new_parts = []
-    for part in parts_of_speech.strip().split(" "):
+    for part in filter(lambda x: x, parts_of_speech.strip().split(" ")):
         if part not in PARTS_OF_SPEECH_MAPPING:
             raise RuntimeError(
-                "Unknown part of speech: {:}\nNote: Valid parts of speech are: {:}".format(
-                    part, list(PARTS_OF_SPEECH_MAPPING.keys())
+                "In verse: {:}, line: {:}: Unknown part of speech: {:}"
+                "\nNote: Valid parts of speech are: {:}".format(
+                    verse_num, line_num, part, list(PARTS_OF_SPEECH_MAPPING.keys())
                 )
             )
         new_parts.append(PARTS_OF_SPEECH_MAPPING[part])
@@ -208,12 +210,20 @@ def get_mtime(path):
 
 def chunks(inp_iter, chunk_size):
     for idx in range(0, len(inp_iter), chunk_size):
-        yield inp_iter[idx:chunk_size]
+        yield inp_iter[idx : idx + chunk_size]
 
 
-def parse_word_grammar(line):
+def parse_word_grammar(line, verse_num, line_num):
     def strip(lst):
-        return list(filter(lambda x: x, map(lambda x: x.strip(), lst)))
+        return list(map(lambda x: x.strip(), lst))
+
+    def check(elem, elem_name):
+        if not elem:
+            raise RuntimeError(
+                "In verse: {:}, line: {:}, expected a '{:}' field but none was provided".format(
+                    verse_num, line_num, elem_name
+                )
+            )
 
     # Note that we could use regex here, but manually parsing it is easy enough
     # and probably faster
@@ -222,12 +232,15 @@ def parse_word_grammar(line):
     root, _, rest = rest.partition(",")
     parts_of_speech, _, meaning = rest.partition(")")
 
-    # Insert sqrt sign for verbal roots
-    if "-" in root:
-        last_dash = root.rfind("-") + 1
-        root = root[:last_dash] + "√" + root[last_dash:]
+    check(word, "word")
+    check(root, "root")
+    check(meaning, "meaning")
 
-    return strip([word, meaning, root, process_parts_of_speech(parts_of_speech)])
+    # Insert sqrt sign for verbal roots
+    if "!" in root:
+        root = root.replace("!", "√")
+
+    return strip([word, meaning, root, process_parts_of_speech(parts_of_speech, verse_num, line_num)])
 
 
 def extract_title(str):
@@ -253,7 +266,12 @@ def main():
     args, _ = parser.parse_known_args()
 
     # Early exit when nothing has been modified.
-    if os.path.exists(args.output) and get_mtime(args.input_file) <= get_mtime(args.output):
+    if (
+        os.path.exists(args.output)
+        and get_mtime(args.input_file) <= get_mtime(args.output)
+        # Skip nothing if the script has changed
+        and get_mtime(__file__) < get_mtime(args.output)
+    ):
         return
 
     translit_ruleset = json.load(open(args.transliteration_ruleset))
@@ -281,8 +299,8 @@ def main():
         for section in word_by_word.split("\n-\n"):
             word_by_word_sections.append([])
             to_sandhi_word_lines.append([])
-            for line in section.split("\n"):
-                word, meaning, root, parts_of_speech = parse_word_grammar(line)
+            for line_num, line in enumerate(section.split("\n")):
+                word, meaning, root, parts_of_speech = parse_word_grammar(line, index + 1, line_num + 1)
                 to_sandhi_word_lines[-1].append(word)
                 word_by_word_sections[-1].append([word, meaning, root, parts_of_speech])
 

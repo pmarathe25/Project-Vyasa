@@ -1,19 +1,44 @@
-1-1
+1-2
 
 naaraayan<am (naaraayan<a, acc sing) Narayana
-namaskr>tya (namas-kr>, abs) having bowed (to)
+namaskr>tya (namas-!kr>, abs) having bowed (to)
 naram (nara, acc sing) Nara (lit. "man")
-ca (ca, indc) and
-aiva (aiva, indc) just so
+ca (ca,) and
+aiva (aiva,) just so
 narauttamam (nara+uttama, acc sing) the best man
 -
 daiviim (daivii, acc sing) the goddess
 sarasvatiim (sarasvatii, acc sing) Sarasvati
-ca (ca, indc) and
-aiva (aiva, indc) just so
-tata: (tata:, indc) thus
+ca (ca,) and
+aiva (aiva,) just so
+tata: (tata:,) thus
 jayam (jaya, acc sing) victory
-udiirayait (ud-iir, 3 sing pres act caus pot) (let one) proclaim
+udiirayait (ud-!iir, 3 sing pres act caus pot) (let one) proclaim
 
 Having bowed to Narayana and Nara, the best man, 
 and the goddess Sarasvati, one should thus proclaim victory.
+
+laumahars<an<aputra: (laumahars<an<a+putra, nom sing) Lomaharshana's son
+ugras~ravaa: (ugras<ravas, nom sing) Ugrasravas
+saauti: (saauti, nom sing) Sauti
+paauraan<ika: (paauraan<ika, nom sing) well-versed in the Puranas
+naaimis<aaran<yai (naaimis<a+aaran<ya, loc sing) in the Naimisharanya
+-
+s~aaunakasya (s~aaunaka, gen sing) of Shaunaka
+kulapatai: (kula+pati, gen sing) of the head of the family
+dvaadas~avaars<ikai (dvaa+das~a+vaars<ika, loc sing) in the 12-yearly
+satrai (satra, loc sing) in the sacrifice
+-
+sukhaasiinaan (sukha+aas, acc pl pres mid part) the sitting blissfully
+abhyagacchat (abhi-!gam, 3 sing imp act ind) he approached
+brahmars<iin (brahma+r>s<i, acc pl) the Brahman sages
+sa.s~itavrataan (sa.s~ita+vrata, acc pl) rigid-vowed (firm in their vows)
+-
+vinayaavanata: (vinaya+ava-!nam, nom sing perf pass part) having bowed humbly
+bhuutvaa (!bhu, abs) having been
+kadaacit (kadaa+cit,) once
+suutanandana: (suuta+nandana, nom sing) son of Suta 
+
+Once, the son of Lomaharshana, Ugrasravas, (also known as) Sauti, (also as) the son
+of Suta, well-versed in the Puranas, humbly bowing, approached the blissfully sitting,
+rigid-vowed Brahman sages in the Naimisharanya at the 12-years sacrifice of Kulapati Shaunaka. 

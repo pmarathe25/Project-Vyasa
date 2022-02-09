@@ -39,15 +39,15 @@ Without further ado, here's an example of what the final product looks like.
 
 Verse Text:
 
-![Verse Text](./_resources/example_verse_text.png)
+![Verse Text](./src/images/example_verse_text.png)
 
 Word by word breakdown and translation:
 
-![Word-by-word Breakdown And Translation](./_resources/example_word_by_word.png)
+![Word-by-word Breakdown And Translation](./src/images/example_word_by_word.png)
 
 And finally, grammatical analysis in the form of a pop-out that appears on hover:
 
-![Grammatical Analysis Pop-out](./_resources/example_pop_out.png)
+![Grammatical Analysis Pop-out](./src/images/example_pop_out.png)
 
 
 ## Set Up
@@ -61,7 +61,12 @@ To set up this repository for local development, you will need to:
   npm i
   ```
 
-3. Launch the web server:
+3. Install the Gatsby CLI client:
+  ```
+  npm i -g gatsby-cli
+  ```
+
+4. Launch the web server:
   ```
   make launch
   ```
@@ -148,7 +153,9 @@ Some common syntax rules to consider:
   This allows the frontend to split them up and provide definitions for each consituent word
   in a pop-out bubble.
 
-- Pre-verbs must be separated from their roots by dashes, i.e. `-`. For example: `ava-gam`.
+- Verbal roots should be prefixed with an exclamation mark, i.e. `!`. For example: `!gam`.
+
+- Pre-verbs must be separated from their roots by dashes, i.e. `-`. For example: `ava-!gam`.
 
 ### Parts Of Speech
 
@@ -164,7 +171,7 @@ Valid entries are as follows:
 - `caus/des`: Causative/Desiderative
 - `ind/pot`: Indicative/Potential mood
 - `abs`: Absolutive
-- `indc`: Indeclinable
+- `part`: Participle
 
 
 ## Dictionary Format
@@ -172,19 +179,23 @@ Valid entries are as follows:
 This project also includes a miniature (as of this writing) dictionary. 
 The dictionary format is:
 ```
-word (optional gender/function) [meanings...]
+word (detail) [meanings...]
 ... (more words)
 ```
 
-For example:
-```
-namas-kr> to bow, to pay homage
-nara (m) man
-uttama (adj) highest, best
-```
+The `detail` field is only required for the following types:
+- Adjectives. For example: `uttama (adj) highest, best`
+- Indeclinables. For example: `ca (indc) and`
+- Nouns, to specify gender. For example: `nara (m) man`
 
-*Note: In the real codebase, unlike in this example, words are split*
-*into separate files based on their first letter.*
+Additionally, as in the main content text, verbal roots should be prefixed 
+with an exclamation mark, i.e. `!`.
+
+An example file may look like:
+```
+namas-!kr> to bow, to pay homage
+nara (m) man
+```
 
 
 ## Transliteration Methodology
