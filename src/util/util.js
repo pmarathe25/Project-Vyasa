@@ -14,9 +14,4 @@ export function titleCaseFromUrl(str) {
     return titleCase.join(" ");
 }
 
-// Whether we are likely running on a mobile device.
-export function isMobile() {
-    return (window.innerWidth <= 768);
-}
-
 export default toUrl;

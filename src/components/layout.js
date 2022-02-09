@@ -8,7 +8,7 @@ import {
 import { SideBar } from './sidebar'
 import { useTransliterate } from './transliterationHook'
 import { TransliterationModeSelect } from './translitModeSelect'
-import { isMobile } from '../util/util'
+import useIsMobile from '../util/responsiveness'
 
 const Layout = ({ location, pageTitle, children }) => {
     const data = useStaticQuery(graphql`
@@ -41,6 +41,7 @@ const Layout = ({ location, pageTitle, children }) => {
     }
 
     const [sideBarExpanded, setSideBarExpanded] = React.useState(false);
+    const isMobile = useIsMobile()
 
     return (
         <div className={container}>
@@ -85,14 +86,14 @@ const Layout = ({ location, pageTitle, children }) => {
             </Navbar>
             <main className={content}>
                 {
-                    (isMobile()) ?
+                    (isMobile) ?
                         <></>
                         :
                         <Breadcrumb>
                             {breadcrumbs}
                         </Breadcrumb>
                 }
-                <div style={{ paddingBottom: (isMobile() ? "30px" : "5px") }} />
+                <div style={{ paddingBottom: (isMobile ? "30px" : "5px") }} />
                 {children}
             </main>
         </div >
