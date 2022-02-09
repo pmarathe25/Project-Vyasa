@@ -1,6 +1,10 @@
 import { useState, useEffect } from 'react';
 
 function getWindowWidth() {
+    if (typeof window === "undefined") {
+        return 0;
+    }
+
     return (window.innerWidth);
 }
 
@@ -13,6 +17,7 @@ export default function useIsMobile() {
             setWidth(getWindowWidth());
         }
 
+        handleResize();
         window.addEventListener('resize', handleResize);
         return () => window.removeEventListener('resize', handleResize);
     }, []);
