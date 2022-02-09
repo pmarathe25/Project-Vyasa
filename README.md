@@ -186,7 +186,9 @@ word (detail) [meanings...]
 The `detail` field is only required for the following types:
 - Adjectives. For example: `uttama (adj) highest, best`
 - Indeclinables. For example: `ca (indc) and`
-- Nouns, to specify gender. For example: `nara (m) man`
+- Nouns, to specify gender. For example: `nara (m) man`.
+  Multiple genders may be specified, in which case they should 
+  be concatenated, e.g. `mn`. 
 
 Additionally, as in the main content text, verbal roots should be prefixed 
 with an exclamation mark, i.e. `!`.

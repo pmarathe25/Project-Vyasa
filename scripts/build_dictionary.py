@@ -41,8 +41,10 @@ def main():
             detail, _, meanings = rest.partition(")")
             if detail == "indc":
                 detail = "indeclinable"
-            else:
+            elif detail == "adj":
                 detail += "."
+            else:
+                detail = "./".join(detail) + "."
             add(word, "({:}) {:}".format(detail, meanings))
 
         with open(path, "r") as f:
