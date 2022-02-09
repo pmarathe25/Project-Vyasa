@@ -1,7 +1,7 @@
 import * as React from 'react';
-import { Button, Col, Collapse, OverlayTrigger, Popover, Row, Tab, Tabs } from 'react-bootstrap';
+import { Button, Col, Collapse, Container, OverlayTrigger, Popover, Row, Tab, Tabs } from 'react-bootstrap';
 import { useTransliterate } from './transliterationHook';
-import { verseText, translationText, verseTextTab } from "./verse.module.css";
+import { translationText, verseText, verseTextTab } from "./verse.module.css";
 
 const allWordsDict = require("../../content/generated/dictionary/all_words.json");
 
@@ -42,11 +42,11 @@ const RootMeanings = ({ root }) => {
             {
                 translitRoots.map((rootPar, index) =>
                     <div style={{ display: "flex" }} key={index}>
-                        <p style={{ fontSize: "20px", paddingRight: "10px" }}>
+                        <p style={{ fontSize: "20px", paddingRight: "5px" }}>
                             {rootPar}
                         </p>
                         <p style={{ top: "50%", marginTop: "auto", marginBottom: "auto" }}>
-                            {rootDefs[index] ? " " + rootDefs[index] : ""}
+                            {rootDefs[index] ? rootDefs[index] : ""}
                         </p>
                     </div>
                 )
@@ -59,7 +59,7 @@ const WordAndDefinition = ({ word, definition, root, parts_of_speech }) => {
     word = useTransliterate(word);
 
     return (
-        <Col>
+        <Col sm="auto">
             <OverlayTrigger
                 placement="top"
                 overlay={
@@ -100,7 +100,7 @@ const VerseText = ({ num, text, wordByWord }) => {
                 </p>
             </Tab>
             <Tab eventKey="word-by-word" title="Word-by-word Translation" tabClassName={verseTextTab}>
-                <div className={verseText} >
+                <Container className={verseText} >
                     {wordByWord.map((line, index) =>
                         <Row key={index} style={{
                             width: "fit-content", margin: "auto"
@@ -112,7 +112,7 @@ const VerseText = ({ num, text, wordByWord }) => {
                             }
                         </Row>
                     )}
-                </div>
+                </Container>
             </Tab>
         </Tabs >
     )

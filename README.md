@@ -153,7 +153,9 @@ Some common syntax rules to consider:
   This allows the frontend to split them up and provide definitions for each consituent word
   in a pop-out bubble.
 
-- Pre-verbs must be separated from their roots by dashes, i.e. `-`. For example: `ava-gam`.
+- Verbal roots should be prefixed with an exclamation mark, i.e. `!`. For example: `!gam`.
+
+- Pre-verbs must be separated from their roots by dashes, i.e. `-`. For example: `ava-!gam`.
 
 ### Parts Of Speech
 
@@ -169,6 +171,7 @@ Valid entries are as follows:
 - `caus/des`: Causative/Desiderative
 - `ind/pot`: Indicative/Potential mood
 - `abs`: Absolutive
+- `part`: Participle
 - `indc`: Indeclinable
 
 
