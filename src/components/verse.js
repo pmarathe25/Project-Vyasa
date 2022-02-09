@@ -59,7 +59,7 @@ const WordAndDefinition = ({ word, definition, root, parts_of_speech }) => {
     word = useTransliterate(word);
 
     return (
-        <Col sm="auto">
+        <Col>
             <OverlayTrigger
                 placement="top"
                 overlay={
@@ -102,9 +102,13 @@ const VerseText = ({ num, text, wordByWord }) => {
             <Tab eventKey="word-by-word" title="Word-by-word Translation" tabClassName={verseTextTab}>
                 <Container className={verseText} >
                     {wordByWord.map((line, index) =>
-                        <Row key={index} style={{
-                            width: "fit-content", margin: "auto"
-                        }}>
+                        <Row
+                            key={index}
+                            style={{
+                                width: "fit-content", margin: "auto"
+                            }}
+                            lg="auto"
+                        >
                             {
                                 line.map(([word, definition, root, parts_of_speech], wordIndex) =>
                                     <WordAndDefinition key={word + wordIndex} word={word} definition={definition} root={root} parts_of_speech={parts_of_speech} />

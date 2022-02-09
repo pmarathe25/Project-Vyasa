@@ -35,6 +35,10 @@ def transliteration_ruleset():
             "tatau gam",
         ),
         (
+            ["tata:", "na"],
+            "tatau na",
+        ),
+        (
             ["pati:", "gam"],
             "patirgam",
         ),
