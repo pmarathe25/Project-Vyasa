@@ -94,7 +94,7 @@ def build_sandhied_text(words, translit_ruleset):
     VOICED_CONSONANTS = keys_of("voiced-consonants", "voiced-retroflex-consonants")
     CONSONANTS = UNVOICED_CONSONANTS + VOICED_CONSONANTS + keys_of("nasal-consonants", "sibilants")
     SEMI_VOWELS = keys_of("semi-vowels")
-    ALL_VOICED = VOICED_CONSONANTS + VOWELS + SEMI_VOWELS
+    ALL_VOICED = VOICED_CONSONANTS + VOWELS + SEMI_VOWELS +  keys_of("nasal-consonants")
 
     # Format: (first_word_condition, second_word_condition, change strategy)
     # Order matters because applying one sandhi may invalidate another!
