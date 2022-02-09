@@ -172,7 +172,6 @@ Valid entries are as follows:
 - `ind/pot`: Indicative/Potential mood
 - `abs`: Absolutive
 - `part`: Participle
-- `indc`: Indeclinable
 
 
 ## Dictionary Format
@@ -180,19 +179,23 @@ Valid entries are as follows:
 This project also includes a miniature (as of this writing) dictionary. 
 The dictionary format is:
 ```
-word (optional gender/function) [meanings...]
+word (detail) [meanings...]
 ... (more words)
 ```
 
-For example:
-```
-namas-kr> to bow, to pay homage
-nara (m) man
-uttama (adj) highest, best
-```
+The `detail` field is only required for the following types:
+- Adjectives. For example: `uttama (adj) highest, best`
+- Indeclinables. For example: `ca (indc) and`
+- Nouns, to specify gender. For example: `nara (m) man`
 
-*Note: In the real codebase, unlike in this example, words are split*
-*into separate files based on their first letter.*
+Additionally, as in the main content text, verbal roots should be prefixed 
+with an exclamation mark, i.e. `!`.
+
+An example file may look like:
+```
+namas-!kr> to bow, to pay homage
+nara (m) man
+```
 
 
 ## Transliteration Methodology

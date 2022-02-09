@@ -43,7 +43,11 @@ def main():
         def handle_nominal(line):
             word, _, rest = line.partition("(")
             detail, _, meanings = rest.partition(")")
-            add(word, "({:}.) {:}".format(detail, meanings))
+            if detail == "indc":
+                detail = "indeclinable"
+            else:
+                detail += "."
+            add(word, "({:}) {:}".format(detail, meanings))
 
         with open(path, "r") as f:
             for line in filter(lambda x: x, f.readlines()):

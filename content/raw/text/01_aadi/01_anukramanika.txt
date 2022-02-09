@@ -3,15 +3,15 @@
 naaraayan<am (naaraayan<a, acc sing) Narayana
 namaskr>tya (namas-!kr>, abs) having bowed (to)
 naram (nara, acc sing) Nara (lit. "man")
-ca (ca, indc) and
-aiva (aiva, indc) just so
+ca (ca,) and
+aiva (aiva,) just so
 narauttamam (nara+uttama, acc sing) the best man
 -
 daiviim (daivii, acc sing) the goddess
 sarasvatiim (sarasvatii, acc sing) Sarasvati
-ca (ca, indc) and
-aiva (aiva, indc) just so
-tata: (tata:, indc) thus
+ca (ca,) and
+aiva (aiva,) just so
+tata: (tata:,) thus
 jayam (jaya, acc sing) victory
 udiirayait (ud-!iir, 3 sing pres act caus pot) (let one) proclaim
 
@@ -29,7 +29,7 @@ kulapatai: (kula+pati, gen sing) of the head of the family
 dvaadas~avaars<ikai (dvaa+das~a+vaars<ika, loc sing) in the 12-yearly
 satrai (satra, loc sing) in the sacrifice
 -
-sukhaasiinan (sukha+aas, acc pl pres mid part) the sitting blissfully
+sukhaasiinaan (sukha+aas, acc pl pres mid part) the sitting blissfully
 abhyagacchat (abhi-!gam, 3 sing imp act ind) he approached
 brahmars<iin (brahma+r>s<i, acc pl) the Brahman sages
 sa.s~itavrataan (sa.s~ita+vrata, acc pl) rigid-vowed (firm in their vows)

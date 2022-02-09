@@ -192,7 +192,7 @@ PARTS_OF_SPEECH_MAPPING = OrderedDict(
 
 def process_parts_of_speech(parts_of_speech, verse_num, line_num):
     new_parts = []
-    for part in parts_of_speech.strip().split(" "):
+    for part in filter(lambda x: x, parts_of_speech.strip().split(" ")):
         if part not in PARTS_OF_SPEECH_MAPPING:
             raise RuntimeError(
                 "In verse: {:}, line: {:}: Unknown part of speech: {:}"
@@ -215,7 +215,7 @@ def chunks(inp_iter, chunk_size):
 
 def parse_word_grammar(line, verse_num, line_num):
     def strip(lst):
-        return list(filter(lambda x: x, map(lambda x: x.strip(), lst)))
+        return list(map(lambda x: x.strip(), lst))
 
     def check(elem, elem_name):
         if not elem:
@@ -234,7 +234,6 @@ def parse_word_grammar(line, verse_num, line_num):
 
     check(word, "word")
     check(root, "root")
-    check(parts_of_speech, "parts of speech")
     check(meaning, "meaning")
 
     # Insert sqrt sign for verbal roots
