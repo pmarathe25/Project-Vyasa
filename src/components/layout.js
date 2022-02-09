@@ -8,6 +8,7 @@ import {
 import { SideBar } from './sidebar'
 import { useTransliterate } from './transliterationHook'
 import { TransliterationModeSelect } from './translitModeSelect'
+import { isMobile } from '../util/util'
 
 const Layout = ({ location, pageTitle, children }) => {
     const data = useStaticQuery(graphql`
@@ -83,9 +84,15 @@ const Layout = ({ location, pageTitle, children }) => {
                 </Container>
             </Navbar>
             <main className={content}>
-                <Breadcrumb>
-                    {breadcrumbs}
-                </Breadcrumb>
+                {
+                    (isMobile()) ?
+                        <></>
+                        :
+                        <Breadcrumb>
+                            {breadcrumbs}
+                        </Breadcrumb>
+                }
+                <div style={{ paddingBottom: (isMobile() ? "30px" : "5px") }} />
                 {children}
             </main>
         </div >
