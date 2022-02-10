@@ -25,33 +25,45 @@
             "au": "ओ",
             "aau": "औ"
         },
-        "unvoiced-consonants": {
+        "unvoiced-velar-consonants": {
             "k": "क्",
-            "kh": "ख्",
+            "kh": "ख्"
+        },
+        "unvoiced-palatal-consonants": {
             "c": "च्",
-            "ch": "छ्",
-            "t": "त्",
-            "th": "थ्",
-            "p": "प्",
-            "ph": "फ्"
+            "ch": "छ्"
         },
         "unvoiced-retroflex-consonants": {
             "t<": "ट्",
             "th<": "ठ्"
         },
-        "voiced-consonants": {
+        "unvoiced-dental-consonants": {
+            "t": "त्",
+            "th": "थ्"
+        },
+        "unvoiced-bilabial-consonants": {
+            "p": "प्",
+            "ph": "फ्"
+        },
+        "voiced-velar-consonants": {
             "g": "ग्",
-            "gh": "घ्",
+            "gh": "घ्"
+        },
+        "voiced-palatal-consonants": {
             "j": "ज्",
-            "jh": "झ्",
-            "d": "द्",
-            "dh": "ध्",
-            "b": "ब्",
-            "bh": "भ्"
+            "jh": "झ्"
         },
         "voiced-retroflex-consonants": {
             "d<": "ड्",
             "dh<": "ढ्"
+        },
+        "voiced-dental-consonants": {
+            "d": "द्",
+            "dh": "ध्"
+        },
+        "voiced-bilabial-consonants": {
+            "b": "ब्",
+            "bh": "भ्"
         },
         "nasal-consonants": {
             "n^": "ङ्",

@@ -1,4 +1,4 @@
-1-2
+1-3
 
 naaraayan<am (naaraayan<a, acc sing) Narayana
 namaskr>tya (namas-!kr>, abs) having bowed (to)
@@ -42,3 +42,18 @@ suutanandana: (suuta+nandana, nom sing) son of Suta
 Once, the son of Lomaharshana, Ugrasravas, (also known as) Sauti, (also as) the son
 of Suta, well-versed in the Puranas, humbly bowing, approached the blissfully sitting,
 rigid-vowed Brahman sages in the Naimisharanya at the 12-years sacrifice of Kulapati Shaunaka. 
+
+tam (sa, acc sing) him
+aas~ramam (aas~rama, acc sing) hermitage
+anupraaptam (anu-pra-!aap, acc sing perf pass part) having reached
+naaimis<aaran<yavaasinaam (naaimis<a+aaran<ya+vaasin, gen pl) of those living in the Naimisharanya
+-
+citraa: (citra, acc pl) wonderful
+s~rautum (!s~ru, inf) to hear
+kathaa: (kathaa, acc pl) stories
+tatra (tatra,) thereupon, then
+parivavru: (pari-!vru, 3 pl perf act ind) they surrounded
+tapasvina: (tapasvin, nom pl) the ascetics
+
+Then, the ascetics surrounded him, having reached the hermitage of the 
+Naimisharanya-dwellers, to hear (his) wonderful stories.

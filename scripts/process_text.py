@@ -27,11 +27,30 @@ def build_sandhied_text(words, translit_ruleset):
             keys.extend(SEQUENCE_MAP[cat_name].keys())
         return keys
 
+    VOWELS = keys_of("vowels")
+    UNVOICED_CONSONANTS = keys_of(
+        "unvoiced-velar-consonants",
+        "unvoiced-palatal-consonants",
+        "unvoiced-retroflex-consonants",
+        "unvoiced-dental-consonants",
+        "unvoiced-bilabial-consonants",
+    )
+    VOICED_CONSONANTS = keys_of(
+        "voiced-velar-consonants",
+        "voiced-palatal-consonants",
+        "voiced-retroflex-consonants",
+        "voiced-dental-consonants",
+        "voiced-bilabial-consonants",
+    )
+    CONSONANTS = UNVOICED_CONSONANTS + VOICED_CONSONANTS + keys_of("nasal-consonants", "sibilants")
+    SEMI_VOWELS = keys_of("semi-vowels")
+    ALL_VOICED = VOICED_CONSONANTS + VOWELS + SEMI_VOWELS + keys_of("nasal-consonants")
+
     VOICED_MAKER_MAP = {
         unvoiced: voiced
         for unvoiced, voiced in zip(
-            keys_of("unvoiced-consonants", "unvoiced-retroflex-consonants"),
-            keys_of("voiced-consonants", "voiced-retroflex-consonants"),
+            UNVOICED_CONSONANTS,
+            VOICED_CONSONANTS,
         )
     }
 
@@ -89,13 +108,6 @@ def build_sandhied_text(words, translit_ruleset):
 
         return matches_impl
 
-    VOWELS = keys_of("vowels")
-    UNVOICED_CONSONANTS = keys_of("unvoiced-consonants", "unvoiced-retroflex-consonants")
-    VOICED_CONSONANTS = keys_of("voiced-consonants", "voiced-retroflex-consonants")
-    CONSONANTS = UNVOICED_CONSONANTS + VOICED_CONSONANTS + keys_of("nasal-consonants", "sibilants")
-    SEMI_VOWELS = keys_of("semi-vowels")
-    ALL_VOICED = VOICED_CONSONANTS + VOWELS + SEMI_VOWELS +  keys_of("nasal-consonants")
-
     # Format: (first_word_condition, second_word_condition, change strategy)
     # Order matters because applying one sandhi may invalidate another!
     PRE_MERGE_SANDHI = [
@@ -108,8 +120,18 @@ def build_sandhied_text(words, translit_ruleset):
         (matches(["t"]), matches(keys_of("voiced-retroflex-consonants")), compose(make_voiced, make_retroflex)),
         # Unvoiced -> Voiced
         (matches(UNVOICED_CONSONANTS), matches(ALL_VOICED), make_voiced),
-        # Visarga sandhi not including a: or aa:
+        # Visarga sandhi
         (matches([":"], but_not=["a:", "aa:"]), matches(ALL_VOICED), replace_final(":", "r")),
+        (matches([":"]), matches(keys_of("unvoiced-palatal-consonants")), replace_final(":", "s~")),
+        (matches([":"]), matches(keys_of("unvoiced-retroflex-consonants")), replace_final(":", "s<")),
+        (matches([":"]), matches(keys_of("unvoiced-dental-consonants")), replace_final(":", "s")),
+    ]
+
+    # Next we do a second pass to merge words
+    MERGE_CONDITIONS = [
+        (matches(VOWELS), matches(VOWELS)),
+        (matches(CONSONANTS), matches(VOWELS)),
+        (matches(CONSONANTS + SEMI_VOWELS), matches(CONSONANTS + SEMI_VOWELS)),
     ]
 
     POST_MERGE_SANDHI = [
@@ -131,21 +153,16 @@ def build_sandhied_text(words, translit_ruleset):
         return words
 
     def apply_merge(words):
-        # Next we do a second pass to merge words
-        MERGE_CONDITIONS = [
-            (matches(VOWELS), matches(VOWELS)),
-            (matches(CONSONANTS), matches(VOWELS)),
-            (matches(CONSONANTS + SEMI_VOWELS), matches(CONSONANTS + SEMI_VOWELS)),
-        ]
-        merged = []
+        merged = [words.pop(0)]
         index = 0
-        while index < len(words):
-            merged.append(words[index])
+        while words:
             for trailing_cond, leading_cond in MERGE_CONDITIONS:
-                if trailing_cond(words[index], mode="ends") and leading_cond(words[index + 1], mode="starts"):
-                    merged[-1] += words.pop(index + 1)
-                    continue
-            index += 1
+                if trailing_cond(merged[index], mode="ends") and leading_cond(words[0], mode="starts"):
+                    merged[-1] += words.pop(0)
+                    break
+            else:
+                merged.append(words.pop(0))
+                index += 1
         return merged
 
     words = apply_sandhi(words, PRE_MERGE_SANDHI)
@@ -186,6 +203,7 @@ PARTS_OF_SPEECH_MAPPING = OrderedDict(
         ("abs", "absolutive"),
         ("indc", "indeclinable"),
         ("part", "participle"),
+        ("inf", "Infinitive"),
     ]
 )
 
@@ -213,7 +231,7 @@ def chunks(inp_iter, chunk_size):
         yield inp_iter[idx : idx + chunk_size]
 
 
-def parse_word_grammar(line, verse_num, line_num):
+def parse_word_grammar(line, verse_num, line_num, dictionary):
     def strip(lst):
         return list(map(lambda x: x.strip(), lst))
 
@@ -229,6 +247,14 @@ def parse_word_grammar(line, verse_num, line_num):
     # and probably faster
     rest = line
     word, _, rest = rest.partition("(")
+
+    if "," not in rest:
+        raise RuntimeError(
+            "In verse: {:}, line: {:}, expected a comma separating the root from parts of speech!".format(
+                verse_num, line_num
+            )
+        )
+
     root, _, rest = rest.partition(",")
     parts_of_speech, _, meaning = rest.partition(")")
 
@@ -239,6 +265,10 @@ def parse_word_grammar(line, verse_num, line_num):
     # Insert sqrt sign for verbal roots
     if "!" in root:
         root = root.replace("!", "√")
+
+    for root_part in root.split("+"):
+        if root_part not in dictionary:
+            raise RuntimeError("Could not find: {:} in the dictionary. Is an entry missing?".format(root_part))
 
     return strip([word, meaning, root, process_parts_of_speech(parts_of_speech, verse_num, line_num)])
 
@@ -261,6 +291,13 @@ def main():
         required=True,
         help="Path to the raw transliteration ruleset, used to apply sandhi.",
     )
+    parser.add_argument(
+        "-d",
+        "--dictionary",
+        required=True,
+        help="Path to the dictionary, used to check that all words have definitions.",
+    )
+
     parser.add_argument("-o", "--output", help="Path to output JSON file in which to save the processed verse text")
 
     args, _ = parser.parse_known_args()
@@ -274,10 +311,8 @@ def main():
     ):
         return
 
-    translit_ruleset = json.load(open(args.transliteration_ruleset))
-    contents = open(args.input_file).read().strip()
-    header, _, contents = contents.partition("\n\n")
-    contents = contents.split("\n\n")
+    TRANSLIT_RULESET = json.load(open(args.transliteration_ruleset))
+    DICTIONARY = json.load(open(args.dictionary))
 
     book = extract_title(os.path.dirname(args.input_file))
     chapter = extract_title(os.path.splitext(os.path.basename(args.input_file))[0])
@@ -287,27 +322,28 @@ def main():
         "verses": [],
     }
 
+    contents = open(args.input_file).read().strip()
+    header, _, contents = contents.partition("\n\n")
     start_verse, end_verse = map(int, header.split("-"))
-
     # Parses input file according to format outlined in README.
     # To have the front-end handle newlines, we need a bit of weirdness in the word-by-word
     # translation - specifically, instead of just having a list of words for each verse, we have to have a list
     # of lines (i.e. list of lists). Then the front-end can render each list in a separate HTML element.
-    for index, (word_by_word, translation) in enumerate(chunks(contents, 2)):
+    for index, (word_by_word, translation) in enumerate(chunks(contents.split("\n\n"), 2)):
         word_by_word_sections = []
         to_sandhi_word_lines = []
         for section in word_by_word.split("\n-\n"):
             word_by_word_sections.append([])
             to_sandhi_word_lines.append([])
             for line_num, line in enumerate(section.split("\n")):
-                word, meaning, root, parts_of_speech = parse_word_grammar(line, index + 1, line_num + 1)
+                word, meaning, root, parts_of_speech = parse_word_grammar(line, index + 1, line_num + 1, DICTIONARY)
                 to_sandhi_word_lines[-1].append(word)
                 word_by_word_sections[-1].append([word, meaning, root, parts_of_speech])
 
         processed["verses"].append(
             {
                 "num": start_verse + index,
-                "text": "\n".join(build_sandhied_text(line, translit_ruleset) for line in to_sandhi_word_lines),
+                "text": "\n".join(build_sandhied_text(line, TRANSLIT_RULESET) for line in to_sandhi_word_lines),
                 "translation": translation,
                 "wordByWord": word_by_word_sections,
             }

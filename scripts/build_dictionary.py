@@ -29,11 +29,11 @@ def main():
 
         def add(word, meanings):
             nonlocal out_dict
-            out_dict[word.strip()] = meanings.strip()
+            meanings, _, reference = meanings.partition("[")
+            out_dict[word.strip()] = [meanings.strip(), reference.strip("] ")]
 
         def handle_verb(line):
             word, _, meanings = line.partition(" ")
-            word = word.replace("!", "√")
             add(word, meanings)
 
         def handle_nominal(line):
@@ -41,16 +41,20 @@ def main():
             detail, _, meanings = rest.partition(")")
             if detail == "indc":
                 detail = "indeclinable"
-            else:
+            elif detail == "adj":
                 detail += "."
+            else:
+                detail = "./".join(detail) + "."
             add(word, "({:}) {:}".format(detail, meanings))
 
         with open(path, "r") as f:
             for line_num, line in enumerate(f.readlines()):
                 if not line:
                     continue
+
+                line = line.replace("!", "√")
                 tokens = [x for x in line.split(" ") if x]
-                if "!" in tokens[0]:
+                if "√" in tokens[0]:
                     handle_verb(line)
                 elif "(" in tokens[1]:
                     handle_nominal(line)

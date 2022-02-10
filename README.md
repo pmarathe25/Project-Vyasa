@@ -170,6 +170,7 @@ Valid entries are as follows:
 - `act/pass/mid`: Active/Passive/Middle voice
 - `caus/des`: Causative/Desiderative
 - `ind/pot`: Indicative/Potential mood
+- `inf`: Infinitive
 - `abs`: Absolutive
 - `part`: Participle
 
@@ -179,17 +180,23 @@ Valid entries are as follows:
 This project also includes a miniature (as of this writing) dictionary. 
 The dictionary format is:
 ```
-word (detail) [meanings...]
+word (detail) meanings... [reference]
 ... (more words)
 ```
 
 The `detail` field is only required for the following types:
 - Adjectives. For example: `uttama (adj) highest, best`
 - Indeclinables. For example: `ca (indc) and`
-- Nouns, to specify gender. For example: `nara (m) man`
+- Nouns, to specify gender. For example: `nara (m) man`.
+  Multiple genders may be specified, in which case they should 
+  be concatenated, e.g. `mn`. 
 
-Additionally, as in the main content text, verbal roots should be prefixed 
+As in the main content text, verbal roots should be prefixed 
 with an exclamation mark, i.e. `!`.
+
+Finally, you can optionally add a reference word enclosed in square brackets.
+The reference will be transliterated when it is displayed.
+For example: `vaasin (mn) staying, dwelling [!vas]`
 
 An example file may look like:
 ```

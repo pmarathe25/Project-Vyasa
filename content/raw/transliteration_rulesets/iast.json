@@ -25,33 +25,45 @@
             "au": "o",
             "aau": "au"
         },
-        "unvoiced-consonants": {
+        "unvoiced-velar-consonants": {
             "k": "k",
-            "kh": "kh",
+            "kh": "kh"
+        },
+        "unvoiced-palatal-consonants": {
             "c": "c",
-            "ch": "ch",
-            "t": "t",
-            "th": "th",
-            "p": "p",
-            "ph": "ph"
+            "ch": "ch"
         },
         "unvoiced-retroflex-consonants": {
             "t<": "ṭ",
             "th<": "ṭh"
         },
-        "voiced-consonants": {
+        "unvoiced-dental-consonants": {
+            "t": "t",
+            "th": "th"
+        },
+        "unvoiced-bilabial-consonants": {
+            "p": "p",
+            "ph": "ph"
+        },
+        "voiced-velar-consonants": {
             "g": "g",
-            "gh": "gh",
+            "gh": "gh"
+        },
+        "voiced-palatal-consonants": {
             "j": "j",
-            "jh": "jh",
-            "d": "d",
-            "dh": "dh",
-            "b": "b",
-            "bh": "bh"
+            "jh": "jh"
         },
         "voiced-retroflex-consonants": {
             "d<": "ḍ",
             "dh<": "ḍh"
+        },
+        "voiced-dental-consonants": {
+            "d": "d",
+            "dh": "dh"
+        },
+        "voiced-bilabial-consonants": {
+            "b": "b",
+            "bh": "bh"
         },
         "nasal-consonants": {
             "n^": "ṅ",
