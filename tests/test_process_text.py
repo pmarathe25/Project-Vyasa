@@ -120,6 +120,23 @@ def transliteration_ruleset():
             ["tat", "gam"],
             "tadgam",
         ),
+        # Nasals
+        (
+            ["tan", "ca"],
+            "ta.s~ca",
+        ),
+        (
+            ["tan", "cha"],
+            "ta.s~cha",
+        ),
+        (
+            ["tan", "t<a"],
+            "ta.s<t<a",
+        ),
+        (
+            ["tan", "ta"],
+            "ta.sta",
+        ),
     ],
 )
 def test_build_sandhied_text(words, expected_output, transliteration_ruleset):

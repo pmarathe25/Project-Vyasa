@@ -98,6 +98,32 @@ const WordAndDefinition = ({ word, definition, root, parts_of_speech }) => {
     )
 }
 
+const TabContents = (props) => {
+    const overlayNumStyle = {
+        width: "fit-content",
+        position: "absolute",
+        zIndex: "1",
+        color: "rgb(60, 60, 60)",
+        fontSize: "50px",
+        paddingTop: "15px",
+    };
+
+    return (
+        <Container>
+            <Row>
+                <Col sm="auto">
+                    <div style={overlayNumStyle}>
+                        {props.num}
+                    </div>
+                </Col>
+                <Col style={{ zIndex: "2" }}>
+                    {props.children}
+                </Col>
+            </Row>
+        </Container>
+    )
+}
+
 const VerseText = ({ num, text, wordByWord }) => {
     text = useTransliterate(text);
     const [key, setKey] = React.useState("text");
@@ -112,28 +138,32 @@ const VerseText = ({ num, text, wordByWord }) => {
             variant="pills"
         >
             <Tab eventKey="text" title="Sanskrit Text" tabClassName={verseTextTab}>
-                <p className={verseText}>
-                    {text}
-                </p>
+                <TabContents num={num}>
+                    <p className={verseText}>
+                        {text}
+                    </p>
+                </TabContents>
             </Tab>
             <Tab eventKey="word-by-word" title="Word-by-word Translation" tabClassName={verseTextTab}>
-                <Container className={verseText} >
-                    {wordByWord.map((line, index) =>
-                        <Row
-                            key={index}
-                            style={{
-                                width: "fit-content", margin: "auto"
-                            }}
-                            lg="auto"
-                        >
-                            {
-                                line.map(([word, definition, root, parts_of_speech], wordIndex) =>
-                                    <WordAndDefinition key={word + wordIndex} word={word} definition={definition} root={root} parts_of_speech={parts_of_speech} />
-                                )
-                            }
-                        </Row>
-                    )}
-                </Container>
+                <TabContents num={num}>
+                    <Container className={verseText} >
+                        {wordByWord.map((line, index) =>
+                            <Row
+                                key={index}
+                                style={{
+                                    width: "fit-content", margin: "auto"
+                                }}
+                                lg="auto"
+                            >
+                                {
+                                    line.map(([word, definition, root, parts_of_speech], wordIndex) =>
+                                        <WordAndDefinition key={word + wordIndex} word={word} definition={definition} root={root} parts_of_speech={parts_of_speech} />
+                                    )
+                                }
+                            </Row>
+                        )}
+                    </Container>
+                </TabContents>
             </Tab>
         </Tabs >
     )

@@ -132,6 +132,10 @@ def build_sandhied_text(words, translit_ruleset):
         (matches([":"]), matches(keys_of("unvoiced-palatal-consonants")), replace_final(":", "s~")),
         (matches([":"]), matches(keys_of("unvoiced-retroflex-consonants")), replace_final(":", "s<")),
         (matches([":"]), matches(keys_of("unvoiced-dental-consonants")), replace_final(":", "s")),
+        # Nasals
+        (matches(["n"]), matches(keys_of("unvoiced-palatal-consonants")), replace_final("n", ".s~")),
+        (matches(["n"]), matches(keys_of("unvoiced-retroflex-consonants")), replace_final("n", ".s<")),
+        (matches(["n"]), matches(keys_of("unvoiced-dental-consonants")), replace_final("n", ".s")),
     ]
 
     # Next we do a second pass to merge words
@@ -141,6 +145,7 @@ def build_sandhied_text(words, translit_ruleset):
         (matches(CONSONANTS + SEMI_VOWELS), matches(CONSONANTS + SEMI_VOWELS)),
     ]
 
+    # And finally, a pass to apply sandhi that we don't want to merge
     POST_MERGE_SANDHI = [
         # Visarga rules
         (matches(["aa:"]), matches(ALL_VOICED), replace_final("aa:", "aa")),
