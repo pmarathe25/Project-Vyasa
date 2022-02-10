@@ -17,7 +17,7 @@ const Translation = ({ translation }) => {
                     aria-expanded={open}
                     style={{ borderRadius: "25px" }}
                 >
-                    Show Translation
+                    {open ? "Hide" : "Show"} Translation
                 </Button>
             </div>
             <Collapse in={open}>
