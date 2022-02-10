@@ -18,9 +18,7 @@ def main():
     output["rules"] = mapping_rules["rules"]
 
     ruleset = {}
-    for category, category_map in mapping_rules["sequence_map"].items():
-        output[category] = list(category_map.values())
-
+    for category_map in mapping_rules["sequence_map"].values():
         for sequence, target_char in category_map.items():
             assert sequence, "Sequence mapping cannot contain an empty sequence!"
 

@@ -42,9 +42,16 @@ def build_sandhied_text(words, translit_ruleset):
         "voiced-dental-consonants",
         "voiced-bilabial-consonants",
     )
-    CONSONANTS = UNVOICED_CONSONANTS + VOICED_CONSONANTS + keys_of("nasal-consonants", "sibilants")
+    NASAL_CONSONANTS = keys_of(
+        "nasal-velar-consonants",
+        "nasal-palatal-consonants",
+        "nasal-retroflex-consonants",
+        "nasal-dental-consonants",
+        "nasal-bilabial-consonants",
+    )
+    CONSONANTS = UNVOICED_CONSONANTS + VOICED_CONSONANTS + NASAL_CONSONANTS + keys_of("sibilants")
     SEMI_VOWELS = keys_of("semi-vowels")
-    ALL_VOICED = VOICED_CONSONANTS + VOWELS + SEMI_VOWELS + keys_of("nasal-consonants")
+    ALL_VOICED = VOICED_CONSONANTS + VOWELS + SEMI_VOWELS + NASAL_CONSONANTS
 
     VOICED_MAKER_MAP = {
         unvoiced: voiced

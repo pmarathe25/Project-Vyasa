@@ -91,7 +91,7 @@ const WordAndDefinition = ({ word, definition, root, parts_of_speech }) => {
                     {word}
                 </p>
             </OverlayTrigger>
-            <p style={{ fontStyle: "italic", fontSize: "20px", color: "rgb(175, 175, 175)" }}>
+            <p style={{ fontStyle: "italic", fontSize: "16px", color: "rgb(175, 175, 175)" }}>
                 {definition}
             </p>
         </Col>
@@ -103,8 +103,13 @@ const VerseText = ({ num, text, wordByWord }) => {
     const [key, setKey] = React.useState("text");
 
     return (
-        <Tabs id={"verse-text-tabs-" + num} defaultActiveKey="text" activeKey={key} onSelect={(k) => setKey(k)}
-            style={{ borderBottom: "1px solid rgb(80, 80, 80)", marginBottom: "4px" }}
+        <Tabs
+            id={"verse-text-tabs-" + num}
+            defaultActiveKey="text"
+            activeKey={key}
+            onSelect={(k) => setKey(k)}
+            style={{ borderBottom: "1px solid rgb(60, 60, 60)", marginBottom: "4px" }}
+            variant="pills"
         >
             <Tab eventKey="text" title="Sanskrit Text" tabClassName={verseTextTab}>
                 <p className={verseText}>
@@ -137,8 +142,8 @@ const VerseText = ({ num, text, wordByWord }) => {
 const Verse = ({ num, text, wordByWord, translation }) => {
     return (
         <div id={`verse_${num}`} style={{
-            borderBottom: "2px solid rgb(80, 80, 80)", borderTop: "0px",
-            borderRadius: "8px", paddingBottom: "5px", marginBottom: "5px"
+            borderBottom: "2px solid rgb(60, 60, 60)", borderTop: "0px",
+            paddingBottom: "5px", marginBottom: "5px"
         }}>
             <VerseText num={num} text={text} wordByWord={wordByWord} />
             <Translation translation={translation} />
