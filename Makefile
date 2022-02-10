@@ -49,7 +49,7 @@ $(GEN_CHAPTERS_DIR)/%.json: $(RAW_CHAPTERS) $(PROCESS_TEXT_SCRIPT) $(GEN_DICTION
 launch: $(GEN_RULE_SETS) $(GEN_CHAPTERS) $(GEN_DICTIONARY_FILE)
 	gatsby develop
 
-test: $(GEN_RULE_SETS)
+test: $(GEN_RULE_SETS) $(GEN_DICTIONARY_FILE)
 	python3 -m pytest tests/ -vv
 	npm test
 

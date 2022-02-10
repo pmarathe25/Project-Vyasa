@@ -27,11 +27,30 @@ def build_sandhied_text(words, translit_ruleset):
             keys.extend(SEQUENCE_MAP[cat_name].keys())
         return keys
 
+    VOWELS = keys_of("vowels")
+    UNVOICED_CONSONANTS = keys_of(
+        "unvoiced-velar-consonants",
+        "unvoiced-palatal-consonants",
+        "unvoiced-retroflex-consonants",
+        "unvoiced-dental-consonants",
+        "unvoiced-bilabial-consonants",
+    )
+    VOICED_CONSONANTS = keys_of(
+        "voiced-velar-consonants",
+        "voiced-palatal-consonants",
+        "voiced-retroflex-consonants",
+        "voiced-dental-consonants",
+        "voiced-bilabial-consonants",
+    )
+    CONSONANTS = UNVOICED_CONSONANTS + VOICED_CONSONANTS + keys_of("nasal-consonants", "sibilants")
+    SEMI_VOWELS = keys_of("semi-vowels")
+    ALL_VOICED = VOICED_CONSONANTS + VOWELS + SEMI_VOWELS + keys_of("nasal-consonants")
+
     VOICED_MAKER_MAP = {
         unvoiced: voiced
         for unvoiced, voiced in zip(
-            keys_of("unvoiced-consonants", "unvoiced-retroflex-consonants"),
-            keys_of("voiced-consonants", "voiced-retroflex-consonants"),
+            UNVOICED_CONSONANTS,
+            VOICED_CONSONANTS,
         )
     }
 
@@ -89,13 +108,6 @@ def build_sandhied_text(words, translit_ruleset):
 
         return matches_impl
 
-    VOWELS = keys_of("vowels")
-    UNVOICED_CONSONANTS = keys_of("unvoiced-consonants", "unvoiced-retroflex-consonants")
-    VOICED_CONSONANTS = keys_of("voiced-consonants", "voiced-retroflex-consonants")
-    CONSONANTS = UNVOICED_CONSONANTS + VOICED_CONSONANTS + keys_of("nasal-consonants", "sibilants")
-    SEMI_VOWELS = keys_of("semi-vowels")
-    ALL_VOICED = VOICED_CONSONANTS + VOWELS + SEMI_VOWELS + keys_of("nasal-consonants")
-
     # Format: (first_word_condition, second_word_condition, change strategy)
     # Order matters because applying one sandhi may invalidate another!
     PRE_MERGE_SANDHI = [
@@ -108,8 +120,18 @@ def build_sandhied_text(words, translit_ruleset):
         (matches(["t"]), matches(keys_of("voiced-retroflex-consonants")), compose(make_voiced, make_retroflex)),
         # Unvoiced -> Voiced
         (matches(UNVOICED_CONSONANTS), matches(ALL_VOICED), make_voiced),
-        # Visarga sandhi not including a: or aa:
+        # Visarga sandhi
         (matches([":"], but_not=["a:", "aa:"]), matches(ALL_VOICED), replace_final(":", "r")),
+        (matches([":"]), matches(keys_of("unvoiced-palatal-consonants")), replace_final(":", "s~")),
+        (matches([":"]), matches(keys_of("unvoiced-retroflex-consonants")), replace_final(":", "s<")),
+        (matches([":"]), matches(keys_of("unvoiced-dental-consonants")), replace_final(":", "s")),
+    ]
+
+    # Next we do a second pass to merge words
+    MERGE_CONDITIONS = [
+        (matches(VOWELS), matches(VOWELS)),
+        (matches(CONSONANTS), matches(VOWELS)),
+        (matches(CONSONANTS + SEMI_VOWELS), matches(CONSONANTS + SEMI_VOWELS)),
     ]
 
     POST_MERGE_SANDHI = [
@@ -131,21 +153,16 @@ def build_sandhied_text(words, translit_ruleset):
         return words
 
     def apply_merge(words):
-        # Next we do a second pass to merge words
-        MERGE_CONDITIONS = [
-            (matches(VOWELS), matches(VOWELS)),
-            (matches(CONSONANTS), matches(VOWELS)),
-            (matches(CONSONANTS + SEMI_VOWELS), matches(CONSONANTS + SEMI_VOWELS)),
-        ]
-        merged = []
+        merged = [words.pop(0)]
         index = 0
-        while index < len(words):
-            merged.append(words[index])
+        while words:
             for trailing_cond, leading_cond in MERGE_CONDITIONS:
-                if trailing_cond(words[index], mode="ends") and leading_cond(words[index + 1], mode="starts"):
-                    merged[-1] += words.pop(index + 1)
-                    continue
-            index += 1
+                if trailing_cond(merged[index], mode="ends") and leading_cond(words[0], mode="starts"):
+                    merged[-1] += words.pop(0)
+                    break
+            else:
+                merged.append(words.pop(0))
+                index += 1
         return merged
 
     words = apply_sandhi(words, PRE_MERGE_SANDHI)
@@ -186,6 +203,7 @@ PARTS_OF_SPEECH_MAPPING = OrderedDict(
         ("abs", "absolutive"),
         ("indc", "indeclinable"),
         ("part", "participle"),
+        ("inf", "Infinitive"),
     ]
 )
 
@@ -229,6 +247,14 @@ def parse_word_grammar(line, verse_num, line_num, dictionary):
     # and probably faster
     rest = line
     word, _, rest = rest.partition("(")
+
+    if "," not in rest:
+        raise RuntimeError(
+            "In verse: {:}, line: {:}, expected a comma separating the root from parts of speech!".format(
+                verse_num, line_num
+            )
+        )
+
     root, _, rest = rest.partition(",")
     parts_of_speech, _, meaning = rest.partition(")")
 

@@ -8,6 +8,7 @@ import pytest
 
 ROOT_DIR = os.path.realpath(os.path.join(os.path.dirname(__file__), os.path.pardir))
 TRANSLITERATION_RULESET = os.path.join(ROOT_DIR, "content", "raw", "transliteration_rulesets", "devanagari.json")
+DICTIONARY = os.path.join(ROOT_DIR, "content", "generated", "dictionary", "all_words.json")
 SCRIPTS_DIR = os.path.join(ROOT_DIR, "scripts")
 
 import sys
@@ -42,6 +43,38 @@ def transliteration_ruleset():
             ["pati:", "gam"],
             "patirgam",
         ),
+        (
+            ["ta:", "ca"],
+            "tas~ca",
+        ),
+        (
+            ["ta:", "cha"],
+            "tas~cha",
+        ),
+        (
+            ["taa:", "ca"],
+            "taas~ca",
+        ),
+        (
+            ["taa:", "cha"],
+            "taas~cha",
+        ),
+        (
+            ["ti:", "ca"],
+            "tis~ca",
+        ),
+        (
+            ["ti:", "cha"],
+            "tis~cha",
+        ),
+        (
+            ["ta:", "t<a"],
+            "tas<t<a",
+        ),
+        (
+            ["ta:", "ta"],
+            "tasta",
+        ),
         # Vowels
         (
             ["ca", "aiva"],
@@ -73,6 +106,10 @@ def transliteration_ruleset():
         (
             ["naram", "aiva"],
             "naramaiva",
+        ),
+        (
+            ["tam", "aas~ramam", "anupraaptam"],
+            "tamaas~ramamanupraaptam",
         ),
         # Unvoiced + Voiced
         (
@@ -204,7 +241,7 @@ def test_process_text(content, expected_output):
 
         process_text = os.path.join(SCRIPTS_DIR, "process_text.py")
 
-        cmd = ["python3", process_text, inp.name, "-o", out_file, "-r", TRANSLITERATION_RULESET]
+        cmd = ["python3", process_text, inp.name, "-o", out_file, "-r", TRANSLITERATION_RULESET, "-d", DICTIONARY]
         print(f"Running command: {' '.join(cmd)}")
         status = sp.run(cmd)
         assert status.returncode == 0, f"Error in {process_text}"

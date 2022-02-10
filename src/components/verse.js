@@ -29,6 +29,20 @@ const Translation = ({ translation }) => {
     )
 }
 
+const RootDef = ({ rootDef }) => {
+    const [definition, reference] = rootDef;
+    const translitRef = useTransliterate(reference);
+
+    if (!rootDef) {
+        return (<></>);
+    }
+    return (
+        <p style={{ top: "50%", marginTop: "auto", marginBottom: "auto" }}>
+            {definition + (translitRef ? ` (from ${translitRef})` : "")}
+        </p>
+    )
+}
+
 const RootMeanings = ({ root }) => {
     let rootDefs = [];
     let translitRoots = useTransliterate(root).split("+");
@@ -45,9 +59,7 @@ const RootMeanings = ({ root }) => {
                         <p style={{ fontSize: "20px", paddingRight: "5px" }}>
                             {rootPar}
                         </p>
-                        <p style={{ top: "50%", marginTop: "auto", marginBottom: "auto" }}>
-                            {rootDefs[index] ? rootDefs[index] : ""}
-                        </p>
+                        <RootDef rootDef={rootDefs[index]} />
                     </div>
                 )
             }
