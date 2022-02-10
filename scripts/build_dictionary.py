@@ -30,7 +30,7 @@ def main():
         def add(word, meanings):
             nonlocal out_dict
             meanings, _, reference = meanings.partition("[")
-            out_dict[word.strip()] = [meanings.strip(), reference.strip("] ")]
+            out_dict[word.strip()] = [meanings.strip(), reference.strip().strip("]")]
 
         def handle_verb(line):
             word, _, meanings = line.partition(" ")
