@@ -37,14 +37,14 @@ $(GEN_DICTIONARY_DIR):
 $(GEN_RULE_SET_DIR)/%.json: $(RAW_RULE_SET_DIR)/%.json $(BUILD_RULE_SET_SCRIPT) | $(GEN_RULE_SET_DIR)
 	python3 $(BUILD_RULE_SET_SCRIPT) $< -o $@
 
+$(GEN_DICTIONARY_FILE): $(RAW_DICTIONARY_FILES) $(BUILD_DICTIONARY_SCRIPT) | $(GEN_DICTIONARY_DIR)
+	python3 $(BUILD_DICTIONARY_SCRIPT) $(RAW_DICTIONARY_DIR) -o $@
+
 # Automatic rules don't work well when we want to go from a nested input structure
 # to a flattened output structure, so we'll manage timestamps within the script.
 # This rule will trigger for *every* output file when *any* input file is touched.
-$(GEN_CHAPTERS_DIR)/%.json: $(RAW_CHAPTERS) $(PROCESS_TEXT_SCRIPT) | $(GEN_CHAPTERS_DIR)
-	@ python3 $(PROCESS_TEXT_SCRIPT) $< -o $@ --transliteration-ruleset $(RAW_RULE_SET_DIR)/devanagari.json
-
-$(GEN_DICTIONARY_FILE): $(RAW_DICTIONARY_FILES) $(BUILD_DICTIONARY_SCRIPT) | $(GEN_DICTIONARY_DIR)
-	python3 $(BUILD_DICTIONARY_SCRIPT) $(RAW_DICTIONARY_DIR) -o $@
+$(GEN_CHAPTERS_DIR)/%.json: $(RAW_CHAPTERS) $(PROCESS_TEXT_SCRIPT) $(GEN_DICTIONARY_FILE) | $(GEN_CHAPTERS_DIR)
+	@ python3 $(PROCESS_TEXT_SCRIPT) $< -o $@ --transliteration-ruleset $(RAW_RULE_SET_DIR)/devanagari.json -d $(GEN_DICTIONARY_FILE)
 
 launch: $(GEN_RULE_SETS) $(GEN_CHAPTERS) $(GEN_DICTIONARY_FILE)
 	gatsby develop
