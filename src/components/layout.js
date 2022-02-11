@@ -95,7 +95,6 @@ const Layout = ({ location, pageTitle, children }) => {
                             {breadcrumbs}
                         </Breadcrumb>
                 }
-                <div style={{ paddingBottom: (isMobile ? "30px" : "5px") }} />
                 {children}
             </main>
         </div >
