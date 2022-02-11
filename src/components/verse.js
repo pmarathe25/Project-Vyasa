@@ -139,7 +139,7 @@ const VerseText = ({ num, text, wordByWord }) => {
         >
             <Tab eventKey="text" title="Sanskrit Text" tabClassName={verseTextTab}>
                 <TabContents num={num}>
-                    <p className={verseText}>
+                    <p className={verseText} style={{ overflowWrap: "break-word" }}>
                         {text}
                     </p>
                 </TabContents>

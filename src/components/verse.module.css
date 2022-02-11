@@ -17,6 +17,7 @@
 .verse-text-tab {
     background: #646464;
     color: #8d8d8d;
+    padding: 8px;
 }
 
 .verse-text-tab:hover {
