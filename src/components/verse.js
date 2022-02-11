@@ -103,7 +103,7 @@ const TabContents = (props) => {
         width: "fit-content",
         position: "absolute",
         zIndex: "1",
-        color: "rgb(60, 60, 60)",
+        color: "rgb(75, 75, 75)",
         fontSize: "50px",
         paddingTop: "15px",
     };
