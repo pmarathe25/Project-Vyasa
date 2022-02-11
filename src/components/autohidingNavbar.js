@@ -25,7 +25,7 @@ const AutohidingNavbar = (props) => {
         const onScroll = () => {
             setOffset([offset[1], window.pageYOffset]);
 
-            if (window.pageYOffset < (isMobile ? 30 : 60)) {
+            if (window.pageYOffset < (isMobile ? 40 : 60)) {
                 setNavbarStyle(navbarSlideOnStyle);
                 return;
             }
@@ -52,9 +52,9 @@ const AutohidingNavbar = (props) => {
     });
 
     return (
-        <Navbar bg="dark" variant="dark" fixed="top" expand={false} style={navbarStyle}>
+        <Navbar bg="dark" variant="dark" fixed="top" expand={false} style={{ minHeight: "70px", ...navbarStyle }}>
             {props.children}
-        </Navbar>
+        </Navbar >
     )
 }
 
