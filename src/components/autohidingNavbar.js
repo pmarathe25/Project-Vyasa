@@ -14,6 +14,7 @@ const AutohidingNavbar = (props) => {
     const navbarSlideOffStyle = { top: -100, transition: "all .75s ease" };
     const navbarSlideOnStyle = { top: 0, transition: "all .25s ease" };
     const [navbarStyle, setNavbarStyle] = React.useState(navbarSlideOnStyle);
+    // Used for scrolling up thresholding logic
     const [scrollUpTotal, setScrollUpTotal] = React.useState(0);
 
     React.useEffect(() => {
@@ -48,7 +49,7 @@ const AutohidingNavbar = (props) => {
         window.removeEventListener('scroll', onScroll);
         window.addEventListener('scroll', onScroll, { passive: true });
         return () => window.removeEventListener('scroll', onScroll);
-    }, [offset]);
+    });
 
     return (
         <Navbar bg="dark" variant="dark" fixed="top" expand={false} style={navbarStyle}>
