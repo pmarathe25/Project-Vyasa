@@ -9,6 +9,7 @@ import { SideBar } from './sidebar'
 import { useTransliterate } from './transliterationHook'
 import { TransliterationModeSelect } from './translitModeSelect'
 import useIsMobile from '../util/responsiveness'
+import AutohidingNavbar from './autohidingNavbar'
 
 const Layout = ({ location, pageTitle, children }) => {
     const data = useStaticQuery(graphql`
@@ -43,13 +44,14 @@ const Layout = ({ location, pageTitle, children }) => {
     const [sideBarExpanded, setSideBarExpanded] = React.useState(false);
     const isMobile = useIsMobile()
 
+
     return (
         <div className={container}>
             <title>{pageTitle} | {data.site.siteMetadata.title} </title>
-            <Navbar bg="dark" variant="dark" fixed="top" expand={false}>
+            <AutohidingNavbar>
                 <Container style={{ justifyContent: "space-around" }}>
                     <Row style={{ display: "flex" }}>
-                        <Link to="/" className={brandLink} style={{ width: "fit-content", minWidth: "175px" }}>
+                        <Link to="/" className={brandLink} style={{ width: "fit-content", minWidth: "170px", margin: 0, padding: 0 }}>
                             Project {useTransliterate("vyaasa")}
                         </Link>
                         <Link to={toUrl("/about")} style={{ width: "fit-content", margin: "auto" }}>
@@ -83,7 +85,7 @@ const Layout = ({ location, pageTitle, children }) => {
                         </Offcanvas.Body >
                     </Navbar.Offcanvas >
                 </Container>
-            </Navbar>
+            </AutohidingNavbar>
             <main className={content}>
                 {
                     (isMobile) ?

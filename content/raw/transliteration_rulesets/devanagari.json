@@ -65,11 +65,19 @@
             "b": "ब्",
             "bh": "भ्"
         },
-        "nasal-consonants": {
-            "n^": "ङ्",
-            "n~": "ञ्",
-            "n<": "ण्",
-            "n": "न्",
+        "nasal-velar-consonants": {
+            "n^": "ङ्"
+        },
+        "nasal-palatal-consonants": {
+            "n~": "ञ्"
+        },
+        "nasal-retroflex-consonants": {
+            "n<": "ण्"
+        },
+        "nasal-dental-consonants": {
+            "n": "न्"
+        },
+        "nasal-bilabial-consonants": {
             "m": "म्"
         },
         "sibilants": {

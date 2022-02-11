@@ -42,9 +42,16 @@ def build_sandhied_text(words, translit_ruleset):
         "voiced-dental-consonants",
         "voiced-bilabial-consonants",
     )
-    CONSONANTS = UNVOICED_CONSONANTS + VOICED_CONSONANTS + keys_of("nasal-consonants", "sibilants")
+    NASAL_CONSONANTS = keys_of(
+        "nasal-velar-consonants",
+        "nasal-palatal-consonants",
+        "nasal-retroflex-consonants",
+        "nasal-dental-consonants",
+        "nasal-bilabial-consonants",
+    )
+    CONSONANTS = UNVOICED_CONSONANTS + VOICED_CONSONANTS + NASAL_CONSONANTS + keys_of("sibilants")
     SEMI_VOWELS = keys_of("semi-vowels")
-    ALL_VOICED = VOICED_CONSONANTS + VOWELS + SEMI_VOWELS + keys_of("nasal-consonants")
+    ALL_VOICED = VOICED_CONSONANTS + VOWELS + SEMI_VOWELS + NASAL_CONSONANTS
 
     VOICED_MAKER_MAP = {
         unvoiced: voiced
@@ -125,6 +132,10 @@ def build_sandhied_text(words, translit_ruleset):
         (matches([":"]), matches(keys_of("unvoiced-palatal-consonants")), replace_final(":", "s~")),
         (matches([":"]), matches(keys_of("unvoiced-retroflex-consonants")), replace_final(":", "s<")),
         (matches([":"]), matches(keys_of("unvoiced-dental-consonants")), replace_final(":", "s")),
+        # Nasals
+        (matches(["n"]), matches(keys_of("unvoiced-palatal-consonants")), replace_final("n", ".s~")),
+        (matches(["n"]), matches(keys_of("unvoiced-retroflex-consonants")), replace_final("n", ".s<")),
+        (matches(["n"]), matches(keys_of("unvoiced-dental-consonants")), replace_final("n", ".s")),
     ]
 
     # Next we do a second pass to merge words
@@ -134,6 +145,7 @@ def build_sandhied_text(words, translit_ruleset):
         (matches(CONSONANTS + SEMI_VOWELS), matches(CONSONANTS + SEMI_VOWELS)),
     ]
 
+    # And finally, a pass to apply sandhi that we don't want to merge
     POST_MERGE_SANDHI = [
         # Visarga rules
         (matches(["aa:"]), matches(ALL_VOICED), replace_final("aa:", "aa")),
@@ -173,53 +185,93 @@ def build_sandhied_text(words, translit_ruleset):
 
 
 # Follow a consistent ordering for every word
+# Format: abbreviation, full-form, type
 PARTS_OF_SPEECH_MAPPING = OrderedDict(
     [
-        ("nom", "nominative"),
-        ("voc", "vocative"),
-        ("acc", "accusative"),
-        ("inst", "instrumental"),
-        ("dat", "dative"),
-        ("abl", "ablative"),
-        ("gen", "genitive"),
-        ("loc", "locative"),
-        ("1", "first person"),
-        ("2", "second person"),
-        ("3", "third person"),
-        ("sing", "singular"),
-        ("du", "dual"),
-        ("pl", "plural"),
-        ("pres", "present"),
-        ("perf", "perfect"),
-        ("imp", "imperfect"),
-        ("fut", "future"),
-        ("act", "active"),
-        ("pass", "passive"),
-        ("mid", "middle"),
-        ("ind", "indicative"),
-        ("pot", "potential"),
-        ("caus", "causative"),
-        ("des", "desiderative"),
-        ("abs", "absolutive"),
-        ("indc", "indeclinable"),
-        ("part", "participle"),
-        ("inf", "Infinitive"),
+        ("nom", ("nominative", "case")),
+        ("voc", ("vocative", "case")),
+        ("acc", ("accusative", "case")),
+        ("inst", ("instrumental", "case")),
+        ("dat", ("dative", "case")),
+        ("abl", ("ablative", "case")),
+        ("gen", ("genitive", "case")),
+        ("loc", ("locative", "case")),
+        ("1", ("first person", "person")),
+        ("2", ("second person", "person")),
+        ("3", ("third person", "person")),
+        ("sing", ("singular", "number")),
+        ("du", ("dual", "number")),
+        ("pl", ("plural", "number")),
+        ("pres", ("present", "tense")),
+        ("perf", ("perfect", "tense")),
+        ("imp", ("imperfect", "tense")),
+        ("fut", ("future", "tense")),
+        ("act", ("active", "voice")),
+        ("pass", ("passive", "voice")),
+        ("mid", ("middle", "voice")),
+        ("ind", ("indicative", "mood")),
+        ("pot", ("potential", "mood")),
+        ("caus", ("causative", "other")),
+        ("des", ("desiderative", "other")),
+        ("abs", ("absolutive", "form")),
+        ("part", ("participle", "form")),
+        ("inf", ("Infinitive", "form")),
     ]
 )
 
+NOUN_PARTS = set(["case", "number"])
+VERB_PARTS = set(["person", "number", "tense", "voice", "mood"])
+PARTICIPLE_PARTS = NOUN_PARTS | {"tense", "voice", "form"}
 
-def process_parts_of_speech(parts_of_speech, verse_num, line_num):
-    new_parts = []
+
+def process_parts_of_speech(parts_of_speech, is_verb, verse_num, line_num):
+    def show_error(msg):
+        raise RuntimeError(
+            "In verse: {:}, line: {:}: ".format(verse_num, line_num)
+            + msg
+            + "\nNote: parts of speech were: {:}".format(parts_of_speech)
+        )
+
+    new_parts = OrderedDict()
+    part_functions = set()
     for part in filter(lambda x: x, parts_of_speech.strip().split(" ")):
         if part not in PARTS_OF_SPEECH_MAPPING:
-            raise RuntimeError(
-                "In verse: {:}, line: {:}: Unknown part of speech: {:}"
+            show_error(
+                "Unknown part of speech: {:}"
                 "\nNote: Valid parts of speech are: {:}".format(
                     verse_num, line_num, part, list(PARTS_OF_SPEECH_MAPPING.keys())
                 )
             )
-        new_parts.append(PARTS_OF_SPEECH_MAPPING[part])
-    return " ".join(new_parts).title()
+
+        part_name, part_function = PARTS_OF_SPEECH_MAPPING[part]
+        if part_function in part_functions:
+            show_error("{:} was specified more than once.".format(part_function))
+        part_functions.add(part_function)
+        new_parts[part_function] = part_name
+
+    def check_parts(expected):
+        if expected != part_functions:
+            show_error("Expected parts of speech: {:}, but received: {:}".format(expected, part_functions))
+
+    # Validate that part functions are ok
+    if "other" in part_functions:
+        if not is_verb:
+            show_error("Cannot use parts of speech: {:} for non-verbs!".format(new_parts["other"]))
+        part_functions.remove("other")
+
+    if is_verb:
+        if "form" in new_parts:
+            if new_parts["form"] == "participle":
+                check_parts(PARTICIPLE_PARTS)
+            else:
+                # Otherwise form must be the only part
+                check_parts({"form"})
+        else:
+            check_parts(VERB_PARTS)
+    elif parts_of_speech:
+        check_parts(NOUN_PARTS)
+
+    return " ".join(new_parts.values()).title()
 
 
 def get_mtime(path):
@@ -263,14 +315,15 @@ def parse_word_grammar(line, verse_num, line_num, dictionary):
     check(meaning, "meaning")
 
     # Insert sqrt sign for verbal roots
-    if "!" in root:
+    is_verb = "!" in root
+    if is_verb:
         root = root.replace("!", "√")
 
     for root_part in root.split("+"):
         if root_part not in dictionary:
             raise RuntimeError("Could not find: {:} in the dictionary. Is an entry missing?".format(root_part))
 
-    return strip([word, meaning, root, process_parts_of_speech(parts_of_speech, verse_num, line_num)])
+    return strip([word, meaning, root, process_parts_of_speech(parts_of_speech, is_verb, verse_num, line_num)])
 
 
 def extract_title(str):

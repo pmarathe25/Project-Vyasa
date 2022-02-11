@@ -120,6 +120,23 @@ def transliteration_ruleset():
             ["tat", "gam"],
             "tadgam",
         ),
+        # Nasals
+        (
+            ["tan", "ca"],
+            "ta.s~ca",
+        ),
+        (
+            ["tan", "cha"],
+            "ta.s~cha",
+        ),
+        (
+            ["tan", "t<a"],
+            "ta.s<t<a",
+        ),
+        (
+            ["tan", "ta"],
+            "ta.sta",
+        ),
     ],
 )
 def test_build_sandhied_text(words, expected_output, transliteration_ruleset):
@@ -176,8 +193,8 @@ def build_expected(verses_text, translations, word_lists):
             """
             1-1
 
-            ca (ca, indc) and
-            aiva (aiva, indc) just so
+            ca (ca,) and
+            aiva (aiva,) just so
 
             And so
             """,
@@ -189,8 +206,8 @@ def build_expected(verses_text, translations, word_lists):
                     [
                         # Line 1
                         [
-                            ["ca", "and", "ca", "Indeclinable"],
-                            ["aiva", "just so", "aiva", "Indeclinable"],
+                            ["ca", "and", "ca", ""],
+                            ["aiva", "just so", "aiva", ""],
                         ]
                     ]
                 ],
@@ -201,9 +218,9 @@ def build_expected(verses_text, translations, word_lists):
             """
             1-1
 
-            ca (ca, indc) and
+            ca (ca,) and
             -
-            aiva (aiva, indc) just so
+            aiva (aiva,) just so
 
             And so
             """,
@@ -215,11 +232,11 @@ def build_expected(verses_text, translations, word_lists):
                     [
                         # Line 1
                         [
-                            ["ca", "and", "ca", "Indeclinable"],
+                            ["ca", "and", "ca", ""],
                         ],
                         # Line 2
                         [
-                            ["aiva", "just so", "aiva", "Indeclinable"],
+                            ["aiva", "just so", "aiva", ""],
                         ],
                     ]
                 ],

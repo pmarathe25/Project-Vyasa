@@ -17,7 +17,7 @@ const Translation = ({ translation }) => {
                     aria-expanded={open}
                     style={{ borderRadius: "25px" }}
                 >
-                    Show Translation
+                    {open ? "Hide" : "Show"} Translation
                 </Button>
             </div>
             <Collapse in={open}>
@@ -91,10 +91,36 @@ const WordAndDefinition = ({ word, definition, root, parts_of_speech }) => {
                     {word}
                 </p>
             </OverlayTrigger>
-            <p style={{ fontStyle: "italic", fontSize: "20px", color: "rgb(175, 175, 175)" }}>
+            <p style={{ fontStyle: "italic", fontSize: "16px", color: "rgb(175, 175, 175)" }}>
                 {definition}
             </p>
         </Col>
+    )
+}
+
+const TabContents = (props) => {
+    const overlayNumStyle = {
+        width: "fit-content",
+        position: "absolute",
+        zIndex: "1",
+        color: "rgb(60, 60, 60)",
+        fontSize: "50px",
+        paddingTop: "15px",
+    };
+
+    return (
+        <Container>
+            <Row>
+                <Col sm="auto" style={{ position: "absolute" }}>
+                    <div style={overlayNumStyle}>
+                        {props.num}
+                    </div>
+                </Col>
+                <Col style={{ zIndex: "2" }}>
+                    {props.children}
+                </Col>
+            </Row>
+        </Container>
     )
 }
 
@@ -103,32 +129,41 @@ const VerseText = ({ num, text, wordByWord }) => {
     const [key, setKey] = React.useState("text");
 
     return (
-        <Tabs id={"verse-text-tabs-" + num} defaultActiveKey="text" activeKey={key} onSelect={(k) => setKey(k)}
-            style={{ borderBottom: "1px solid rgb(80, 80, 80)", marginBottom: "4px" }}
+        <Tabs
+            id={"verse-text-tabs-" + num}
+            defaultActiveKey="text"
+            activeKey={key}
+            onSelect={(k) => setKey(k)}
+            style={{ borderBottom: "1px solid rgb(60, 60, 60)", marginBottom: "4px" }}
+            variant="pills"
         >
             <Tab eventKey="text" title="Sanskrit Text" tabClassName={verseTextTab}>
-                <p className={verseText}>
-                    {text}
-                </p>
+                <TabContents num={num}>
+                    <p className={verseText} style={{ overflowWrap: "break-word" }}>
+                        {text}
+                    </p>
+                </TabContents>
             </Tab>
             <Tab eventKey="word-by-word" title="Word-by-word Translation" tabClassName={verseTextTab}>
-                <Container className={verseText} >
-                    {wordByWord.map((line, index) =>
-                        <Row
-                            key={index}
-                            style={{
-                                width: "fit-content", margin: "auto"
-                            }}
-                            lg="auto"
-                        >
-                            {
-                                line.map(([word, definition, root, parts_of_speech], wordIndex) =>
-                                    <WordAndDefinition key={word + wordIndex} word={word} definition={definition} root={root} parts_of_speech={parts_of_speech} />
-                                )
-                            }
-                        </Row>
-                    )}
-                </Container>
+                <TabContents num={num}>
+                    <Container className={verseText} >
+                        {wordByWord.map((line, index) =>
+                            <Row
+                                key={index}
+                                style={{
+                                    width: "fit-content", margin: "auto"
+                                }}
+                                lg="auto"
+                            >
+                                {
+                                    line.map(([word, definition, root, parts_of_speech], wordIndex) =>
+                                        <WordAndDefinition key={word + wordIndex} word={word} definition={definition} root={root} parts_of_speech={parts_of_speech} />
+                                    )
+                                }
+                            </Row>
+                        )}
+                    </Container>
+                </TabContents>
             </Tab>
         </Tabs >
     )
@@ -137,8 +172,8 @@ const VerseText = ({ num, text, wordByWord }) => {
 const Verse = ({ num, text, wordByWord, translation }) => {
     return (
         <div id={`verse_${num}`} style={{
-            borderBottom: "2px solid rgb(80, 80, 80)", borderTop: "0px",
-            borderRadius: "8px", paddingBottom: "5px", marginBottom: "5px"
+            borderBottom: "2px solid rgb(60, 60, 60)", borderTop: "0px",
+            paddingBottom: "5px", marginBottom: "5px"
         }}>
             <VerseText num={num} text={text} wordByWord={wordByWord} />
             <Translation translation={translation} />

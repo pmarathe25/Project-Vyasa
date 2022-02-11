@@ -7,3 +7,5 @@ s~aaunaka (m) Shaunaka, a Sanskrit grammarian
 suuta (m) charioteer
 sa (mn) he, this, that
 !s~ru to hear
+sarva (mn) all
+sat (mn) being, existing, truth [!as]
