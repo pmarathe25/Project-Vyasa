@@ -219,7 +219,7 @@ PARTS_OF_SPEECH_MAPPING = OrderedDict(
     ]
 )
 
-
+# TODO: validate that all required parts of speech are present
 def process_parts_of_speech(parts_of_speech, verse_num, line_num):
     new_parts = []
     for part in filter(lambda x: x, parts_of_speech.strip().split(" ")):
