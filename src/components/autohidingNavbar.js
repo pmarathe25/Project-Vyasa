@@ -29,7 +29,6 @@ const AutohidingNavbar = (props) => {
                 return;
             }
 
-            console.log(scrollUpTotal);
             const delta = window.pageYOffset - offset[1];
             if (delta > 0) {
                 // Disregard tiny accidental scrolling down.
@@ -40,7 +39,6 @@ const AutohidingNavbar = (props) => {
             }
             else {
                 setScrollUpTotal(scrollUpTotal + delta);
-                console.log(scrollUpTotal);
                 if (scrollUpTotal < -15) {
                     setNavbarStyle(navbarSlideOnStyle);
                 }
