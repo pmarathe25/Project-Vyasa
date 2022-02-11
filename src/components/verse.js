@@ -111,7 +111,7 @@ const TabContents = (props) => {
     return (
         <Container>
             <Row>
-                <Col sm="auto">
+                <Col sm="auto" style={{ position: "absolute" }}>
                     <div style={overlayNumStyle}>
                         {props.num}
                     </div>
