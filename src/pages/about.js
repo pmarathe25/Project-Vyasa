@@ -10,7 +10,7 @@ const About = ({ location }) => {
     }
 
     const textStyle = {
-        marginBottom: "10px",
+        marginBottom: "30px",
         marginTop: "10px",
         width: "80%",
         marginLeft: "auto",
@@ -32,8 +32,13 @@ const About = ({ location }) => {
                 It is <b>not</b> the aim to provide anything more than a
                 literally correct translation; that is, the included translations do not
                 consider the broader cultural, historical, and philosophical context of the text.
+            </p>
+            <h2 style={headerStyle}>Contributing</h2>
+            <p style={textStyle}>
+                If you'd like to help with this project, there are several ways to do so!
                 <br />
-                <br />
+                See the <Link to="https://github.com/pmarathe25/Project-Vyasa/blob/main/CONTRIBUTING.md">
+                    CONTRIBUTING.md</Link> file on the GitHub repository for more details.
             </p>
             <h2 style={headerStyle}>How To Use This Site</h2>
             <p style={textStyle}>
@@ -59,13 +64,12 @@ const About = ({ location }) => {
             <p style={textStyle}>
                 In addition to these, you can hover over each word in the word-by-word translation
                 to get more information on the root of the word and its grammatical form.
-
             </p>
+
             <p style={textStyle}>
                 Example screenshots of what the site looks like in a desktop browser have been provided below.
             </p>
             <div style={textStyle}>
-
                 <h3>Examples</h3>
                 <h4>Original Verse Text</h4>
                 <StaticImage src='../images/example_verse_text.png' alt="Verse Text" />
