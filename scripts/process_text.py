@@ -430,7 +430,7 @@ def main():
 
     os.makedirs(os.path.dirname(args.output), exist_ok=True)
     print("Writing to: {:}".format(args.output))
-    json.dump(processed, open(args.output, "w"))
+    json.dump(processed, open(args.output, "w"), separators=(',', ':'))
 
 
 if __name__ == "__main__":
