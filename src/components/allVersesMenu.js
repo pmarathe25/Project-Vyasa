@@ -11,9 +11,8 @@ const AllVersesMenu = ({ location }) => {
             <Button
                 className={navSideBarToggle}
                 onClick={() => setSideBarExpanded(true)}
-                style={{ width: "10%", minWidth: "120px" }}
             >
-                <p style={{ fontVariant: "small-caps", fontSize: "16px" }}>
+                <p style={{ fontVariant: "small-caps", fontSize: "18px" }}>
                     All Verses
                 </p>
             </Button>
