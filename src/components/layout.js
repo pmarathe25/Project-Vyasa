@@ -54,7 +54,14 @@ const Layout = ({ location, pageTitle, children }) => {
                         <Link to="/" className={brandLink} style={{ width: "fit-content", minWidth: "170px", margin: 0, padding: 0 }}>
                             Project {useTransliterate("vyaasa")}
                         </Link>
-                        <Link to={toUrl("/about")} style={{ width: "fit-content", margin: "auto" }}>
+                        <Link
+                            to={toUrl("/about")}
+                            style={{
+                                width: "fit-content",
+                                marginTop: "auto", marginBottom: "auto",
+                                paddingLeft: 0, paddingRight: 0
+                            }}
+                        >
                             About
                         </Link>
                     </Row>

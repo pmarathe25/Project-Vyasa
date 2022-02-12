@@ -1,5 +1,5 @@
 html, body {
-    background-color: rgb(50, 50, 60);
+    background-color: rgb(55, 55, 65);
     color:rgb(230, 230, 230);
     margin: 0;
     padding: 0;
@@ -38,17 +38,17 @@ a:active {
 
 .accordion-button {
     color: white;
-    background: rgb(61, 102, 139);
+    background: rgb(76, 118, 155);
 }
 
 .accordion-button:not(.collapsed) {
     color: white;
-    background: rgb(100, 153, 202);
+    background: rgb(81, 150, 214);
 }
 
 .accordion-button:hover {
     color: white;
-    background: rgb(91, 138, 179);
+    background: rgb(98, 157, 207);
 }
 
 .accordion-button::after {
