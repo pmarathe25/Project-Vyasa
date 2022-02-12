@@ -38,18 +38,14 @@ const AutohidingNavbar = (props) => {
                 if (scrollDownTotal > 50 && !props.isExpanded) {
                     setNavbarStyle(navbarSlideOffStyle);
                 }
-                if (delta > 2) {
-                    setScrollUpTotal(0);
-                }
+                setScrollUpTotal(0);
             }
             else {
                 setScrollUpTotal(scrollUpTotal + delta);
                 if (scrollUpTotal < -5) {
                     setNavbarStyle(navbarSlideOnStyle);
                 }
-                if (delta < -2) {
-                    setScrollDownTotal(0);
-                }
+                setScrollDownTotal(0);
             }
         };
 
