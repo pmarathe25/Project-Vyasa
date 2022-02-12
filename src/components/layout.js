@@ -11,7 +11,7 @@ import { TransliterationModeSelect } from './translitModeSelect'
 import useIsMobile from '../util/responsiveness'
 import AutohidingNavbar from './autohidingNavbar'
 import { GoMarkGithub } from "react-icons/go"
-
+import Seo from './seo'
 
 const Layout = ({ location, pageTitle, children }) => {
     const data = useStaticQuery(graphql`
@@ -55,6 +55,7 @@ const Layout = ({ location, pageTitle, children }) => {
     return (
         <div className={container}>
             <title>{pageTitle} | {data.site.siteMetadata.title} </title>
+            <Seo location={location} title={pageTitle} />
             <AutohidingNavbar>
                 <Container style={{ justifyContent: "space-around" }}>
                     <Row style={{ display: "flex" }}>
