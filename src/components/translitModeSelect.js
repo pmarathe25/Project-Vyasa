@@ -19,15 +19,16 @@ export const TranslitModeContextProvider = (props) => {
 export const TransliterationModeSelect = ({ navExpanded }) => {
     const devanagari = useTransliterate("daivanaagarii");
 
-    const baseStyle = {
+    const style = {
         paddingBottom: navExpanded ? "10px" : 0,
         height: "fit-content",
-        marginTop: "auto", marginBottom: "auto"
+        marginTop: "auto", marginBottom: "auto",
+        marginLeft: navExpanded ? 0 : "auto",
+        marginRight: navExpanded ? 0 : "auto"
     };
-    const translitSpaceStyle = navExpanded ? baseStyle : { ...baseStyle, marginLeft: "40%", marginRight: "50%" };
 
     return (
-        <Nav.Item style={translitSpaceStyle}>
+        <Nav.Item style={style}>
             <TranslitModeContext.Consumer>
                 {({ mode, setMode }) =>
                     <ToggleButtonGroup
