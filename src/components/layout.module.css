@@ -19,13 +19,3 @@
   width: 1100px;
   max-width: 100%;
 }
-
-.nav-side-bar {
-  background: rgb(88, 88, 88);
-}
-
-.nav-side-bar-toggle {
-  border-width: 2px;
-  background:rgb(66, 106, 238);
-  border-radius: 2px;
-}

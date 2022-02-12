@@ -28,18 +28,21 @@ const VersesAccordion = ({ baseURL, chapter, setSideBarExpanded }) => {
                 </SideBarLink>
             </Accordion.Header>
             <Accordion.Body className={sideBarAccordion}>
-                <ul>
+                <ListGroup>
                     {
                         chapter.verses.map(verse =>
-                            <ListGroup>
-                                <ListGroup.Item eventKey={verse.num} variant="dark">
-                                    <SideBarLink to={`${chapterURL}/#verse_${verse.num}`} setSideBarExpanded={setSideBarExpanded} useClass={verseLink}>
-                                        Verse {verse.num}
-                                    </SideBarLink>
-                                </ListGroup.Item>
-                            </ListGroup>)
+                            <ListGroup.Item key={verse.num} eventKey={verse.num} variant="dark">
+                                <SideBarLink
+                                    to={`${chapterURL}/#verse_${verse.num}`}
+                                    setSideBarExpanded={setSideBarExpanded}
+                                    useClass={verseLink}
+                                >
+                                    Verse {verse.num}
+                                </SideBarLink>
+                            </ListGroup.Item>
+                        )
                     }
-                </ul>
+                </ListGroup>
             </Accordion.Body>
         </Accordion.Item>
     )
@@ -61,7 +64,7 @@ const ChaptersAccordion = ({ book, activeChapter, setSideBarExpanded }) => {
                     {
                         book.nodes.map(chapter =>
                         (
-                            <VersesAccordion baseURL={bookURL} chapter={chapter} setSideBarExpanded={setSideBarExpanded} />
+                            <VersesAccordion key={chapter.chapter} baseURL={bookURL} chapter={chapter} setSideBarExpanded={setSideBarExpanded} />
                         )
                         )
                     }
@@ -109,7 +112,7 @@ export const SideBar = ({ location, setSideBarExpanded }) => {
         <Accordion defaultActiveKey={activeBook} alwaysOpen={true} flush>
             {
                 data.allTextJson.group.map(book =>
-                    <ChaptersAccordion book={book} activeChapter={activeChapter} setSideBarExpanded={setSideBarExpanded} />
+                    <ChaptersAccordion key={book.fieldValue} book={book} activeChapter={activeChapter} setSideBarExpanded={setSideBarExpanded} />
                 )
             }
         </Accordion>
