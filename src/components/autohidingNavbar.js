@@ -34,7 +34,6 @@ const AutohidingNavbar = (props) => {
             const delta = window.pageYOffset - offset[1];
             if (delta > 0) {
                 setScrollDownTotal(scrollDownTotal + delta);
-                console.log(scrollDownTotal);
                 // In expanded mode, we do not want the navbar to go away!
                 if (scrollDownTotal > 50 && !props.isExpanded) {
                     setNavbarStyle(navbarSlideOffStyle);
