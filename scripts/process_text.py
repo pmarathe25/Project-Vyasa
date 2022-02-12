@@ -49,8 +49,15 @@ def build_sandhied_text(words, translit_ruleset):
         "nasal-dental-consonants",
         "nasal-bilabial-consonants",
     )
+    SEMI_VOWELS = keys_of(
+        "velar-semivowels",
+        "palatal-semivowels",
+        "retroflex-semivowels",
+        "dental-semivowels",
+        "bilabial-semivowels",
+    )
+
     CONSONANTS = UNVOICED_CONSONANTS + VOICED_CONSONANTS + NASAL_CONSONANTS + keys_of("sibilants")
-    SEMI_VOWELS = keys_of("semi-vowels")
     ALL_VOICED = VOICED_CONSONANTS + VOWELS + SEMI_VOWELS + NASAL_CONSONANTS
 
     VOICED_MAKER_MAP = {
@@ -79,11 +86,25 @@ def build_sandhied_text(words, translit_ruleset):
     def make_retroflex(cur, nxt):
         return cur + "<", nxt
 
-    def replace_final(pat, replace_with):
+    def replace_final(replace_pairs):
+        """
+        Args:
+            replace_pairs (List[Tuple[str, str]]):
+                    A list of tuples containing the substring to replace
+                    and what to replace it with. These are processed in order
+                    and only the first matching replacement is applied.
+        """
+
         def replace_final_impl(cur, nxt):
-            assert cur.endswith(pat)
-            cur = cur[: -len(pat)] + replace_with
-            return cur, nxt
+            for pat, replace_with in replace_pairs:
+                if cur.endswith(pat):
+                    cur = cur[: -len(pat)] + replace_with
+                    return cur, nxt
+
+            raise RuntimeError(
+                "None of the provided replacement pairs matched word: {:}"
+                "\nNote: Replacement pairs were: {:}".format(cur, replace_pairs)
+            )
 
         return replace_final_impl
 
@@ -119,38 +140,40 @@ def build_sandhied_text(words, translit_ruleset):
     # Order matters because applying one sandhi may invalidate another!
     PRE_MERGE_SANDHI = [
         # Special rules for m
-        (matches(["m"]), matches(VOWELS, invert=True), replace_final("m", ".")),
+        (matches(["m"]), matches(VOWELS, invert=True), replace_final([("m", ".")])),
         # Special rules for t
-        (matches(["t"]), matches(["c"]), replace_final("t", "c")),
-        (matches(["t"]), matches(["j"]), replace_final("t", "j")),
+        (matches(["t"]), matches(keys_of("dental-semivowels")), replace_final([("t", "l")])),
+        (matches(["t"]), matches(["c"]), replace_final([("t", "c")])),
+        (matches(["t"]), matches(["j"]), replace_final([("t", "j")])),
         (matches(["t"]), matches(keys_of("unvoiced-retroflex-consonants")), make_retroflex),
         (matches(["t"]), matches(keys_of("voiced-retroflex-consonants")), compose(make_voiced, make_retroflex)),
         # Unvoiced -> Voiced
         (matches(UNVOICED_CONSONANTS), matches(ALL_VOICED), make_voiced),
         # Visarga sandhi
-        (matches([":"], but_not=["a:", "aa:"]), matches(ALL_VOICED), replace_final(":", "r")),
-        (matches([":"]), matches(keys_of("unvoiced-palatal-consonants")), replace_final(":", "s~")),
-        (matches([":"]), matches(keys_of("unvoiced-retroflex-consonants")), replace_final(":", "s<")),
-        (matches([":"]), matches(keys_of("unvoiced-dental-consonants")), replace_final(":", "s")),
+        (matches([":"], but_not=["a:", "aa:"]), matches(ALL_VOICED), replace_final([(":", "r")])),
+        (matches([":"]), matches(keys_of("unvoiced-palatal-consonants")), replace_final([(":", "s~")])),
+        (matches([":"]), matches(keys_of("unvoiced-retroflex-consonants")), replace_final([(":", "s<")])),
+        (matches([":"]), matches(keys_of("unvoiced-dental-consonants")), replace_final([(":", "s")])),
         # Nasals
-        (matches(["n"]), matches(keys_of("unvoiced-palatal-consonants")), replace_final("n", ".s~")),
-        (matches(["n"]), matches(keys_of("unvoiced-retroflex-consonants")), replace_final("n", ".s<")),
-        (matches(["n"]), matches(keys_of("unvoiced-dental-consonants")), replace_final("n", ".s")),
+        (matches(["n"]), matches(keys_of("unvoiced-palatal-consonants")), replace_final([("n", ".s~")])),
+        (matches(["n"]), matches(keys_of("unvoiced-retroflex-consonants")), replace_final([("n", ".s<")])),
+        (matches(["n"]), matches(keys_of("unvoiced-dental-consonants")), replace_final([("n", ".s")])),
+        # Vowels + Vowels
+        (matches(["u"]), matches(VOWELS, but_not=["u"]), replace_final([("uu", "v"), ("u", "v")])),
     ]
 
     # Next we do a second pass to merge words
     MERGE_CONDITIONS = [
         (matches(VOWELS), matches(VOWELS)),
-        (matches(CONSONANTS), matches(VOWELS)),
-        (matches(CONSONANTS + SEMI_VOWELS), matches(CONSONANTS + SEMI_VOWELS)),
+        (matches(CONSONANTS + SEMI_VOWELS), matches(VOWELS + CONSONANTS + SEMI_VOWELS)),
     ]
 
     # And finally, a pass to apply sandhi that we don't want to merge
     POST_MERGE_SANDHI = [
         # Visarga rules
-        (matches(["aa:"]), matches(ALL_VOICED), replace_final("aa:", "aa")),
-        (matches(["a:"]), matches(VOWELS), replace_final("a:", "a")),
-        (matches(["a:"]), matches(ALL_VOICED), replace_final("a:", "au")),
+        (matches(["aa:"]), matches(ALL_VOICED), replace_final([("aa:", "aa")])),
+        (matches(["a:"]), matches(VOWELS), replace_final([("a:", "a")])),
+        (matches(["a:"]), matches(ALL_VOICED), replace_final([("a:", "au")])),
     ]
 
     def apply_sandhi(words, conditions):

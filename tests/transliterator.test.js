@@ -3,9 +3,12 @@
 const { transliterate, } = require('../src/util/transliterator.js');
 
 test.each([
-    // rr is not a valid sequence, but rr> is, so this should come back unchanges.
-    ["rrrr", "rrrr"],
+    // r>r is not a valid sequence, but r>r> is, so this should come back unchanged.
+    ["r>r", "r>r"],
     ["dharma", "धर्म"],
+    ["satta", "सत्त"],
+    ["la", "ल"],
+    ["talla", "तल्ल"],
     ["dharma karma", "धर्म कर्म"],
     ["dharma\nkarma", "धर्म\nकर्म"],
     ["vr>n<iitai", "वृणीते"],
