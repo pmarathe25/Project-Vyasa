@@ -10,6 +10,7 @@ module.exports = {
     `gatsby-plugin-anchor-links`,
     `gatsby-plugin-image`,
     `gatsby-plugin-sharp`,
+    `gatsby-plugin-gatsby-cloud`,
     {
       resolve: "gatsby-source-filesystem",
       options: {
