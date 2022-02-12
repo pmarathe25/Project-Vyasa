@@ -9,7 +9,6 @@ const AllVersesMenu = ({ location }) => {
     return (
         <>
             <Button
-                aria-controls="offcanvasNavbar"
                 className={navSideBarToggle}
                 onClick={() => setSideBarExpanded(true)}
                 style={{ width: "10%", minWidth: "120px" }}
@@ -22,7 +21,6 @@ const AllVersesMenu = ({ location }) => {
             <Navbar.Offcanvas
                 id="offcanvasNavbar"
                 variant="dark"
-                aria-labelledby="offcanvasNavbarLabel"
                 placement="end"
                 scroll={true}
                 show={sideBarExpanded}
