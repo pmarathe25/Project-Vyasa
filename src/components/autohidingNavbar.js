@@ -10,12 +10,13 @@ const AutohidingNavbar = (props) => {
 
     // Always show navbar when at the top of the page.
     // Otherwise, hide navbar when scrolling down, and show it when we scroll up by more than a certain threshold.
-    // If we do not threshold the upwards scrolling, the navbar will constantly pop in and out due to scrolling noise.
+    // If we do not threshold, the navbar will constantly pop in and out due to scrolling noise.
     const navbarSlideOffStyle = { top: -300, transition: "all .5s ease" };
     const navbarSlideOnStyle = { top: 0, transition: "all .5s ease" };
     const [navbarStyle, setNavbarStyle] = React.useState(navbarSlideOnStyle);
-    // Used for scrolling up thresholding logic
+    // Used for scrolling up/down thresholding logic
     const [scrollUpTotal, setScrollUpTotal] = React.useState(0);
+    const [scrollDownTotal, setScrollDownTotal] = React.useState(0);
 
     React.useEffect(() => {
         if (typeof window === "undefined") {
@@ -32,18 +33,23 @@ const AutohidingNavbar = (props) => {
 
             const delta = window.pageYOffset - offset[1];
             if (delta > 0) {
+                setScrollDownTotal(scrollDownTotal + delta);
+                console.log(scrollDownTotal);
+                // In expanded mode, we do not want the navbar to go away!
+                if (scrollDownTotal > 50 && !props.isExpanded) {
+                    setNavbarStyle(navbarSlideOffStyle);
+                }
                 if (delta > 2) {
                     setScrollUpTotal(0);
-                }
-                // In expanded mode, we do not want the navbar to go away!
-                if (!props.isExpanded) {
-                    setNavbarStyle(navbarSlideOffStyle);
                 }
             }
             else {
                 setScrollUpTotal(scrollUpTotal + delta);
-                if (scrollUpTotal < -2) {
+                if (scrollUpTotal < -5) {
                     setNavbarStyle(navbarSlideOnStyle);
+                }
+                if (delta < -2) {
+                    setScrollDownTotal(0);
                 }
             }
         };
