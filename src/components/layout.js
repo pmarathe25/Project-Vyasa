@@ -10,6 +10,8 @@ import { useTransliterate } from './transliterationHook'
 import { TransliterationModeSelect } from './translitModeSelect'
 import useIsMobile from '../util/responsiveness'
 import AutohidingNavbar from './autohidingNavbar'
+import { GoMarkGithub } from "react-icons/go"
+
 
 const Layout = ({ location, pageTitle, children }) => {
     const data = useStaticQuery(graphql`
@@ -44,6 +46,11 @@ const Layout = ({ location, pageTitle, children }) => {
     const [sideBarExpanded, setSideBarExpanded] = React.useState(false);
     const isMobile = useIsMobile()
 
+    const linkStyle = {
+        width: "fit-content",
+        marginTop: "auto", marginBottom: "auto",
+        paddingLeft: 0, paddingRight: "20px"
+    };
 
     return (
         <div className={container}>
@@ -54,8 +61,11 @@ const Layout = ({ location, pageTitle, children }) => {
                         <Link to="/" className={brandLink} style={{ width: "fit-content", minWidth: "170px", margin: 0, padding: 0 }}>
                             Project {useTransliterate("vyaasa")}
                         </Link>
-                        <Link to={toUrl("/about")} style={{ width: "fit-content", margin: "auto" }}>
+                        <Link to={toUrl("/about")} style={linkStyle}>
                             About
+                        </Link>
+                        <Link to={"https://github.com/pmarathe25/Project-Vyasa"} style={linkStyle}>
+                            <GoMarkGithub size={30} />
                         </Link>
                     </Row>
                     <TransliterationModeSelect />
