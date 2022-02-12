@@ -257,20 +257,20 @@ def process_parts_of_speech(parts_of_speech, is_verb, verse_num, line_num):
 
     new_parts = OrderedDict()
     part_functions = set()
-    for part in filter(lambda x: x, parts_of_speech.strip().split(" ")):
-        if part not in PARTS_OF_SPEECH_MAPPING:
-            show_error(
-                "Unknown part of speech: {:}"
-                "\nNote: Valid parts of speech are: {:}".format(
-                    verse_num, line_num, part, list(PARTS_OF_SPEECH_MAPPING.keys())
-                )
-            )
+    parts_of_speech = set(filter(lambda x: x, parts_of_speech.strip().split(" ")))
+    for part in PARTS_OF_SPEECH_MAPPING:
+        if part not in parts_of_speech:
+            continue
 
+        parts_of_speech.remove(part)
         part_name, part_function = PARTS_OF_SPEECH_MAPPING[part]
         if part_function in part_functions:
             show_error("{:} was specified more than once.".format(part_function))
         part_functions.add(part_function)
         new_parts[part_function] = part_name
+
+    if parts_of_speech:
+        show_error("Unrecognized parts of speech: {:}".format(parts_of_speech))
 
     def check_parts(expected):
         if expected != part_functions:
@@ -430,7 +430,7 @@ def main():
 
     os.makedirs(os.path.dirname(args.output), exist_ok=True)
     print("Writing to: {:}".format(args.output))
-    json.dump(processed, open(args.output, "w"), separators=(',', ':'))
+    json.dump(processed, open(args.output, "w"), separators=(",", ":"))
 
 
 if __name__ == "__main__":

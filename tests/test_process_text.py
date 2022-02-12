@@ -259,6 +259,34 @@ def build_expected(verses_text, translations, word_lists):
                 ],
             ),
         ),
+        # Check parts of speech ordering
+        (
+            """
+            1-1
+
+            prastaavayan (pra-!stu, nom sing pres act part caus) causing to start, starting 
+
+            Starting
+            """,
+            build_expected(
+                ["prastaavayan"],
+                ["Starting"],
+                [
+                    # Verse 1
+                    [
+                        # Line 1
+                        [
+                            [
+                                "prastaavayan",
+                                "causing to start, starting",
+                                "pra-√stu",
+                                "Nominative Singular Present Active Causative Participle",
+                            ],
+                        ],
+                    ]
+                ],
+            ),
+        ),
     ],
 )
 def test_process_text(content, expected_output):
