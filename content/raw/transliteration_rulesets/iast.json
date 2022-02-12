@@ -15,9 +15,9 @@
         },
         "vocalic": {
             "r>": "ṛ",
-            "rr>": "ṝ",
+            "r>r>": "ṝ",
             "l>": "ḷ",
-            "ll>": "ḹ"
+            "l>l>": "ḹ"
         },
         "compound-vowels": {
             "ai": "e",
@@ -86,11 +86,19 @@
             "s": "s",
             "h": "h"
         },
-        "semi-vowels": {
-            "y": "y",
-            "r": "r",
-            "l": "l",
-            "l<": "l̥",
+        "velar-semivowels": {
+            "y": "y"
+        },
+        "palatal-semivowels}": {
+            "r": "r"
+        },
+        "retroflex-semivowels": {
+            "l<": "l̥"
+        },
+        "dental-semivowels": {
+            "l": "l"
+        },
+        "bilabial-semivowels": {
             "v": "v"
         }
     },

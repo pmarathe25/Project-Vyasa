@@ -1,9 +1,8 @@
 html, body {
-    background-color: rgb(43, 45, 53);
+    background-color: rgb(50, 50, 60);
     color:rgb(230, 230, 230);
     margin: 0;
     padding: 0;
-    margin-top: 50px;
 }
 
 p {

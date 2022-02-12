@@ -66,7 +66,7 @@ def main():
                     )
 
     print("Writing dictionary to: {:}".format(args.output))
-    json.dump(out_dict, open(args.output, "w"))
+    json.dump(out_dict, open(args.output, "w"), separators=(",", ":"))
 
 
 if __name__ == "__main__":

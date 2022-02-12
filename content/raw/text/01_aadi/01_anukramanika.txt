@@ -1,4 +1,4 @@
-1-4
+1-5
 
 naaraayan<am (naaraayan<a, acc sing) Narayana
 namaskr>tya (namas-!kr>, abs) having bowed (to)
@@ -64,7 +64,7 @@ taan (sa, acc pl) those
 tu (tu,) but
 sarvaan (sarva, acc pl) all
 aiva (aiva,) indeed
-kr>tan~jali: (kr>ta+an~jali, nom sing) having joined hands
+kr>taan~jali: (kr>ta+an~jali, nom sing) having joined hands
 -
 apr>cchat (!prach, 3 sing imp act ind) he asked
 sa (sa, nom sing) he
@@ -76,3 +76,19 @@ abhipuujita: (abhi-!puuj, nom sing perf pass part) having been honored
 
 Having greeted all those seers with joined hands, and having been honored 
 by the true ones (i.e. the seers/sages), he asked (about) the progress of (their) asceticism.
+
+atha (atha,) then
+tais<u (sa, loc pl) with them
+upavis<t<ais<u (upa-!vis<, loc pl perf pass part) having sat down
+sarvais<u (sarva, loc pl) all
+aiva (aiva,) indeed
+tapasvis<u (tapasvin, loc pl) the ascetics
+-
+nirdis<t<am (nirdis<t<a, acc sing) the assigned
+aasanam (aasana, acc sing) seat
+bhaijai (!bhaj, 3 sing perf mid ind) he took
+vinayaat (vinaya, abl sing) humbly
+laaumahars<an<i: (laaumahars<an<i, nom sing) Lomaharshana's son
+
+Then, with all those ascetics having sat down, 
+Lomaharshana's son humbly took the seat assigned to him.

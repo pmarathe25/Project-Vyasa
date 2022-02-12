@@ -36,7 +36,7 @@ def main():
         output["sequence_map"] = ruleset
 
     print(f"Writing Trie to: {args.output}")
-    json.dump(output, open(args.output, "w"))
+    json.dump(output, open(args.output, "w"), separators=(",", ":"))
 
 
 if __name__ == "__main__":

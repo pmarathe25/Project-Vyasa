@@ -102,6 +102,10 @@ def transliteration_ruleset():
             ["tat", "d<a"],
             "tad<d<a",
         ),
+        (
+            ["tat", "lauka"],
+            "tallauka",
+        ),
         # Consonant + Vowel
         (
             ["naram", "aiva"],
@@ -136,6 +140,19 @@ def transliteration_ruleset():
         (
             ["tan", "ta"],
             "ta.sta",
+        ),
+        # Vowel + Vowel
+        (
+            ["tu", "iva"],
+            "tviva",
+        ),
+        (
+            ["tuu", "iva"],
+            "tviva",
+        ),
+        (
+            ["tu", "aiva"],
+            "tvaiva",
         ),
     ],
 )
