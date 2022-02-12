@@ -53,6 +53,7 @@ const AutohidingNavbar = (props) => {
     return (
         <Navbar bg="dark" variant="dark" sticky="top" expand="md" collapseOnSelect
             style={{ minHeight: "70px", marginBottom: "20px", ...navbarStyle }}
+            onToggle={(expanded) => { props.setIsExpanded(expanded) }}
         >
             {props.children}
         </Navbar >
