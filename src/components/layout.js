@@ -48,7 +48,7 @@ const Layout = ({ location, pageTitle, children }) => {
         <div className={container}>
             <title>{pageTitle} | {data.site.siteMetadata.title}</title>
             <Seo location={location} title={pageTitle} />
-            <AutohidingNavbar setIsExpanded={setNavExpanded}>
+            <AutohidingNavbar isExpanded={navExpanded} setIsExpanded={setNavExpanded}>
                 <Container>
                     <Link to="/" className={brandLink} style={{ width: "fit-content", marginRight: "10px", padding: 0 }}>
                         Project {useTransliterate("vyaasa")}

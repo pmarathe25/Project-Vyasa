@@ -35,7 +35,10 @@ const AutohidingNavbar = (props) => {
                 if (delta > 2) {
                     setScrollUpTotal(0);
                 }
-                setNavbarStyle(navbarSlideOffStyle);
+                // In expanded mode, we do not want the navbar to go away!
+                if (!props.isExpanded) {
+                    setNavbarStyle(navbarSlideOffStyle);
+                }
             }
             else {
                 setScrollUpTotal(scrollUpTotal + delta);
@@ -44,7 +47,7 @@ const AutohidingNavbar = (props) => {
                 }
             }
         };
-        // clean up code
+
         window.removeEventListener('scroll', onScroll);
         window.addEventListener('scroll', onScroll, { passive: true });
         return () => window.removeEventListener('scroll', onScroll);
@@ -54,7 +57,9 @@ const AutohidingNavbar = (props) => {
     return (
         <Navbar bg="dark" variant="dark" sticky="top" expand="md"
             style={{ minHeight: "70px", marginBottom: "20px", ...navbarStyle }}
-            onToggle={(expanded) => { props.setIsExpanded(isMobile ? expanded : false) }}
+            onToggle={(expanded) => {
+                props.setIsExpanded(isMobile ? expanded : false);
+            }}
         >
             {props.children}
         </Navbar >
