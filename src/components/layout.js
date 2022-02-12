@@ -11,13 +11,7 @@ import Seo from './seo'
 import { useTransliterate } from './transliterationHook'
 import { TransliterationModeSelect } from './translitModeSelect'
 
-const TopBarNavLink = (props) => {
-    const linkStyle = {
-        width: "fit-content",
-        marginTop: "auto", marginBottom: "auto",
-        paddingLeft: 0, paddingRight: "20px"
-    };
-
+const TopBarNavItem = (props) => {
     return (
         <Nav.Item
             style={{
@@ -27,9 +21,7 @@ const TopBarNavLink = (props) => {
             }}
             key={props.keyName}
         >
-            <Link to={props.to} style={linkStyle}>
-                {props.children}
-            </Link>
+            {props.children}
         </Nav.Item>
     );
 }
@@ -46,6 +38,12 @@ const Layout = ({ location, pageTitle, children }) => {
 
     const [navExpanded, setNavExpanded] = React.useState(false);
 
+    const linkStyle = {
+        width: "fit-content",
+        marginTop: "auto", marginBottom: "auto",
+        paddingLeft: 0, paddingRight: "20px"
+    };
+
     return (
         <div className={container}>
             <title>{pageTitle} | {data.site.siteMetadata.title}</title>
@@ -58,12 +56,17 @@ const Layout = ({ location, pageTitle, children }) => {
 
                     <Navbar.Collapse id="responsive-navbar-nav">
                         <Nav className="top-bar-links">
-                            <TopBarNavLink to={toUrl("/about")} navExpanded={navExpanded} keyName="about">
-                                About
-                            </TopBarNavLink>
-                            <TopBarNavLink to={"https://github.com/pmarathe25/Project-Vyasa"} navExpanded={navExpanded} keyName="github">
-                                <GoMarkGithub size={35} />
-                            </TopBarNavLink>
+                            <TopBarNavItem navExpanded={navExpanded} keyName="about">
+                                <Link to={toUrl("/about")} style={linkStyle}>
+
+                                    About
+                                </Link>
+                            </TopBarNavItem>
+                            <TopBarNavItem navExpanded={navExpanded} keyName="github">
+                                <a href="https://github.com/pmarathe25/Project-Vyasa">
+                                    <GoMarkGithub size={35} />
+                                </a>
+                            </TopBarNavItem>
                         </Nav>
                         <TransliterationModeSelect navExpanded={navExpanded} />
                     </Navbar.Collapse>
