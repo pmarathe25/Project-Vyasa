@@ -1,6 +1,6 @@
 import * as React from 'react'
-import { Button, Navbar, Offcanvas } from 'react-bootstrap'
-import { navSideBar, navSideBarToggle } from './layout.module.css'
+import { Button, Offcanvas } from 'react-bootstrap'
+import { navSideBar, navSideBarToggle } from './allVersesMenu.module.css'
 import { SideBar } from './sidebar'
 
 const AllVersesMenu = ({ location }) => {
@@ -18,8 +18,8 @@ const AllVersesMenu = ({ location }) => {
                 </p>
             </Button>
 
-            <Navbar.Offcanvas
-                id="offcanvasNavbar"
+            <Offcanvas
+                id="offcanvas"
                 variant="dark"
                 placement="end"
                 scroll={true}
@@ -30,7 +30,7 @@ const AllVersesMenu = ({ location }) => {
                 <Offcanvas.Body variant="dark" className={navSideBar}>
                     <SideBar location={location} setSideBarExpanded={setSideBarExpanded}></SideBar>
                 </Offcanvas.Body >
-            </Navbar.Offcanvas >
+            </Offcanvas >
         </>
     )
 }

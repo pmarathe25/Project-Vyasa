@@ -50,10 +50,11 @@ const AutohidingNavbar = (props) => {
         return () => window.removeEventListener('scroll', onScroll);
     });
 
+    // Navbar is not collapsible on non-mobile, so it's never considered "expanded"
     return (
-        <Navbar bg="dark" variant="dark" sticky="top" expand="md" collapseOnSelect
+        <Navbar bg="dark" variant="dark" sticky="top" expand="md"
             style={{ minHeight: "70px", marginBottom: "20px", ...navbarStyle }}
-            onToggle={(expanded) => { props.setIsExpanded(expanded) }}
+            onToggle={(expanded) => { props.setIsExpanded(isMobile ? expanded : false) }}
         >
             {props.children}
         </Navbar >

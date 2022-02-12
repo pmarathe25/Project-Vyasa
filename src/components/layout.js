@@ -25,6 +25,7 @@ const TopBarNavLink = (props) => {
                 height: "fit-content",
                 marginTop: "auto", marginBottom: "auto"
             }}
+            key={props.keyName}
         >
             <Link to={props.to} style={linkStyle}>
                 {props.children}
@@ -47,7 +48,7 @@ const Layout = ({ location, pageTitle, children }) => {
 
     return (
         <div className={container}>
-            <title>{pageTitle} | {data.site.siteMetadata.title} </title>
+            <title>{pageTitle} | {data.site.siteMetadata.title}</title>
             <Seo location={location} title={pageTitle} />
             <AutohidingNavbar setIsExpanded={setNavExpanded}>
                 <Container style={{ justifyContent: "space-around" }}>
@@ -57,10 +58,10 @@ const Layout = ({ location, pageTitle, children }) => {
 
                     <Navbar.Collapse id="responsive-navbar-nav">
                         <Nav className="top-bar-links">
-                            <TopBarNavLink to={toUrl("/about")} navExpanded={navExpanded}>
+                            <TopBarNavLink to={toUrl("/about")} navExpanded={navExpanded} keyName="about">
                                 About
                             </TopBarNavLink>
-                            <TopBarNavLink to={"https://github.com/pmarathe25/Project-Vyasa"} navExpanded={navExpanded}>
+                            <TopBarNavLink to={"https://github.com/pmarathe25/Project-Vyasa"} navExpanded={navExpanded} keyName="github">
                                 <GoMarkGithub size={35} />
                             </TopBarNavLink>
                         </Nav>
