@@ -47,6 +47,10 @@ def main():
                 detail = "./".join(detail) + "."
             add(word, "({:}) {:}".format(detail, meanings))
 
+        def handle_other(line):
+            word, _, meanings = line.partition(" ")
+            add(word, meanings)
+
         with open(path, "r") as f:
             for line_num, line in enumerate(f.readlines()):
                 if not line:
@@ -59,11 +63,7 @@ def main():
                 elif "(" in tokens[1]:
                     handle_nominal(line)
                 else:
-                    raise RuntimeError(
-                        "Error on line: {:} in: {:}. Did you forget to mark a verb root or include "
-                        "additional information about a noun/adj/indeclinable?"
-                        "\nNote: Line was: {:}".format(line_num, path, line)
-                    )
+                    handle_other(line)
 
     print("Writing dictionary to: {:}".format(args.output))
     json.dump(out_dict, open(args.output, "w"), separators=(",", ":"))

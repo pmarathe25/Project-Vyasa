@@ -234,6 +234,7 @@ PARTS_OF_SPEECH_MAPPING = OrderedDict(
         ("mid", ("middle", "voice")),
         ("ind", ("indicative", "mood")),
         ("pot", ("potential", "mood")),
+        ("impv", ("imperative", "mood")),
         ("caus", ("causative", "other")),
         ("des", ("desiderative", "other")),
         ("abs", ("absolutive", "form")),
@@ -430,8 +431,10 @@ def main():
                 "wordByWord": word_by_word_sections,
             }
         )
-    assert start_verse + index == end_verse, "Expected to see verses {:}-{:} but only received {:} verses".format(
-        start_verse, end_verse, index + 1
+    assert (
+        start_verse + index == end_verse
+    ), "Expected to see verses {:}-{:} ({:} verses) but received {:} verses. Did you forget to update the header?".format(
+        start_verse, end_verse, end_verse - start_verse + 1, index + 1
     )
 
     os.makedirs(os.path.dirname(args.output), exist_ok=True)

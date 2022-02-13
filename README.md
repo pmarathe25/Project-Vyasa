@@ -173,7 +173,7 @@ Valid entries are as follows:
 - `pres/perf/imp/fut`: Present/Perfect/Imperfect/Future tense
 - `act/pass/mid`: Active/Passive/Middle voice
 - `caus/des`: Causative/Desiderative
-- `ind/pot`: Indicative/Potential mood
+- `ind/pot/impv`: Indicative/Potential mood
 - `inf`: Infinitive
 - `abs`: Absolutive
 - `part`: Participle
