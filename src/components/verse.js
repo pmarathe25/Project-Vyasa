@@ -75,12 +75,17 @@ const WordAndDefinition = ({ word, definition, root, parts_of_speech }) => {
 
     const [showPopover, setShowPopover] = React.useState(false);
 
-    // Detect clicks outside the element marked with `ref` to make the
+    // Detect clicks outside the word and popover to make the
     // popover go away on mobile.
     const ref = React.useRef(null);
+    const popoverRef = React.useRef(null);
     React.useEffect(() => {
         const checkOutsideClick = (event) => {
-            if (ref.current && !ref.current.contains(event.target)) {
+            const outsideWord = ref.current && !ref.current.contains(event.target);
+            const outsidePopover = !popoverRef.current ||
+                (popoverRef.current && !popoverRef.current.contains(event.target));
+
+            if (outsideWord && outsidePopover) {
                 setShowPopover(false);
             }
         };
@@ -103,7 +108,7 @@ const WordAndDefinition = ({ word, definition, root, parts_of_speech }) => {
                         onMouseLeave={() => setShowPopover(false)}
                         onTouchStart={() => setShowPopover(true)}
                     >
-                        <Popover.Body>
+                        <Popover.Body ref={popoverRef} >
                             <Col>
                                 <RootMeanings root={root} />
                                 <p style={{ fontSize: "16px" }}>
