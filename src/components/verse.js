@@ -79,15 +79,15 @@ const WordAndDefinition = ({ word, definition, root, parts_of_speech }) => {
     // popover go away on mobile.
     const ref = React.useRef(null);
     React.useEffect(() => {
-        const onOutsideClick = (event) => {
+        const checkOutsideClick = (event) => {
             if (ref.current && !ref.current.contains(event.target)) {
                 setShowPopover(false);
             }
         };
 
-        document.addEventListener('click', onOutsideClick, true);
+        document.addEventListener('click', checkOutsideClick, true);
         return () => {
-            document.removeEventListener('click', onOutsideClick, true);
+            document.removeEventListener('click', checkOutsideClick, true);
         };
     }, []);
 
