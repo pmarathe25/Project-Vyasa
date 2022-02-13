@@ -71,14 +71,38 @@ const RootMeanings = ({ root }) => {
 }
 
 const WordAndDefinition = ({ word, definition, root, parts_of_speech }) => {
-    word = useTransliterate(word);
+    const translitWord = useTransliterate(word);
+
+    const [showPopover, setShowPopover] = React.useState(false);
+
+    // Detect clicks outside the element marked with `ref` to make the
+    // popover go away on mobile.
+    const ref = React.useRef(null);
+    React.useEffect(() => {
+        const onOutsideClick = (event) => {
+            if (ref.current && !ref.current.contains(event.target)) {
+                setShowPopover(false);
+            }
+        };
+
+        document.addEventListener('click', onOutsideClick, true);
+        return () => {
+            document.removeEventListener('click', onOutsideClick, true);
+        };
+    }, []);
 
     return (
-        <Col>
+        <Col ref={ref}>
             <OverlayTrigger
                 placement="auto"
                 overlay={
-                    <Popover style={{ backgroundColor: "rgb(13, 100, 233)" }}>
+                    <Popover
+                        id={`${word}-popover`}
+                        style={{ backgroundColor: "rgb(13, 100, 233)" }}
+                        onMouseEnter={() => setShowPopover(true)}
+                        onMouseLeave={() => setShowPopover(false)}
+                        onTouchStart={() => setShowPopover(true)}
+                    >
                         <Popover.Body>
                             <Col>
                                 <RootMeanings root={root} />
@@ -89,9 +113,15 @@ const WordAndDefinition = ({ word, definition, root, parts_of_speech }) => {
                         </Popover.Body>
                     </Popover>
                 }
+                show={showPopover}
             >
-                <p>
-                    {word}
+                <p
+                    role="presentation"
+                    onMouseEnter={() => setShowPopover(true)}
+                    onMouseLeave={() => setShowPopover(false)}
+                    onTouchStart={() => setShowPopover(true)}
+                >
+                    {translitWord}
                 </p>
             </OverlayTrigger>
             <p style={{ fontStyle: "italic", fontSize: "16px", color: "rgb(175, 175, 175)" }}>
