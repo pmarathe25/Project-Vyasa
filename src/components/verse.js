@@ -80,7 +80,7 @@ const WordAndDefinition = ({ word, definition, root, parts_of_speech }) => {
     const ref = React.useRef(null);
     const popoverRef = React.useRef(null);
     React.useEffect(() => {
-        const checkOutsideClick = (event) => {
+        const handleClick = (event) => {
             const outsideWord = ref.current && !ref.current.contains(event.target);
             const outsidePopover = !popoverRef.current ||
                 (popoverRef.current && !popoverRef.current.contains(event.target));
@@ -90,9 +90,9 @@ const WordAndDefinition = ({ word, definition, root, parts_of_speech }) => {
             }
         };
 
-        document.addEventListener('click', checkOutsideClick, true);
+        document.addEventListener('click', handleClick, true);
         return () => {
-            document.removeEventListener('click', checkOutsideClick, true);
+            document.removeEventListener('click', handleClick, true);
         };
     }, []);
 
