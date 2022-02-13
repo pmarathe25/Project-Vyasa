@@ -168,9 +168,9 @@ const VerseText = ({ num, text, wordByWord, location }) => {
                         Sanskrit Text
                     </Nav.Link>
                     <Nav.Link className={verseTextTab} eventKey="word-by-word">
-                        Word-by-word Translation
+                        Word-by-word Analysis
                     </Nav.Link>
-                    <Nav.Link to={url} as={Link} >
+                    <Nav.Link to={url} as={Link} style={{ paddingLeft: "4px" }}>
                         <FiLink size="18px" />
                     </Nav.Link>
                 </Nav>
