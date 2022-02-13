@@ -230,6 +230,31 @@ def build_expected(verses_text, translations, word_lists):
                 ],
             ),
         ),
+        # Alternate syntax omitting explicit root and parts of speech
+        (
+            """
+            1-1
+
+            ca and
+            aiva just so
+
+            And so
+            """,
+            build_expected(
+                ["caaiva"],
+                ["And so"],
+                [
+                    # Verse 1
+                    [
+                        # Line 1
+                        [
+                            ["ca", "and", "ca", ""],
+                            ["aiva", "just so", "aiva", ""],
+                        ]
+                    ]
+                ],
+            ),
+        ),
         # Multi-line - no sandhi should happen
         (
             """

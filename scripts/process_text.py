@@ -234,6 +234,7 @@ PARTS_OF_SPEECH_MAPPING = OrderedDict(
         ("mid", ("middle", "voice")),
         ("ind", ("indicative", "mood")),
         ("pot", ("potential", "mood")),
+        ("impv", ("imperative", "mood")),
         ("caus", ("causative", "other")),
         ("des", ("desiderative", "other")),
         ("abs", ("absolutive", "form")),
@@ -321,21 +322,27 @@ def parse_word_grammar(line, verse_num, line_num, dictionary):
     # Note that we could use regex here, but manually parsing it is easy enough
     # and probably faster
     rest = line
-    word, _, rest = rest.partition("(")
+    parts_of_speech = ""
+    if "(" in rest:
+        word, _, rest = rest.partition("(")
 
-    if "," not in rest:
-        raise RuntimeError(
-            "In verse: {:}, line: {:}, expected a comma separating the root from parts of speech!".format(
-                verse_num, line_num
+        if "," not in rest:
+            raise RuntimeError(
+                "In verse: {:}, line: {:}, expected a comma separating the root from parts of speech!".format(
+                    verse_num, line_num
+                )
             )
-        )
 
-    root, _, rest = rest.partition(",")
-    parts_of_speech, _, meaning = rest.partition(")")
+        root, _, rest = rest.partition(",")
+        parts_of_speech, _, meaning = rest.partition(")")
 
-    check(word, "word")
-    check(root, "root")
-    check(meaning, "meaning")
+        check(word, "word")
+        check(root, "root")
+        check(meaning, "meaning")
+    else:
+        # Alternate format when word == root and no parts of speech are needed.
+        word, _, meaning = rest.partition(" ")
+        root = word
 
     # Insert sqrt sign for verbal roots
     is_verb = "!" in root
@@ -424,8 +431,10 @@ def main():
                 "wordByWord": word_by_word_sections,
             }
         )
-    assert start_verse + index == end_verse, "Expected to see verses {:}-{:} but only received {:} verses".format(
-        start_verse, end_verse, index + 1
+    assert (
+        start_verse + index == end_verse
+    ), "Expected to see verses {:}-{:} ({:} verses) but received {:} verses. Did you forget to update the header?".format(
+        start_verse, end_verse, end_verse - start_verse + 1, index + 1
     )
 
     os.makedirs(os.path.dirname(args.output), exist_ok=True)

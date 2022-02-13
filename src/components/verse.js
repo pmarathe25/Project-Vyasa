@@ -1,5 +1,8 @@
+import { Link } from 'gatsby';
 import * as React from 'react';
-import { Button, Col, Collapse, Container, OverlayTrigger, Popover, Row, Tab, Tabs } from 'react-bootstrap';
+import { Button, Col, Collapse, Container, Nav, OverlayTrigger, Popover, Row, Tab } from 'react-bootstrap';
+import { FiLink } from "react-icons/fi";
+import toUrl from '../util/util';
 import { useTransliterate } from './transliterationHook';
 import { translationText, verseText, verseTextTab } from "./verse.module.css";
 
@@ -68,14 +71,38 @@ const RootMeanings = ({ root }) => {
 }
 
 const WordAndDefinition = ({ word, definition, root, parts_of_speech }) => {
-    word = useTransliterate(word);
+    const translitWord = useTransliterate(word);
+
+    const [showPopover, setShowPopover] = React.useState(false);
+
+    // Detect clicks outside the element marked with `ref` to make the
+    // popover go away on mobile.
+    const ref = React.useRef(null);
+    React.useEffect(() => {
+        const checkOutsideClick = (event) => {
+            if (ref.current && !ref.current.contains(event.target)) {
+                setShowPopover(false);
+            }
+        };
+
+        document.addEventListener('click', checkOutsideClick, true);
+        return () => {
+            document.removeEventListener('click', checkOutsideClick, true);
+        };
+    }, []);
 
     return (
-        <Col>
+        <Col ref={ref}>
             <OverlayTrigger
-                placement="top"
+                placement="auto"
                 overlay={
-                    <Popover style={{ backgroundColor: "rgb(13, 100, 233)" }}>
+                    <Popover
+                        id={`${word}-popover`}
+                        style={{ backgroundColor: "rgb(13, 100, 233)" }}
+                        onMouseEnter={() => setShowPopover(true)}
+                        onMouseLeave={() => setShowPopover(false)}
+                        onTouchStart={() => setShowPopover(true)}
+                    >
                         <Popover.Body>
                             <Col>
                                 <RootMeanings root={root} />
@@ -86,9 +113,15 @@ const WordAndDefinition = ({ word, definition, root, parts_of_speech }) => {
                         </Popover.Body>
                     </Popover>
                 }
+                show={showPopover}
             >
-                <p>
-                    {word}
+                <p
+                    role="presentation"
+                    onMouseEnter={() => setShowPopover(true)}
+                    onMouseLeave={() => setShowPopover(false)}
+                    onTouchStart={() => setShowPopover(true)}
+                >
+                    {translitWord}
                 </p>
             </OverlayTrigger>
             <p style={{ fontStyle: "italic", fontSize: "16px", color: "rgb(175, 175, 175)" }}>
@@ -98,11 +131,37 @@ const WordAndDefinition = ({ word, definition, root, parts_of_speech }) => {
     )
 }
 
+const WordByWord = ({ wordByWord }) => {
+    return (
+        <Container className={verseText} >
+            {wordByWord.map((line, index) =>
+                <Row
+                    key={index}
+                    style={{ width: "fit-content", margin: "auto" }}
+                    lg="auto"
+                >
+                    {
+                        line.map(([word, definition, root, parts_of_speech], wordIndex) =>
+                            <WordAndDefinition
+                                key={word + wordIndex}
+                                word={word}
+                                definition={definition}
+                                root={root}
+                                parts_of_speech={parts_of_speech}
+                            />
+                        )
+                    }
+                </Row>
+            )}
+        </Container>
+    );
+}
+
 const TabContents = (props) => {
     const overlayNumStyle = {
         width: "fit-content",
         position: "absolute",
-        zIndex: "1",
+        zIndex: 1,
         color: "rgb(75, 75, 75)",
         fontSize: "50px",
         paddingTop: "15px",
@@ -116,7 +175,7 @@ const TabContents = (props) => {
                         {props.num}
                     </div>
                 </Col>
-                <Col style={{ zIndex: "2" }}>
+                <Col style={{ zIndex: 2 }}>
                     {props.children}
                 </Col>
             </Row>
@@ -124,58 +183,53 @@ const TabContents = (props) => {
     )
 }
 
-const VerseText = ({ num, text, wordByWord }) => {
+const VerseText = ({ num, text, wordByWord, location }) => {
     text = useTransliterate(text);
-    const [key, setKey] = React.useState("text");
+    const url = toUrl(`${location.pathname}#verse_${num}`);
 
     return (
-        <Tabs
-            id={"verse-text-tabs-" + num}
-            defaultActiveKey="text"
-            activeKey={key}
-            onSelect={(k) => setKey(k)}
-            style={{ borderBottom: "1px solid rgb(60, 60, 60)", marginBottom: "4px" }}
-            variant="pills"
-        >
-            <Tab eventKey="text" title="Sanskrit Text" tabClassName={verseTextTab}>
-                <TabContents num={num}>
-                    <p className={verseText} style={{ overflowWrap: "break-word" }}>
-                        {text}
-                    </p>
-                </TabContents>
-            </Tab>
-            <Tab eventKey="word-by-word" title="Word-by-word Translation" tabClassName={verseTextTab}>
-                <TabContents num={num}>
-                    <Container className={verseText} >
-                        {wordByWord.map((line, index) =>
-                            <Row
-                                key={index}
-                                style={{
-                                    width: "fit-content", margin: "auto"
-                                }}
-                                lg="auto"
-                            >
-                                {
-                                    line.map(([word, definition, root, parts_of_speech], wordIndex) =>
-                                        <WordAndDefinition key={word + wordIndex} word={word} definition={definition} root={root} parts_of_speech={parts_of_speech} />
-                                    )
-                                }
-                            </Row>
-                        )}
-                    </Container>
-                </TabContents>
-            </Tab>
-        </Tabs >
+
+        <Tab.Container defaultActiveKey="text" id={"verse-text-tabs-" + num}>
+            <Row>
+                <Nav variant="pills"
+                    style={{ borderBottom: "1px solid rgb(60, 60, 60)", marginBottom: "4px" }}
+                >
+                    <Nav.Link className={verseTextTab} eventKey="text">
+                        Sanskrit Text
+                    </Nav.Link>
+                    <Nav.Link className={verseTextTab} eventKey="word-by-word">
+                        Word-by-word Analysis
+                    </Nav.Link>
+                    <Nav.Link to={url} as={Link} style={{ paddingLeft: "4px" }}>
+                        <FiLink size="18px" />
+                    </Nav.Link>
+                </Nav>
+            </Row>
+            <Tab.Content>
+                <Tab.Pane eventKey="text">
+                    <TabContents num={num}>
+                        <p className={verseText} style={{ overflowWrap: "break-word" }}>
+                            {text}
+                        </p>
+                    </TabContents>
+                </Tab.Pane>
+                <Tab.Pane eventKey="word-by-word">
+                    <TabContents num={num}>
+                        <WordByWord wordByWord={wordByWord} />
+                    </TabContents>
+                </Tab.Pane>
+            </Tab.Content>
+        </Tab.Container>
     )
 }
 
-const Verse = ({ num, text, wordByWord, translation }) => {
+const Verse = ({ num, text, wordByWord, translation, location }) => {
     return (
         <div id={`verse_${num}`} style={{
             borderBottom: "2px solid rgb(60, 60, 60)", borderTop: "0px",
             paddingBottom: "5px", marginBottom: "5px"
         }}>
-            <VerseText num={num} text={text} wordByWord={wordByWord} />
+            <VerseText num={num} text={text} wordByWord={wordByWord} location={location} />
             <Translation translation={translation} />
         </div>
     )

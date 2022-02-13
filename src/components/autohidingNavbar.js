@@ -11,9 +11,7 @@ const AutohidingNavbar = (props) => {
     // Always show navbar when at the top of the page.
     // Otherwise, hide navbar when scrolling down, and show it when we scroll up by more than a certain threshold.
     // If we do not threshold, the navbar will constantly pop in and out due to scrolling noise.
-    const navbarSlideOffStyle = { top: -300, transition: "all .5s ease" };
-    const navbarSlideOnStyle = { top: 0, transition: "all .5s ease" };
-    const [navbarStyle, setNavbarStyle] = React.useState(navbarSlideOnStyle);
+    const [navbarStyle, setNavbarStyle] = React.useState({ top: 0, transition: "all .5s ease" });
     // Used for scrolling up/down thresholding logic
     const [scrollUpTotal, setScrollUpTotal] = React.useState(0);
     const [scrollDownTotal, setScrollDownTotal] = React.useState(0);
@@ -22,6 +20,9 @@ const AutohidingNavbar = (props) => {
         if (typeof window === "undefined") {
             return;
         }
+
+        const navbarSlideOffStyle = { top: -300, transition: "all .5s ease" };
+        const navbarSlideOnStyle = { top: 0, transition: "all .5s ease" };
 
         const onScroll = () => {
             setOffset([offset[1], window.pageYOffset]);
@@ -52,7 +53,8 @@ const AutohidingNavbar = (props) => {
         window.removeEventListener('scroll', onScroll);
         window.addEventListener('scroll', onScroll, { passive: true });
         return () => window.removeEventListener('scroll', onScroll);
-    });
+    }, [offset, scrollDownTotal, scrollUpTotal,
+        isMobile, props.isExpanded]);
 
     // Navbar is not collapsible on non-mobile, so it's never considered "expanded"
     return (

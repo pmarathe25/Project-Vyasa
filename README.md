@@ -127,6 +127,10 @@ The format must conform to the following rules:
   ingest and convert into either Devanagari or IAST. 
   See the [transliteration](#transliteration-methodology) section for details.
 
+- For indeclinable words whose root is the same as the word, the "base-form" and
+  "parts of speech" fields may be omitted. 
+  For example: `ca and` rather than `ca (ca,) and`.
+
 For example, consider the following example input text, given here in IAST:
 ```
 nara gacchati
@@ -169,7 +173,7 @@ Valid entries are as follows:
 - `pres/perf/imp/fut`: Present/Perfect/Imperfect/Future tense
 - `act/pass/mid`: Active/Passive/Middle voice
 - `caus/des`: Causative/Desiderative
-- `ind/pot`: Indicative/Potential mood
+- `ind/pot/impv`: Indicative/Potential mood
 - `inf`: Infinitive
 - `abs`: Absolutive
 - `part`: Participle

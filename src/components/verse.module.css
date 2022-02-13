@@ -23,6 +23,7 @@
 .verse-text-tab:hover {
     background: #3467d6;
     color: #ffffff;
+    cursor: pointer;
 }
 
 .translation-accordion {

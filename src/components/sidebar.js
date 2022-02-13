@@ -1,5 +1,4 @@
-import { graphql, useStaticQuery } from 'gatsby'
-import { AnchorLink } from 'gatsby-plugin-anchor-links'
+import { graphql, useStaticQuery, Link } from 'gatsby'
 import * as React from 'react'
 import { Accordion, ListGroup } from 'react-bootstrap'
 import toUrl from '../util/util'
@@ -8,11 +7,11 @@ import { sideBarAccordion, sideBarLink, verseLink } from "./sidebar.module.css"
 
 const SideBarLink = (props) => {
     return (
-        <AnchorLink to={props.to} className={props.useClass} onAnchorLinkClick={() => { props.setSideBarExpanded(false) }}>
+        <Link to={props.to} className={props.useClass} onClick={() => { props.setSideBarExpanded(false) }}>
             <p className={props.useClass}>
                 {props.children}
             </p>
-        </AnchorLink>
+        </Link>
     );
 }
 
