@@ -9,7 +9,11 @@ const Chapter = ({ location, data }) => {
             {
                 data.textJson.verses.map(node =>
                     <div key={node.num} style={{ paddingBottom: "20px" }}>
-                        <Verse num={node.num} text={node.text} wordByWord={node.wordByWord} translation={node.translation} />
+                        <Verse
+                            num={node.num} text={node.text}
+                            wordByWord={node.wordByWord} translation={node.translation}
+                            location={location}
+                        />
                     </div>
                 )
             }
