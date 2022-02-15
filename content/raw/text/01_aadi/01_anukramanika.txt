@@ -1,4 +1,4 @@
-1-7
+1-8
 
 naaraayan<am (naaraayan<a, acc sing) Narayana
 namaskr>tya (namas-!kr>, abs) having bowed (to)
@@ -35,7 +35,7 @@ brahmars<iin (brahma+r>s<i, acc pl) the Brahman sages
 sa.s~itavrataan (sa.s~ita+vrata, acc pl) rigid-vowed (firm in their vows)
 -
 vinayaavanata: (vinaya+ava-!nam, nom sing perf pass part) having bowed humbly
-bhuutvaa (!bhu, abs) having been
+bhuutvaa (!bhuu, abs) having been
 kadaacit (kadaa+cit,) once
 suutanandana: (suuta+nandana, nom sing) son of Suta 
 
@@ -130,3 +130,26 @@ mama (aham, gen sing) of me
 
 Sauti, when have you come? Where was that time spent by you, 
 lotus-petal-eyed (one)? Tell that to me (who is) asking.
+
+aivam thus
+pr>s<t<a: (!prach, nom sing perf pass part) having been asked
+abraviit (!bruu, 3 sing imp act ind) he spoke
+samyak rightly
+yathaavat properly
+laaumahars<an<i: (laaumahars<an<i, nom sing) Lomaharshana's son
+-
+vaakyam (vaakya, acc sing) statement
+vacanasa.panna: (vacana+sa.panna, nom sing) endowed with (good) speech
+tais<aam (sa, gen pl) of them
+ca and
+caritaas~rayam (carita+aas~rayam, acc sing) going (to be) sheltered, seeking shelter
+-
+tasmin (sa, loc sing) in that
+sadasi (sadas, loc sing) assembly
+vistiirn<ai (vistiirn<a, loc sing) broad, great
+muniinaam (muni, gen pl) of sages
+bhaavitaatmanaam (bhaavita+aatman, gen pl) self-realized (lit. soul-manifested)
+
+Thus asked, rightly and properly, Lomaharshana's son (Sauti), equipped with good speech, 
+spoke a statement to (the ones) seeking their (the sages') shelter
+in that great assembly of self-realized sages.
