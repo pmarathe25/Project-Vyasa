@@ -1,3 +1,8 @@
+"""
+Processes dictionary files to create a single file containing all entries. 
+The format of the dictionary is: Dict[str, Tuple[str, str, str]]
+That is, it maps words to tuples of (meanings, reference/root, parts of speech of reference/root)
+"""
 import argparse
 import glob
 import json
@@ -35,10 +40,17 @@ def main():
 
         print("Processing: {:}".format(path))
 
+        expected_start_letter, _ = os.path.splitext(os.path.basename(path))
         with open(path, "r") as f:
             for line_num, line in enumerate(f.readlines()):
 
                 def add(word, meanings):
+                    if not word.strip("√").startswith(expected_start_letter):
+                        raise RuntimeError(
+                            "In file: {:} on line: {:}. Expected word to start with: {:}"
+                            "\nNote: Word was: {:}".format(path, line_num, expected_start_letter, word)
+                        )
+
                     nonlocal out_dict
                     meanings, _, reference = meanings.partition("[")
                     reference = reference.strip().strip("]")
