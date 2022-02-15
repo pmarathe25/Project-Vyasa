@@ -33,15 +33,29 @@ const Translation = ({ translation }) => {
 }
 
 const RootDef = ({ rootDef }) => {
-    const [definition, reference] = rootDef;
+    const [definition, reference, referencePartsOfSpeech] = rootDef;
     const translitRef = useTransliterate(reference);
 
     if (!rootDef) {
         return (<></>);
     }
+
+    const buildDefString = () => {
+        let out = definition + " ";
+        if (translitRef) {
+            if (referencePartsOfSpeech) {
+                out += `\n${referencePartsOfSpeech} of ${translitRef}`;
+            }
+            else {
+                out += `(from ${translitRef})`;
+            }
+        }
+        return out;
+    };
+
     return (
-        <p style={{ top: "50%", marginTop: "auto", marginBottom: "auto" }}>
-            {definition + (translitRef ? ` (from ${translitRef})` : "")}
+        <p style={{ top: "50%", marginTop: "auto", marginBottom: "auto", whiteSpace: "pre-wrap" }}>
+            {buildDefString()}
         </p>
     )
 }
