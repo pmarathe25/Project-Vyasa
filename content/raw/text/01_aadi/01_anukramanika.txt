@@ -55,7 +55,7 @@ tatra thereupon, then
 parivavru: (pari-!vru, 3 pl perf act ind) they surrounded
 tapasvina: (tapasvin, nom pl) the ascetics
 
-Then, the ascetics surrounded him, having reached the hermitage of the 
+Then, the ascetics surrounded him, (who had) reached the hermitage of the 
 Naimisharanya-dwellers, to hear (his) wonderful stories.
 
 abhivaadya (abhi-!vad, caus abs) having greeted
@@ -128,7 +128,7 @@ aitat (aitat, acc sing) that
 pr>cchata: (!prach, gen sing pres act part) of the asking
 mama (aham, gen sing) of me
 
-Sauti, when have you come? Where was that time spent by you, 
+Sauti, whence have you come? Where was that time spent by you, 
 lotus-petal-eyed (one)? Tell that to me (who is) asking.
 
 aivam thus
