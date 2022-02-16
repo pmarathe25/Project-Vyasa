@@ -71,7 +71,7 @@ const WordAndDefinition = ({ location, word, definition, reference, refPartsOfSp
 }
 
 const DictSection = ({ location, sectionName, wordComponents }) => {
-    sectionName = useTransliterate(sectionName);
+    const translitSectionName = useTransliterate(sectionName);
 
     let entries = []
     for (const [word, definition, reference, refPartsOfSpeech] of wordComponents.sort(
@@ -92,9 +92,28 @@ const DictSection = ({ location, sectionName, wordComponents }) => {
 
     return (
         <>
-            <h2>{sectionName}</h2>
+            <Link to={toUrl(`/dictionary#section_${sectionName}`)}>
+                <h2>{translitSectionName}</h2>
+            </Link>
             {entries}
         </>
+    )
+}
+
+const SectionLink = ({ sectionName }) => {
+    const translitSectionName = useTransliterate(sectionName);
+
+    const sectionLinkStyle = {
+        fontSize: "22px", width: "fit-content",
+        display: "inline", padding: 0,
+    };
+
+    return (
+        <Link to={toUrl(`/dictionary#section_${sectionName}`)}>
+            <p style={sectionLinkStyle}>
+                {translitSectionName}
+            </p>
+        </Link>
     )
 }
 
@@ -108,14 +127,25 @@ const Dictionary = ({ location }) => {
         dictSections.get(sectionName).push([word, definition, ref, refPartsOfSpeech])
     }
 
+    // Top-bar with links to eacch section
+    let sectionLinks = [];
     let sections = [];
     for (let [sectionName, wordComponents] of [...dictSections.entries()].sort(
         ([word], [other]) => {
             return sortSanskrit(word, other);
         }
     )) {
+        sectionLinks.push(
+            <Col key={sectionName}>
+                <SectionLink sectionName={sectionName} />
+            </Col>
+        )
         sections.push(
-            <Col key={sectionName} style={{ width: "fit-content", minWidth: "50%", marginBottom: "20px" }}>
+            <Col key={sectionName} id={toUrl(`section_${sectionName}`)}
+                style={{
+                    width: "fit-content", minWidth: "50%", marginBottom: "20px"
+                }}
+            >
                 <DictSection
                     location={location}
                     sectionName={sectionName}
@@ -128,7 +158,10 @@ const Dictionary = ({ location }) => {
     return (
         <Layout location={location} pageTitle="Dictionary">
             <Container>
-                <Row >
+                <Row style={{ marginBottom: "20px" }}>
+                    {sectionLinks}
+                </Row>
+                <Row>
                     {sections}
                 </Row>
             </Container>
