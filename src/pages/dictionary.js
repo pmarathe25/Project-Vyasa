@@ -22,7 +22,7 @@ const WordAndDefinition = ({ location, word, definition, reference, refPartsOfSp
     const wordParts = word.split("-");
     const translitWordParts = translitWord.split("-");
     let wordElements = [];
-    for (let index in wordParts) {
+    for (let index = 0; index < wordParts.length; ++index) {
         const part = (
             <p style={wordLinkStyle}>
                 {translitWordParts[index]}
@@ -33,7 +33,7 @@ const WordAndDefinition = ({ location, word, definition, reference, refPartsOfSp
                 <p style={wordLinkStyle}>
                     {(index > 0 ? "-" : "")}
                 </p>
-                {index == (wordParts.length - 1) && index > 0
+                {index === (wordParts.length - 1) && index > 0
                     ? (
                         <Link to={`${baseUrl}#${toUrl(wordParts[index])}`} style={wordLinkStyle}>
                             {part}
@@ -46,7 +46,7 @@ const WordAndDefinition = ({ location, word, definition, reference, refPartsOfSp
     }
 
     const id = toUrl(word);
-    const isActive = location.hash == `#${id}`;
+    const isActive = location.hash === `#${id}`;
 
     return (
         <div id={id} style={{
