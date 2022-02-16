@@ -92,7 +92,7 @@ const WordAndDefinition = ({ word, definition, root, parts_of_speech }) => {
     return (
         <Col ref={ref}>
             <OverlayTrigger
-                placement="auto"
+                placement="top"
                 overlay={
                     <Popover
                         id={`${word}-popover`}
