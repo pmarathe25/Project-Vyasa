@@ -61,7 +61,12 @@ const Layout = ({ location, pageTitle, children }) => {
                                 </Link>
                             </TopBarNavItem>
                             <TopBarNavItem navExpanded={navExpanded} keyName="github" >
-                                <a href="https://github.com/pmarathe25/Project-Vyasa" style={{ marginLeft: "12px" }}>
+                                <a
+                                    href="https://github.com/pmarathe25/Project-Vyasa"
+                                    style={{ marginLeft: "12px" }}
+                                    target="_blank"
+                                    rel="noreferrer"
+                                >
                                     <GoMarkGithub size={35} />
                                 </a>
                             </TopBarNavItem>

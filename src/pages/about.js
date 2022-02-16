@@ -37,7 +37,11 @@ const About = ({ location }) => {
             <p style={textStyle}>
                 If you'd like to help with this project, there are several ways to do so!
                 <br />
-                See the <a href="https://github.com/pmarathe25/Project-Vyasa/blob/main/CONTRIBUTING.md">
+                See the <a
+                    href="https://github.com/pmarathe25/Project-Vyasa/blob/main/CONTRIBUTING.md"
+                    target="_blank"
+                    rel="noreferrer"
+                >
                     CONTRIBUTING.md</a> file on the GitHub repository for more details.
             </p>
             <h2 style={headerStyle}>How To Use This Site</h2>
