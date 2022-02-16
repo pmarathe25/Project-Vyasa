@@ -41,7 +41,7 @@ const Layout = ({ location, pageTitle, children }) => {
     const linkStyle = {
         width: "fit-content",
         marginTop: "auto", marginBottom: "auto",
-        paddingLeft: 0, paddingRight: "10px"
+        paddingLeft: "7px", paddingRight: "7px"
     };
 
     return (
@@ -66,8 +66,8 @@ const Layout = ({ location, pageTitle, children }) => {
                                     Dictionary
                                 </Link>
                             </TopBarNavItem>
-                            <TopBarNavItem navExpanded={navExpanded} keyName="github" style={{ paddingLeft: "10px" }}>
-                                <a href="https://github.com/pmarathe25/Project-Vyasa">
+                            <TopBarNavItem navExpanded={navExpanded} keyName="github" >
+                                <a href="https://github.com/pmarathe25/Project-Vyasa" style={{ marginLeft: "12px" }}>
                                     <GoMarkGithub size={35} />
                                 </a>
                             </TopBarNavItem>
