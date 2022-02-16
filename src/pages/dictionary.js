@@ -51,7 +51,7 @@ const WordAndDefinition = ({ location, word, definition, reference, refPartsOfSp
     return (
         <div id={id} style={{
             marginBottom: "8px",
-            backgroundColor: isActive ? "rgb(81, 150, 214)" : "inherit",
+            backgroundColor: isActive ? "rgb(50, 100, 200)" : "inherit",
             borderRadius: isActive ? "5px" : "inherit",
             borderBottom: "1px solid rgb(65, 65, 65)"
         }}>
