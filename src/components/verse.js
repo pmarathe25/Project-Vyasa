@@ -5,6 +5,7 @@ import { FiLink } from "react-icons/fi";
 import toUrl from '../util/util';
 import { useTransliterate } from './transliterationHook';
 import { translationText, verseText, verseTextTab } from "./verse.module.css";
+import Definition from './definition';
 
 const allWordsDict = require("../../content/generated/dictionary/all_words.json");
 
@@ -32,36 +33,9 @@ const Translation = ({ translation }) => {
     )
 }
 
-const RootDef = ({ rootDef }) => {
-    const [definition, reference, referencePartsOfSpeech] = rootDef;
-    const translitRef = useTransliterate(reference);
-
-    if (!rootDef) {
-        return (<></>);
-    }
-
-    const buildDefString = () => {
-        let out = definition + " ";
-        if (translitRef) {
-            if (referencePartsOfSpeech) {
-                out += `\n${referencePartsOfSpeech} of ${translitRef}`;
-            }
-            else {
-                out += `(from ${translitRef})`;
-            }
-        }
-        return out;
-    };
-
-    return (
-        <p style={{ top: "50%", marginTop: "auto", marginBottom: "auto", whiteSpace: "pre-wrap" }}>
-            {buildDefString()}
-        </p>
-    )
-}
-
 const RootMeanings = ({ root }) => {
     let rootDefs = [];
+    const roots = root.split("+");
     let translitRoots = useTransliterate(root).split("+");
     let rootComponents = root.split("+");
     for (let rootComp of rootComponents) {
@@ -73,10 +47,16 @@ const RootMeanings = ({ root }) => {
             {
                 translitRoots.map((rootPar, index) =>
                     <div style={{ display: "flex" }} key={index}>
-                        <p style={{ fontSize: "20px", paddingRight: "5px" }}>
-                            {rootPar}
-                        </p>
-                        <RootDef rootDef={rootDefs[index]} />
+                        <a href={`/dictionary#${toUrl(roots[index])}`} target="_blank" rel="noreferrer">
+                            <p style={{ fontSize: "20px", paddingRight: "5px" }}>
+                                {rootPar}
+                            </p>
+                        </a>
+                        <Definition
+                            definition={rootDefs[index][0]}
+                            reference={rootDefs[index][1]}
+                            refPartsOfSpeech={rootDefs[index][2]}
+                        />
                     </div>
                 )
             }
@@ -181,7 +161,7 @@ const TabContents = (props) => {
         width: "fit-content",
         position: "absolute",
         zIndex: 1,
-        color: "rgb(75, 75, 75)",
+        color: "rgb(70, 70, 70)",
         fontSize: "50px",
         paddingTop: "15px",
     };
@@ -207,11 +187,10 @@ const VerseText = ({ num, text, wordByWord, location }) => {
     const url = toUrl(`${location.pathname}#verse_${num}`);
 
     return (
-
         <Tab.Container defaultActiveKey="text" id={"verse-text-tabs-" + num}>
             <Row>
                 <Nav variant="pills"
-                    style={{ borderBottom: "1px solid rgb(60, 60, 60)", marginBottom: "4px" }}
+                    style={{ borderBottom: "1px solid rgb(65, 65, 65)", marginBottom: "4px" }}
                 >
                     <Nav.Link className={verseTextTab} eventKey="text">
                         Sanskrit Text
@@ -245,7 +224,7 @@ const VerseText = ({ num, text, wordByWord, location }) => {
 const Verse = ({ num, text, wordByWord, translation, location }) => {
     return (
         <div id={`verse_${num}`} style={{
-            borderBottom: "2px solid rgb(60, 60, 60)", borderTop: "0px",
+            borderBottom: "2px solid rgb(65, 65, 65)", borderTop: "0px",
             paddingBottom: "5px", marginBottom: "5px"
         }}>
             <VerseText num={num} text={text} wordByWord={wordByWord} location={location} />

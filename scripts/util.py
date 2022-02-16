@@ -73,7 +73,7 @@ def process_parts_of_speech(parts_of_speech, is_verb, err_prefix, is_declined=Tr
         return parts_of_speech
 
     def show_error(msg):
-        raise RuntimeError(err_prefix + msg + "\nNote: parts of speech were: {:}".format(parts_of_speech))
+        raise RuntimeError(err_prefix + msg + f"\nNote: parts of speech were: {parts_of_speech}")
 
     new_parts = OrderedDict()
     part_functions = set()
@@ -85,24 +85,24 @@ def process_parts_of_speech(parts_of_speech, is_verb, err_prefix, is_declined=Tr
         parts_of_speech.remove(part)
         part_name, part_function = PARTS_OF_SPEECH_MAPPING[part]
         if part_function in part_functions:
-            show_error("{:} was specified more than once.".format(part_function))
+            show_error(f"{part_function} was specified more than once.")
         part_functions.add(part_function)
         new_parts[part_function] = part_name
 
     if parts_of_speech:
-        show_error("Unrecognized parts of speech: {:}".format(parts_of_speech))
+        show_error(f"Unrecognized parts of speech: {parts_of_speech}")
 
     def check_parts(expected):
         if not is_declined:
             expected = copy.copy(expected) - NOUN_PARTS
 
         if expected != part_functions:
-            show_error("Expected parts of speech: {:}, but received: {:}".format(expected, part_functions))
+            show_error(f"Expected parts of speech: {expected}, but received: {part_functions}")
 
     # Validate that part functions are ok
     if "other" in part_functions:
         if not is_verb:
-            show_error("Cannot use parts of speech: {:} for non-verbs!".format(new_parts["other"]))
+            show_error(f"Cannot use parts of speech: {new_parts['other']} for non-verbs!")
         part_functions.remove("other")
 
     if is_verb:

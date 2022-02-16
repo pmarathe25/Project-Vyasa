@@ -1,4 +1,4 @@
-import { graphql, useStaticQuery, Link } from 'gatsby'
+import { graphql, Link, useStaticQuery } from 'gatsby'
 import * as React from 'react'
 import { Accordion, ListGroup } from 'react-bootstrap'
 import toUrl from '../util/util'
@@ -8,37 +8,43 @@ import { sideBarAccordion, sideBarLink, verseLink } from "./sidebar.module.css"
 const SideBarLink = (props) => {
     return (
         <Link to={props.to} className={props.useClass} onClick={() => { props.setSideBarExpanded(false) }}>
-            <p className={props.useClass}>
-                {props.children}
-            </p>
+            {props.children}
         </Link>
     );
 }
 
-// A per-chapter accordion item that expands all constituent verses
-const VersesAccordion = ({ baseURL, chapter, setSideBarExpanded }) => {
+// A per-chapter accordion item that expands all constituent verses, highlighting the active one.
+const VersesAccordion = ({ location, baseURL, chapter, setSideBarExpanded }) => {
     const chapterURL = toUrl(`${baseURL}/${chapter.chapter}`);
 
     return (
         <Accordion.Item eventKey={chapter.chapter} className={sideBarAccordion}>
             <Accordion.Header className={sideBarAccordion}>
                 <SideBarLink to={chapterURL} setSideBarExpanded={setSideBarExpanded} useClass={sideBarLink}>
-                    {chapter.chapter}
+                    <p className={sideBarLink}>
+                        {chapter.chapter}
+                    </p>
                 </SideBarLink>
             </Accordion.Header>
             <Accordion.Body className={sideBarAccordion}>
                 <ListGroup>
                     {
                         chapter.verses.map(verse =>
-                            <ListGroup.Item key={verse.num} eventKey={verse.num} variant="dark">
-                                <SideBarLink
-                                    to={`${chapterURL}/#verse_${verse.num}`}
-                                    setSideBarExpanded={setSideBarExpanded}
-                                    useClass={verseLink}
+                            <SideBarLink
+                                to={`${chapterURL}/#verse_${verse.num}`}
+                                setSideBarExpanded={setSideBarExpanded}
+                                useClass={verseLink}
+                            >
+                                <ListGroup.Item key={verse.num} eventKey={verse.num} variant="dark"
+                                    style={{
+                                        backgroundColor: location.hash == `#verse_${verse.num}` ? "rgb(81, 150, 214)" : "inherit",
+                                    }}
                                 >
-                                    Verse {verse.num}
-                                </SideBarLink>
-                            </ListGroup.Item>
+                                    <p className={verseLink}>
+                                        Verse {verse.num}
+                                    </p>
+                                </ListGroup.Item>
+                            </SideBarLink>
                         )
                     }
                 </ListGroup>
@@ -48,14 +54,16 @@ const VersesAccordion = ({ baseURL, chapter, setSideBarExpanded }) => {
 }
 
 // A per-book accordion item that expands all constituent chapters
-const ChaptersAccordion = ({ book, activeChapter, setSideBarExpanded }) => {
+const ChaptersAccordion = ({ location, book, activeChapter, setSideBarExpanded }) => {
     const bookURL = toUrl(`/${book.fieldValue}`);
 
     return (
         <Accordion.Item eventKey={book.fieldValue} className={sideBarAccordion}>
             <Accordion.Header className={sideBarAccordion}>
                 <SideBarLink to={bookURL} setSideBarExpanded={setSideBarExpanded} useClass={sideBarLink}>
-                    {book.fieldValue}
+                    <p className={sideBarLink}>
+                        {book.fieldValue}
+                    </p>
                 </SideBarLink>
             </Accordion.Header>
             <Accordion.Body className={sideBarAccordion}>
@@ -63,7 +71,13 @@ const ChaptersAccordion = ({ book, activeChapter, setSideBarExpanded }) => {
                     {
                         book.nodes.map(chapter =>
                         (
-                            <VersesAccordion key={chapter.chapter} baseURL={bookURL} chapter={chapter} setSideBarExpanded={setSideBarExpanded} />
+                            <VersesAccordion
+                                location={location}
+                                key={chapter.chapter}
+                                baseURL={bookURL}
+                                chapter={chapter}
+                                setSideBarExpanded={setSideBarExpanded}
+                            />
                         )
                         )
                     }
@@ -111,7 +125,12 @@ export const SideBar = ({ location, setSideBarExpanded }) => {
         <Accordion defaultActiveKey={activeBook} alwaysOpen={true} flush>
             {
                 data.allTextJson.group.map(book =>
-                    <ChaptersAccordion key={book.fieldValue} book={book} activeChapter={activeChapter} setSideBarExpanded={setSideBarExpanded} />
+                    <ChaptersAccordion
+                        location={location}
+                        key={book.fieldValue}
+                        book={book}
+                        activeChapter={activeChapter}
+                        setSideBarExpanded={setSideBarExpanded} />
                 )
             }
         </Accordion>

@@ -104,14 +104,14 @@ def build_sandhied_text(words, translit_ruleset):
                         cur = cur[: -len(pat)] + replace_with
                         return cur, nxt
                 else:
-                    assert mode == "start", "Mode must be either 'start' or 'end', but was: {:}".format(mode)
+                    assert mode == "start", f"Mode must be either 'start' or 'end', but was: {mode}"
                     if nxt.startswith(pat):
                         nxt = replace_with + nxt[len(pat) :]
                         return cur, nxt
 
             raise RuntimeError(
-                "None of the provided replacement pairs matched word: {:}"
-                "\nNote: Replacement pairs were: {:}".format(cur, replace_pairs)
+                f"None of the provided replacement pairs matched word: {cur}"
+                f"\nNote: Replacement pairs were: {replace_pairs}"
             )
 
         return replace_impl
@@ -230,9 +230,7 @@ def parse_word_grammar(line, verse_num, line_num, dictionary):
     def check(elem, elem_name):
         if not elem:
             raise RuntimeError(
-                "In verse: {:}, line: {:}, expected a '{:}' field but none was provided".format(
-                    verse_num, line_num, elem_name
-                )
+                f"In verse: {verse_num}, line: {line_num}, expected a '{elem_name}' field but none was provided"
             )
 
     # Note that we could use regex here, but manually parsing it is easy enough
@@ -244,9 +242,7 @@ def parse_word_grammar(line, verse_num, line_num, dictionary):
 
         if "," not in rest:
             raise RuntimeError(
-                "In verse: {:}, line: {:}, expected a comma separating the root from parts of speech!".format(
-                    verse_num, line_num
-                )
+                f"In verse: {verse_num}, line: {line_num}, expected a comma separating the root from parts of speech!"
             )
 
         root, _, rest = rest.partition(",")
@@ -267,16 +263,14 @@ def parse_word_grammar(line, verse_num, line_num, dictionary):
 
     for root_part in root.split("+"):
         if root_part not in dictionary:
-            raise RuntimeError("Could not find: {:} in the dictionary. Is an entry missing?".format(root_part))
+            raise RuntimeError(f"Could not find: {root_part} in the dictionary. Is an entry missing?")
 
     return strip(
         [
             word,
             meaning,
             root,
-            util.process_parts_of_speech(
-                parts_of_speech, is_verb, "In verse: {:}, line: {:}: ".format(verse_num, line_num)
-            ),
+            util.process_parts_of_speech(parts_of_speech, is_verb, f"In verse: {verse_num}, line: {line_num}: "),
         ]
     )
 
@@ -356,14 +350,13 @@ def main():
                 "wordByWord": word_by_word_sections,
             }
         )
-    assert (
-        start_verse + index == end_verse
-    ), "Expected to see verses {:}-{:} ({:} verses) but received {:} verses. Did you forget to update the header?".format(
-        start_verse, end_verse, end_verse - start_verse + 1, index + 1
-    )
+
+    err_msg = f"Expected to see verses {start_verse}-{end_verse} ({end_verse - start_verse + 1} verses) "
+    err_msg += f"but received {index + 1} verses. Did you forget to update the header?"
+    assert start_verse + index == end_verse, err_msg
 
     os.makedirs(os.path.dirname(args.output), exist_ok=True)
-    print("Writing to: {:}".format(args.output))
+    print(f"Writing to: {args.output}")
     json.dump(processed, open(args.output, "w"), separators=(",", ":"))
 
 

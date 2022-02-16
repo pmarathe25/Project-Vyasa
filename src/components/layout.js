@@ -41,7 +41,7 @@ const Layout = ({ location, pageTitle, children }) => {
     const linkStyle = {
         width: "fit-content",
         marginTop: "auto", marginBottom: "auto",
-        paddingLeft: 0, paddingRight: "20px"
+        paddingLeft: 0, paddingRight: "10px"
     };
 
     return (
@@ -58,11 +58,15 @@ const Layout = ({ location, pageTitle, children }) => {
                         <Nav className="top-bar-links">
                             <TopBarNavItem navExpanded={navExpanded} keyName="about">
                                 <Link to={toUrl("/about")} style={linkStyle}>
-
                                     About
                                 </Link>
                             </TopBarNavItem>
-                            <TopBarNavItem navExpanded={navExpanded} keyName="github">
+                            <TopBarNavItem navExpanded={navExpanded} keyName="dictionary">
+                                <Link to={toUrl("/dictionary")} style={linkStyle}>
+                                    Dictionary
+                                </Link>
+                            </TopBarNavItem>
+                            <TopBarNavItem navExpanded={navExpanded} keyName="github" style={{ paddingLeft: "10px" }}>
                                 <a href="https://github.com/pmarathe25/Project-Vyasa">
                                     <GoMarkGithub size={35} />
                                 </a>

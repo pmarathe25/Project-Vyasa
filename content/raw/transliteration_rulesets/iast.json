@@ -1,10 +1,5 @@
 {
     "sequence_map": {
-        "special": {
-            "'": "'",
-            ".": "ṃ",
-            ":": "ḥ"
-        },
         "vowels": {
             "a": "a",
             "aa": "ā",
@@ -13,78 +8,77 @@
             "u": "u",
             "uu": "ū"
         },
-        "vocalic": {
-            "r>": "ṛ",
-            "r>r>": "ṝ",
-            "l>": "ḷ",
-            "l>l>": "ḹ"
-        },
         "compound-vowels": {
             "ai": "e",
             "aai": "ai",
             "au": "o",
             "aau": "au"
         },
+        "vocalic": {
+            "r>": "ṛ",
+            "r>r>": "ṝ",
+            "l>": "ḷ",
+            "l>l>": "ḹ"
+        },
+        "special": {
+            "'": "'",
+            ".": "ṃ",
+            ":": "ḥ"
+        },
         "unvoiced-velar-consonants": {
             "k": "k",
             "kh": "kh"
-        },
-        "unvoiced-palatal-consonants": {
-            "c": "c",
-            "ch": "ch"
-        },
-        "unvoiced-retroflex-consonants": {
-            "t<": "ṭ",
-            "th<": "ṭh"
-        },
-        "unvoiced-dental-consonants": {
-            "t": "t",
-            "th": "th"
-        },
-        "unvoiced-bilabial-consonants": {
-            "p": "p",
-            "ph": "ph"
         },
         "voiced-velar-consonants": {
             "g": "g",
             "gh": "gh"
         },
+        "nasal-velar-consonants": {
+            "n^": "ṅ"
+        },
+        "unvoiced-palatal-consonants": {
+            "c": "c",
+            "ch": "ch"
+        },
         "voiced-palatal-consonants": {
             "j": "j",
             "jh": "jh"
+        },
+        "nasal-palatal-consonants": {
+            "n~": "ñ"
+        },
+        "unvoiced-retroflex-consonants": {
+            "t<": "ṭ",
+            "th<": "ṭh"
         },
         "voiced-retroflex-consonants": {
             "d<": "ḍ",
             "dh<": "ḍh"
         },
+        "nasal-retroflex-consonants": {
+            "n<": "ṇ"
+        },
+        "unvoiced-dental-consonants": {
+            "t": "t",
+            "th": "th"
+        },
         "voiced-dental-consonants": {
             "d": "d",
             "dh": "dh"
+        },
+        "nasal-dental-consonants": {
+            "n": "n"
+        },
+        "unvoiced-bilabial-consonants": {
+            "p": "p",
+            "ph": "ph"
         },
         "voiced-bilabial-consonants": {
             "b": "b",
             "bh": "bh"
         },
-        "nasal-velar-consonants": {
-            "n^": "ṅ"
-        },
-        "nasal-palatal-consonants": {
-            "n~": "ñ"
-        },
-        "nasal-retroflex-consonants": {
-            "n<": "ṇ"
-        },
-        "nasal-dental-consonants": {
-            "n": "n"
-        },
         "nasal-bilabial-consonants": {
             "m": "m"
-        },
-        "sibilants": {
-            "s~": "ś",
-            "s<": "ṣ",
-            "s": "s",
-            "h": "h"
         },
         "velar-semivowels": {
             "y": "y"
@@ -100,6 +94,12 @@
         },
         "bilabial-semivowels": {
             "v": "v"
+        },
+        "sibilants": {
+            "s~": "ś",
+            "s<": "ṣ",
+            "s": "s",
+            "h": "h"
         }
     },
     "rules": {}

@@ -38,7 +38,7 @@ $(GEN_RULE_SET_DIR)/%.json: $(RAW_RULE_SET_DIR)/%.json $(BUILD_RULE_SET_SCRIPT) 
 	python3 $(BUILD_RULE_SET_SCRIPT) $< -o $@
 
 $(GEN_DICTIONARY_FILE): $(RAW_DICTIONARY_FILES) $(BUILD_DICTIONARY_SCRIPT) | $(GEN_DICTIONARY_DIR)
-	python3 $(BUILD_DICTIONARY_SCRIPT) $(RAW_DICTIONARY_DIR) -o $@
+	python3 $(BUILD_DICTIONARY_SCRIPT) $(RAW_DICTIONARY_DIR) -o $@ --transliteration-ruleset $(RAW_RULE_SET_DIR)/devanagari.json
 
 # Automatic rules don't work well when we want to go from a nested input structure
 # to a flattened output structure, so we'll manage timestamps within the script.

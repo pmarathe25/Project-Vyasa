@@ -1,16 +1,15 @@
-sarasvatii (f) Sarasvati, goddess of knowledge, arts, etc.
-satra (n) sacrifice
-sa.s~ita (adj) sharp, well-prepared, rigid, firm
-sukha (adj) pleasant
-saauti (m) Sauti, the narrator of the Mahabharata
-s~aaunaka (m) Shaunaka, a Sanskrit grammarian
-suuta (m) charioteer
-sa (m) he, this, that
+!str> to spread out, to scatter!s~a.s to approve of, to tell, to express
 !s~ru to hear
+sa (m) he, this, that
+sa.panna (adj) right, correct, thriving, finished, endowed with
+sa.s~ita (adj) sharp, well-prepared, rigid, firm
+saauti (m) Sauti, the narrator of the Mahabharata
+sadas (n) assembly, seat, residence
+samyak (indc) together, rightly, properly, completely
+sarasvatii (f) Sarasvati, goddess of knowledge, arts, etc.
 sarva (mn) all
 sat (mn) being, existing, truth [!as]
-!s~a.s to approve of, to tell, to express
-samyak (indc) together, rightly, properly, completely
-sa.panna (adj) right, correct, thriving, finished, endowed with
-sadas (n) assembly, seat, residence
-!str> to spread out, to scatter
+satra (n) sacrifice
+sukha (adj) pleasant
+suuta (m) charioteer
+s~aaunaka (m) Shaunaka, a Sanskrit grammarian

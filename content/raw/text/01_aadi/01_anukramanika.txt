@@ -19,7 +19,7 @@ Having bowed to Narayana and Nara, the best man,
 and the goddess Sarasvati, one should thus proclaim victory.
 
 laumahars<an<aputra: (laumahars<an<a+putra, nom sing) Lomaharshana's son
-ugras~ravaa: (ugras<ravas, nom sing) Ugrasravas
+ugras~ravaa: (ugras~ravas, nom sing) Ugrasravas
 saauti: (saauti, nom sing) Sauti
 paauraan<ika: (paauraan<ika, nom sing) well-versed in the Puranas
 naaimis<aaran<yai (naaimis<a+aaran<ya, loc sing) in the Naimisharanya
@@ -79,7 +79,7 @@ by the true ones (i.e. the seers/sages), he asked (about) the progress of (their
 
 atha then
 tais<u (sa, loc pl) with them
-upavis<t<ais<u (upa-!vis<, loc pl perf pass part) having sat down
+upavis<t<ais<u (upa-!vis~, loc pl perf pass part) having sat down
 sarvais<u (sarva, loc pl) all
 aiva indeed
 tapasvis<u (tapasvin, loc pl) the ascetics
