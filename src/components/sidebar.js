@@ -37,10 +37,10 @@ const VersesAccordion = ({ location, baseURL, chapter, setSideBarExpanded }) => 
                             >
                                 <ListGroup.Item key={verse.num} eventKey={verse.num} variant="dark"
                                     style={{
-                                        backgroundColor: location.hash == `#verse_${verse.num}` ? "rgb(81, 150, 214)" : "inherit",
+                                        backgroundColor: location.hash === `#verse_${verse.num}` ? "rgb(81, 150, 214)" : "inherit",
                                     }}
                                 >
-                                    <p className={verseLink}>
+                                    <p >
                                         Verse {verse.num}
                                     </p>
                                 </ListGroup.Item>
