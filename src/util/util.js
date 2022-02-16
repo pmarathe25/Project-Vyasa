@@ -5,7 +5,12 @@ const devanagari = require("../../content/generated/transliteration_rulesets/dev
 
 // Converts a string to a URL compatible format
 export function toUrl(str) {
-    return str.replaceAll(" ", "-").replaceAll("√", "rt").toLowerCase();
+    return str
+        .replaceAll(" ", "-")
+        .replaceAll("√", "rt")
+        .replaceAll("<", "lt")
+        .replaceAll(">", "gt")
+        .toLowerCase();
 }
 
 // Converts a string converted by `toUrl` to title case

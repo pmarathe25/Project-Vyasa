@@ -13,7 +13,6 @@ const allWordsDict = require("../../content/generated/dictionary/all_words.json"
 const WordAndDefinition = ({ location, word, definition, reference, refPartsOfSpeech }) => {
     const translitWord = useTransliterate(word);
     const baseUrl = "/dictionary";
-    const id = toUrl(`${word}`);
 
     const wordLinkStyle = {
         fontSize: "22px", width: "fit-content",
@@ -46,6 +45,7 @@ const WordAndDefinition = ({ location, word, definition, reference, refPartsOfSp
         );
     }
 
+    const id = toUrl(word);
     const isActive = location.hash == `#${id}`;
 
     return (
