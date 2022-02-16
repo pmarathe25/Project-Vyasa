@@ -5,7 +5,7 @@ import { FiLink } from "react-icons/fi";
 import toUrl from '../util/util';
 import Definition from './definition';
 import { useTransliterate } from './transliterationHook';
-import { translationText, verseText, verseTextTab } from "./verse.module.css";
+import { translationText, verseText, verseTextTab, verseWord } from "./verse.module.css";
 
 const allWordsDict = require("../../content/generated/dictionary/all_words.json");
 
@@ -46,7 +46,7 @@ const RootMeanings = ({ root }) => {
             {
                 translitRoots.map((rootPar, index) =>
                     <div style={{ display: "flex" }} key={index}>
-                        <Link href={`/dictionary#${toUrl(roots[index])}`} target="_blank">
+                        <Link to={`/dictionary#${toUrl(roots[index])}`} target="_blank">
                             <p style={{ fontSize: "20px", paddingRight: "5px" }}>
                                 {rootPar}
                             </p>
@@ -115,6 +115,7 @@ const WordAndDefinition = ({ word, definition, root, parts_of_speech }) => {
             >
                 <p
                     role="presentation"
+                    className={verseWord}
                     onMouseEnter={() => setShowPopover(true)}
                     onMouseLeave={() => setShowPopover(false)}
                     onTouchStart={() => setShowPopover(true)}

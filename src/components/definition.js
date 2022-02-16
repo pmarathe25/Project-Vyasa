@@ -12,7 +12,7 @@ const Reference = ({ reference, refPartsOfSpeech, refStyle }) => {
     }
 
     const refLink = (
-        <Link href={`/dictionary#${toUrl(reference)}`} style={{ fontSize: "18px" }} target="_blank">
+        <Link to={`/dictionary#${toUrl(reference)}`} style={{ fontSize: "18px" }}>
             {translitReference}
         </Link>
     );

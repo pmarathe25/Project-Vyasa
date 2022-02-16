@@ -26,6 +26,10 @@
     cursor: pointer;
 }
 
+.verse-word {
+    font-size: inherit;
+}
+
 .translation-accordion {
     background: rgb(84, 84, 85);
     color: white;
