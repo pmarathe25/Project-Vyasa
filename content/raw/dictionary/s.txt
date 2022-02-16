@@ -1,4 +1,5 @@
-!str> to spread out, to scatter!s~a.s to approve of, to tell, to express
+!str> to spread out, to scatter
+!s~a.s to approve of, to tell, to express
 !s~ru to hear
 sa (m) he, this, that
 sa.panna (adj) right, correct, thriving, finished, endowed with

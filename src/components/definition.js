@@ -1,4 +1,3 @@
-import { Link } from 'gatsby';
 import * as React from 'react';
 import { useTransliterate } from '../components/transliterationHook';
 import toUrl from '../util/util';
@@ -11,9 +10,11 @@ const Reference = ({ reference, refPartsOfSpeech, refStyle }) => {
         return (<></>);
     }
 
-    const refLink = (<Link to={`/dictionary#${toUrl(reference)}`} style={{ fontSize: "18px" }}>
-        {translitReference}
-    </Link>);
+    const refLink = (
+        <a href={`/dictionary#${toUrl(reference)}`} style={{ fontSize: "18px" }} target="_blank" rel="noreferrer">
+            {translitReference}
+        </a>
+    );
 
     return (
         <div style={refStyle}>

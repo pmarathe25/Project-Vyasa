@@ -34,11 +34,10 @@ const Translation = ({ translation }) => {
 }
 
 const RootMeanings = ({ root }) => {
-    let rootDefs = [];
     const roots = root.split("+");
-    let translitRoots = useTransliterate(root).split("+");
-    let rootComponents = root.split("+");
-    for (let rootComp of rootComponents) {
+    const translitRoots = useTransliterate(root).split("+");
+    let rootDefs = [];
+    for (let rootComp of roots) {
         rootDefs.push(allWordsDict[rootComp]);
     }
 

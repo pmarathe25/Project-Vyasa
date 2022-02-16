@@ -37,7 +37,6 @@ const WordAndDefinition = ({ location, word, definition, reference, refPartsOfSp
                 {index == (wordParts.length - 1) && index > 0
                     ? (
                         <Link to={`${baseUrl}#${toUrl(wordParts[index])}`} style={wordLinkStyle}>
-
                             {part}
                         </Link>
                     )
