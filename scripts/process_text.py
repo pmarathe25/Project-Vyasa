@@ -4,6 +4,8 @@ import json
 import os
 from collections import OrderedDict
 
+import util
+
 
 def build_sandhied_text(words, translit_ruleset):
     """
@@ -86,7 +88,7 @@ def build_sandhied_text(words, translit_ruleset):
     def make_retroflex(cur, nxt):
         return cur + "<", nxt
 
-    def replace_final(replace_pairs):
+    def replace(mode, replace_pairs):
         """
         Args:
             replace_pairs (List[Tuple[str, str]]):
@@ -95,18 +97,24 @@ def build_sandhied_text(words, translit_ruleset):
                     and only the first matching replacement is applied.
         """
 
-        def replace_final_impl(cur, nxt):
+        def replace_impl(cur, nxt):
             for pat, replace_with in replace_pairs:
-                if cur.endswith(pat):
-                    cur = cur[: -len(pat)] + replace_with
-                    return cur, nxt
+                if mode == "end":
+                    if cur.endswith(pat):
+                        cur = cur[: -len(pat)] + replace_with
+                        return cur, nxt
+                else:
+                    assert mode == "start", f"Mode must be either 'start' or 'end', but was: {mode}"
+                    if nxt.startswith(pat):
+                        nxt = replace_with + nxt[len(pat) :]
+                        return cur, nxt
 
             raise RuntimeError(
-                "None of the provided replacement pairs matched word: {:}"
-                "\nNote: Replacement pairs were: {:}".format(cur, replace_pairs)
+                f"None of the provided replacement pairs matched word: {cur}"
+                f"\nNote: Replacement pairs were: {replace_pairs}"
             )
 
-        return replace_final_impl
+        return replace_impl
 
     def matches(patterns, invert=False, but_not=None):
         """
@@ -140,26 +148,26 @@ def build_sandhied_text(words, translit_ruleset):
     # Order matters because applying one sandhi may invalidate another!
     PRE_MERGE_SANDHI = [
         # Special rules for m
-        (matches(["m"]), matches(VOWELS, invert=True), replace_final([("m", ".")])),
+        (matches(["m"]), matches(VOWELS, invert=True), replace("end", [("m", ".")])),
         # Special rules for t
-        (matches(["t"]), matches(keys_of("dental-semivowels")), replace_final([("t", "l")])),
-        (matches(["t"]), matches(["c"]), replace_final([("t", "c")])),
-        (matches(["t"]), matches(["j"]), replace_final([("t", "j")])),
+        (matches(["t"]), matches(keys_of("dental-semivowels")), replace("end", [("t", "l")])),
+        (matches(["t"]), matches(["c"]), replace("end", [("t", "c")])),
+        (matches(["t"]), matches(["j"]), replace("end", [("t", "j")])),
         (matches(["t"]), matches(keys_of("unvoiced-retroflex-consonants")), make_retroflex),
         (matches(["t"]), matches(keys_of("voiced-retroflex-consonants")), compose(make_voiced, make_retroflex)),
         # Unvoiced -> Voiced
         (matches(UNVOICED_CONSONANTS), matches(ALL_VOICED), make_voiced),
         # Visarga sandhi
-        (matches([":"], but_not=["a:", "aa:"]), matches(ALL_VOICED), replace_final([(":", "r")])),
-        (matches([":"]), matches(keys_of("unvoiced-palatal-consonants")), replace_final([(":", "s~")])),
-        (matches([":"]), matches(keys_of("unvoiced-retroflex-consonants")), replace_final([(":", "s<")])),
-        (matches([":"]), matches(keys_of("unvoiced-dental-consonants")), replace_final([(":", "s")])),
+        (matches([":"], but_not=["a:", "aa:"]), matches(ALL_VOICED), replace("end", [(":", "r")])),
+        (matches([":"]), matches(keys_of("unvoiced-palatal-consonants")), replace("end", [(":", "s~")])),
+        (matches([":"]), matches(keys_of("unvoiced-retroflex-consonants")), replace("end", [(":", "s<")])),
+        (matches([":"]), matches(keys_of("unvoiced-dental-consonants")), replace("end", [(":", "s")])),
         # Nasals
-        (matches(["n"]), matches(keys_of("unvoiced-palatal-consonants")), replace_final([("n", ".s~")])),
-        (matches(["n"]), matches(keys_of("unvoiced-retroflex-consonants")), replace_final([("n", ".s<")])),
-        (matches(["n"]), matches(keys_of("unvoiced-dental-consonants")), replace_final([("n", ".s")])),
+        (matches(["n"]), matches(keys_of("unvoiced-palatal-consonants")), replace("end", [("n", ".s~")])),
+        (matches(["n"]), matches(keys_of("unvoiced-retroflex-consonants")), replace("end", [("n", ".s<")])),
+        (matches(["n"]), matches(keys_of("unvoiced-dental-consonants")), replace("end", [("n", ".s")])),
         # Vowels + Vowels
-        (matches(["u"]), matches(VOWELS, but_not=["u"]), replace_final([("uu", "v"), ("u", "v")])),
+        (matches(["u"]), matches(VOWELS, but_not=["u"]), replace("end", [("uu", "v"), ("u", "v")])),
     ]
 
     # Next we do a second pass to merge words
@@ -171,9 +179,17 @@ def build_sandhied_text(words, translit_ruleset):
     # And finally, a pass to apply sandhi that we don't want to merge
     POST_MERGE_SANDHI = [
         # Visarga rules
-        (matches(["aa:"]), matches(ALL_VOICED), replace_final([("aa:", "aa")])),
-        (matches(["a:"]), matches(VOWELS), replace_final([("a:", "a")])),
-        (matches(["a:"]), matches(ALL_VOICED), replace_final([("a:", "au")])),
+        (matches(["aa:"]), matches(ALL_VOICED), replace("end", [("aa:", "aa")])),
+        (
+            matches(["a:"]),
+            matches(["a"], but_not=["aa", "au", "ai"]),
+            compose(
+                replace("end", [("a:", "au")]),
+                replace("start", [("a", "'")]),
+            ),
+        ),
+        (matches(["a:"]), matches(VOWELS), replace("end", [("a:", "a")])),
+        (matches(["a:"]), matches(ALL_VOICED), replace("end", [("a:", "au")])),
     ]
 
     def apply_sandhi(words, conditions):
@@ -207,106 +223,6 @@ def build_sandhied_text(words, translit_ruleset):
     return " ".join(words).strip()
 
 
-# Follow a consistent ordering for every word
-# Format: abbreviation, full-form, type
-PARTS_OF_SPEECH_MAPPING = OrderedDict(
-    [
-        ("nom", ("nominative", "case")),
-        ("voc", ("vocative", "case")),
-        ("acc", ("accusative", "case")),
-        ("inst", ("instrumental", "case")),
-        ("dat", ("dative", "case")),
-        ("abl", ("ablative", "case")),
-        ("gen", ("genitive", "case")),
-        ("loc", ("locative", "case")),
-        ("1", ("first person", "person")),
-        ("2", ("second person", "person")),
-        ("3", ("third person", "person")),
-        ("sing", ("singular", "number")),
-        ("du", ("dual", "number")),
-        ("pl", ("plural", "number")),
-        ("pres", ("present", "tense")),
-        ("perf", ("perfect", "tense")),
-        ("imp", ("imperfect", "tense")),
-        ("fut", ("future", "tense")),
-        ("act", ("active", "voice")),
-        ("pass", ("passive", "voice")),
-        ("mid", ("middle", "voice")),
-        ("ind", ("indicative", "mood")),
-        ("pot", ("potential", "mood")),
-        ("impv", ("imperative", "mood")),
-        ("caus", ("causative", "other")),
-        ("des", ("desiderative", "other")),
-        ("abs", ("absolutive", "form")),
-        ("part", ("participle", "form")),
-        ("inf", ("Infinitive", "form")),
-    ]
-)
-
-NOUN_PARTS = set(["case", "number"])
-VERB_PARTS = set(["person", "number", "tense", "voice", "mood"])
-PARTICIPLE_PARTS = NOUN_PARTS | {"tense", "voice", "form"}
-
-
-def process_parts_of_speech(parts_of_speech, is_verb, verse_num, line_num):
-    def show_error(msg):
-        raise RuntimeError(
-            "In verse: {:}, line: {:}: ".format(verse_num, line_num)
-            + msg
-            + "\nNote: parts of speech were: {:}".format(parts_of_speech)
-        )
-
-    new_parts = OrderedDict()
-    part_functions = set()
-    parts_of_speech = set(filter(lambda x: x, parts_of_speech.strip().split(" ")))
-    for part in PARTS_OF_SPEECH_MAPPING:
-        if part not in parts_of_speech:
-            continue
-
-        parts_of_speech.remove(part)
-        part_name, part_function = PARTS_OF_SPEECH_MAPPING[part]
-        if part_function in part_functions:
-            show_error("{:} was specified more than once.".format(part_function))
-        part_functions.add(part_function)
-        new_parts[part_function] = part_name
-
-    if parts_of_speech:
-        show_error("Unrecognized parts of speech: {:}".format(parts_of_speech))
-
-    def check_parts(expected):
-        if expected != part_functions:
-            show_error("Expected parts of speech: {:}, but received: {:}".format(expected, part_functions))
-
-    # Validate that part functions are ok
-    if "other" in part_functions:
-        if not is_verb:
-            show_error("Cannot use parts of speech: {:} for non-verbs!".format(new_parts["other"]))
-        part_functions.remove("other")
-
-    if is_verb:
-        if "form" in new_parts:
-            if new_parts["form"] == "participle":
-                check_parts(PARTICIPLE_PARTS)
-            else:
-                # Otherwise form must be the only part
-                check_parts({"form"})
-        else:
-            check_parts(VERB_PARTS)
-    elif parts_of_speech:
-        check_parts(NOUN_PARTS)
-
-    return " ".join(new_parts.values()).title()
-
-
-def get_mtime(path):
-    return os.stat(path).st_mtime
-
-
-def chunks(inp_iter, chunk_size):
-    for idx in range(0, len(inp_iter), chunk_size):
-        yield inp_iter[idx : idx + chunk_size]
-
-
 def parse_word_grammar(line, verse_num, line_num, dictionary):
     def strip(lst):
         return list(map(lambda x: x.strip(), lst))
@@ -314,9 +230,7 @@ def parse_word_grammar(line, verse_num, line_num, dictionary):
     def check(elem, elem_name):
         if not elem:
             raise RuntimeError(
-                "In verse: {:}, line: {:}, expected a '{:}' field but none was provided".format(
-                    verse_num, line_num, elem_name
-                )
+                f"In verse: {verse_num}, line: {line_num}, expected a '{elem_name}' field but none was provided"
             )
 
     # Note that we could use regex here, but manually parsing it is easy enough
@@ -328,9 +242,7 @@ def parse_word_grammar(line, verse_num, line_num, dictionary):
 
         if "," not in rest:
             raise RuntimeError(
-                "In verse: {:}, line: {:}, expected a comma separating the root from parts of speech!".format(
-                    verse_num, line_num
-                )
+                f"In verse: {verse_num}, line: {line_num}, expected a comma separating the root from parts of speech!"
             )
 
         root, _, rest = rest.partition(",")
@@ -351,9 +263,16 @@ def parse_word_grammar(line, verse_num, line_num, dictionary):
 
     for root_part in root.split("+"):
         if root_part not in dictionary:
-            raise RuntimeError("Could not find: {:} in the dictionary. Is an entry missing?".format(root_part))
+            raise RuntimeError(f"Could not find: {root_part} in the dictionary. Is an entry missing?")
 
-    return strip([word, meaning, root, process_parts_of_speech(parts_of_speech, is_verb, verse_num, line_num)])
+    return strip(
+        [
+            word,
+            meaning,
+            root,
+            util.process_parts_of_speech(parts_of_speech, is_verb, f"In verse: {verse_num}, line: {line_num}: "),
+        ]
+    )
 
 
 def extract_title(str):
@@ -388,9 +307,9 @@ def main():
     # Early exit when nothing has been modified.
     if (
         os.path.exists(args.output)
-        and get_mtime(args.input_file) <= get_mtime(args.output)
+        and util.get_mtime(args.input_file) <= util.get_mtime(args.output)
         # Skip nothing if the script has changed
-        and get_mtime(__file__) < get_mtime(args.output)
+        and util.get_mtime(__file__) < util.get_mtime(args.output)
     ):
         return
 
@@ -412,7 +331,7 @@ def main():
     # To have the front-end handle newlines, we need a bit of weirdness in the word-by-word
     # translation - specifically, instead of just having a list of words for each verse, we have to have a list
     # of lines (i.e. list of lists). Then the front-end can render each list in a separate HTML element.
-    for index, (word_by_word, translation) in enumerate(chunks(contents.split("\n\n"), 2)):
+    for index, (word_by_word, translation) in enumerate(util.chunks(contents.split("\n\n"), 2)):
         word_by_word_sections = []
         to_sandhi_word_lines = []
         for section in word_by_word.split("\n-\n"):
@@ -431,14 +350,13 @@ def main():
                 "wordByWord": word_by_word_sections,
             }
         )
-    assert (
-        start_verse + index == end_verse
-    ), "Expected to see verses {:}-{:} ({:} verses) but received {:} verses. Did you forget to update the header?".format(
-        start_verse, end_verse, end_verse - start_verse + 1, index + 1
-    )
+
+    err_msg = f"Expected to see verses {start_verse}-{end_verse} ({end_verse - start_verse + 1} verses) "
+    err_msg += f"but received {index + 1} verses. Did you forget to update the header?"
+    assert start_verse + index == end_verse, err_msg
 
     os.makedirs(os.path.dirname(args.output), exist_ok=True)
-    print("Writing to: {:}".format(args.output))
+    print(f"Writing to: {args.output}")
     json.dump(processed, open(args.output, "w"), separators=(",", ":"))
 
 

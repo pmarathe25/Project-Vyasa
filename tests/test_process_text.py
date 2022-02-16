@@ -32,6 +32,10 @@ def transliteration_ruleset():
             "tata aiva",
         ),
         (
+            ["pr>s<t<a:", "abraviit"],
+            "pr>s<t<au 'braviit",
+        ),
+        (
             ["tata:", "gam"],
             "tatau gam",
         ),

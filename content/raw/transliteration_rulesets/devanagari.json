@@ -1,10 +1,5 @@
 {
     "sequence_map": {
-        "special": {
-            "'": "ऽ",
-            ".": "ं",
-            ":": "ः"
-        },
         "vowels": {
             "a": "अ",
             "aa": "आ",
@@ -13,78 +8,77 @@
             "u": "उ",
             "uu": "ऊ"
         },
-        "vocalic": {
-            "r>": "ऋ",
-            "r>r>": "ॠ",
-            "l>": "ऌ",
-            "l>l>": "ॡ"
-        },
         "compound-vowels": {
             "ai": "ए",
             "aai": "ऐ",
             "au": "ओ",
             "aau": "औ"
         },
+        "vocalic": {
+            "r>": "ऋ",
+            "r>r>": "ॠ",
+            "l>": "ऌ",
+            "l>l>": "ॡ"
+        },
+        "special": {
+            "'": "ऽ",
+            ".": "ं",
+            ":": "ः"
+        },
         "unvoiced-velar-consonants": {
             "k": "क्",
             "kh": "ख्"
-        },
-        "unvoiced-palatal-consonants": {
-            "c": "च्",
-            "ch": "छ्"
-        },
-        "unvoiced-retroflex-consonants": {
-            "t<": "ट्",
-            "th<": "ठ्"
-        },
-        "unvoiced-dental-consonants": {
-            "t": "त्",
-            "th": "थ्"
-        },
-        "unvoiced-bilabial-consonants": {
-            "p": "प्",
-            "ph": "फ्"
         },
         "voiced-velar-consonants": {
             "g": "ग्",
             "gh": "घ्"
         },
+        "nasal-velar-consonants": {
+            "n^": "ङ्"
+        },
+        "unvoiced-palatal-consonants": {
+            "c": "च्",
+            "ch": "छ्"
+        },
         "voiced-palatal-consonants": {
             "j": "ज्",
             "jh": "झ्"
+        },
+        "nasal-palatal-consonants": {
+            "n~": "ञ्"
+        },
+        "unvoiced-retroflex-consonants": {
+            "t<": "ट्",
+            "th<": "ठ्"
         },
         "voiced-retroflex-consonants": {
             "d<": "ड्",
             "dh<": "ढ्"
         },
+        "nasal-retroflex-consonants": {
+            "n<": "ण्"
+        },
+        "unvoiced-dental-consonants": {
+            "t": "त्",
+            "th": "थ्"
+        },
         "voiced-dental-consonants": {
             "d": "द्",
             "dh": "ध्"
+        },
+        "nasal-dental-consonants": {
+            "n": "न्"
+        },
+        "unvoiced-bilabial-consonants": {
+            "p": "प्",
+            "ph": "फ्"
         },
         "voiced-bilabial-consonants": {
             "b": "ब्",
             "bh": "भ्"
         },
-        "nasal-velar-consonants": {
-            "n^": "ङ्"
-        },
-        "nasal-palatal-consonants": {
-            "n~": "ञ्"
-        },
-        "nasal-retroflex-consonants": {
-            "n<": "ण्"
-        },
-        "nasal-dental-consonants": {
-            "n": "न्"
-        },
         "nasal-bilabial-consonants": {
             "m": "म्"
-        },
-        "sibilants": {
-            "s~": "श्",
-            "s<": "ष्",
-            "s": "स्",
-            "h": "ह्"
         },
         "velar-semivowels": {
             "y": "य्"
@@ -100,6 +94,12 @@
         },
         "bilabial-semivowels": {
             "v": "व्"
+        },
+        "sibilants": {
+            "s~": "श्",
+            "s<": "ष्",
+            "s": "स्",
+            "h": "ह्"
         }
     },
     "rules": {
