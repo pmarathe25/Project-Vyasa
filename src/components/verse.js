@@ -3,9 +3,9 @@ import * as React from 'react';
 import { Button, Col, Collapse, Container, Nav, OverlayTrigger, Popover, Row, Tab } from 'react-bootstrap';
 import { FiLink } from "react-icons/fi";
 import toUrl from '../util/util';
+import Definition from './definition';
 import { useTransliterate } from './transliterationHook';
 import { translationText, verseText, verseTextTab } from "./verse.module.css";
-import Definition from './definition';
 
 const allWordsDict = require("../../content/generated/dictionary/all_words.json");
 
