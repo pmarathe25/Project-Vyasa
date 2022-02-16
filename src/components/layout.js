@@ -6,7 +6,7 @@ import { toUrl } from '../util/util'
 import AllVersesMenu from './allVersesMenu'
 import AutohidingNavbar from './autohidingNavbar'
 import ResponsiveBreadcrumbs from './breadcrumbs'
-import { brandLink, container, content } from './layout.module.css'
+import { brandLink, container, content, navLink } from './layout.module.css'
 import Seo from './seo'
 import { useTransliterate } from './transliterationHook'
 import { TransliterationModeSelect } from './translitModeSelect'
@@ -38,36 +38,35 @@ const Layout = ({ location, pageTitle, children }) => {
 
     const [navExpanded, setNavExpanded] = React.useState(false);
 
-    const linkStyle = {
-        width: "fit-content",
-        marginTop: "auto", marginBottom: "auto",
-        paddingLeft: 0, paddingRight: "10px"
-    };
-
     return (
         <div className={container}>
             <title>{pageTitle} | {data.site.siteMetadata.title}</title>
             <Seo location={location} title={pageTitle} />
             <AutohidingNavbar isExpanded={navExpanded} setIsExpanded={setNavExpanded}>
                 <Container>
-                    <Link to="/" className={brandLink} style={{ width: "fit-content", marginRight: "10px", padding: 0 }}>
+                    <Link to="/" className={brandLink}>
                         Project {useTransliterate("vyaasa")}
                     </Link>
 
                     <Navbar.Collapse id="responsive-navbar-nav">
                         <Nav className="top-bar-links">
                             <TopBarNavItem navExpanded={navExpanded} keyName="about">
-                                <Link to={toUrl("/about")} style={linkStyle}>
+                                <Link to={toUrl("/about")} className={navLink}>
                                     About
                                 </Link>
                             </TopBarNavItem>
                             <TopBarNavItem navExpanded={navExpanded} keyName="dictionary">
-                                <Link to={toUrl("/dictionary")} style={linkStyle}>
+                                <Link to={toUrl("/dictionary")} className={navLink}>
                                     Dictionary
                                 </Link>
                             </TopBarNavItem>
-                            <TopBarNavItem navExpanded={navExpanded} keyName="github" style={{ paddingLeft: "10px" }}>
-                                <a href="https://github.com/pmarathe25/Project-Vyasa">
+                            <TopBarNavItem navExpanded={navExpanded} keyName="github" >
+                                <a
+                                    href="https://github.com/pmarathe25/Project-Vyasa"
+                                    style={{ marginLeft: "12px" }}
+                                    target="_blank"
+                                    rel="noreferrer"
+                                >
                                     <GoMarkGithub size={35} />
                                 </a>
                             </TopBarNavItem>

@@ -6,12 +6,30 @@
 .brand-link {
   padding: 5px 5px;
   text-decoration: none;
-  font-size: 20pt;
+  font-size: 21pt;
+  width: fit-content;
+  padding: 0;
+  border-radius: 2px;
 }
 
 .brand-link:hover {
   transition: all 0.2s ease-in-out;
-  background: rgb(87, 87, 87);
+  background: rgb(66, 66, 66);
+  box-shadow: 2px 2px 1px rgb(46, 46, 46);
+}
+
+.nav-link {
+  width: fit-content;
+  margin-top: auto; 
+  margin-bottom: auto;
+  margin-left: 15px;
+  border-radius: 2px;
+}
+
+.nav-link:hover {
+  transition: all 0.2s ease-in-out;
+  background: rgb(66, 66, 66);
+  box-shadow: 2px 2px 1px rgb(46, 46, 46);
 }
 
 .content {
