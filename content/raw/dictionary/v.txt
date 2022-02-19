@@ -1,4 +1,4 @@
-!vac to speak, to tell
+!vac to speak, to tell, to say
 !vad to say, to speak
 !vas to live, to dwell
 !vis~ to enter
@@ -12,6 +12,7 @@ vaasin (mn) staying, dwelling [!vas]
 vacana (mn) speech, sentence, word
 vi-!hr> to distribute, to dispose, to set
 vi-!str> to stretch, to scatter
+vicitra (adj) strange, wonderful, varied
 vidhivat (indc) according to rule, duty
 vinaya (mn) humility
 vistiirn<a (mn) strewn, spread out, broad, extensive [vi-!str>]

@@ -176,9 +176,9 @@ uvaaca (!vac, 3 sing perf act ind) said
 janamaijayasya (janamaijaya, gen sing) of Janamejaya
 raajars<ai: (raajan+r>s<i, gen sing) of the royal sage
 sarpasatrai (sarpa+satra, loc sing) in the snake sacrifice
-mahaatmana: (mahat+aatman, gen sing) of the great souled
+mahaatmana: (mahat+aatman, gen sing m) of the great souled
 -
-samiipai (samiipa, loc sing) in the vicinitiy, near
+samiipai (samiipa, loc sing) at, (lit. in the vicinity)
 paarthivaindrasya (paarthiva+indra, gen sing) of the best prince
 samyak completely
 paariks<itasya (paariks<ita, gen sing) of the son of Parikshit 
@@ -199,6 +199,11 @@ vaai indeed
 -
 s~rutvaa (!s~ru, abs) having heard
 aham (aham, nom sing) I
+taa: (saa, acc pl) those
+vicitraarthaa: (vicitra+artha, acc pl f) wonderful, marvelous
+mahaabhaaratasa.s~ritaa: (mahaabhaarata+sa.s~rita, acc pl f) of/from the Mahabharata
 
 Sauti said: 
-"Of Janamejaya"
+"(I), having heard those various excellent, marvelous, and sacred stories of the Mahabharata,
+which were indeed told in full by Vaishampayana, having been composed by Vyasa (the black islander), 
+at the snake sacrifice of Janamejaya, the great-souled royal sage, the best prince, the son of Parikshit...

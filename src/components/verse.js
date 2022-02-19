@@ -46,7 +46,7 @@ const RootMeanings = ({ root }) => {
             {
                 translitRoots.map((rootPar, index) =>
                     <div style={{ display: "flex" }} key={index}>
-                        <Link to={`/dictionary#${toUrl(roots[index])}`} target="_blank">
+                        <Link to={`/dictionary#${toUrl(roots[index])}`} target="_blank" style={{ color: "rgb(125, 155, 170)" }}>
                             <p style={{ fontSize: "20px", paddingRight: "5px" }}>
                                 {rootPar}
                             </p>
