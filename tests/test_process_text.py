@@ -296,7 +296,7 @@ def build_expected(verse_num, verses_text, translations, word_lists):
             """
             1
 
-            prastaavayan (pra-!stu, nom sing pres act part caus) causing to start, starting 
+            prastaavayan (pra-!stu, nom sing m pres act part caus) causing to start, starting 
 
             Starting
             """,
@@ -313,7 +313,7 @@ def build_expected(verse_num, verses_text, translations, word_lists):
                                 "prastaavayan",
                                 "causing to start, starting",
                                 "pra-√stu",
-                                "Nominative Singular Present Active Causative Participle",
+                                "Nominative Singular Masculine Present Active Causative Participle",
                             ],
                         ],
                     ]
