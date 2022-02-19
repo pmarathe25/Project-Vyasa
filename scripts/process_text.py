@@ -327,6 +327,10 @@ def main():
     contents = open(args.input_file).read().strip()
     header, _, contents = contents.partition("\n\n")
     start_verse, end_verse = map(int, header.split("-"))
+
+    # Strip trailing whitespace at the ends of lines
+    contents = "\n".join(map(lambda x: x.strip(), contents.splitlines()))
+
     # Parses input file according to format outlined in README.
     # To have the front-end handle newlines, we need a bit of weirdness in the word-by-word
     # translation - specifically, instead of just having a list of words for each verse, we have to have a list
