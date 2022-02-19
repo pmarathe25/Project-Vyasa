@@ -16,10 +16,17 @@ import util
 
 def validate_dictionary(dct):
     for word, (_, reference, _, section_name) in dct.items():
+        is_verb = "√" in word
+
         assert (
             not reference or reference in dct
-        ), f"Word: {word} refers to: {reference}, but the latter is not present as an entry in the dictionary!"
+        ), f"Word: {word} refers to: {reference}, but the latter is not present in the dictionary!"
         assert word.strip("√").startswith(section_name), f"Word: {word} is in the wrong section: {section_name}"
+        if is_verb:
+            base_form = word.split("-")[-1]
+            assert base_form in dct, "Base form ({:}) of word: {:} is not present in the dictionary!".format(
+                base_form, word
+            )
 
 
 def main():
