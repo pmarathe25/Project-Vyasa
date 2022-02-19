@@ -108,11 +108,7 @@ def build_sandhied_text(words, translit_ruleset):
                     if nxt.startswith(pat):
                         nxt = replace_with + nxt[len(pat) :]
                         return cur, nxt
-
-            raise RuntimeError(
-                f"None of the provided replacement pairs matched word: {cur}"
-                f"\nNote: Replacement pairs were: {replace_pairs}"
-            )
+            return cur, nxt
 
         return replace_impl
 
@@ -168,6 +164,14 @@ def build_sandhied_text(words, translit_ruleset):
         (matches(["n"]), matches(keys_of("unvoiced-dental-consonants")), replace("end", [("n", ".s")])),
         # Vowels + Vowels
         (matches(["u"]), matches(VOWELS, but_not=["u"]), replace("end", [("uu", "v"), ("u", "v")])),
+        (
+            matches(["a", "aa"]),
+            matches(["a", "aa"], but_not=["au", "aau"]),
+            compose(
+                replace("end", [("aa", "a")]),
+                replace("start", [("aa", "a")]),
+            ),
+        ),
     ]
 
     # Next we do a second pass to merge words

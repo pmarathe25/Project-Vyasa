@@ -158,6 +158,18 @@ def transliteration_ruleset():
             ["tu", "aiva"],
             "tvaiva",
         ),
+        (
+            ["taa", "api"],
+            "taapi",
+        ),
+        (
+            ["ta", "aapi"],
+            "taapi",
+        ),
+        (
+            ["taa", "aapi"],
+            "taapi",
+        ),
     ],
 )
 def test_build_sandhied_text(words, expected_output, transliteration_ruleset):
