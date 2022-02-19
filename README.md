@@ -81,13 +81,15 @@ The content for each chapter is stored in separate text file: `content/text/{boo
 
 The format of each file is:
 ```
-<first verse number>-<last verse number>
+<verse number>
 
 word0 (base-form, parts of speech) literal translation
 word1 (base-form, parts of speech) literal translation
 ...
 
 <Translation>
+
+<start verse number>-<end verse number>
 
 word0 (base-form, parts of speech) literal translation
 word1 (base-form, parts of speech) literal translation
@@ -101,6 +103,10 @@ word1 (base-form, parts of speech) literal translation
 The format must conform to the following rules:
 
 - Sections must be separated by a single blank line. 
+
+- For each verse, the first section must indicate the verse number(s). 
+  If the section includes more than one verse, the range of verses may be 
+  specified using a dash to separate the start and end verse numbers.
 
 - There must not be any blank lines within a section
 
@@ -177,6 +183,11 @@ Valid entries are as follows:
 - `inf`: Infinitive
 - `abs`: Absolutive
 - `part`: Participle
+
+Additionally, for adjectives and participles, gender must be provided 
+(for other words, this is recorded in the dictionary):
+
+- `m/f/n`: Masculine/Feminine/Neuter
 
 
 ## Dictionary Format

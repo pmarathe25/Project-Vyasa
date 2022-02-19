@@ -40,14 +40,15 @@ const Reference = ({ reference, refPartsOfSpeech, refStyle }) => {
 
 const Definition = ({ definition, reference, refPartsOfSpeech }) => {
     const style = {
-        color: "rgb(220, 220, 220)",
+        color: "rgb(242, 242, 242)",
         display: "inline",
+        fontStyle: "italic",
         top: "50%",
         width: "fit-content",
         padding: 0,
         marginLeft: "5px", marginTop: "auto", marginBottom: "auto",
         whiteSpace: "pre-wrap",
-        fontSize: "16px"
+        fontSize: "14px"
     };
 
     return (

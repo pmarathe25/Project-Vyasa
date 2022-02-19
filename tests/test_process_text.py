@@ -158,13 +158,25 @@ def transliteration_ruleset():
             ["tu", "aiva"],
             "tvaiva",
         ),
+        (
+            ["taa", "api"],
+            "taapi",
+        ),
+        (
+            ["ta", "aapi"],
+            "taapi",
+        ),
+        (
+            ["taa", "aapi"],
+            "taapi",
+        ),
     ],
 )
 def test_build_sandhied_text(words, expected_output, transliteration_ruleset):
     assert build_sandhied_text(words, transliteration_ruleset) == expected_output
 
 
-def build_expected(verses_text, translations, word_lists):
+def build_expected(verse_num, verses_text, translations, word_lists):
     """
     Args:
         verses_text (List[str]):
@@ -193,10 +205,10 @@ def build_expected(verses_text, translations, word_lists):
                 ]
     """
     verses = []
-    for index, (text, translation, word_list) in enumerate(zip(verses_text, translations, word_lists)):
+    for (text, translation, word_list) in zip(verses_text, translations, word_lists):
         verses.append(
             {
-                "num": index + 1,
+                "num": verse_num,
                 "text": text,
                 "translation": translation,
                 "wordByWord": word_list,
@@ -212,7 +224,7 @@ def build_expected(verses_text, translations, word_lists):
         # Basic
         (
             """
-            1-1
+            1
 
             ca (ca,) and
             aiva (aiva,) just so
@@ -220,6 +232,7 @@ def build_expected(verses_text, translations, word_lists):
             And so
             """,
             build_expected(
+                "1",
                 ["caaiva"],
                 ["And so"],
                 [
@@ -237,7 +250,7 @@ def build_expected(verses_text, translations, word_lists):
         # Alternate syntax omitting explicit root and parts of speech
         (
             """
-            1-1
+            1
 
             ca and
             aiva just so
@@ -245,6 +258,7 @@ def build_expected(verses_text, translations, word_lists):
             And so
             """,
             build_expected(
+                "1",
                 ["caaiva"],
                 ["And so"],
                 [
@@ -262,7 +276,7 @@ def build_expected(verses_text, translations, word_lists):
         # Multi-line - no sandhi should happen
         (
             """
-            1-1
+            1
 
             ca (ca,) and
             -
@@ -271,6 +285,7 @@ def build_expected(verses_text, translations, word_lists):
             And so
             """,
             build_expected(
+                "1",
                 ["ca\naiva"],
                 ["And so"],
                 [
@@ -291,13 +306,14 @@ def build_expected(verses_text, translations, word_lists):
         # Check parts of speech ordering
         (
             """
-            1-1
+            1
 
-            prastaavayan (pra-!stu, nom sing pres act part caus) causing to start, starting 
+            prastaavayan (pra-!stu, nom sing m pres act part caus) causing to start, starting 
 
             Starting
             """,
             build_expected(
+                "1",
                 ["prastaavayan"],
                 ["Starting"],
                 [
@@ -309,7 +325,7 @@ def build_expected(verses_text, translations, word_lists):
                                 "prastaavayan",
                                 "causing to start, starting",
                                 "pra-√stu",
-                                "Nominative Singular Present Active Causative Participle",
+                                "Nominative Singular Masculine Present Active Causative Participle",
                             ],
                         ],
                     ]

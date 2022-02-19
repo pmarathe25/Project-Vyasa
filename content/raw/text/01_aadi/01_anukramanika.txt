@@ -1,11 +1,11 @@
-1-8
+0
 
 naaraayan<am (naaraayan<a, acc sing) Narayana
 namaskr>tya (namas-!kr>, abs) having bowed (to)
 naram (nara, acc sing) Nara (lit. "man")
 ca and
 aiva just so
-narauttamam (nara+uttama, acc sing) the best man
+narauttamam (nara+uttama, acc sing m) the best man
 -
 daiviim (daivii, acc sing) the goddess
 sarasvatiim (sarasvatii, acc sing) Sarasvati
@@ -18,10 +18,12 @@ udiirayait (ud-!iir, 3 sing pres act caus pot) (let one) proclaim
 Having bowed to Narayana and Nara, the best man, 
 and the goddess Sarasvati, one should thus proclaim victory.
 
+1-2
+
 laumahars<an<aputra: (laumahars<an<a+putra, nom sing) Lomaharshana's son
 ugras~ravaa: (ugras~ravas, nom sing) Ugrasravas
 saauti: (saauti, nom sing) Sauti
-paauraan<ika: (paauraan<ika, nom sing) well-versed in the Puranas
+paauraan<ika: (paauraan<ika, nom sing m) well-versed in the Puranas
 naaimis<aaran<yai (naaimis<a+aaran<ya, loc sing) in the Naimisharanya
 -
 s~aaunakasya (s~aaunaka, gen sing) of Shaunaka
@@ -29,12 +31,12 @@ kulapatai: (kula+pati, gen sing) of the head of the family
 dvaadas~avaars<ikai (dvaadas~a+vaars<ika, loc sing) in the 12-yearly
 satrai (satra, loc sing) in the sacrifice
 -
-sukhaasiinaan (sukha+!aas, acc pl pres mid part) the sitting blissfully
+sukhaasiinaan (sukha+!aas, acc pl m pres mid part) the sitting blissfully
 abhyagacchat (abhi-!gam, 3 sing imp act ind) he approached
 brahmars<iin (brahma+r>s<i, acc pl) the Brahman sages
-sa.s~itavrataan (sa.s~ita+vrata, acc pl) rigid-vowed (firm in their vows)
+sa.s~itavrataan (sa.s~ita+vrata, acc pl m) rigid-vowed (firm in their vows)
 -
-vinayaavanata: (vinaya+ava-!nam, nom sing perf pass part) having bowed humbly
+vinayaavanata: (vinaya+ava-!nam, nom sing m perf pass part) having bowed humbly
 bhuutvaa (!bhuu, abs) having been
 kadaacit (kadaa+cit,) once
 suutanandana: (suuta+nandana, nom sing) son of Suta 
@@ -43,9 +45,11 @@ Once, the son of Lomaharshana, Ugrasravas, (also known as) Sauti, (also as) the 
 of Suta, well-versed in the Puranas, humbly bowing, approached the blissfully sitting,
 rigid-vowed Brahman sages in the Naimisharanya at the 12-years sacrifice of Kulapati Shaunaka. 
 
+3
+
 tam (sa, acc sing) him
 aas~ramam (aas~rama, acc sing) hermitage
-anupraaptam (anu-pra-!aap, acc sing perf pass part) having reached
+anupraaptam (anu-pra-!aap, acc sing m perf pass part) having reached
 naaimis<aaran<yavaasinaam (naaimis<a+aaran<ya+vaasin, gen pl) of those living in the Naimisharanya
 -
 citraa: (citra, acc pl) wonderful
@@ -57,6 +61,8 @@ tapasvina: (tapasvin, nom pl) the ascetics
 
 Then, the ascetics surrounded him, (who had) reached the hermitage of the 
 Naimisharanya-dwellers, to hear (his) wonderful stories.
+
+4
 
 abhivaadya (abhi-!vad, caus abs) having greeted
 muniin (muni, acc pl) the seers
@@ -72,19 +78,21 @@ tapauvr>ddhim (tapas+vr>ddhi, acc sing) progress of asceticism
 sadbhi: (sat, inst pl) by the true ones (i.e. the sages)
 ca and
 aiva indeed
-abhipuujita: (abhi-!puuj, nom sing perf pass part) having been honored
+abhipuujita: (abhi-!puuj, nom sing m perf pass part) having been honored
 
 Having greeted all those seers with joined hands, and having been honored 
 by the true ones (i.e. the seers/sages), he asked (about) the progress of (their) asceticism.
 
+5
+
 atha then
 tais<u (sa, loc pl) with them
-upavis<t<ais<u (upa-!vis~, loc pl perf pass part) having sat down
+upavis<t<ais<u (upa-!vis~, loc pl m perf pass part) having sat down
 sarvais<u (sarva, loc pl) all
 aiva indeed
 tapasvis<u (tapasvin, loc pl) the ascetics
 -
-nirdis<t<am (nirdis<t<a, acc sing) the assigned
+nirdis<t<am (nirdis<t<a, acc sing n) the assigned
 aasanam (aasana, acc sing) seat
 bhaijai (!bhaj, 3 sing perf mid ind) he took
 vinayaat (vinaya, abl sing) humbly
@@ -93,7 +101,9 @@ laaumahars<an<i: (laaumahars<an<i, nom sing) Lomaharshana's son
 Then, with all those ascetics having sat down, 
 Lomaharshana's son humbly took the seat assigned to him.
 
-sukhaasiinam (sukha+!aas, acc sing pres mid part) sitting blissfully/comfortably
+6
+
+sukhaasiinam (sukha+!aas, acc sing m pres mid part) sitting blissfully/comfortably
 tata: thus
 tam (sa, acc sing) him
 tu and
@@ -106,11 +116,13 @@ apr>cchat (!prach, 3 sing imp act ind) he asked
 r>s<i: (r>s<i, nom sing) a seer
 tatra there
 kas~cit (ka+cit, nom sing) one
-prastaavayan (pra-!stu, nom sing pres act part caus) causing to start, starting 
+prastaavayan (pra-!stu, nom sing m pres act part caus) causing to start, starting 
 kathaa: (kathaa, acc pl) the stories, i.e. the conversation
 
 Having noticed him rested and sitting comfortably, 
 then one seer, starting the conversation, asked: 
+
+7
 
 kuta: whence
 aagamyatai (aa-!gam, 3 sing pres pass ind) it is come
@@ -118,28 +130,30 @@ saautai (saauti, voc sing) Sauti
 kva where
 ca and
 ayam (ayam, nom sing) this
-vihr>ta: (vi-!hr>, nom sing perf pass part) was spent
+vihr>ta: (vi-!hr>, nom sing m perf pass part) was spent
 tvayaa (tvam, inst sing) by you
 -
 kaala: (kaala, nom sing) time
 kamalapatraaks<a (kamala+patra+aks<a, voc sing) lotus-petal-eyed
 s~a.sa (!s~a.s, 2 sing pres act impv) tell
 aitat (aitat, acc sing) that
-pr>cchata: (!prach, gen sing pres act part) of the asking
+pr>cchata: (!prach, gen sing m pres act part) of the asking
 mama (aham, gen sing) of me
 
 Sauti, whence have you come? Where was that time spent by you, 
 lotus-petal-eyed (one)? Tell that to me (who is) asking.
 
+8
+
 aivam thus
-pr>s<t<a: (!prach, nom sing perf pass part) having been asked
+pr>s<t<a: (!prach, nom sing m perf pass part) having been asked
 abraviit (!bruu, 3 sing imp act ind) he spoke
 samyak rightly
 yathaavat properly
 laaumahars<an<i: (laaumahars<an<i, nom sing) Lomaharshana's son
 -
 vaakyam (vaakya, acc sing) statement
-vacanasa.panna: (vacana+sa.panna, nom sing) endowed with (good) speech
+vacanasa.panna: (vacana+sa.panna, nom sing m) endowed with (good) speech
 tais<aam (sa, gen pl) of them
 ca and
 caritaas~rayam (carita+aas~rayam, acc sing) going (to be) sheltered, seeking shelter
@@ -153,3 +167,43 @@ bhaavitaatmanaam (bhaavita+aatman, gen pl) self-realized (lit. soul-manifested)
 Thus asked, rightly and properly, Lomaharshana's son (Sauti), equipped with good speech, 
 spoke a statement to (the ones) seeking their (the sages') shelter
 in that great assembly of self-realized sages.
+
+9-11
+
+saauti: (saauti, nom sing) Sauti
+uvaaca (!vac, 3 sing perf act ind) said
+-
+janamaijayasya (janamaijaya, gen sing) of Janamejaya
+raajars<ai: (raajan+r>s<i, gen sing) of the royal sage
+sarpasatrai (sarpa+satra, loc sing) in the snake sacrifice
+mahaatmana: (mahat+aatman, gen sing m) of the great souled
+-
+samiipai (samiipa, loc sing) at, (lit. in the vicinity)
+paarthivaindrasya (paarthiva+indra, gen sing) of the best prince
+samyak completely
+paariks<itasya (paariks<ita, gen sing) of the son of Parikshit 
+ca and
+-
+kr>s<n<advaaipaayanaprauktaa: (kr>s<n<a+dvaaipaayana+pra-!vac, acc pl f perf pass part) having been composed (by) the black islander, i.e. Vyasa
+supun<yaa: (supun<ya, acc pl f) excellent
+vividhaa: (vividha, acc pl f) various
+kathaa: (kathaa, acc pl) stories
+-
+kathitaa: (!kath, acc pl f perf pass part) having been told
+ca and
+api also
+vidhivat sacred
+yaa: (yaa, acc pl) which
+vaais~ampaayanaina (vaais~ampaayana, inst sing) by Vaishampayana
+vaai indeed
+-
+s~rutvaa (!s~ru, abs) having heard
+aham (aham, nom sing) I
+taa: (saa, acc pl) those
+vicitraarthaa: (vicitra+artha, acc pl f) wonderful, marvelous
+mahaabhaaratasa.s~ritaa: (mahaabhaarata+sa.s~rita, acc pl f) of/from the Mahabharata
+
+Sauti said: 
+"(I), having heard those various excellent, marvelous, and sacred stories of the Mahabharata,
+which were indeed told in full by Vaishampayana, having been composed by the black islander (Vyasa), 
+at the snake sacrifice of Janamejaya, the great-souled royal sage, the best prince, the son of Parikshit...

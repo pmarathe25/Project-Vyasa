@@ -108,11 +108,7 @@ def build_sandhied_text(words, translit_ruleset):
                     if nxt.startswith(pat):
                         nxt = replace_with + nxt[len(pat) :]
                         return cur, nxt
-
-            raise RuntimeError(
-                f"None of the provided replacement pairs matched word: {cur}"
-                f"\nNote: Replacement pairs were: {replace_pairs}"
-            )
+            return cur, nxt
 
         return replace_impl
 
@@ -168,6 +164,14 @@ def build_sandhied_text(words, translit_ruleset):
         (matches(["n"]), matches(keys_of("unvoiced-dental-consonants")), replace("end", [("n", ".s")])),
         # Vowels + Vowels
         (matches(["u"]), matches(VOWELS, but_not=["u"]), replace("end", [("uu", "v"), ("u", "v")])),
+        (
+            matches(["a", "aa"]),
+            matches(["a", "aa"], but_not=["au", "aau"]),
+            compose(
+                replace("end", [("aa", "a")]),
+                replace("start", [("aa", "a")]),
+            ),
+        ),
     ]
 
     # Next we do a second pass to merge words
@@ -261,16 +265,23 @@ def parse_word_grammar(line, verse_num, line_num, dictionary):
     if is_verb:
         root = root.replace("!", "√")
 
+    dictionary_entries = []
     for root_part in root.split("+"):
         if root_part not in dictionary:
             raise RuntimeError(f"Could not find: {root_part} in the dictionary. Is an entry missing?")
+        dictionary_entries.append(dictionary[root_part])
 
     return strip(
         [
             word,
             meaning,
             root,
-            util.process_parts_of_speech(parts_of_speech, is_verb, f"In verse: {verse_num}, line: {line_num}: "),
+            util.process_parts_of_speech(
+                parts_of_speech,
+                is_verb,
+                f"In verse: {verse_num}, line: {line_num} ({line}): ",
+                dictionary_entries=dictionary_entries,
+            ),
         ]
     )
 
@@ -325,35 +336,33 @@ def main():
     }
 
     contents = open(args.input_file).read().strip()
-    header, _, contents = contents.partition("\n\n")
-    start_verse, end_verse = map(int, header.split("-"))
+
+    # Strip trailing whitespace at the ends of lines
+    contents = "\n".join(map(lambda x: x.strip(), contents.splitlines()))
+
     # Parses input file according to format outlined in README.
     # To have the front-end handle newlines, we need a bit of weirdness in the word-by-word
     # translation - specifically, instead of just having a list of words for each verse, we have to have a list
     # of lines (i.e. list of lists). Then the front-end can render each list in a separate HTML element.
-    for index, (word_by_word, translation) in enumerate(util.chunks(contents.split("\n\n"), 2)):
+    for verse_num, word_by_word, translation in util.chunks(contents.split("\n\n"), 3):
         word_by_word_sections = []
         to_sandhi_word_lines = []
         for section in word_by_word.split("\n-\n"):
             word_by_word_sections.append([])
             to_sandhi_word_lines.append([])
             for line_num, line in enumerate(section.split("\n")):
-                word, meaning, root, parts_of_speech = parse_word_grammar(line, index + 1, line_num + 1, DICTIONARY)
+                word, meaning, root, parts_of_speech = parse_word_grammar(line, verse_num, line_num + 1, DICTIONARY)
                 to_sandhi_word_lines[-1].append(word)
                 word_by_word_sections[-1].append([word, meaning, root, parts_of_speech])
 
         processed["verses"].append(
             {
-                "num": start_verse + index,
+                "num": verse_num,
                 "text": "\n".join(build_sandhied_text(line, TRANSLIT_RULESET) for line in to_sandhi_word_lines),
                 "translation": translation,
                 "wordByWord": word_by_word_sections,
             }
         )
-
-    err_msg = f"Expected to see verses {start_verse}-{end_verse} ({end_verse - start_verse + 1} verses) "
-    err_msg += f"but received {index + 1} verses. Did you forget to update the header?"
-    assert start_verse + index == end_verse, err_msg
 
     os.makedirs(os.path.dirname(args.output), exist_ok=True)
     print(f"Writing to: {args.output}")

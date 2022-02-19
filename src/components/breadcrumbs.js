@@ -9,7 +9,7 @@ const ResponsiveBreadcrumbs = ({ location }) => {
     const isMobile = useIsMobile()
 
     let breadcrumbStyle = {
-        fontSize: "18px"
+        fontSize: "16px"
     };
     let breadcrumbs = [
         <Breadcrumb.Item key="/" linkProps={{ "to": "/" }} linkAs={Link} style={breadcrumbStyle}>
