@@ -1,4 +1,4 @@
-1-9
+0
 
 naaraayan<am (naaraayan<a, acc sing) Narayana
 namaskr>tya (namas-!kr>, abs) having bowed (to)
@@ -17,6 +17,8 @@ udiirayait (ud-!iir, 3 sing pres act caus pot) (let one) proclaim
 
 Having bowed to Narayana and Nara, the best man, 
 and the goddess Sarasvati, one should thus proclaim victory.
+
+1-2
 
 laumahars<an<aputra: (laumahars<an<a+putra, nom sing) Lomaharshana's son
 ugras~ravaa: (ugras~ravas, nom sing) Ugrasravas
@@ -43,6 +45,8 @@ Once, the son of Lomaharshana, Ugrasravas, (also known as) Sauti, (also as) the 
 of Suta, well-versed in the Puranas, humbly bowing, approached the blissfully sitting,
 rigid-vowed Brahman sages in the Naimisharanya at the 12-years sacrifice of Kulapati Shaunaka. 
 
+3
+
 tam (sa, acc sing) him
 aas~ramam (aas~rama, acc sing) hermitage
 anupraaptam (anu-pra-!aap, acc sing perf pass part) having reached
@@ -57,6 +61,8 @@ tapasvina: (tapasvin, nom pl) the ascetics
 
 Then, the ascetics surrounded him, (who had) reached the hermitage of the 
 Naimisharanya-dwellers, to hear (his) wonderful stories.
+
+4
 
 abhivaadya (abhi-!vad, caus abs) having greeted
 muniin (muni, acc pl) the seers
@@ -77,6 +83,8 @@ abhipuujita: (abhi-!puuj, nom sing perf pass part) having been honored
 Having greeted all those seers with joined hands, and having been honored 
 by the true ones (i.e. the seers/sages), he asked (about) the progress of (their) asceticism.
 
+5
+
 atha then
 tais<u (sa, loc pl) with them
 upavis<t<ais<u (upa-!vis~, loc pl perf pass part) having sat down
@@ -92,6 +100,8 @@ laaumahars<an<i: (laaumahars<an<i, nom sing) Lomaharshana's son
 
 Then, with all those ascetics having sat down, 
 Lomaharshana's son humbly took the seat assigned to him.
+
+6
 
 sukhaasiinam (sukha+!aas, acc sing pres mid part) sitting blissfully/comfortably
 tata: thus
@@ -112,6 +122,8 @@ kathaa: (kathaa, acc pl) the stories, i.e. the conversation
 Having noticed him rested and sitting comfortably, 
 then one seer, starting the conversation, asked: 
 
+7
+
 kuta: whence
 aagamyatai (aa-!gam, 3 sing pres pass ind) it is come
 saautai (saauti, voc sing) Sauti
@@ -130,6 +142,8 @@ mama (aham, gen sing) of me
 
 Sauti, whence have you come? Where was that time spent by you, 
 lotus-petal-eyed (one)? Tell that to me (who is) asking.
+
+8
 
 aivam thus
 pr>s<t<a: (!prach, nom sing perf pass part) having been asked
@@ -153,6 +167,8 @@ bhaavitaatmanaam (bhaavita+aatman, gen pl) self-realized (lit. soul-manifested)
 Thus asked, rightly and properly, Lomaharshana's son (Sauti), equipped with good speech, 
 spoke a statement to (the ones) seeking their (the sages') shelter
 in that great assembly of self-realized sages.
+
+9-11
 
 saauti: (saauti, nom sing) Sauti
 uvaaca (!vac, 3 sing perf act ind) said

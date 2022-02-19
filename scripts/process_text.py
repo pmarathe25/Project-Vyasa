@@ -325,8 +325,6 @@ def main():
     }
 
     contents = open(args.input_file).read().strip()
-    header, _, contents = contents.partition("\n\n")
-    start_verse, end_verse = map(int, header.split("-"))
 
     # Strip trailing whitespace at the ends of lines
     contents = "\n".join(map(lambda x: x.strip(), contents.splitlines()))
@@ -335,7 +333,7 @@ def main():
     # To have the front-end handle newlines, we need a bit of weirdness in the word-by-word
     # translation - specifically, instead of just having a list of words for each verse, we have to have a list
     # of lines (i.e. list of lists). Then the front-end can render each list in a separate HTML element.
-    for index, (word_by_word, translation) in enumerate(util.chunks(contents.split("\n\n"), 2)):
+    for index, (verse_num, word_by_word, translation) in enumerate(util.chunks(contents.split("\n\n"), 3)):
         word_by_word_sections = []
         to_sandhi_word_lines = []
         for section in word_by_word.split("\n-\n"):
@@ -348,16 +346,12 @@ def main():
 
         processed["verses"].append(
             {
-                "num": start_verse + index,
+                "num": verse_num,
                 "text": "\n".join(build_sandhied_text(line, TRANSLIT_RULESET) for line in to_sandhi_word_lines),
                 "translation": translation,
                 "wordByWord": word_by_word_sections,
             }
         )
-
-    err_msg = f"Expected to see verses {start_verse}-{end_verse} ({end_verse - start_verse + 1} verses) "
-    err_msg += f"but received {index + 1} verses. Did you forget to update the header?"
-    assert start_verse + index == end_verse, err_msg
 
     os.makedirs(os.path.dirname(args.output), exist_ok=True)
     print(f"Writing to: {args.output}")
