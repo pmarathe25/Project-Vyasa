@@ -30,6 +30,9 @@ PARTS_OF_SPEECH_MAPPING = OrderedDict(
         ("sing", ("singular", "number")),
         ("du", ("dual", "number")),
         ("pl", ("plural", "number")),
+        ("m", ("masculine", "gender")),
+        ("f", ("feminine", "gender")),
+        ("n", ("neuter", "gender")),
         ("pres", ("present", "tense")),
         ("perf", ("perfect", "tense")),
         ("imp", ("imperfect", "tense")),
@@ -50,10 +53,10 @@ PARTS_OF_SPEECH_MAPPING = OrderedDict(
 
 NOUN_PARTS = set(["case", "number"])
 VERB_PARTS = set(["person", "number", "tense", "voice", "mood"])
-PARTICIPLE_PARTS = NOUN_PARTS | {"tense", "voice", "form"}
+PARTICIPLE_PARTS = NOUN_PARTS | {"tense", "voice", "form", "gender"}
 
 
-def process_parts_of_speech(parts_of_speech, is_verb, err_prefix, is_declined=True):
+def process_parts_of_speech(parts_of_speech, is_verb, err_prefix, is_declined=True, dictionary_entries=None):
     """
     Processes a space separate sequence of parts of speech, validates it, then returns
     a string including the full forms.
@@ -65,6 +68,10 @@ def process_parts_of_speech(parts_of_speech, is_verb, err_prefix, is_declined=Tr
         is_declined (bool):
                 Whether the word is declined if it is a noun or adjective.
                 For non-declined words, case and number are not required.
+        dictionary_entries (List[List[str]]):
+                A list of dictionary entries for each part of the root.
+                These will be used to check whether the word in question is an
+                adjective, and therefore whether it needs to specify gender.
 
     Returns:
         str: The parts of speech in their full form.
@@ -72,8 +79,12 @@ def process_parts_of_speech(parts_of_speech, is_verb, err_prefix, is_declined=Tr
     if not parts_of_speech:
         return parts_of_speech
 
+    dictionary_entries = dictionary_entries or []
+
+    orig_parts_of_speech = copy.copy(parts_of_speech)
+
     def show_error(msg):
-        raise RuntimeError(err_prefix + msg + f"\nNote: parts of speech were: {parts_of_speech}")
+        raise RuntimeError(err_prefix + msg + f"\nNote: parts of speech were: {orig_parts_of_speech}")
 
     new_parts = OrderedDict()
     part_functions = set()
@@ -114,7 +125,8 @@ def process_parts_of_speech(parts_of_speech, is_verb, err_prefix, is_declined=Tr
                 check_parts({"form"})
         else:
             check_parts(VERB_PARTS)
-    elif parts_of_speech:
-        check_parts(NOUN_PARTS)
+    elif new_parts:
+        is_adj = any("(adj.)" in entry[0] for entry in dictionary_entries)
+        check_parts(NOUN_PARTS | ({"gender"} if is_adj else set()))
 
     return " ".join(new_parts.values()).title()

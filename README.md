@@ -184,6 +184,11 @@ Valid entries are as follows:
 - `abs`: Absolutive
 - `part`: Participle
 
+Additionally, for adjectives and participles, gender must be provided 
+(for other words, this is recorded in the dictionary):
+
+- `m/f/n`: Masculine/Feminine/Neuter
+
 
 ## Dictionary Format
 
