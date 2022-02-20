@@ -162,10 +162,10 @@ tasmin (sa, loc sing) in that
 sadasi (sadas, loc sing) assembly
 vistiirn<ai (vistiirn<a, loc sing) broad, great
 muniinaam (muni, gen pl) of sages
-bhaavitaatmanaam (bhaavita+aatman, gen pl) self-realized (lit. soul-manifested)
+bhaavitaatmanaam (bhaavita+aatman, m gen pl) self-realized (lit. soul-manifested)
 
-Thus asked, rightly and properly, Lomaharshana's son (Sauti), equipped with good speech, 
-spoke a statement to (the ones) seeking their (the sages') shelter
+Thus asked, Lomaharshana's son (Sauti), equipped with good speech, 
+spoke a statement, rightly and properly, to (the ones) seeking their (the sages') shelter
 in that great assembly of self-realized sages.
 
 9-11
@@ -178,7 +178,7 @@ raajars<ai: (raajan+r>s<i, gen sing) of the royal sage
 sarpasatrai (sarpa+satra, loc sing) in the snake sacrifice
 mahaatmana: (mahat+aatman, gen sing m) of the great souled
 -
-samiipai (samiipa, loc sing) at, (lit. in the vicinity)
+samiipai (samiipa, loc sing) at (lit. in the vicinity)
 paarthivaindrasya (paarthiva+indra, gen sing) of the best prince
 samyak completely
 paariks<itasya (paariks<ita, gen sing) of the son of Parikshit 
@@ -207,3 +207,18 @@ Sauti said:
 "(I), having heard those various excellent, marvelous, and sacred stories of the Mahabharata,
 which were indeed told in full by Vaishampayana, having been composed by the black islander (Vyasa), 
 at the snake sacrifice of Janamejaya, the great-souled royal sage, the best prince, the son of Parikshit...
+
+12-13
+
+bahuuni (bahu, acc pl n) many
+sa.parikramya (sam-pari-!kram, abs) having traveled
+tiirthaani (tiirtha, acc pl) places of pilgrimage
+aayatanaani (aayatana, acc pl) shrines
+ca and
+-
+samantapan~cakam (samantapan~caka, acc sing) Samantapancaka
+naama (naaman, acc sing) named
+pun<yam (pun<ya, acc sing n) holy
+dvijanis<aivitam (dvija+nis<aivita, acc sing n) revered by the twice-born
+
+"And having traveled to many shrines and places of pilgrimage

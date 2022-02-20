@@ -5,17 +5,21 @@ import toUrl from '../util/util';
 
 
 const Reference = ({ reference, refPartsOfSpeech, refStyle }) => {
-    const translitReference = useTransliterate(reference);
+    const refParts = reference.split("+");
+    const translitRefParts = useTransliterate(reference).split("+");
 
     if (!reference) {
         return (<></>);
     }
 
-    const refLink = (
-        <Link to={`/dictionary#${toUrl(reference)}`} style={{ fontSize: "18px" }}>
-            {translitReference}
-        </Link>
-    );
+    let refLinks = [];
+    for (let index in translitRefParts) {
+        refLinks.push(
+            <Link to={`/dictionary#${toUrl(refParts[index])}`} style={{ fontSize: "18px", fontStyle: "normal" }}>
+                {(index > 0 ? ", " : "")}{translitRefParts[index]}
+            </Link>
+        );
+    }
 
     return (
         <div style={refStyle}>
@@ -23,13 +27,13 @@ const Reference = ({ reference, refPartsOfSpeech, refStyle }) => {
                 refPartsOfSpeech
                     ?
                     (<>
-                        [{refPartsOfSpeech} of {refLink}]
+                        [{refPartsOfSpeech} of {refLinks}]
                     </>
                     )
                     :
                     (
                         <>
-                            [see {refLink}]
+                            [see {refLinks}]
                         </>
                     )
             }
@@ -40,7 +44,7 @@ const Reference = ({ reference, refPartsOfSpeech, refStyle }) => {
 
 const Definition = ({ definition, reference, refPartsOfSpeech }) => {
     const style = {
-        color: "rgb(242, 242, 242)",
+        color: "rgb(248, 248, 248)",
         display: "inline",
         fontStyle: "italic",
         top: "50%",
@@ -48,7 +52,7 @@ const Definition = ({ definition, reference, refPartsOfSpeech }) => {
         padding: 0,
         marginLeft: "5px", marginTop: "auto", marginBottom: "auto",
         whiteSpace: "pre-wrap",
-        fontSize: "14px"
+        fontSize: "15px"
     };
 
     return (

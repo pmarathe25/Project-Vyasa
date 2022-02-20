@@ -18,8 +18,8 @@ def validate_dictionary(dct):
     for word, (_, reference, _, section_name) in dct.items():
         is_verb = "√" in word
 
-        assert (
-            not reference or reference in dct
+        assert not reference or all(
+            ref_part in dct for ref_part in reference.split("+")
         ), f"Word: {word} refers to: {reference}, but the latter is not present in the dictionary!"
         assert word.strip("√").startswith(section_name), f"Word: {word} is in the wrong section: {section_name}"
         if is_verb:
@@ -126,9 +126,15 @@ def main():
                         detail = "indeclinable"
                     elif detail == "adj":
                         detail += "."
-                    else:
+                    elif detail:
+                        if not all(elem in "mfn" for elem in detail):
+                            raise RuntimeError(
+                                "Unrecognized item in word details: '{:}'\nNote: Line was: {:}"
+                                "\nHint: If no details (e.g. gender) are required, use an empty set of "
+                                "parentheses to separate the word from its definition".format(detail, line)
+                            )
                         detail = "./".join(detail) + "."
-                    add(word, f"({detail}) {meanings}")
+                    add(word, (f"({detail}) " if detail else "") + f"{meanings}")
                 else:
                     word, _, meanings = line.partition(" ")
                     add(word, meanings)

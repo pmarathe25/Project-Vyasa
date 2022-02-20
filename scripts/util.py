@@ -105,7 +105,7 @@ def process_parts_of_speech(parts_of_speech, is_verb, err_prefix, is_declined=Tr
 
     def check_parts(expected):
         if not is_declined:
-            expected = copy.copy(expected) - NOUN_PARTS
+            expected = copy.copy(expected) - NOUN_PARTS - {"gender"}
 
         if expected != part_functions:
             show_error(f"Expected parts of speech: {expected}, but received: {part_functions}")

@@ -210,7 +210,8 @@ As in the main content text, verbal roots should be prefixed
 with an exclamation mark, i.e. `!`.
 
 Finally, you can optionally add a reference word enclosed in square brackets.
-The reference will be transliterated when it is displayed.
+The reference will be transliterated when it is displayed and uses the same format
+as the "base-form" field in the content files.
 For example: `vaasin (mn) staying, dwelling [!vas]`
 
 An example file may look like:
