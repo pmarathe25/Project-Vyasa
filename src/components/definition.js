@@ -15,9 +15,16 @@ const Reference = ({ reference, refPartsOfSpeech, refStyle }) => {
     let refLinks = [];
     for (let index in translitRefParts) {
         refLinks.push(
-            <Link to={`/dictionary#${toUrl(refParts[index])}`} style={{ fontSize: "18px", fontStyle: "normal" }}>
-                {(index > 0 ? ", " : "")}{translitRefParts[index]}
-            </Link>
+            <div style={refStyle} key={index}>
+                {(index > 0 ? ", " : "")}
+                <Link
+                    to={`/dictionary#${toUrl(refParts[index])}`}
+                    style={{ fontSize: "20px", fontStyle: "normal" }}
+                    key={index}
+                >
+                    {translitRefParts[index]}
+                </Link>
+            </div>
         );
     }
 
