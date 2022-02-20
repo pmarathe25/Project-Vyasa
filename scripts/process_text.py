@@ -29,7 +29,7 @@ def build_sandhied_text(words, translit_ruleset):
             keys.extend(SEQUENCE_MAP[cat_name].keys())
         return keys
 
-    VOWELS = keys_of("vowels")
+    VOWELS = keys_of("vowels", "compound-vowels")
     UNVOICED_CONSONANTS = keys_of(
         "unvoiced-velar-consonants",
         "unvoiced-palatal-consonants",
