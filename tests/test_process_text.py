@@ -159,6 +159,22 @@ def transliteration_ruleset():
             "tvaiva",
         ),
         (
+            ["ti", "upa"],
+            "tyupa",
+        ),
+        (
+            ["tii", "upa"],
+            "tyupa",
+        ),
+        (
+            ["ti", "aiva"],
+            "tyaiva",
+        ),
+        (
+            ["ti", "iva"],
+            "tiiva",
+        ),
+        (
             ["taa", "api"],
             "taapi",
         ),

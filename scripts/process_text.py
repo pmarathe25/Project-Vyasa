@@ -164,6 +164,7 @@ def build_sandhied_text(words, translit_ruleset):
         (matches(["n"]), matches(keys_of("unvoiced-dental-consonants")), replace("end", [("n", ".s")])),
         # Vowels + Vowels
         (matches(["u"]), matches(VOWELS, but_not=["u"]), replace("end", [("uu", "v"), ("u", "v")])),
+        (matches(["i"]), matches(VOWELS, but_not=["i"]), replace("end", [("ii", "y"), ("i", "y")])),
         (
             matches(["a", "aa"]),
             matches(["a", "aa"], but_not=["au", "aau"]),
