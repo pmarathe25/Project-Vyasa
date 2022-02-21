@@ -4,11 +4,11 @@ import { useTransliterate } from '../components/transliterationHook';
 import toUrl from '../util/util';
 
 
-const Reference = ({ reference, refPartsOfSpeech, refStyle }) => {
-    const refParts = reference.split("+");
-    const translitRefParts = useTransliterate(reference).split("+");
+const Root = ({ root, partsOfSpeech, refStyle }) => {
+    const refParts = root.split("+");
+    const translitRefParts = useTransliterate(root).split("+");
 
-    if (!reference) {
+    if (!root) {
         return (<></>);
     }
 
@@ -31,10 +31,10 @@ const Reference = ({ reference, refPartsOfSpeech, refStyle }) => {
     return (
         <div style={refStyle}>
             {
-                refPartsOfSpeech
+                partsOfSpeech
                     ?
                     (<>
-                        [{refPartsOfSpeech} of {refLinks}]
+                        [{partsOfSpeech} of {refLinks}]
                     </>
                     )
                     :
@@ -49,7 +49,7 @@ const Reference = ({ reference, refPartsOfSpeech, refStyle }) => {
 
 }
 
-const Definition = ({ definition, reference, refPartsOfSpeech }) => {
+const Definition = ({ definition, root, partsOfSpeech }) => {
     const style = {
         color: "rgb(248, 248, 248)",
         display: "inline",
@@ -67,7 +67,7 @@ const Definition = ({ definition, reference, refPartsOfSpeech }) => {
             <p style={style}>
                 {definition}
             </p>
-            <Reference reference={reference} refPartsOfSpeech={refPartsOfSpeech} refStyle={style} />
+            <Root root={root} partsOfSpeech={partsOfSpeech} refStyle={style} />
         </div>
     );
 }

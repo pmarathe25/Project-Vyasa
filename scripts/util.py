@@ -1,6 +1,6 @@
+import copy
 import os
 from collections import OrderedDict
-import copy
 
 
 def get_mtime(path):

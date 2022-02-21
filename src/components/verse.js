@@ -53,8 +53,8 @@ const RootMeanings = ({ root }) => {
                         </Link>
                         <Definition
                             definition={rootDefs[index][0]}
-                            reference={rootDefs[index][1]}
-                            refPartsOfSpeech={rootDefs[index][2]}
+                            root={rootDefs[index][1]}
+                            partsOfSpeech={rootDefs[index][2]}
                         />
                     </div>
                 )

@@ -162,7 +162,7 @@ tasmin (sa, loc sing) in that
 sadasi (sadas, loc sing) assembly
 vistiirn<ai (vistiirn<a, loc sing) broad, great
 muniinaam (muni, gen pl) of sages
-bhaavitaatmanaam (bhaavita+aatman, m gen pl) self-realized (lit. soul-manifested)
+bhaavitaatmanaam (bhaavita+aatman, m gen pl) of self-realized (lit. soul-manifested)
 
 Thus asked, Lomaharshana's son (Sauti), equipped with good speech, 
 spoke a statement, rightly and properly, to (the ones) seeking their (the sages') shelter
@@ -219,6 +219,6 @@ ca and
 samantapan~cakam (samantapan~caka, acc sing) Samantapancaka
 naama (naaman, acc sing) named
 pun<yam (pun<ya, acc sing n) holy
-dvijanis<aivitam (dvija+nis<aivita, acc sing n) revered by the twice-born
+dvijanis<aivitam (dvija+ni-!saiv, acc sing n perf pass part) revered by the twice-born
 
 "And having traveled to many shrines and places of pilgrimage
