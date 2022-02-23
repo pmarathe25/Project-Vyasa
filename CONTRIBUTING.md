@@ -215,6 +215,10 @@ Some common syntax rules to consider:
 
 - Verbal roots should be prefixed with an exclamation mark, i.e. `!`. For example: `!gam`.
 
+- In cases where a single verbal root is used for multiple verbs meaning different things, 
+    append the verb class in roman numerals after a pipe character, i.e. `|`. 
+    For example: `!ks<i|VI`. 
+
 - Pre-verbs must be separated from their roots by dashes, i.e. `-`. For example: `ava-!gam`.
 
 ### Parts Of Speech

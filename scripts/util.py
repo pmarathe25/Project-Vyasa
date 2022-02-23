@@ -12,6 +12,14 @@ def chunks(inp_iter, chunk_size):
         yield inp_iter[idx : idx + chunk_size]
 
 
+def adjust_verb(verb):
+    verb = verb.replace("!", "√")
+    if "|" in verb:
+        verb, _, cls = verb.partition("|")
+        verb = f"{verb} ({cls})"
+    return verb
+
+
 # Follow a consistent ordering for every word
 # Format: abbreviation, full-form, type
 PARTS_OF_SPEECH_MAPPING = OrderedDict(

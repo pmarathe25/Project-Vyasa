@@ -263,7 +263,7 @@ def parse_word_grammar(line, verse_num, line_num, dictionary):
     # Insert sqrt sign for verbal roots
     is_verb = "!" in root
     if is_verb:
-        root = root.replace("!", "√")
+        root = util.adjust_verb(root)
 
     dictionary_entries = []
     for root_part in root.split("+"):

@@ -19,7 +19,7 @@ const Root = ({ root, partsOfSpeech, refStyle }) => {
                 {(index > 0 ? ", " : "")}
                 <Link
                     to={`/dictionary#${toUrl(refParts[index])}`}
-                    style={{ fontSize: "20px", fontStyle: "normal" }}
+                    style={{ fontSize: "20px", fontStyle: "normal", whiteSpace: "nowrap" }}
                     key={index}
                 >
                     {translitRefParts[index]}

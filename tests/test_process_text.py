@@ -348,6 +348,34 @@ def build_expected(verse_num, verses_text, translations, word_lists):
                 ],
             ),
         ),
+        # Verb classes
+        (
+            """
+            1
+
+            ca (ca,) and
+            aiva (aiva,) just so
+            ks<ayati (!ks<i|6, 3 sing pres act ind) it is destroyed
+
+            And so it is destroyed
+            """,
+            build_expected(
+                "1",
+                ["caaiva"],
+                ["And so"],
+                [
+                    # Verse 1
+                    [
+                        # Line 1
+                        [
+                            ["ca", "and", "ca", ""],
+                            ["aiva", "just so", "aiva", ""],
+                            ["ks<ayati", "it is destroyed", "!ks<i|6", ""],
+                        ]
+                    ]
+                ],
+            ),
+        ),
     ],
 )
 def test_process_text(content, expected_output):

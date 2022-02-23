@@ -10,6 +10,8 @@ export function toUrl(str) {
         .replaceAll("√", "rt")
         .replaceAll("<", "lt")
         .replaceAll(">", "gt")
+        .replaceAll("(", "lparen")
+        .replaceAll(")", "rparen")
         .toLowerCase();
 }
 

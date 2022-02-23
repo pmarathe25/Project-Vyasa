@@ -220,5 +220,23 @@ samantapan~cakam (samantapan~caka, acc sing) Samantapancaka
 naama (naaman, acc sing) named
 pun<yam (pun<ya, acc sing n) holy
 dvijanis<aivitam (dvija+ni-!saiv, acc sing n perf pass part) revered by the twice-born
+-
+gatavaan (!gam, nom sing m perf act part) having gone
+asmi (!as, 1 sing pres act ind) I am
+tam (sa, acc sing) that
+dais~am (dais~a, acc sing) place
+yuddham (yuddha, acc sing) the battle
+yatra where
+abhavat (!bhuu, 3 sing imp act ind) was
+puraa long ago
+-
+kuruun<aam (kuru, gen pl) of the Kurus
+paan<d<avaanaam (paan<d<ava, gen pl) of the Pandavas
+ca and
+sarvais<aam (sarva, gen pl) of all
+ca and
+mahiiks<itaam (mahii+ks<it, gen pl) of the earthly rulers
 
-"And having traveled to many shrines and places of pilgrimage
+"And having traveled to many shrines and places of pilgrimage, 
+I went (to) that holy place, revered by the twice-born, named Samantapancaka,
+where (there) was a battle long ago of the Pandavas, the Kurus, and all the earthly rulers.
