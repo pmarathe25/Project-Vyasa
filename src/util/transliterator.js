@@ -2,7 +2,6 @@ function transliterate(text, translitRuleset) {
     let sequenceMap = translitRuleset["sequence_map"];
     let rules = translitRuleset["rules"];
 
-    text = text.toLowerCase();
     let output = "";
     let curDict = sequenceMap;
     let curSequence = "";

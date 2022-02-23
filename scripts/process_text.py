@@ -2,7 +2,6 @@
 import argparse
 import json
 import os
-from collections import OrderedDict
 
 import util
 
@@ -29,7 +28,7 @@ def build_sandhied_text(words, translit_ruleset):
             keys.extend(SEQUENCE_MAP[cat_name].keys())
         return keys
 
-    VOWELS = keys_of("vowels")
+    VOWELS = keys_of("vowels", "compound-vowels")
     UNVOICED_CONSONANTS = keys_of(
         "unvoiced-velar-consonants",
         "unvoiced-palatal-consonants",
@@ -164,6 +163,7 @@ def build_sandhied_text(words, translit_ruleset):
         (matches(["n"]), matches(keys_of("unvoiced-dental-consonants")), replace("end", [("n", ".s")])),
         # Vowels + Vowels
         (matches(["u"]), matches(VOWELS, but_not=["u"]), replace("end", [("uu", "v"), ("u", "v")])),
+        (matches(["i"]), matches(VOWELS, but_not=["i"]), replace("end", [("ii", "y"), ("i", "y")])),
         (
             matches(["a", "aa"]),
             matches(["a", "aa"], but_not=["au", "aau"]),
@@ -263,7 +263,7 @@ def parse_word_grammar(line, verse_num, line_num, dictionary):
     # Insert sqrt sign for verbal roots
     is_verb = "!" in root
     if is_verb:
-        root = root.replace("!", "√")
+        root = util.adjust_verb(root)
 
     dictionary_entries = []
     for root_part in root.split("+"):

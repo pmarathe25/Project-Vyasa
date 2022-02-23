@@ -162,10 +162,10 @@ tasmin (sa, loc sing) in that
 sadasi (sadas, loc sing) assembly
 vistiirn<ai (vistiirn<a, loc sing) broad, great
 muniinaam (muni, gen pl) of sages
-bhaavitaatmanaam (bhaavita+aatman, gen pl) self-realized (lit. soul-manifested)
+bhaavitaatmanaam (bhaavita+aatman, m gen pl) of self-realized (lit. soul-manifested)
 
-Thus asked, rightly and properly, Lomaharshana's son (Sauti), equipped with good speech, 
-spoke a statement to (the ones) seeking their (the sages') shelter
+Thus asked, Lomaharshana's son (Sauti), equipped with good speech, 
+spoke a statement, rightly and properly, to (the ones) seeking their (the sages') shelter
 in that great assembly of self-realized sages.
 
 9-11
@@ -178,7 +178,7 @@ raajars<ai: (raajan+r>s<i, gen sing) of the royal sage
 sarpasatrai (sarpa+satra, loc sing) in the snake sacrifice
 mahaatmana: (mahat+aatman, gen sing m) of the great souled
 -
-samiipai (samiipa, loc sing) at, (lit. in the vicinity)
+samiipai (samiipa, loc sing) at (lit. in the vicinity)
 paarthivaindrasya (paarthiva+indra, gen sing) of the best prince
 samyak completely
 paariks<itasya (paariks<ita, gen sing) of the son of Parikshit 
@@ -204,6 +204,39 @@ vicitraarthaa: (vicitra+artha, acc pl f) wonderful, marvelous
 mahaabhaaratasa.s~ritaa: (mahaabhaarata+sa.s~rita, acc pl f) of/from the Mahabharata
 
 Sauti said: 
-"(I), having heard those various excellent, marvelous, and sacred stories of the Mahabharata,
+"I, having heard those various excellent, marvelous, and sacred stories of the Mahabharata,
 which were indeed told in full by Vaishampayana, having been composed by the black islander (Vyasa), 
 at the snake sacrifice of Janamejaya, the great-souled royal sage, the best prince, the son of Parikshit...
+
+12-13
+
+bahuuni (bahu, acc pl n) many
+sa.parikramya (sam-pari-!kram, abs) having traveled
+tiirthaani (tiirtha, acc pl) places of pilgrimage
+aayatanaani (aayatana, acc pl) shrines
+ca and
+-
+samantapan~cakam (samantapan~caka, acc sing) Samantapancaka
+naama (naaman, acc sing) named
+pun<yam (pun<ya, acc sing n) holy
+dvijanis<aivitam (dvija+ni-!saiv, acc sing n perf pass part) revered by the twice-born
+-
+gatavaan (!gam, nom sing m perf act part) having gone
+asmi (!as, 1 sing pres act ind) I am
+tam (sa, acc sing) that
+dais~am (dais~a, acc sing) place
+yuddham (yuddha, acc sing) the battle
+yatra where
+abhavat (!bhuu, 3 sing imp act ind) was
+puraa long ago
+-
+kuruun<aam (kuru, gen pl) of the Kurus
+paan<d<avaanaam (paan<d<ava, gen pl) of the Pandavas
+ca and
+sarvais<aam (sarva, gen pl) of all
+ca and
+mahiiks<itaam (mahii+ks<it, gen pl) of the earthly rulers
+
+"And having traveled to many shrines and places of pilgrimage, 
+I went (to) that holy place, revered by the twice-born, named Samantapancaka,
+where (there) was a battle long ago of the Pandavas, the Kurus, and all the earthly rulers.

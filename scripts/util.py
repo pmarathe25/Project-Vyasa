@@ -1,6 +1,6 @@
+import copy
 import os
 from collections import OrderedDict
-import copy
 
 
 def get_mtime(path):
@@ -10,6 +10,14 @@ def get_mtime(path):
 def chunks(inp_iter, chunk_size):
     for idx in range(0, len(inp_iter), chunk_size):
         yield inp_iter[idx : idx + chunk_size]
+
+
+def adjust_verb(verb):
+    verb = verb.replace("!", "√")
+    if "|" in verb:
+        verb, _, cls = verb.partition("|")
+        verb = f"{verb} ({cls})"
+    return verb
 
 
 # Follow a consistent ordering for every word
@@ -105,7 +113,7 @@ def process_parts_of_speech(parts_of_speech, is_verb, err_prefix, is_declined=Tr
 
     def check_parts(expected):
         if not is_declined:
-            expected = copy.copy(expected) - NOUN_PARTS
+            expected = copy.copy(expected) - NOUN_PARTS - {"gender"}
 
         if expected != part_functions:
             show_error(f"Expected parts of speech: {expected}, but received: {part_functions}")

@@ -7,8 +7,6 @@ module.exports = {
   },
   plugins: [
     `gatsby-transformer-json`,
-    `gatsby-plugin-image`,
-    `gatsby-plugin-sharp`,
     `gatsby-plugin-gatsby-cloud`,
     {
       resolve: "gatsby-source-filesystem",

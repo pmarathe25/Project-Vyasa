@@ -50,14 +50,19 @@ const Layout = ({ location, pageTitle, children }) => {
 
                     <Navbar.Collapse id="responsive-navbar-nav">
                         <Nav className="top-bar-links">
+                            <TopBarNavItem navExpanded={navExpanded} keyName="dictionary">
+                                <Link to={toUrl("/dictionary")} className={navLink}>
+                                    Dictionary
+                                </Link>
+                            </TopBarNavItem>
                             <TopBarNavItem navExpanded={navExpanded} keyName="about">
                                 <Link to={toUrl("/about")} className={navLink}>
                                     About
                                 </Link>
                             </TopBarNavItem>
-                            <TopBarNavItem navExpanded={navExpanded} keyName="dictionary">
-                                <Link to={toUrl("/dictionary")} className={navLink}>
-                                    Dictionary
+                            <TopBarNavItem navExpanded={navExpanded} keyName="issues">
+                                <Link to={toUrl("/issues")} className={navLink}>
+                                    Issues?
                                 </Link>
                             </TopBarNavItem>
                             <TopBarNavItem navExpanded={navExpanded} keyName="github" >
@@ -87,4 +92,4 @@ const Layout = ({ location, pageTitle, children }) => {
     )
 }
 
-export default Layout
+export default Layout;

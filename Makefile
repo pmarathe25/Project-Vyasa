@@ -14,6 +14,7 @@ GEN_DICTIONARY_DIR := $(GEN_CONTENT_DIR)/dictionary
 BUILD_RULE_SET_SCRIPT := $(SCRIPTS_DIR)/build_transliteration_ruleset.py
 PROCESS_TEXT_SCRIPT := $(SCRIPTS_DIR)/process_text.py
 BUILD_DICTIONARY_SCRIPT := $(SCRIPTS_DIR)/build_dictionary.py
+UTIL_FILE := $(SCRIPTS_DIR)/util.py
 
 GEN_RULE_SETS := $(patsubst $(RAW_RULE_SET_DIR)/%.json,$(GEN_RULE_SET_DIR)/%.json,$(wildcard $(RAW_RULE_SET_DIR)/*.json))
 
@@ -24,6 +25,15 @@ RAW_DICTIONARY_FILES = $(wildcard $(RAW_DICTIONARY_DIR)/*.txt)
 GEN_DICTIONARY_FILE = $(GEN_DICTIONARY_DIR)/all_words.json
 
 all: $(GEN_RULE_SETS) $(GEN_CHAPTERS) $(GEN_DICTIONARY_FILE)
+
+$(BUILD_RULE_SET_SCRIPT): $(UTIL_FILE)
+	touch $@
+
+$(PROCESS_TEXT_SCRIPT): $(UTIL_FILE)
+	touch $@
+
+$(BUILD_DICTIONARY_SCRIPT): $(UTIL_FILE)
+	touch $@
 
 $(GEN_RULE_SET_DIR):
 	mkdir -p $@

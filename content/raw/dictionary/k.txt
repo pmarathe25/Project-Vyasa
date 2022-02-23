@@ -1,5 +1,7 @@
 !kath to tell (a story), to narrate, to relate
 !kr> to do, to make
+!kram to step, to walk
+!ks<i|VI to dwell
 ka (mn) who?
 kaala (m) time
 kadaa (indc) when
@@ -7,6 +9,8 @@ kamala (mn) lotus
 kathaa (f) story, tale
 kr>s<n<a (adj) dark, black
 kr>ta (mn) done, made, accomplished [!kr>]
+ks<it () (at the end of a compound) ruling, dwelling [!ks<i|VI]
 kula (m) family
+kuru (m) Kuru, ancestor of Pandu and Dhritarashtra, but "kuru" generally refers to descendants of only the latter
 kuta: (indc) from where? whence?
 kva (indc) where? in what place?

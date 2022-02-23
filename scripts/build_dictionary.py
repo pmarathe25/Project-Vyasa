@@ -18,10 +18,12 @@ def validate_dictionary(dct):
     for word, (_, reference, _, section_name) in dct.items():
         is_verb = "√" in word
 
-        assert (
-            not reference or reference in dct
+        assert not reference or all(
+            ref_part if not is_verb else util.adjust_verb(ref_part) in dct for ref_part in reference.split("+")
         ), f"Word: {word} refers to: {reference}, but the latter is not present in the dictionary!"
+
         assert word.strip("√").startswith(section_name), f"Word: {word} is in the wrong section: {section_name}"
+
         if is_verb:
             base_form = word.split("-")[-1]
             assert base_form in dct, "Base form ({:}) of word: {:} is not present in the dictionary!".format(
@@ -63,6 +65,12 @@ def main():
         print(f"Processing: {path}")
 
         expected_start_letter, _ = os.path.splitext(os.path.basename(path))
+        # Delete any previous entries from this file so that removing an entry
+        # from the text file also removes it from the dictionary.
+        rem_words = list(filter(lambda word: word.strip("√").startswith(expected_start_letter), out_dict.keys()))
+        for word in rem_words:
+            del out_dict[word]
+
         POSSIBLE_SECTION_NAMES = [
             section_name for section_name in SECTION_NAMES if section_name.startswith(expected_start_letter)
         ]
@@ -94,6 +102,9 @@ def main():
                     meanings, _, reference = meanings.partition("[")
                     reference = reference.strip().strip("]")
                     reference, _, reference_parts_of_speech = reference.partition(",")
+                    is_reference_verb = "!" in reference
+                    if is_reference_verb:
+                        reference = util.adjust_verb(reference)
                     out_dict[word.strip()] = list(
                         map(
                             lambda x: x.strip(),
@@ -102,7 +113,7 @@ def main():
                                 reference,
                                 util.process_parts_of_speech(
                                     reference_parts_of_speech,
-                                    is_verb="√" in reference,
+                                    is_verb=is_reference_verb,
                                     err_prefix=f"In file: {path} on line: {line_num}: ",
                                     is_declined=False,
                                 ),
@@ -114,21 +125,28 @@ def main():
                 if not line:
                     continue
 
-                line = line.replace("!", "√")
                 tokens = [x for x in line.split(" ") if x]
-                if "√" in tokens[0]:
+                if "!" in tokens[0]:
                     word, _, meanings = line.partition(" ")
-                    add(word, meanings)
+                    add(util.adjust_verb(word), meanings)
                 elif "(" in tokens[1]:
+
                     word, _, rest = line.partition("(")
+
                     detail, _, meanings = rest.partition(")")
                     if detail == "indc":
                         detail = "indeclinable"
                     elif detail == "adj":
                         detail += "."
-                    else:
+                    elif detail:
+                        if not all(elem in "mfn" for elem in detail):
+                            raise RuntimeError(
+                                "Unrecognized item in word details: '{:}'\nNote: Line was: {:}"
+                                "\nHint: If no details (e.g. gender) are required, use an empty set of "
+                                "parentheses to separate the word from its definition".format(detail, line)
+                            )
                         detail = "./".join(detail) + "."
-                    add(word, f"({detail}) {meanings}")
+                    add(word, (f"({detail}) " if detail else "") + f"{meanings}")
                 else:
                     word, _, meanings = line.partition(" ")
                     add(word, meanings)

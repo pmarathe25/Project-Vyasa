@@ -10,7 +10,7 @@ import { sortSanskrit, toUrl } from '../util/util'
 const allWordsDict = require("../../content/generated/dictionary/all_words.json");
 
 
-const WordAndDefinition = ({ location, word, definition, reference, refPartsOfSpeech }) => {
+const WordAndDefinition = ({ location, word, definition, root, partsOfSpeech }) => {
     const translitWord = useTransliterate(word);
     const baseUrl = "/dictionary";
 
@@ -63,8 +63,8 @@ const WordAndDefinition = ({ location, word, definition, reference, refPartsOfSp
             {wordElements}
             <Definition
                 definition={definition}
-                reference={reference}
-                refPartsOfSpeech={refPartsOfSpeech}
+                root={root}
+                partsOfSpeech={partsOfSpeech}
             />
         </div>
     )
@@ -74,7 +74,7 @@ const DictSection = ({ location, sectionName, wordComponents }) => {
     const translitSectionName = useTransliterate(sectionName);
 
     let entries = []
-    for (const [word, definition, reference, refPartsOfSpeech] of wordComponents.sort(
+    for (const [word, definition, root, partsOfSpeech] of wordComponents.sort(
         ([word], [other]) => {
             return sortSanskrit(word, other);
         })) {
@@ -84,8 +84,8 @@ const DictSection = ({ location, sectionName, wordComponents }) => {
                 location={location}
                 word={word}
                 definition={definition}
-                reference={reference}
-                refPartsOfSpeech={refPartsOfSpeech}
+                root={root}
+                partsOfSpeech={partsOfSpeech}
             />
         );
     }
@@ -120,11 +120,11 @@ const SectionLink = ({ sectionName }) => {
 const Dictionary = ({ location }) => {
     let dictSections = new Map();
     for (let word in allWordsDict) {
-        const [definition, ref, refPartsOfSpeech, sectionName] = allWordsDict[word];
+        const [definition, ref, partsOfSpeech, sectionName] = allWordsDict[word];
         if (!dictSections.has(sectionName)) {
             dictSections.set(sectionName, []);
         }
-        dictSections.get(sectionName).push([word, definition, ref, refPartsOfSpeech])
+        dictSections.get(sectionName).push([word, definition, ref, partsOfSpeech])
     }
 
     // Top-bar with links to eacch section
