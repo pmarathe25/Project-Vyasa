@@ -166,7 +166,7 @@ def build_sandhied_text(words, translit_ruleset):
         (matches(["i"]), matches(VOWELS, but_not=["i"]), replace("end", [("ii", "y"), ("i", "y")])),
         (
             matches(["a", "aa"]),
-            matches(["a", "aa"], but_not=["au", "aau"]),
+            matches(["a", "aa"], but_not=["ai", "aai", "au", "aau"]),
             compose(
                 replace("end", [("aa", "a")]),
                 replace("start", [("aa", "a")]),
