@@ -186,6 +186,10 @@ def transliteration_ruleset():
             ["taa", "aapi"],
             "taapi",
         ),
+        (
+            ["sarvai", "aiva"],
+            "sarva aiva",
+        ),
     ],
 )
 def test_build_sandhied_text(words, expected_output, transliteration_ruleset):

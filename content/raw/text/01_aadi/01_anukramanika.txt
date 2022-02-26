@@ -68,14 +68,14 @@ abhivaadya (abhi-!vad, caus abs) having greeted
 muniin (muni, acc pl) the seers
 taan (sa, acc pl) those
 tu and
-sarvaan (sarva, acc pl) all
+sarvaan (sarva, acc pl m) all
 aiva indeed
-kr>taan~jali: (kr>ta+an~jali, nom sing) having joined hands
+kr>taan~jali: (kr>ta+an~jali, nom sing m) having joined hands
 -
 apr>cchat (!prach, 3 sing imp act ind) he asked
 sa (sa, nom sing) he
 tapauvr>ddhim (tapas+vr>ddhi, acc sing) progress of asceticism
-sadbhi: (sat, inst pl) by the true ones (i.e. the sages)
+sadbhi: (sat, inst pl m) by the true ones (i.e. the sages)
 ca and
 aiva indeed
 abhipuujita: (abhi-!puuj, nom sing m perf pass part) having been honored
@@ -88,7 +88,7 @@ by the true ones (i.e. the seers/sages), he asked (about) the progress of (their
 atha then
 tais<u (sa, loc pl) with them
 upavis<t<ais<u (upa-!vis~, loc pl m perf pass part) having sat down
-sarvais<u (sarva, loc pl) all
+sarvais<u (sarva, loc pl m) all
 aiva indeed
 tapasvis<u (tapasvin, loc pl) the ascetics
 -
@@ -233,7 +233,7 @@ puraa long ago
 kuruun<aam (kuru, gen pl) of the Kurus
 paan<d<avaanaam (paan<d<ava, gen pl) of the Pandavas
 ca and
-sarvais<aam (sarva, gen pl) of all
+sarvais<aam (sarva, gen pl m) of all
 ca and
 mahiiks<itaam (mahii+ks<it, gen pl) of the earthly rulers
 
@@ -244,5 +244,14 @@ where (there) was a battle long ago of the Pandavas, the Kurus, and all the eart
 14-15
 
 didr>ks<u: (didr>ks<u, nom sing m) wanting to see
+aagata: (aa-!gam, nom sing m perf pass part) having come
+tasmaat (tat, abl sing) from that
+samiipam (samiipa, acc sing) near, in the presence of
+bhavataam (bhavat, gen pl m) of you (all)
+iha here
+-
+aayus<manta: (aayus<mat, nom pl m) full of life
+sarvai (sarva, nom pl m) all
+aiva indeed
 
 Wanting

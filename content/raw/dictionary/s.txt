@@ -16,8 +16,8 @@ samiipa (n) vicinity, proximity
 samyak (indc) together, rightly, properly, completely
 sarasvatii (f) Sarasvati, goddess of knowledge, arts, etc.
 sarpa (mn) a snake
-sarva (mn) all
-sat (mn) being, existing, truth [!as]
+sarva (adj) all
+sat (adj) being, existing, truth [!as, pres act part]
 satra (n) sacrifice
 sukha (adj) pleasant
 supun<ya (adj) excellent, great religious/moral merit
