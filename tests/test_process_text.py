@@ -355,14 +355,14 @@ def build_expected(verse_num, verses_text, translations, word_lists):
 
             ca (ca,) and
             aiva (aiva,) just so
-            ks<ayati (!ks<i|6, 3 sing pres act ind) it is destroyed
+            ks<ayati (!ks<i|VI, 3 sing pres act ind) it is destroyed
 
             And so it is destroyed
             """,
             build_expected(
                 "1",
-                ["caaiva"],
-                ["And so"],
+                ["caaiva ks<ayati"],
+                ["And so it is destroyed"],
                 [
                     # Verse 1
                     [
@@ -370,7 +370,12 @@ def build_expected(verse_num, verses_text, translations, word_lists):
                         [
                             ["ca", "and", "ca", ""],
                             ["aiva", "just so", "aiva", ""],
-                            ["ks<ayati", "it is destroyed", "!ks<i|6", ""],
+                            [
+                                "ks<ayati",
+                                "it is destroyed",
+                                "√ks<i (VI)",
+                                "Third Person Singular Present Active Indicative",
+                            ],
                         ]
                     ]
                 ],
