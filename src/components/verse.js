@@ -161,8 +161,8 @@ const TabContents = (props) => {
         width: "fit-content",
         position: "absolute",
         zIndex: 1,
-        color: "rgb(70, 70, 70)",
-        fontSize: "50px",
+        color: "rgb(67, 67, 67)",
+        fontSize: "45px",
         paddingTop: "15px",
     };
 
@@ -190,7 +190,7 @@ const VerseText = ({ num, text, wordByWord, location }) => {
         <Tab.Container defaultActiveKey="text" id={"verse-text-tabs-" + num}>
             <Row>
                 <Nav variant="pills"
-                    style={{ borderBottom: "1px solid rgb(65, 65, 65)", marginBottom: "4px" }}
+                    style={{ borderBottom: "1px solid rgb(65, 65, 65)" }}
                 >
                     <Nav.Link className={verseTextTab} eventKey="text">
                         Sanskrit Text
@@ -198,7 +198,11 @@ const VerseText = ({ num, text, wordByWord, location }) => {
                     <Nav.Link className={verseTextTab} eventKey="word-by-word">
                         Word-by-word Analysis
                     </Nav.Link>
-                    <Nav.Link to={url} as={Link} style={{ paddingLeft: "4px" }}>
+                    <Nav.Link to={url} as={Link} style={{
+                        paddingLeft: "4px",
+                        paddingTop: "0px", paddingBottom: "0px",
+                        marginTop: "auto", marginBottom: "auto"
+                    }}>
                         <FiLink size="18px" />
                     </Nav.Link>
                 </Nav>

@@ -98,7 +98,9 @@
         "sibilants": {
             "s~": "श्",
             "s<": "ष्",
-            "s": "स्",
+            "s": "स्"
+        },
+        "approximants": {
             "h": "ह्"
         },
         "numbers": {

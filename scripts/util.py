@@ -53,8 +53,10 @@ PARTS_OF_SPEECH_MAPPING = OrderedDict(
         ("impv", ("imperative", "mood")),
         ("caus", ("causative", "other")),
         ("des", ("desiderative", "other")),
+        ("desadj", ("desiderative", "other")),
         ("abs", ("absolutive", "form")),
         ("part", ("participle", "form")),
+        ("ger", ("gerund", "form")),
         ("inf", ("Infinitive", "form")),
     ]
 )
@@ -62,6 +64,7 @@ PARTS_OF_SPEECH_MAPPING = OrderedDict(
 NOUN_PARTS = set(["case", "number"])
 VERB_PARTS = set(["person", "number", "tense", "voice", "mood"])
 PARTICIPLE_PARTS = NOUN_PARTS | {"tense", "voice", "form", "gender"}
+DESIDERATIVE_ADJECTIVE_PARTS = NOUN_PARTS
 
 
 def process_parts_of_speech(parts_of_speech, is_verb, err_prefix, is_declined=True, dictionary_entries=None):
@@ -94,7 +97,7 @@ def process_parts_of_speech(parts_of_speech, is_verb, err_prefix, is_declined=Tr
     def show_error(msg):
         raise RuntimeError(err_prefix + msg + f"\nNote: parts of speech were: {orig_parts_of_speech}")
 
-    new_parts = OrderedDict()
+    sorted_parts = OrderedDict()
     part_functions = set()
     parts_of_speech = set(filter(lambda x: x, parts_of_speech.strip().split(" ")))
     for part in PARTS_OF_SPEECH_MAPPING:
@@ -102,11 +105,11 @@ def process_parts_of_speech(parts_of_speech, is_verb, err_prefix, is_declined=Tr
             continue
 
         parts_of_speech.remove(part)
-        part_name, part_function = PARTS_OF_SPEECH_MAPPING[part]
+        _, part_function = PARTS_OF_SPEECH_MAPPING[part]
         if part_function in part_functions:
             show_error(f"{part_function} was specified more than once.")
         part_functions.add(part_function)
-        new_parts[part_function] = part_name
+        sorted_parts[part_function] = part
 
     if parts_of_speech:
         show_error(f"Unrecognized parts of speech: {parts_of_speech}")
@@ -121,20 +124,23 @@ def process_parts_of_speech(parts_of_speech, is_verb, err_prefix, is_declined=Tr
     # Validate that part functions are ok
     if "other" in part_functions:
         if not is_verb:
-            show_error(f"Cannot use parts of speech: {new_parts['other']} for non-verbs!")
+            show_error(f"Cannot use parts of speech: {sorted_parts['other']} for non-verbs!")
         part_functions.remove("other")
 
     if is_verb:
-        if "form" in new_parts:
-            if new_parts["form"] == "participle":
+        if "other" in sorted_parts and sorted_parts["other"] == "desadj":
+            check_parts(DESIDERATIVE_ADJECTIVE_PARTS)
+        elif "form" in sorted_parts:
+            if sorted_parts["form"] == "part":
                 check_parts(PARTICIPLE_PARTS)
             else:
                 # Otherwise form must be the only part
                 check_parts({"form"})
         else:
             check_parts(VERB_PARTS)
-    elif new_parts:
+    elif sorted_parts:
         is_adj = any("(adj.)" in entry[0] for entry in dictionary_entries)
         check_parts(NOUN_PARTS | ({"gender"} if is_adj else set()))
 
-    return " ".join(new_parts.values()).title()
+    new_parts = [PARTS_OF_SPEECH_MAPPING[part][0] for part in sorted_parts.values()]
+    return " ".join(new_parts).title()

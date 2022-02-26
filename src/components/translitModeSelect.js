@@ -38,13 +38,13 @@ export const TransliterationModeSelect = ({ navExpanded }) => {
                         onChange={(val) => { setMode(val) }}
                         vertical={false}
                     >
-                        <ToggleButton id="translit-select-dev" value={0}>
-                            <p style={{ fontSize: (mode === 1 ? "16px" : "18px"), minWidth: "80px" }}>
+                        <ToggleButton id="translit-select-dev" value={0} size="sm">
+                            <p style={{ fontSize: "18px", minWidth: "80px" }}>
                                 {devanagari}
                             </p>
                         </ToggleButton>
-                        <ToggleButton id="translit-select-iast" value={1}>
-                            <p style={{ fontSize: "16px" }}>
+                        <ToggleButton id="translit-select-iast" value={1} size="sm">
+                            <p style={{ fontSize: "18px" }}>
                                 IAST
                             </p>
                         </ToggleButton>
@@ -52,7 +52,6 @@ export const TransliterationModeSelect = ({ navExpanded }) => {
                 }
             </TranslitModeContext.Consumer >
         </Nav.Item>
-
     )
 }
 

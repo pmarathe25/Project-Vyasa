@@ -8,9 +8,13 @@ aas~rama (mn) indefatigable, asylum, hermitage
 aas~rayam (mn) sheltered
 aatman (n) soul, essence
 aayatana (n) altar, resting place, sanctuary
+aayus (n) life, vital power, vigor
+aayus<mat (adj) "life-possessing", healthy [aayus]
 abhi-!gam to approach, to go near
 abhi-!puuj to honor, to worship
 abhi-!vad to declare, to express, (causative) to address or salute reverently
+abhis<aika (m) consecration, religious bathing [saika]
+agni (m) fire
 aham I (1st person pronoun)
 ais<a (m) this, that
 aitat (n) this, that
@@ -23,4 +27,4 @@ api (indc) even, but, also
 artha (mn) reason, substance, wealth, having to do with, manner, kind
 atha (indc) then
 ava-!nam to bow down
-ayam (mn) this
+ayam (m) this

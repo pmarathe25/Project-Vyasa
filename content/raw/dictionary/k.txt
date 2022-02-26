@@ -2,13 +2,14 @@
 !kr> to do, to make
 !kram to step, to walk
 !ks<i|VI to dwell
-ka (mn) who?
+ka (m) who?
 kaala (m) time
 kadaa (indc) when
 kamala (mn) lotus
 kathaa (f) story, tale
+kim (n) what?
 kr>s<n<a (adj) dark, black
-kr>ta (mn) done, made, accomplished [!kr>]
+kr>ta (adj) done, made, accomplished [!kr>, perf pass part]
 ks<it () (at the end of a compound) ruling, dwelling [!ks<i|VI]
 kula (m) family
 kuru (m) Kuru, ancestor of Pandu and Dhritarashtra, but "kuru" generally refers to descendants of only the latter

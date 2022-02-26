@@ -19,7 +19,7 @@ def validate_dictionary(dct):
         is_verb = "√" in word
 
         assert not reference or all(
-            ref_part if not is_verb else util.adjust_verb(ref_part) in dct for ref_part in reference.split("+")
+            (ref_part if not is_verb else util.adjust_verb(ref_part)) in dct for ref_part in reference.split("+")
         ), f"Word: {word} refers to: {reference}, but the latter is not present in the dictionary!"
 
         assert word.strip("√").startswith(section_name), f"Word: {word} is in the wrong section: {section_name}"
@@ -78,8 +78,9 @@ def main():
         with open(path, "r") as f:
             sorted_lines = list(map(lambda x: x.strip(), sorted(f.readlines())))
             for line_num, line in enumerate(sorted_lines):
+                line_num += 1
 
-                def add(word, meanings):
+                def add(word, meanings, is_adj=False):
                     base_word = word.strip("√")
                     if not base_word.startswith(expected_start_letter):
                         raise RuntimeError(
@@ -102,9 +103,15 @@ def main():
                     meanings, _, reference = meanings.partition("[")
                     reference = reference.strip().strip("]")
                     reference, _, reference_parts_of_speech = reference.partition(",")
+
                     is_reference_verb = "!" in reference
                     if is_reference_verb:
                         reference = util.adjust_verb(reference)
+
+                    # If the referrent is an adjective, we need to change certain forms - e.g. "des" -> "desadj"
+                    if is_adj:
+                        reference_parts_of_speech = reference_parts_of_speech.replace("des", "desadj")
+
                     out_dict[word.strip()] = list(
                         map(
                             lambda x: x.strip(),
@@ -130,13 +137,14 @@ def main():
                     word, _, meanings = line.partition(" ")
                     add(util.adjust_verb(word), meanings)
                 elif "(" in tokens[1]:
-
+                    is_adj = False
                     word, _, rest = line.partition("(")
 
                     detail, _, meanings = rest.partition(")")
                     if detail == "indc":
                         detail = "indeclinable"
                     elif detail == "adj":
+                        is_adj = True
                         detail += "."
                     elif detail:
                         if not all(elem in "mfn" for elem in detail):
@@ -146,7 +154,7 @@ def main():
                                 "parentheses to separate the word from its definition".format(detail, line)
                             )
                         detail = "./".join(detail) + "."
-                    add(word, (f"({detail}) " if detail else "") + f"{meanings}")
+                    add(word, (f"({detail}) " if detail else "") + f"{meanings}", is_adj=is_adj)
                 else:
                     word, _, meanings = line.partition(" ")
                     add(word, meanings)

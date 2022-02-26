@@ -2,6 +2,7 @@
 import argparse
 import json
 import os
+from collections import defaultdict
 
 import util
 
@@ -58,8 +59,10 @@ def build_sandhied_text(words, translit_ruleset):
         "bilabial-semivowels",
     )
 
-    CONSONANTS = UNVOICED_CONSONANTS + VOICED_CONSONANTS + NASAL_CONSONANTS + keys_of("sibilants")
-    ALL_VOICED = VOICED_CONSONANTS + VOWELS + SEMI_VOWELS + NASAL_CONSONANTS
+    CONSONANTS = (
+        UNVOICED_CONSONANTS + VOICED_CONSONANTS + NASAL_CONSONANTS + keys_of("sibilants") + keys_of("approximants")
+    )
+    ALL_VOICED = VOICED_CONSONANTS + VOWELS + SEMI_VOWELS + NASAL_CONSONANTS + keys_of("approximants")
 
     VOICED_MAKER_MAP = {
         unvoiced: voiced
@@ -132,8 +135,24 @@ def build_sandhied_text(words, translit_ruleset):
                 return False
 
             func = word.endswith if mode == "ends" else word.startswith
+
+            # Split patterns by length. Exceptions only apply if they are the same length.
+            len_pattern_map = defaultdict(list)
+            len_but_not_map = defaultdict(list)
             for pat in patterns:
-                if func(pat) and not any(func(exc_pat) for exc_pat in but_not):
+                len_pattern_map[len(pat)].append(pat)
+            for exc_pat in but_not:
+                len_but_not_map[len(exc_pat)].append(exc_pat)
+
+            # Descending length so that we catch non-matching patterns correctly
+            all_lens = list(len_pattern_map.keys()) + list(len_but_not_map.keys())
+            for length in sorted(all_lens, reverse=True):
+                pat_list = len_pattern_map[length]
+                but_not_list = len_but_not_map[length]
+
+                if any(func(exc_pat) for exc_pat in but_not_list):
+                    return invert
+                if any(func(pat) for pat in pat_list):
                     return not invert
             return invert
 
@@ -162,11 +181,19 @@ def build_sandhied_text(words, translit_ruleset):
         (matches(["n"]), matches(keys_of("unvoiced-retroflex-consonants")), replace("end", [("n", ".s<")])),
         (matches(["n"]), matches(keys_of("unvoiced-dental-consonants")), replace("end", [("n", ".s")])),
         # Vowels + Vowels
-        (matches(["u"]), matches(VOWELS, but_not=["u"]), replace("end", [("uu", "v"), ("u", "v")])),
-        (matches(["i"]), matches(VOWELS, but_not=["i"]), replace("end", [("ii", "y"), ("i", "y")])),
+        (
+            matches(["u"], but_not=["au", "aau"]),
+            matches(VOWELS, but_not=["u"]),
+            replace("end", [("uu", "v"), ("u", "v")]),
+        ),
+        (
+            matches(["i"], but_not=["ai", "aai"]),
+            matches(VOWELS, but_not=["i"]),
+            replace("end", [("ii", "y"), ("i", "y")]),
+        ),
         (
             matches(["a", "aa"]),
-            matches(["a", "aa"], but_not=["au", "aau"]),
+            matches(["a", "aa"], but_not=["ai", "aai", "au", "aau"]),
             compose(
                 replace("end", [("aa", "a")]),
                 replace("start", [("aa", "a")]),
@@ -176,7 +203,7 @@ def build_sandhied_text(words, translit_ruleset):
 
     # Next we do a second pass to merge words
     MERGE_CONDITIONS = [
-        (matches(VOWELS), matches(VOWELS)),
+        (matches(VOWELS, but_not=["ai"]), matches(VOWELS)),
         (matches(CONSONANTS + SEMI_VOWELS), matches(VOWELS + CONSONANTS + SEMI_VOWELS)),
     ]
 
@@ -194,6 +221,8 @@ def build_sandhied_text(words, translit_ruleset):
         ),
         (matches(["a:"]), matches(VOWELS), replace("end", [("a:", "a")])),
         (matches(["a:"]), matches(ALL_VOICED), replace("end", [("a:", "au")])),
+        # Vowel rules
+        (matches(["ai"]), matches(VOWELS, but_not=["a"]), replace("end", [("ai", "a")])),
     ]
 
     def apply_sandhi(words, conditions):
