@@ -11,7 +11,7 @@ const AutohidingNavbar = (props) => {
     // Always show navbar when at the top of the page.
     // Otherwise, hide navbar when scrolling down, and show it when we scroll up by more than a certain threshold.
     // If we do not threshold, the navbar will constantly pop in and out due to scrolling noise.
-    const [navbarStyle, setNavbarStyle] = React.useState({ top: 0, transition: "all .5s ease" });
+    const [navbarStyle, setNavbarStyle] = React.useState({ top: 0, transition: "all 0.5s ease" });
     // Used for scrolling up/down thresholding logic
     const [scrollUpTotal, setScrollUpTotal] = React.useState(0);
     const [scrollDownTotal, setScrollDownTotal] = React.useState(0);
@@ -21,8 +21,8 @@ const AutohidingNavbar = (props) => {
             return;
         }
 
-        const navbarSlideOffStyle = { top: -300, transition: "all .4s ease" };
-        const navbarSlideOnStyle = { top: 0, transition: "all .4s ease" };
+        const navbarSlideOffStyle = { top: -300, transition: "all 0.8s ease" };
+        const navbarSlideOnStyle = { top: 0, transition: "all 0.4s ease" };
 
         const onScroll = () => {
             setOffset([offset[1], window.pageYOffset]);
