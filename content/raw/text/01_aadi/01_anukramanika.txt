@@ -250,8 +250,34 @@ samiipam (samiipa, acc sing) near, in the presence of
 bhavataam (bhavat, gen pl m) of you (all)
 iha here
 -
-aayus<manta: (aayus<mat, nom pl m) full of life
-sarvai (sarva, nom pl m) all
+aayus<manta: (aayus<mat, voc pl m) full of life
+sarvai (sarva, voc pl m) all
 aiva indeed
+brahmabhuutaa: (brahma+bhuuta, voc pl m) like Brahma
+hi indeed
+mai (aham, dat sing) to me
+mataa: (!man, voc pl m perf pass part) seem, lit. "having been thought of"
+-
+asmin (ayam, loc sing) in this
+yajn~ai (yajn~a, loc sing) holy place, (place of) sacrifice
+mahaabhaagaa: (mahaabhaaga, voc pl m) illustrious
+suuryapaavakavarcasa: (suurya+paavaka+varcas, voc pl m) shining with the power of the Sun
+-
+kr>taabhis<aikaa: (kr>ta+abhis<aika, voc pl m) having done religious bathing
+s~ucaya: (s~uci, voc pl m) pure
+kr>tajapyaa: (kr>ta+japya, voc pl m) having meditated
+hutaagnaya: (hutaagni, voc pl m) (ones who) offered sacrifices in fire
+-
+bhavanta: (bhavat, voc pl m) you (all)
+aasatai (!aas, 3 pl pres mid ind) they are sitting
+svasthaa: (svastha, voc pl m) self-abiding
+braviimi (!bruu, 1 sing pres act ind) I say
+kim (kim, acc sing) what
+aham (aham, nom sing) I
+dvijaa: (dvija, voc pl) twice-born
 
-Wanting
+"Wanting to see (you) I have come here, in your presence, from that (place). 
+(You who are) all full of life and indeed seem like Brahma to me, 
+(who are) illustrious, shining with the power of the Sun in this holy place,
+(who are) pure having done religious bathing (and who) have meditated (and) offered sacrifices in fire,
+what do I say to you (all), twice-born, (who) are sitting, self-abiding?  

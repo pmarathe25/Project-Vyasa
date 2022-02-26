@@ -56,6 +56,7 @@ PARTS_OF_SPEECH_MAPPING = OrderedDict(
         ("desadj", ("desiderative", "other")),
         ("abs", ("absolutive", "form")),
         ("part", ("participle", "form")),
+        ("ger", ("gerund", "form")),
         ("inf", ("Infinitive", "form")),
     ]
 )

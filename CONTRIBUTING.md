@@ -236,6 +236,7 @@ Valid entries are as follows:
 - `ind/pot/impv`: Indicative/Potential/Imperative mood
 - `inf`: Infinitive
 - `abs`: Absolutive
+- `ger`: Gerund
 - `part`: Participle
 
 Additionally, for adjectives and participles, gender must be provided 
