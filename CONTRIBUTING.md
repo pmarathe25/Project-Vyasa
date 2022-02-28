@@ -156,7 +156,7 @@ naraḥ eva gacchati
 ```
 
 The corresponding content file might look like this 
-(*note: This [transliteration format](#transliteration-methodology) is* not *IAST!*):
+(*note: this [transliteration format](#transliteration-methodology) is* not *IAST!*):
 ```
 1
 
