@@ -52,7 +52,6 @@ a:active {
 }
 
 .accordion-button::after {
-    border-radius: 3px;
     background-size: 24px;
     width: 24px;
     height: 24px;

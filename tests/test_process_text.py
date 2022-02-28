@@ -119,6 +119,10 @@ def transliteration_ruleset():
             ["tam", "aas~ramam", "anupraaptam"],
             "tamaas~ramamanupraaptam",
         ),
+        (
+            ["naram", "r>s<i"],
+            "naramr>s<i",
+        ),
         # Unvoiced + Voiced
         (
             ["tat", "aiva"],
