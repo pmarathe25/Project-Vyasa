@@ -132,6 +132,8 @@ The format of each file is:
 <word1> (<base-form>, <parts of speech>) <literal translation>
 ...
 
+<Translation>
+
 <verse number (or range if multiple verses)>
 
 <word0> (<base-form>, <parts of speech>) <literal translation>
