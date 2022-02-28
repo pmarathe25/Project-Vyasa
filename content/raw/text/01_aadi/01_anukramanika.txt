@@ -56,7 +56,7 @@ citraa: (citra, acc pl) wonderful
 s~rautum (!s~ru, inf) to hear
 kathaa: (kathaa, acc pl) stories
 tatra thereupon, then
-parivavru: (pari-!vru, 3 pl perf act ind) they surrounded
+parivavru: (pari-!vr>, 3 pl perf act ind) they surrounded
 tapasvina: (tapasvin, nom pl) the ascetics
 
 Then, the ascetics surrounded him, (who had) reached the hermitage of the 
@@ -246,7 +246,7 @@ where (there) was a battle long ago of the Pandavas, the Kurus, and all the eart
 didr>ks<u: (didr>ks<u, nom sing m) wanting to see
 aagata: (aa-!gam, nom sing m perf pass part) having come
 tasmaat (tat, abl sing) from that
-samiipam (samiipa, acc sing) near, in the presence of
+samiipam (samiipa, acc sing) near, in the presence
 bhavataam (bhavat, gen pl m) of you (all)
 iha here
 -
@@ -281,3 +281,19 @@ dvijaa: (dvija, voc pl) twice-born
 (who are) illustrious, shining with the power of the Sun in this holy place,
 (who are) pure having done religious bathing (and who) have meditated (and) offered sacrifices in fire,
 what do I say to you (all), twice-born, (who) are sitting, self-abiding?  
+
+16
+
+puraan<asa.s~ritaa: (puraan<a+sa.s~rita, acc pl f) from/relating to the Puranas
+pun<yaa: (pun<ya, acc pl f) sacred
+kathaa: (kathaa, acc pl) stories
+dharmaarthasa.s~ritaa: (dharma+artha+sa.s~rita, acc pl f) about moral obligation and wealth
+-
+itivr>ttam (itivr>tta, acc sing) chronicle
+naraindraan<aam (nara+indra, gen pl) of great/important men
+r>s<iin<aam (r>s<i, gen pl) of sages
+ca and
+mahaatmanaam (mahat+aatman, gen pl m) of great-souled
+
+"(Do I tell) sacred stories from the Puranas about moral obligation and wealth, 
+(or) the chronicle(s) of great men and great-souled sages?"

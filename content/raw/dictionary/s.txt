@@ -6,7 +6,7 @@
 sa (m) he, this, that
 sa.panna (adj) right, correct, thriving, finished, endowed with
 sa.s~ita (adj) sharp, well-prepared, rigid, firm
-sa.s~rita (adj) united with, inherent in, relating to
+sa.s~rita (adj) united with, inherent in, relating to, concerning
 saa (f) she, this that
 saauti (m) Sauti, the narrator of the Mahabharata
 sadas (n) assembly, seat, residence
@@ -20,7 +20,7 @@ sarpa (mn) a snake
 sarva (adj) all
 sat (adj) being, existing, truth [!as, pres act part]
 satra (n) sacrifice
-stha () (at the end of a compound) standing, staying
+stha () (in compound) standing, staying
 sukha (adj) pleasant
 supun<ya (adj) excellent, great religious/moral merit
 suurya (mn) the Sun

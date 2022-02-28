@@ -100,8 +100,9 @@ const WordAndDefinition = ({ word, definition, root, parts_of_speech }) => {
                         onMouseEnter={() => setShowPopover(true)}
                         onMouseLeave={() => setShowPopover(false)}
                         onTouchStart={() => setShowPopover(true)}
+
                     >
-                        <Popover.Body ref={popoverRef} >
+                        <Popover.Body ref={popoverRef} style={{ paddingTop: "10px", paddingBottom: "10px" }}>
                             <Col>
                                 <RootMeanings root={root} />
                                 <p style={{ fontSize: "16px" }}>

@@ -2,8 +2,9 @@
 !vad to say, to speak
 !vas to live, to dwell
 !vis~ to enter
+!vr> to cover
 !vr>dh to increase
-!vru to cover
+!vr>t to turn, to advance, to be
 vaai (indc) indeed
 vaais~ampaayana (m) Vaishampayana
 vaakya (n) speech, statement, sentence
@@ -20,4 +21,5 @@ vistiirn<a (mn) strewn, spread out, broad, extensive [vi-!str>]
 vis~raanta (mn) rested, taking rest
 vividha (adj) manifold, varied
 vr>ddhi (f) growth, increase [!vr>dh]
+vr>tta (adj) occurred, happened, turned, set in motion [!vr>t, perf pass part]
 vrata (n) law, vow
