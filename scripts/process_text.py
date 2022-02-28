@@ -369,10 +369,10 @@ def main():
     # Strip trailing whitespace at the ends of lines
     contents = "\n".join(map(lambda x: x.strip(), contents.splitlines()))
 
-    # Parses input file according to format outlined in README.
-    # To have the front-end handle newlines, we need a bit of weirdness in the word-by-word
-    # translation - specifically, instead of just having a list of words for each verse, we have to have a list
-    # of lines (i.e. list of lists). Then the front-end can render each list in a separate HTML element.
+    # Parses input file according to format outlined in CONTRIBUTING.md.
+    # To have the front-end handle newlines, we need a bit of weirdness in the word-by-word translation - specifically,
+    # instead of just having a list of words for each verse, we have to have a list of lines of words (i.e. list of lists of words).
+    # Then the front-end can render each list in a separate HTML element.
     for verse_num, word_by_word, translation in util.chunks(contents.split("\n\n"), 3):
         word_by_word_sections = []
         to_sandhi_word_lines = []
