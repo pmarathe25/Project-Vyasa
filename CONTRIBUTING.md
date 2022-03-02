@@ -132,6 +132,8 @@ The format of each file is:
 <word1> (<base-form>, <parts of speech>) <literal translation>
 ...
 
+<Translation>
+
 <verse number (or range if multiple verses)>
 
 <word0> (<base-form>, <parts of speech>) <literal translation>
@@ -154,7 +156,7 @@ naraḥ eva gacchati
 ```
 
 The corresponding content file might look like this 
-(*note: This [transliteration format](#transliteration-methodology) is* not *IAST!*):
+(*note: this [transliteration format](#transliteration-methodology) is* not *IAST!*):
 ```
 1
 
@@ -187,7 +189,7 @@ The format must conform to the following rules:
 
   For indeclinable words whose root is the same as the word, the "base-form" and
   "parts of speech" fields may be omitted. 
-  For example: `ca and` rather than `ca (ca,) and`.
+  For example: `ca and` rather than `ca (ca, indc) and`.
 
   The [`process_text.py`](./scripts/process_text.py) script can automatically generate 
   text with *sandhi* applied based on the word-by-word input. As of this writing, 

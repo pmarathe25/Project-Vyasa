@@ -1,3 +1,7 @@
+:root {
+    --button-color: rgb(65, 111, 182);
+}
+
 html, body {
     background-color: rgb(55, 55, 65);
     color:rgb(230, 230, 230);
@@ -38,7 +42,7 @@ a:active {
 
 .accordion-button {
     color: white;
-    background: rgb(69, 112, 150);
+    background: var(--button-color);
 }
 
 .accordion-button:not(.collapsed) {
@@ -48,11 +52,22 @@ a:active {
 
 .accordion-button:hover {
     color: white;
-    background: rgb(107, 170, 224);
+    background: rgb(99, 159, 211);
 }
 
 .accordion-button::after {
     background-size: 24px;
     width: 24px;
     height: 24px;
+}
+
+.nav-pills .nav-link.active, .nav-pills .show > .nav-link {
+    color: #fff;
+    background-color: var(--button-color);
+}
+
+.btn-primary {
+    color: #fff;
+    background-color: var(--button-color);
+    border-color: var(--button-color);
 }
