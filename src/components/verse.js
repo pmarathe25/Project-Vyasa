@@ -96,7 +96,7 @@ const WordAndDefinition = ({ word, definition, root, parts_of_speech }) => {
                 overlay={
                     <Popover
                         id={`${word}-popover`}
-                        style={{ backgroundColor: "rgb(13, 100, 233)" }}
+                        style={{ backgroundColor: "var(--button-color)" }}
                         onMouseEnter={() => setShowPopover(true)}
                         onMouseLeave={() => setShowPopover(false)}
                         onTouchStart={() => setShowPopover(true)}
