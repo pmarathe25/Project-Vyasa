@@ -170,12 +170,12 @@ const TabContents = (props) => {
     return (
         <Container>
             <Row>
-                <Col sm="auto" style={{ position: "absolute" }}>
+                <Col sm="auto" style={{ position: "absolute", width: "fit-content" }}>
                     <div style={overlayNumStyle}>
                         {props.num}
                     </div>
                 </Col>
-                <Col style={{ zIndex: 2 }}>
+                <Col style={{ zIndex: 2, width: "fit-content" }}>
                     {props.children}
                 </Col>
             </Row>
@@ -189,7 +189,7 @@ const VerseText = ({ num, text, wordByWord, location }) => {
 
     return (
         <Tab.Container defaultActiveKey="text" id={"verse-text-tabs-" + num}>
-            <Row>
+            <Row style={{ width: "fit-content" }}>
                 <Nav variant="pills"
                     style={{ borderBottom: "1px solid rgb(65, 65, 65)" }}
                 >
@@ -211,7 +211,7 @@ const VerseText = ({ num, text, wordByWord, location }) => {
             <Tab.Content>
                 <Tab.Pane eventKey="text">
                     <TabContents num={num}>
-                        <p className={verseText} style={{ overflowWrap: "break-word" }}>
+                        <p className={verseText} style={{ overflowWrap: "anywhere" }}>
                             {text}
                         </p>
                     </TabContents>

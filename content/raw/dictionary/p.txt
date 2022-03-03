@@ -5,6 +5,8 @@ paariks<ita (m) belonging to/son of Parikshita
 paarthiva (m) prince
 paauraan<ika (adj) of/relating to the Puranas
 paavaka (adj) pure, clear, bright, shining
+para (adj) distant, far, past, future, alien, other, enemy
+parama (adj) highest, furthest, final, best, worst [para, sup]
 pari-!vr> to surround
 pati (m) lord, ruler
 patra (n) leaf, petal
@@ -12,5 +14,5 @@ pra-!stu to praise, to begin, to commence
 pra-!vac to proclaim, to announce, to impart
 pun<ya (adj) auspicious, pleasant, holy
 puraa (indc) at first, formerly, long ago
-puraan<a (adj) old, ancient, also refers to a class of ancient literary works covering a vast range of topics
+puraan<a (adj) old, ancient, (as proper noun) refers to a class of ancient literary works covering a vast range of topics
 putra (m) son

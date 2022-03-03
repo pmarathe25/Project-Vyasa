@@ -65,7 +65,7 @@ Naimisharanya-dwellers, to hear (his) wonderful stories.
 4
 
 abhivaadya (abhi-!vad, caus abs) having greeted
-muniin (muni, acc pl) the seers
+muniin (muni, acc pl) the sages
 taan (sa, acc pl) those
 tu and
 sarvaan (sarva, acc pl m) all
@@ -80,8 +80,8 @@ ca and
 aiva indeed
 abhipuujita: (abhi-!puuj, nom sing m perf pass part) having been honored
 
-Having greeted all those seers with joined hands, and having been honored 
-by the true ones (i.e. the seers/sages), he asked (about) the progress of (their) asceticism.
+Having greeted all those sages with joined hands, and having been honored 
+by the true ones (i.e. the sages), he asked (about) the progress of (their) asceticism.
 
 5
 
@@ -113,14 +113,14 @@ ca and
 -
 atha then
 apr>cchat (!prach, 3 sing imp act ind) he asked
-r>s<i: (r>s<i, nom sing) a seer
+r>s<i: (r>s<i, nom sing) a sage
 tatra there
 kas~cit (ka+cit, nom sing) one
 prastaavayan (pra-!stu, nom sing m pres act part caus) causing to start, starting 
 kathaa: (kathaa, acc pl) the stories, i.e. the conversation
 
 Having noticed him rested and sitting comfortably, 
-then one seer, starting the conversation, asked: 
+then one sage, starting the conversation, asked: 
 
 7
 
@@ -297,3 +297,26 @@ mahaatmanaam (mahat+aatman, gen pl m) of great-souled
 
 "(Do I tell) sacred stories from the Puranas about moral obligation and wealth, 
 (or) the chronicle(s) of great men and great-souled sages?"
+
+17
+
+r>s<aya: (r>s<i, nom pl) the sages
+uucu: (!vac, 3 pl perf act ind) said
+-
+dvaaipaayanaina (dvaaipaayana, inst sing) by the islander (Vyasa)
+yat (yat, acc sing) which
+prauktam (pra-!vac, acc sing n perf pass part) having been told
+puraan<am (puraan<a, acc sing n) Purana
+paramars<in<aa (parama+r>s<i, inst sing m) by the greatest sage
+-
+suraai: (sura, inst pl) by deities
+brahmars<ibhi: (brahma+r>s<i, inst pl) by the Brahman sages
+ca and
+aiva indeed
+s~rutvaa (!s~ru, abs) having heard
+yat (yat, acc sing) which
+abhipuujitam (abhi-!puuj, acc sing n perf pass part) having been honored
+
+The sages said:
+"The Purana, which (was) told by the great island-born sage (Vyasa),
+and which (was) honored by the deities and Brahman sages, (after) having heard (it)...

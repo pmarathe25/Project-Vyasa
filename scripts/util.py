@@ -51,13 +51,14 @@ PARTS_OF_SPEECH_MAPPING = OrderedDict(
         ("ind", ("indicative", "mood")),
         ("pot", ("potential", "mood")),
         ("impv", ("imperative", "mood")),
-        ("caus", ("causative", "other")),
-        ("des", ("desiderative", "other")),
-        ("desadj", ("desiderative", "other")),
         ("abs", ("absolutive", "form")),
         ("part", ("participle", "form")),
         ("ger", ("gerund", "form")),
         ("inf", ("Infinitive", "form")),
+        ("caus", ("causative", "other")),
+        ("des", ("desiderative", "other")),
+        ("desadj", ("desiderative", "other")),
+        ("sup", ("Superlative", "degree")),
     ]
 )
 
@@ -67,7 +68,9 @@ PARTICIPLE_PARTS = NOUN_PARTS | {"tense", "voice", "form", "gender"}
 DESIDERATIVE_ADJECTIVE_PARTS = NOUN_PARTS
 
 
-def process_parts_of_speech(parts_of_speech, is_verb, err_prefix, is_declined=True, dictionary_entries=None):
+def process_parts_of_speech(
+    parts_of_speech, is_verb, err_prefix, is_declined=True, is_adj=None, dictionary_entries=None
+):
     """
     Processes a space separate sequence of parts of speech, validates it, then returns
     a string including the full forms.
@@ -79,6 +82,8 @@ def process_parts_of_speech(parts_of_speech, is_verb, err_prefix, is_declined=Tr
         is_declined (bool):
                 Whether the word is declined if it is a noun or adjective.
                 For non-declined words, case and number are not required.
+        is_adj (bool):
+                Whether the word is an adjective or not.
         dictionary_entries (List[List[str]]):
                 A list of dictionary entries for each part of the root.
                 These will be used to check whether the word in question is an
@@ -139,7 +144,12 @@ def process_parts_of_speech(parts_of_speech, is_verb, err_prefix, is_declined=Tr
         else:
             check_parts(VERB_PARTS)
     elif sorted_parts:
-        is_adj = any("(adj.)" in entry[0] for entry in dictionary_entries)
+        is_adj = is_adj or any("(adj.)" in entry[0] for entry in dictionary_entries)
+        if "degree" in part_functions:
+            if not is_adj:
+                show_error(f"Cannot use parts of speech: {sorted_parts['degree']} for non-adjectives!")
+            part_functions.remove("degree")
+
         check_parts(NOUN_PARTS | ({"gender"} if is_adj else set()))
 
     new_parts = [PARTS_OF_SPEECH_MAPPING[part][0] for part in sorted_parts.values()]
