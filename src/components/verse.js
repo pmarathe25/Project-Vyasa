@@ -6,6 +6,7 @@ import toUrl from '../util/util';
 import Definition from './definition';
 import { useTransliterate } from './transliterationHook';
 import { translationText, verseText, verseTextTab, verseWord } from "./verse.module.css";
+import useIsMobile from "../util/responsiveness"
 
 const allWordsDict = require("../../content/generated/dictionary/all_words.json");
 
@@ -158,13 +159,12 @@ const WordByWord = ({ wordByWord }) => {
 }
 
 const TabContents = (props) => {
+    const isMobile = useIsMobile();
+
     const overlayNumStyle = {
-        width: "fit-content",
-        position: "absolute",
         zIndex: 1,
-        color: "rgb(67, 67, 67)",
-        fontSize: "45px",
-        paddingTop: "15px",
+        color: isMobile ? "rgb(75, 75, 75)" : "rgb(85, 85, 85)",
+        fontSize: "50px",
     };
 
     return (
