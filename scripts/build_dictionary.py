@@ -123,6 +123,7 @@ def main():
                                     is_verb=is_reference_verb,
                                     err_prefix=f"In file: {path} on line: {line_num}: ",
                                     is_declined=False,
+                                    is_adj=is_adj,
                                 ),
                                 section_name,
                             ],

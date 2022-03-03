@@ -240,6 +240,7 @@ Valid entries are as follows:
 - `abs`: Absolutive
 - `ger`: Gerund
 - `part`: Participle
+- `sup`: Superlative
 
 Additionally, for adjectives and participles, gender must be provided 
 (for other words, this is recorded in the dictionary instead):
@@ -269,7 +270,7 @@ naaraayan<a (m) Narayana, a name for Vishnu
 namas-!kr> to bow, to pay homage
 nandana (m) son, lit. "delighter"
 nara (m) man
-ni-!saiv to visit, to frequent, to honour [!saiv]
+ni-!saiv to visit, to frequent, to honor [!saiv]
 nirdis<t<a (adj) pointed out, shown, appointed
 ```
 

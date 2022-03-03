@@ -263,7 +263,8 @@ def parse_word_grammar(line, verse_num, line_num, dictionary):
     def check(elem, elem_name):
         if not elem:
             raise RuntimeError(
-                f"In verse: {verse_num}, line: {line_num}, expected a '{elem_name}' field but none was provided"
+                f"In verse: {verse_num}, line: {line_num}, expected a '{elem_name}' field but none was provided."
+                f"\nNote: Line was: {line}"
             )
 
     # Note that we could use regex here, but manually parsing it is easy enough
@@ -276,6 +277,7 @@ def parse_word_grammar(line, verse_num, line_num, dictionary):
         if "," not in rest:
             raise RuntimeError(
                 f"In verse: {verse_num}, line: {line_num}, expected a comma separating the root from parts of speech!"
+                f"\nNote: Line was: {line}"
             )
 
         root, _, rest = rest.partition(",")
@@ -376,11 +378,13 @@ def main():
     for verse_num, word_by_word, translation in util.chunks(contents.split("\n\n"), 3):
         word_by_word_sections = []
         to_sandhi_word_lines = []
+        line_num = 0
         for section in word_by_word.split("\n-\n"):
             word_by_word_sections.append([])
             to_sandhi_word_lines.append([])
-            for line_num, line in enumerate(section.split("\n")):
-                word, meaning, root, parts_of_speech = parse_word_grammar(line, verse_num, line_num + 1, DICTIONARY)
+            for line in section.split("\n"):
+                line_num += 1
+                word, meaning, root, parts_of_speech = parse_word_grammar(line, verse_num, line_num, DICTIONARY)
                 to_sandhi_word_lines[-1].append(word)
                 word_by_word_sections[-1].append([word, meaning, root, parts_of_speech])
 
