@@ -51,13 +51,13 @@ PARTS_OF_SPEECH_MAPPING = OrderedDict(
         ("ind", ("indicative", "mood")),
         ("pot", ("potential", "mood")),
         ("impv", ("imperative", "mood")),
+        ("caus", ("causative", "other")),
+        ("des", ("desiderative", "other")),
+        ("desadj", ("desiderative", "other")),
         ("abs", ("absolutive", "form")),
         ("part", ("participle", "form")),
         ("ger", ("gerund", "form")),
         ("inf", ("Infinitive", "form")),
-        ("caus", ("causative", "other")),
-        ("des", ("desiderative", "other")),
-        ("desadj", ("desiderative", "other")),
         ("sup", ("Superlative", "degree")),
     ]
 )
