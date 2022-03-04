@@ -6,6 +6,7 @@ import toUrl from '../util/util';
 import Definition from './definition';
 import { useTransliterate } from './transliterationHook';
 import { translationText, verseText, verseTextTab, verseWord } from "./verse.module.css";
+import useIsMobile from "../util/responsiveness"
 
 const allWordsDict = require("../../content/generated/dictionary/all_words.json");
 
@@ -84,13 +85,17 @@ const WordAndDefinition = ({ word, definition, root, parts_of_speech }) => {
         };
 
         document.addEventListener('click', handleClick, true);
+        document.addEventListener('touchstart', handleClick, true);
+        document.addEventListener('touchmove', handleClick, true);
         return () => {
             document.removeEventListener('click', handleClick, true);
+            document.removeEventListener('touchstart', handleClick, true);
+            document.removeEventListener('touchmove', handleClick, true);
         };
     }, []);
 
     return (
-        <Col ref={ref}>
+        <Col style={{ padding: "0px", marginLeft: "6px", marginRight: "6px", width: "fit-content" }}>
             <OverlayTrigger
                 placement="top"
                 overlay={
@@ -100,7 +105,7 @@ const WordAndDefinition = ({ word, definition, root, parts_of_speech }) => {
                         onMouseEnter={() => setShowPopover(true)}
                         onMouseLeave={() => setShowPopover(false)}
                         onTouchStart={() => setShowPopover(true)}
-
+                        onTouchMove={() => setShowPopover(false)}
                     >
                         <Popover.Body ref={popoverRef} style={{ paddingTop: "10px", paddingBottom: "10px" }}>
                             <Col>
@@ -115,16 +120,22 @@ const WordAndDefinition = ({ word, definition, root, parts_of_speech }) => {
                 show={showPopover}
             >
                 <p
+                    ref={ref}
                     role="presentation"
                     className={verseWord}
                     onMouseEnter={() => setShowPopover(true)}
                     onMouseLeave={() => setShowPopover(false)}
                     onTouchStart={() => setShowPopover(true)}
+                    onTouchMove={() => setShowPopover(false)}
                 >
                     {translitWord}
                 </p>
             </OverlayTrigger>
-            <p style={{ fontStyle: "italic", fontSize: "16px", color: "rgb(175, 175, 175)" }}>
+            <p style={{
+                fontStyle: "italic", fontSize: "16px",
+                color: "rgb(175, 175, 175)",
+                width: "fit-content", marginLeft: "auto", marginRight: "auto"
+            }}>
                 {definition}
             </p>
         </Col>
@@ -158,24 +169,23 @@ const WordByWord = ({ wordByWord }) => {
 }
 
 const TabContents = (props) => {
+    const isMobile = useIsMobile();
+
     const overlayNumStyle = {
-        width: "fit-content",
-        position: "absolute",
         zIndex: 1,
-        color: "rgb(67, 67, 67)",
-        fontSize: "45px",
-        paddingTop: "15px",
+        color: isMobile ? "rgb(67, 67, 67)" : "rgb(85, 85, 85)",
+        fontSize: "50px",
     };
 
     return (
-        <Container>
+        <Container style={{ padding: "0px" }}>
             <Row>
-                <Col sm="auto" style={{ position: "absolute", width: "fit-content" }}>
+                <Col sm="auto" style={{ position: "absolute", width: "fit-content", padding: "0px" }}>
                     <div style={overlayNumStyle}>
                         {props.num}
                     </div>
                 </Col>
-                <Col style={{ zIndex: 2, width: "fit-content" }}>
+                <Col style={{ zIndex: 2, width: "fit-content", padding: "0px" }}>
                     {props.children}
                 </Col>
             </Row>
