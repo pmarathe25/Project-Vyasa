@@ -298,7 +298,7 @@ mahaatmanaam (mahat+aatman, gen pl m) of great-souled
 "(Do I tell) sacred stories from the Puranas about moral obligation and wealth, 
 (or) the chronicle(s) of great men and great-souled sages?"
 
-17-18
+17-21
 
 r>s<aya: (r>s<i, nom pl) the sages
 uucu: (!vac, 3 pl perf act ind) said
@@ -325,6 +325,11 @@ suuks<maarthanyaayayuktasya (suuks<ma+artha+nyaaya+yukta, gen sing n) of (someth
 vaidaarthaai: (vaida+artha, inst pl) by the meaning of the Vedas 
 bhuus<itasya (!bhuus<, gen sing perf pass part n) of (something) enriched, lit. "having been decorated by"
 ca and
+- 
+bhaaratasya (bhaarata, gen sing m) of the Bharata (i.e. the Mahabharata)
+itihaasasya (itihaasa, gen sing) of the history
+pun<yaam (pun<ya, acc sing f) sacred
+granthaarthasa.yutaam (grantha+artha+sa.yuta, acc sing f) containing (lit. "having been united with") the meaning of books
 
 The sages said:
 "Of that most extensive narrative (with) various words and sections, 

@@ -120,11 +120,13 @@ def process_parts_of_speech(
         show_error(f"Unrecognized parts of speech: {parts_of_speech}")
 
     def check_parts(expected):
+        undeclined_parts = expected
         if not is_declined:
-            expected = copy.copy(expected) - NOUN_PARTS - {"gender"}
+            undeclined_parts = copy.copy(undeclined_parts) - NOUN_PARTS - {"gender"}
 
-        if expected != part_functions:
-            show_error(f"Expected parts of speech: {expected}, but received: {part_functions}")
+        if expected != part_functions and undeclined_parts != part_functions:
+            err_parts = f"{expected}" if is_declined else f"{expected} or {undeclined_parts}"
+            show_error(f"Expected parts of speech: {err_parts}, but received: {part_functions}")
 
     # Validate that part functions are ok
     if "other" in part_functions:
