@@ -20,7 +20,7 @@ const Translation = ({ translation }) => {
                     onClick={() => { setOpen(!open) }}
                     aria-controls="collapsed-translation-text"
                     aria-expanded={open}
-                    style={{ borderRadius: "25px" }}
+                    style={{ borderRadius: "25px", fontSize: "9pt", padding: "5px" }}
                 >
                     {open ? "Hide" : "Show"} Translation
                 </Button>

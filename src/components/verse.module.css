@@ -1,5 +1,5 @@
 .verse-text {
-    font-size: 22px;
+    font-size: 20px;
     color: rgb(252, 251, 250);
     padding-bottom: 5px;
     white-space: pre-wrap;
@@ -18,9 +18,10 @@
 
 .verse-text-tab {
     color: #d1d1d1;
-    padding: 8px;
-    padding-top: 6px;
-    padding-bottom: 6px;
+    font-size: 15px;
+    padding: 10px;
+    padding-top: 5px;
+    padding-bottom: 5px;
     height: fit-content;
 }
 

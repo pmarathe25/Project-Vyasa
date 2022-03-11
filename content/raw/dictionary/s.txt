@@ -5,6 +5,7 @@
 !s~ru to hear
 sa (m) he, this, that
 sa.panna (adj) right, correct, thriving, finished, endowed with
+sa.skaara (m) cleansing the body, training the mind, correctness, purity (especially of pronunciation)
 sa.s~ita (adj) sharp, well-prepared, rigid, firm
 sa.s~rita (adj) united with, inherent in, relating to, concerning
 sa.yuta (adj) united, containing [sam-!yu, perf pass part]
@@ -31,5 +32,6 @@ suurya (mn) the Sun
 suuta (m) charioteer
 sva one's own, one's self
 svastha (adj) self-abiding, self-sufficient, independent [sva+stha]
+s~aastra (n) an order, teaching, scientific treatise, religious scripture
 s~aaunaka (m) Shaunaka, a Sanskrit grammarian
 s~uci (adj) gleaming, shining, radiant, pure
