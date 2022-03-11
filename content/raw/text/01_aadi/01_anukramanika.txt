@@ -99,7 +99,7 @@ vinayaat (vinaya, abl sing) humbly
 laaumahars<an<i: (laaumahars<an<i, nom sing) Lomaharshana's son
 
 Then, with all those ascetics having sat down, 
-Lomaharshana's son humbly took the seat assigned to him.
+Lomaharshana's son humbly took the seat assigned (to him).
 
 6
 
@@ -317,6 +317,53 @@ s~rutvaa (!s~ru, abs) having heard
 yat (yat, acc sing) which
 abhipuujitam (abhi-!puuj, acc sing n perf pass part) having been honored
 
+
 The sages said:
-"The Purana, which (was) told by the great island-born sage (Vyasa),
-and which (was) honored by the deities and Brahman sages, (after) having heard (it)...
+"The Purana, which (was) told by the greatest sage, Vyasa, 
+which (was) honored by the deities and Brahman sages (upon) having heard (it)...
+
+18
+
+tasya (tat, gen sing) of that
+aakhyaanavaris<th<asya (aakhyaana+varis<th<a, gen sing n) of the most extensive narrative
+vicitrapadaparvan<a: (vicitra+pada+parvan, gen sing n) of (something having) various words and sections
+-
+suuks<maarthanyaayayuktasya (suuks<ma+artha+nyaaya+yukta, gen sing n) of (something) having subtle and logical meaning
+vaidaarthaai: (vaida+artha, inst pl) by the meaning of the Vedas 
+bhuus<itasya (!bhuus<, gen sing perf pass part n) of (something) enriched, lit. "having been decorated by"
+ca and
+
+"Of that most extensive narrative, having various words and sections,
+having subtle and logical meaning, and decorated by the meaning of the Vedas...
+
+19
+
+bhaaratasya (bhaarata, gen sing m) of the Bharata (i.e. the Mahabharata)
+itihaasasya (itihaasa, gen sing) of the history
+pun<yaam (pun<ya, acc sing f) sacred
+granthaarthasa.yutaam (grantha+artha+sa.yuta, acc sing f) containing (lit. "having been united with") the meanings of (many) books
+-
+sa.skaaraupagataam (sa.skaara+upagata, acc sing f) possessing purity
+braahmiim (braahmii, acc sing) speech
+naanaas~aastraupabr>.hitaam (naanaa+s~aastra+upabr>.hita, acc sing f) augmented by various Shastras
+
+"Of the Bharata, the sacred history containing the meanings of (many) books,
+possessing purity (of) speech (i.e. elegant language) augmented by various Shastras...
+
+20
+
+janamaijayasya (janamaijaya, gen sing) of Janamejaya
+yaam (yaa, acc sing) which
+raajn~a: (raajan, gen sing) of the king
+vaais~a.paayana: (vaais~ampaayana, nom sing) Vaishampayana
+uktavaan (!vac, nom sing m perf act part) narrated, told, lit. "having spoken"
+-
+yathaavat properly
+sa: (sa, nom sing) he/that
+r>s<i: (r>s<i, nom sing) the sage
+tus<t<yaa (tus<t<i, inst sing) with satisfaction
+satrai (satra, loc sing) in the sacrifice
+dvaaipaayanaajn~ayaa (dvaaipaayana+aajn~aa, inst sing) at Vyasa's behest, lit. "by the islander-command"
+
+"Which that sage, Vaishampayana, narrated properly with satisfaction
+at Vyasa's behest at king Janamejaya's sacrifice...

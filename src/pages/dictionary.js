@@ -49,24 +49,29 @@ const WordAndDefinition = ({ location, word, definition, root, partsOfSpeech }) 
     const isActive = location.hash === `#${id}`;
 
     return (
-        <div id={id} style={{
-            marginBottom: "8px",
-            backgroundColor: isActive ? "rgb(50, 100, 200)" : "inherit",
-            borderRadius: isActive ? "5px" : "inherit",
-            borderBottom: "1px solid rgb(65, 65, 65)"
-        }}>
-            <Link to={`${baseUrl}#${id}`} style={{
-                width: "fit-content", margin: "auto", padding: 0, backgroundColor: "inherit"
+        // We use this weird padding/margin thing to make the anchor link 
+        // appear 100px from the top of the page when we scroll to it. 
+        // The styling is done in the inner div so that the user is none the wiser. 
+        <span id={id} style={{ paddingTop: "100px", marginTop: "-100px" }}>
+            <div style={{
+                marginBottom: "8px",
+                backgroundColor: isActive ? "rgb(50, 100, 200)" : "inherit",
+                borderRadius: isActive ? "5px" : "inherit",
+                borderBottom: "1px solid rgb(65, 65, 65)",
             }}>
-                <FiLink size="14px" style={{ backgroundColor: "inherit", paddingRight: "2px" }} />
-            </Link>
-            {wordElements}
-            <Definition
-                definition={definition}
-                root={root}
-                partsOfSpeech={partsOfSpeech}
-            />
-        </div>
+                <Link to={`${baseUrl}#${id}`} style={{
+                    width: "fit-content", margin: "auto", padding: 0, backgroundColor: "inherit"
+                }}>
+                    <FiLink size="14px" style={{ backgroundColor: "inherit", paddingRight: "2px" }} />
+                </Link>
+                {wordElements}
+                <Definition
+                    definition={definition}
+                    root={root}
+                    partsOfSpeech={partsOfSpeech}
+                />
+            </div>
+        </span>
     )
 }
 
