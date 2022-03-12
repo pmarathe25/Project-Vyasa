@@ -365,5 +365,22 @@ tus<t<yaa (tus<t<i, inst sing) with satisfaction
 satrai (satra, loc sing) in the sacrifice
 dvaaipaayanaajn~ayaa (dvaaipaayana+aajn~aa, inst sing) at Vyasa's behest, lit. "by the islander-command"
 
-"Which that sage, Vaishampayana, narrated properly with satisfaction
+"Which that sage, Vaishampayana, narrated properly (and) with satisfaction
 at Vyasa's behest at king Janamejaya's sacrifice...
+
+21
+
+vaidaai: (vaida, inst pl) by the Vedas
+caturbhi: (catus, inst pl m) by the four
+sa.yuktaam (sa.yukta, acc sing f) having been combined
+vyaasasya (vyaasa, gen sing) of Vyasa
+adbhutakarman<a: (adbhuta+karman, gen sing m) of the extraordinary composer, lit. "wonderful-doer"
+-
+sa.hitaam (sa.hita, acc sing f) endowed with
+s~rautum (!s~ru, inf) to hear
+icchaama: (!is<, 1 pl pres act ind) we wish
+dharmyaam (dharmya, acc sing f) righteous(ness)
+paapabhayaapahaam (paapa+bhaya+apaha, acc sing f) (which) dispels fear of evil, lit. "evil-fear-dispeller"
+
+"We wish to hear (of that composition [described by verses 17-20]) of the extraordinary composer Vyasa,
+(which is) united with (the meaning of) the four Vedas, endowed with righteous(ness), (and which) dispels the fear of evil."
