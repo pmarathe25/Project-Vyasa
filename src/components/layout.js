@@ -8,7 +8,6 @@ import AutohidingNavbar from './autohidingNavbar'
 import ResponsiveBreadcrumbs from './breadcrumbs'
 import { brandLink, container, content, navLink } from './layout.module.css'
 import Seo from './seo'
-import { useTransliterate } from './transliterationHook'
 import { TransliterationModeSelect } from './translitModeSelect'
 
 const TopBarNavItem = (props) => {
@@ -45,7 +44,7 @@ const Layout = ({ location, pageTitle, children }) => {
             <AutohidingNavbar isExpanded={navExpanded} setIsExpanded={setNavExpanded}>
                 <Container>
                     <Link to="/" className={brandLink}>
-                        Project {useTransliterate("vyaasa")}
+                        Project Vyasa
                     </Link>
 
                     <Navbar.Collapse id="responsive-navbar-nav">

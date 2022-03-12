@@ -4,6 +4,7 @@ import { Col, Container, Row } from 'react-bootstrap'
 import { FiLink } from "react-icons/fi"
 import Definition from '../components/definition'
 import Layout from '../components/layout'
+import OffsetAnchor from '../components/offsetAnchor'
 import { useTransliterate } from '../components/transliterationHook'
 import { sortSanskrit, toUrl } from '../util/util'
 
@@ -49,15 +50,11 @@ const WordAndDefinition = ({ location, word, definition, root, partsOfSpeech }) 
     const isActive = location.hash === `#${id}`;
 
     return (
-        // We use this weird padding/margin thing to make the anchor link 
-        // appear 100px from the top of the page when we scroll to it. 
-        // The styling is done in the inner div so that the user is none the wiser. 
-        <span id={id} style={{ paddingTop: "100px", marginTop: "-100px" }}>
+        <OffsetAnchor id={id}>
             <div style={{
                 marginBottom: "8px",
-                backgroundColor: isActive ? "rgb(50, 100, 200)" : "inherit",
+                backgroundColor: isActive ? "var(--blue-highlight-color)" : "inherit",
                 borderRadius: isActive ? "5px" : "inherit",
-                borderBottom: "1px solid rgb(65, 65, 65)",
             }}>
                 <Link to={`${baseUrl}#${id}`} style={{
                     width: "fit-content", margin: "auto", padding: 0, backgroundColor: "inherit"
@@ -71,7 +68,7 @@ const WordAndDefinition = ({ location, word, definition, root, partsOfSpeech }) 
                     partsOfSpeech={partsOfSpeech}
                 />
             </div>
-        </span>
+        </OffsetAnchor>
     )
 }
 
@@ -146,17 +143,19 @@ const Dictionary = ({ location }) => {
             </Col>
         )
         sections.push(
-            <Col key={sectionName} id={toUrl(`section_${sectionName}`)}
-                style={{
-                    width: "fit-content", minWidth: "50%", marginBottom: "20px"
-                }}
-            >
-                <DictSection
-                    location={location}
-                    sectionName={sectionName}
-                    wordComponents={wordComponents}
-                />
-            </Col>
+            <OffsetAnchor id={toUrl(`section_${sectionName}`)}>
+                <Col key={sectionName}
+                    style={{
+                        width: "fit-content", minWidth: "50%", marginBottom: "20px"
+                    }}
+                >
+                    <DictSection
+                        location={location}
+                        sectionName={sectionName}
+                        wordComponents={wordComponents}
+                    />
+                </Col>
+            </OffsetAnchor>
         );
     };
 

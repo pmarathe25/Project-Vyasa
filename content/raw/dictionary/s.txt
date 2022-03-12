@@ -4,16 +4,19 @@
 !s~a.s to approve of, to tell, to express
 !s~ru to hear
 sa (m) he, this, that
+sa.hita (adj) joined, uninterrupted, agreeing with, endowed with
 sa.panna (adj) right, correct, thriving, finished, endowed with
 sa.skaara (m) cleansing the body, training the mind, correctness, purity (especially of pronunciation)
 sa.s~ita (adj) sharp, well-prepared, rigid, firm
 sa.s~rita (adj) united with, inherent in, relating to, concerning
+sa.yukta (adj) conjoined, united with, combined [sam-!yuj|VII, perf pass part]
 sa.yuta (adj) united, containing [sam-!yu, perf pass part]
 saa (f) she, this that
 saauti (m) Sauti, the narrator of the Mahabharata
 sadas (n) assembly, seat, residence
 saika (m) effusion, emission, offering
 sam-!yu to unite, to join together, to contain
+sam-!yuj|VII to combine, to unite
 sam-pari-!kram to travel, to wander [!kram]
 samantapan~caka (n) Samantapancaka, a district of Kurukshetra
 samiipa (n) vicinity, proximity

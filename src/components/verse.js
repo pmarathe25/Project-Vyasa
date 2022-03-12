@@ -7,6 +7,7 @@ import Definition from './definition';
 import { useTransliterate } from './transliterationHook';
 import { translationText, verseText, verseTextTab, verseWord } from "./verse.module.css";
 import useIsMobile from "../util/responsiveness"
+import OffsetAnchor from './offsetAnchor';
 
 const allWordsDict = require("../../content/generated/dictionary/all_words.json");
 
@@ -101,7 +102,7 @@ const WordAndDefinition = ({ word, definition, root, parts_of_speech }) => {
                 overlay={
                     <Popover
                         id={`${word}-popover`}
-                        style={{ backgroundColor: "var(--button-color)" }}
+                        style={{ backgroundColor: "var(--blue-highlight-color)" }}
                         onMouseEnter={() => setShowPopover(true)}
                         onMouseLeave={() => setShowPopover(false)}
                         onTouchStart={() => setShowPopover(true)}
@@ -179,7 +180,7 @@ const TabContents = (props) => {
 
     return (
         <Container style={{ padding: "0px" }}>
-            <Row>
+            <Row style={{ marginLeft: "0px" }}>
                 <Col sm="auto" style={{ position: "absolute", width: "fit-content", padding: "0px" }}>
                     <div style={overlayNumStyle}>
                         {props.num}
@@ -199,9 +200,9 @@ const VerseText = ({ num, text, wordByWord, location }) => {
 
     return (
         <Tab.Container defaultActiveKey="text" id={"verse-text-tabs-" + num}>
-            <Row style={{ width: "fit-content" }}>
+            <Row style={{ width: "fit-content", marginLeft: "0px" }}>
                 <Nav variant="pills"
-                    style={{ borderBottom: "1px solid rgb(65, 65, 65)" }}
+                    style={{ borderBottom: "2px solid rgb(80, 80, 80)", marginBottom: "3px" }}
                 >
                     <Nav.Link className={verseTextTab} eventKey="text">
                         Sanskrit Text
@@ -237,14 +238,18 @@ const VerseText = ({ num, text, wordByWord, location }) => {
 }
 
 const Verse = ({ num, text, wordByWord, translation, location }) => {
+    const isActive = location.hash === `#verse_${num}`;
+
     return (
-        <div id={`verse_${num}`} style={{
-            borderBottom: "2px solid rgb(65, 65, 65)", borderTop: "0px",
-            paddingBottom: "5px", marginBottom: "5px"
-        }}>
-            <VerseText num={num} text={text} wordByWord={wordByWord} location={location} />
-            <Translation translation={translation} />
-        </div>
+        <OffsetAnchor id={`verse_${num}`} >
+            <div style={{
+                paddingBottom: "5px", marginBottom: "5px",
+                backgroundColor: isActive ? "rgb(65, 65, 75)" : "inherit"
+            }}>
+                <VerseText num={num} text={text} wordByWord={wordByWord} location={location} />
+                <Translation translation={translation} />
+            </div>
+        </OffsetAnchor>
     )
 }
 
