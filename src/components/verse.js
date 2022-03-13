@@ -244,7 +244,8 @@ const Verse = ({ num, text, wordByWord, translation, location }) => {
         <OffsetAnchor id={`verse_${num}`} >
             <div style={{
                 paddingBottom: "5px", marginBottom: "5px",
-                backgroundColor: isActive ? "rgb(65, 65, 75)" : "inherit"
+                backgroundColor: isActive ? "rgb(64, 64, 76)" : "inherit",
+                borderRadius: "7px",
             }}>
                 <VerseText num={num} text={text} wordByWord={wordByWord} location={location} />
                 <Translation translation={translation} />
