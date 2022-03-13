@@ -178,7 +178,7 @@ const TabContents = (props) => {
 
     const overlayNumStyle = {
         zIndex: 1,
-        color: isMobile ? "rgb(67, 67, 67)" : "rgb(85, 85, 85)",
+        color: isMobile ? "rgb(63, 63, 73)" : "rgb(78, 78, 88)",
         fontSize: "50px",
     };
 
