@@ -1,7 +1,10 @@
 !aap to reach
 !aas to sit
 !as to be
+a () (as prefix) negates a word
 aa-!gam to come
+aadi (m) beginning
+aadya (adj) first [aadi]
 aajn~aa (f) order, command
 aakhyaana (n) communication, story, tale, narrative
 aaran<ya (n) forest
@@ -19,11 +22,14 @@ abhis<aika (m) consecration, religious bathing [saika]
 adbhuta (adj) extraordinary, wonderful
 agni (m) fire
 aham I (1st person pronoun)
+aika (adj) one, single, solitary
+aikaaks<ara (n) the sole imperishable thing; (n) the sacred syllable 'Om' [aika+aks<ara]
 ais<a (m) this, that
 aitat (n) this, that
 aiva (indc) just so, exactly so, indeed (places emphasis on the preceding word)
 aivam (indc) thus, in this way
 aks<a (n) (in compound) eye
+aks<ara (adj) imperishable, lit. "not melting away" [!ks<ar]; (n) letter, syllable
 anu-pra-!aap to reach
 an~jali (m) joined hands
 apaha (adj) (in compound) removing, dispelling, repelling, destroying
@@ -31,4 +37,5 @@ api (indc) even, but, also
 artha (mn) reason, substance, wealth, manner, kind
 atha (indc) then
 ava-!nam to bow down
+avyakta (adj) not manifested, invisible, imperceptible [a+vyakta]
 ayam (m) this

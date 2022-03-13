@@ -255,23 +255,24 @@ Entries are split into files based on their starting character:
 `content/raw/dictionary/{character}.txt` and each word is 
 provided in stem/root form (i.e. not declined/conjugated) on a separate line.
 
+Multiple defintions may be provided, in which case they should be separated by a semi-colon, i.e. `;`.
+
 The dictionary format is:
 ```
-<word> (<detail>) <meanings...> [<optional root/reference>{, <optional parts of speech>}]
+<word> (<detail0>) <meanings0...> [<optional root0/reference0>{, <optional parts of speech 0>}] ; (<detail1>) <meanings1...> ... (etc.)
 ... (more words)
 ```
 
 For example:
 ```
-!nam to bend, to bow
-naaimis<a (m) Naimisha, a sacred forest
-naaman (n) name
-naaraayan<a (m) Narayana, a name for Vishnu
-namas-!kr> to bow, to pay homage
-nandana (m) son, lit. "delighter"
-nara (m) man
-ni-!saiv to visit, to frequent, to honor [!saiv]
-nirdis<t<a (adj) pointed out, shown, appointed
+!iir to go, to move, to rise, to arise from
+!is< to want, to wish
+iha (indc) here
+iis~aana (adj) wealthy; (m) name of Vishnu
+indra (m) Indra, a thunderbolt-wielding god; (m) a prince; () (in compound) the best/first/chief
+iti (indc) marks the end of a clause, quotation, or thought
+itihaasa (m) history, legend, lit. "so indeed it was" [iti+ha+!as]
+itivr>tta (n) chronicle, occurrence, event, lit. "thus it occurred" [iti+vr>tta]
 ```
 
 The `word` field follows almost the same format as the 

@@ -1,28 +1,28 @@
 import { Link } from 'gatsby';
 import * as React from 'react';
+import { Container, Row } from 'react-bootstrap';
 import { useTransliterate } from '../components/transliterationHook';
 import toUrl from '../util/util';
 
-
 const Root = ({ root, partsOfSpeech, refStyle }) => {
-    const refParts = root.split("+");
-    const translitRefParts = useTransliterate(root).split("+");
+    const rootParts = root.split("+");
+    const translitRootParts = useTransliterate(root).split("+");
 
     if (!root) {
         return (<></>);
     }
 
     let refLinks = [];
-    for (let index in translitRefParts) {
+    for (let index in translitRootParts) {
         refLinks.push(
             <div style={refStyle} key={index}>
                 {(index > 0 ? ", " : "")}
                 <Link
-                    to={`/dictionary#${toUrl(refParts[index])}`}
+                    to={`/dictionary#${toUrl(rootParts[index])}`}
                     style={{ fontSize: "20px", fontStyle: "normal", whiteSpace: "nowrap" }}
                     key={index}
                 >
-                    {translitRefParts[index]}
+                    {translitRootParts[index]}
                 </Link>
             </div>
         );
@@ -49,7 +49,7 @@ const Root = ({ root, partsOfSpeech, refStyle }) => {
 
 }
 
-const Definition = ({ definition, root, partsOfSpeech }) => {
+const Definition = ({ definitions, roots, partsOfSpeeches }) => {
     const style = {
         color: "rgb(248, 248, 248)",
         display: "inline",
@@ -62,13 +62,29 @@ const Definition = ({ definition, root, partsOfSpeech }) => {
         fontSize: "15px"
     };
 
+    let definitionElements = [];
+
+    for (let index = 0; index < definitions.length; ++index) {
+        const definition = definitions[index];
+        const root = roots[index];
+        const partsOfSpeech = partsOfSpeeches[index];
+
+        definitionElements.push(
+            <Row>
+                <div style={style} key={definition}>
+                    <p style={style}>
+                        {definition}
+                    </p>
+                    <Root root={root} partsOfSpeech={partsOfSpeech} refStyle={style} />
+                </div>
+            </Row>
+        );
+    }
+
     return (
-        <div style={style}>
-            <p style={style}>
-                {definition}
-            </p>
-            <Root root={root} partsOfSpeech={partsOfSpeech} refStyle={style} />
-        </div>
+        <Container style={{ height: "fit-content", marginTop: "auto", marginBottom: "auto", padding: "0px", paddingLeft: "12px" }}>
+            {definitionElements}
+        </Container>
     );
 }
 

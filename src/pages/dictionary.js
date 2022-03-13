@@ -11,13 +11,14 @@ import { sortSanskrit, toUrl } from '../util/util'
 const allWordsDict = require("../../content/generated/dictionary/all_words.json");
 
 
-const WordAndDefinition = ({ location, word, definition, root, partsOfSpeech }) => {
+const WordAndDefinitions = ({ location, word, definitions, roots, partsOfSpeeches }) => {
     const translitWord = useTransliterate(word);
     const baseUrl = "/dictionary";
 
     const wordLinkStyle = {
         fontSize: "22px", width: "fit-content",
         display: "inline", padding: 0,
+        whiteSpace: "nowrap"
     };
 
     const wordParts = word.split("-");
@@ -54,6 +55,8 @@ const WordAndDefinition = ({ location, word, definition, root, partsOfSpeech }) 
             <div style={{
                 backgroundColor: isActive ? "var(--blue-highlight-color)" : "inherit",
                 borderRadius: isActive ? "5px" : "inherit",
+                paddingBottom: "5px",
+                display: "flex",
             }}>
                 <Link to={`${baseUrl}#${id}`} style={{
                     width: "fit-content", margin: "auto", padding: 0,
@@ -62,9 +65,9 @@ const WordAndDefinition = ({ location, word, definition, root, partsOfSpeech }) 
                 </Link>
                 {wordElements}
                 <Definition
-                    definition={definition}
-                    root={root}
-                    partsOfSpeech={partsOfSpeech}
+                    definitions={definitions}
+                    roots={roots}
+                    partsOfSpeeches={partsOfSpeeches}
                 />
             </div>
         </OffsetAnchor>
@@ -78,18 +81,18 @@ const DictSection = ({ location, sectionName, wordComponents }) => {
     const url = toUrl(`${baseUrl}#${id}`);
 
     let entries = []
-    for (const [word, definition, root, partsOfSpeech] of wordComponents.sort(
+    for (const [word, definitions, roots, partsOfSpeeches] of wordComponents.sort(
         ([word], [other]) => {
             return sortSanskrit(word, other);
         })) {
         entries.push(
-            <WordAndDefinition
+            <WordAndDefinitions
                 key={word}
                 location={location}
                 word={word}
-                definition={definition}
-                root={root}
-                partsOfSpeech={partsOfSpeech}
+                definitions={definitions}
+                roots={roots}
+                partsOfSpeeches={partsOfSpeeches}
             />
         );
     }
@@ -127,11 +130,11 @@ const SectionLink = ({ sectionName }) => {
 const Dictionary = ({ location }) => {
     let dictSections = new Map();
     for (let word in allWordsDict) {
-        const [definition, ref, partsOfSpeech, sectionName] = allWordsDict[word];
+        const [sectionName, definitions, roots, partsOfSpeeches] = allWordsDict[word];
         if (!dictSections.has(sectionName)) {
             dictSections.set(sectionName, []);
         }
-        dictSections.get(sectionName).push([word, definition, ref, partsOfSpeech])
+        dictSections.get(sectionName).push([word, definitions, roots, partsOfSpeeches])
     }
 
     // Top-bar with links to eacch section

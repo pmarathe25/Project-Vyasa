@@ -33,7 +33,7 @@ satrai (satra, loc sing) in the sacrifice
 -
 sukhaasiinaan (sukha+!aas, acc pl m pres mid part) the sitting blissfully
 abhyagacchat (abhi-!gam, 3 sing imp act ind) he approached
-brahmars<iin (brahma+r>s<i, acc pl) the Brahman sages
+brahmars<iin (brahman+r>s<i, acc pl) the Brahman sages
 sa.s~itavrataan (sa.s~ita+vrata, acc pl m) rigid-vowed (firm in their vows)
 -
 vinayaavanata: (vinaya+ava-!nam, nom sing m perf pass part) having bowed humbly
@@ -253,7 +253,7 @@ iha here
 aayus<manta: (aayus<mat, voc pl m) full of life
 sarvai (sarva, voc pl m) all
 aiva indeed
-brahmabhuutaa: (brahma+bhuuta, voc pl m) like Brahma
+brahmabhuutaa: (brahman+bhuuta, voc pl m) like Brahma
 hi indeed
 mai (aham, dat sing) to me
 mataa: (!man, voc pl m perf pass part) seem, lit. "having been thought of"
@@ -310,7 +310,7 @@ puraan<am (puraan<a, acc sing n) Purana
 paramars<in<aa (parama+r>s<i, inst sing m) by the greatest sage
 -
 suraai: (sura, inst pl) by deities
-brahmars<ibhi: (brahma+r>s<i, inst pl) by the Brahman sages
+brahmars<ibhi: (brahman+r>s<i, inst pl) by the Brahman sages
 ca and
 aiva indeed
 s~rutvaa (!s~ru, abs) having heard
@@ -384,3 +384,24 @@ paapabhayaapahaam (paapa+bhaya+apaha, acc sing f) (which) dispels fear of evil, 
 
 "We wish to hear (of that composition [described by verses 17-20]) of the extraordinary composer Vyasa,
 (which is) united with (the meaning of) the four Vedas, endowed with righteous(ness), (and which) dispels the fear of evil."
+
+22
+
+saauti: (saauti, nom sing) Sauti
+uvaaca (!vac, 3 sing perf act ind) said
+-
+aadyam (aadya, acc sing m) the first
+purus<am (purus<a, acc sing) being
+iis~aanam (iis~aana, acc sing m) Ishana
+puruhuutam (puru+huuta, acc sing m) called upon by many
+purus<t<utam (puru+stuta, acc sing m) praised by many
+-
+r>tam properly
+aikaaks<aram (aikaaks<ara, acc sing) the imperishable one
+brahma (brahman, acc sing) Brahma
+vyaktaavyaktam (vyakta+avyakta, acc sing m) perceptible and imperceptible
+sanaatanam (sanaatana, acc sing m) eternal
+
+Sauti said:
+"The first being, Ishana, called upon by many, praised by many, 
+the imperishable one, Brahma, perceptible and imperceptible, eternal..."

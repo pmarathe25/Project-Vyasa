@@ -10,25 +10,26 @@ import argparse
 import glob
 import json
 import os
+from typing import List, Tuple
 
 import util
 
 
 def validate_dictionary(dct):
-    for word, (_, reference, _, section_name) in dct.items():
+    for word, (section_name, _, references, _) in dct.items():
         is_verb = "√" in word
-
-        assert not reference or all(
-            (ref_part if not is_verb else util.adjust_verb(ref_part)) in dct for ref_part in reference.split("+")
-        ), f"Word: {word} refers to: {reference}, but the latter is not present in the dictionary!"
-
-        assert word.strip("√").startswith(section_name), f"Word: {word} is in the wrong section: {section_name}"
-
         if is_verb:
             base_form = word.split("-")[-1]
             assert base_form in dct, "Base form ({:}) of word: {:} is not present in the dictionary!".format(
                 base_form, word
             )
+
+        for reference in references:
+            assert not reference or all(
+                (ref_part if not is_verb else util.adjust_verb(ref_part)) in dct for ref_part in reference.split("+")
+            ), f"Word: {word} refers to: {reference}, but the latter is not present in the dictionary!"
+
+            assert word.strip("√").startswith(section_name), f"Word: {word} is in the wrong section: {section_name}"
 
 
 def main():
@@ -80,7 +81,15 @@ def main():
             for line_num, line in enumerate(sorted_lines):
                 line_num += 1
 
-                def add(word, meanings, is_adj=False):
+                def add(word: str, definitions: List[Tuple[str, bool]]):
+                    """
+                    Add a word and one or more definitions to the dictionary.
+
+                    Args:
+                        word (str): The word to add to the dictionary.
+                        definitions (List[Tuple[str, bool]]):
+                                A list of definitions and booleans indicating whether they are adjectives.
+                    """
                     base_word = word.strip("√")
                     if not base_word.startswith(expected_start_letter):
                         raise RuntimeError(
@@ -100,48 +109,40 @@ def main():
                         )
 
                     nonlocal out_dict
-                    meanings, _, reference = meanings.partition("[")
-                    reference = reference.strip().strip("]")
-                    reference, _, reference_parts_of_speech = reference.partition(",")
 
-                    is_reference_verb = "!" in reference
-                    if is_reference_verb:
-                        reference = util.adjust_verb(reference)
+                    # Create an entry including definitions, references, and reference parts of speech.
+                    dict_entry = [section_name, [], [], []]
+                    for definition, is_adj in definitions:
+                        definition, _, reference = definition.partition("[")
+                        reference = reference.strip().strip("]")
+                        reference, _, reference_parts_of_speech = reference.partition(",")
 
-                    # If the referrent is an adjective, we need to change certain forms - e.g. "des" -> "desadj"
-                    if is_adj:
-                        reference_parts_of_speech = reference_parts_of_speech.replace("des", "desadj")
+                        is_reference_verb = "!" in reference
+                        if is_reference_verb:
+                            reference = util.adjust_verb(reference)
 
-                    out_dict[word.strip()] = list(
-                        map(
-                            lambda x: x.strip(),
-                            [
-                                meanings,
-                                reference,
-                                util.process_parts_of_speech(
-                                    reference_parts_of_speech,
-                                    is_verb=is_reference_verb,
-                                    err_prefix=f"In file: {path} on line: {line_num}: ",
-                                    is_declined=False,
-                                    is_adj=is_adj,
-                                ),
-                                section_name,
-                            ],
+                        # If the referrent is an adjective, we need to change certain forms - e.g. "des" -> "desadj"
+                        if is_adj:
+                            reference_parts_of_speech = reference_parts_of_speech.replace("des", "desadj")
+
+                        dict_entry[1].append(definition.strip())
+                        dict_entry[2].append(reference.strip())
+                        dict_entry[3].append(
+                            util.process_parts_of_speech(
+                                reference_parts_of_speech,
+                                is_verb=is_reference_verb,
+                                err_prefix=f"In file: {path} on line: {line_num}: ",
+                                is_declined=False,
+                                is_adj=is_adj,
+                            ).strip()
                         )
-                    )
+                    out_dict[word.strip()] = dict_entry
 
                 if not line:
                     continue
 
-                tokens = [x for x in line.split(" ") if x]
-                if "!" in tokens[0]:
-                    word, _, meanings = line.partition(" ")
-                    add(util.adjust_verb(word), meanings)
-                elif "(" in tokens[1]:
+                def process_detail(detail):
                     is_adj = False
-                    word, _, rest = line.partition("(")
-
-                    detail, _, meanings = rest.partition(")")
                     if detail == "indc":
                         detail = "indeclinable"
                     elif detail == "adj":
@@ -155,10 +156,24 @@ def main():
                                 "parentheses to separate the word from its definition".format(detail, line)
                             )
                         detail = "./".join(detail) + "."
-                    add(word, (f"({detail}) " if detail else "") + f"{meanings}", is_adj=is_adj)
-                else:
-                    word, _, meanings = line.partition(" ")
-                    add(word, meanings)
+                    return detail, is_adj
+
+                word, _, rest = line.partition(" ")
+                if "!" in word:
+                    word = util.adjust_verb(word)
+
+                definitions = []
+                raw_definitions = rest.split(";")
+                for raw_definition in raw_definitions:
+                    is_adj = False
+                    raw_definition = raw_definition.strip()
+                    if raw_definition[0] == "(":
+                        raw_definition = raw_definition.lstrip("(")
+                        detail, _, raw_definition = raw_definition.partition(")")
+                        detail, is_adj = process_detail(detail)
+                        raw_definition = (f"({detail}) " if detail else "") + f"{raw_definition}"
+                    definitions.append((raw_definition, is_adj))
+                add(word, definitions)
 
         print("\tSorting: {:}".format(path))
         with open(path, "w") as f:
