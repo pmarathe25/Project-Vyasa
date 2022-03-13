@@ -108,7 +108,7 @@ const DictSection = ({ location, sectionName, wordComponents }) => {
             <Col>
                 {columnEntries}
             </Col>
-        )
+        );
     }
 
     return (
