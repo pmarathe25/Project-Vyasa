@@ -21,7 +21,7 @@ const Translation = ({ translation }) => {
                     onClick={() => { setOpen(!open) }}
                     aria-controls="collapsed-translation-text"
                     aria-expanded={open}
-                    style={{ borderRadius: "25px", fontSize: "9pt", padding: "5px" }}
+                    style={{ borderRadius: "25px", fontSize: "12px", padding: "4px" }}
                 >
                     {open ? "Hide" : "Show"} Translation
                 </Button>
@@ -48,7 +48,9 @@ const RootMeanings = ({ root }) => {
             {
                 translitRoots.map((rootPar, index) =>
                     <div style={{ display: "flex" }} key={index}>
-                        <Link to={`/dictionary#${toUrl(roots[index])}`} target="_blank" style={{ color: "rgb(125, 155, 170)" }}>
+                        <Link to={`/dictionary#${toUrl(roots[index])}`} target="_blank"
+                            style={{ color: "rgb(125, 155, 170)", height: "fit-content" }}
+                        >
                             <p style={{ fontSize: "20px", paddingRight: "5px", whiteSpace: "nowrap" }}>
                                 {rootPar}
                             </p>
@@ -136,7 +138,7 @@ const WordAndDefinition = ({ word, definition, root, parts_of_speech }) => {
             </OverlayTrigger>
             <p style={{
                 fontStyle: "italic", fontSize: "16px",
-                color: "rgb(175, 175, 175)",
+                color: "rgb(185, 185, 185)",
                 width: "fit-content",
                 maxWidth: "200px",
                 marginLeft: "auto", marginRight: "auto",
@@ -216,7 +218,7 @@ const VerseText = ({ num, text, wordByWord, location }) => {
                     </Nav.Link>
                     <Nav.Link to={url} as={Link} style={{
                         paddingLeft: "4px",
-                        paddingTop: "0px", paddingBottom: "4px",
+                        paddingTop: "0px", paddingBottom: "0px",
                     }}>
                         <FiLink size="16px" />
                     </Nav.Link>

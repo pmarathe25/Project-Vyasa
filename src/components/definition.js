@@ -51,14 +51,13 @@ const Root = ({ root, partsOfSpeech, refStyle }) => {
 
 const Definition = ({ definitions, roots, partsOfSpeeches }) => {
     const style = {
-        color: "rgb(248, 248, 248)",
-        display: "inline",
+        color: "rgb(250, 250, 250)",
+        display: "inline-block",
         fontStyle: "italic",
         top: "50%",
         width: "fit-content",
         padding: 0,
         marginLeft: "5px", marginTop: "auto", marginBottom: "auto",
-        whiteSpace: "pre-wrap",
         fontSize: "15px"
     };
 

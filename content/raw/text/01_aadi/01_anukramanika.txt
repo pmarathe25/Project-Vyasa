@@ -385,7 +385,7 @@ paapabhayaapahaam (paapa+bhaya+apaha, acc sing f) (which) dispels fear of evil, 
 "We wish to hear (of that composition [described by verses 17-20]) of the extraordinary composer Vyasa,
 (which is) united with (the meaning of) the four Vedas, endowed with righteous(ness), (and which) dispels the fear of evil."
 
-22
+22-24
 
 saauti: (saauti, nom sing) Sauti
 uvaaca (!vac, 3 sing perf act ind) said
@@ -401,7 +401,38 @@ aikaaks<aram (aikaaks<ara, acc sing) the imperishable one
 brahma (brahman, acc sing) Brahma
 vyaktaavyaktam (vyakta+avyakta, acc sing m) perceptible and imperceptible
 sanaatanam (sanaatana, acc sing m) eternal
+-
+asat (asat, acc sing n) non-existent
+ca and
+sat (sat, acc sing n) existent
+ca and
+aiva indeed
+yat (yat, acc sing) who
+vis~vam (vis~va, acc sing n) every(thing)
+sadasat (sat+asat, acc sing n) existent and non-existent
+param (para, acc sing n) different than, distinct from
+-
+paraavaraan<aam (para+avara, gen pl n) of high and low (i.e. all) (things/beings)
+sras<t<aaram (sras<t<aara, acc sing) the creator
+puraan<am (puraan<a, acc sing m) ancient
+paramavyayam (param+avyaya, acc sing m) completely undecaying
+-
+man^galyam (man^galya, acc sing m) pleasing
+man^galam (man^gala, acc sing) auspicious
+vis<n<um (vis<n<u, acc sing) Vishnu
+varain<yam (varain<ya, acc sing m) excellent
+anagham (anagha, acc sing m) faultless
+s~ucim (s~uci, acc sing m) pure
+-
+namaskr>tya (namas-!kr>, abs) having bowed (to)
+hr>s<iikais~am (hr>s<iikais~a, acc sing) lord of the senses
+caraacaragurum (cara+acara+guru, acc sing m) the guru of moving and non-moving (beings)
+harim (hari, acc sing) Hari, i.e. Vishnu/Krishna
 
 Sauti said:
-"The first being, Ishana, called upon by many, praised by many, 
-the imperishable one, Brahma, perceptible and imperceptible, eternal..."
+"Having bowed properly (to) the first being, Ishana, called upon by many, praised by many, 
+(who is) Brahma, the imperishable one, perceptible and imperceptible, eternal,
+the non-existent and existent one, who (is) every(thing), distinct from the existent and non-existent,
+the creator of high and low (things/beings), ancient, completely undecaying,
+(who is) Vishnu, pleasing, auspicious, excellent, faultless, pure,
+the lord of the senses, the guru of moving and non-moving (beings), (also called) Hari...

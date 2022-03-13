@@ -9,6 +9,7 @@ paauraan<ika (adj) of/relating to the Puranas
 paavaka (adj) pure, clear, bright, shining
 pada (n) a step, a word
 para (adj) distant, far, past, future, alien, other, enemy
+param (indc) greatly, completely, to a high degree
 parama (adj) highest, furthest, final, best, worst [para, sup]
 pari-!vr> to surround
 parvan (n) a knot, a division, a section

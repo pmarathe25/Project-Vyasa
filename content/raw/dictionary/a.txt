@@ -1,7 +1,7 @@
 !aap to reach
 !aas to sit
 !as to be
-a () (as prefix) negates a word
+a () (as prefix) negates/inverts the meaning of a word
 aa-!gam to come
 aadi (m) beginning
 aadya (adj) first [aadi]
@@ -19,23 +19,30 @@ abhi-!gam to approach, to go near
 abhi-!puuj to honor, to worship
 abhi-!vad to declare, to express, (causative) to address or salute reverently
 abhis<aika (m) consecration, religious bathing [saika]
+acara (adj) not moving, immovable
 adbhuta (adj) extraordinary, wonderful
+agha (adj) bad, dangerous, sinful
 agni (m) fire
 aham I (1st person pronoun)
 aika (adj) one, single, solitary
-aikaaks<ara (n) the sole imperishable thing; (n) the sacred syllable 'Om' [aika+aks<ara]
+aikaaks<ara () [aika+aks<ara]; (n) the sole imperishable thing; (n) the sacred syllable 'Om'
 ais<a (m) this, that
 aitat (n) this, that
 aiva (indc) just so, exactly so, indeed (places emphasis on the preceding word)
 aivam (indc) thus, in this way
 aks<a (n) (in compound) eye
 aks<ara (adj) imperishable, lit. "not melting away" [!ks<ar]; (n) letter, syllable
+an () (as prefix) negates/inverts the meaning of a word
+anagha (adj) sinless, faultless [an+agha]
 anu-pra-!aap to reach
 an~jali (m) joined hands
 apaha (adj) (in compound) removing, dispelling, repelling, destroying
 api (indc) even, but, also
 artha (mn) reason, substance, wealth, manner, kind
+asat (adj) not being, not existing
 atha (indc) then
 ava-!nam to bow down
+avara (adj) low, inferior, nearer
 avyakta (adj) not manifested, invisible, imperceptible [a+vyakta]
+avyaya (adj) imperishable, undecaying [a+vyaya]
 ayam (m) this

@@ -27,6 +27,7 @@ sarpa (mn) a snake
 sarva (adj) all
 sat (adj) being, existing, truth [!as, pres act part]
 satra (n) sacrifice
+sras<t<aara (m) creator
 stha () (in compound) standing, staying
 stuta (adj) praised, eulogized, celebrated, glorified [!stu, perf pass part]
 sukha (adj) pleasant
