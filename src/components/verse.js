@@ -2,12 +2,12 @@ import { Link } from 'gatsby';
 import * as React from 'react';
 import { Button, Col, Collapse, Container, Nav, OverlayTrigger, Popover, Row, Tab } from 'react-bootstrap';
 import { FiLink } from "react-icons/fi";
+import useIsMobile from "../util/responsiveness";
 import toUrl from '../util/util';
 import Definition from './definition';
-import { useTransliterate } from './transliterationHook';
-import { translationText, verseText, verseTextTab, verseWord } from "./verse.module.css";
-import useIsMobile from "../util/responsiveness"
 import OffsetAnchor from './offsetAnchor';
+import { useTransliterate } from './transliterationHook';
+import { translationText, verseText, verseTextTab } from "./verse.module.css";
 
 const allWordsDict = require("../../content/generated/dictionary/all_words.json");
 
@@ -96,7 +96,9 @@ const WordAndDefinition = ({ word, definition, root, parts_of_speech }) => {
     }, []);
 
     return (
-        <Col style={{ padding: "0px", marginLeft: "6px", marginRight: "6px", width: "fit-content" }}>
+        <Col
+            style={{ padding: "0px", marginLeft: "8px", marginRight: "8px" }}
+        >
             <OverlayTrigger
                 placement="top"
                 overlay={
@@ -123,11 +125,11 @@ const WordAndDefinition = ({ word, definition, root, parts_of_speech }) => {
                 <p
                     ref={ref}
                     role="presentation"
-                    className={verseWord}
                     onMouseEnter={() => setShowPopover(true)}
                     onMouseLeave={() => setShowPopover(false)}
                     onTouchStart={() => setShowPopover(true)}
                     onTouchMove={() => setShowPopover(false)}
+                    style={{ width: "fit-content", marginLeft: "auto", marginRight: "auto" }}
                 >
                     {translitWord}
                 </p>
@@ -135,7 +137,9 @@ const WordAndDefinition = ({ word, definition, root, parts_of_speech }) => {
             <p style={{
                 fontStyle: "italic", fontSize: "16px",
                 color: "rgb(175, 175, 175)",
-                width: "fit-content", marginLeft: "auto", marginRight: "auto"
+                width: "fit-content",
+                maxWidth: "200px",
+                marginLeft: "auto", marginRight: "auto",
             }}>
                 {definition}
             </p>
@@ -145,7 +149,7 @@ const WordAndDefinition = ({ word, definition, root, parts_of_speech }) => {
 
 const WordByWord = ({ wordByWord }) => {
     return (
-        <Container className={verseText} >
+        <Container className={verseText}>
             {wordByWord.map((line, index) =>
                 <Row
                     key={index}
@@ -180,7 +184,7 @@ const TabContents = (props) => {
 
     return (
         <Container style={{ padding: "0px" }}>
-            <Row style={{ marginLeft: "0px" }}>
+            <Row style={{ marginLeft: "0px", maxWidth: "100%" }}>
                 <Col sm="auto" style={{ position: "absolute", width: "fit-content", padding: "0px" }}>
                     <div style={overlayNumStyle}>
                         {props.num}
@@ -212,10 +216,9 @@ const VerseText = ({ num, text, wordByWord, location }) => {
                     </Nav.Link>
                     <Nav.Link to={url} as={Link} style={{
                         paddingLeft: "4px",
-                        paddingTop: "0px", paddingBottom: "0px",
-                        marginTop: "auto", marginBottom: "auto"
+                        paddingTop: "0px", paddingBottom: "4px",
                     }}>
-                        <FiLink size="18px" />
+                        <FiLink size="16px" />
                     </Nav.Link>
                 </Nav>
             </Row>
@@ -243,8 +246,10 @@ const Verse = ({ num, text, wordByWord, translation, location }) => {
     return (
         <OffsetAnchor id={`verse_${num}`} >
             <div style={{
+                maxWidth: "1100px", marginRight: "auto", marginLeft: "auto",
                 paddingBottom: "5px", marginBottom: "5px",
-                backgroundColor: isActive ? "rgb(65, 65, 75)" : "inherit"
+                backgroundColor: isActive ? "rgb(64, 64, 76)" : "inherit",
+                borderRadius: "7px",
             }}>
                 <VerseText num={num} text={text} wordByWord={wordByWord} location={location} />
                 <Translation translation={translation} />

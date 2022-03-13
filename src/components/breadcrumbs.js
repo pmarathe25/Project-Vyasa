@@ -31,7 +31,7 @@ const ResponsiveBreadcrumbs = ({ location }) => {
         (isMobile) ?
             <></>
             :
-            <Breadcrumb>
+            <Breadcrumb style={{ paddingBottom: "5px" }}>
                 {breadcrumbs}
             </Breadcrumb>
     )

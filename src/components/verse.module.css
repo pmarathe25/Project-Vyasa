@@ -31,13 +31,6 @@
     cursor: pointer;
 }
 
-.verse-word {
-    font-size: inherit;
-    width: fit-content;
-    margin-left: auto;
-    margin-right: auto;
-}
-
 .translation-accordion {
     background: rgb(84, 84, 85);
     color: white;

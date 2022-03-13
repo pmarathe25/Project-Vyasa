@@ -6,7 +6,7 @@ import { toUrl } from '../util/util'
 import AllVersesMenu from './allVersesMenu'
 import AutohidingNavbar from './autohidingNavbar'
 import ResponsiveBreadcrumbs from './breadcrumbs'
-import { brandLink, container, content, navLink } from './layout.module.css'
+import { brandLink, container, navLink } from './layout.module.css'
 import Seo from './seo'
 import { TransliterationModeSelect } from './translitModeSelect'
 
@@ -83,10 +83,10 @@ const Layout = ({ location, pageTitle, children }) => {
                     <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                 </Container>
             </AutohidingNavbar>
-            <main className={content}>
+            <Container>
                 <ResponsiveBreadcrumbs location={location} />
                 {children}
-            </main>
+            </Container>
         </div >
     )
 }

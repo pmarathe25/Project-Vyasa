@@ -31,9 +31,3 @@
   background: rgb(66, 66, 66);
   box-shadow: 2px 2px 1px rgb(46, 46, 46);
 }
-
-.content {
-  margin: auto;
-  width: 1100px;
-  max-width: 92%;
-}
