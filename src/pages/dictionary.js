@@ -97,6 +97,20 @@ const DictSection = ({ location, sectionName, wordComponents }) => {
         );
     }
 
+    let sectionColumns = [];
+    const maxColumns = 3;
+    const columnLength = entries.length / maxColumns + 1;
+    for (let col = 0; col < columnLength; col++) {
+        const start = col * columnLength;
+        const end = start + columnLength;
+        let columnEntries = entries.slice(start, end);
+        sectionColumns.push(
+            <Col>
+                {columnEntries}
+            </Col>
+        );
+    }
+
     return (
         <>
             <OffsetAnchor id={id}>
@@ -104,7 +118,9 @@ const DictSection = ({ location, sectionName, wordComponents }) => {
                     <h2>{translitSectionName}</h2>
                 </Link>
             </OffsetAnchor>
-            {entries}
+            <Row xs={1} lg={2} xxl={3} key={sectionName} style={{ marginBottom: "20px" }}>
+                {sectionColumns}
+            </Row>
         </>
     )
 }
@@ -151,13 +167,11 @@ const Dictionary = ({ location }) => {
             </Col>
         )
         sections.push(
-            <Col key={sectionName} style={{ marginBottom: "20px" }}>
-                <DictSection
-                    location={location}
-                    sectionName={sectionName}
-                    wordComponents={wordComponents}
-                />
-            </Col>
+            <DictSection
+                location={location}
+                sectionName={sectionName}
+                wordComponents={wordComponents}
+            />
         );
     };
 
@@ -167,9 +181,7 @@ const Dictionary = ({ location }) => {
                 <Row style={{ marginBottom: "20px" }}>
                     {sectionLinks}
                 </Row>
-                <Row xs={1} lg={2} xxl={3}>
-                    {sections}
-                </Row>
+                {sections}
             </Container>
         </Layout >
     );
