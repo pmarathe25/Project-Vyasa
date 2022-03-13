@@ -9,6 +9,7 @@ paauraan<ika (adj) of/relating to the Puranas
 paavaka (adj) pure, clear, bright, shining
 pada (n) a step, a word
 para (adj) distant, far, past, future, alien, other, enemy
+param (indc) greatly, completely, to a high degree
 parama (adj) highest, furthest, final, best, worst [para, sup]
 pari-!vr> to surround
 parvan (n) a knot, a division, a section
@@ -18,5 +19,7 @@ pra-!stu to praise, to begin, to commence
 pra-!vac to proclaim, to announce, to impart
 pun<ya (adj) auspicious, pleasant, holy [!pun<|VI]
 puraa (indc) at first, formerly, long ago
-puraan<a (adj) old, ancient, (as proper noun) refers to a class of ancient literary works covering a vast range of topics
+puraan<a (adj) old, ancient; (n) a class of ancient literary works covering a vast range of topics
+puru (adj) much, many, abundant
+purus<a (m) a man, a human, the soul, the supreme being
 putra (m) son

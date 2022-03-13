@@ -146,7 +146,9 @@ def process_parts_of_speech(
         else:
             check_parts(VERB_PARTS)
     elif sorted_parts:
-        is_adj = is_adj or any("(adj.)" in entry[0] for entry in dictionary_entries)
+        is_adj = is_adj or any(
+            "(adj.)" in definition for (_, definitions, _, _) in dictionary_entries for definition in definitions
+        )
         if "degree" in part_functions:
             if not is_adj:
                 show_error(f"Cannot use parts of speech: {sorted_parts['degree']} for non-adjectives!")
