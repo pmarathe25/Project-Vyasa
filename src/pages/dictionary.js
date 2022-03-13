@@ -59,7 +59,7 @@ const WordAndDefinitions = ({ location, word, definitions, roots, partsOfSpeeche
                 display: "flex",
             }}>
                 <Link to={`${baseUrl}#${id}`} style={{
-                    width: "fit-content", margin: "auto", padding: 0,
+                    width: "fit-content", marginTop: "5px", padding: 0,
                 }}>
                     <FiLink size="16px" style={{ paddingRight: "5px", marginBottom: "5px" }} />
                 </Link>
