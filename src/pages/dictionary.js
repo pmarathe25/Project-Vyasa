@@ -143,12 +143,12 @@ const Dictionary = ({ location }) => {
             </Col>
         )
         sections.push(
-            <OffsetAnchor id={toUrl(`section_${sectionName}`)}>
-                <Col key={sectionName}
-                    style={{
-                        width: "fit-content", minWidth: "50%", marginBottom: "20px"
-                    }}
-                >
+            <OffsetAnchor id={toUrl(`section_${sectionName}`)}
+                style={{
+                    width: "49%", paddingRight: "1%", marginBottom: "20px"
+                }}
+            >
+                <Col key={sectionName} >
                     <DictSection
                         location={location}
                         sectionName={sectionName}

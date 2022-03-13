@@ -7,7 +7,12 @@ const OffsetAnchor = (props) => {
     return (
         // We use this weird padding/margin thing to make the anchor link 
         // appear 100px from the top of the page when we scroll to it. 
-        <span id={props.id} style={{ paddingTop: "70px", marginTop: "-70px" }}>
+        <span id={props.id} style={{
+            paddingTop: "70px", marginTop: "-70px",
+            paddingLeft: "0px", paddingRight: "0px",
+            marginLeft: "0px", marginRight: "0px",
+            ...props.style
+        }}>
             {props.children}
         </span>
     )
