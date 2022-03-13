@@ -40,7 +40,7 @@ const VersesAccordion = ({ location, baseURL, chapter, setSideBarExpanded }) => 
                                         backgroundColor: location.hash === `#verse_${verse.num}` ? "rgb(81, 150, 214)" : "inherit",
                                     }}
                                 >
-                                    <p style={{ fontSize: "15.5px" }}>
+                                    <p>
                                         Verse {verse.num}
                                     </p>
                                 </ListGroup.Item>
