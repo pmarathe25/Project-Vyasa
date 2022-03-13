@@ -178,7 +178,7 @@ const TabContents = (props) => {
 
     const overlayNumStyle = {
         zIndex: 1,
-        color: isMobile ? "rgb(63, 63, 73)" : "rgb(78, 78, 88)",
+        color: isMobile ? "rgb(63, 63, 73)" : "rgb(80, 80, 92)",
         fontSize: "50px",
     };
 
@@ -248,7 +248,7 @@ const Verse = ({ num, text, wordByWord, translation, location }) => {
             <div style={{
                 maxWidth: "1100px", marginRight: "auto", marginLeft: "auto",
                 paddingBottom: "5px", marginBottom: "5px",
-                backgroundColor: isActive ? "rgb(64, 64, 76)" : "inherit",
+                backgroundColor: isActive ? "rgb(66, 66, 78)" : "inherit",
                 borderRadius: "7px",
             }}>
                 <VerseText num={num} text={text} wordByWord={wordByWord} location={location} />
