@@ -52,14 +52,13 @@ const WordAndDefinition = ({ location, word, definition, root, partsOfSpeech }) 
     return (
         <OffsetAnchor id={id}>
             <div style={{
-                marginBottom: "8px",
                 backgroundColor: isActive ? "var(--blue-highlight-color)" : "inherit",
                 borderRadius: isActive ? "5px" : "inherit",
             }}>
                 <Link to={`${baseUrl}#${id}`} style={{
-                    width: "fit-content", margin: "auto", padding: 0, backgroundColor: "inherit"
+                    width: "fit-content", margin: "auto", padding: 0,
                 }}>
-                    <FiLink size="14px" style={{ backgroundColor: "inherit", paddingRight: "2px" }} />
+                    <FiLink size="16px" style={{ paddingRight: "5px", marginBottom: "5px" }} />
                 </Link>
                 {wordElements}
                 <Definition
@@ -74,6 +73,9 @@ const WordAndDefinition = ({ location, word, definition, root, partsOfSpeech }) 
 
 const DictSection = ({ location, sectionName, wordComponents }) => {
     const translitSectionName = useTransliterate(sectionName);
+    const baseUrl = "/dictionary";
+    const id = toUrl(`section_${sectionName}`);
+    const url = toUrl(`${baseUrl}#${id}`);
 
     let entries = []
     for (const [word, definition, root, partsOfSpeech] of wordComponents.sort(
@@ -94,9 +96,11 @@ const DictSection = ({ location, sectionName, wordComponents }) => {
 
     return (
         <>
-            <Link to={toUrl(`/dictionary#section_${sectionName}`)}>
-                <h2>{translitSectionName}</h2>
-            </Link>
+            <OffsetAnchor id={id}>
+                <Link to={url}>
+                    <h2>{translitSectionName}</h2>
+                </Link>
+            </OffsetAnchor>
             {entries}
         </>
     )
@@ -104,6 +108,7 @@ const DictSection = ({ location, sectionName, wordComponents }) => {
 
 const SectionLink = ({ sectionName }) => {
     const translitSectionName = useTransliterate(sectionName);
+    const baseUrl = "/dictionary";
 
     const sectionLinkStyle = {
         fontSize: "22px", width: "fit-content",
@@ -111,7 +116,7 @@ const SectionLink = ({ sectionName }) => {
     };
 
     return (
-        <Link to={toUrl(`/dictionary#section_${sectionName}`)}>
+        <Link to={toUrl(`${baseUrl}#section_${sectionName}`)}>
             <p style={sectionLinkStyle}>
                 {translitSectionName}
             </p>
@@ -143,29 +148,23 @@ const Dictionary = ({ location }) => {
             </Col>
         )
         sections.push(
-            <OffsetAnchor id={toUrl(`section_${sectionName}`)}
-                style={{
-                    width: "49%", paddingRight: "1%", marginBottom: "20px"
-                }}
-            >
-                <Col key={sectionName} >
-                    <DictSection
-                        location={location}
-                        sectionName={sectionName}
-                        wordComponents={wordComponents}
-                    />
-                </Col>
-            </OffsetAnchor>
+            <Col key={sectionName} style={{ marginBottom: "20px" }}>
+                <DictSection
+                    location={location}
+                    sectionName={sectionName}
+                    wordComponents={wordComponents}
+                />
+            </Col>
         );
     };
 
     return (
         <Layout location={location} pageTitle="Dictionary">
-            <Container>
+            <Container fluid>
                 <Row style={{ marginBottom: "20px" }}>
                     {sectionLinks}
                 </Row>
-                <Row>
+                <Row xs={1} lg={2} xxl={3}>
                     {sections}
                 </Row>
             </Container>
