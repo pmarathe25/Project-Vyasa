@@ -193,7 +193,7 @@ def build_sandhied_text(words, translit_ruleset):
         ),
         (
             matches(["a", "aa"]),
-            matches(["a", "aa"], but_not=["ai", "aai", "au", "aau"]),
+            matches(["a", "aa"]),
             compose(
                 replace("end", [("aa", "a")]),
                 replace("start", [("aa", "a")]),
@@ -399,7 +399,7 @@ def main():
 
     os.makedirs(os.path.dirname(args.output), exist_ok=True)
     print(f"Writing to: {args.output}")
-    json.dump(processed, open(args.output, "w"), separators=(",", ":"))
+    json.dump(processed, open(args.output, "w"), separators=(",\n", ":"))
 
 
 if __name__ == "__main__":

@@ -452,4 +452,23 @@ vyaasasya (vyaasa, gen sing) of Vyasa
 adbhutakarman<a: (adbhuta+karman, gen sing m) of the doer (of) wonderful (deeds)
 
 "I will declare the holy thought(s) of Vyasa, the doer (of) wonderful (deeds),  
-the great-souled great sage, honored by everyone here."
+the great-souled great sage, honored by everyone here.
+
+26
+
+aacakhyu: (aa-!khyaa, 3 pl perf act ind) they told
+kavaya: (kavi, nom pl) the bards
+kaicit (ka+cit, nom pl) some
+sa.pratyaacaks<atai (sam-prati-aa-!caks<|II, 3 pl pres mid ind) they are teaching
+parai (para, nom pl m) others
+-
+aakhyaasyanti (aa-!khyaa, 3 pl fut act ind) they will tell
+tathaa in that manner, in the same way
+aiva indeed
+anyai (anya, nom pl m) others
+itihaasam (itihaasa, acc sing) history
+imam (ayam, acc sing) this
+bhuvi (bhuu, loc sing) on earth
+
+"Some bards told this history, others are teaching (it),
+others will tell (it) in the same way indeed on earth
