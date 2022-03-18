@@ -1,4 +1,5 @@
 !kath to tell (a story), to narrate, to relate
+!khyaa to tell
 !kr> to do, to make
 !kram to step, to walk
 !ks<ar to ooze, to flow, to melt away, to perish
@@ -10,6 +11,7 @@ kadaa (indc) when
 kamala (mn) lotus
 karman (n) act, action; () (in compound) one who acts or one who is acted upon
 kathaa (f) story, tale
+kavi (m) a poet, a bard, a singer
 kim (n) what?
 kr>s<n<a (adj) dark, black
 kr>ta (adj) done, made, accomplished [!kr>, perf pass part]

@@ -84,6 +84,10 @@ def transliteration_ruleset():
             ["ca", "aiva"],
             "caaiva",
         ),
+        (
+            ["tathaa", "aiva"],
+            "tathaaiva",
+        ),
         # Special 'm' rules
         (
             ["naram", "ca"],

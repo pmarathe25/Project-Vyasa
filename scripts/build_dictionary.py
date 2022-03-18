@@ -181,7 +181,7 @@ def main():
 
     validate_dictionary(out_dict)
     print(f"Writing dictionary to: {args.output}")
-    json.dump(out_dict, open(args.output, "w"), separators=(",", ":"))
+    json.dump(out_dict, open(args.output, "w"), separators=(",\n", ":"))
 
 
 if __name__ == "__main__":

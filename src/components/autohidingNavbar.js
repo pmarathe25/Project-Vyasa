@@ -21,12 +21,13 @@ const AutohidingNavbar = (props) => {
             return;
         }
 
-        const navbarSlideOffStyle = { top: -300, transition: "all 0.8s ease" };
-        const navbarSlideOnStyle = { top: 0, transition: "all 0.4s ease" };
+        const navbarSlideOffStyle = { top: -100, transition: "all 0.5s ease" };
+        const navbarSlideOnStyle = { top: 0, transition: "all 0.2s ease" };
 
         const onScroll = () => {
             setOffset([offset[1], window.pageYOffset]);
 
+            // Always enable the navbar when at the top of the page
             if (window.pageYOffset < (isMobile ? 25 : 60)) {
                 setNavbarStyle(navbarSlideOnStyle);
                 return;
@@ -36,7 +37,7 @@ const AutohidingNavbar = (props) => {
             if (delta > 0) {
                 setScrollDownTotal(scrollDownTotal + delta);
                 // In expanded mode, we do not want the navbar to go away!
-                if (scrollDownTotal > (isMobile ? 100 : 300) && !props.isExpanded) {
+                if (scrollDownTotal > 50 && !props.isExpanded) {
                     setNavbarStyle(navbarSlideOffStyle);
                 }
                 setScrollUpTotal(0);
@@ -59,7 +60,7 @@ const AutohidingNavbar = (props) => {
     // Navbar is not collapsible on non-mobile, so it's never considered "expanded"
     return (
         <Navbar bg="dark" variant="dark" sticky="top" expand="md"
-            style={{ minHeight: "70px", marginBottom: "20px", ...navbarStyle }}
+            style={{ marginBottom: "20px", ...navbarStyle }}
             onToggle={(expanded) => {
                 props.setIsExpanded(isMobile ? expanded : false);
             }}

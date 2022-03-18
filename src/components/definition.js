@@ -1,6 +1,6 @@
 import { Link } from 'gatsby';
 import * as React from 'react';
-import { Container, Row } from 'react-bootstrap';
+import { Container } from 'react-bootstrap';
 import { useTransliterate } from '../components/transliterationHook';
 import toUrl from '../util/util';
 
@@ -57,7 +57,7 @@ const Definition = ({ definitions, roots, partsOfSpeeches }) => {
         top: "50%",
         width: "fit-content",
         padding: 0,
-        marginLeft: "5px", marginTop: "auto", marginBottom: "auto",
+        marginTop: "auto", marginBottom: "auto",
         fontSize: "15px"
     };
 
@@ -69,19 +69,17 @@ const Definition = ({ definitions, roots, partsOfSpeeches }) => {
         const partsOfSpeech = partsOfSpeeches[index];
 
         definitionElements.push(
-            <Row>
-                <div style={style} key={definition}>
-                    <p style={style}>
-                        {definition}
-                    </p>
-                    <Root root={root} partsOfSpeech={partsOfSpeech} refStyle={style} />
-                </div>
-            </Row>
+            <div style={{ marginLeft: "4px", ...style }} key={definition}>
+                <p style={style}>
+                    {definition}
+                </p>
+                <Root root={root} partsOfSpeech={partsOfSpeech} refStyle={{ marginLeft: "4px", ...style }} />
+            </div>
         );
     }
 
     return (
-        <Container style={{ height: "fit-content", marginTop: "auto", marginBottom: "auto", padding: "0px", paddingLeft: "12px" }}>
+        <Container style={{ height: "fit-content", marginTop: "auto", marginBottom: "auto", padding: "0px", paddingLeft: "0px" }}>
             {definitionElements}
         </Container>
     );

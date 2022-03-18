@@ -31,7 +31,7 @@ kulapatai: (kula+pati, gen sing) of the head of the family
 dvaadas~avaars<ikai (dvaadas~a+vaars<ika, loc sing n) in the 12-yearly
 satrai (satra, loc sing) in the sacrifice
 -
-sukhaasiinaan (sukha+!aas, acc pl m pres mid part) the sitting blissfully
+sukhaasiinaan (sukha+!aas, acc pl m pres mid part) sitting blissfully
 abhyagacchat (abhi-!gam, 3 sing imp act ind) he approached
 brahmars<iin (brahman+r>s<i, acc pl) the Brahman sages
 sa.s~itavrataan (sa.s~ita+vrata, acc pl m) rigid-vowed (firm in their vows)
@@ -86,13 +86,13 @@ by the true ones (i.e. the sages), he asked (about) the progress of (their) asce
 5
 
 atha then
-tais<u (sa, loc pl) with them
-upavis<t<ais<u (upa-!vis~, loc pl m perf pass part) having sat down
-sarvais<u (sarva, loc pl m) all
+tais<u (sa, loc pl) at them
+upavis<t<ais<u (upa-!vis~, loc pl m perf pass part) at having sat down
+sarvais<u (sarva, loc pl m) at all
 aiva indeed
-tapasvis<u (tapasvin, loc pl) the ascetics
+tapasvis<u (tapasvin, loc pl) at the ascetics
 -
-nirdis<t<am (nirdis<t<a, acc sing n) the assigned
+nirdis<t<am (nirdis<t<a, acc sing n) assigned
 aasanam (aasana, acc sing) seat
 bhaijai (!bhaj, 3 sing perf mid ind) he took
 vinayaat (vinaya, abl sing) humbly
@@ -390,13 +390,13 @@ paapabhayaapahaam (paapa+bhaya+apaha, acc sing f) (which) dispels fear of evil, 
 saauti: (saauti, nom sing) Sauti
 uvaaca (!vac, 3 sing perf act ind) said
 -
-aadyam (aadya, acc sing m) the first
+aadyam (aadya, acc sing m) first
 purus<am (purus<a, acc sing) being
 iis~aanam (iis~aana, acc sing m) Ishana
 puruhuutam (puru+huuta, acc sing m) called upon by many
 purus<t<utam (puru+stuta, acc sing m) praised by many
 -
-r>tam properly
+r>tam (r>ta, acc sing m) true
 aikaaks<aram (aikaaks<ara, acc sing) the imperishable one
 brahma (brahman, acc sing) Brahma
 vyaktaavyaktam (vyakta+avyakta, acc sing m) perceptible and imperceptible
@@ -430,11 +430,11 @@ caraacaragurum (cara+acara+guru, acc sing m) the guru of moving and non-moving (
 harim (hari, acc sing) Hari, i.e. Vishnu/Krishna
 
 Sauti said:
-"Having bowed properly (to) the first being, Ishana, called upon by many, praised by many, 
-(who is) Brahma, the imperishable one, perceptible and imperceptible, eternal,
-the non-existent and existent one, who (is) every(thing), distinct from the existent and non-existent,
+"Having bowed (to) the first being, Ishana, called upon by many, praised by many, 
+the true imperishable one, (who is) Brahma, perceptible and imperceptible, eternal,
+the non-existent and existent one, who (is) distinct from every(thing) existent and non-existent,
 the creator of high and low (things/beings), ancient, completely undecaying,
-(who is) Vishnu, pleasing, auspicious, excellent, faultless, pure,
+pleasing, auspicious, (who is) Vishnu, excellent, faultless, pure,
 the lord of the senses, the guru of moving and non-moving (beings), (also called) Hari...
 
 25
@@ -452,4 +452,23 @@ vyaasasya (vyaasa, gen sing) of Vyasa
 adbhutakarman<a: (adbhuta+karman, gen sing m) of the doer (of) wonderful (deeds)
 
 "I will declare the holy thought(s) of Vyasa, the doer (of) wonderful (deeds),  
-the great-souled great sage, honored by everyone here."
+the great-souled great sage, honored by everyone here.
+
+26
+
+aacakhyu: (aa-!khyaa, 3 pl perf act ind) they told
+kavaya: (kavi, nom pl) the bards
+kaicit (ka+cit, nom pl) some
+sa.pratyaacaks<atai (sam-prati-aa-!caks<|II, 3 pl pres mid ind) they are teaching
+parai (para, nom pl m) others
+-
+aakhyaasyanti (aa-!khyaa, 3 pl fut act ind) they will tell
+tathaa in that manner, in the same way
+aiva indeed
+anyai (anya, nom pl m) others
+itihaasam (itihaasa, acc sing) history
+imam (ayam, acc sing) this
+bhuvi (bhuu, loc sing) on earth
+
+"Some bards told this history, others are teaching (it),
+others will tell (it) in the same way indeed on earth
