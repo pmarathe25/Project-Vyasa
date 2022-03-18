@@ -21,12 +21,13 @@ const AutohidingNavbar = (props) => {
             return;
         }
 
-        const navbarSlideOffStyle = { top: -50, transition: "all 0.4s ease" };
-        const navbarSlideOnStyle = { top: 0, transition: "all 0.4s ease" };
+        const navbarSlideOffStyle = { top: -100, transition: "all 0.5s ease" };
+        const navbarSlideOnStyle = { top: 0, transition: "all 0.2s ease" };
 
         const onScroll = () => {
             setOffset([offset[1], window.pageYOffset]);
 
+            // Always enable the navbar when at the top of the page
             if (window.pageYOffset < (isMobile ? 25 : 60)) {
                 setNavbarStyle(navbarSlideOnStyle);
                 return;
