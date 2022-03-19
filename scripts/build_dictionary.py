@@ -136,6 +136,9 @@ def main():
                                 is_adj=is_adj,
                             ).strip()
                         )
+
+                    if word.strip() in out_dict:
+                        raise RuntimeError("Duplicate definition of: {:} on line: {:}".format(word, line))
                     out_dict[word.strip()] = dict_entry
 
                 if not line:

@@ -1,9 +1,10 @@
+!dhr>|I to hold, to support; () (causative) to use, to utilize, to exploit, to possess
 !dis~ to point out, to show
 !dr>s~ to see
 dais~a (m) region, place, province [!dis~]
 daivii (f) goddess
 das~an (adj) ten
-dharma (m) right, justice, moral obligation, religious duty
+dharma (m) right, justice, moral obligation, religious duty [!dhr>|I]
 dharmya (adj) righteous, just, legitimate [dharma]
 didr>ks<u (adj) wanting to see [!dr>s~, des]
 dvaadas~a (adj) twelve (two + ten) [dvi+das~an]
@@ -11,3 +12,4 @@ dvaaipaayana (m) of/relating to an island, island-born [dviipa]
 dvi (adj) dual, two
 dviipa (mn) island, peninsula
 dvija (mn) twice-born, referring to a physical birth and then a spiritual birth [dvi+ja]
+dvijaati (adj) twice-born [dvi+jaati]; [dvija]

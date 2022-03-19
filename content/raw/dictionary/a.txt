@@ -18,7 +18,7 @@ aayus (n) life, vital power, vigor
 aayus<mat (adj) "life-possessing", healthy [aayus]
 abhi-!gam to approach, to go near
 abhi-!puuj to honor, to worship
-abhi-!vad to declare, to express, (causative) to address or salute reverently
+abhi-!vad to declare, to express; () (causative) to address or salute reverently
 abhis<aika (m) consecration, religious bathing [saika]
 acara (adj) not moving, immovable
 adbhuta (adj) extraordinary, wonderful
@@ -47,5 +47,4 @@ ava-!nam to bow down
 avara (adj) low, inferior, nearer
 avyakta (adj) not manifested, invisible, imperceptible [a+vyakta]
 avyaya (adj) imperishable, undecaying [a+vyaya]
-ayam (adj) this, that
-ayam (m) this
+ayam (m) this, that
