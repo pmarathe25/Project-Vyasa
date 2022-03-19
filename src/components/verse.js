@@ -55,7 +55,7 @@ const RootMeanings = ({ root }) => {
                         <Link to={`/dictionary#${toUrl(roots[index])}`} target="_blank"
                             style={{ color: "rgb(125, 155, 170)", height: "fit-content" }}
                         >
-                            <p style={{ fontSize: "20px", paddingRight: "5px", whiteSpace: "nowrap" }}>
+                            <p style={{ fontSize: "19px", paddingRight: "5px", whiteSpace: "nowrap" }}>
                                 {rootPar}
                             </p>
                         </Link>
