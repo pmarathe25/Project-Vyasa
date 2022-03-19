@@ -1,5 +1,6 @@
 !saiv to serve, to dwell, to honor
-!str> to spread out, to scatter
+!sthaa to stand
+!str> to spread out, to cover
 !stu to praise
 !s~a.s to approve of, to tell, to express
 !s~ru to hear
@@ -15,10 +16,12 @@ saa (f) she, this that
 saauti (m) Sauti, the narrator of the Mahabharata
 sadas (n) assembly, seat, residence
 saika (m) effusion, emission, offering
+sam-!aas to sit together, to assemble
 sam-!yu to unite, to join together, to contain
 sam-!yuj|VII to combine, to unite
 sam-pari-!kram to travel, to wander [!kram]
 sam-prati-aa-!caks<|II to explain, to teach
+samaasa (m) aggregation, union, succinctness, brevity
 samantapan~caka (n) Samantapancaka, a district of Kurukshetra
 samiipa (n) vicinity, proximity
 samyak (indc) together, rightly, properly, completely
@@ -29,7 +32,7 @@ sarva (adj) all
 sat (adj) being, existing, truth [!as, pres act part]
 satra (n) sacrifice
 sras<t<aara (m) creator
-stha () (in compound) standing, staying
+stha () (in compound) standing, staying [!sthaa]
 stuta (adj) praised, eulogized, celebrated, glorified [!stu, perf pass part]
 sukha (adj) pleasant
 supun<ya (adj) excellent, great religious/moral merit
