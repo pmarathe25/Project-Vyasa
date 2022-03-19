@@ -1,7 +1,7 @@
 .verse-text {
-    font-size: 20px;
+    font-size: 19px;
     color: rgb(252, 251, 250);
-    padding-bottom: 5px;
+    padding-bottom: 2px;
     white-space: pre-wrap;
     text-align: center;
     padding-left: 0px;
@@ -9,7 +9,7 @@
 }
 
 .translation-text {
-    font-size: 16.5px;
+    font-size: 16px;
     color: rgb(252, 251, 250);
     padding-bottom: 5px;
     padding-top: 5px;
@@ -19,10 +19,10 @@
 
 .verse-text-tab {
     color: #d1d1d1;
-    font-size: 15px;
+    font-size: 14px;
     padding: 10px;
-    padding-top: 5px;
-    padding-bottom: 5px;
+    padding-top: 3px;
+    padding-bottom: 3px;
     height: fit-content;
 }
 

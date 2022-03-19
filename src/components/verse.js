@@ -21,7 +21,11 @@ const Translation = ({ translation }) => {
                     onClick={() => { setOpen(!open) }}
                     aria-controls="collapsed-translation-text"
                     aria-expanded={open}
-                    style={{ borderRadius: "25px", fontSize: "12px", padding: "4px" }}
+                    style={{
+                        borderRadius: "4px", fontSize: "12.5px",
+                        paddingTop: "1px", paddingBottom: "1px",
+                        paddingLeft: "5px", paddingRight: "5px"
+                    }}
                 >
                     {open ? "Hide" : "Show"} Translation
                 </Button>
@@ -51,7 +55,7 @@ const RootMeanings = ({ root }) => {
                         <Link to={`/dictionary#${toUrl(roots[index])}`} target="_blank"
                             style={{ color: "rgb(125, 155, 170)", height: "fit-content" }}
                         >
-                            <p style={{ fontSize: "20px", paddingRight: "5px", whiteSpace: "nowrap" }}>
+                            <p style={{ fontSize: "19px", paddingRight: "5px", whiteSpace: "nowrap" }}>
                                 {rootPar}
                             </p>
                         </Link>
@@ -137,7 +141,7 @@ const WordAndDefinition = ({ word, definition, root, parts_of_speech }) => {
                 </p>
             </OverlayTrigger>
             <p style={{
-                fontStyle: "italic", fontSize: "16px",
+                fontStyle: "italic", fontSize: "15px",
                 color: "rgb(185, 185, 185)",
                 width: "fit-content",
                 maxWidth: "200px",
@@ -180,8 +184,8 @@ const TabContents = (props) => {
 
     const overlayNumStyle = {
         zIndex: 1,
-        color: isMobile ? "rgb(63, 63, 73)" : "rgb(80, 80, 92)",
-        fontSize: "50px",
+        color: isMobile ? "rgb(70, 70, 82)" : "rgb(85, 85, 97)",
+        fontSize: "30px",
     };
 
     return (
@@ -220,7 +224,7 @@ const VerseText = ({ num, text, wordByWord, location }) => {
                         paddingLeft: "4px",
                         paddingTop: "0px", paddingBottom: "0px",
                     }}>
-                        <FiLink size="16px" />
+                        <FiLink size="14px" />
                     </Nav.Link>
                 </Nav>
             </Row>

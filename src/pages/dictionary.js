@@ -16,7 +16,7 @@ const WordAndDefinitions = ({ location, word, definitions, roots, partsOfSpeeche
     const baseUrl = "/dictionary";
 
     const wordLinkStyle = {
-        fontSize: "22px", width: "fit-content",
+        fontSize: "19px", width: "fit-content",
         display: "inline", padding: 0,
         whiteSpace: "nowrap"
     };
