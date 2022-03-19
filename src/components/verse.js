@@ -141,7 +141,7 @@ const WordAndDefinition = ({ word, definition, root, parts_of_speech }) => {
                 </p>
             </OverlayTrigger>
             <p style={{
-                fontStyle: "italic", fontSize: "16px",
+                fontStyle: "italic", fontSize: "15px",
                 color: "rgb(185, 185, 185)",
                 width: "fit-content",
                 maxWidth: "200px",
