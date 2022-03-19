@@ -1,6 +1,6 @@
 import { Link } from 'gatsby';
 import * as React from 'react';
-import { Button, Col, Collapse, Container, Nav, OverlayTrigger, Popover, Row, Tab } from 'react-bootstrap';
+import { Col, Collapse, Container, Nav, OverlayTrigger, Popover, Row, Tab } from 'react-bootstrap';
 import { FiLink } from "react-icons/fi";
 import useIsMobile from "../util/responsiveness";
 import toUrl from '../util/util';
@@ -10,34 +10,6 @@ import { useTransliterate } from './transliterationHook';
 import { translationText, verseText, verseTextTab } from "./verse.module.css";
 
 const allWordsDict = require("../../content/generated/dictionary/all_words.json");
-
-const Translation = ({ translation }) => {
-    const [open, setOpen] = React.useState(false);
-
-    return (
-        <>
-            <div style={{ width: "max-content", margin: "auto", padding: 0 }}>
-                <Button size="sm"
-                    onClick={() => { setOpen(!open) }}
-                    aria-controls="collapsed-translation-text"
-                    aria-expanded={open}
-                    style={{
-                        borderRadius: "4px", fontSize: "12.5px",
-                        paddingTop: "1px", paddingBottom: "1px",
-                        paddingLeft: "5px", paddingRight: "5px"
-                    }}
-                >
-                    {open ? "Hide" : "Show"} Translation
-                </Button>
-            </div>
-            <Collapse in={open}>
-                <p className={translationText}>
-                    {translation}
-                </p>
-            </Collapse>
-        </>
-    )
-}
 
 const RootMeanings = ({ root }) => {
     const roots = root.split("+");
@@ -184,7 +156,7 @@ const TabContents = (props) => {
 
     const overlayNumStyle = {
         zIndex: 1,
-        color: isMobile ? "rgb(70, 70, 82)" : "rgb(85, 85, 97)",
+        color: isMobile ? "rgb(72, 72, 85)" : "rgb(88, 88, 105)",
         fontSize: "30px",
     };
 
@@ -204,25 +176,46 @@ const TabContents = (props) => {
     )
 }
 
-const VerseText = ({ num, text, wordByWord, location }) => {
+
+const Translation = ({ show, translation }) => {
+    return (
+        <Collapse in={show}>
+            <p className={translationText}>
+                {translation}
+            </p>
+        </Collapse>
+    )
+}
+
+const VerseText = ({ num, text, wordByWord, location, translation }) => {
     text = useTransliterate(text);
     const url = toUrl(`${location.pathname}#verse_${num}`);
+    const [show, setShow] = React.useState(false);
+
+    const tabButtonStyle = { borderRadius: "4px 4px 0px 0px", color: "rgb(225, 225, 225)" };
 
     return (
         <Tab.Container defaultActiveKey="text" id={"verse-text-tabs-" + num}>
             <Row style={{ width: "fit-content", marginLeft: "0px" }}>
                 <Nav variant="pills"
-                    style={{ borderBottom: "2px solid rgb(80, 80, 80)", marginBottom: "3px" }}
+                    style={{
+                        borderBottom: "1px solid rgb(80, 80, 80)",
+                        marginBottom: "3px"
+                    }}
                 >
-                    <Nav.Link className={verseTextTab} eventKey="text">
-                        Sanskrit Text
+                    <Nav.Link className={verseTextTab} eventKey="text" style={tabButtonStyle}>
+                        Text
                     </Nav.Link>
-                    <Nav.Link className={verseTextTab} eventKey="word-by-word">
-                        Word-by-word Analysis
+                    <Nav.Link className={verseTextTab} eventKey="word-by-word" style={tabButtonStyle}>
+                        Word-by-word
+                    </Nav.Link>
+                    <Nav.Link className={verseTextTab} onClick={() => { setShow(!show) }} style={tabButtonStyle}>
+                        {show ? "Hide" : "Show"} Translation
                     </Nav.Link>
                     <Nav.Link to={url} as={Link} style={{
                         paddingLeft: "4px",
                         paddingTop: "0px", paddingBottom: "0px",
+                        ...tabButtonStyle
                     }}>
                         <FiLink size="14px" />
                     </Nav.Link>
@@ -241,8 +234,9 @@ const VerseText = ({ num, text, wordByWord, location }) => {
                         <WordByWord wordByWord={wordByWord} />
                     </TabContents>
                 </Tab.Pane>
+                <Translation translation={translation} show={show} />
             </Tab.Content>
-        </Tab.Container>
+        </Tab.Container >
     )
 }
 
@@ -252,13 +246,14 @@ const Verse = ({ num, text, wordByWord, translation, location }) => {
     return (
         <OffsetAnchor id={`verse_${num}`} >
             <div style={{
-                maxWidth: "1100px", marginRight: "auto", marginLeft: "auto",
-                paddingBottom: "5px", marginBottom: "5px",
+                maxWidth: "950px",
+                marginRight: "auto", marginLeft: "auto",
+                marginBottom: "5px",
+                paddingBottom: "5px",
                 backgroundColor: isActive ? "rgb(66, 66, 78)" : "inherit",
                 borderRadius: "7px",
             }}>
-                <VerseText num={num} text={text} wordByWord={wordByWord} location={location} />
-                <Translation translation={translation} />
+                <VerseText num={num} text={text} wordByWord={wordByWord} location={location} translation={translation} />
             </div>
         </OffsetAnchor>
     )

@@ -49,5 +49,5 @@ Each word is broken down into its roots, which can be clicked to go to the corre
 
 ## Contributing
 
-If you'd like to contribute to this project, there are several ways to do so!
+If you'd like to contribute to this project, there are several ways to do so;
 See [CONTRIBUTING.md](./CONTRIBUTING.md) for details.
