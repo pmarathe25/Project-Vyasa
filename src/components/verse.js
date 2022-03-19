@@ -209,7 +209,11 @@ const VerseText = ({ num, text, wordByWord, location, translation }) => {
                     <Nav.Link className={verseTextTab} eventKey="word-by-word" style={tabButtonStyle}>
                         Word-by-word
                     </Nav.Link>
-                    <Nav.Link className={verseTextTab} onClick={() => { setShow(!show) }} style={tabButtonStyle}>
+                    <Nav.Link className={verseTextTab} onClick={() => { setShow(!show) }}
+                        style={{
+                            backgroundColor: show ? "rgb(85, 85, 80)" : "inherit",
+                            ...tabButtonStyle
+                        }}>
                         {show ? "Hide" : "Show"} Translation
                     </Nav.Link>
                     <Nav.Link to={url} as={Link} style={{
