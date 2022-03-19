@@ -192,24 +192,30 @@ const VerseText = ({ num, text, wordByWord, location, translation }) => {
     const url = toUrl(`${location.pathname}#verse_${num}`);
     const [show, setShow] = React.useState(false);
 
+    const tabButtonStyle = { borderRadius: "4px 4px 0px 0px", color: "rgb(225, 225, 225)" };
+
     return (
         <Tab.Container defaultActiveKey="text" id={"verse-text-tabs-" + num}>
             <Row style={{ width: "fit-content", marginLeft: "0px" }}>
                 <Nav variant="pills"
-                    style={{ borderBottom: "2px solid rgb(80, 80, 80)", marginBottom: "3px" }}
+                    style={{
+                        borderBottom: "1px solid rgb(80, 80, 80)",
+                        marginBottom: "3px"
+                    }}
                 >
-                    <Nav.Link className={verseTextTab} eventKey="text">
+                    <Nav.Link className={verseTextTab} eventKey="text" style={tabButtonStyle}>
                         Text
                     </Nav.Link>
-                    <Nav.Link className={verseTextTab} eventKey="word-by-word">
+                    <Nav.Link className={verseTextTab} eventKey="word-by-word" style={tabButtonStyle}>
                         Word-by-word
                     </Nav.Link>
-                    <Nav.Link className={verseTextTab} onClick={() => { setShow(!show) }} style={{ color: "#d1d1d1" }} >
+                    <Nav.Link className={verseTextTab} onClick={() => { setShow(!show) }} style={tabButtonStyle}>
                         {show ? "Hide" : "Show"} Translation
                     </Nav.Link>
                     <Nav.Link to={url} as={Link} style={{
                         paddingLeft: "4px",
                         paddingTop: "0px", paddingBottom: "0px",
+                        ...tabButtonStyle
                     }}>
                         <FiLink size="14px" />
                     </Nav.Link>
@@ -230,7 +236,7 @@ const VerseText = ({ num, text, wordByWord, location, translation }) => {
                 </Tab.Pane>
                 <Translation translation={translation} show={show} />
             </Tab.Content>
-        </Tab.Container>
+        </Tab.Container >
     )
 }
 
