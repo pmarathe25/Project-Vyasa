@@ -20,15 +20,15 @@
 .verse-text-tab {
     color: #d1d1d1;
     font-size: 14px;
-    padding: 10px;
-    padding-top: 3px;
-    padding-bottom: 3px;
-    height: fit-content;
+    padding-left: 7px;
+    padding-right: 7px;
+    padding-top: 4px;
+    padding-bottom: 4px;
 }
 
 .verse-text-tab:hover {
     background: #646464;
-    color: #ffffff;
+    color: #d1d1d1;
     cursor: pointer;
 }
 
