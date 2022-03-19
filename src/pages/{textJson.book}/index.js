@@ -8,7 +8,7 @@ const ChapterLink = ({ chapter }) => {
     return (
         <Link to={toUrl(chapter)} style={{ textDecoration: "none" }}>
             <ListGroup.Item variant="dark" eventKey={chapter}>
-                <p style={{ fontSize: "20px" }}>
+                <p style={{ fontSize: "17px" }}>
                     {chapter}
                 </p>
             </ListGroup.Item>

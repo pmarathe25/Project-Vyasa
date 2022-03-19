@@ -1,15 +1,12 @@
 import { Link } from 'gatsby'
 import * as React from 'react'
 import { Breadcrumb } from 'react-bootstrap'
-import useIsMobile from '../util/responsiveness'
 import { titleCaseFromUrl } from '../util/util'
 
 
 const ResponsiveBreadcrumbs = ({ location }) => {
-    const isMobile = useIsMobile()
-
     let breadcrumbStyle = {
-        fontSize: "16px"
+        fontSize: "17px"
     };
     let breadcrumbs = [
         <Breadcrumb.Item key="/" linkProps={{ "to": "/" }} linkAs={Link} style={breadcrumbStyle}>
@@ -28,12 +25,12 @@ const ResponsiveBreadcrumbs = ({ location }) => {
     }
 
     return (
-        (isMobile) ?
-            <></>
-            :
-            <Breadcrumb style={{ paddingBottom: "5px" }}>
-                {breadcrumbs}
-            </Breadcrumb>
+        <Breadcrumb style={{
+            paddingBottom: "5px", width: "fit-content",
+            marginLeft: "auto", marginRight: "auto"
+        }}>
+            {breadcrumbs}
+        </Breadcrumb>
     )
 }
 

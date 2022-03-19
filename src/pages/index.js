@@ -8,7 +8,7 @@ const BookLink = ({ book }) => {
     return (
         <Link to={toUrl(book)} style={{ textDecoration: "none" }}>
             <ListGroup.Item variant="dark" eventKey={book}>
-                <p style={{ fontSize: "20px" }}>
+                <p style={{ fontSize: "17px" }}>
                     {book}
                 </p>
             </ListGroup.Item>
@@ -27,7 +27,7 @@ const Index = ({ location, data }) => {
                 If this is your first time here, you may want to check out
                 the <Link to={toUrl("/about")}>About</Link> page.
                 Otherwise, click one of the rows below or use the <b>All Verses</b> button in the top-right
-                to get started!
+                to get started.
             </p>
             <ListGroup>
                 {

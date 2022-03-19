@@ -240,8 +240,10 @@ const Verse = ({ num, text, wordByWord, translation, location }) => {
     return (
         <OffsetAnchor id={`verse_${num}`} >
             <div style={{
-                maxWidth: "1000px", marginRight: "auto", marginLeft: "auto",
-                paddingBottom: "5px", marginBottom: "5px",
+                maxWidth: "950px",
+                marginRight: "auto", marginLeft: "auto",
+                marginBottom: "5px",
+                paddingBottom: "5px",
                 backgroundColor: isActive ? "rgb(66, 66, 78)" : "inherit",
                 borderRadius: "7px",
             }}>
