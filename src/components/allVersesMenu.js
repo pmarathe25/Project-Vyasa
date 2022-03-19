@@ -12,7 +12,7 @@ const AllVersesMenu = ({ location }) => {
                 className={navSideBarToggle}
                 onClick={() => setSideBarExpanded(true)}
             >
-                <p style={{ fontVariant: "small-caps", fontSize: "17px" }}>
+                <p style={{ fontVariant: "small-caps", fontSize: "15px" }}>
                     All Verses
                 </p>
             </Button>

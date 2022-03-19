@@ -39,12 +39,12 @@ export const TransliterationModeSelect = ({ navExpanded }) => {
                         vertical={false}
                     >
                         <ToggleButton id="translit-select-dev" value={0} size="sm">
-                            <p style={{ fontSize: "18px", minWidth: "80px" }}>
+                            <p style={{ fontSize: "16px" }}>
                                 {devanagari}
                             </p>
                         </ToggleButton>
                         <ToggleButton id="translit-select-iast" value={1} size="sm">
-                            <p style={{ fontSize: "18px" }}>
+                            <p style={{ fontSize: "15px" }}>
                                 IAST
                             </p>
                         </ToggleButton>
