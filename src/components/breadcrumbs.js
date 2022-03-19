@@ -6,7 +6,7 @@ import { titleCaseFromUrl } from '../util/util'
 
 const ResponsiveBreadcrumbs = ({ location }) => {
     let breadcrumbStyle = {
-        fontSize: "17px"
+        fontSize: "16px"
     };
     let breadcrumbs = [
         <Breadcrumb.Item key="/" linkProps={{ "to": "/" }} linkAs={Link} style={breadcrumbStyle}>
