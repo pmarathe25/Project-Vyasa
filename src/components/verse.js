@@ -246,14 +246,14 @@ const VerseText = ({ num, text, wordByWord, location, translation }) => {
 
 const Verse = ({ num, text, wordByWord, translation, location }) => {
     const isActive = location.hash === `#verse_${num}`;
+    const isMobile = useIsMobile();
 
     return (
         <OffsetAnchor id={`verse_${num}`} >
             <div style={{
                 maxWidth: "950px",
                 marginRight: "auto", marginLeft: "auto",
-                marginBottom: "12px",
-                paddingBottom: "5px",
+                marginBottom: isMobile ? "15px" : "2px",
                 backgroundColor: isActive ? "rgb(66, 66, 78)" : "inherit",
                 borderRadius: "7px",
             }}>
