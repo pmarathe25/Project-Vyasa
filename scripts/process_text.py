@@ -165,6 +165,11 @@ def build_sandhied_text(words, translit_ruleset):
         (matches(["m"]), matches(VOWELS, invert=True), replace("end", [("m", ".")])),
         # Special rules for t
         (matches(["t"]), matches(keys_of("dental-semivowels")), replace("end", [("t", "l")])),
+        (
+            matches(["t"]),
+            matches(keys_of("nasal-dental-consonants", "nasal-bilabial-consonants")),
+            replace("end", [("t", "n")]),
+        ),
         (matches(["t"]), matches(["c"]), replace("end", [("t", "c")])),
         (matches(["t"]), matches(["j"]), replace("end", [("t", "j")])),
         (matches(["t"]), matches(keys_of("unvoiced-retroflex-consonants")), make_retroflex),
@@ -182,7 +187,7 @@ def build_sandhied_text(words, translit_ruleset):
         (matches(["n"]), matches(keys_of("unvoiced-dental-consonants")), replace("end", [("n", ".s")])),
         # Vowels + Vowels
         (
-            matches(["u"], but_not=["au", "aau"]),
+            matches(["u", "aau"], but_not=["au"]),
             matches(VOWELS, but_not=["u"]),
             replace("end", [("uu", "v"), ("u", "v")]),
         ),
@@ -199,11 +204,16 @@ def build_sandhied_text(words, translit_ruleset):
                 replace("start", [("aa", "a")]),
             ),
         ),
+        (
+            matches(["ai", "au"], but_not=["aai", "aau"]),
+            matches(["a"], but_not=["aa", "ai", "au"]),
+            replace("start", [("a", "'")]),
+        ),
     ]
 
     # Next we do a second pass to merge words
     MERGE_CONDITIONS = [
-        (matches(VOWELS, but_not=["ai"]), matches(VOWELS)),
+        (matches(VOWELS, but_not=["ai", "aai", "au", "aau"]), matches(VOWELS)),
         (matches(CONSONANTS + SEMI_VOWELS), matches(VOWELS + CONSONANTS + SEMI_VOWELS)),
     ]
 
@@ -222,7 +232,9 @@ def build_sandhied_text(words, translit_ruleset):
         (matches(["a:"]), matches(VOWELS), replace("end", [("a:", "a")])),
         (matches(["a:"]), matches(ALL_VOICED), replace("end", [("a:", "au")])),
         # Vowel rules
+        (matches(["aai"]), matches(VOWELS), replace("end", [("aai", "aa")])),
         (matches(["ai"]), matches(VOWELS, but_not=["a"]), replace("end", [("ai", "a")])),
+        (matches(["au"], but_not=["aau"]), matches(VOWELS, but_not=["a"]), replace("end", [("au", "a")])),
     ]
 
     def apply_sandhi(words, conditions):

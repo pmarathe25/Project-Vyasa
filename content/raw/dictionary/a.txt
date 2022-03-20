@@ -4,15 +4,18 @@
 a () (as prefix) negates/inverts the meaning of a word
 aa-!gam to come
 aa-!khyaa to communicate, to inform, to declare
+aa-!vr> to cover, to hide, to conceal, to surround
 aadi (m) beginning
 aadya (adj) first [aadi]
 aajn~aa (f) order, command
 aakhyaana (n) communication, story, tale, narrative
+aalauka (m) sight, vision, light, luster [lauka]
 aaran<ya (n) forest
 aasana (n) posture, seat
 aas~rama (mn) indefatigable, asylum, hermitage
 aas~rayam (mn) sheltered
 aatman (n) soul, essence
+aavr>ta (adj) covered, enveloped [aa-!vr>, perf pass part]
 aayatana (n) altar, resting place, sanctuary
 aayus (n) life, vital power, vigor
 aayus<mat (adj) "life-possessing", healthy [aayus]
@@ -33,9 +36,11 @@ aiva (indc) just so, exactly so, indeed (places emphasis on the preceding word)
 aivam (indc) thus, in this way
 aks<a (n) (in compound) eye
 aks<ara (adj) imperishable, lit. "not melting away" [a+!ks<ar]; (n) letter, syllable
+aks<aya (adj) undecaying, indestructible [a+ks<aya]
 alam (indc) enough, sufficient, adequate
 alam-!kr> to adorn, to decorate, to embellish [alam]
 an () (as prefix) negates/inverts the meaning of a word
+an<d<a (n) egg
 anagha (adj) sinless, faultless [an+agha]
 anu-!i|I to follow, to go after, to seek
 anu-pra-!aap to reach

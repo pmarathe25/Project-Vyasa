@@ -44,6 +44,7 @@ PARTS_OF_SPEECH_MAPPING = OrderedDict(
         ("pres", ("present", "tense")),
         ("perf", ("perfect", "tense")),
         ("imp", ("imperfect", "tense")),
+        ("aor", ("aorist", "tense")),
         ("fut", ("future", "tense")),
         ("act", ("active", "voice")),
         ("pass", ("passive", "voice")),
