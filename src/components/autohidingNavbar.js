@@ -60,7 +60,11 @@ const AutohidingNavbar = (props) => {
     // Navbar is not collapsible on non-mobile, so it's never considered "expanded"
     return (
         <Navbar bg="dark" variant="dark" sticky="top" expand="md"
-            style={{ marginBottom: "20px", ...navbarStyle }}
+            style={{
+                marginBottom: "20px",
+                boxShadow: "0px 3px 3px rgb(45, 45, 55)",
+                ...navbarStyle
+            }}
             onToggle={(expanded) => {
                 props.setIsExpanded(isMobile ? expanded : false);
             }}
