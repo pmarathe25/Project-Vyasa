@@ -281,7 +281,7 @@ exception that it **cannot** include compounds in *split* form.
 Instead, they should be provided as a single word with their components
 mentioned in the reference field:
 ```
-dvija (mn) twice-born, referring to a physical birth and then a spiritual birth [dvi+ja]
+dvija (adj) twice-born, referring to a physical birth and then a spiritual birth [dvi+ja]
 ```
 
 The `detail` field is only required for the following types:

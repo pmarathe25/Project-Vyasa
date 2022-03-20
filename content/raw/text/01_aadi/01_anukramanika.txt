@@ -274,7 +274,7 @@ svasthaa: (svastha, voc pl m) self-abiding
 braviimi (!bruu, 1 sing pres act ind) I say
 kim (kim, acc sing) what
 aham (aham, nom sing) I
-dvijaa: (dvija, voc pl) twice-born
+dvijaa: (dvija, voc pl m) twice-born
 
 "Wanting to see (you) I have come here, in your presence, from that (place). 
 (You who are) all full of life and indeed seem like Brahma to me, 
