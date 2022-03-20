@@ -71,7 +71,7 @@ const Layout = ({ location, pageTitle, children }) => {
                                     target="_blank"
                                     rel="noreferrer"
                                 >
-                                    <GoMarkGithub size={35} />
+                                    <GoMarkGithub size={30} />
                                 </a>
                             </TopBarNavItem>
                         </Nav>

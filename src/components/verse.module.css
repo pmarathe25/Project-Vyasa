@@ -18,11 +18,11 @@
 }
 
 .verse-text-tab {
-    font-size: 14.5px;
+    font-size: 15px;
     padding-left: 7px;
     padding-right: 7px;
-    padding-top: 3px;
-    padding-bottom: 3px;
+    padding-top: 4px;
+    padding-bottom: 4px;
 }
 
 .verse-text-tab:hover {

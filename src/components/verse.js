@@ -199,8 +199,8 @@ const VerseText = ({ num, text, wordByWord, location, translation }) => {
             <Row style={{ width: "fit-content", marginLeft: "0px" }}>
                 <Nav variant="pills"
                     style={{
-                        borderBottom: "1px solid rgb(80, 80, 80)",
-                        marginBottom: "3px"
+                        borderBottom: "1px solid rgb(75, 75, 75)",
+                        marginBottom: "4px"
                     }}
                 >
                     <Nav.Link className={verseTextTab} eventKey="text" style={tabButtonStyle}>
@@ -252,7 +252,7 @@ const Verse = ({ num, text, wordByWord, translation, location }) => {
             <div style={{
                 maxWidth: "950px",
                 marginRight: "auto", marginLeft: "auto",
-                marginBottom: "5px",
+                marginBottom: "12px",
                 paddingBottom: "5px",
                 backgroundColor: isActive ? "rgb(66, 66, 78)" : "inherit",
                 borderRadius: "7px",
