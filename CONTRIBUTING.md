@@ -176,8 +176,13 @@ The format must conform to the following rules:
 - Sections must be separated by a single blank line. 
 
 - For each verse, the first section must indicate the verse number(s). 
+
   If the section includes more than one verse, the range of verses may be 
   specified using a dash to separate the start and end verse numbers, e.g. `1-3`.
+
+  If the section includes a portion of a verse, use a dot, i.e. `.` to indicate
+  how many lines it includes. For example, if a section includes the entirety of verse
+  1 and the first line of verse 2, use `1-2.1`.
 
 - There must not be any blank lines within a section
 
@@ -232,7 +237,7 @@ Valid entries are as follows:
 - `nom/voc/acc/inst/dat/abl/gen/loc`: Nominative/Vocative/Accusative/Instrumental/Dative/Ablative/Genitive/Locative case
 - `1/2/3`: 1st/2nd/3rd person
 - `sing/du/pl`: Singular/Dual/Plural number
-- `pres/perf/imp/fut`: Present/Perfect/Imperfect/Future tense
+- `pres/perf/imp/aor/fut`: Present/Perfect/Imperfect/Aorist/Future tense
 - `act/pass/mid`: Active/Passive/Middle voice
 - `caus/des`: Causative/Desiderative form
 - `ind/pot/impv`: Indicative/Potential/Imperative mood

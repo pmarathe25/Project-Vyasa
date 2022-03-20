@@ -88,6 +88,30 @@ def transliteration_ruleset():
             ["tathaa", "aiva"],
             "tathaaiva",
         ),
+        (
+            ["prabhai", "asmin"],
+            "prabhai 'smin",
+        ),
+        (
+            ["prabhai", "aadi"],
+            "prabha aadi",
+        ),
+        (
+            ["prabhaai", "asmin"],
+            "prabhaa asmin",
+        ),
+        (
+            ["prabhau", "asmin"],
+            "prabhau 'smin",
+        ),
+        (
+            ["prabhau", "aadi"],
+            "prabha aadi",
+        ),
+        (
+            ["prabhaau", "asmin"],
+            "prabhaavasmin",
+        ),
         # Special 'm' rules
         (
             ["naram", "ca"],
@@ -113,6 +137,14 @@ def transliteration_ruleset():
         (
             ["tat", "lauka"],
             "tallauka",
+        ),
+        (
+            ["tat", "ma"],
+            "tanma",
+        ),
+        (
+            ["tat", "na"],
+            "tanna",
         ),
         # Consonant + Vowel
         (
