@@ -1,6 +1,7 @@
 !vac to speak, to tell, to say
 !vad to say, to speak
 !vas to live, to dwell
+!vid|II to know, to understand, to perceive
 !vis~ to enter
 !vr> to cover
 !vr>dh to increase
@@ -19,6 +20,7 @@ vi-!hr> to distribute, to dispose, to set
 vi-!str> to stretch, to scatter
 vicitra (adj) strange, wonderful, varied
 vidhivat (indc) according to rule, duty
+vidvas (adj) one who knows, wise, learned, lit. "having understood" [!vid|II, perf act part]
 vinaya (mn) humility
 vis<n<u (m) Vishnu, one of the principal Hindu deities
 vistara (adj) extensive, long [vi-!str>]
@@ -27,7 +29,7 @@ vis~raanta (mn) rested, taking rest
 vis~va (adj) all, every, whole, universal, all-pervading
 vividha (adj) manifold, varied
 vr>ddhi (f) growth, increase [!vr>dh]
-vr>tta (adj) occurred, happened, turned, set in motion [!vr>t, perf pass part]
+vr>tta (adj) occurred, happened, turned, set in motion [!vr>t, perf pass part]; (n) poetic meter containing a fixed number of syllables
 vrata (n) law, vow
 vyaasa (m) Vyasa, the author of the Mahabharata
 vyakta (adj) manifested, visible, perceptible

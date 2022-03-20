@@ -182,6 +182,8 @@ def main():
         with open(path, "w") as f:
             f.write("\n".join(sorted_lines))
 
+    # Sort dictionary to keep diffs smaller.
+    out_dict = dict(sorted(out_dict.items()))
     validate_dictionary(out_dict)
     print(f"Writing dictionary to: {args.output}")
     json.dump(out_dict, open(args.output, "w"), separators=(",\n", ":"))
