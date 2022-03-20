@@ -17,12 +17,14 @@ saauti (m) Sauti, the narrator of the Mahabharata
 sadas (n) assembly, seat, residence
 saika (m) effusion, emission, offering
 sam-!aas to sit together, to assemble
+sam-!i|I to go or come together, to meet
 sam-!yu to unite, to join together, to contain
 sam-!yuj|VII to combine, to unite
 sam-pari-!kram to travel, to wander [!kram]
 sam-prati-aa-!caks<|II to explain, to teach
 samaasa (m) aggregation, union, [sam-!aas]; (m) succinctness, brevity, conciseness
 samantapan~caka (n) Samantapancaka, a district of Kurukshetra
+samaya (m) agreement, engagement [sam-!i|I]; (m) a speech, a declaration
 samiipa (n) vicinity, proximity
 samyak (indc) together, rightly, properly, completely
 sanaatana (adj) eternal, perpetual, everlasting
@@ -44,4 +46,6 @@ sva one's own, one's self
 svastha (adj) self-abiding, self-sufficient, independent [sva+stha]
 s~aastra (n) an order, teaching, scientific treatise, religious scripture
 s~aaunaka (m) Shaunaka, a Sanskrit grammarian
+s~abda (m) word
+s~ubha (adj) splendid, bright, pleasant, eminent
 s~uci (adj) gleaming, shining, radiant, pure
