@@ -4,8 +4,14 @@ import { Container, Row } from 'react-bootstrap';
 import { useTransliterate } from '../components/transliterationHook';
 import toUrl from '../util/util';
 
-const Root = ({ root, partsOfSpeech, rootStyle }) => {
-    const rootParts = root.split("+");
+const style = {
+    color: "rgb(250, 250, 250)",
+    fontStyle: "italic",
+    padding: 0,
+    fontSize: "15px",
+};
+
+const Root = ({ root, partsOfSpeech }) => {
     const translitRootParts = useTransliterate(root).split("+");
 
     if (!root) {
@@ -13,9 +19,10 @@ const Root = ({ root, partsOfSpeech, rootStyle }) => {
     }
 
     let refLinks = [];
+    const rootParts = root.split("+");
     for (let index in translitRootParts) {
         refLinks.push(
-            <div style={rootStyle} key={index}>
+            <div style={{ marginLeft: "4px", display: "inline-block", ...style }} key={index}>
                 {(index > 0 ? ", " : "")}
                 <Link
                     to={`/dictionary#${toUrl(rootParts[index])}`}
@@ -29,7 +36,7 @@ const Root = ({ root, partsOfSpeech, rootStyle }) => {
     }
 
     return (
-        <div style={rootStyle}>
+        <div style={{ marginLeft: "4px", display: "inline-block", ...style }}>
             {
                 partsOfSpeech
                     ?
@@ -50,13 +57,6 @@ const Root = ({ root, partsOfSpeech, rootStyle }) => {
 }
 
 const Definition = ({ definitions, roots, partsOfSpeeches }) => {
-    const style = {
-        color: "rgb(250, 250, 250)",
-        fontStyle: "italic",
-        padding: 0,
-        fontSize: "15px",
-    };
-
     let definitionElements = [];
 
     for (let index = 0; index < definitions.length; ++index) {
@@ -71,7 +71,7 @@ const Definition = ({ definitions, roots, partsOfSpeeches }) => {
                     ...style
                 }}>
                 {definition}
-                <Root root={root} partsOfSpeech={partsOfSpeech} rootStyle={{ marginLeft: "4px", display: "inline-block", ...style }} />
+                <Root root={root} partsOfSpeech={partsOfSpeech} />
             </Row>
         );
     }

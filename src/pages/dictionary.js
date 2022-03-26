@@ -1,7 +1,6 @@
 import { Link } from 'gatsby'
 import * as React from 'react'
 import { Col, Row } from 'react-bootstrap'
-import { FiLink } from "react-icons/fi"
 import Definition from '../components/definition'
 import Layout from '../components/layout'
 import OffsetAnchor from '../components/offsetAnchor'
@@ -53,11 +52,6 @@ const WordAndDefinitions = ({ location, word, definitions, roots, partsOfSpeeche
                 paddingBottom: "5px",
                 display: "flex",
             }}>
-                <Link to={`${baseUrl}#${id}`} style={{
-                    width: "fit-content", marginTop: "5px", padding: 0,
-                }}>
-                    <FiLink size="16px" style={{ paddingRight: "5px", marginBottom: "5px" }} />
-                </Link>
                 {wordElements}
                 <Definition
                     definitions={definitions}

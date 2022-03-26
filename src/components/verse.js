@@ -179,7 +179,7 @@ const TabContents = (props) => {
 
 const Translation = ({ show, translation }) => {
     return (
-        <Collapse in={show}>
+        <Collapse in={show} mountOnEnter={true} unmountOnExit={true}>
             <p className={translationText}>
                 {translation}
             </p>
@@ -196,7 +196,7 @@ const VerseContent = ({ num, text, wordByWord, location, translation }) => {
     const tabButtonStyle = { borderRadius: "4px 4px 0px 0px", color: "rgb(225, 225, 225)" };
 
     return (
-        <Tab.Container defaultActiveKey="text" id={"verse-text-tabs-" + num}>
+        <Tab.Container defaultActiveKey="text" id={"verse-text-tabs-" + num} >
             <Row style={{ width: "fit-content", marginLeft: "0px" }}>
                 <Nav variant="pills"
                     style={{
@@ -227,14 +227,14 @@ const VerseContent = ({ num, text, wordByWord, location, translation }) => {
                 </Nav>
             </Row>
             <Tab.Content>
-                <Tab.Pane eventKey="text">
+                <Tab.Pane eventKey="text" mountOnEnter={true} unmountOnExit={true}>
                     <TabContents num={num}>
                         <p className={verseText} style={{ overflowWrap: "anywhere" }}>
                             {text}
                         </p>
                     </TabContents>
                 </Tab.Pane>
-                <Tab.Pane eventKey="word-by-word">
+                <Tab.Pane eventKey="word-by-word" mountOnEnter={true} unmountOnExit={true}>
                     <TabContents num={num}>
                         <WordByWord wordByWord={wordByWord} />
                     </TabContents>
