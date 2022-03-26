@@ -1,6 +1,6 @@
 import { Link } from 'gatsby'
 import * as React from 'react'
-import { Col, Container, Row } from 'react-bootstrap'
+import { Col, Row } from 'react-bootstrap'
 import { FiLink } from "react-icons/fi"
 import Definition from '../components/definition'
 import Layout from '../components/layout'
@@ -10,42 +10,37 @@ import { sortSanskrit, toUrl } from '../util/util'
 
 const allWordsDict = require("../../content/generated/dictionary/all_words.json");
 
-
 const WordAndDefinitions = ({ location, word, definitions, roots, partsOfSpeeches }) => {
     const translitWord = useTransliterate(word);
     const baseUrl = "/dictionary";
 
-    const wordLinkStyle = {
-        fontSize: "19px", width: "fit-content",
-        display: "inline", padding: 0,
-        whiteSpace: "nowrap"
-    };
+    const wordElements = React.useMemo(() => {
+        const wordLinkStyle = {
+            fontSize: "19px", width: "fit-content",
+            display: "inline", padding: 0,
+            whiteSpace: "nowrap"
+        };
 
-    const wordParts = word.split("-");
-    const translitWordParts = translitWord.split("-");
-    let wordElements = [];
-    for (let index = 0; index < wordParts.length; ++index) {
-        const part = (
-            <p style={wordLinkStyle}>
-                {translitWordParts[index]}
-            </p>
-        );
-        wordElements.push(
-            <div key={index} style={wordLinkStyle}>
-                <p style={wordLinkStyle}>
-                    {(index > 0 ? "-" : "")}
-                </p>
-                {index === (wordParts.length - 1) && index > 0
+        const wordParts = word.split("-");
+        const translitWordParts = translitWord.split("-");
+        let ret = [];
+        for (let index = 0; index < wordParts.length; ++index) {
+            const part = translitWordParts[index];
+            ret.push(
+                index === (wordParts.length - 1) && index > 0
                     ? (
-                        <Link to={`${baseUrl}#${toUrl(wordParts[index])}`} style={wordLinkStyle}>
+                        <Link key={index} to={`${baseUrl}#${toUrl(wordParts[index])}`} style={wordLinkStyle}>
                             {part}
                         </Link>
                     )
-                    : part
-                }
-            </div>
-        );
-    }
+                    :
+                    <p style={wordLinkStyle} key={index}>
+                        {part + (wordParts.length > 1 ? "-" : "")}
+                    </p>
+            );
+        }
+        return ret;
+    }, [word, translitWord, baseUrl]);
 
     const id = toUrl(word);
     const isActive = location.hash === `#${id}`;
@@ -81,10 +76,7 @@ const DictSection = ({ location, sectionName, wordComponents }) => {
     const url = toUrl(`${baseUrl}#${id}`);
 
     let entries = []
-    for (const [word, definitions, roots, partsOfSpeeches] of wordComponents.sort(
-        ([word], [other]) => {
-            return sortSanskrit(word, other);
-        })) {
+    for (const [word, definitions, roots, partsOfSpeeches] of wordComponents) {
         entries.push(
             <WordAndDefinitions
                 key={word}
@@ -100,12 +92,12 @@ const DictSection = ({ location, sectionName, wordComponents }) => {
     let sectionColumns = [];
     const maxColumns = 3;
     const columnLength = entries.length / maxColumns + 1;
-    for (let col = 0; col < columnLength; col++) {
+    for (let col = 0; col < maxColumns; col++) {
         const start = col * columnLength;
         const end = start + columnLength;
         let columnEntries = entries.slice(start, end);
         sectionColumns.push(
-            <Col>
+            <Col key={col}>
                 {columnEntries}
             </Col>
         );
@@ -135,32 +127,37 @@ const SectionLink = ({ sectionName }) => {
     };
 
     return (
-        <Link to={toUrl(`${baseUrl}#section_${sectionName}`)}>
-            <p style={sectionLinkStyle}>
-                {translitSectionName}
-            </p>
+        <Link to={toUrl(`${baseUrl}#section_${sectionName}`)} style={sectionLinkStyle}>
+            {translitSectionName}
         </Link>
     )
 }
 
-const Dictionary = ({ location }) => {
-    let dictSections = new Map();
+function getSortedDictSections() {
+    let ret = new Map();
     for (let word in allWordsDict) {
         const [sectionName, definitions, roots, partsOfSpeeches] = allWordsDict[word];
-        if (!dictSections.has(sectionName)) {
-            dictSections.set(sectionName, []);
+        if (!ret.has(sectionName)) {
+            ret.set(sectionName, []);
         }
-        dictSections.get(sectionName).push([word, definitions, roots, partsOfSpeeches])
+        ret.get(sectionName).push([word, definitions, roots, partsOfSpeeches])
     }
+    ret = [...ret.entries()].sort(sortSanskrit);
+    for (let elem of ret) {
+        elem[1] = elem[1].sort(sortSanskrit);
+    }
+    return ret;
+};
 
-    // Top-bar with links to eacch section
+// This will only be computed once when the dictionary is first loaded.
+const dictSections = getSortedDictSections();
+Object.freeze(dictSections);
+
+const Dictionary = ({ location }) => {
+    // Top-bar with links to each section
     let sectionLinks = [];
     let sections = [];
-    for (let [sectionName, wordComponents] of [...dictSections.entries()].sort(
-        ([word], [other]) => {
-            return sortSanskrit(word, other);
-        }
-    )) {
+    for (let [sectionName, wordComponents] of dictSections) {
         sectionLinks.push(
             <Col key={sectionName}>
                 <SectionLink sectionName={sectionName} />
@@ -168,6 +165,7 @@ const Dictionary = ({ location }) => {
         )
         sections.push(
             <DictSection
+                key={sectionName}
                 location={location}
                 sectionName={sectionName}
                 wordComponents={wordComponents}
@@ -177,12 +175,10 @@ const Dictionary = ({ location }) => {
 
     return (
         <Layout location={location} pageTitle="Dictionary">
-            <Container fluid>
-                <Row style={{ marginBottom: "20px" }}>
-                    {sectionLinks}
-                </Row>
-                {sections}
-            </Container>
+            <Row style={{ marginBottom: "20px" }}>
+                {sectionLinks}
+            </Row>
+            {sections}
         </Layout >
     );
 }

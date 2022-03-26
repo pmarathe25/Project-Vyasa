@@ -14,10 +14,14 @@ const allWordsDict = require("../../content/generated/dictionary/all_words.json"
 const RootMeanings = ({ root }) => {
     const roots = root.split("+");
     const translitRoots = useTransliterate(root).split("+");
-    let rootDefs = [];
-    for (let rootComp of roots) {
-        rootDefs.push(allWordsDict[rootComp]);
-    }
+
+    const rootDefs = React.useMemo(() => {
+        let ret = [];
+        for (let rootComp of roots) {
+            ret.push(allWordsDict[rootComp]);
+        }
+        return ret;
+    }, [roots]);
 
     return (
         <>
@@ -137,7 +141,7 @@ const WordByWord = ({ wordByWord }) => {
                     {
                         line.map(([word, definition, root, parts_of_speech], wordIndex) =>
                             <WordAndDefinition
-                                key={word + wordIndex}
+                                key={index + wordIndex}
                                 word={word}
                                 definition={definition}
                                 root={root}
@@ -154,19 +158,15 @@ const WordByWord = ({ wordByWord }) => {
 const TabContents = (props) => {
     const isMobile = useIsMobile();
 
-    const overlayNumStyle = {
-        zIndex: 1,
-        color: isMobile ? "rgb(72, 72, 85)" : "rgb(88, 88, 105)",
-        fontSize: "30px",
-    };
-
     return (
         <Container style={{ padding: "0px" }}>
             <Row style={{ marginLeft: "0px", maxWidth: "100%" }}>
-                <Col sm="auto" style={{ position: "absolute", width: "fit-content", padding: "0px" }}>
-                    <div style={overlayNumStyle}>
-                        {props.num}
-                    </div>
+                <Col sm="auto" style={{
+                    position: "absolute", width: "fit-content", padding: "0px", zIndex: 1,
+                    color: isMobile ? "rgb(72, 72, 85)" : "rgb(88, 88, 105)",
+                    fontSize: "30px",
+                }}>
+                    {props.num}
                 </Col>
                 <Col style={{ zIndex: 2, width: "fit-content", padding: "0px" }}>
                     {props.children}
@@ -187,10 +187,11 @@ const Translation = ({ show, translation }) => {
     )
 }
 
-const VerseText = ({ num, text, wordByWord, location, translation }) => {
+const VerseContent = ({ num, text, wordByWord, location, translation }) => {
     text = useTransliterate(text);
-    const url = toUrl(`${location.pathname}#verse_${num}`);
     const [show, setShow] = React.useState(false);
+
+    const url = toUrl(`${location.pathname}#verse_${num}`);
 
     const tabButtonStyle = { borderRadius: "4px 4px 0px 0px", color: "rgb(225, 225, 225)" };
 
@@ -245,8 +246,8 @@ const VerseText = ({ num, text, wordByWord, location, translation }) => {
 }
 
 const Verse = ({ num, text, wordByWord, translation, location }) => {
-    const isActive = location.hash === `#verse_${num}`;
     const isMobile = useIsMobile();
+    const isActive = location.hash === `#verse_${num}`;
 
     return (
         <OffsetAnchor id={`verse_${num}`} >
@@ -257,9 +258,9 @@ const Verse = ({ num, text, wordByWord, translation, location }) => {
                 backgroundColor: isActive ? "rgb(66, 66, 66)" : "inherit",
                 borderRadius: "7px",
             }}>
-                <VerseText num={num} text={text} wordByWord={wordByWord} location={location} translation={translation} />
+                <VerseContent num={num} text={text} wordByWord={wordByWord} location={location} translation={translation} />
             </div>
-        </OffsetAnchor>
+        </OffsetAnchor >
     )
 }
 
