@@ -18,12 +18,14 @@ sadas (n) assembly, seat, residence
 saika (m) effusion, emission, offering
 sam-!aas to sit together, to assemble
 sam-!i|I to go or come together, to meet
+sam-!s~ru to hear or hear from, to listen attentively; () (when passive) to be heard, talked, or read about
 sam-!yu to unite, to join together, to contain
 sam-!yuj|VII to combine, to unite
 sam-pari-!kram to travel, to wander [!kram]
 sam-prati-aa-!caks<|II to explain, to teach
 samaasa (m) aggregation, union, [sam-!aas]; (m) succinctness, brevity, conciseness
 samantapan~caka (n) Samantapancaka, a district of Kurukshetra
+samataa (f) sameness of level, equality
 samaya (m) agreement, engagement [sam-!i|I]; (m) a speech, a declaration
 samiipa (n) vicinity, proximity
 samyak (indc) together, rightly, properly, completely
@@ -32,8 +34,10 @@ sarasvatii (f) Sarasvati, goddess of knowledge, arts, etc.
 sarpa (mn) a snake
 sarva (adj) all
 sarvatas (indc) from all sides, entirely, everywhere
+sarvatra (indc) everywhere, omnipresent
 sat (adj) being, existing, truth [!as, pres act part]
 satra (n) sacrifice
+satya (adj) true, real, genuine, honest, virtuous [sat]
 sras<t<aara (m) creator
 stha () (in compound) standing, staying [!sthaa]
 stuta (adj) praised, eulogized, celebrated, glorified [!stu, perf pass part]
