@@ -190,22 +190,13 @@ const Translation = ({ show, translation }) => {
 const VerseContent = ({ num, text, wordByWord, location, translation }) => {
     text = useTransliterate(text);
     const [show, setShow] = React.useState(false);
-    const isMobile = useIsMobile();
 
     const url = toUrl(`${location.pathname}#verse_${num}`);
-    const isActive = location.hash === `#verse_${num}`;
 
     const tabButtonStyle = { borderRadius: "4px 4px 0px 0px", color: "rgb(225, 225, 225)" };
 
     return (
-        <Tab.Container defaultActiveKey="text" id={"verse-text-tabs-" + num}
-            style={{
-                maxWidth: "950px",
-                marginRight: "auto", marginLeft: "auto",
-                marginBottom: isMobile ? "20px" : "2px",
-                backgroundColor: isActive ? "rgb(66, 66, 66)" : "inherit",
-                borderRadius: "7px",
-            }}>
+        <Tab.Container defaultActiveKey="text" id={"verse-text-tabs-" + num}>
             <Row style={{ width: "fit-content", marginLeft: "0px" }}>
                 <Nav variant="pills"
                     style={{
@@ -255,10 +246,21 @@ const VerseContent = ({ num, text, wordByWord, location, translation }) => {
 }
 
 const Verse = ({ num, text, wordByWord, translation, location }) => {
+    const isMobile = useIsMobile();
+    const isActive = location.hash === `#verse_${num}`;
+
     return (
         <OffsetAnchor id={`verse_${num}`} >
-            <VerseContent num={num} text={text} wordByWord={wordByWord} location={location} translation={translation} />
-        </OffsetAnchor>
+            <div style={{
+                maxWidth: "950px",
+                marginRight: "auto", marginLeft: "auto",
+                marginBottom: isMobile ? "20px" : "2px",
+                backgroundColor: isActive ? "rgb(66, 66, 66)" : "inherit",
+                borderRadius: "7px",
+            }}>
+                <VerseContent num={num} text={text} wordByWord={wordByWord} location={location} translation={translation} />
+            </div>
+        </OffsetAnchor >
     )
 }
 
