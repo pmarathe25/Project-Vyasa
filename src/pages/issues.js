@@ -4,7 +4,8 @@ import Layout from '../components/layout'
 const Issues = ({ location }) => {
     const headerStyle = {
         width: "80%",
-        margin: "auto"
+        margin: "auto",
+        color: "white"
     }
 
     const textStyle = {
@@ -30,12 +31,11 @@ const Issues = ({ location }) => {
                 >
                     file a GitHub issue
                 </a>
-                !
+                .
                 <br />
                 <br />
                 For any bugs you experience on the website, leave as much detail as
                 you can on what triggers the bug and how to reproduce it.
-                <br />
                 <br />
                 For content inaccuracies, specify where the error is (a link to the verse
                 is ideal) and, if possible, what correction needs to be made.

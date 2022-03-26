@@ -1,5 +1,6 @@
 import * as React from 'react'
 import { Button, Offcanvas } from 'react-bootstrap'
+import { HiOutlineChevronDoubleRight } from 'react-icons/hi'
 import { navSideBar, navSideBarToggle } from './allVersesMenu.module.css'
 import { SideBar } from './sidebar'
 
@@ -21,11 +22,15 @@ const AllVersesMenu = ({ location }) => {
                 id="offcanvas"
                 variant="dark"
                 placement="end"
-                scroll={true}
                 show={sideBarExpanded}
                 onHide={() => setSideBarExpanded(false)}
             >
-                <Offcanvas.Header closeButton className={navSideBar} onClick={() => setSideBarExpanded(false)} />
+                <Offcanvas.Header className={navSideBar}>
+                    <HiOutlineChevronDoubleRight
+                        style={{ color: "rgb(200, 200, 200)", cursor: "pointer" }}
+                        size="24px"
+                        onClick={() => setSideBarExpanded(false)} />
+                </Offcanvas.Header>
                 <Offcanvas.Body variant="dark" className={navSideBar}>
                     <SideBar location={location} setSideBarExpanded={setSideBarExpanded}></SideBar>
                 </Offcanvas.Body >

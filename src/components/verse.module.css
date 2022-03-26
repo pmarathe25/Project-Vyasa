@@ -1,6 +1,5 @@
 .verse-text {
     font-size: 19px;
-    color: rgb(255, 255, 255);
     padding-bottom: 2px;
     white-space: pre-wrap;
     text-align: center;
@@ -9,10 +8,13 @@
 }
 
 .translation-text {
-    font-size: 15px;
-    color: rgb(255, 255, 255);
+    color: rgba(240, 240, 240);
+    font-size: 15.5px;
+    font-style: italic;
     padding-bottom: 5px;
     padding-top: 5px;
+    margin-top: 5px;
+    margin-bottom: 10px;
     white-space: pre-wrap;
     text-align: center;
 }
