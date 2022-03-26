@@ -4,7 +4,8 @@ import Layout from '../components/layout'
 const About = ({ location }) => {
     const headerStyle = {
         width: "80%",
-        margin: "auto"
+        margin: "auto",
+        color: "white"
     }
 
     const textStyle = {
@@ -33,8 +34,7 @@ const About = ({ location }) => {
             </p>
             <h2 style={headerStyle}>Contributing</h2>
             <p style={textStyle}>
-                If you'd like to help with this project, there are several ways to do so!
-                <br />
+                If you'd like to help with this project, there are several ways to do so.
                 See the <a
                     href="https://github.com/pmarathe25/Project-Vyasa/blob/main/CONTRIBUTING.md"
                     target="_blank"
