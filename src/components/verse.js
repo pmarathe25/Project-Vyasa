@@ -91,7 +91,7 @@ const WordAndDefinition = ({ word, definition, root, parts_of_speech }) => {
                         <Popover.Body ref={popoverRef} style={{ paddingTop: "10px", paddingBottom: "10px" }}>
                             <Col>
                                 <RootMeanings root={root} />
-                                <p style={{ fontSize: "16px" }}>
+                                <p style={{ fontSize: "15px" }}>
                                     {parts_of_speech}
                                 </p>
                             </Col>
@@ -253,8 +253,8 @@ const Verse = ({ num, text, wordByWord, translation, location }) => {
             <div style={{
                 maxWidth: "950px",
                 marginRight: "auto", marginLeft: "auto",
-                marginBottom: isMobile ? "15px" : "2px",
-                backgroundColor: isActive ? "rgb(66, 66, 78)" : "inherit",
+                marginBottom: isMobile ? "20px" : "2px",
+                backgroundColor: isActive ? "rgb(66, 66, 66)" : "inherit",
                 borderRadius: "7px",
             }}>
                 <VerseText num={num} text={text} wordByWord={wordByWord} location={location} translation={translation} />

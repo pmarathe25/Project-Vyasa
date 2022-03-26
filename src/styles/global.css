@@ -1,12 +1,9 @@
 :root {
-    --blue-highlight-color: rgb(65, 116, 192);
+    --blue-highlight-color: rgb(72, 122, 200);
 }
 
 html, body {
-    background-color: rgb(55, 55, 65);
-    color:rgb(230, 230, 230);
-    margin: 0;
-    padding: 0;
+    background-color: rgb(55, 55, 55);
 }
 
 p {
@@ -40,25 +37,31 @@ a:active {
     cursor: pointer;
 }
 
+/* Accordion button needs to be in the global CSS because we don't ever 
+    directly use it (only via Accordion.Header) and hence can't set the style that way */
 .accordion-button {
     color: white;
-    background: var(--blue-highlight-color);
+    background-color: rgb(84, 84, 84);
+    padding-top: 9px;
+    padding-bottom: 9px;
+    border: 1px solid rgba(0, 0, 0, 0.25) !important;
+    box-shadow: none !important;
 }
 
 .accordion-button:not(.collapsed) {
     color: white;
-    background: rgb(69, 139, 204);
+    background: var(--blue-highlight-color);
+}
+
+/* Disable highlight when this is the active accordion */
+.accordion-button:not(.collapsed):hover {
+    color: white;
+    background: var(--blue-highlight-color);
 }
 
 .accordion-button:hover {
     color: white;
-    background: rgb(99, 159, 211);
-}
-
-.accordion-button::after {
-    background-size: 24px;
-    width: 24px;
-    height: 24px;
+    background-color: rgb(100, 100, 100);
 }
 
 .nav-pills .nav-link.active, .nav-pills .show > .nav-link {
@@ -67,7 +70,11 @@ a:active {
 }
 
 .btn-primary {
-    color: #fff;
     background-color: var(--blue-highlight-color);
     border-color: var(--blue-highlight-color);
+    box-shadow: none !important;
+}
+
+.navbar-toggler {
+    box-shadow: none !important;
 }

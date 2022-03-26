@@ -16,6 +16,7 @@ const AutohidingNavbar = (props) => {
     const [scrollUpTotal, setScrollUpTotal] = React.useState(0);
     const [scrollDownTotal, setScrollDownTotal] = React.useState(0);
 
+    console.log(props.isExpanded);
     React.useEffect(() => {
         if (typeof window === "undefined") {
             return;
@@ -62,7 +63,7 @@ const AutohidingNavbar = (props) => {
         <Navbar bg="dark" variant="dark" sticky="top" expand="md"
             style={{
                 marginBottom: "20px",
-                boxShadow: "0px 3px 3px rgb(45, 45, 55)",
+                boxShadow: "0px 3px 3px rgb(45, 45, 45)",
                 ...navbarStyle
             }}
             onToggle={(expanded) => {
