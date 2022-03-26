@@ -14,27 +14,25 @@ const style = {
 const Root = ({ root, partsOfSpeech }) => {
     const translitRootParts = useTransliterate(root).split("+");
 
-    const refLinks = React.useMemo(() => {
-        let ret = [];
-        const rootParts = root.split("+");
-        for (let index in translitRootParts) {
-            ret.push(
-                <div style={{ marginLeft: "4px", display: "inline-block", ...style }} key={index}>
-                    {(index > 0 ? ", " : "")}
-                    <Link
-                        to={`/dictionary#${toUrl(rootParts[index])}`}
-                        style={{ fontSize: "19px", fontStyle: "normal", whiteSpace: "nowrap" }}
-                        key={index}
-                    >
-                        {translitRootParts[index]}
-                    </Link>
-                </div>
-            );
-        }
-    }, [root, translitRootParts]);
-
     if (!root) {
         return (<></>);
+    }
+
+    let refLinks = [];
+    const rootParts = root.split("+");
+    for (let index in translitRootParts) {
+        refLinks.push(
+            <div style={{ marginLeft: "4px", display: "inline-block", ...style }} key={index}>
+                {(index > 0 ? ", " : "")}
+                <Link
+                    to={`/dictionary#${toUrl(rootParts[index])}`}
+                    style={{ fontSize: "19px", fontStyle: "normal", whiteSpace: "nowrap" }}
+                    key={index}
+                >
+                    {translitRootParts[index]}
+                </Link>
+            </div>
+        );
     }
 
     return (
