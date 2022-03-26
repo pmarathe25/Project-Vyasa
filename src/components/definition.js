@@ -1,6 +1,6 @@
 import { Link } from 'gatsby';
 import * as React from 'react';
-import { Container, Row } from 'react-bootstrap';
+import { Container } from 'react-bootstrap';
 import { useTransliterate } from '../components/transliterationHook';
 import toUrl from '../util/util';
 
@@ -65,14 +65,15 @@ const Definition = ({ definitions, roots, partsOfSpeeches }) => {
         const partsOfSpeech = partsOfSpeeches[index];
 
         definitionElements.push(
-            <Row key={index}
+            <div key={index}
                 style={{
                     width: "100%", marginLeft: "5px",
+                    display: "inline-block",
                     ...style
                 }}>
                 {definition}
                 <Root root={root} partsOfSpeech={partsOfSpeech} />
-            </Row>
+            </div>
         );
     }
 

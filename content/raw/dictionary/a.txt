@@ -14,6 +14,7 @@ aaran<ya (n) forest
 aasana (n) posture, seat
 aas~rama (mn) indefatigable, asylum, hermitage
 aas~rayam (mn) sheltered
+aatmaka (adj) belonging to or forming the nature of, composed of
 aatman (n) soul, essence
 aavr>ta (adj) covered, enveloped [aa-!vr>, perf pass part]
 aayatana (n) altar, resting place, sanctuary
@@ -24,6 +25,7 @@ abhi-!puuj to honor, to worship
 abhi-!vad to declare, to express; () (causative) to address or salute reverently
 abhis<aika (m) consecration, religious bathing [saika]
 acara (adj) not moving, immovable
+acintya (adj) inconceivable, incomprehensible, unexpected [a+cintya]
 adbhuta (adj) extraordinary, wonderful
 agha (adj) bad, dangerous, sinful
 agni (m) fire
@@ -44,7 +46,7 @@ an<d<a (n) egg
 anagha (adj) sinless, faultless [an+agha]
 anu-!i|I to follow, to go after, to seek
 anu-pra-!aap to reach
-anvita (adj) possessing, endowed lit. "having been followed by" [anu-!i|I]
+anvita (adj) possessing, endowed lit. "having been followed by" [anu-!i|I, perf pass part]
 anya (adj) other, another
 an~jali (m) joined hands
 apaha (adj) (in compound) removing, dispelling, repelling, destroying

@@ -402,14 +402,14 @@ brahma (brahman, acc sing) Brahma
 vyaktaavyaktam (vyakta+avyakta, acc sing m) perceptible and imperceptible
 sanaatanam (sanaatana, acc sing m) eternal
 -
-asat (asat, acc sing n) non-existent
+asat (asat, acc sing n) nonexistent
 ca and
 sat (sat, acc sing n) existent
 ca and
 aiva indeed
 yat (yat, acc sing) who
 vis~vam (vis~va, acc sing n) every(thing)
-sadasat (sat+asat, acc sing n) existent and non-existent
+sadasat (sat+asat, acc sing n) existent and nonexistent
 param (para, acc sing n) different than, distinct from
 -
 paraavaraan<aam (para+avara, gen pl n) of high and low (i.e. all) (things/beings)
@@ -426,16 +426,16 @@ s~ucim (s~uci, acc sing m) pure
 -
 namaskr>tya (namas-!kr>, abs) having bowed (to)
 hr>s<iikais~am (hr>s<iikais~a, acc sing) lord of the senses
-caraacaragurum (cara+acara+guru, acc sing m) the guru of moving and non-moving (beings)
+caraacaragurum (cara+acara+guru, acc sing m) the guru of moving and nonmoving (beings)
 harim (hari, acc sing) Hari, i.e. Vishnu/Krishna
 
 Sauti said:
 "Having bowed (to) the first being, Ishana, called upon by many, praised by many, 
 the true imperishable one, (who is) Brahma, perceptible and imperceptible, eternal,
-the non-existent and existent one, who (is) distinct from every(thing) existent and non-existent,
+the nonexistent and existent one, who (is) distinct from every(thing) existent and nonexistent,
 the creator of high and low (things/beings), ancient, completely undecaying,
 pleasing, auspicious, (who is) Vishnu, excellent, faultless, pure,
-the lord of the senses, the guru of moving and non-moving (beings), (also called) Hari...
+the lord of the senses, the guru of moving and nonmoving (beings), (also called) Hari...
 
 25
 
@@ -536,4 +536,35 @@ pracaks<atai (pra-!caks<|II, 3 pl pres mid ind) they call
 
 "In this (world), deprived of radiance (and) light, entirely enveloped by darkness,
 (there) came into being a great egg, the one indestructible seed, the cause of (all) beings,
-in the beginning of the age. They call it the Mahadivya.   
+in the beginning of the age. They call it the Mahadivya...   
+
+30.2-31
+
+yasmin (yat, loc sing) in which
+sa.s~ruuyatai (sam-!s~ru, 3 sing pres pass ind) it is said, lit. "it is heard"
+satyam (satya, nom sing n) true
+jyauti: (jyautis, nom sing) light
+brahma (brahman, nom sing) Brahma
+sanaatanam (sanaatana, nom sing n) eternal
+-
+adbhutam (adbhuta, nom sing n) extraordinary
+ca and
+api also
+acintyam (acintya, nom sing n) inconceivable
+ca and
+sarvatra everywhere
+samataam (samataa, acc sing) equally
+gatam (!gam, nom sing n perf pass part) present, lit. "having gone"
+-
+avyaktam (avyakta, nom sing n) imperceptible
+kaaran<am (kaaran<a, nom sing) cause
+suuks<mam (suuks<ma, nom sing n) subtle
+yat (yat, nom sing) who
+tat (tat, nom sing) that
+sat (sat, nom sing n) existing
+asat (asat, nom sing n) not existing
+aatmakam (aatmaka, nom sing n) having a nature (of)
+
+"In which it is said (was) the true light, Brahma, the eternal, 
+both extraordinary and also inconceivable, equally present everywhere,
+who (is) the imperceptible subtle cause, that (one) having a nature (of) existing and not existing.
