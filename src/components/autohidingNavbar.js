@@ -16,7 +16,6 @@ const AutohidingNavbar = (props) => {
     const [scrollUpTotal, setScrollUpTotal] = React.useState(0);
     const [scrollDownTotal, setScrollDownTotal] = React.useState(0);
 
-    console.log(props.isExpanded);
     React.useEffect(() => {
         if (typeof window === "undefined") {
             return;

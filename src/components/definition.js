@@ -4,7 +4,7 @@ import { Container, Row } from 'react-bootstrap';
 import { useTransliterate } from '../components/transliterationHook';
 import toUrl from '../util/util';
 
-const Root = ({ root, partsOfSpeech, refStyle }) => {
+const Root = ({ root, partsOfSpeech, rootStyle }) => {
     const rootParts = root.split("+");
     const translitRootParts = useTransliterate(root).split("+");
 
@@ -15,7 +15,7 @@ const Root = ({ root, partsOfSpeech, refStyle }) => {
     let refLinks = [];
     for (let index in translitRootParts) {
         refLinks.push(
-            <div style={refStyle} key={index}>
+            <div style={rootStyle} key={index}>
                 {(index > 0 ? ", " : "")}
                 <Link
                     to={`/dictionary#${toUrl(rootParts[index])}`}
@@ -29,7 +29,7 @@ const Root = ({ root, partsOfSpeech, refStyle }) => {
     }
 
     return (
-        <div style={refStyle}>
+        <div style={rootStyle}>
             {
                 partsOfSpeech
                     ?
@@ -52,7 +52,6 @@ const Root = ({ root, partsOfSpeech, refStyle }) => {
 const Definition = ({ definitions, roots, partsOfSpeeches }) => {
     const style = {
         color: "rgb(250, 250, 250)",
-        display: "inline-block",
         fontStyle: "italic",
         padding: 0,
         fontSize: "15px",
@@ -66,13 +65,13 @@ const Definition = ({ definitions, roots, partsOfSpeeches }) => {
         const partsOfSpeech = partsOfSpeeches[index];
 
         definitionElements.push(
-            <Row style={{ width: "100%", marginLeft: "5px" }}>
-                <div style={style} key={definition}>
-                    <p style={style}>
-                        {definition}
-                    </p>
-                    <Root root={root} partsOfSpeech={partsOfSpeech} refStyle={{ marginLeft: "4px", ...style }} />
-                </div>
+            <Row key={index}
+                style={{
+                    width: "100%", marginLeft: "5px",
+                    ...style
+                }}>
+                {definition}
+                <Root root={root} partsOfSpeech={partsOfSpeech} rootStyle={{ marginLeft: "4px", display: "inline-block", ...style }} />
             </Row>
         );
     }

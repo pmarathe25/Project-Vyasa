@@ -28,7 +28,7 @@ export function titleCaseFromUrl(str) {
 
 export function sortSanskrit(word, otherWord) {
     // For the purposes of sorting, it doesn't matter how we transliterate.
-    return transliterate(word.replace("√", ""), devanagari) > transliterate(otherWord.replace("√", ""), devanagari) ? 1 : -1;
+    return transliterate(word[0].replace("√", ""), devanagari) > transliterate(otherWord[0].replace("√", ""), devanagari) ? 1 : -1;
 }
 
 export default toUrl;
