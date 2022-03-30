@@ -80,7 +80,8 @@ const Definition = ({ definitions, roots, partsOfSpeeches }) => {
     return (
         <Container style={{
             marginTop: "auto", marginBottom: "auto",
-            padding: "0px", paddingLeft: "0px", paddingRight: "5px"
+            padding: "0px",
+            paddingLeft: "0px", paddingRight: "5px"
         }}>
             {definitionElements}
         </Container>
