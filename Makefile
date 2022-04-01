@@ -60,7 +60,7 @@ launch: $(GEN_RULE_SETS) $(GEN_CHAPTERS) $(GEN_DICTIONARY_FILE)
 	gatsby develop
 
 test: $(GEN_RULE_SETS) $(GEN_DICTIONARY_FILE)
-	python3 -m pytest tests/ -vv
+	python3 -m pytest tests/ -vv -x
 	npm test
 
 clean:

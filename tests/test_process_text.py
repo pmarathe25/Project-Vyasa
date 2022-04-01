@@ -117,6 +117,49 @@ def transliteration_ruleset():
             ["naram", "ca"],
             "nara. ca",
         ),
+        # Special 'n' rules
+        # NOTE: Doubling of 'n' only happens when preceded by a short vowel
+        (
+            ["bhavan", "aika"],
+            "bhavannaika",
+        ),
+        (
+            ["bhavin", "aika"],
+            "bhavinnaika",
+        ),
+        (
+            ["bhavun", "aika"],
+            "bhavunnaika",
+        ),
+        # 'n' with long or compound vowels should not double
+        (
+            ["bhavaan", "aika"],
+            "bhavaanaika",
+        ),
+        (
+            ["bhaviin", "aika"],
+            "bhaviinaika",
+        ),
+        (
+            ["bhavuun", "aika"],
+            "bhavuunaika",
+        ),
+        (
+            ["bhavain", "aika"],
+            "bhavainaika",
+        ),
+        (
+            ["bhavaain", "aika"],
+            "bhavaainaika",
+        ),
+        (
+            ["bhavaun", "aika"],
+            "bhavaunaika",
+        ),
+        (
+            ["bhavaaun", "aika"],
+            "bhavaaunaika",
+        ),
         # Special 't' rules
         (
             ["tat", "ca"],

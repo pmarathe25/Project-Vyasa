@@ -576,7 +576,7 @@ pitaamaha: (pitr>+maha, nom sing m) great father
 jajn~ai (!jan, 3 sing perf mid ind) was born
 prabhu: (prabhu, nom sing m) lord
 aika: (aika, nom sing m) one
-prajaapati: (prajaapati, nom sing) Prajapati, lit. "lord of beings"
+prajaapati: (prajaapati, nom sing) Prajapati
 -
 brahmaa (brahman, nom sing) Brahma
 suraguru: (suraguru, nom sing) Suraguru
@@ -593,7 +593,14 @@ daks<aputraa: (daks<a+putra, nom pl m) the sons of Daksha
 ca and
 sapta seven
 vaai indeed
+-
+tata: then
+prajaanaam (prajaa, gen pl) of beings
+pataya: (pati, nom pl) lords
+praabhavan (pra-!bhuu, 3 pl imp act ind) appeared
+aikavi.s~ati: (aikavi.s~ati, nom sing) twenty-one
 
 "From which was born the great father, the Prajapati, the one lord, 
 Brahma [along with] Suraguru, Sthanu, Manu, Ka, [and] then Paramesthi,
-[and] so also the 10 sons of Pracetas, Daksha, and indeed the seven sons of Daksha
+[and] so also the 10 sons of Pracetas, Daksha, and indeed the seven sons of Daksha,
+then appeared twenty-one lords of beings (prajapatis)
