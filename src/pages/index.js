@@ -26,10 +26,14 @@ const Index = ({ location, data }) => {
             <p style={{ marginBottom: "40px", width: "80%", marginLeft: "auto", marginRight: "auto", fontSize: "18px", whiteSpace: "pre-wrap" }}>
                 If this is your first time here, you may want to check out
                 the <Link to={toUrl("/about")}>About</Link> page.
-                Otherwise, click one of the rows below or use the <b>All Verses</b> button in the top-right
+                Otherwise, click on one of the books below or use the <b>All Verses</b> button in the top-right
                 to get started.
             </p>
-            <ListGroup>
+            <ListGroup style={{
+                maxWidth: "var(--content-max-width)",
+                marginRight: "auto", marginLeft: "auto",
+                borderRadius: "7px",
+            }}>
                 {
                     data.allTextJson.nodes.map(node => (
                         <BookLink key={node.book} book={node.book} />

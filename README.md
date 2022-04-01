@@ -20,8 +20,7 @@ but I've yet to find one that has all the following properties:
 - Detailed and accurate word-level grammatical explanation
 - A minimal, easy-to-navigate, and clean web interface
 
-Having stated the goal, it is equally important to mention that it is *not* the aim
-of this project to provide anything more than a literally correct translation; 
+It is *not* the aim to provide anything more than a literally correct translation; 
 that is, the included translations do not consider the broader cultural, historical, 
 and philosophical context of the text.
 
