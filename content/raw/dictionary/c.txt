@@ -2,6 +2,7 @@
 !car to walk, to go
 !cint to think, to consider
 ca (indc) and
+caitas (n) intelligence, soul, heart, mind
 cara (adj) moving, movable [!car]
 carita (mn) going, acting, doing [!car]
 catus (adj) four, four-fold, four times

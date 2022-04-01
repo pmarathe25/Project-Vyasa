@@ -11,16 +11,24 @@ pada (n) a step, a word
 para (adj) distant, far, past, future, alien, other, enemy, high
 param (indc) greatly, completely, to a high degree
 parama (adj) highest, furthest, final, best, worst [para, sup]
+paramais<th<in (adj) standing at the head, highest, chief [parama+!sthaa]; (m) Paramesthi
 pari-!vr> to surround
 parvan (n) a knot, a division, a section
-pati (m) lord, ruler
+pati (m) (in compound) lord, master, owner, ruler
 patra (n) leaf, petal
+pitr> (m) father
+pra () (as prefix) excessively, very much; () (as prefix) forward, in front
+pra-!bhuu to spring forth, to originate, to surpass, to be powerful
 pra-!caks<|II to call, to name, to tell, to declare
 pra-!jan to generate, to procreate, to beget
 pra-!stu to praise, to begin, to commence
 pra-!vac to proclaim, to announce, to impart, to declare
+praacaitas () [pracaitas]; (adj) descended from/belonging to Pracetas; (m) (plural) refers to the 10 sons of Pracetas
 prabhaa (f) light, splendor, radiance [!bhaa]
+prabhu [pra-!bhuu]; (adj) mighty, powerful; (m) lord, king, chief, leader
+pracaitas (adj) attentive, observant, mindful, clever, wise [pra+caitas]; (m) Pracetas
 prajaa (f) offspring, descendant, person, creature [pra-!jan]
+prajaapati (m) lord of creatures, protector of life [prajaa+pati]
 prati-!sthaa to stand, to abide, to dwell, to be established
 priya (adj) beloved, dear, favorite
 pun<ya (adj) auspicious, pleasant, holy [!pun<|VI]
