@@ -36,13 +36,13 @@ abhyagacchat (abhi-!gam, 3 sing imp act ind) he approached
 brahmars<iin (brahman+r>s<i, acc pl) the Brahman sages
 sa.s~itavrataan (sa.s~ita+vrata, acc pl m) rigid-vowed (firm in their vows)
 -
-vinayaavanata: (vinaya+ava-!nam, nom sing m perf pass part) having bowed humbly
+vinayaavanata: (vinaya+ava-!nam, nom sing m perf pass part) humbly bowed
 bhuutvaa (!bhuu, abs) having been
 kadaacit (kadaa+cit,) once
 suutanandana: (suuta+nandana, nom sing) son of Suta 
 
 Once, the son of Lomaharshana, Ugrasravas, [also known as] Sauti, [also as] the son
-of Suta, well-versed in the Puranas, humbly bowing, approached the blissfully sitting,
+of Suta, well-versed in the Puranas, humbly bowed, approached the blissfully sitting,
 rigid-vowed Brahman sages in the Naimisharanya at the 12-years sacrifice of Kulapati Shaunaka. 
 
 3
@@ -78,9 +78,9 @@ tapauvr>ddhim (tapas+vr>ddhi, acc sing) progress of asceticism
 sadbhi: (sat, inst pl m) by the true ones (i.e. the sages)
 ca and
 aiva indeed
-abhipuujita: (abhi-!puuj, nom sing m perf pass part) having been honored
+abhipuujita: (abhi-!puuj, nom sing m perf pass part) honored
 
-Having greeted all those sages with joined hands, and having been honored 
+Having greeted all those sages with joined hands, and honored 
 by the true ones (i.e. the sages), he asked [about] the progress of [their] asceticism.
 
 5
@@ -146,7 +146,7 @@ lotus-petal-eyed [one]? Tell that to me [who is] asking.
 8
 
 aivam thus
-pr>s<t<a: (!prach, nom sing m perf pass part) having been asked
+pr>s<t<a: (!prach, nom sing m perf pass part) asked
 abraviit (!bruu, 3 sing imp act ind) he spoke
 samyak rightly
 yathaavat properly
@@ -184,15 +184,15 @@ samyak completely, in full
 paariks<itasya (paariks<ita, gen sing) of the son of Parikshit 
 ca and
 -
-kr>s<n<advaaipaayanaprauktaa: (kr>s<n<a+dvaaipaayana+pra-!vac, acc pl f perf pass part) having been composed (by) the black islander, i.e. Vyasa
+kr>s<n<advaaipaayanaprauktaa: (kr>s<n<a+dvaaipaayana+pra-!vac, acc pl f perf pass part) imparted (by) the black islander, i.e. Vyasa
 supun<yaa: (supun<ya, acc pl f) excellent
 vividhaa: (vividha, acc pl f) various
 kathaa: (kathaa, acc pl) stories
 -
-kathitaa: (!kath, acc pl f perf pass part) having been told
+kathitaa: (!kath, acc pl f perf pass part) told
 ca and
 api also
-vidhivat sacred
+vidhivat according to rule
 yaa: (yaa, acc pl) which
 vaais~ampaayanaina (vaais~ampaayana, inst sing) by Vaishampayana
 vaai indeed
@@ -204,8 +204,8 @@ vicitraarthaa: (vicitra+artha, acc pl f) wonderful, marvelous
 mahaabhaaratasa.s~ritaa: (mahaabhaarata+sa.s~rita, acc pl f) of/from the Mahabharata
 
 Sauti said: 
-"I, having heard those various excellent, marvelous, and sacred stories of the Mahabharata,
-which were indeed told in full by Vaishampayana, having been composed by the black islander (Vyasa), 
+"I, having heard those various excellent and marvelous stories of the Mahabharata,
+imparted in full by the black islander (Vyasa), which [were] indeed told according to rule by Vaishampayana
 at the snake sacrifice of Janamejaya, the great-souled royal sage, the best prince, the son of Parikshit...
 
 12-13
@@ -225,7 +225,7 @@ gatavaan (!gam, nom sing m perf act part) having gone
 asmi (!as, 1 sing pres act ind) I am
 tam (sa, acc sing) that
 dais~am (dais~a, acc sing) place
-yuddham (yuddha, acc sing) the battle
+yuddham (yuddha, nom sing) the battle
 yatra where
 abhavat (!bhuu, 3 sing imp act ind) was
 puraa long ago
@@ -237,7 +237,7 @@ sarvais<aam (sarva, gen pl m) of all
 ca and
 mahiiks<itaam (mahii+ks<it, gen pl) of the earthly rulers
 
-"And having traveled to many shrines and places of pilgrimage, 
+"[And] having traveled to many shrines and places of pilgrimage, 
 I went [to] that holy place, revered by the twice-born, named Samantapancaka,
 where [there] was a battle long ago of the Pandavas, the Kurus, and all the earthly rulers.
 
@@ -256,12 +256,12 @@ aiva indeed
 brahmabhuutaa: (brahman+bhuuta, voc pl m) like Brahma
 hi indeed
 mai (aham, dat sing) to me
-mataa: (!man, voc pl m perf pass part) seem, lit. "having been thought of"
+mataa: (!man, voc pl m perf pass part) seem, lit. "thought of (as)"
 -
 asmin (ayam, loc sing) in this
 yajn~ai (yajn~a, loc sing) holy place, (place of) sacrifice
 mahaabhaagaa: (mahaabhaaga, voc pl m) illustrious
-suuryapaavakavarcasa: (suurya+paavaka+varcas, voc pl m) shining with the power of the Sun
+suuryapaavakavarcasa: (suurya+paavaka+varcas, voc pl m) shining with the power of the Sun, lit. "sun-power-shining"
 -
 kr>taabhis<aikaa: (kr>ta+abhis<aika, voc pl m) having done religious bathing
 s~ucaya: (s~uci, voc pl m) pure
@@ -305,7 +305,7 @@ uucu: (!vac, 3 pl perf act ind) said
 -
 dvaaipaayanaina (dvaaipaayana, inst sing) by the islander (Vyasa)
 yat (yat, acc sing) which
-prauktam (pra-!vac, acc sing n perf pass part) having been told
+prauktam (pra-!vac, acc sing n perf pass part) told
 puraan<am (puraan<a, acc sing n) Purana
 paramars<in<aa (parama+r>s<i, inst sing m) by the greatest sage
 -
@@ -315,7 +315,7 @@ ca and
 aiva indeed
 s~rutvaa (!s~ru, abs) having heard
 yat (yat, acc sing) which
-abhipuujitam (abhi-!puuj, acc sing n perf pass part) having been honored
+abhipuujitam (abhi-!puuj, acc sing n perf pass part) honored
 
 
 The sages said:
@@ -326,11 +326,11 @@ which [was] honored by the deities and Brahman sages [upon] having heard [it]...
 
 tasya (tat, gen sing) of that
 aakhyaanavaris<th<asya (aakhyaana+varis<th<a, gen sing n) of the most extensive narrative
-vicitrapadaparvan<a: (vicitra+pada+parvan, gen sing n) of (something having) various words and sections
+vicitrapadaparvan<a: (vicitra+pada+parvan, gen sing n) of (something) having various words and sections
 -
 suuks<maarthanyaayayuktasya (suuks<ma+artha+nyaaya+yukta, gen sing n) of (something) having subtle and logical meaning
 vaidaarthaai: (vaida+artha, inst pl) by the meaning of the Vedas 
-bhuus<itasya (!bhuus<, gen sing perf pass part n) of (something) enriched, lit. "having been decorated by"
+bhuus<itasya (!bhuus<, gen sing perf pass part n) of (something) enriched, lit. "decorated by"
 ca and
 
 "Of that most extensive narrative, having various words and sections,
@@ -341,7 +341,7 @@ having subtle and logical meaning, and decorated by the meaning of the Vedas...
 bhaaratasya (bhaarata, gen sing m) of the Bharata (i.e. the Mahabharata)
 itihaasasya (itihaasa, gen sing) of the history
 pun<yaam (pun<ya, acc sing f) sacred
-granthaarthasa.yutaam (grantha+artha+sa.yuta, acc sing f) containing (lit. "having been united with") the meanings of [many] books
+granthaarthasa.yutaam (grantha+artha+sa.yuta, acc sing f) containing (lit. "united with") the meanings of [many] books
 -
 sa.skaaraupagataam (sa.skaara+upagata, acc sing f) possessing purity
 braahmiim (braahmii, acc sing) speech
@@ -372,7 +372,7 @@ at Vyasa's behest at king Janamejaya's sacrifice...
 
 vaidaai: (vaida, inst pl) by the Vedas
 caturbhi: (catus, inst pl m) by the four
-sa.yuktaam (sa.yukta, acc sing f) having been combined
+sa.yuktaam (sa.yukta, acc sing f) united
 vyaasasya (vyaasa, gen sing) of Vyasa
 adbhutakarman<a: (adbhuta+karman, gen sing m) of the extraordinary composer, lit. "wonderful-doer"
 -
@@ -440,7 +440,7 @@ the lord of the senses, the guru of moving and nonmoving [beings], [also called]
 25
 
 mahars<ai: (mahat+r>s<i, gen sing m) of the great sage
-puujitasya (!puuj, gen sing m perf pass part) having been honored
+puujitasya (!puuj, gen sing m perf pass part) honored
 iha here
 sarvalaukaai: (sarva+lauka, inst pl m) by everyone
 mahaatmana: (mahat+aatman, gen sing m) of the great souled
