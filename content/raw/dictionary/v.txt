@@ -16,6 +16,7 @@ vaida (m) true knowledge; (m) one of the Vedas, a set of four formative literary
 varain<ya (adj) desirable, excellent, best
 varcas (adj) power, vigor, energy
 varis<th<a (adj) widest, broadest, most extensive
+vasu (adj) excellent, good, beneficial; (mn) a particular class of gods
 vi-!hr> to distribute, to dispose, to set
 vi-!str> to stretch, to scatter
 vi.s~ati (f) twenty
@@ -28,6 +29,7 @@ vistara (adj) extensive, long [vi-!str>]
 vistiirn<a (mn) strewn, spread out, broad, extensive [vi-!str>]
 vis~raanta (mn) rested, taking rest
 vis~va (adj) all, every, whole, universal, all-pervading [!vis~]
+vis~vaidaiva (m) Vishvedeva, a particular class of deities [vis~va+daiva]
 vividha (adj) manifold, varied
 vr>ddhi (f) growth, increase [!vr>dh]
 vr>tta (adj) occurred, happened, turned, set in motion [!vr>t, perf pass part]; (n) poetic meter containing a fixed number of syllables

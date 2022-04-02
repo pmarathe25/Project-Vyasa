@@ -593,14 +593,34 @@ daks<aputraa: (daks<a+putra, nom pl m) the sons of Daksha
 ca and
 sapta seven
 vaai indeed
--
+
+"From which was born the great father, the Prajapati, the one lord, 
+Brahma [along with] Suraguru, Sthanu, Manu, Ka, [and] then Paramesthi,
+[and] so also the 10 sons of Pracetas, Daksha, and indeed the seven sons of Daksha.
+
+33.2-34
+
 tata: then
 prajaanaam (prajaa, gen pl) of beings
 pataya: (pati, nom pl) lords
 praabhavan (pra-!bhuu, 3 pl imp act ind) appeared
 aikavi.s~ati: (aikavi.s~ati, nom sing) twenty-one
+-
+purus<a: (purus<a, nom sing) Purusha
+ca and
+apramaiyaatmaa (apramaiyaatman, nom sing) of unfathomable nature, lit. "unfathomable-natured"
+yam (ya, acc sing) whom
+sarvars<aya: (sarva+r>s<i, nom sing m) all the sages
+vidu: (!vid|II, 3 pl perf act ind) knew
+-
+vis~vaidaivaa: (vis~vaidaiva, nom pl) the Vishvedevas
+tathaa then
+aadityaa: (aaditya, nom pl) the Adityas
+vasava: (vasu, nom pl m) the Vasus
+atha then
+as~vinaau (as~vin, nom du m) the two Ashwins
+api also
 
-"From which was born the great father, the Prajapati, the one lord, 
-Brahma [along with] Suraguru, Sthanu, Manu, Ka, [and] then Paramesthi,
-[and] so also the 10 sons of Pracetas, Daksha, and indeed the seven sons of Daksha,
-then appeared twenty-one lords of beings (prajapatis)
+"Then appeared twenty-one lords of beings (prajapatis)
+and the Purusha of unfathomable nature, whom all the sages knew,
+then the Vishvedevas, the Adityas, the Vasus, then also the two Ashwins.
