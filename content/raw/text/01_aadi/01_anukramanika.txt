@@ -2,7 +2,7 @@
 
 naaraayan<am (naaraayan<a, acc sing) Narayana
 namaskr>tya (namas-!kr>, abs) having bowed (to)
-naram (nara, acc sing) Nara (lit. "man")
+naram (nara, acc sing) Nara, lit. "man"
 ca and
 aiva just so
 narauttamam (nara+uttama, acc sing m) the best man
@@ -162,7 +162,7 @@ tasmin (sa, loc sing) in that
 sadasi (sadas, loc sing) assembly
 vistiirn<ai (vistiirn<a, loc sing) broad, great
 muniinaam (muni, gen pl) of sages
-bhaavitaatmanaam (bhaavita+aatman, m gen pl) of self-realized (lit. soul-manifested)
+bhaavitaatmanaam (bhaavita+aatman, m gen pl) of self-realized, lit. "soul-manifested"
 
 Thus asked, Lomaharshana's son (Sauti), equipped with good speech, 
 spoke a statement, rightly and properly, to [the ones] seeking their (the sages') shelter
@@ -178,7 +178,7 @@ raajars<ai: (raajan+r>s<i, gen sing) of the royal sage
 sarpasatrai (sarpa+satra, loc sing) in the snake sacrifice
 mahaatmana: (mahat+aatman, gen sing m) of the great souled
 -
-samiipai (samiipa, loc sing) at (lit. in the vicinity)
+samiipai (samiipa, loc sing) at, lit. "in the vicinity"
 paarthivaindrasya (paarthiva+indra, gen sing) of the best prince
 samyak completely, in full
 paariks<itasya (paariks<ita, gen sing) of the son of Parikshit 
@@ -363,7 +363,7 @@ sa: (sa, nom sing) he/that
 r>s<i: (r>s<i, nom sing) the sage
 tus<t<yaa (tus<t<i, inst sing) with satisfaction
 satrai (satra, loc sing) in the sacrifice
-dvaaipaayanaajn~ayaa (dvaaipaayana+aajn~aa, inst sing) at Vyasa's behest, lit. "by the islander-command"
+dvaaipaayanaajn~ayaa (dvaaipaayana+aajn~aa, inst sing) at Vyasa's behest, lit. "islander-command"
 
 "Which that sage, Vaishampayana, narrated properly (and) with satisfaction
 at Vyasa's behest at king Janamejaya's sacrifice...
@@ -531,7 +531,7 @@ yugasya (yuga, gen sing) of the age
 aadaau (aadi, loc sing) in the beginning
 nimittam (nimitta, nom sing) the cause
 tat (tat, acc sing) it
-mahaddivyam (mahat+divya, acc sing n) Mahadivya, lit. "the great divine"
+mahaddivyam (mahat+divya, acc sing n) Mahadivya, lit. "great-divine"
 pracaks<atai (pra-!caks<|II, 3 pl pres mid ind) they call
 
 "In this [world], deprived of radiance [and] light, entirely enveloped by darkness,
@@ -614,7 +614,7 @@ sarvars<aya: (sarva+r>s<i, nom sing m) all the sages
 vidu: (!vid|II, 3 pl perf act ind) knew
 -
 vis~vaidaivaa: (vis~vaidaiva, nom pl) the Vishvedevas
-tathaa then
+tathaa so also
 aadityaa: (aaditya, nom pl) the Adityas
 vasava: (vasu, nom pl m) the Vasus
 atha then
@@ -623,4 +623,4 @@ api also
 
 "Then appeared twenty-one lords of beings (prajapatis)
 and the Purusha of unfathomable nature, whom all the sages knew,
-then the Vishvedevas, the Adityas, the Vasus, then also the two Ashwins.
+so also the Vishvedevas, the Adityas, the Vasus, then also the two Ashwins.
