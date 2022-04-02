@@ -1,11 +1,13 @@
 {
     "sequence_map": {
-        "vowels": {
+        "short-vowels": {
             "a": "अ",
-            "aa": "आ",
             "i": "इ",
+            "u": "उ"
+        },
+        "long-vowels": {
+            "aa": "आ",
             "ii": "ई",
-            "u": "उ",
             "uu": "ऊ"
         },
         "compound-vowels": {

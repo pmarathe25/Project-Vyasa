@@ -18,7 +18,7 @@ sadas (n) assembly, seat, residence
 saika (m) effusion, emission, offering
 sam-!aas to sit together, to assemble
 sam-!i|I to go or come together, to meet
-sam-!s~ru to hear or hear from, to listen attentively; () (when passive) to be heard, talked, or read about
+sam-!s~ru to hear or hear from, to listen attentively; () (passive voice) to be heard, talked, or read about
 sam-!yu to unite, to join together, to contain
 sam-!yuj|VII to combine, to unite
 sam-pari-!kram to travel, to wander [!kram]
@@ -30,6 +30,7 @@ samaya (m) agreement, engagement [sam-!i|I]; (m) a speech, a declaration
 samiipa (n) vicinity, proximity
 samyak (indc) together, rightly, properly, completely
 sanaatana (adj) eternal, perpetual, everlasting
+sapta (indc) (in compound) seven
 sarasvatii (f) Sarasvati, goddess of knowledge, arts, etc.
 sarpa (mn) a snake
 sarva (adj) all
@@ -40,10 +41,12 @@ satra (n) sacrifice
 satya (adj) true, real, genuine, honest, virtuous [sat]
 sras<t<aara (m) creator
 stha () (in compound) standing, staying [!sthaa]
+sthaan<u (adj) standing firmly, stationary, immovable [!sthaa]; (m) Sthanu
 stuta (adj) praised, eulogized, celebrated, glorified [!stu, perf pass part]
 sukha (adj) pleasant
 supun<ya (adj) excellent, great religious/moral merit
 sura (m) a deity, a divinity, a sage, the Sun
+suraguru (m) teacher of the gods [sura+guru]; (m) Suraguru
 suuks<ma (adj) subtle, minute, fine, small, exact
 suurya (mn) the Sun
 suuta (m) charioteer

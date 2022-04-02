@@ -29,7 +29,7 @@ def build_sandhied_text(words, translit_ruleset):
             keys.extend(SEQUENCE_MAP[cat_name].keys())
         return keys
 
-    VOWELS = keys_of("vowels", "compound-vowels", "vocalic")
+    VOWELS = keys_of("short-vowels", "long-vowels", "compound-vowels", "vocalic")
     UNVOICED_CONSONANTS = keys_of(
         "unvoiced-velar-consonants",
         "unvoiced-palatal-consonants",
@@ -71,6 +71,9 @@ def build_sandhied_text(words, translit_ruleset):
             VOICED_CONSONANTS,
         )
     }
+
+    def concat(patterns, str):
+        return [pat + str for pat in patterns]
 
     def compose(*funcs):
         def new_func(cur, nxt):
@@ -114,20 +117,20 @@ def build_sandhied_text(words, translit_ruleset):
 
         return replace_impl
 
-    def matches(patterns, invert=False, but_not=None):
+    def matches(patterns=None, but_not=None):
         """
         Builds a function that will match a particular pattern in a word.
 
         Args:
             patterns (List[str]):
-                    A list of patterns to match
-            invert (bool):
-                    Whether to invert the check, i.e. check if the patterns do *not* match.
+                    A list of patterns to match.
+                    By default, matches everything.
             but_not (List[str]):
                     A list of strings that should disqualify a match when present.
                     For example, to match a visarga that is not preceded by `a`
                     use `matches([":"], but_not=["a:"])`.
         """
+        patterns = patterns or [""]
         but_not = but_not or []
 
         def matches_impl(word, mode):
@@ -136,7 +139,7 @@ def build_sandhied_text(words, translit_ruleset):
 
             func = word.endswith if mode == "ends" else word.startswith
 
-            # Split patterns by length. Exceptions only apply if they are the same length.
+            # Split patterns by length. but_not only applies if it is the same length or longer than the pattern.
             len_pattern_map = defaultdict(list)
             len_but_not_map = defaultdict(list)
             for pat in patterns:
@@ -151,10 +154,10 @@ def build_sandhied_text(words, translit_ruleset):
                 but_not_list = len_but_not_map[length]
 
                 if any(func(exc_pat) for exc_pat in but_not_list):
-                    return invert
+                    return False
                 if any(func(pat) for pat in pat_list):
-                    return not invert
-            return invert
+                    return True
+            return False
 
         return matches_impl
 
@@ -162,7 +165,7 @@ def build_sandhied_text(words, translit_ruleset):
     # Order matters because applying one sandhi may invalidate another!
     PRE_MERGE_SANDHI = [
         # Special rules for m
-        (matches(["m"]), matches(VOWELS, invert=True), replace("end", [("m", ".")])),
+        (matches(["m"]), matches(but_not=VOWELS), replace("end", [("m", ".")])),
         # Special rules for t
         (matches(["t"]), matches(keys_of("dental-semivowels")), replace("end", [("t", "l")])),
         (
@@ -185,6 +188,15 @@ def build_sandhied_text(words, translit_ruleset):
         (matches(["n"]), matches(keys_of("unvoiced-palatal-consonants")), replace("end", [("n", ".s~")])),
         (matches(["n"]), matches(keys_of("unvoiced-retroflex-consonants")), replace("end", [("n", ".s<")])),
         (matches(["n"]), matches(keys_of("unvoiced-dental-consonants")), replace("end", [("n", ".s")])),
+        # Final 'n' is doubled when preceded by a short vowel and followed by any vowel.
+        (
+            matches(
+                concat(keys_of("short-vowels"), "n"),
+                but_not=concat(keys_of("long-vowels", "compound-vowels"), "n"),
+            ),
+            matches(VOWELS),
+            replace("end", [("n", "nn")]),
+        ),
         # Vowels + Vowels
         (
             matches(["u", "aau"], but_not=["au"]),

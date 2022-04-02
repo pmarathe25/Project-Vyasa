@@ -6,6 +6,7 @@ aa-!gam to come
 aa-!khyaa to communicate, to inform, to declare
 aa-!vr> to cover, to hide, to conceal, to surround
 aadi (m) beginning
+aaditya (m) son of Aditi [aditi]; (m) (plural) refers to seven deities of the heavenly sphere
 aadya (adj) first [aadi]
 aajn~aa (f) order, command
 aakhyaana (n) communication, story, tale, narrative
@@ -15,7 +16,7 @@ aasana (n) posture, seat
 aas~rama (mn) indefatigable, asylum, hermitage
 aas~rayam (mn) sheltered
 aatmaka (adj) belonging to or forming the nature of, composed of
-aatman (n) soul, essence
+aatman (n) soul, essence, nature, character
 aavr>ta (adj) covered, enveloped [aa-!vr>, perf pass part]
 aayatana (n) altar, resting place, sanctuary
 aayus (n) life, vital power, vigor
@@ -27,11 +28,13 @@ abhis<aika (m) consecration, religious bathing [saika]
 acara (adj) not moving, immovable
 acintya (adj) inconceivable, incomprehensible, unexpected [a+cintya]
 adbhuta (adj) extraordinary, wonderful
+aditi (f) destitution
 agha (adj) bad, dangerous, sinful
 agni (m) fire
 aham I (1st person pronoun)
 aika (adj) one, single, solitary
 aikaaks<ara () [aika+aks<ara]; (n) the sole imperishable thing; (n) the sacred syllable 'Om'
+aikavi.s~ati (f) twenty-one [aika+vi.s~ati]
 ais<a (m) this, that
 aitat (n) this, that
 aiva (indc) just so, exactly so, indeed (places emphasis on the preceding word)
@@ -51,8 +54,12 @@ anya (adj) other, another
 an~jali (m) joined hands
 apaha (adj) (in compound) removing, dispelling, repelling, destroying
 api (indc) even, but, also
+apramaiya (adj) immeasurable, unfathomable [a+pramaiya]
+apramaiyaatman (m) of unfathomable nature, a name of Shiva [apramaiya+aatman]
 artha (mn) reason, substance, wealth, manner, kind
 asat (adj) not being, not existing
+as~va (m) horse
+as~vin (adj) consisting of horses, mounted on horseback; (m) a horse tamer; (m) (dual) "the two charioteers", name of two divinities
 atha (indc) then
 ava-!nam to bow down
 avara (adj) low, inferior, nearer

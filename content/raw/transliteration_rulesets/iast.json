@@ -1,11 +1,13 @@
 {
     "sequence_map": {
-        "vowels": {
+        "short-vowels": {
             "a": "a",
-            "aa": "ā",
             "i": "i",
+            "u": "u"
+        },
+        "long-vowels": {
+            "aa": "ā",
             "ii": "ī",
-            "u": "u",
             "uu": "ū"
         },
         "compound-vowels": {

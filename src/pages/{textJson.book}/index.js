@@ -19,7 +19,11 @@ const ChapterLink = ({ chapter }) => {
 const ChapterIndex = ({ location, data, pageContext }) => {
     return (
         <Layout location={location} pageTitle={pageContext.book}>
-            <ListGroup>
+            <ListGroup style={{
+                maxWidth: "var(--content-max-width)",
+                marginRight: "auto", marginLeft: "auto",
+                borderRadius: "7px",
+            }}>
                 {
                     data.allTextJson.nodes.map(node => (
                         <ChapterLink key={node.chapter} chapter={node.chapter} />

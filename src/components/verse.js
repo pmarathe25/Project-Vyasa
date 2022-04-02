@@ -189,6 +189,7 @@ const Translation = ({ show, translation }) => {
 
 const VerseContent = ({ num, text, wordByWord, location, translation }) => {
     text = useTransliterate(text);
+    const isMobile = useIsMobile();
     const [show, setShow] = React.useState(false);
 
     const url = toUrl(`${location.pathname}#verse_${num}`);
@@ -201,7 +202,7 @@ const VerseContent = ({ num, text, wordByWord, location, translation }) => {
                 <Nav variant="pills"
                     style={{
                         borderBottom: "1px solid rgb(75, 75, 75)",
-                        marginBottom: "4px"
+                        marginBottom: isMobile ? "4px" : "1px"
                     }}
                 >
                     <Nav.Link className={verseTextTab} eventKey="text" style={tabButtonStyle}>
@@ -252,7 +253,7 @@ const Verse = ({ num, text, wordByWord, translation, location }) => {
     return (
         <OffsetAnchor id={`verse_${num}`} >
             <div style={{
-                maxWidth: "950px",
+                maxWidth: "var(--content-max-width)",
                 marginRight: "auto", marginLeft: "auto",
                 marginBottom: isMobile ? "20px" : "2px",
                 backgroundColor: isActive ? "rgb(66, 66, 66)" : "inherit",
