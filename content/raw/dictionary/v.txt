@@ -1,3 +1,4 @@
+!vaa to blow (as the wind)
 !vac to speak, to tell, to say
 !vad to say, to speak
 !vas to live, to dwell
@@ -11,6 +12,7 @@ vaais~ampaayana (m) Vaishampayana
 vaakya (n) speech, statement, sentence
 vaars<ika (mn) yearly, annual
 vaasin (mn) staying, dwelling [!vas]
+vaayu (m) the wind, the air [!vaa]
 vacana (mn) speech, sentence, word
 vaida (m) true knowledge; (m) one of the Vedas, a set of four formative literary works originating in ancient India
 varain<ya (adj) desirable, excellent, best

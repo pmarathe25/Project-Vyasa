@@ -8,6 +8,7 @@ paarthiva (m) prince
 paauraan<ika (adj) of/relating to the Puranas
 paavaka (adj) pure, clear, bright, shining
 pada (n) a step, a word
+paks<a (m) wing, feather; (m) half a lunar month, a fortnight
 para (adj) distant, far, past, future, alien, other, enemy, high
 param (indc) greatly, completely, to a high degree
 parama (adj) highest, furthest, final, best, worst [para, sup]
@@ -16,12 +17,15 @@ pari-!vr> to surround
 parvan (n) a knot, a division, a section
 pati (m) (in compound) lord, master, owner, ruler
 patra (n) leaf, petal
-pitr> (m) father
+pis~aaca (m) a class of demons
+pitr> (m) father; (m) (plural) the fathers, forefather, ancestors; (m) a class of demigods
+pr>thivii (f) the earth, land, ground, soil
 pra () (as prefix) excessively, very much; () (as prefix) forward, in front
 pra-!bhuu to spring forth, to originate, to appear, to surpass, to be powerful
 pra-!caks<|II to call, to name, to tell, to declare
 pra-!jan to generate, to procreate, to beget
 pra-!stu to praise, to begin, to commence
+pra-!suu|II to beget, to produce, to obtain offspring to bear fruit
 pra-!vac to proclaim, to announce, to impart, to declare
 praacaitas () [pracaitas]; (adj) descended from/belonging to Pracetas; (m) (plural) refers to the 10 sons of Pracetas
 prabhaa (f) light, splendor, radiance [!bhaa]
@@ -30,6 +34,7 @@ pracaitas (adj) attentive, observant, mindful, clever, wise [pra+caitas]; (m) Pr
 prajaa (f) offspring, descendant, person, creature [pra-!jan]
 prajaapati (m) lord of creatures, protector of life [prajaa+pati]
 pramaiya (adj) measurable, provable
+prasuuta (adj) born, produced, begotten [pra-!suu|II, perf pass part]
 prati-!sthaa to stand, to abide, to dwell, to be established
 priya (adj) beloved, dear, favorite
 pun<ya (adj) auspicious, pleasant, holy [!pun<|VI]

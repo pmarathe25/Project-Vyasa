@@ -2,7 +2,9 @@
 !sthaa to stand
 !str> to spread out, to cover
 !stu to praise
+!suu|II to bring forth, to beget, to give birth to
 !s~a.s to approve of, to tell, to express
+!s~is<|VII to distinguish, to discriminate
 !s~ru to hear
 sa (m) he, this, that
 sa.hita (adj) joined, uninterrupted, agreeing with, endowed with
@@ -10,9 +12,11 @@ sa.panna (adj) right, correct, thriving, finished, endowed with
 sa.skaara (m) cleansing the body, training the mind, correctness, purity (especially of pronunciation)
 sa.s~ita (adj) sharp, well-prepared, rigid, firm
 sa.s~rita (adj) united with, inherent in, relating to, concerning
+sa.vatsara (m) a year
 sa.yukta (adj) conjoined, united with, combined [sam-!yuj|VII, perf pass part]
 sa.yuta (adj) united, containing [sam-!yu, perf pass part]
 saa (f) she, this that
+saadhya (m) (plural) a class of celestial beings
 saauti (m) Sauti, the narrator of the Mahabharata
 sadas (n) assembly, seat, residence
 saika (m) effusion, emission, offering
@@ -23,21 +27,24 @@ sam-!yu to unite, to join together, to contain
 sam-!yuj|VII to combine, to unite
 sam-pari-!kram to travel, to wander [!kram]
 sam-prati-aa-!caks<|II to explain, to teach
+sam-ud-!i|I to rise up together, to come together or prepare
 samaasa (m) aggregation, union, [sam-!aas]; (m) succinctness, brevity, conciseness
 samantapan~caka (n) Samantapancaka, a district of Kurukshetra
 samataa (f) sameness of level, equality
 samaya (m) agreement, engagement [sam-!i|I]; (m) a speech, a declaration
 samiipa (n) vicinity, proximity
+samudita (adj) elevated, risen, possessed of, supplied with [sam-ud-!i|I, perf pass part]
 samyak (indc) together, rightly, properly, completely
 sanaatana (adj) eternal, perpetual, everlasting
 sapta (indc) (in compound) seven
 sarasvatii (f) Sarasvati, goddess of knowledge, arts, etc.
 sarpa (mn) a snake
-sarva (adj) all
+sarva (adj) all, all sorts
 sarvatas (indc) from all sides, entirely, everywhere
 sarvatra (indc) everywhere, omnipresent
 sat (adj) being, existing, truth [!as, pres act part]
 satra (n) sacrifice
+sattama (adj) very good, best, most virtuous, very venerable [sat, sup]
 satya (adj) true, real, genuine, honest, virtuous [sat]
 sras<t<aara (m) creator
 stha () (in compound) standing, staying [!sthaa]
@@ -50,11 +57,12 @@ sura (m) a deity, a divinity, a sage, the Sun
 suraguru (m) teacher of the gods [sura+guru]; (m) Suraguru
 suuks<ma (adj) subtle, minute, fine, small, exact
 suurya (mn) the Sun
-suuta (m) charioteer
+suuta (m) charioteer; (adj) born, engendered [!suu|II, perf pass part]
 sva one's own, one's self
 svastha (adj) self-abiding, self-sufficient, independent [sva+stha]
 s~aastra (n) an order, teaching, scientific treatise, religious scripture
 s~aaunaka (m) Shaunaka, a Sanskrit grammarian
 s~abda (m) word
+s~is<t<a (adj) disciplined, cultured, learned, eminent [!s~is<|VII, perf pass part]
 s~ubha (adj) splendid, bright, pleasant, eminent
 s~uci (adj) gleaming, shining, radiant, pure

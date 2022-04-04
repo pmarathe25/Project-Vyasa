@@ -39,7 +39,7 @@ sa.s~itavrataan (sa.s~ita+vrata, acc pl m) rigid-vowed (firm in their vows)
 vinayaavanata: (vinaya+ava-!nam, nom sing m perf pass part) humbly bowed
 bhuutvaa (!bhuu, abs) having been
 kadaacit (kadaa+cit,) once
-suutanandana: (suuta+nandana, nom sing) son of Suta 
+suutanandana: (suuta+nandana, nom sing m) son of Suta 
 
 Once, the son of Lomaharshana, Ugrasravas, [also known as] Sauti, [also as] the son
 of Suta, well-versed in the Puranas, humbly bowed, approached the blissfully sitting,
@@ -598,7 +598,7 @@ vaai indeed
 Brahma [along with] Suraguru, Sthanu, Manu, Ka, [and] then Paramesthi,
 [and] so also the 10 sons of Pracetas, Daksha, and indeed the seven sons of Daksha.
 
-33.2-34
+33.2-35.1
 
 tata: then
 prajaanaam (prajaa, gen pl) of beings
@@ -620,7 +620,52 @@ vasava: (vasu, nom pl m) the Vasus
 atha then
 as~vinaau (as~vin, nom du m) the two Ashwins
 api also
+-
+yaks<aa: (yaks<a, nom pl) the Yakshas
+saadhyaa: (saadhya, nom pl) the Sadhyas
+pis~aacaa: (pis~aaca, nom pl) the Pishachas
+ca and
+guhyakaa: (guhyaka, nom pl) the Guhyakas
+pitara: (pitr>, nom pl) the Pitrs
+tathaa in that manner
 
 "Then appeared twenty-one lords of beings (prajapatis)
 and the Purusha of unfathomable nature, whom all the sages knew,
-so also the Vishvedevas, the Adityas, the Vasus, then also the two Ashwins.
+so also the Vishvedevas, the Adityas, the Vasus, then also the two Ashwins,
+and in that manner, the Yakshas, the Sadhyas, the Pishachas, the Guhyakas, the Pitrs...
+
+35.2-36.1
+
+tata: then
+prasuutaa: (prasuuta, nom pl m) [they were] begotten
+vidvaa.sa: (vidvas, nom pl m) wise
+s~is<t<aa: (s~is<t<a, nom pl m) distinguished
+brahmars<isattamaa: (brahman+r>s<i+sattama, nom pl m) the most venerable Brahman sages  
+-
+raajars<aya: (raajan+r>s<i, nom pl) the royal sages
+ca and
+bahava: (bahu, nom pl m) many
+sarvaai: (sarva, inst pl m) by all sorts
+samuditaa: (samudita, nom pl m) elevated
+gun<aai: (gun<a, inst pl) by virtues
+
+"Then [were] begotten the wise, distinguished, most venerable Brahman sages,
+and many royal sages elevated by all sorts [of] virtues...
+
+36.2-37.1
+
+aapa: (aapas, nom sing) the water
+dyaau: (div, nom sing) the heavens
+pr>thivii (pr>thivii, nom sing) the earth
+vaayu: (vaayu, nom sing) the wind
+antariks<am (antariks<a, nom sing) the sky 
+dis~a: (dis~, nom pl) the points
+tathaa so also
+-
+sa.vatsarartava: (sa.vatsara+r>tu, nom pl) the years [and] seasons
+maasaa: (maasa, nom pl) the months
+paks<aahauraatraya: (paks<a+ahauraatri, nom pl) the fortnights, the days [and] nights
+kramaat gradually
+
+"So also the water, the heavens, the earth, the wind, [and] the points [of] the sky,
+[and] gradually the years, the seasons, the months, the fortnights, the days [and] nights.
