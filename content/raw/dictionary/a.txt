@@ -11,6 +11,7 @@ aadya (adj) first [aadi]
 aajn~aa (f) order, command
 aakhyaana (n) communication, story, tale, narrative
 aalauka (m) sight, vision, light, luster [lauka]
+aapas (n) water
 aaran<ya (n) forest
 aasana (n) posture, seat
 aas~rama (mn) indefatigable, asylum, hermitage
@@ -32,6 +33,8 @@ aditi (f) destitution
 agha (adj) bad, dangerous, sinful
 agni (m) fire
 aham I (1st person pronoun)
+ahar (n) a day
+ahauraatri (f) day and night [ahar+raatri]
 aika (adj) one, single, solitary
 aikaaks<ara () [aika+aks<ara]; (n) the sole imperishable thing; (n) the sacred syllable 'Om'
 aikavi.s~ati (f) twenty-one [aika+vi.s~ati]
@@ -47,6 +50,8 @@ alam-!kr> to adorn, to decorate, to embellish [alam]
 an () (as prefix) negates/inverts the meaning of a word
 an<d<a (n) egg
 anagha (adj) sinless, faultless [an+agha]
+antar (indc) within, between
+antariks<a (n) the atmosphere or sky, the intermediate space between the earth and the heavens
 anu-!i|I to follow, to go after, to seek
 anu-pra-!aap to reach
 anvita (adj) possessing, endowed lit. "followed by" [anu-!i|I, perf pass part]
