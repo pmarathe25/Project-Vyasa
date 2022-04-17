@@ -465,7 +465,7 @@ parai (para, nom pl m) others
 aakhyaasyanti (aa-!khyaa, 3 pl fut act ind) they will tell
 tathaa in that manner, in the same way
 aiva indeed
-anyai (anya, nom pl m) others
+anyai (anya, nom pl) others
 itihaasam (itihaasa, acc sing) history
 imam (ayam, acc sing) this
 bhuvi (bhuu, loc sing) on earth
@@ -659,7 +659,7 @@ dyaau: (div, nom sing) the heavens
 pr>thivii (pr>thivii, nom sing) the earth
 vaayu: (vaayu, nom sing) the wind
 antariks<am (antariks<a, nom sing) the sky 
-dis~a: (dis~, nom pl) the points
+dis~a: (dis~, nom pl) the quarters [of the sky]
 tathaa so also
 -
 sa.vatsarartava: (sa.vatsara+r>tu, nom pl) the years [and] seasons
@@ -667,5 +667,18 @@ maasaa: (maasa, nom pl) the months
 paks<aahauraatraya: (paks<a+ahauraatri, nom pl) the fortnights, the days [and] nights
 kramaat gradually
 
-"So also the water, the heavens, the earth, the wind, [and] the points [of] the sky,
+"So also the water, the heavens, the earth, the wind, the sky, [and] the quarters [of the sky],
 [and] gradually the years, the seasons, the months, the fortnights, the days [and] nights.
+
+37.2
+
+yat (yat, nom sing) what[ever]
+ca and
+anyat (anyat, nom sing) else
+api also
+tat (tat, nom sing) that
+sarvam (sarva, nom sing n) all
+sambhuutam (sambhuuta, nom sing n) produced
+laukasaaks<ikam (lauka+saaks<ika, nom sing n) observed [in the] world, lit. "world-witnessed"
+
+"And what[ever] else [is] observed [in the] world, all that [was] also produced.
