@@ -6,7 +6,7 @@
 !s~a.s to approve of, to tell, to express
 !s~is<|VII to distinguish, to discriminate
 !s~ru to hear
-sa (m) he, this, that
+sa (m) he, this, that; () (as prefix) with, having
 sa.hita (adj) joined, uninterrupted, agreeing with, endowed with
 sa.panna (adj) right, correct, thriving, finished, endowed with
 sa.skaara (m) cleansing the body, training the mind, correctness, purity (especially of pronunciation)
@@ -17,10 +17,13 @@ sa.yukta (adj) conjoined, united with, combined [sam-!yuj|VII, perf pass part]
 sa.yuta (adj) united, containing [sam-!yu, perf pass part]
 saa (f) she, this that
 saadhya (m) (plural) a class of celestial beings
+saaks<ika (adj) (in compound) witnessed [saaks<in]
+saaks<in (adj) observing, witnessing, eye-witness [sa+aks<a]
 saauti (m) Sauti, the narrator of the Mahabharata
 sadas (n) assembly, seat, residence
 saika (m) effusion, emission, offering
 sam-!aas to sit together, to assemble
+sam-!bhuu to be or come together, to be born or produced
 sam-!i|I to go or come together, to meet
 sam-!s~ru to hear or hear from, to listen attentively; () (passive voice) to be heard, talked, or read about
 sam-!yu to unite, to join together, to contain
@@ -32,6 +35,7 @@ samaasa (m) aggregation, union, [sam-!aas]; (m) succinctness, brevity, concisene
 samantapan~caka (n) Samantapancaka, a district of Kurukshetra
 samataa (f) sameness of level, equality
 samaya (m) agreement, engagement [sam-!i|I]; (m) a speech, a declaration
+sambhuuta (adj) united, born, produced [sam-!bhuu, perf pass part]
 samiipa (n) vicinity, proximity
 samudita (adj) elevated, risen, possessed of, supplied with [sam-ud-!i|I, perf pass part]
 samyak (indc) together, rightly, properly, completely
