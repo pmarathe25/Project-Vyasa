@@ -7,7 +7,7 @@ import toUrl from '../util/util';
 import Definition from './definition';
 import OffsetAnchor from './offsetAnchor';
 import { useTransliterate } from './transliterationHook';
-import { translationText, verseText, verseTextTab } from "./verse.module.css";
+import { translationText, verseText } from "./verse.module.css";
 
 const allWordsDict = require("../../content/generated/dictionary/all_words.json");
 
@@ -164,7 +164,7 @@ const TabContents = (props) => {
                 <Col sm="auto" style={{
                     position: "absolute", width: "fit-content", padding: "0px", zIndex: 1,
                     color: isMobile ? "rgb(72, 72, 85)" : "rgb(88, 88, 105)",
-                    fontSize: "30px",
+                    fontSize: "25px",
                 }}>
                     {props.num}
                 </Col>
@@ -196,6 +196,16 @@ const VerseContent = ({ num, text, wordByWord, location, translation }) => {
 
     const tabButtonStyle = { borderRadius: "4px 4px 0px 0px", color: "rgb(225, 225, 225)" };
 
+    const verseTabStyle = {
+        fontSize: "14px",
+        paddingLeft: "8px",
+        paddingRight: "8px",
+        paddingTop: isMobile ? "5px" : "2px",
+        paddingBottom: isMobile ? "5px" : "2px",
+        cursor: "pointer",
+        ...tabButtonStyle
+    };
+
     return (
         <Tab.Container defaultActiveKey="text" id={"verse-text-tabs-" + num} >
             <Row style={{ width: "fit-content", marginLeft: "0px" }}>
@@ -205,16 +215,16 @@ const VerseContent = ({ num, text, wordByWord, location, translation }) => {
                         marginBottom: isMobile ? "4px" : "1px"
                     }}
                 >
-                    <Nav.Link className={verseTextTab} eventKey="text" style={tabButtonStyle}>
+                    <Nav.Link eventKey="text" style={verseTabStyle}>
                         Text
                     </Nav.Link>
-                    <Nav.Link className={verseTextTab} eventKey="word-by-word" style={tabButtonStyle}>
+                    <Nav.Link eventKey="word-by-word" style={verseTabStyle}>
                         Word-by-word
                     </Nav.Link>
-                    <Nav.Link className={verseTextTab} onClick={() => { setShow(!show) }}
+                    <Nav.Link onClick={() => { setShow(!show) }}
                         style={{
                             backgroundColor: show ? "rgb(85, 85, 80)" : "inherit",
-                            ...tabButtonStyle
+                            ...verseTabStyle
                         }}>
                         {show ? "Hide" : "Show"} Translation
                     </Nav.Link>
@@ -256,7 +266,7 @@ const Verse = ({ num, text, wordByWord, translation, location }) => {
                 minHeight: "80px",
                 maxWidth: "var(--content-max-width)",
                 marginRight: "auto", marginLeft: "auto",
-                marginBottom: isMobile ? "20px" : "2px",
+                marginBottom: isMobile ? "20px" : "1px",
                 backgroundColor: isActive ? "rgb(66, 66, 66)" : "inherit",
                 borderRadius: "7px",
             }}>

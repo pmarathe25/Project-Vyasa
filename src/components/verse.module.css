@@ -19,14 +19,6 @@
     text-align: center;
 }
 
-.verse-text-tab {
-    font-size: 15px;
-    padding-left: 7px;
-    padding-right: 7px;
-    padding-top: 4px;
-    padding-bottom: 4px;
-}
-
 .verse-text-tab:hover {
     background: #646464;
     color: #d1d1d1;
