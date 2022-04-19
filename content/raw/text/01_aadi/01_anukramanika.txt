@@ -666,12 +666,7 @@ sa.vatsarartava: (sa.vatsara+r>tu, nom pl) the years [and] seasons
 maasaa: (maasa, nom pl) the months
 paks<aahauraatraya: (paks<a+ahauraatri, nom pl) the fortnights, the days [and] nights
 kramaat gradually
-
-"So also the water, the heavens, the earth, the wind, the sky, [and] the quarters [of the sky],
-[and] gradually the years, the seasons, the months, the fortnights, the days [and] nights.
-
-37.2
-
+-
 yat (yat, nom sing) what[ever]
 ca and
 anyat (anyat, nom sing) else
@@ -681,4 +676,24 @@ sarvam (sarva, nom sing n) all
 sambhuutam (sambhuuta, nom sing n) produced
 laukasaaks<ikam (lauka+saaks<ika, nom sing n) observed [in the] world, lit. "world-witnessed"
 
-"And what[ever] else [is] observed [in the] world, all that [was] also produced.
+"So also the water, the heavens, the earth, the wind, the sky, [and] the quarters [of the sky],
+[and] gradually the years, the seasons, the months, the fortnights, the days [and] nights,
+and what[ever] else [is] observed [in the] world, all that [was] also produced.
+
+38
+
+yat (yat, nom sing) what
+idam (idam, nom sing) that
+dr>s~yatai (!dr>s~, 3 sing pres pass ind) is seen
+ki.cit (kim+cit,) whatever
+bhuutam (bhuuta, nom sing n) created
+sthaavarajan^gamam (sthaavara+jan^gama, nom sing n) stationary and moving
+-
+puna: (punar,) again
+sa.ks<ipyatai (sam-!ks<ip, 3 sing pres pass ind) is diminished
+sarvam (sarva, nom sing n) all
+jagatpraaptai (jagat+praapta, loc sing n) at the end of the world, lit. "at world-complete"
+yugaks<ayai (yuga+ks<aya, loc sing) at the destruction of the age, lit. "at age-destruction"
+
+"What is seen, whatever [is] created, [both] stationary and moving,
+all that is diminished again at the end of the world, at the destruction of the age.
