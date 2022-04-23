@@ -26,16 +26,14 @@ const WordAndDefinitions = ({ location, word, definitions, roots, partsOfSpeeche
         for (let index = 0; index < wordParts.length; ++index) {
             const part = translitWordParts[index];
             ret.push(
-                index === (wordParts.length - 1) && index > 0
-                    ? (
-                        <Link key={index} to={`${baseUrl}#${toUrl(wordParts[index])}`} style={wordLinkStyle}>
-                            {part}
-                        </Link>
-                    )
-                    :
+                <>
+                    <Link key={index} to={`${baseUrl}#${toUrl(wordParts[index])}`} style={wordLinkStyle}>
+                        {part}
+                    </Link>
                     <p style={wordLinkStyle} key={index}>
-                        {part + (wordParts.length > 1 ? "-" : "")}
+                        {(wordParts.length > 1 ? "-" : "")}
                     </p>
+                </>
             );
         }
         return ret;

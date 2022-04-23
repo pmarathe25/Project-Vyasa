@@ -18,11 +18,9 @@ import util
 def validate_dictionary(dct):
     for word, (section_name, _, references, _) in dct.items():
         is_verb = "√" in word
-        if is_verb:
-            base_form = word.split("-")[-1]
-            assert base_form in dct, "Base form ({:}) of word: {:} is not present in the dictionary!".format(
-                base_form, word
-            )
+
+        for part in word.split("-"):
+            assert part in dct, "Part ({:}) of word: {:} is not present in the dictionary!".format(part, word)
 
         for reference in references:
             assert not reference or all(
