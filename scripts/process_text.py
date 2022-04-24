@@ -117,6 +117,18 @@ def build_sandhied_text(words, translit_ruleset):
 
         return replace_impl
 
+    def join():
+        """
+        Joins two words together into one.
+        """
+
+        def join_impl(cur, nxt):
+            # We join the first word into the second so that sandhi can continue correctly.
+            # Otherwise, the next iteration would see "" as the first word.
+            return "", cur + nxt
+
+        return join_impl
+
     def matches(patterns=None, but_not=None):
         """
         Builds a function that will match a particular pattern in a word.
@@ -220,6 +232,15 @@ def build_sandhied_text(words, translit_ruleset):
             matches(["ai", "au"], but_not=["aai", "aau"]),
             matches(["a"], but_not=["aa", "ai", "au"]),
             replace("start", [("a", "'")]),
+        ),
+        (
+            matches(["a", "aa"]),
+            matches(["r>"]),
+            compose(
+                replace("end", [("aa", "a")]),
+                replace("start", [("r>", "r")]),
+                join(),
+            ),
         ),
     ]
 
