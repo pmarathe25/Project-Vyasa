@@ -5,10 +5,9 @@ import { useTransliterate } from '../components/transliterationHook';
 import toUrl from '../util/util';
 
 const style = {
-    color: "rgb(250, 250, 250)",
-    fontStyle: "italic",
+    color: "var(--text-gray-color)",
     padding: 0,
-    fontSize: "15px",
+    fontSize: "14.5px",
 };
 
 const Root = ({ root, partsOfSpeech }) => {

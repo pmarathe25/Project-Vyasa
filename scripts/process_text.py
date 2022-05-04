@@ -72,7 +72,7 @@ def build_sandhied_text(words, translit_ruleset):
         )
     }
 
-    def concat(patterns, str):
+    def postpend(patterns, str):
         return [pat + str for pat in patterns]
 
     def compose(*funcs):
@@ -116,6 +116,18 @@ def build_sandhied_text(words, translit_ruleset):
             return cur, nxt
 
         return replace_impl
+
+    def join():
+        """
+        Joins two words together into one.
+        """
+
+        def join_impl(cur, nxt):
+            # We join the first word into the second so that sandhi can continue correctly.
+            # Otherwise, the next iteration would see "" as the first word.
+            return "", cur + nxt
+
+        return join_impl
 
     def matches(patterns=None, but_not=None):
         """
@@ -162,7 +174,7 @@ def build_sandhied_text(words, translit_ruleset):
         return matches_impl
 
     # Format: (first_word_condition, second_word_condition, change strategy)
-    # Order matters because applying one sandhi may invalidate another!
+    # Order matters because applying one sandhi may invalidate another; it's a classic phase-ordering problem!
     PRE_MERGE_SANDHI = [
         # Special rules for m
         (matches(["m"]), matches(but_not=VOWELS), replace("end", [("m", ".")])),
@@ -191,8 +203,8 @@ def build_sandhied_text(words, translit_ruleset):
         # Final 'n' is doubled when preceded by a short vowel and followed by any vowel.
         (
             matches(
-                concat(keys_of("short-vowels"), "n"),
-                but_not=concat(keys_of("long-vowels", "compound-vowels"), "n"),
+                postpend(keys_of("short-vowels"), "n"),
+                but_not=postpend(keys_of("long-vowels", "compound-vowels"), "n"),
             ),
             matches(VOWELS),
             replace("end", [("n", "nn")]),
@@ -220,6 +232,15 @@ def build_sandhied_text(words, translit_ruleset):
             matches(["ai", "au"], but_not=["aai", "aau"]),
             matches(["a"], but_not=["aa", "ai", "au"]),
             replace("start", [("a", "'")]),
+        ),
+        (
+            matches(["a", "aa"]),
+            matches(["r>"]),
+            compose(
+                replace("end", [("aa", "a")]),
+                replace("start", [("r>", "r")]),
+                join(),
+            ),
         ),
     ]
 

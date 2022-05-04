@@ -117,10 +117,10 @@ const WordAndDefinition = ({ word, definition, root, parts_of_speech }) => {
                 </p>
             </OverlayTrigger>
             <p style={{
-                fontStyle: "italic", fontSize: "15px",
+                fontSize: "14.5px",
                 color: "rgb(185, 185, 185)",
                 width: "fit-content",
-                maxWidth: "200px",
+                maxWidth: "125px",
                 marginLeft: "auto", marginRight: "auto",
             }}>
                 {definition}

@@ -273,6 +273,18 @@ def transliteration_ruleset():
             ["sarvai", "aiva"],
             "sarva aiva",
         ),
+        (
+            ["yatha", "r>tu"],
+            "yathartu",
+        ),
+        (
+            ["yathaa", "r>tu"],
+            "yathartu",
+        ),
+        (
+            ["yathaa", "r>taau", "r>tu"],
+            "yathartaavr>tu",
+        ),
     ],
 )
 def test_build_sandhied_text(words, expected_output, transliteration_ruleset):
