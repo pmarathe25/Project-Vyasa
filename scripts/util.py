@@ -59,6 +59,7 @@ PARTS_OF_SPEECH_MAPPING = OrderedDict(
         ("part", ("participle", "form")),
         ("ger", ("gerund", "form")),
         ("inf", ("Infinitive", "form")),
+        ("adv", ("Adverb", "form")),
         ("sup", ("Superlative", "degree")),
     ]
 )
@@ -135,7 +136,10 @@ def process_parts_of_speech(
             show_error(f"Cannot use parts of speech: {sorted_parts['other']} for non-verbs!")
         part_functions.remove("other")
 
-    if is_verb:
+    if "form" in sorted_parts and sorted_parts["form"] == "adv":
+        # Adverbs only have form.
+        check_parts({"form"})
+    elif is_verb:
         if "other" in sorted_parts and sorted_parts["other"] == "desadj":
             check_parts(DESIDERATIVE_ADJECTIVE_PARTS)
         elif "form" in sorted_parts:
