@@ -245,6 +245,7 @@ Valid entries are as follows:
 - `abs`: Absolutive
 - `ger`: Gerund
 - `part`: Participle
+- `adv`: Adverb
 - `sup`: Superlative
 
 Additionally, for adjectives and participles, gender must be provided 
