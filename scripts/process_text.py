@@ -362,8 +362,9 @@ def parse_word_grammar(line, verse_num, line_num, dictionary):
     )
 
 
-def extract_title(str):
-    return str.split("_")[-1].title() + " Parva"
+def extract_title(str, prefix):
+    num, name = str.split("_")
+    return f"{prefix} {int(num)}: {name.title()} Parva"
 
 
 def main():
@@ -403,8 +404,8 @@ def main():
     TRANSLIT_RULESET = json.load(open(args.transliteration_ruleset))
     DICTIONARY = json.load(open(args.dictionary))
 
-    book = extract_title(os.path.dirname(args.input_file))
-    chapter = extract_title(os.path.splitext(os.path.basename(args.input_file))[0])
+    book = extract_title(os.path.basename(os.path.dirname(args.input_file)), "Book")
+    chapter = extract_title(os.path.splitext(os.path.basename(args.input_file))[0], "Chapter")
     processed = {
         "book": book,
         "chapter": chapter,

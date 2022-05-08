@@ -5,7 +5,7 @@ import { titleCaseFromUrl } from '../util/util'
 
 
 const ResponsiveBreadcrumbs = ({ location }) => {
-    let breadcrumbStyle = {
+    const breadcrumbStyle = {
         fontSize: "16px"
     };
     let breadcrumbs = [
