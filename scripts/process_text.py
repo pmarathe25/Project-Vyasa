@@ -186,6 +186,14 @@ def build_sandhied_text(words, translit_ruleset):
             replace("end", [("t", "n")]),
         ),
         (matches(["t"]), matches(["c"]), replace("end", [("t", "c")])),
+        (
+            matches(["t"]),
+            matches(["s~"]),
+            compose(
+                replace("end", [("t", "c")]),
+                replace("start", [("s~", "ch")]),
+            ),
+        ),
         (matches(["t"]), matches(["j"]), replace("end", [("t", "j")])),
         (matches(["t"]), matches(keys_of("unvoiced-retroflex-consonants")), make_retroflex),
         (matches(["t"]), matches(keys_of("voiced-retroflex-consonants")), compose(make_voiced, make_retroflex)),

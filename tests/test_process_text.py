@@ -189,6 +189,19 @@ def transliteration_ruleset():
             ["tat", "na"],
             "tanna",
         ),
+        # 't' plus sibilants
+        (
+            ["tat", "sa"],
+            "tatsa",
+        ),
+        (
+            ["tat", "s<a"],
+            "tats<a",
+        ),
+        (
+            ["tat", "s~a"],
+            "taccha",
+        ),
         # Consonant + Vowel
         (
             ["naram", "aiva"],
@@ -423,7 +436,7 @@ def build_expected(verse_num, verses_text, translations, word_lists):
             """
             1
 
-            prastaavayan (pra-!stu, nom sing m pres act part caus) causing to start, starting 
+            prastaavayan (pra-!stu, nom sing m pres act part caus) causing to start, starting
 
             Starting
             """,
@@ -483,24 +496,27 @@ def build_expected(verse_num, verses_text, translations, word_lists):
     ],
 )
 def test_process_text(content, expected_output):
-    in_dir = tempfile.TemporaryDirectory(suffix="_example")
-    with tempfile.NamedTemporaryFile("w+", dir=in_dir.name, suffix="_example.txt") as inp:
+    root_dir = tempfile.TemporaryDirectory()
+
+    book_dir = os.path.join(root_dir.name, "01_example")
+    os.makedirs(book_dir, exist_ok=True)
+
+    chapter_file = os.path.join(book_dir, "01_example.txt")
+    with open(chapter_file, "w") as inp:
         inp.write(dedent(content))
-        inp.flush()
 
-        expected_output["book"] = "Example Parva"
-        expected_output["chapter"] = "Example Parva"
+    expected_output["book"] = "Book 1: Example Parva"
+    expected_output["chapter"] = "Chapter 1: Example Parva"
 
-        out_dir = tempfile.TemporaryDirectory()
-        out_file = os.path.join(out_dir.name, "processed.json")
+    out_file = os.path.join(root_dir.name, "processed.json")
 
-        process_text = os.path.join(SCRIPTS_DIR, "process_text.py")
+    process_text = os.path.join(SCRIPTS_DIR, "process_text.py")
 
-        cmd = ["python3", process_text, inp.name, "-o", out_file, "-r", TRANSLITERATION_RULESET, "-d", DICTIONARY]
-        print(f"Running command: {' '.join(cmd)}")
-        status = sp.run(cmd)
-        assert status.returncode == 0, f"Error in {process_text}"
+    cmd = ["python3", process_text, chapter_file, "-o", out_file, "-r", TRANSLITERATION_RULESET, "-d", DICTIONARY]
+    print(f"Running command: {' '.join(cmd)}")
+    status = sp.run(cmd)
+    assert status.returncode == 0, f"Error in {process_text}"
 
-        output = json.load(open(out_file))
+    output = json.load(open(out_file))
 
-        assert output == expected_output
+    assert output == expected_output
