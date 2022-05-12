@@ -20,7 +20,7 @@ and the goddess Sarasvati, one should thus proclaim victory.
 
 1-2
 
-laumahars<an<aputra: (laumahars<an<a+putra, nom sing) Lomaharshana's son
+laumahars<an<aputra: (laumahars<an<a+putra, nom sing m) Lomaharshana's son
 ugras~ravaa: (ugras~ravas, nom sing) Ugrasravas
 saauti: (saauti, nom sing) Sauti
 paauraan<ika: (paauraan<ika, nom sing m) well-versed in the Puranas
@@ -731,3 +731,39 @@ sa.parivartatai (sam-pari-!vr>t, 3 sing pres mid ind) it revolves
 
 "Thus, this wheel (of time), the destroyer of [all] created things, without beginning and end,
 revolves perpetually in the world.
+
+41
+
+trayastri.s~at (trayastri.s~at, nom sing) thirty-three
+sahasraan<i (sahasra, nom pl) thousand(s)
+trayastri.s~at (trayastri.s~at, nom sing) thirty-three
+s~ataani (s~ata, nom pl) hundred(s)
+ca and
+-
+trayastri.s~at (trayastri.s~at, nom sing) thirty-three
+ca and
+daivaanaam (daiva, gen pl) of gods
+sr>s<t<i: (sr>s<t<i, nom sing) the generation
+sa.ks<aipalaks<an<aa (sa.ks<aipa+laks<an<aa, nom sing) a brief indication
+
+"[To give] a brief indication, the generation of the gods [was]
+thirty-three thousand, thirty-three hundred, and thirty-three.
+
+42
+
+divasputra: (diva+putra, nom sing) son of Diva, lit. "Diva-son"
+br>hadbhaanu: (br>hadbhaanu, nom sing m) Brhadbhanu
+caks<u: (caks<us, nom sing m) Cakshus
+aatmaa (aatman, nom sing) Atma
+vibhaavasu: (vibhaavasu, nom sing m) Vibhavasu
+-
+savitaa (savitr>, nom sing) Savita
+ca and
+r>ciika: (r>ciika, nom sing) Rcika
+arka: (arka, nom sing) Arka
+bhaanu: (bhaanu, nom sing) Bhanu
+aas~aavaha: (aas~aavaha, nom sing) Ashavaha
+ravi: (ravi, nom sing) Ravi
+
+"The son(s) of Diva [were] Brhadbhanu, Cakshus, Atma, Vibhavasu,
+and Savita, Rcika, Arka, Bhanu, Ashavaha, Ravi.

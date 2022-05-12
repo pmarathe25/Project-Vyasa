@@ -15,10 +15,12 @@ aalauka (m) sight, vision, light, luster [lauka]
 aapas (n) water
 aaran<ya (n) relating to a forest, forest-born
 aasana (n) posture, seat
+aas~aa (f) wish, hope, desire
+aas~aavaha (m) hope-bringing [aas~aa+vaha]; (m) Ashavaha
 aas~rama (mn) indefatigable, asylum, hermitage
 aas~rayam (mn) sheltered
 aatmaka (adj) belonging to or forming the nature of, composed of
-aatman (n) soul, essence, nature, character
+aatman (n) soul, essence, nature, character; (m) Atma
 aavr>ta (adj) covered, enveloped [aa-!vr>, perf pass part]
 aayatana (n) altar, resting place, sanctuary
 aayus (n) life, vital power, vigor
@@ -66,6 +68,7 @@ apaha (adj) (in compound) removing, dispelling, repelling, destroying
 api (indc) even, but, also
 apramaiya (adj) immeasurable, unfathomable [a+pramaiya]
 apramaiyaatman (m) of unfathomable nature, a name of Shiva [apramaiya+aatman]
+arka (m) one who praises [!r>c]; (m) Arka
 artha (mn) reason, substance, wealth, manner, kind
 asat (adj) not being, not existing
 as~va (m) horse

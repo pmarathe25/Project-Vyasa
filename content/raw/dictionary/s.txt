@@ -3,12 +3,14 @@
 !str> to spread out, to cover
 !stu to praise
 !suu|II to bring forth, to beget, to give birth to
+!su|I to urge, to impel, to incite
 !s~a.s to approve of, to tell, to express
 !s~is<|VII to distinguish, to discriminate
 !s~ru to hear
 sa (m) he, this, that; () (as prefix) with, having
 sa.haara (m) collection, accumulation, contraction; (m) end, conclusion, destruction [sam-!hr>]
 sa.hita (adj) joined, uninterrupted, agreeing with, endowed with
+sa.ks<aipa (m) (in compound) briefly, concisely, in short [sam-!ks<ip]
 sa.panna (adj) right, correct, thriving, finished, endowed with
 sa.skaara (m) cleansing the body, training the mind, correctness, purity (especially of pronunciation)
 sa.s~ita (adj) sharp, well-prepared, rigid, firm
@@ -22,6 +24,7 @@ saaks<ika (adj) (in compound) witnessed [saaks<in]
 saaks<in (adj) observing, witnessing, eye-witness [sa+aks<a]
 saauti (m) Sauti, the narrator of the Mahabharata
 sadas (n) assembly, seat, residence
+sahasra (n) a thousand
 saika (m) effusion, emission, offering
 sam () (as prefix) with, together, along with, altogether
 sam-!aas to sit together, to assemble
@@ -55,6 +58,8 @@ sat (adj) being, existing, truth [!as, pres act part]
 satra (n) sacrifice
 sattama (adj) very good, best, most virtuous, very venerable [sat, sup]
 satya (adj) true, real, genuine, honest, virtuous [sat]
+savitr> (m) stimulator, rouser [!su|I]; (m) Savita
+sr>s<t<i (f) production, creation
 sras<t<aara (m) creator
 stha () (in compound) standing, staying [!sthaa]
 sthaan<u (adj) standing firmly, stationary, immovable [!sthaa]; (m) Sthanu
@@ -73,6 +78,7 @@ svastha (adj) self-abiding, self-sufficient, independent [sva+stha]
 s~aastra (n) an order, teaching, scientific treatise, religious scripture
 s~aaunaka (m) Shaunaka, a Sanskrit grammarian
 s~abda (m) word
+s~ata (n) a hundred
 s~is<t<a (adj) disciplined, cultured, learned, eminent [!s~is<|VII, perf pass part]
 s~ubha (adj) splendid, bright, pleasant, eminent
 s~uci (adj) gleaming, shining, radiant, pure
