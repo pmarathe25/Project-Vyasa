@@ -20,7 +20,7 @@ and the goddess Sarasvati, one should thus proclaim victory.
 
 1-2
 
-laumahars<an<aputra: (laumahars<an<a+putra, nom sing) Lomaharshana's son
+laumahars<an<aputra: (laumahars<an<a+putra, nom sing m) Lomaharshana's son
 ugras~ravaa: (ugras~ravas, nom sing) Ugrasravas
 saauti: (saauti, nom sing) Sauti
 paauraan<ika: (paauraan<ika, nom sing m) well-versed in the Puranas
@@ -748,3 +748,22 @@ sa.ks<aipalaks<an<aa (sa.ks<aipa+laks<an<aa, nom sing) a brief indication
 
 "[To give] a brief indication, the generation of the gods [was]
 thirty-three thousand, thirty-three hundred, and thirty-three.
+
+42
+
+divasputra: (diva+putra, nom sing) son of Diva, lit. "Diva-son"
+br>hadbhaanu: (br>hadbhaanu, nom sing m) Brhadbhanu
+caks<u: (caks<us, nom sing m) Cakshus
+aatmaa (aatman, nom sing) Atma
+vibhaavasu: (vibhaavasu, nom sing m) Vibhavasu
+-
+savitaa (savitr>, nom sing) Savita
+ca and
+r>ciika: (r>ciika, nom sing) Rcika
+arka: (arka, nom sing) Arka
+bhaanu: (bhaanu, nom sing) Bhanu
+aas~aavaha: (aas~aavaha, nom sing) Ashavaha
+ravi: (ravi, nom sing) Ravi
+
+"The son(s) of Diva [were] Brhadbhanu, Cakshus, Atma, Vibhavasu,
+and Savita, Rcika, Arka, Bhanu, Ashavaha, Ravi.

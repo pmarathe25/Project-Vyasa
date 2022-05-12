@@ -3,6 +3,7 @@
 !str> to spread out, to cover
 !stu to praise
 !suu|II to bring forth, to beget, to give birth to
+!su|I to urge, to impel, to incite
 !s~a.s to approve of, to tell, to express
 !s~is<|VII to distinguish, to discriminate
 !s~ru to hear
@@ -57,6 +58,7 @@ sat (adj) being, existing, truth [!as, pres act part]
 satra (n) sacrifice
 sattama (adj) very good, best, most virtuous, very venerable [sat, sup]
 satya (adj) true, real, genuine, honest, virtuous [sat]
+savitr> (m) stimulator, rouser [!su|I]; (m) Savita
 sr>s<t<i (f) production, creation
 sras<t<aara (m) creator
 stha () (in compound) standing, staying [!sthaa]
