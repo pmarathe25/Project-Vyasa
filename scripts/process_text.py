@@ -176,6 +176,9 @@ def build_sandhied_text(words, translit_ruleset):
     # Format: (first_word_condition, second_word_condition, change strategy)
     # Order matters because applying one sandhi may invalidate another; it's a classic phase-ordering problem!
     PRE_MERGE_SANDHI = [
+        # Rules for consonant replacement. These occur prior to any sandhi
+        (matches(["raaj"]), matches(), replace("end", [("j", "t<")])),
+        (matches(["d"]), matches(), replace("end", [("d", "t")])),
         # Special rules for m
         (matches(["m"]), matches(but_not=VOWELS), replace("end", [("m", ".")])),
         # Special rules for t

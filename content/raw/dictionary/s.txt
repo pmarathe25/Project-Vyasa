@@ -1,4 +1,5 @@
 !saiv to serve, to dwell, to honor
+!smr>|I to remember, to recollect
 !sthaa to stand
 !str> to spread out, to cover
 !stu to praise
@@ -59,6 +60,7 @@ satra (n) sacrifice
 sattama (adj) very good, best, most virtuous, very venerable [sat, sup]
 satya (adj) true, real, genuine, honest, virtuous [sat]
 savitr> (m) stimulator, rouser [!su|I]; (m) Savita
+smr>ta () [!smr>|I, perf pass part]; (adj) remembered, recollected; (adj) mentioned, taught, named
 sr>s<t<i (f) production, creation
 sras<t<aara (m) creator
 stha () (in compound) standing, staying [!sthaa]
@@ -66,6 +68,7 @@ sthaan<u (adj) standing firmly, stationary, immovable [!sthaa]; (m) Sthanu
 sthaavara (adj) standing still, not moving [!sthaa]
 stuta (adj) praised, eulogized, celebrated, glorified [!stu, perf pass part]
 su () (as prefix) good, excellent, right
+subhraaj () [su+bhraaj]; (m) shining brightly; (m) Subhraj
 sukha (adj) pleasant
 supun<ya (adj) excellent, great religious/moral merit [su+pun<ya]
 sura (m) a deity, a divinity, a sage, the Sun
