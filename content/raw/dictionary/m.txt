@@ -1,3 +1,4 @@
+!mah to exalt, to honor, to esteem highly
 !man to think, to consider
 maanus<a (adj) belonging to humankind
 maasa (m) month
@@ -6,6 +7,7 @@ mahaabhaaga (adj) highly fortunate, illustrious, virtuous [mahat+bhaaga]
 mahaabhaarata (m) Mahabharata
 mahat (adj) great
 mahii (f) the earth, lit. "the great one" [mahat]
+mahya () [!mah]; (adj) highly honored; (m) Mahya
 man^gala (n) anything auspicious, happiness, bliss
 man^galya (adj) auspicious, holy, pleasing
 manus (m) man; (m) Manu, the first man

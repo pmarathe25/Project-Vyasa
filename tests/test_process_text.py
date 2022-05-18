@@ -26,278 +26,88 @@ def transliteration_ruleset():
 @pytest.mark.parametrize(
     "words,expected_output",
     [
+        # Special final consonant replacements
+        (["raaj", "t<ra"], "raat<t<ra"),
+        (["tad", "ta"], "tatta"),
+        # 'j' -> 't<' -> 'd<' (because it is followed by a vowel, i.e. voiced sound)
+        (["raaj", "iti"], "raad<iti"),
         # Visarga
-        (
-            ["tata:", "aiva"],
-            "tata aiva",
-        ),
-        (
-            ["pr>s<t<a:", "abraviit"],
-            "pr>s<t<au 'braviit",
-        ),
-        (
-            ["tata:", "gam"],
-            "tatau gam",
-        ),
-        (
-            ["tata:", "na"],
-            "tatau na",
-        ),
-        (
-            ["pati:", "gam"],
-            "patirgam",
-        ),
-        (
-            ["ta:", "ca"],
-            "tas~ca",
-        ),
-        (
-            ["ta:", "cha"],
-            "tas~cha",
-        ),
-        (
-            ["taa:", "ca"],
-            "taas~ca",
-        ),
-        (
-            ["taa:", "cha"],
-            "taas~cha",
-        ),
-        (
-            ["ti:", "ca"],
-            "tis~ca",
-        ),
-        (
-            ["ti:", "cha"],
-            "tis~cha",
-        ),
-        (
-            ["ta:", "t<a"],
-            "tas<t<a",
-        ),
-        (
-            ["ta:", "ta"],
-            "tasta",
-        ),
+        (["tata:", "aiva"], "tata aiva"),
+        (["pr>s<t<a:", "abraviit"], "pr>s<t<au 'braviit"),
+        (["tata:", "gam"], "tatau gam"),
+        (["tata:", "na"], "tatau na"),
+        (["pati:", "gam"], "patirgam"),
+        (["ta:", "ca"], "tas~ca"),
+        (["ta:", "cha"], "tas~cha"),
+        (["taa:", "ca"], "taas~ca"),
+        (["taa:", "cha"], "taas~cha"),
+        (["ti:", "ca"], "tis~ca"),
+        (["ti:", "cha"], "tis~cha"),
+        (["ta:", "t<a"], "tas<t<a"),
+        (["ta:", "ta"], "tasta"),
         # Vowels
-        (
-            ["ca", "aiva"],
-            "caaiva",
-        ),
-        (
-            ["tathaa", "aiva"],
-            "tathaaiva",
-        ),
-        (
-            ["prabhai", "asmin"],
-            "prabhai 'smin",
-        ),
-        (
-            ["prabhai", "aadi"],
-            "prabha aadi",
-        ),
-        (
-            ["prabhaai", "asmin"],
-            "prabhaa asmin",
-        ),
-        (
-            ["prabhau", "asmin"],
-            "prabhau 'smin",
-        ),
-        (
-            ["prabhau", "aadi"],
-            "prabha aadi",
-        ),
-        (
-            ["prabhaau", "asmin"],
-            "prabhaavasmin",
-        ),
+        (["ca", "aiva"], "caaiva"),
+        (["tathaa", "aiva"], "tathaaiva"),
+        (["prabhai", "asmin"], "prabhai 'smin"),
+        (["prabhai", "aadi"], "prabha aadi"),
+        (["prabhaai", "asmin"], "prabhaa asmin"),
+        (["prabhau", "asmin"], "prabhau 'smin"),
+        (["prabhau", "aadi"], "prabha aadi"),
+        (["prabhaau", "asmin"], "prabhaavasmin"),
         # Special 'm' rules
-        (
-            ["naram", "ca"],
-            "nara. ca",
-        ),
+        (["naram", "ca"], "nara. ca"),
         # Special 'n' rules
         # NOTE: Doubling of 'n' only happens when preceded by a short vowel
-        (
-            ["bhavan", "aika"],
-            "bhavannaika",
-        ),
-        (
-            ["bhavin", "aika"],
-            "bhavinnaika",
-        ),
-        (
-            ["bhavun", "aika"],
-            "bhavunnaika",
-        ),
+        (["bhavan", "aika"], "bhavannaika"),
+        (["bhavin", "aika"], "bhavinnaika"),
+        (["bhavun", "aika"], "bhavunnaika"),
         # 'n' with long or compound vowels should not double
-        (
-            ["bhavaan", "aika"],
-            "bhavaanaika",
-        ),
-        (
-            ["bhaviin", "aika"],
-            "bhaviinaika",
-        ),
-        (
-            ["bhavuun", "aika"],
-            "bhavuunaika",
-        ),
-        (
-            ["bhavain", "aika"],
-            "bhavainaika",
-        ),
-        (
-            ["bhavaain", "aika"],
-            "bhavaainaika",
-        ),
-        (
-            ["bhavaun", "aika"],
-            "bhavaunaika",
-        ),
-        (
-            ["bhavaaun", "aika"],
-            "bhavaaunaika",
-        ),
+        (["bhavaan", "aika"], "bhavaanaika"),
+        (["bhaviin", "aika"], "bhaviinaika"),
+        (["bhavuun", "aika"], "bhavuunaika"),
+        (["bhavain", "aika"], "bhavainaika"),
+        (["bhavaain", "aika"], "bhavaainaika"),
+        (["bhavaun", "aika"], "bhavaunaika"),
+        (["bhavaaun", "aika"], "bhavaaunaika"),
         # Special 't' rules
-        (
-            ["tat", "ca"],
-            "tacca",
-        ),
-        (
-            ["tat", "ja"],
-            "tajja",
-        ),
-        (
-            ["tat", "t<a"],
-            "tat<t<a",
-        ),
-        (
-            ["tat", "d<a"],
-            "tad<d<a",
-        ),
-        (
-            ["tat", "lauka"],
-            "tallauka",
-        ),
-        (
-            ["tat", "ma"],
-            "tanma",
-        ),
-        (
-            ["tat", "na"],
-            "tanna",
-        ),
+        (["tat", "ca"], "tacca"),
+        (["tat", "ja"], "tajja"),
+        (["tat", "t<a"], "tat<t<a"),
+        (["tat", "d<a"], "tad<d<a"),
+        (["tat", "lauka"], "tallauka"),
+        (["tat", "ma"], "tanma"),
+        (["tat", "na"], "tanna"),
         # 't' plus sibilants
-        (
-            ["tat", "sa"],
-            "tatsa",
-        ),
-        (
-            ["tat", "s<a"],
-            "tats<a",
-        ),
-        (
-            ["tat", "s~a"],
-            "taccha",
-        ),
+        (["tat", "sa"], "tatsa"),
+        (["tat", "s<a"], "tats<a"),
+        (["tat", "s~a"], "taccha"),
         # Consonant + Vowel
-        (
-            ["naram", "aiva"],
-            "naramaiva",
-        ),
-        (
-            ["tam", "aas~ramam", "anupraaptam"],
-            "tamaas~ramamanupraaptam",
-        ),
-        (
-            ["naram", "r>s<i"],
-            "naramr>s<i",
-        ),
+        (["naram", "aiva"], "naramaiva"),
+        (["tam", "aas~ramam", "anupraaptam"], "tamaas~ramamanupraaptam"),
+        (["naram", "r>s<i"], "naramr>s<i"),
         # Unvoiced + Voiced
-        (
-            ["tat", "aiva"],
-            "tadaiva",
-        ),
-        (
-            ["tat", "gam"],
-            "tadgam",
-        ),
+        (["tat", "aiva"], "tadaiva"),
+        (["tat", "gam"], "tadgam"),
         # Nasals
-        (
-            ["tan", "ca"],
-            "ta.s~ca",
-        ),
-        (
-            ["tan", "cha"],
-            "ta.s~cha",
-        ),
-        (
-            ["tan", "t<a"],
-            "ta.s<t<a",
-        ),
-        (
-            ["tan", "ta"],
-            "ta.sta",
-        ),
+        (["tan", "ca"], "ta.s~ca"),
+        (["tan", "cha"], "ta.s~cha"),
+        (["tan", "t<a"], "ta.s<t<a"),
+        (["tan", "ta"], "ta.sta"),
         # Vowel + Vowel
-        (
-            ["tu", "iva"],
-            "tviva",
-        ),
-        (
-            ["tuu", "iva"],
-            "tviva",
-        ),
-        (
-            ["tu", "aiva"],
-            "tvaiva",
-        ),
-        (
-            ["ti", "upa"],
-            "tyupa",
-        ),
-        (
-            ["tii", "upa"],
-            "tyupa",
-        ),
-        (
-            ["ti", "aiva"],
-            "tyaiva",
-        ),
-        (
-            ["ti", "iva"],
-            "tiiva",
-        ),
-        (
-            ["taa", "api"],
-            "taapi",
-        ),
-        (
-            ["ta", "aapi"],
-            "taapi",
-        ),
-        (
-            ["taa", "aapi"],
-            "taapi",
-        ),
-        (
-            ["sarvai", "aiva"],
-            "sarva aiva",
-        ),
-        (
-            ["yatha", "r>tu"],
-            "yathartu",
-        ),
-        (
-            ["yathaa", "r>tu"],
-            "yathartu",
-        ),
-        (
-            ["yathaa", "r>taau", "r>tu"],
-            "yathartaavr>tu",
-        ),
+        (["tu", "iva"], "tviva"),
+        (["tuu", "iva"], "tviva"),
+        (["tu", "aiva"], "tvaiva"),
+        (["ti", "upa"], "tyupa"),
+        (["tii", "upa"], "tyupa"),
+        (["ti", "aiva"], "tyaiva"),
+        (["ti", "iva"], "tiiva"),
+        (["taa", "api"], "taapi"),
+        (["ta", "aapi"], "taapi"),
+        (["taa", "aapi"], "taapi"),
+        (["sarvai", "aiva"], "sarva aiva"),
+        (["yatha", "r>tu"], "yathartu"),
+        (["yathaa", "r>tu"], "yathartu"),
+        (["yathaa", "r>taau", "r>tu"], "yathartaavr>tu"),
     ],
 )
 def test_build_sandhied_text(words, expected_output, transliteration_ruleset):

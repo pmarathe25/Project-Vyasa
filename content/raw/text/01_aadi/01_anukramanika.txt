@@ -136,7 +136,7 @@ tvayaa (tvam, inst sing) by you
 kaala: (kaala, nom sing) time
 kamalapatraaks<a (kamala+patra+aks<a, voc sing) lotus-petal-eyed
 s~a.sa (!s~a.s, 2 sing pres act impv) tell
-aitat (aitat, acc sing) that
+aitad (aitad, acc sing) that
 pr>cchata: (!prach, gen sing m pres act part) of the asking
 mama (aham, gen sing) of me
 
@@ -245,7 +245,7 @@ where [there] was a battle long ago of the Pandavas, the Kurus, and all the eart
 
 didr>ks<u: (didr>ks<u, nom sing m) wanting to see
 aagata: (aa-!gam, nom sing m perf pass part) having come
-tasmaat (tat, abl sing) from that
+tasmaat (tad, abl sing) from that
 samiipam (samiipa, acc sing) near, in the presence
 bhavataam (bhavat, gen pl m) of you (all)
 iha here
@@ -324,7 +324,7 @@ which [was] honored by the deities and Brahman sages [upon] having heard [it]...
 
 18
 
-tasya (tat, gen sing) of that
+tasya (tad, gen sing) of that
 aakhyaanavaris<th<asya (aakhyaana+varis<th<a, gen sing n) of the most extensive narrative
 vicitrapadaparvan<a: (vicitra+pada+parvan, gen sing n) of (something) having various words and sections
 -
@@ -530,7 +530,7 @@ aks<ayam (aks<aya, nom sing n) indestructible
 yugasya (yuga, gen sing) of the age
 aadaau (aadi, loc sing) in the beginning
 nimittam (nimitta, nom sing) the cause
-tat (tat, acc sing) it
+tad (tad, acc sing) it
 mahaddivyam (mahat+divya, acc sing n) Mahadivya, lit. "great-divine"
 pracaks<atai (pra-!caks<|II, 3 pl pres mid ind) they call
 
@@ -560,7 +560,7 @@ avyaktam (avyakta, nom sing n) imperceptible
 kaaran<am (kaaran<a, nom sing) cause
 suuks<mam (suuks<ma, nom sing n) subtle
 yat (yat, nom sing) who
-tat (tat, nom sing) that
+tad (tad, nom sing) that
 sat (sat, nom sing n) existing
 asat (asat, nom sing n) not existing
 aatmakam (aatmaka, nom sing n) having a nature (of)
@@ -671,7 +671,7 @@ yat (yat, nom sing) what[ever]
 ca and
 anyat (anyat, nom sing) else
 api also
-tat (tat, nom sing) that
+tad (tad, nom sing) that
 sarvam (sarva, nom sing n) all
 sambhuutam (sambhuuta, nom sing n) produced
 laukasaaks<ikam (lauka+saaks<ika, nom sing n) observed [in the] world, lit. "world-witnessed"
@@ -707,8 +707,8 @@ naanaaruupaan<i (naanaa+ruupa, nom pl) various features
 paryayai (paryaya, loc sing) at the change
 -
 dr>s~yantai (!dr>s~, 3 pl pres pass ind) are seen
-taani (tat, nom sing) those
-taani (tat, nom sing) these [things (listed in the previous verses)]
+taani (tad, nom sing) those
+taani (tad, nom sing) these [things (listed in the previous verses)]
 aiva indeed
 tathaa in that manner
 bhaavaa: (bhaava, nom pl) arise, lit. "[are] arising"
@@ -720,7 +720,7 @@ are seen, indeed in that manner these [things (listed in the previous verses)] a
 40
 
 aivam thus
-aitat (aitat, nom sing) this
+aitad (aitad, nom sing) this
 anaadyantam (an+aadi+anta, nom sing) without beginning and end
 bhuutasa.haarakaarakam (bhuuta+sa.haara+kaaraka, nom sing n) destroyer of [all] created things, lit. "created-thing-destruction-doer"
 -
@@ -767,3 +767,25 @@ ravi: (ravi, nom sing) Ravi
 
 "The son(s) of Diva [were] Brhadbhanu, Cakshus, Atma, Vibhavasu,
 and Savita, Rcika, Arka, Bhanu, Ashavaha, Ravi.
+
+43
+
+putraa: (putra, nom pl) sons
+vivasvata: (vivasvat, gen sing m) of Vivasvan
+sarvai (sarva, nom pl m) all
+mahya: (mahya, nom sing m) Mahya
+tais<aam (tad, gen pl) of those
+tathaa and
+avara: (avara, nom sing m) last/youngest
+-
+daivabhraaj (daivabhraaj, nom sing) Devabhraj
+tanaya: (tanaya, nom sing) son
+tasya (sa, gen sing) his
+tasmaat (sa, abl sing) his [son], lit. "from him"
+subhraaj (subhraaj, nom sing) Subhraj
+iti -
+tata: thus
+smr>ta: (smr>ta, nom sing m) [it is] said
+
+"[Those were] all sons of Vivasvan and of those, Mahya [was] the youngest;
+His son [was] Devabhraj, [and] his [son was] Subhraj - thus [it is] said.

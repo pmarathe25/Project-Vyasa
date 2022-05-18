@@ -43,7 +43,7 @@ aika (adj) one, single, solitary
 aikaaks<ara () [aika+aks<ara]; (n) the sole imperishable thing; (n) the sacred syllable 'Om'
 aikavi.s~ati (f) twenty-one [aika+vi.s~ati]
 ais<a (m) this, that
-aitat (n) this, that
+aitad (n) this, that
 aiva (indc) just so, exactly so, indeed (places emphasis on the preceding word)
 aivam (indc) thus, in this way
 aks<a (n) (in compound) eye
@@ -76,7 +76,7 @@ as~vin (adj) consisting of horses, mounted on horseback; (m) a horse tamer; (m) 
 atha (indc) then
 ava () (as prefix) off, away, down
 ava-!nam to bow down
-avara (adj) low, inferior, nearer
+avara () [ava]; (adj) low, inferior, nearer, last, younger
 avyakta (adj) not manifested, invisible, imperceptible [a+vyakta]
 avyaya (adj) imperishable, undecaying [a+vyaya]
 aya (m) (in compound) going
