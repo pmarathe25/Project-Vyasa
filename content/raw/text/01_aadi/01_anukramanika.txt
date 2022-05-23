@@ -11,7 +11,7 @@ daiviim (daivii, acc sing) the goddess
 sarasvatiim (sarasvatii, acc sing) Sarasvati
 ca and
 aiva just so
-tata: thus
+tata: (tatas) thus
 jayam (jaya, acc sing) victory
 udiirayait (ud-!iir, 3 sing pres act caus pot) (let one) proclaim
 
@@ -104,7 +104,7 @@ Lomaharshana's son humbly took the seat assigned [to him].
 6
 
 sukhaasiinam (sukha+!aas, acc sing m pres mid part) sitting blissfully/comfortably
-tata: thus
+tata: (tatas) thus
 tam (sa, acc sing) him
 tu and
 vis~raantam (vis~raanta, acc sing) rested
@@ -124,7 +124,7 @@ then one sage, starting the conversation, asked:
 
 7
 
-kuta: whence
+kuta: (kutas) whence
 aagamyatai (aa-!gam, 3 sing pres pass ind) it is come
 saautai (saauti, voc sing) Sauti
 kva where
@@ -136,7 +136,7 @@ tvayaa (tvam, inst sing) by you
 kaala: (kaala, nom sing) time
 kamalapatraaks<a (kamala+patra+aks<a, voc sing) lotus-petal-eyed
 s~a.sa (!s~a.s, 2 sing pres act impv) tell
-aitad (aitad, acc sing) that
+aitat (aitad, acc sing) that
 pr>cchata: (!prach, gen sing m pres act part) of the asking
 mama (aham, gen sing) of me
 
@@ -530,7 +530,7 @@ aks<ayam (aks<aya, nom sing n) indestructible
 yugasya (yuga, gen sing) of the age
 aadaau (aadi, loc sing) in the beginning
 nimittam (nimitta, nom sing) the cause
-tad (tad, acc sing) it
+tat (tad, acc sing) it
 mahaddivyam (mahat+divya, acc sing n) Mahadivya, lit. "great-divine"
 pracaks<atai (pra-!caks<|II, 3 pl pres mid ind) they call
 
@@ -543,7 +543,7 @@ in the beginning of the age. They call it the Mahadivya...
 yasmin (yat, loc sing) in which
 sa.s~ruuyatai (sam-!s~ru, 3 sing pres pass ind) it is said, lit. "it is heard"
 satyam (satya, nom sing n) true
-jyauti: (jyautis, nom sing) light
+jyauti: (jyauti, nom sing) light
 brahma (brahman, nom sing) Brahma
 sanaatanam (sanaatana, nom sing n) eternal
 -
@@ -600,7 +600,7 @@ Brahma [along with] Suraguru, Sthanu, Manu, Ka, [and] then Paramesthi,
 
 33.2-35.1
 
-tata: then
+tata: (tatas) then
 prajaanaam (prajaa, gen pl) of beings
 pataya: (pati, nom pl) lords
 praabhavan (pra-!bhuu, 3 pl imp act ind) appeared
@@ -636,7 +636,7 @@ and in that manner, the Yakshas, the Sadhyas, the Pishachas, the Guhyakas, the P
 
 35.2-36.1
 
-tata: then
+tata: (tatas) then
 prasuutaa: (prasuuta, nom pl m) [they were] begotten
 vidvaa.sa: (vidvas, nom pl m) wise
 s~is<t<aa: (s~is<t<a, nom pl m) distinguished
@@ -778,14 +778,32 @@ tais<aam (tad, gen pl) of those
 tathaa and
 avara: (avara, nom sing m) last/youngest
 -
-daivabhraaj (daivabhraaj, nom sing) Devabhraj
+daivabhraat< (daivabhraaj, nom sing) Devabhraj
 tanaya: (tanaya, nom sing) son
 tasya (sa, gen sing) his
 tasmaat (sa, abl sing) his [son], lit. "from him"
-subhraaj (subhraaj, nom sing) Subhraj
+subhraat< (subhraaj, nom sing) Subhraj
 iti -
-tata: thus
+tata: (tatas) thus
 smr>ta: (smr>ta, nom sing m) [it is] said
 
 "[Those were] all sons of Vivasvan and of those, Mahya [was] the youngest;
 His son [was] Devabhraj, [and] his [son was] Subhraj - thus [it is] said.
+
+44
+
+subhraaja: (subhraaj, gen sing) of Subhraaj
+tu and
+traya: (tri, nom pl m) three
+putraa: (putra, nom pl) sons
+prajaavanta: (prajaavat, nom pl m) having [many] offspring
+bahus~rutaa: (bahus~ruta, nom pl m) very famous, lit. "much-known"
+-
+das~ajyauti: (das~ajyauti, nom sing) Dashajyoti
+s~atajyauti: (s~atajyauti, nom sing) Shatajyoti
+sahasrajyauti: (sahasrajyauti, nom sing) Sahasrajyoti
+aiva indeed
+ca and
+
+"And of Subhraaj, [there were] three very famous sons, having [many] offpsring,
+Dashajyoti, Shatajyoti, and indeed Sahasrajyoti.
