@@ -26,11 +26,6 @@ def transliteration_ruleset():
 @pytest.mark.parametrize(
     "words,expected_output",
     [
-        # Special final consonant replacements
-        (["raaj", "t<ra"], "raat<t<ra"),
-        (["tad", "ta"], "tatta"),
-        # 'j' -> 't<' -> 'd<' (because it is followed by a vowel, i.e. voiced sound)
-        (["raaj", "iti"], "raad<iti"),
         # Visarga
         (["tata:", "aiva"], "tata aiva"),
         (["pr>s<t<a:", "abraviit"], "pr>s<t<au 'braviit"),

@@ -63,6 +63,7 @@ def build_sandhied_text(words, translit_ruleset):
         UNVOICED_CONSONANTS + VOICED_CONSONANTS + NASAL_CONSONANTS + keys_of("sibilants") + keys_of("approximants")
     )
     ALL_VOICED = VOICED_CONSONANTS + VOWELS + SEMI_VOWELS + NASAL_CONSONANTS + keys_of("approximants")
+    ALL = CONSONANTS + VOWELS + SEMI_VOWELS
 
     VOICED_MAKER_MAP = {
         unvoiced: voiced
@@ -146,9 +147,6 @@ def build_sandhied_text(words, translit_ruleset):
         but_not = but_not or []
 
         def matches_impl(word, mode):
-            if not word.strip():
-                return False
-
             func = word.endswith if mode == "ends" else word.startswith
 
             # Split patterns by length. but_not only applies if it is the same length or longer than the pattern.
@@ -176,11 +174,8 @@ def build_sandhied_text(words, translit_ruleset):
     # Format: (first_word_condition, second_word_condition, change strategy)
     # Order matters because applying one sandhi may invalidate another; it's a classic phase-ordering problem!
     PRE_MERGE_SANDHI = [
-        # Rules for consonant replacement. These occur prior to any sandhi
-        (matches(["raaj"]), matches(), replace("end", [("j", "t<")])),
-        (matches(["d"]), matches(), replace("end", [("d", "t")])),
         # Special rules for m
-        (matches(["m"]), matches(but_not=VOWELS), replace("end", [("m", ".")])),
+        (matches(["m"]), matches(ALL, but_not=VOWELS), replace("end", [("m", ".")])),
         # Special rules for t
         (matches(["t"]), matches(keys_of("dental-semivowels")), replace("end", [("t", "l")])),
         (
@@ -331,13 +326,16 @@ def parse_word_grammar(line, verse_num, line_num, dictionary):
         word, _, rest = rest.partition("(")
 
         if "," not in rest:
-            raise RuntimeError(
-                f"In verse: {verse_num}, line: {line_num}, expected a comma separating the root from parts of speech!"
-                f"\nNote: Line was: {line}"
-            )
-
-        root, _, rest = rest.partition(",")
-        parts_of_speech, _, meaning = rest.partition(")")
+            root, _, meaning = rest.partition(")")
+            if root not in dictionary or any("(indeclinable)" not in entry for entry in dictionary[root][1]):
+                raise RuntimeError(
+                    f"In verse: {verse_num}, line: {line_num}, expected a comma separating the root from parts of speech!"
+                    "Parts of speech may only be omitted for indeclinables!"
+                    f"\nNote: Line was: {line}"
+                )
+        else:
+            root, _, rest = rest.partition(",")
+            parts_of_speech, _, meaning = rest.partition(")")
 
         check(word, "word")
         check(root, "root")
