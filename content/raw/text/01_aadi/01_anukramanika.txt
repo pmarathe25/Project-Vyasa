@@ -797,7 +797,7 @@ tu and
 traya: (tri, nom pl m) three
 putraa: (putra, nom pl) sons
 prajaavanta: (prajaavat, nom pl m) having [many] offspring
-bahus~rutaa: (bahus~ruta, nom pl m) very famous, lit. "much-known"
+bahus~rutaa: (bahus~ruta, nom pl m) very learned, lit. "much-heard"
 -
 das~ajyauti: (das~ajyauti, nom sing) Dashajyoti
 s~atajyauti: (s~atajyauti, nom sing) Shatajyoti
@@ -805,5 +805,5 @@ sahasrajyauti: (sahasrajyauti, nom sing) Sahasrajyoti
 aiva indeed
 ca and
 
-"And of Subhraaj, [there were] three very famous sons, having [many] offpsring,
+"And of Subhraaj, [there were] three very learned sons, having [many] offpsring,
 Dashajyoti, Shatajyoti, and indeed Sahasrajyoti.
