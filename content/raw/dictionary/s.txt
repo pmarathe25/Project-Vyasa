@@ -26,7 +26,7 @@ saaks<in (adj) observing, witnessing, eye-witness [sa+aks<a]
 saauti (m) Sauti, the narrator of the Mahabharata
 sadas (n) assembly, seat, residence
 sahasra (n) a thousand
-sahasrajyauti (m) Sahasrajyoti [sahasra+jyauti]
+sahasrajyautis (m) Sahasrajyoti [sahasra+jyautis]
 saika (m) effusion, emission, offering
 sam () (as prefix) with, together, along with, altogether
 sam-!aas to sit together, to assemble
@@ -83,7 +83,7 @@ s~aastra (n) an order, teaching, scientific treatise, religious scripture
 s~aaunaka (m) Shaunaka, a Sanskrit grammarian
 s~abda (m) word
 s~ata (n) a hundred
-s~atajyauti (m) Shatajyoti [s~ata+jyauti]
+s~atajyauti (m) Shatajyoti [s~ata+jyautis]
 s~is<t<a (adj) disciplined, cultured, learned, eminent [!s~is<|VII, perf pass part]
 s~ruta heard, listened to, known, famous [!s~ru, perf pass part]
 s~ubha (adj) splendid, bright, pleasant, eminent

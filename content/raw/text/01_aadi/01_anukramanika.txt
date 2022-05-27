@@ -543,7 +543,7 @@ in the beginning of the age. They call it the Mahadivya...
 yasmin (yat, loc sing) in which
 sa.s~ruuyatai (sam-!s~ru, 3 sing pres pass ind) it is said, lit. "it is heard"
 satyam (satya, nom sing n) true
-jyauti: (jyauti, nom sing) light
+jyauti: (jyautis, nom sing) light
 brahma (brahman, nom sing) Brahma
 sanaatanam (sanaatana, nom sing n) eternal
 -
@@ -801,9 +801,26 @@ bahus~rutaa: (bahus~ruta, nom pl m) very learned, lit. "much-heard"
 -
 das~ajyauti: (das~ajyauti, nom sing) Dashajyoti
 s~atajyauti: (s~atajyauti, nom sing) Shatajyoti
-sahasrajyauti: (sahasrajyauti, nom sing) Sahasrajyoti
+sahasrajyauti: (sahasrajyautis, nom sing) Sahasrajyoti
 aiva indeed
 ca and
 
 "And of Subhraaj, [there were] three very learned sons, having [many] offpsring,
 Dashajyoti, Shatajyoti, and indeed Sahasrajyoti.
+
+45
+
+das~aputrasahasraan<i (das~an+putra+sahasra, nom pl n) ten thousand sons
+das~ajyautai: (das~ajyauti, gen sing) of Dashajyoti
+mahaatmana: (mahat+aatman, gen sing m) of the great souled
+-
+tata: (tatas) beyond that
+das~gun<aa: (das~agun<a, nom pl m) ten times
+ca and
+anyai (anya, nom pl) others
+s~atajyautai: (s~atajyauti, gen sing) of Shatajyoti
+iha here
+aatmajaa: (aatmaja, nom pl m) sons
+
+"[There were] ten thousand (10,000) sons of great-souled Dashajyoti,
+and of Shatajyoti, other sons ten times beyond that (i.e. 100,000) here.
