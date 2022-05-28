@@ -54,6 +54,7 @@ sapta (indc) (in compound) seven
 sarasvatii (f) Sarasvati, goddess of knowledge, arts, etc.
 sarpa (mn) a snake
 sarva (adj) all, all sorts
+sarvas~as (indc) wholly, completely, altogether, in general
 sarvatas (indc) from all sides, entirely, everywhere
 sarvatra (indc) everywhere, omnipresent
 sat (adj) being, existing, truth [!as, pres act part]
@@ -74,6 +75,7 @@ sukha (adj) pleasant
 supun<ya (adj) excellent, great religious/moral merit [su+pun<ya]
 sura (m) a deity, a divinity, a sage, the Sun
 suraguru (m) teacher of the gods [sura+guru]; (m) Suraguru
+suta (adj) child, offspring
 suuks<ma (adj) subtle, minute, fine, small, exact
 suurya (mn) the Sun
 suuta (m) charioteer; (adj) born, engendered [!suu|II, perf pass part]

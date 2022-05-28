@@ -808,7 +808,7 @@ ca and
 "And of Subhraaj, [there were] three very learned sons, having [many] offpsring,
 Dashajyoti, Shatajyoti, and indeed Sahasrajyoti.
 
-45
+45-46.1
 
 das~aputrasahasraan<i (das~an+putra+sahasra, nom pl n) ten thousand sons
 das~ajyautai: (das~ajyauti, gen sing) of Dashajyoti
@@ -821,6 +821,31 @@ anyai (anya, nom pl) others
 s~atajyautai: (s~atajyauti, gen sing) of Shatajyoti
 iha here
 aatmajaa: (aatmaja, nom pl m) sons
+-
+bhuuya: (bhuuyas) more
+tata: (tatas) beyond that
+das~gun<aa: (das~agun<a, nom pl m) ten times
+sahasrajyautis<a: (sahasrajyautis, gen sing) of Sahasrajyoti
+sutaa: (suta, nom pl m) sons
 
 "[There were] ten thousand (10,000) sons of great-souled Dashajyoti,
-and of Shatajyoti, other sons ten times beyond that (i.e. 100,000) here.
+and of Shatajyoti, other sons ten times beyond that (i.e. 100,000) here,
+[and] of Sahasrajyoti, sons ten times more beyond that (i.e. 1,000,000).
+
+46.2-47.1
+
+taibhya: (sa, abl pl) from them
+kuruva.s~a: (kuru+va.s~a, nom sing) the Kuru lineage
+ca and
+yaduunaam (yadu, gen pl) of the Yadus
+bharatasya (bharata, gen sing) of Bharata
+ca and
+-
+yayaatiiks<vaakuva.s~a: (yayaati+iks<vaaku+va.s~a, nom sing) the Yayati [and] Ikshvaku lineage(s)
+ca and
+raajars<in<aam (raajan+r>s<i, gen pl) of the royal sages
+ca and
+sarvas~a: (sarvas~as) in general
+
+"From them [came] the Kuru lineage, and [that] of the Yadus and of Bharata,
+and the Yayati and Ikshvaku lineage(s) and [that] of the royal sages in general.
