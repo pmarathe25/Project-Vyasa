@@ -26,7 +26,7 @@ saaks<in (adj) observing, witnessing, eye-witness [sa+aks<a]
 saauti (m) Sauti, the narrator of the Mahabharata
 sadas (n) assembly, seat, residence
 sahasra (n) a thousand
-sahasrajyauti (m) Sahasrajyoti [sahasra+jyauti]
+sahasrajyautis (m) Sahasrajyoti [sahasra+jyautis]
 saika (m) effusion, emission, offering
 sam () (as prefix) with, together, along with, altogether
 sam-!aas to sit together, to assemble
@@ -54,6 +54,7 @@ sapta (indc) (in compound) seven
 sarasvatii (f) Sarasvati, goddess of knowledge, arts, etc.
 sarpa (mn) a snake
 sarva (adj) all, all sorts
+sarvas~as (indc) wholly, completely, altogether, in general
 sarvatas (indc) from all sides, entirely, everywhere
 sarvatra (indc) everywhere, omnipresent
 sat (adj) being, existing, truth [!as, pres act part]
@@ -74,6 +75,7 @@ sukha (adj) pleasant
 supun<ya (adj) excellent, great religious/moral merit [su+pun<ya]
 sura (m) a deity, a divinity, a sage, the Sun
 suraguru (m) teacher of the gods [sura+guru]; (m) Suraguru
+suta (adj) child, offspring
 suuks<ma (adj) subtle, minute, fine, small, exact
 suurya (mn) the Sun
 suuta (m) charioteer; (adj) born, engendered [!suu|II, perf pass part]
@@ -83,7 +85,7 @@ s~aastra (n) an order, teaching, scientific treatise, religious scripture
 s~aaunaka (m) Shaunaka, a Sanskrit grammarian
 s~abda (m) word
 s~ata (n) a hundred
-s~atajyauti (m) Shatajyoti [s~ata+jyauti]
+s~atajyauti (m) Shatajyoti [s~ata+jyautis]
 s~is<t<a (adj) disciplined, cultured, learned, eminent [!s~is<|VII, perf pass part]
 s~ruta heard, listened to, known, famous [!s~ru, perf pass part]
 s~ubha (adj) splendid, bright, pleasant, eminent
