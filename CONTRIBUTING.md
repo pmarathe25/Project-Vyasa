@@ -36,7 +36,7 @@ To do so, you will need to:
 
 1. [Install `npm`](https://docs.npmjs.com/downloading-and-installing-node-js-and-npm)
 
-2. Install required packages:
+2. Navigate to the repository directory and install required packages:
     ```
     npm i
     ```

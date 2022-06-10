@@ -111,7 +111,12 @@ const WordAndDefinition = ({ word, definition, root, parts_of_speech }) => {
                     onMouseLeave={() => setShowPopover(false)}
                     onTouchStart={() => setShowPopover(true)}
                     onTouchMove={() => setShowPopover(false)}
-                    style={{ width: "fit-content", marginLeft: "auto", marginRight: "auto" }}
+                    style={{
+                        width: "fit-content",
+                        marginLeft: "auto", marginRight: "auto",
+                        backgroundColor: "var(--text-highlight-color)",
+                        borderRadius: "2px",
+                    }}
                 >
                     {translitWord}
                 </p>
@@ -267,7 +272,7 @@ const Verse = ({ num, text, wordByWord, translation, location }) => {
                 maxWidth: "var(--content-max-width)",
                 marginRight: "auto", marginLeft: "auto",
                 marginBottom: isMobile ? "20px" : "1px",
-                backgroundColor: isActive ? "rgb(66, 66, 66)" : "inherit",
+                backgroundColor: isActive ? "rgb(63, 63, 63)" : "inherit",
                 borderRadius: "7px",
             }}>
                 <VerseContent num={num} text={text} wordByWord={wordByWord} location={location} translation={translation} />

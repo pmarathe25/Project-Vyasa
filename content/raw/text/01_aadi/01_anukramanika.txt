@@ -1,22 +1,22 @@
 0
 
 naaraayan<am (naaraayan<a, acc sing) Narayana
-namaskr>tya (namas-!kr>, abs) having bowed (to)
+namaskr>tya (namas-!kr>, abs) having bowed [to]
 naram (nara, acc sing) Nara, lit. "man"
 ca and
-aiva just so
+aiva indeed
 narauttamam (nara+uttama, acc sing m) the best man
 -
 daiviim (daivii, acc sing) the goddess
 sarasvatiim (sarasvatii, acc sing) Sarasvati
 ca and
-aiva just so
+aiva indeed
 tata: (tatas) thus
 jayam (jaya, acc sing) victory
-udiirayait (ud-!iir, 3 sing pres act caus pot) (let one) proclaim
+udiirayait (ud-!iir, 3 sing pres act caus pot) [one should] proclaim
 
-Having bowed to Narayana and Nara, the best man,
-and the goddess Sarasvati, one should thus proclaim victory.
+Having bowed [to] Narayana and Nara, the best man,
+and the goddess Sarasvati, [one should] thus proclaim victory.
 
 1-2
 
@@ -24,7 +24,7 @@ laumahars<an<aputra: (laumahars<an<a+putra, nom sing m) Lomaharshana's son
 ugras~ravaa: (ugras~ravas, nom sing) Ugrasravas
 saauti: (saauti, nom sing) Sauti
 paauraan<ika: (paauraan<ika, nom sing m) well-versed in the Puranas
-naaimis<aaran<yai (naaimis<a+aaran<ya, loc sing) in the Naimisha forest
+naaimis<aaran<yai (naaimis<a+aran<ya, loc sing) in the Naimisha forest
 -
 s~aaunakasya (s~aaunaka, gen sing) of Shaunaka
 kulapatai: (kula+pati, gen sing) of the head of the family
@@ -37,12 +37,12 @@ brahmars<iin (brahman+r>s<i, acc pl) the Brahman sages
 sa.s~itavrataan (sa.s~ita+vrata, acc pl m) rigid-vowed (firm in their vows)
 -
 vinayaavanata: (vinaya+ava-!nam, nom sing m perf pass part) having humbly bowed
-bhuutvaa (!bhuu, abs) having been
+bhuutvaa (!bhuu, abs) having become
 kadaacit (kadaa+cit,) once
 suutanandana: (suuta+nandana, nom sing m) son of Suta
 
 Once, the son of Lomaharshana, Ugrasravas, [also known as] Sauti, [also as] the son
-of Suta, well-versed in the Puranas, having humbly bowed, approached the blissfully sitting,
+of Suta, well-versed in the Puranas, having (become) humbly bowed, approached the blissfully sitting,
 rigid-vowed Brahman sages in the Naimisha forest at the 12-yearly sacrifice of Kulapati Shaunaka.
 
 3
@@ -50,7 +50,7 @@ rigid-vowed Brahman sages in the Naimisha forest at the 12-yearly sacrifice of K
 tam (sa, acc sing) him
 aas~ramam (aas~rama, acc sing) hermitage
 anupraaptam (anu-pra-!aap, acc sing m perf pass part) having reached
-naaimis<aaran<yavaasinaam (naaimis<a+aaran<ya+vaasin, gen pl) of those living in the Naimisha forest
+naaimis<aaran<yavaasinaam (naaimis<a+aran<ya+vaasin, gen pl) of those living in the Naimisha forest
 -
 citraa: (citra, acc pl) wonderful
 s~rautum (!s~ru, inf) to hear

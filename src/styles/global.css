@@ -1,5 +1,6 @@
 :root {
     --blue-highlight-color: rgb(63, 113, 205);
+    --text-highlight-color: rgb(75, 75, 75);
     --text-gray-color: rgba(255, 255, 255, 0.9);
     --content-max-width: 950px;
 }
@@ -40,7 +41,7 @@ a:active {
     cursor: pointer;
 }
 
-/* Accordion button needs to be in the global CSS because we don't ever 
+/* Accordion button needs to be in the global CSS because we don't ever
     directly use it (only via Accordion.Header) and hence can't set the style that way */
 .accordion-button {
     color: white;
