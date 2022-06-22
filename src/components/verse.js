@@ -29,7 +29,7 @@ const RootMeanings = ({ root }) => {
                         <Link to={`/dictionary#${toUrl(roots[index])}`} target="_blank"
                             style={{ color: "rgb(125, 155, 170)", height: "fit-content" }}
                         >
-                            <p style={{ fontSize: "19px", paddingRight: "5px", whiteSpace: "nowrap" }}>
+                            <p style={{ fontSize: "20px", paddingRight: "5px", whiteSpace: "nowrap" }}>
                                 {rootPar}
                             </p>
                         </Link>
@@ -120,8 +120,7 @@ const WordWithPopover = ({ word, definition, root, parts_of_speech }) => {
                         width: "fit-content",
                         marginLeft: "auto", marginRight: "auto",
                         backgroundColor: "var(--text-highlight-color)",
-                        color: "rgb(150, 210, 255)",
-                        fontWeight: "bold",
+                        color: "rgb(120, 210, 255)",
                         borderRadius: "2px",
                     }}
                 >
@@ -129,7 +128,7 @@ const WordWithPopover = ({ word, definition, root, parts_of_speech }) => {
                 </p>
             </OverlayTrigger>
             <p style={{
-                fontSize: "14.5px",
+                fontSize: "15px",
                 color: "rgb(200, 200, 200)",
                 width: "fit-content",
                 maxWidth: "110px",
@@ -150,7 +149,7 @@ const WordByWord = ({ wordByWord }) => {
                     <Row
                         key={index}
                         style={{
-                            fontSize: "19px",
+                            fontSize: "20px",
                             whiteSpace: "pre-wrap",
                             marginLeft: "auto", marginRight: "auto",
                         }}
@@ -180,13 +179,13 @@ const Verse = ({ text, wordByWord, translation }) => {
     const [showWordByWord, setShowWordByWord] = React.useState(false);
 
     const style = {
-        fontSize: "19px",
+        fontSize: "20px",
         paddingBottom: "2px",
         whiteSpace: "pre-wrap",
     };
 
     const colStyle = {
-        paddingBottom: isMobile ? "15px" : "0px",
+        paddingBottom: isMobile ? "15px" : "7px",
         paddingLeft: "0px",
         paddingRight: "0px",
     };
@@ -233,7 +232,7 @@ const Verse = ({ text, wordByWord, translation }) => {
             <Col style={{
                 ...style,
                 ...colStyle,
-                fontSize: "15px",
+                fontSize: "15.5px",
                 whiteSpace: "pre-wrap",
                 color: "var(--text-dark-gray-color)",
             }}>
