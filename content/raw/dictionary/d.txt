@@ -1,4 +1,4 @@
-!dhr>|I to hold, to support; () (causative) to use, to utilize, to exploit, to possess
+!dhr>=I to hold, to support; () (causative) to use, to utilize, to exploit, to possess
 !dis~ to point out, to show
 !dr>s~ to see
 !dyut to shine, to be bright or brilliant
@@ -10,7 +10,7 @@ daks<a (adj) able, clever, dextrous, industrious, intelligent; (m) Daksha
 das~agun<a (adj) tenfold, ten times more [das~an+gun<a]
 das~ajyauti (m) Dashajyoti [das~an+jyautis]
 das~an (adj) ten
-dharma (m) right, justice, moral obligation, religious duty [!dhr>|I]
+dharma (m) right, justice, moral obligation, religious duty [!dhr>=I]
 dharmya (adj) righteous, just, legitimate [dharma]
 didr>ks<u (adj) wanting to see [!dr>s~, des]
 dis~ (f) region, cardinal point, quarter (of the sky, i.e. cardinal direction) [!dis~]

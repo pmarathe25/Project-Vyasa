@@ -3,7 +3,7 @@
 !bhraaj to shine, to beam, to sparkle, to glitter
 !bhuu to be
 !bhuus< to adorn, to decorate
-!br>.h|I to increase, to strengthen, to promote
+!br>.h=I to increase, to strengthen, to promote
 !bruu to speak
 bahu (adj) much, many
 bahus~ruta (adj) very learned, one who has studied much [bahu+s~ruta]
@@ -21,6 +21,6 @@ bhuuta (adj) having become, existing, any living being, created thing [!bhuu, pe
 bhuuyas (indc) more, most, very much, exceedingly
 biija (n) seed, germ
 br>hadbhaanu () [br>hat+bhaanu]; (adj) shining brightly; (m) fire or the god of fire; (m) Brhadbhanu
-br>hat (adj) great, vast, abundant [!br>.h|I, pres act part]
+br>hat (adj) great, vast, abundant [!br>.h=I, pres act part]
 braahmii (f) speech or the goddess of speech (Sarasvati)
 brahman (n) the self-existent One, the Absolute, the Creator

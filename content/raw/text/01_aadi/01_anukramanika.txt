@@ -1,12 +1,10 @@
-0
-
 naaraayan<am (naaraayan<a, acc sing) Narayana
 namaskr>tya (namas-!kr>, abs) having bowed [to]
 naram (nara, acc sing) Nara, lit. "man"
 ca and
 aiva indeed
 narauttamam (nara+uttama, acc sing m) the best man
--
+|
 daiviim (daivii, acc sing) the goddess
 sarasvatiim (sarasvatii, acc sing) Sarasvati
 ca and
@@ -14,55 +12,52 @@ aiva indeed
 tata: (tatas) thus
 jayam (jaya, acc sing) victory
 udiirayait (ud-!iir, 3 sing pres act caus pot) [one should] proclaim
+||
 
 Having bowed [to] Narayana and Nara, the best man,
 and the goddess Sarasvati, [one should] thus proclaim victory.
-
-1-2
 
 laumahars<an<aputra: (laumahars<an<a+putra, nom sing m) Lomaharshana's son
 ugras~ravaa: (ugras~ravas, nom sing) Ugrasravas
 saauti: (saauti, nom sing) Sauti
 paauraan<ika: (paauraan<ika, nom sing m) well-versed in the Puranas
 naaimis<aaran<yai (naaimis<a+aran<ya, loc sing) in the Naimisha forest
--
+|
 s~aaunakasya (s~aaunaka, gen sing) of Shaunaka
 kulapatai: (kula+pati, gen sing) of the head of the family
 dvaadas~avaars<ikai (dvaadas~a+vaars<ika, loc sing n) at the 12-yearly
 satrai (satra, loc sing) at the sacrifice
--
+||
 sukhaasiinaan (sukha+!aas, acc pl m pres mid part) sitting blissfully
 abhyagacchat (abhi-!gam, 3 sing imp act ind) he approached
 brahmars<iin (brahman+r>s<i, acc pl) the Brahman sages
 sa.s~itavrataan (sa.s~ita+vrata, acc pl m) rigid-vowed (firm in their vows)
--
+|
 vinayaavanata: (vinaya+ava-!nam, nom sing m perf pass part) having humbly bowed
 bhuutvaa (!bhuu, abs) having become
 kadaacit (kadaa+cit,) once
 suutanandana: (suuta+nandana, nom sing m) son of Suta
+||
 
 Once, the son of Lomaharshana, Ugrasravas, [also known as] Sauti, [also as] the son
 of Suta, well-versed in the Puranas, having (become) humbly bowed, approached the blissfully sitting,
 rigid-vowed Brahman sages in the Naimisha forest at the 12-yearly sacrifice of Kulapati Shaunaka.
 
-3
-
 tam (sa, acc sing) him
 aas~ramam (aas~rama, acc sing) hermitage
 anupraaptam (anu-pra-!aap, acc sing m perf pass part) having reached
 naaimis<aaran<yavaasinaam (naaimis<a+aran<ya+vaasin, gen pl) of those living in the Naimisha forest
--
+|
 citraa: (citra, acc pl) wonderful
 s~rautum (!s~ru, inf) to hear
 kathaa: (kathaa, acc pl) stories
 tatra thereupon, then
 parivavru: (pari-!vr>, 3 pl perf act ind) they surrounded
 tapasvina: (tapasvin, nom pl) the ascetics
+||
 
 Then, the ascetics surrounded him, [who had] reached the hermitage of those
 living in the Naimisha forest, to hear [his] wonderful stories.
-
-4
 
 abhivaadya (abhi-!vad, caus abs) having greeted
 muniin (muni, acc pl) the sages
@@ -71,7 +66,7 @@ tu and
 sarvaan (sarva, acc pl m) all
 aiva indeed
 kr>taan~jali: (kr>ta+an~jali, nom sing m) having joined hands
--
+|
 apr>cchat (!prach, 3 sing imp act ind) he asked
 sa (sa, nom sing) he
 tapauvr>ddhim (tapas+vr>ddhi, acc sing) progress of asceticism
@@ -79,11 +74,10 @@ sadbhi: (sat, inst pl m) by the true ones (i.e. the sages)
 ca and
 aiva indeed
 abhipuujita: (abhi-!puuj, nom sing m perf pass part) honored
+||
 
 Having greeted all those sages with joined hands, and honored
 by the true ones (i.e. the sages), he asked [about] the progress of [their] asceticism.
-
-5
 
 atha then
 tais<u (sa, loc pl) at them
@@ -91,17 +85,16 @@ upavis<t<ais<u (upa-!vis~, loc pl m perf pass part) at having sat down
 sarvais<u (sarva, loc pl m) at all
 aiva indeed
 tapasvis<u (tapasvin, loc pl) at the ascetics
--
+|
 nirdis<t<am (nirdis<t<a, acc sing n) assigned
 aasanam (aasana, acc sing) seat
 bhaijai (!bhaj, 3 sing perf mid ind) he took
 vinayaat (vinaya, abl sing) humbly
 laaumahars<an<i: (laaumahars<an<i, nom sing) Lomaharshana's son
+||
 
 Then, with all those ascetics having sat down,
 Lomaharshana's son humbly took the seat assigned [to him].
-
-6
 
 sukhaasiinam (sukha+!aas, acc sing m pres mid part) sitting blissfully/comfortably
 tata: (tatas) thus
@@ -110,7 +103,7 @@ tu and
 vis~raantam (vis~raanta, acc sing) rested
 upalaks<ya (upa-!laks<, abs) having noticed
 ca and
--
+|
 atha then
 apr>cchat (!prach, 3 sing imp act ind) he asked
 r>s<i: (r>s<i, nom sing) a sage
@@ -118,11 +111,10 @@ tatra there
 kas~cit (ka+cit, nom sing) one
 prastaavayan (pra-!stu, nom sing m pres act part caus) causing to start, starting
 kathaa: (kathaa, acc pl) the stories, i.e. the conversation
+||
 
 Having noticed him rested and sitting comfortably,
 then one sage, starting the conversation, asked:
-
-7
 
 kuta: (kutas) whence
 aagamyatai (aa-!gam, 3 sing pres pass ind) it is come
@@ -132,18 +124,17 @@ ca and
 ayam (ayam, nom sing) this
 vihr>ta: (vi-!hr>, nom sing m perf pass part) was spent
 tvayaa (tvam, inst sing) by you
--
+|
 kaala: (kaala, nom sing) time
 kamalapatraaks<a (kamala+patra+aks<a, voc sing) lotus-petal-eyed
 s~a.sa (!s~a.s, 2 sing pres act impv) tell
 aitat (aitad, acc sing) that
 pr>cchata: (!prach, gen sing m pres act part) of the asking
 mama (aham, gen sing) of me
+||
 
 Sauti, whence have you come? Where was that time spent by you,
 lotus-petal-eyed [one]? Tell that to me [who is] asking.
-
-8
 
 aivam thus
 pr>s<t<a: (!prach, nom sing m perf pass part) asked
@@ -151,44 +142,43 @@ abraviit (!bruu, 3 sing imp act ind) he spoke
 samyak rightly
 yathaavat properly
 laaumahars<an<i: (laaumahars<an<i, nom sing) Lomaharshana's son
--
+|
 vaakyam (vaakya, acc sing) statement
 vacanasa.panna: (vacana+sa.panna, nom sing m) endowed with (good) speech
 tais<aam (sa, gen pl) of them
 ca and
 caritaas~rayam (carita+aas~rayam, acc sing) going (to be) sheltered, seeking shelter
--
+||
 tasmin (sa, loc sing) in that
 sadasi (sadas, loc sing) assembly
 vistiirn<ai (vistiirn<a, loc sing) broad, great
 muniinaam (muni, gen pl) of sages
 bhaavitaatmanaam (bhaavita+aatman, m gen pl) of self-realized, lit. "soul-manifested"
+|
 
 Thus asked, Lomaharshana's son (Sauti), equipped with good speech,
 spoke a statement, rightly and properly, to [the ones] seeking their (the sages') shelter
 in that great assembly of self-realized sages.
 
-9-11
-
 saauti: (saauti, nom sing) Sauti
 uvaaca (!vac, 3 sing perf act ind) said
--
+|
 janamaijayasya (janamaijaya, gen sing) of Janamejaya
 raajars<ai: (raajan+r>s<i, gen sing) of the royal sage
 sarpasatrai (sarpa+satra, loc sing) in the snake sacrifice
 mahaatmana: (mahat+aatman, gen sing m) of the great souled
--
+||
 samiipai (samiipa, loc sing) at, lit. "in the vicinity"
 paarthivaindrasya (paarthiva+indra, gen sing) of the best prince
 samyak completely, in full
 paariks<itasya (paariks<ita, gen sing) of the son of Parikshit
 ca and
--
+|
 kr>s<n<advaaipaayanaprauktaa: (kr>s<n<a+dvaaipaayana+pra-!vac, acc pl f perf pass part) imparted (by) the black islander, i.e. Vyasa
 supun<yaa: (supun<ya, acc pl f) excellent
 vividhaa: (vividha, acc pl f) various
 kathaa: (kathaa, acc pl) stories
--
+||
 kathitaa: (!kath, acc pl f perf pass part) told
 ca and
 api also
@@ -196,31 +186,30 @@ vidhivat according to rule
 yaa: (yaa, acc pl) which
 vaais~ampaayanaina (vaais~ampaayana, inst sing) by Vaishampayana
 vaai indeed
--
+|
 s~rutvaa (!s~ru, abs) having heard
 aham (aham, nom sing) I
 taa: (saa, acc pl) those
 vicitraarthaa: (vicitra+artha, acc pl f) wonderful, marvelous
 mahaabhaaratasa.s~ritaa: (mahaabhaarata+sa.s~rita, acc pl f) of/from the Mahabharata
+||
 
 Sauti said:
 "I, having heard those various excellent and marvelous stories of the Mahabharata,
 imparted in full by the black islander (Vyasa), which [were] indeed told according to rule by Vaishampayana
 at the snake sacrifice of Janamejaya, the great-souled royal sage, the best prince, the son of Parikshit...
 
-12-13
-
 bahuuni (bahu, acc pl n) many
 sa.parikramya (sam-pari-!kram, abs) having traveled
 tiirthaani (tiirtha, acc pl) places of pilgrimage
 aayatanaani (aayatana, acc pl) shrines
 ca and
--
+|
 samantapan~cakam (samantapan~caka, acc sing) Samantapancaka
 naama (naaman, acc sing) named
 pun<yam (pun<ya, acc sing n) holy
 dvijanis<aivitam (dvija+ni-!saiv, acc sing n perf pass part) revered by the twice-born
--
+||
 gatavaan (!gam, nom sing m perf act part) having gone
 asmi (!as, 1 sing pres act ind) I am
 tam (sa, acc sing) that
@@ -229,19 +218,18 @@ yuddham (yuddha, nom sing) the battle
 yatra where
 abhavat (!bhuu, 3 sing imp act ind) was
 puraa long ago
--
+|
 kuruun<aam (kuru, gen pl) of the Kurus
 paan<d<avaanaam (paan<d<ava, gen pl) of the Pandavas
 ca and
 sarvais<aam (sarva, gen pl m) of all
 ca and
 mahiiks<itaam (mahii+ks<it, gen pl) of the earthly rulers
+||
 
 "[And] having traveled to many shrines and places of pilgrimage,
 I went [to] that holy place, revered by the twice-born, named Samantapancaka,
 where [there] was a battle long ago of the Pandavas, the Kurus, and all the earthly rulers.
-
-14-15
 
 didr>ks<u: (didr>ks<u, nom sing m) wanting to see
 aagata: (aa-!gam, nom sing m perf pass part) having come
@@ -249,7 +237,7 @@ tasmaat (tad, abl sing) from that
 samiipam (samiipa, acc sing) near, in the presence
 bhavataam (bhavat, gen pl m) of you (all)
 iha here
--
+|
 aayus<manta: (aayus<mat, voc pl m) full of life
 sarvai (sarva, voc pl m) all
 aiva indeed
@@ -257,17 +245,17 @@ brahmabhuutaa: (brahman+bhuuta, voc pl m) like Brahma
 hi indeed
 mai (aham, dat sing) to me
 mataa: (!man, voc pl m perf pass part) seem, lit. "thought of (as)"
--
+|
 asmin (ayam, loc sing) in this
 yajn~ai (yajn~a, loc sing) holy place, (place of) sacrifice
 mahaabhaagaa: (mahaabhaaga, voc pl m) illustrious
 suuryapaavakavarcasa: (suurya+paavaka+varcas, voc pl m) shining with the power of the Sun, lit. "sun-power-shining"
--
+||
 kr>taabhis<aikaa: (kr>ta+abhis<aika, voc pl m) having done religious bathing
 s~ucaya: (s~uci, voc pl m) pure
 kr>tajapyaa: (kr>ta+japya, voc pl m) having meditated
 hutaagnaya: (hutaagni, voc pl m) (ones who) offered sacrifices in fire
--
+|
 bhavanta: (bhavat, voc pl m) you (all)
 aasatai (!aas, 3 pl pres mid ind) they are sitting
 svasthaa: (svastha, voc pl m) self-abiding
@@ -275,6 +263,7 @@ braviimi (!bruu, 1 sing pres act ind) I say
 kim (kim, acc sing) what
 aham (aham, nom sing) I
 dvijaa: (dvija, voc pl m) twice-born
+||
 
 "Wanting to see [you] I have come here, in your presence, from that [place].
 [You who are] all full of life and indeed seem like Brahma to me,
@@ -282,33 +271,30 @@ dvijaa: (dvija, voc pl m) twice-born
 [who are] pure having done religious bathing [and who] have meditated [and] offered sacrifices in fire,
 what do I say to you [all], twice-born, [who] are sitting, self-abiding?
 
-16
-
 puraan<asa.s~ritaa: (puraan<a+sa.s~rita, acc pl f) from/relating to the Puranas
 pun<yaa: (pun<ya, acc pl f) sacred
 kathaa: (kathaa, acc pl) stories
 dharmaarthasa.s~ritaa: (dharma+artha+sa.s~rita, acc pl f) about moral obligation and wealth
--
+|
 itivr>ttam (itivr>tta, acc sing) chronicle
 naraindraan<aam (nara+indra, gen pl) of great/important men
 r>s<iin<aam (r>s<i, gen pl) of sages
 ca and
 mahaatmanaam (mahat+aatman, gen pl m) of great-souled
+||
 
 "Sacred stories from the Puranas about moral obligation and wealth,
 [or] the chronicle(s) of great men and great-souled sages?"
 
-17
-
 r>s<aya: (r>s<i, nom pl) the sages
 uucu: (!vac, 3 pl perf act ind) said
--
+|
 dvaaipaayanaina (dvaaipaayana, inst sing) by the islander (Vyasa)
 yat (yat, acc sing) which
 prauktam (pra-!vac, acc sing n perf pass part) told
 puraan<am (puraan<a, acc sing n) Purana
 paramars<in<aa (parama+r>s<i, inst sing m) by the greatest sage
--
+|
 suraai: (sura, inst pl) by deities
 brahmars<ibhi: (brahman+r>s<i, inst pl) by the Brahman sages
 ca and
@@ -316,92 +302,86 @@ aiva indeed
 s~rutvaa (!s~ru, abs) having heard
 yat (yat, acc sing) which
 abhipuujitam (abhi-!puuj, acc sing n perf pass part) honored
-
+||
 
 The sages said:
 "The Purana, which [was] told by the greatest sage, Vyasa,
 which [was] honored by the deities and Brahman sages [upon] having heard [it]...
 
-18
-
 tasya (tad, gen sing) of that
 aakhyaanavaris<th<asya (aakhyaana+varis<th<a, gen sing n) of the most extensive narrative
 vicitrapadaparvan<a: (vicitra+pada+parvan, gen sing n) of (something) having various words and sections
--
+|
 suuks<maarthanyaayayuktasya (suuks<ma+artha+nyaaya+yukta, gen sing n) of (something) having subtle and logical meaning
 vaidaarthaai: (vaida+artha, inst pl) by the meaning of the Vedas
 bhuus<itasya (!bhuus<, gen sing perf pass part n) of (something) enriched, lit. "decorated by"
 ca and
+||
 
 "Of that most extensive narrative, having various words and sections,
 having subtle and logical meaning, and decorated by the meaning of the Vedas...
-
-19
 
 bhaaratasya (bhaarata, gen sing m) of the Bharata (i.e. the Mahabharata)
 itihaasasya (itihaasa, gen sing) of the history
 pun<yaam (pun<ya, acc sing f) sacred
 granthaarthasa.yutaam (grantha+artha+sa.yuta, acc sing f) containing (lit. "united with") the meanings of [many] books
--
+|
 sa.skaaraupagataam (sa.skaara+upagata, acc sing f) possessing purity
 braahmiim (braahmii, acc sing) speech
 naanaas~aastraupabr>.hitaam (naanaa+s~aastra+upabr>.hita, acc sing f) augmented by various Shastras
+||
 
 "Of the Bharata, the sacred history containing the meanings of [many] books,
 possessing purity [of] speech (i.e. elegant language) augmented by various Shastras...
-
-20
 
 janamaijayasya (janamaijaya, gen sing) of Janamejaya
 yaam (yaa, acc sing) which
 raajn~a: (raajan, gen sing) of the king
 vaais~a.paayana: (vaais~ampaayana, nom sing) Vaishampayana
 uktavaan (!vac, nom sing m perf act part) narrated, told, lit. "having spoken"
--
+|
 yathaavat properly
 sa: (sa, nom sing) he/that
 r>s<i: (r>s<i, nom sing) the sage
 tus<t<yaa (tus<t<i, inst sing) with satisfaction
 satrai (satra, loc sing) in the sacrifice
 dvaaipaayanaajn~ayaa (dvaaipaayana+aajn~aa, inst sing) at Vyasa's behest, lit. "islander-command"
+||
 
 "Which that sage, Vaishampayana, narrated properly (and) with satisfaction
 at Vyasa's behest at king Janamejaya's sacrifice...
-
-21
 
 vaidaai: (vaida, inst pl) by the Vedas
 caturbhi: (catus, inst pl m) by the four
 sa.yuktaam (sa.yukta, acc sing f) united
 vyaasasya (vyaasa, gen sing) of Vyasa
 adbhutakarman<a: (adbhuta+karman, gen sing m) of the extraordinary composer, lit. "wonderful-doer"
--
+|
 sa.hitaam (sa.hita, acc sing f) endowed with
 s~rautum (!s~ru, inf) to hear
 icchaama: (!is<, 1 pl pres act ind) we wish
 dharmyaam (dharmya, acc sing f) righteous[ness]
 paapabhayaapahaam (paapa+bhaya+apaha, acc sing f) (which) dispels fear of evil, lit. "evil-fear-dispeller"
+||
 
 "We wish to hear [of that composition (described by verses 17-20)] of the extraordinary composer Vyasa,
 [which is] united with [the meaning of] the four Vedas, endowed with righteous[ness], [and which] dispels the fear of evil."
 
-22-24
-
 saauti: (saauti, nom sing) Sauti
 uvaaca (!vac, 3 sing perf act ind) said
--
+|
 aadyam (aadya, acc sing m) first
 purus<am (purus<a, acc sing) being
 iis~aanam (iis~aana, acc sing m) Ishana
 puruhuutam (puru+huuta, acc sing m) called upon by many
 purus<t<utam (puru+stuta, acc sing m) praised by many
--
+|
 r>tam (r>ta, acc sing m) true
 aikaaks<aram (aikaaks<ara, acc sing) the imperishable one
 brahma (brahman, acc sing) Brahma
 vyaktaavyaktam (vyakta+avyakta, acc sing m) perceptible and imperceptible
 sanaatanam (sanaatana, acc sing m) eternal
--
+||
 asat (asat, acc sing n) nonexistent
 ca and
 sat (sat, acc sing n) existent
@@ -411,23 +391,24 @@ yat (yat, acc sing) who
 vis~vam (vis~va, acc sing n) all
 sadasat (sat+asat, acc sing n) existent and nonexistent
 param (para, acc sing n) different than, distinct from
--
+|
 paraavaraan<aam (para+avara, gen pl n) of high and low (i.e. all) (things/beings)
 sras<t<aaram (sras<t<aara, acc sing) the creator
 puraan<am (puraan<a, acc sing m) ancient
 paramavyayam (param+avyaya, acc sing m) completely undecaying
--
+||
 man^galyam (man^galya, acc sing m) pleasing
 man^galam (man^gala, acc sing) auspicious
 vis<n<um (vis<n<u, acc sing) Vishnu
 varain<yam (varain<ya, acc sing m) excellent
 anagham (anagha, acc sing m) faultless
 s~ucim (s~uci, acc sing m) pure
--
+|
 namaskr>tya (namas-!kr>, abs) having bowed (to)
 hr>s<iikais~am (hr>s<iikais~a, acc sing) lord of the senses
 caraacaragurum (cara+acara+guru, acc sing m) the guru of moving and nonmoving (beings)
 harim (hari, acc sing) Hari, i.e. Vishnu/Krishna
+||
 
 Sauti said:
 "Having bowed [to] the first being, Ishana, called upon by many, praised by many,
@@ -437,31 +418,28 @@ the creator of high and low [things/beings], ancient, completely undecaying,
 pleasing, auspicious, [who is] Vishnu, excellent, faultless, pure,
 the lord of the senses, the guru of moving and nonmoving [beings], [also called] Hari...
 
-25
-
 mahars<ai: (mahat+r>s<i, gen sing m) of the great sage
 puujitasya (!puuj, gen sing m perf pass part) honored
 iha here
 sarvalaukaai: (sarva+lauka, inst pl m) by everyone
 mahaatmana: (mahat+aatman, gen sing m) of the great souled
--
+|
 pravaks<yaami (pra-!vac, 1 sing fut act ind) I will declare
 matam (mata, acc sing) thought
 pun<yam (pun<ya, acc sing n) holy
 vyaasasya (vyaasa, gen sing) of Vyasa
 adbhutakarman<a: (adbhuta+karman, gen sing m) of the doer [of] wonderful [deeds], lit. "wonderful-doer"
+||
 
 "I will declare the holy thought(s) of Vyasa, the doer [of] wonderful [deeds],
 the great-souled great sage, honored by everyone here.
 
-26
-
 aacakhyu: (aa-!khyaa, 3 pl perf act ind) they told
 kavaya: (kavi, nom pl) the bards
 kaicit (ka+cit, nom pl) some
-sa.pratyaacaks<atai (sam-prati-aa-!caks<|II, 3 pl pres mid ind) they are teaching
+sa.pratyaacaks<atai (sam-prati-aa-!caks<=II, 3 pl pres mid ind) they are teaching
 parai (para, nom pl m) others
--
+|
 aakhyaasyanti (aa-!khyaa, 3 pl fut act ind) they will tell
 tathaa in that manner, in the same way
 aiva indeed
@@ -469,11 +447,10 @@ anyai (anya, nom pl) others
 itihaasam (itihaasa, acc sing) history
 imam (ayam, acc sing) this
 bhuvi (bhuu, loc sing) on earth
+||
 
 "Some bards told this history, others are teaching [it],
 others will tell [it] in the same way indeed on earth.
-
-27
 
 idam (idam, nom sing) it
 tu and
@@ -481,44 +458,42 @@ tris<u (tri, loc pl m) in three
 laukais<u (lauka, loc pl) in the worlds
 mahajjn~aanam (mahat+jn~aana, nom sing n) great knowledge
 pratis<th<itam (prati-!sthaa, nom sing n perf pass part) established
--
+|
 vistaraai: (vistara, inst pl m) with extensive
 ca and
 samaasaai: (samaasa, inst pl) with concise
 ca and
-dhaaryatai (!dhr>|I, 3 sing pres pass ind caus) it is possessed
+dhaaryatai (!dhr>=I, 3 sing pres pass ind caus) it is possessed
 yat (yat, nom sing) which
 dvijaatibhi: (dvijaati, inst pl m) by the twice-born
+||
 
 "And it [is] established in the three worlds [as] great knowledge,
 which with [both] extensive and concise [forms] is possessed by the twice-born.
-
-28
 
 ala.kr>tam (alam-!kr>, nom sing n perf pass part) embellished
 s~ubhaai: (s~ubha, inst pl m) by splendid
 s~abdaai: (s~abda, inst pl) by words
 samayaai: (samaya, inst pl) by conversations, lit. "engagements"
 divyamaanus<aai: (divya+maanus<a, inst pl m) by divine and human
--
+|
 chandauvr>ttaai: (chandauvr>tta, inst pl) with poetic meter
 ca and
 vividhaai: (vividha, inst pl n) with various
 anvitam (anvita, nom sing n) endowed
 vidus<aam (vidvas, gen pl m) of the wise
 priyam (priya, nom sing n) favorite
+||
 
 "Embellished by splendid words [and] divine and human conversations,
 and endowed with various poetic meter, [it is] a favorite of the wise.
-
-29-30.1
 
 nis<prabhai (nis<prabha, loc sing m) in (something) deprived of radiance
 asmin (ayam, loc sing) in this
 niraalaukai (niraalauka, loc sing m) in (something) deprived of light
 sarvatas entirely
 tamasaavr>tai (tamas+aavr>ta, loc sing m) in (something) darkness-enveloped
--
+|
 br>hat (br>hat, nom sing n) great
 an<d<am (an<d<a, nom sing) egg
 abhuut (!bhuu, 3 sing aor act ind) came into being
@@ -526,19 +501,18 @@ aikam (aika, nom sing n) one
 prajaanaam (prajaa, gen pl) of beings
 biijam (biija, nom sing) the seed
 aks<ayam (aks<aya, nom sing n) indestructible
--
+||
 yugasya (yuga, gen sing) of the age
 aadaau (aadi, loc sing) in the beginning
 nimittam (nimitta, nom sing) the cause
 tat (tad, acc sing) it
 mahaddivyam (mahat+divya, acc sing n) Mahadivya, lit. "great-divine"
-pracaks<atai (pra-!caks<|II, 3 pl pres mid ind) they call
+pracaks<atai (pra-!caks<=II, 3 pl pres mid ind) they call
+|
 
 "In this [world], deprived of radiance [and] light, entirely enveloped by darkness,
 [there] came into being a great egg, the one indestructible seed, the cause of (all) beings,
 in the beginning of the age. They call it the Mahadivya...
-
-30.2-31
 
 yasmin (yat, loc sing) in which
 sa.s~ruuyatai (sam-!s~ru, 3 sing pres pass ind) it is said, lit. "it is heard"
@@ -546,7 +520,7 @@ satyam (satya, nom sing n) true
 jyauti: (jyautis, nom sing) light
 brahma (brahman, nom sing) Brahma
 sanaatanam (sanaatana, nom sing n) eternal
--
+||
 adbhutam (adbhuta, nom sing n) extraordinary
 ca and
 api also
@@ -555,7 +529,7 @@ ca and
 sarvatra everywhere
 samataam (samataa, acc sing) equally
 gatam (!gam, nom sing n perf pass part) present, lit. "having gone"
--
+|
 avyaktam (avyakta, nom sing n) imperceptible
 kaaran<am (kaaran<a, nom sing) cause
 suuks<mam (suuks<ma, nom sing n) subtle
@@ -564,12 +538,11 @@ tad (tad, nom sing) that
 sat (sat, nom sing n) existing
 asat (asat, nom sing n) not existing
 aatmakam (aatmaka, nom sing n) having a nature (of)
+||
 
 "In which it is said [was] the true light, Brahma, the eternal,
 both extraordinary and also inconceivable, equally present everywhere,
 who [is] the imperceptible subtle cause, that [one] having a nature [of] existing and not existing...
-
-32-33.1
 
 yasmaat (yat, abl sing) from which
 pitaamaha: (pitr>+maha, nom sing m) great father
@@ -577,7 +550,7 @@ jajn~ai (!jan, 3 sing perf mid ind) was born
 prabhu: (prabhu, nom sing m) lord
 aika: (aika, nom sing m) one
 prajaapati: (prajaapati, nom sing) Prajapati
--
+|
 brahmaa (brahman, nom sing) Brahma
 suraguru: (suraguru, nom sing) Suraguru
 sthaan<u: (sthaan<u, nom sing m) Sthanu
@@ -585,7 +558,7 @@ manu: (manus, nom sing) Manu
 ka: (ka, nom sing) Ka
 paramais<th<ii (paramais<th<in, nom sing m) Paramesthi
 atha then
--
+||
 praacaitasa: (praacaitas, nom pl m) the 10 sons of Pracetas
 tathaa so also
 daks<a: (daks<a, nom sing m) Daksha
@@ -593,26 +566,25 @@ daks<aputraa: (daks<a+putra, nom pl m) the sons of Daksha
 ca and
 sapta seven
 vaai indeed
+|
 
 "From which was born the great father, the Prajapati, the one lord,
 Brahma [along with] Suraguru, Sthanu, Manu, Ka, [and] then Paramesthi,
 [and] so also the 10 sons of Pracetas, Daksha, and indeed the seven sons of Daksha.
-
-33.2-35.1
 
 tata: (tatas) then
 prajaanaam (prajaa, gen pl) of beings
 pataya: (pati, nom pl) lords
 praabhavan (pra-!bhuu, 3 pl imp act ind) appeared
 aikavi.s~ati: (aikavi.s~ati, nom sing) twenty-one
--
+||
 purus<a: (purus<a, nom sing) Purusha
 ca and
 apramaiyaatmaa (apramaiyaatman, nom sing) of unfathomable nature, lit. "unfathomable-natured"
 yam (ya, acc sing) whom
 sarvars<aya: (sarva+r>s<i, nom sing m) all the sages
-vidu: (!vid|II, 3 pl perf act ind) knew
--
+vidu: (!vid=II, 3 pl perf act ind) knew
+|
 vis~vaidaivaa: (vis~vaidaiva, nom pl) the Vishvedevas
 tathaa so also
 aadityaa: (aaditya, nom pl) the Adityas
@@ -620,7 +592,7 @@ vasava: (vasu, nom pl m) the Vasus
 atha then
 as~vinaau (as~vin, nom du m) the two Ashwins
 api also
--
+||
 yaks<aa: (yaks<a, nom pl) the Yakshas
 saadhyaa: (saadhya, nom pl) the Sadhyas
 pis~aacaa: (pis~aaca, nom pl) the Pishachas
@@ -628,31 +600,29 @@ ca and
 guhyakaa: (guhyaka, nom pl) the Guhyakas
 pitara: (pitr>, nom pl) the Pitrs
 tathaa in that manner
+|
 
 "Then appeared twenty-one lords of beings (prajapatis)
 and the Purusha of unfathomable nature, whom all the sages knew,
 so also the Vishvedevas, the Adityas, the Vasus, then also the two Ashwins,
 and in that manner, the Yakshas, the Sadhyas, the Pishachas, the Guhyakas, the Pitrs...
 
-35.2-36.1
-
 tata: (tatas) then
 prasuutaa: (prasuuta, nom pl m) [they were] begotten
 vidvaa.sa: (vidvas, nom pl m) wise
 s~is<t<aa: (s~is<t<a, nom pl m) distinguished
 brahmars<isattamaa: (brahman+r>s<i+sattama, nom pl m) the most venerable Brahman sages
--
+||
 raajars<aya: (raajan+r>s<i, nom pl) the royal sages
 ca and
 bahava: (bahu, nom pl m) many
 sarvaai: (sarva, inst pl m) by all sorts
 samuditaa: (samudita, nom pl m) elevated
 gun<aai: (gun<a, inst pl) by virtues
+|
 
 "Then [were] begotten the wise, distinguished, most venerable Brahman sages,
 and many royal sages elevated by all sorts [of] virtues...
-
-36.2-37.1
 
 aapa: (aapas, nom sing) the water
 dyaau: (div, nom sing) the heavens
@@ -661,12 +631,12 @@ vaayu: (vaayu, nom sing) the wind
 antariks<am (antariks<a, nom sing) the sky
 dis~a: (dis~, nom pl) the quarters [of the sky]
 tathaa so also
--
+||
 sa.vatsarartava: (sa.vatsara+r>tu, nom pl) the years [and] seasons
 maasaa: (maasa, nom pl) the months
 paks<aahauraatraya: (paks<a+ahauraatri, nom pl) the fortnights, the days [and] nights
 kramaat gradually
--
+|
 yat (yat, nom sing) what[ever]
 ca and
 anyat (anyat, nom sing) else
@@ -675,12 +645,11 @@ tad (tad, nom sing) that
 sarvam (sarva, nom sing n) all
 sambhuutam (sambhuuta, nom sing n) produced
 laukasaaks<ikam (lauka+saaks<ika, nom sing n) observed [in the] world, lit. "world-witnessed"
+||
 
 "So also the water, the heavens, the earth, the wind, the sky, [and] the quarters [of the sky],
 [and] gradually the years, the seasons, the months, the fortnights, the days [and] nights,
 and what[ever] else [is] observed [in the] world, all that [was] also produced.
-
-38
 
 yat (yat, nom sing) what
 idam (idam, nom sing) that
@@ -688,24 +657,23 @@ dr>s~yatai (!dr>s~, 3 sing pres pass ind) is seen
 ki.cit (kim+cit,) whatever
 bhuutam (bhuuta, nom sing n) created
 sthaavarajan^gamam (sthaavara+jan^gama, nom sing n) stationary and moving
--
+|
 puna: (punar,) again
 sa.ks<ipyatai (sam-!ks<ip, 3 sing pres pass ind) is diminished
 sarvam (sarva, nom sing n) all
 jagatpraaptai (jagat+praapta, loc sing n) at the end of the world, lit. "at world-complete"
 yugaks<ayai (yuga+ks<aya, loc sing) at the destruction of the age, lit. "at age-destruction"
+||
 
 "What is seen, whatever [is] created, [both] stationary and moving,
 all that is diminished again at the end of the world, at the destruction of the age.
-
-39
 
 yathaa just as
 r>taau (r>tu, loc sing) in a season
 r>tulin^gaani (r>tu+lin^ga, nom pl) [things] characteristic of a season
 naanaaruupaan<i (naanaa+ruupa, nom pl) various features
 paryayai (paryaya, loc sing) at the change
--
+|
 dr>s~yantai (!dr>s~, 3 pl pres pass ind) are seen
 taani (tad, nom sing) those
 taani (tad, nom sing) these [things (listed in the previous verses)]
@@ -713,50 +681,47 @@ aiva indeed
 tathaa in that manner
 bhaavaa: (bhaava, nom pl) arise, lit. "[are] arising"
 yugaadis<u (yuga+aadi, loc pl) at the beginnings of ages, lit. "at age-beginnings"
+||
 
 "Just as at the change [of] a season, those various features characteristic of the [new] season
 are seen, indeed in that manner these [things (listed in the previous verses)] arise at the beginnings of [new] ages.
-
-40
 
 aivam thus
 aitad (aitad, nom sing) this
 anaadyantam (an+aadi+anta, nom sing) without beginning and end
 bhuutasa.haarakaarakam (bhuuta+sa.haara+kaaraka, nom sing n) destroyer of [all] created things, lit. "created-thing-destruction-doer"
--
+|
 anaadinidhanam (an+aadi+nidhana, adv) perpetually
 laukai (lauka, loc sing) in the world
 cakram (cakra, nom sing) the wheel (of time)
 sa.parivartatai (sam-pari-!vr>t, 3 sing pres mid ind) it revolves
+||
 
 "Thus, this wheel (of time), the destroyer of [all] created things, without beginning and end,
 revolves perpetually in the world.
-
-41
 
 trayastri.s~at (trayastri.s~at, nom sing) thirty-three
 sahasraan<i (sahasra, nom pl) thousand(s)
 trayastri.s~at (trayastri.s~at, nom sing) thirty-three
 s~ataani (s~ata, nom pl) hundred(s)
 ca and
--
+|
 trayastri.s~at (trayastri.s~at, nom sing) thirty-three
 ca and
 daivaanaam (daiva, gen pl) of gods
 sr>s<t<i: (sr>s<t<i, nom sing) the generation
 sa.ks<aipalaks<an<aa (sa.ks<aipa+laks<an<aa, nom sing) a brief indication
+||
 
 "[To give] a brief indication, the generation of the gods [was]
 thirty-three thousand, thirty-three hundred, and thirty-three.
-
-42
 
 divasputra: (diva+putra, nom sing) son of Diva, lit. "Diva-son"
 br>hadbhaanu: (br>hadbhaanu, nom sing m) Brhadbhanu
 caks<u: (caks<us, nom sing m) Cakshus
 aatmaa (aatman, nom sing) Atma
 vibhaavasu: (vibhaavasu, nom sing m) Vibhavasu
--
+|
 savitaa (savitr>, nom sing) Savita
 ca and
 r>ciika: (r>ciika, nom sing) Rcika
@@ -764,11 +729,10 @@ arka: (arka, nom sing) Arka
 bhaanu: (bhaanu, nom sing) Bhanu
 aas~aavaha: (aas~aavaha, nom sing) Ashavaha
 ravi: (ravi, nom sing) Ravi
+||
 
 "The son(s) of Diva [were] Brhadbhanu, Cakshus, Atma, Vibhavasu,
 and Savita, Rcika, Arka, Bhanu, Ashavaha, Ravi.
-
-43
 
 putraa: (putra, nom pl) sons
 vivasvata: (vivasvat, gen sing m) of Vivasvan
@@ -777,20 +741,19 @@ mahya: (mahya, nom sing m) Mahya
 tais<aam (tad, gen pl) of those
 tathaa and
 avara: (avara, nom sing m) last/youngest
--
+|
 daivabhraat< (daivabhraaj, nom sing) Devabhraj
 tanaya: (tanaya, nom sing) son
 tasya (sa, gen sing) his
 tasmaat (sa, abl sing) his [son], lit. "from him"
 subhraat< (subhraaj, nom sing) Subhraj
-iti -
+iti |
 tata: (tatas) thus
 smr>ta: (smr>ta, nom sing m) [it is] said
+||
 
 "[Those were] all sons of Vivasvan and of those, Mahya [was] the youngest;
 His son [was] Devabhraj, [and] his [son was] Subhraj - thus [it is] said.
-
-44
 
 subhraaja: (subhraaj, gen sing) of Subhraaj
 tu and
@@ -798,22 +761,21 @@ traya: (tri, nom pl m) three
 putraa: (putra, nom pl) sons
 prajaavanta: (prajaavat, nom pl m) having [many] offspring
 bahus~rutaa: (bahus~ruta, nom pl m) very learned, lit. "much-heard"
--
+|
 das~ajyauti: (das~ajyauti, nom sing) Dashajyoti
 s~atajyauti: (s~atajyauti, nom sing) Shatajyoti
 sahasrajyauti: (sahasrajyautis, nom sing) Sahasrajyoti
 aiva indeed
 ca and
+||
 
 "And of Subhraaj, [there were] three very learned sons, having [many] offpsring,
 Dashajyoti, Shatajyoti, and indeed Sahasrajyoti.
 
-45-46.1
-
 das~aputrasahasraan<i (das~an+putra+sahasra, nom pl n) ten thousand sons
 das~ajyautai: (das~ajyauti, gen sing) of Dashajyoti
 mahaatmana: (mahat+aatman, gen sing m) of the great souled
--
+|
 tata: (tatas) beyond that
 das~gun<aa: (das~agun<a, nom pl m) ten times
 ca and
@@ -821,18 +783,17 @@ anyai (anya, nom pl) others
 s~atajyautai: (s~atajyauti, gen sing) of Shatajyoti
 iha here
 aatmajaa: (aatmaja, nom pl m) sons
--
+||
 bhuuya: (bhuuyas) more
 tata: (tatas) beyond that
 das~gun<aa: (das~agun<a, nom pl m) ten times
 sahasrajyautis<a: (sahasrajyautis, gen sing) of Sahasrajyoti
 sutaa: (suta, nom pl m) sons
+|
 
 "[There were] ten thousand (10,000) sons of great-souled Dashajyoti,
 and of Shatajyoti, other sons ten times beyond that (i.e. 100,000) here,
 [and] of Sahasrajyoti, sons ten times more beyond that (i.e. 1,000,000).
-
-46.2-47.1
 
 taibhya: (sa, abl pl) from them
 kuruva.s~a: (kuru+va.s~a, nom sing) the Kuru lineage
@@ -840,12 +801,13 @@ ca and
 yaduunaam (yadu, gen pl) of the Yadus
 bharatasya (bharata, gen sing) of Bharata
 ca and
--
+||
 yayaatiiks<vaakuva.s~a: (yayaati+iks<vaaku+va.s~a, nom sing) the Yayati [and] Ikshvaku lineage(s)
 ca and
 raajars<in<aam (raajan+r>s<i, gen pl) of the royal sages
 ca and
 sarvas~a: (sarvas~as) in general
+|
 
 "From them [came] the Kuru lineage, and [that] of the Yadus and of Bharata,
 and the Yayati and Ikshvaku lineage(s) and [that] of the royal sages in general.

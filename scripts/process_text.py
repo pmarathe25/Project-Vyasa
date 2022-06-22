@@ -308,6 +308,9 @@ def build_sandhied_text(words, translit_ruleset):
 
 
 def parse_word_grammar(line, verse_num, line_num, dictionary):
+    if is_str_end_marker(line):
+        return [line, None, None, None]
+
     def strip(lst):
         return list(map(lambda x: x.strip(), lst))
 
@@ -376,6 +379,14 @@ def extract_title(str, prefix):
     return f"{prefix} {int(num)}: {name.title()} Parva"
 
 
+def is_str_verse_end_marker(inp):
+    return inp.startswith("||")
+
+
+def is_str_end_marker(inp):
+    return is_str_verse_end_marker(inp) or inp == "|"
+
+
 def main():
     parser = argparse.ArgumentParser(
         description="Processes raw verse-text files into JSON files that can be queried by the front-end"
@@ -430,22 +441,30 @@ def main():
     # To have the front-end handle newlines, we need a bit of weirdness in the word-by-word translation - specifically,
     # instead of just having a list of words for each verse, we have to have a list of lines of words (i.e. list of lists of words).
     # Then the front-end can render each list in a separate HTML element.
-    for verse_num, word_by_word, translation in util.chunks(contents.split("\n\n"), 3):
-        word_by_word_sections = []
-        to_sandhi_word_lines = []
-        line_num = 0
-        for section in word_by_word.split("\n-\n"):
-            word_by_word_sections.append([])
-            to_sandhi_word_lines.append([])
-            for line in section.split("\n"):
-                line_num += 1
-                word, meaning, root, parts_of_speech = parse_word_grammar(line, verse_num, line_num, DICTIONARY)
-                to_sandhi_word_lines[-1].append(word)
-                word_by_word_sections[-1].append([word, meaning, root, parts_of_speech])
+    verse_num = 0
+    for word_by_word, translation in util.chunks(contents.split("\n\n"), 2):
+        word_by_word_sections = [[]]
+        to_sandhi_word_lines = [[]]
+
+        for line_num, line in enumerate(word_by_word.splitlines()):
+            if is_str_verse_end_marker(line):
+                line += f" {verse_num} ||"
+                verse_num += 1
+
+            word, meaning, root, parts_of_speech = parse_word_grammar(line, verse_num, line_num, DICTIONARY)
+            to_sandhi_word_lines[-1].append(word)
+            word_by_word_sections[-1].append([word, meaning, root, parts_of_speech])
+
+            if is_str_end_marker(line):
+                word_by_word_sections.append([])
+                to_sandhi_word_lines.append([])
+
+        # Remove the final empty section
+        word_by_word_sections.pop()
+        to_sandhi_word_lines.pop()
 
         processed["verses"].append(
             {
-                "num": verse_num,
                 "text": "\n".join(build_sandhied_text(line, TRANSLIT_RULESET) for line in to_sandhi_word_lines),
                 "translation": translation,
                 "wordByWord": word_by_word_sections,

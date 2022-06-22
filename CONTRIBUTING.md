@@ -126,18 +126,16 @@ The content for each chapter is stored in separate text file: `content/raw/text/
 
 The format of each file is:
 ```
-<verse number (or range if multiple verses)>
-
 <word0> (<base-form>, <parts of speech>) <literal translation>
 <word1> (<base-form>, <parts of speech>) <literal translation>
 ...
+| (or || for ends of verses)
 
 <Translation>
 
-<verse number (or range if multiple verses)>
-
 <word0> (<base-form>, <parts of speech>) <literal translation>
 <word1> (<base-form>, <parts of speech>) <literal translation>
+| (or || for ends of verses)
 ...
 
 <Translation>
@@ -158,11 +156,10 @@ naraḥ eva gacchati
 The corresponding content file might look like this
 (*note: this [transliteration format](#transliteration-methodology) is* not *IAST!*):
 ```
-1
-
 nara: (nara, nom sing) man
 aiva indeed
 gacchati (!gam, 3 sing pres act ind) goes
+|
 
 The man indeed goes.
 ```
@@ -175,14 +172,8 @@ The format must conform to the following rules:
 
 - Sections must be separated by a single blank line.
 
-- For each verse, the first section must indicate the verse number(s).
-
-  If the section includes more than one verse, the range of verses may be
-  specified using a dash to separate the start and end verse numbers, e.g. `1-3`.
-
-  If the section includes a portion of a verse, use a dot, i.e. `.` to indicate
-  how many lines it includes. For example, if a section includes the entirety of verse
-  1 and the first line of verse 2, use `1-2.1`.
+- Lines of the original source text should be separated by a new line containing either `|` or `||`.
+  The latter marks the end of a verse whereas the former only separates lines.
 
 - There must not be any blank lines within a section
 
@@ -200,14 +191,6 @@ The format must conform to the following rules:
   text with *sandhi* applied based on the word-by-word input. As of this writing,
   some *sandhi* may not yet be implemented. Fortunately, adding new rules is easy!
 
-- If the verse text needs to be split on more than one line, use a line containing a
-  single dash, `-`, to mark where the line break should be. For example:
-  ```
-  word0 (base-form, parts of speech) literal translation
-  -
-  word1 (base-form, parts of speech) literal translation
-  ```
-
 More detail on the fields in parentheses is provided in the following sections.
 
 ### Base Form
@@ -223,8 +206,8 @@ Some common syntax rules to consider:
 - Verbal roots should be prefixed with an exclamation mark, i.e. `!`. For example: `!gam`.
 
 - In cases where a single verbal root is used for multiple verbs meaning different things,
-    append the verb class in roman numerals after a pipe character, i.e. `|`.
-    For example: `!ks<i|VI`.
+    append the verb class in roman numerals after an equal sign, i.e. `=`.
+    For example: `!ks<i=VI`.
 
 - Pre-verbs must be separated from their roots by dashes, i.e. `-`. For example: `ava-!gam`.
 

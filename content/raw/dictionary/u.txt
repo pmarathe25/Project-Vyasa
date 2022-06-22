@@ -2,10 +2,10 @@ ud () (as prefix) up, upwards, over, above
 ud-!iir to arise, to start
 ugras~ravas (m) Ugrasravas, also called Sauti
 upa () (as prefix) towards, near to
-upa-!br>.h|I to augment, to complete [!br>.h|I]
+upa-!br>.h=I to augment, to complete [!br>.h=I]
 upa-!gam to approach, to attain
 upa-!laks< to perceive, to observe
 upa-!vis~ to sit down
-upabr>.hita (adj) completed, augmented [upa-!br>.h|I, perf pass part]
+upabr>.hita (adj) completed, augmented [upa-!br>.h=I, perf pass part]
 upagata (adj) attained, lit. "approached (by)" [upa-!gam, perf pass part]
 uttama (adj) best, highest

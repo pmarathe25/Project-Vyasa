@@ -75,6 +75,13 @@ const WordWithPopover = ({ word, definition, root, parts_of_speech }) => {
         };
     }, []);
 
+    if (!definition && !root && !parts_of_speech) {
+        return (<p>
+            {translitWord}
+        </p>);
+
+    }
+
     return (
         <Col
             style={{ padding: "0px", marginLeft: "4px", marginRight: "4px" }}
@@ -165,7 +172,7 @@ const WordByWord = ({ wordByWord }) => {
     );
 }
 
-const VerseContent = ({ num, text, wordByWord, translation }) => {
+const VerseContent = ({ text, wordByWord, translation }) => {
     text = useTransliterate(text);
     const isMobile = useIsMobile();
     const [showWordByWord, setShowWordByWord] = React.useState(false);
@@ -237,9 +244,9 @@ const VerseContent = ({ num, text, wordByWord, translation }) => {
     );
 }
 
-const Verse = ({ num, text, wordByWord, translation }) => {
+const Verse = ({ text, wordByWord, translation }) => {
     return (
-        <VerseContent num={num} text={text} wordByWord={wordByWord} translation={translation} />
+        <VerseContent text={text} wordByWord={wordByWord} translation={translation} />
     )
 }
 
