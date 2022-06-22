@@ -3,12 +3,12 @@
     --text-highlight-color: rgb(75, 75, 75);
     --text-gray-color: rgba(255, 255, 255, 0.9);
     --text-dark-gray-color: rgba(255, 255, 255, 0.7);
-    --content-max-width: 1100px;
+    --content-max-width: 1150px;
 }
 
 html,
 body {
-    background-color: rgb(55, 55, 55);
+    background-color: rgb(62, 62, 62);
 }
 
 p {
