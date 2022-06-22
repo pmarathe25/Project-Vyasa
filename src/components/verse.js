@@ -172,7 +172,7 @@ const WordByWord = ({ wordByWord }) => {
     );
 }
 
-const VerseContent = ({ text, wordByWord, translation }) => {
+const Verse = ({ text, wordByWord, translation }) => {
     text = useTransliterate(text);
     const isMobile = useIsMobile();
     const [showWordByWord, setShowWordByWord] = React.useState(false);
@@ -233,18 +233,12 @@ const VerseContent = ({ text, wordByWord, translation }) => {
                 ...colStyle,
                 fontSize: "15px",
                 whiteSpace: "pre-wrap",
-                color: "var(--text-gray-color)",
+                color: "var(--text-dark-gray-color)",
             }}>
                 {translation}
             </Col>
         </Row >
     );
-}
-
-const Verse = ({ text, wordByWord, translation }) => {
-    return (
-        <VerseContent text={text} wordByWord={wordByWord} translation={translation} />
-    )
 }
 
 export default Verse;
