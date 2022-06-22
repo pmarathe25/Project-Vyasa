@@ -74,9 +74,9 @@ const Layout = ({ location, pageTitle, children }) => {
                                 </a>
                             </TopBarNavItem>
                         </Nav>
-                        <TransliterationModeSelect navExpanded={navExpanded} />
                     </Navbar.Collapse>
 
+                    <TransliterationModeSelect navExpanded={navExpanded} />
 
                     <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                 </Container>
