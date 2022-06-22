@@ -1,12 +1,12 @@
 !saiv to serve, to dwell, to honor
-!smr>|I to remember, to recollect
+!smr>=I to remember, to recollect
 !sthaa to stand
 !str> to spread out, to cover
 !stu to praise
-!suu|II to bring forth, to beget, to give birth to
-!su|I to urge, to impel, to incite
+!su=I to urge, to impel, to incite
+!suu=II to bring forth, to beget, to give birth to
 !s~a.s to approve of, to tell, to express
-!s~is<|VII to distinguish, to discriminate
+!s~is<=VII to distinguish, to discriminate
 !s~ru to hear
 sa (m) he, this, that; () (as prefix) with, having
 sa.haara (m) collection, accumulation, contraction; (m) end, conclusion, destruction [sam-!hr>]
@@ -17,7 +17,7 @@ sa.skaara (m) cleansing the body, training the mind, correctness, purity (especi
 sa.s~ita (adj) sharp, well-prepared, rigid, firm
 sa.s~rita (adj) united with, inherent in, relating to, concerning
 sa.vatsara (m) a year
-sa.yukta (adj) conjoined, united with, combined [sam-!yuj|VII, perf pass part]
+sa.yukta (adj) conjoined, united with, combined [sam-!yuj=VII, perf pass part]
 sa.yuta (adj) united, containing [sam-!yu, perf pass part]
 saa (f) she, this that
 saadhya (m) (plural) a class of celestial beings
@@ -32,22 +32,22 @@ sam () (as prefix) with, together, along with, altogether
 sam-!aas to sit together, to assemble
 sam-!bhuu to be or come together, to be born or produced
 sam-!hr> to bring together, to compress, to abridge; to crumple up, to destroy
-sam-!i|I to go or come together, to meet
+sam-!i=I to go or come together, to meet
 sam-!ks<ip to throw together, to heap; () (passive voice) to be compressed or diminshed, to shrink up
 sam-!s~ru to hear or hear from, to listen attentively; () (passive voice) to be heard, talked, or read about
 sam-!yu to unite, to join together, to contain
-sam-!yuj|VII to combine, to unite
+sam-!yuj=VII to combine, to unite
 sam-pari-!kram to travel, to wander [!kram]
 sam-pari-!vr>t to turn round, to revolve, to roll
-sam-prati-aa-!caks<|II to explain, to teach
-sam-ud-!i|I to rise up together, to come together or prepare
+sam-prati-aa-!caks<=II to explain, to teach
+sam-ud-!i=I to rise up together, to come together or prepare
 samaasa (m) aggregation, union, [sam-!aas]; (m) succinctness, brevity, conciseness
 samantapan~caka (n) Samantapancaka, a district of Kurukshetra
 samataa (f) sameness of level, equality
-samaya (m) agreement, engagement [sam-!i|I]; (m) a speech, a declaration
+samaya (m) agreement, engagement [sam-!i=I]; (m) a speech, a declaration
 sambhuuta (adj) united, born, produced [sam-!bhuu, perf pass part]
 samiipa (n) vicinity, proximity
-samudita (adj) elevated, risen, possessed of, supplied with [sam-ud-!i|I, perf pass part]
+samudita (adj) elevated, risen, possessed of, supplied with [sam-ud-!i=I, perf pass part]
 samyak (indc) together, rightly, properly, completely
 sanaatana (adj) eternal, perpetual, everlasting
 sapta (indc) (in compound) seven
@@ -61,8 +61,8 @@ sat (adj) being, existing, truth [!as, pres act part]
 satra (n) sacrifice
 sattama (adj) very good, best, most virtuous, very venerable [sat, sup]
 satya (adj) true, real, genuine, honest, virtuous [sat]
-savitr> (m) stimulator, rouser [!su|I]; (m) Savita
-smr>ta () [!smr>|I, perf pass part]; (adj) remembered, recollected; (adj) mentioned, taught, named
+savitr> (m) stimulator, rouser [!su=I]; (m) Savita
+smr>ta () [!smr>=I, perf pass part]; (adj) remembered, recollected; (adj) mentioned, taught, named
 sr>s<t<i (f) production, creation
 sras<t<aara (m) creator
 stha () (in compound) standing, staying [!sthaa]
@@ -78,7 +78,7 @@ suraguru (m) teacher of the gods [sura+guru]; (m) Suraguru
 suta (adj) child, offspring
 suuks<ma (adj) subtle, minute, fine, small, exact
 suurya (mn) the Sun
-suuta (m) charioteer; (adj) born, engendered [!suu|II, perf pass part]
+suuta (m) charioteer; (adj) born, engendered [!suu=II, perf pass part]
 sva one's own, one's self
 svastha (adj) self-abiding, self-sufficient, independent [sva+stha]
 s~aastra (n) an order, teaching, scientific treatise, religious scripture
@@ -86,7 +86,7 @@ s~aaunaka (m) Shaunaka, a Sanskrit grammarian
 s~abda (m) word
 s~ata (n) a hundred
 s~atajyauti (m) Shatajyoti [s~ata+jyautis]
-s~is<t<a (adj) disciplined, cultured, learned, eminent [!s~is<|VII, perf pass part]
+s~is<t<a (adj) disciplined, cultured, learned, eminent [!s~is<=VII, perf pass part]
 s~ruta heard, listened to, known, famous [!s~ru, perf pass part]
 s~ubha (adj) splendid, bright, pleasant, eminent
 s~uci (adj) gleaming, shining, radiant, pure

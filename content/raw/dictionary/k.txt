@@ -3,9 +3,9 @@
 !kr> to do, to make
 !kram to step, to walk
 !ks<ar to ooze, to flow, to melt away, to perish
+!ks<i=I to decay, to waste away
+!ks<i=VI to dwell
 !ks<ip to throw, to cast, to send
-!ks<i|I to decay, to waste away
-!ks<i|VI to dwell
 ka (m) who?; (m) of Vishnu
 kaala (m) time
 kaaraka (adj) (in compound) doer of an action [!kr>]
@@ -20,8 +20,8 @@ kr>s<n<a (adj) dark, black
 kr>ta (adj) done, made, accomplished [!kr>, perf pass part]
 krama (m) a step [!kram]
 kramaat (indc) in regular course, by degrees, gradually [krama, abl sing]
-ks<aya (m) (in compound) loss, destruction, decay [!ks<i|I]
-ks<it () (in compound) ruling, dwelling [!ks<i|VI]
+ks<aya (m) (in compound) loss, destruction, decay [!ks<i=I]
+ks<it () (in compound) ruling, dwelling [!ks<i=VI]
 kula (m) family
 kuru (m) Kuru, ancestor of Pandu and Dhritarashtra, but "kuru" generally refers to descendants of only the latter
 kutas (indc) from where? whence?

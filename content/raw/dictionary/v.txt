@@ -2,10 +2,10 @@
 !vac to speak, to tell, to say
 !vad to say, to speak
 !vah to carry, to convey
-!vas|I to live, to dwell
-!vas|VI to shine, to grow bright
+!vas=I to live, to dwell
+!vas=VI to shine, to grow bright
 !vibhaa to shine or gleam forth, to illuminate [!bhaa]
-!vid|II to know, to understand, to perceive
+!vid=II to know, to understand, to perceive
 !vis~ to enter
 !vr> to cover
 !vr>dh to increase
@@ -15,7 +15,7 @@ vaai (indc) indeed
 vaais~ampaayana (m) Vaishampayana
 vaakya (n) speech, statement, sentence
 vaars<ika (mn) yearly, annual [vars<a]
-vaasin (mn) staying, dwelling [!vas|I]
+vaasin (mn) staying, dwelling [!vas=I]
 vaayu (m) the wind, the air [!vaa]
 vacana (mn) speech, sentence, word
 vaha (adj) (in compound) carrying, bearing, conveying [!vah]
@@ -24,7 +24,7 @@ varain<ya (adj) desirable, excellent, best
 varcas (adj) power, vigor, energy
 varis<th<a (adj) widest, broadest, most extensive
 vars<a (m) a year
-vasu (adj) excellent, good, beneficial; (mn) a particular class of gods; (f) light, radiance [!vas|VI]
+vasu (adj) excellent, good, beneficial; (mn) a particular class of gods; (f) light, radiance [!vas=VI]
 vi () (as prefix) apart, away, out, in different directions
 vi-!hr> to distribute, to dispose, to set
 vi-!str> to stretch, to scatter
@@ -33,7 +33,7 @@ vibhaa () [!bhaa]; (adj) shining, bright; (f) light, splendor
 vibhaavasu () [vibhaa+vasu]; (adj) abounding in light; (m) fire or the god of fire; (m) the sun; (m) the moon; (m) Vibhavasu
 vicitra (adj) strange, wonderful, varied
 vidhivat (indc) according to rule, duty
-vidvas (adj) one who knows, wise, learned, lit. "having understood" [!vid|II, perf act part]
+vidvas (adj) one who knows, wise, learned, lit. "having understood" [!vid=II, perf act part]
 vinaya (mn) humility
 vis<n<u (m) Vishnu, one of the principal Hindu deities
 vistara (adj) extensive, long [vi-!str>]

@@ -141,7 +141,6 @@ def build_expected(verse_num, verses_text, translations, word_lists):
     for (text, translation, word_list) in zip(verses_text, translations, word_lists):
         verses.append(
             {
-                "num": verse_num,
                 "text": text,
                 "translation": translation,
                 "wordByWord": word_list,
@@ -157,16 +156,15 @@ def build_expected(verse_num, verses_text, translations, word_lists):
         # Basic
         (
             """
-            1
-
             ca (ca,) and
             aiva (aiva,) just so
+            |
 
             And so
             """,
             build_expected(
                 "1",
-                ["caaiva"],
+                ["caaiva |"],
                 ["And so"],
                 [
                     # Verse 1
@@ -175,6 +173,7 @@ def build_expected(verse_num, verses_text, translations, word_lists):
                         [
                             ["ca", "and", "ca", ""],
                             ["aiva", "just so", "aiva", ""],
+                            ["|", None, None, None],
                         ]
                     ]
                 ],
@@ -183,16 +182,15 @@ def build_expected(verse_num, verses_text, translations, word_lists):
         # Alternate syntax omitting explicit root and parts of speech
         (
             """
-            1
-
             ca and
             aiva just so
+            |
 
             And so
             """,
             build_expected(
                 "1",
-                ["caaiva"],
+                ["caaiva |"],
                 ["And so"],
                 [
                     # Verse 1
@@ -201,6 +199,7 @@ def build_expected(verse_num, verses_text, translations, word_lists):
                         [
                             ["ca", "and", "ca", ""],
                             ["aiva", "just so", "aiva", ""],
+                            ["|", None, None, None],
                         ]
                     ]
                 ],
@@ -209,17 +208,16 @@ def build_expected(verse_num, verses_text, translations, word_lists):
         # Multi-line - no sandhi should happen
         (
             """
-            1
-
             ca (ca,) and
-            -
+            |
             aiva (aiva,) just so
+            ||
 
             And so
             """,
             build_expected(
                 "1",
-                ["ca\naiva"],
+                ["ca |\naiva || 0 ||"],
                 ["And so"],
                 [
                     # Verse 1
@@ -227,10 +225,12 @@ def build_expected(verse_num, verses_text, translations, word_lists):
                         # Line 1
                         [
                             ["ca", "and", "ca", ""],
+                            ["|", None, None, None],
                         ],
                         # Line 2
                         [
                             ["aiva", "just so", "aiva", ""],
+                            ["|| 0 ||", None, None, None],
                         ],
                     ]
                 ],
@@ -239,15 +239,14 @@ def build_expected(verse_num, verses_text, translations, word_lists):
         # Check parts of speech ordering
         (
             """
-            1
-
             prastaavayan (pra-!stu, nom sing m pres act part caus) causing to start, starting
+            |
 
             Starting
             """,
             build_expected(
                 "1",
-                ["prastaavayan"],
+                ["prastaavayan |"],
                 ["Starting"],
                 [
                     # Verse 1
@@ -260,6 +259,7 @@ def build_expected(verse_num, verses_text, translations, word_lists):
                                 "pra-√stu",
                                 "Nominative Singular Masculine Present Active Causative Participle",
                             ],
+                            ["|", None, None, None],
                         ],
                     ]
                 ],
@@ -268,17 +268,16 @@ def build_expected(verse_num, verses_text, translations, word_lists):
         # Verb classes
         (
             """
-            1
-
             ca (ca,) and
             aiva (aiva,) just so
-            ks<ayati (!ks<i|VI, 3 sing pres act ind) it is destroyed
+            ks<ayati (!ks<i=VI, 3 sing pres act ind) it is destroyed
+            |
 
             And so it is destroyed
             """,
             build_expected(
                 "1",
-                ["caaiva ks<ayati"],
+                ["caaiva ks<ayati |"],
                 ["And so it is destroyed"],
                 [
                     # Verse 1
@@ -293,6 +292,7 @@ def build_expected(verse_num, verses_text, translations, word_lists):
                                 "√ks<i (VI)",
                                 "Third Person Singular Present Active Indicative",
                             ],
+                            ["|", None, None, None],
                         ]
                     ]
                 ],

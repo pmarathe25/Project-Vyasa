@@ -1,6 +1,6 @@
 !yu to join, to bind, to fasten
 !yudh to fight, to battle
-!yuj|VII to join, to unite
+!yuj=VII to join, to unite
 ya (m) who (relative pronoun)
 yaa (f) who (relative pronoun)
 yadu (m) Yadu; (m) the descendants of king Yadu
@@ -13,4 +13,4 @@ yatra (indc) where (relative pronoun)
 yayaati (m) Yayati
 yuddha (n) a battle, a fight, a war [!yudh]
 yuga (n) an age of the world
-yukta (adj) joined, yoked, (in compound) endowed with [!yuj|VII, perf pass part]
+yukta (adj) joined, yoked, (in compound) endowed with [!yuj=VII, perf pass part]

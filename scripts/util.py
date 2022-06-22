@@ -14,8 +14,8 @@ def chunks(inp_iter, chunk_size):
 
 def adjust_verb(verb):
     verb = verb.replace("!", "√")
-    if "|" in verb:
-        verb, _, cls = verb.partition("|")
+    if "=" in verb:
+        verb, _, cls = verb.partition("=")
         verb = f"{verb} ({cls})"
     return verb
 

@@ -10,10 +10,10 @@ const Chapter = ({ location, data }) => {
                 Click on verses to see a detailed breakdown
             </p>
             {
-                data.textJson.verses.map(node =>
+                data.textJson.verses.map((node, index) =>
                     <Verse
-                        key={node.num}
-                        num={node.num} text={node.text}
+                        key={index}
+                        text={node.text}
                         wordByWord={node.wordByWord} translation={node.translation}
                     />
                 )
@@ -28,7 +28,6 @@ query ($id: String) {
         id
         chapter
         verses {
-            num
             text
             wordByWord
             translation

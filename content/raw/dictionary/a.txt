@@ -59,9 +59,9 @@ anta (m) end, limit, boundary
 antar (indc) within, between
 antariks<a (n) the atmosphere or sky, the intermediate space between the earth and the heavens
 anu () (as prefix) after, alongside, under, subordinate to
-anu-!i|I to follow, to go after, to seek
+anu-!i=I to follow, to go after, to seek
 anu-pra-!aap to reach
-anvita (adj) possessing, endowed lit. "followed by" [anu-!i|I, perf pass part]
+anvita (adj) possessing, endowed lit. "followed by" [anu-!i=I, perf pass part]
 anya (m) other, another
 anyat (n) other, another
 an~jali (m) joined hands

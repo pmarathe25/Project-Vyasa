@@ -33,7 +33,7 @@ const WordAndDefinitions = ({ location, word, definitions, roots, partsOfSpeeche
                     {(wordParts.length > 1 ?
 
                         <p style={wordLinkStyle} key={index}>
-                            "-"
+                            -
                         </p>
                         :
                         <></>)}
