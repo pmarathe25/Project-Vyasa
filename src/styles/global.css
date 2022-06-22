@@ -2,7 +2,8 @@
     --blue-highlight-color: rgb(63, 113, 205);
     --text-highlight-color: rgb(75, 75, 75);
     --text-gray-color: rgba(255, 255, 255, 0.9);
-    --content-max-width: 950px;
+    --text-dark-gray-color: rgba(255, 255, 255, 0.7);
+    --content-max-width: 1100px;
 }
 
 html,
@@ -39,39 +40,6 @@ a:active {
 .list-group-item-dark:hover {
     background-color: rgb(111, 117, 116);
     cursor: pointer;
-}
-
-/* Accordion button needs to be in the global CSS because we don't ever
-    directly use it (only via Accordion.Header) and hence can't set the style that way */
-.accordion-button {
-    color: white;
-    background-color: rgb(84, 84, 84);
-    padding-top: 9px;
-    padding-bottom: 9px;
-    border: 1px solid rgba(0, 0, 0, 0.25) !important;
-    box-shadow: none !important;
-}
-
-.accordion-button:not(.collapsed) {
-    color: white;
-    background: var(--blue-highlight-color);
-}
-
-/* Disable highlight when this is the active accordion */
-.accordion-button:not(.collapsed):hover {
-    color: white;
-    background: var(--blue-highlight-color);
-}
-
-.accordion-button:hover {
-    color: white;
-    background-color: rgb(100, 100, 100);
-}
-
-.nav-pills .nav-link.active,
-.nav-pills .show>.nav-link {
-    color: #fff;
-    background-color: var(--blue-highlight-color);
 }
 
 .btn-primary {

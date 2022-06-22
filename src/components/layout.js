@@ -3,7 +3,6 @@ import * as React from 'react'
 import { Container, Nav, Navbar } from 'react-bootstrap'
 import { GoMarkGithub } from "react-icons/go"
 import { toUrl } from '../util/util'
-import AllVersesMenu from './allVersesMenu'
 import AutohidingNavbar from './autohidingNavbar'
 import ResponsiveBreadcrumbs from './breadcrumbs'
 import { brandLink, container, navLink } from './layout.module.css'
@@ -78,7 +77,6 @@ const Layout = ({ location, pageTitle, children }) => {
                         <TransliterationModeSelect navExpanded={navExpanded} />
                     </Navbar.Collapse>
 
-                    <AllVersesMenu location={location} />
 
                     <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                 </Container>
