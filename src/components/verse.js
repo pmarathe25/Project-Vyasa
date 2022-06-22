@@ -5,7 +5,7 @@ import useIsMobile from "../util/responsiveness";
 import toUrl from '../util/util';
 import Definition from './definition';
 import { useTransliterate } from './transliterationHook';
-import { clickableText } from "./verse.module.css"
+import { clickableText, verseText } from "./verse.module.css"
 
 const allWordsDict = require("../../content/generated/dictionary/all_words.json");
 
@@ -189,7 +189,6 @@ const VerseContent = ({ text, wordByWord, translation }) => {
         paddingRight: "0px",
     };
 
-    // TODO: Add verse number information
     return (
         <Row className={isMobile ? "row-cols-1" : "row-cols-2"} style={{
             maxWidth: "var(--content-max-width)",
@@ -220,10 +219,8 @@ const VerseContent = ({ text, wordByWord, translation }) => {
                         :
                         <p
                             role="presentation"
+                            className={verseText}
                             style={{
-                                overflowWrap: "anywhere",
-                                cursor: "pointer",
-                                width: "fit-content",
                                 ...style
                             }}
                             onClick={() => { setShowWordByWord(true); }}>
