@@ -30,9 +30,13 @@ const WordAndDefinitions = ({ location, word, definitions, roots, partsOfSpeeche
                     <Link key={index} to={`${baseUrl}#${toUrl(wordParts[index])}`} style={wordLinkStyle}>
                         {part}
                     </Link>
-                    <p style={wordLinkStyle} key={index}>
-                        {(wordParts.length > 1 ? "-" : "")}
-                    </p>
+                    {(wordParts.length > 1 ?
+
+                        <p style={wordLinkStyle} key={index}>
+                            "-"
+                        </p>
+                        :
+                        <></>)}
                 </>
             );
         }

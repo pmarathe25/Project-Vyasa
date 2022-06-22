@@ -1,13 +1,11 @@
 import { Link } from 'gatsby';
 import * as React from 'react';
-import { Col, Collapse, Container, Nav, OverlayTrigger, Popover, Row, Tab } from 'react-bootstrap';
-import { FiLink } from "react-icons/fi";
+import { Button, Col, OverlayTrigger, Popover, Row } from 'react-bootstrap';
 import useIsMobile from "../util/responsiveness";
 import toUrl from '../util/util';
 import Definition from './definition';
-import OffsetAnchor from './offsetAnchor';
 import { useTransliterate } from './transliterationHook';
-import { translationText, verseText } from "./verse.module.css";
+import { clickableText } from "./verse.module.css"
 
 const allWordsDict = require("../../content/generated/dictionary/all_words.json");
 
@@ -47,7 +45,7 @@ const RootMeanings = ({ root }) => {
     )
 }
 
-const WordAndDefinition = ({ word, definition, root, parts_of_speech }) => {
+const WordWithPopover = ({ word, definition, root, parts_of_speech }) => {
     const translitWord = useTransliterate(word);
 
     const [showPopover, setShowPopover] = React.useState(false);
@@ -79,7 +77,7 @@ const WordAndDefinition = ({ word, definition, root, parts_of_speech }) => {
 
     return (
         <Col
-            style={{ padding: "0px", marginLeft: "8px", marginRight: "8px" }}
+            style={{ padding: "0px", marginLeft: "4px", marginRight: "4px" }}
         >
             <OverlayTrigger
                 placement="top"
@@ -123,10 +121,11 @@ const WordAndDefinition = ({ word, definition, root, parts_of_speech }) => {
             </OverlayTrigger>
             <p style={{
                 fontSize: "14.5px",
-                color: "rgb(185, 185, 185)",
+                color: "rgb(200, 200, 200)",
                 width: "fit-content",
-                maxWidth: "125px",
-                marginLeft: "auto", marginRight: "auto",
+                maxWidth: "110px",
+                textAlign: "center",
+                marginRight: "auto", marginLeft: "auto",
             }}>
                 {definition}
             </p>
@@ -136,148 +135,111 @@ const WordAndDefinition = ({ word, definition, root, parts_of_speech }) => {
 
 const WordByWord = ({ wordByWord }) => {
     return (
-        <Container className={verseText}>
-            {wordByWord.map((line, index) =>
-                <Row
-                    key={index}
-                    style={{ width: "fit-content", margin: "auto" }}
-                    lg="auto"
-                >
-                    {
-                        line.map(([word, definition, root, parts_of_speech], wordIndex) =>
-                            <WordAndDefinition
-                                key={index + wordIndex}
-                                word={word}
-                                definition={definition}
-                                root={root}
-                                parts_of_speech={parts_of_speech}
-                            />
-                        )
-                    }
-                </Row>
-            )}
-        </Container>
+        <>
+            {
+                wordByWord.map((line, index) =>
+                    <Row
+                        key={index}
+                        style={{
+                            fontSize: "19px",
+                            whiteSpace: "pre-wrap",
+                            marginLeft: "auto", marginRight: "auto",
+                        }}
+                        lg="auto"
+                    >
+                        {
+                            line.map(([word, definition, root, parts_of_speech], wordIndex) =>
+                                <WordWithPopover
+                                    key={index + wordIndex}
+                                    word={word}
+                                    definition={definition}
+                                    root={root}
+                                    parts_of_speech={parts_of_speech}
+                                />
+                            )
+                        }
+                    </Row>
+                )
+            }
+        </>
     );
 }
 
-const TabContents = (props) => {
-    const isMobile = useIsMobile();
-
-    return (
-        <Container style={{ padding: "0px" }}>
-            <Row style={{ marginLeft: "0px", maxWidth: "100%" }}>
-                <Col sm="auto" style={{
-                    position: "absolute", width: "fit-content", padding: "0px", zIndex: 1,
-                    color: isMobile ? "rgb(72, 72, 85)" : "rgb(88, 88, 105)",
-                    fontSize: "25px",
-                }}>
-                    {props.num}
-                </Col>
-                <Col style={{ zIndex: 2, width: "fit-content", padding: "0px" }}>
-                    {props.children}
-                </Col>
-            </Row>
-        </Container>
-    )
-}
-
-
-const Translation = ({ show, translation }) => {
-    return (
-        <Collapse in={show} mountOnEnter={true} unmountOnExit={true}>
-            <p className={translationText}>
-                {translation}
-            </p>
-        </Collapse>
-    )
-}
-
-const VerseContent = ({ num, text, wordByWord, location, translation }) => {
+const VerseContent = ({ num, text, wordByWord, translation }) => {
     text = useTransliterate(text);
     const isMobile = useIsMobile();
-    const [show, setShow] = React.useState(false);
+    const [showWordByWord, setShowWordByWord] = React.useState(false);
 
-    const url = toUrl(`${location.pathname}#verse_${num}`);
-
-    const tabButtonStyle = { borderRadius: "4px 4px 0px 0px", color: "rgb(225, 225, 225)" };
-
-    const verseTabStyle = {
-        fontSize: "14px",
-        paddingLeft: "8px",
-        paddingRight: "8px",
-        paddingTop: isMobile ? "5px" : "2px",
-        paddingBottom: isMobile ? "5px" : "2px",
-        cursor: "pointer",
-        ...tabButtonStyle
+    const style = {
+        fontSize: "19px",
+        paddingBottom: "2px",
+        whiteSpace: "pre-wrap",
     };
 
+    const colStyle = {
+        paddingBottom: isMobile ? "15px" : "0px",
+        paddingLeft: "0px",
+        paddingRight: "0px",
+    };
+
+    // TODO: Add verse number information
     return (
-        <Tab.Container defaultActiveKey="text" id={"verse-text-tabs-" + num} >
-            <Row style={{ width: "fit-content", marginLeft: "0px" }}>
-                <Nav variant="pills"
-                    style={{
-                        borderBottom: "1px solid rgb(75, 75, 75)",
-                        marginBottom: isMobile ? "4px" : "1px"
-                    }}
-                >
-                    <Nav.Link eventKey="text" style={verseTabStyle}>
-                        Text
-                    </Nav.Link>
-                    <Nav.Link eventKey="word-by-word" style={verseTabStyle}>
-                        Word-by-word
-                    </Nav.Link>
-                    <Nav.Link onClick={() => { setShow(!show) }}
-                        style={{
-                            backgroundColor: show ? "rgb(85, 85, 80)" : "inherit",
-                            ...verseTabStyle
-                        }}>
-                        {show ? "Hide" : "Show"} Translation
-                    </Nav.Link>
-                    <Nav.Link to={url} as={Link} style={{
-                        paddingLeft: "4px",
-                        paddingTop: "0px", paddingBottom: "0px",
-                        ...tabButtonStyle
-                    }}>
-                        <FiLink size="14px" />
-                    </Nav.Link>
-                </Nav>
-            </Row>
-            <Tab.Content>
-                <Tab.Pane eventKey="text" mountOnEnter={true} unmountOnExit={true}>
-                    <TabContents num={num}>
-                        <p className={verseText} style={{ overflowWrap: "anywhere" }}>
+        <Row className={isMobile ? "row-cols-1" : "row-cols-2"} style={{
+            maxWidth: "var(--content-max-width)",
+            marginRight: "auto", marginLeft: "auto",
+            marginBottom: "20px",
+        }}>
+            <Col style={colStyle}>
+                {
+                    showWordByWord ?
+                        <>
+                            <WordByWord wordByWord={wordByWord} />
+                            <p
+                                role="presentation"
+                                onClick={() => setShowWordByWord(false)}
+                                className={clickableText}
+                                style={{
+                                    color: "var(--text-dark-gray-color)",
+                                    width: "fit-content",
+                                    marginTop: "5px",
+                                    paddingTop: "2px",
+                                    paddingBottom: "2px",
+                                    paddingLeft: "4px",
+                                    paddingRight: "4px",
+                                }}>
+                                Restore Verse Text
+                            </p>
+                        </>
+                        :
+                        <p
+                            role="presentation"
+                            style={{
+                                overflowWrap: "anywhere",
+                                cursor: "pointer",
+                                width: "fit-content",
+                                ...style
+                            }}
+                            onClick={() => { setShowWordByWord(true); }}>
                             {text}
-                        </p>
-                    </TabContents>
-                </Tab.Pane>
-                <Tab.Pane eventKey="word-by-word" mountOnEnter={true} unmountOnExit={true}>
-                    <TabContents num={num}>
-                        <WordByWord wordByWord={wordByWord} />
-                    </TabContents>
-                </Tab.Pane>
-                <Translation translation={translation} show={show} />
-            </Tab.Content>
-        </Tab.Container >
-    )
+                        </p >
+                }
+            </Col>
+            <Col style={{
+                ...style,
+                ...colStyle,
+                fontSize: "15px",
+                whiteSpace: "pre-wrap",
+                color: "var(--text-gray-color)",
+            }}>
+                {translation}
+            </Col>
+        </Row >
+    );
 }
 
-const Verse = ({ num, text, wordByWord, translation, location }) => {
-    const isMobile = useIsMobile();
-    const isActive = location.hash === `#verse_${num}`;
-
+const Verse = ({ num, text, wordByWord, translation }) => {
     return (
-        <OffsetAnchor id={`verse_${num}`} >
-            <div style={{
-                minHeight: "80px",
-                maxWidth: "var(--content-max-width)",
-                marginRight: "auto", marginLeft: "auto",
-                marginBottom: isMobile ? "20px" : "1px",
-                backgroundColor: isActive ? "rgb(63, 63, 63)" : "inherit",
-                borderRadius: "7px",
-            }}>
-                <VerseContent num={num} text={text} wordByWord={wordByWord} location={location} translation={translation} />
-            </div>
-        </OffsetAnchor >
+        <VerseContent num={num} text={text} wordByWord={wordByWord} translation={translation} />
     )
 }
 

@@ -1,30 +1,8 @@
-.verse-text {
-    font-size: 19px;
-    padding-bottom: 2px;
-    white-space: pre-wrap;
-    text-align: center;
-    padding-left: 0px;
-    padding-right: 0px;
-}
-
-.translation-text {
-    color: var(--text-gray-color);
-    font-size: 15px;
-    padding-bottom: 5px;
-    padding-top: 5px;
-    margin-top: 5px;
-    margin-bottom: 10px;
-    white-space: pre-wrap;
-    text-align: center;
-}
-
-.verse-text-tab:hover {
-    background: #646464;
-    color: #d1d1d1;
+.clickable-text {
+    font-size: 12.5px;
     cursor: pointer;
 }
 
-.translation-accordion {
-    background: rgb(84, 84, 85);
-    color: white;
+.clickable-text:hover {
+    text-decoration: underline;
 }
