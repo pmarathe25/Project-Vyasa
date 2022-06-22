@@ -1,11 +1,11 @@
 import { Link } from 'gatsby';
 import * as React from 'react';
-import { Button, Col, OverlayTrigger, Popover, Row } from 'react-bootstrap';
+import { Col, OverlayTrigger, Popover, Row } from 'react-bootstrap';
 import useIsMobile from "../util/responsiveness";
 import toUrl from '../util/util';
 import Definition from './definition';
 import { useTransliterate } from './transliterationHook';
-import { clickableText, verseText } from "./verse.module.css"
+import { clickableText, verseText } from "./verse.module.css";
 
 const allWordsDict = require("../../content/generated/dictionary/all_words.json");
 
