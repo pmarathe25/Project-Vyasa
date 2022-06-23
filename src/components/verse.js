@@ -126,7 +126,7 @@ const WordWithPopover = ({ word, definition, root, parts_of_speech }) => {
                 </p>
             </OverlayTrigger>
             <p style={{
-                fontSize: "15px",
+                fontSize: "14.5px",
                 color: "rgb(200, 200, 200)",
                 width: "fit-content",
                 maxWidth: "110px",
