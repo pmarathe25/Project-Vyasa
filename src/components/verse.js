@@ -76,14 +76,14 @@ const WordWithPopover = ({ word, definition, root, parts_of_speech }) => {
     }, []);
 
     if (!definition && !root && !parts_of_speech) {
-        return (<p>
+        return (<p style={{ padding: "0px", marginLeft: "5px", marginRight: "5px", width: "fit-content" }}>
             {translitWord}
         </p>);
 
     }
 
     return (
-        <Col style={{ padding: "0px", marginLeft: "5px", marginRight: "5px" }}>
+        <Col style={{ padding: "0px", marginLeft: "5px", marginRight: "5px", width: "fit-content" }}>
             <OverlayTrigger
                 placement="top"
                 overlay={
