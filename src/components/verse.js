@@ -214,7 +214,7 @@ const Verse = ({ text, wordByWord, translation }) => {
                                     paddingLeft: "4px",
                                     paddingRight: "4px",
                                 }}>
-                                Restore Verse Text
+                                Show Original Text
                             </p>
                         </>
                         :
