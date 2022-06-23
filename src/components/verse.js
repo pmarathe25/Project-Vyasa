@@ -83,9 +83,7 @@ const WordWithPopover = ({ word, definition, root, parts_of_speech }) => {
     }
 
     return (
-        <Col
-            style={{ padding: "0px", marginLeft: "4px", marginRight: "4px" }}
-        >
+        <Col style={{ padding: "0px", marginLeft: "5px", marginRight: "5px" }}>
             <OverlayTrigger
                 placement="top"
                 overlay={
@@ -200,22 +198,19 @@ const Verse = ({ text, wordByWord, translation }) => {
                 {
                     showWordByWord ?
                         <>
-                            <WordByWord wordByWord={wordByWord} />
                             <p
                                 role="presentation"
                                 onClick={() => setShowWordByWord(false)}
                                 className={clickableText}
                                 style={{
-                                    color: "var(--text-dark-gray-color)",
+                                    color: "rgba(215, 235, 255, 0.85)",
                                     width: "fit-content",
                                     marginTop: "5px",
-                                    paddingTop: "2px",
-                                    paddingBottom: "2px",
-                                    paddingLeft: "4px",
-                                    paddingRight: "4px",
+                                    marginBottom: "15px",
                                 }}>
                                 Show Original Text
                             </p>
+                            <WordByWord wordByWord={wordByWord} />
                         </>
                         :
                         <p
