@@ -19,18 +19,13 @@ export function toUrl(str) {
 // Converts a string converted by `toUrl` to title case
 export function titleCaseFromUrl(str) {
     let titleCase = [];
-    let prevSubstr;
     for (let substr of str.split("-")) {
         for (let word of substr.split("_")) {
-            titleCase.push(word.charAt(0).toUpperCase() + word.slice(1));
+            titleCase.push(word.charAt(0).toUpperCase() + word.slice(1)
+                // HACK: Insert colons in breadcrumbs between book/chapter numbers and titles.
+                + (!isNaN(word) ? ":" : "")
+            );
         }
-
-        // HACK: Insert colons in breadcrumbs between book/chapter numbers and titles.
-        if (prevSubstr === "book" || prevSubstr === "chapter") {
-            titleCase[titleCase.length - 1] += ":";
-            console.log(titleCase.at(-1));
-        }
-        prevSubstr = substr;
     }
     return titleCase.join(" ");
 }

@@ -303,15 +303,17 @@ def build_expected(verse_num, verses_text, translations, word_lists):
 def test_process_text(content, expected_output):
     root_dir = tempfile.TemporaryDirectory()
 
-    book_dir = os.path.join(root_dir.name, "01_example")
+    work_dir = os.path.join(root_dir.name, "work")
+    book_dir = os.path.join(work_dir, "01_example_book")
     os.makedirs(book_dir, exist_ok=True)
 
-    chapter_file = os.path.join(book_dir, "01_example.txt")
+    chapter_file = os.path.join(book_dir, "01_example_chapter.txt")
     with open(chapter_file, "w") as inp:
         inp.write(dedent(content))
 
-    expected_output["book"] = "Book 1: Example Parva"
-    expected_output["chapter"] = "Chapter 1: Example Parva"
+    expected_output["work"] = "Work"
+    expected_output["book"] = "01: Example Book"
+    expected_output["chapter"] = "01: Example Chapter"
 
     out_file = os.path.join(root_dir.name, "processed.json")
 
