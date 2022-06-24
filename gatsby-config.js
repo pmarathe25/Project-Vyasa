@@ -3,7 +3,7 @@ module.exports = {
     title: `Project Vyasa`,
     titleTemplate: `%s | Project Vyasa`,
     url: "https://projectvyasadevgatsby.gtsb.io",
-    description: "A high quality Sanskrit-English reader for the Mahabharata"
+    description: "A high quality Sanskrit-English reader"
   },
   plugins: [
     `gatsby-transformer-json`,

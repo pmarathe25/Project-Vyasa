@@ -23,7 +23,7 @@ export function titleCaseFromUrl(str) {
         for (let word of substr.split("_")) {
             titleCase.push(word.charAt(0).toUpperCase() + word.slice(1)
                 // HACK: Insert colons in breadcrumbs between book/chapter numbers and titles.
-                + (!isNaN(word) ? ":" : "")
+                + (word && !isNaN(word) ? ":" : "")
             );
         }
     }
