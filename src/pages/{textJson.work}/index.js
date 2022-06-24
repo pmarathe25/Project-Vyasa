@@ -4,21 +4,21 @@ import { ListGroup } from 'react-bootstrap'
 import Layout from '../../components/layout'
 import toUrl from '../../util/util'
 
-const ChapterLink = ({ chapter }) => {
+const BookLink = ({ book }) => {
     return (
-        <Link to={toUrl(chapter)} style={{ textDecoration: "none" }}>
-            <ListGroup.Item variant="dark" eventKey={chapter}>
+        <Link to={toUrl(book)} style={{ textDecoration: "none" }}>
+            <ListGroup.Item variant="dark" eventKey={book}>
                 <p style={{ fontSize: "17px" }}>
-                    {chapter}
+                    {book}
                 </p>
             </ListGroup.Item>
         </Link>
     )
 }
 
-const ChapterIndex = ({ location, data, pageContext }) => {
+const BookIndex = ({ location, data, pageContext }) => {
     return (
-        <Layout location={location} pageTitle={pageContext.book}>
+        <Layout location={location} pageTitle={pageContext.work}>
             <ListGroup style={{
                 maxWidth: "var(--content-max-width)",
                 marginRight: "auto", marginLeft: "auto",
@@ -26,7 +26,7 @@ const ChapterIndex = ({ location, data, pageContext }) => {
             }}>
                 {
                     data.allTextJson.nodes.map(node => (
-                        <ChapterLink key={node.chapter} chapter={node.chapter} />
+                        <BookLink key={node.book} book={node.book} />
                     ))
                 }
             </ListGroup>
@@ -35,13 +35,13 @@ const ChapterIndex = ({ location, data, pageContext }) => {
 }
 
 export const query = graphql`
-query ($book: String) {
-    allTextJson(filter: {book: {eq: $book}}) {
+query ($work: String) {
+    allTextJson(filter: {work: {eq: $work}}) {
       nodes {
-        chapter
+        book
       }
     }
   }
 `
 
-export default ChapterIndex
+export default BookIndex

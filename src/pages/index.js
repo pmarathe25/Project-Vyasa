@@ -4,12 +4,12 @@ import { ListGroup } from 'react-bootstrap'
 import Layout from '../components/layout'
 import toUrl from '../util/util'
 
-const BookLink = ({ book }) => {
+const WorkLink = ({ work }) => {
     return (
-        <Link to={toUrl(book)} style={{ textDecoration: "none" }}>
-            <ListGroup.Item variant="dark" eventKey={book}>
+        <Link to={toUrl(work)} style={{ textDecoration: "none" }}>
+            <ListGroup.Item variant="dark" eventKey={work}>
                 <p style={{ fontSize: "17px" }}>
-                    {book}
+                    {work}
                 </p>
             </ListGroup.Item>
         </Link>
@@ -26,8 +26,7 @@ const Index = ({ location, data }) => {
             <p style={{ marginBottom: "40px", width: "80%", marginLeft: "auto", marginRight: "auto", fontSize: "18px", whiteSpace: "pre-wrap" }}>
                 If this is your first time here, you may want to check out
                 the <Link to={toUrl("/about")}>About</Link> page.
-                Otherwise, click on one of the books below or use the <b>All Verses</b> button in the top-right
-                to get started.
+                Otherwise, click on one of the works below to get started.
             </p>
             <ListGroup style={{
                 maxWidth: "var(--content-max-width)",
@@ -36,7 +35,7 @@ const Index = ({ location, data }) => {
             }}>
                 {
                     data.allTextJson.nodes.map(node => (
-                        <BookLink key={node.book} book={node.book} />
+                        <WorkLink key={node.work} work={node.work} />
                     ))
                 }
             </ListGroup>
@@ -49,7 +48,7 @@ export const query = graphql`
 query {
     allTextJson {
         nodes {
-            book
+            work
             id
         }
     }
