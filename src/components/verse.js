@@ -76,7 +76,7 @@ const WordWithPopover = ({ word, definition, root, parts_of_speech }) => {
     }, []);
 
     if (!definition && !root && !parts_of_speech) {
-        return (<p style={{ padding: "0px", marginLeft: "5px", marginRight: "5px", width: "fit-content" }}>
+        return (<p style={{ padding: "0px", margin: "0px", width: "fit-content", fontSize: "18px" }}>
             {translitWord}
         </p>);
 
@@ -179,7 +179,6 @@ const Verse = ({ text, wordByWord, translation }) => {
     const style = {
         fontSize: "20px",
         paddingBottom: "2px",
-        whiteSpace: "pre-wrap",
     };
 
     const colStyle = {
@@ -194,7 +193,7 @@ const Verse = ({ text, wordByWord, translation }) => {
             marginRight: "auto", marginLeft: "auto",
             marginBottom: "20px",
         }}>
-            <Col style={colStyle}>
+            <Col style={colStyle} sm={7}>
                 {
                     showWordByWord ?
                         <>
@@ -217,19 +216,19 @@ const Verse = ({ text, wordByWord, translation }) => {
                             role="presentation"
                             className={verseText}
                             style={{
-                                ...style
+                                ...style,
+                                whiteSpace: "pre-wrap",
                             }}
                             onClick={() => { setShowWordByWord(true); }}>
                             {text}
                         </p >
                 }
             </Col>
-            <Col style={{
+            <Col sm={5} style={{
                 ...style,
                 ...colStyle,
-                fontSize: "15.5px",
-                whiteSpace: "pre-wrap",
-                color: "var(--text-dark-gray-color)",
+                fontSize: "16px",
+                color: "var(--text-gray-color)",
             }}>
                 {translation}
             </Col>
