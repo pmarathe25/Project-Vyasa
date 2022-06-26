@@ -7,7 +7,8 @@ import AutohidingNavbar from './autohidingNavbar'
 import ResponsiveBreadcrumbs from './breadcrumbs'
 import { brandLink, container, navLink } from './layout.module.css'
 import Seo from './seo'
-import { TransliterationModeSelect } from './translitModeSelect'
+import { TranslationToggle } from './translationToggle'
+import { TransliterationModeSelect } from './transliterationModeSelect'
 
 const TopBarNavItem = (props) => {
     return (
@@ -74,9 +75,10 @@ const Layout = ({ location, pageTitle, children }) => {
                                 </a>
                             </TopBarNavItem>
                         </Nav>
+                        <TransliterationModeSelect navExpanded={navExpanded} />
                     </Navbar.Collapse>
 
-                    <TransliterationModeSelect navExpanded={navExpanded} />
+                    <TranslationToggle navExpanded={navExpanded} />
 
                     <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                 </Container>

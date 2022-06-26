@@ -2,6 +2,7 @@ import { graphql } from 'gatsby'
 import * as React from 'react'
 import Layout from '../../../components/layout'
 import Verse from '../../../components/verse'
+import { Container } from 'react-bootstrap'
 
 const Chapter = ({ location, data }) => {
     return (
@@ -9,15 +10,18 @@ const Chapter = ({ location, data }) => {
             <p style={{ textAlign: "center", color: "var(--text-dark-gray-color)" }}>
                 Click or tap on verses to see a detailed breakdown.
             </p>
-            {
-                data.textJson.verses.map((node, index) =>
-                    <Verse
-                        key={index}
-                        text={node.text}
-                        wordByWord={node.wordByWord} translation={node.translation}
-                    />
-                )
-            }
+
+            <Container style={{ marginLeft: "auto", marginRight: "auto", width: "fit-content", padding: "0px" }}>
+                {
+                    data.textJson.verses.map((node, index) =>
+                        <Verse
+                            key={index}
+                            text={node.text}
+                            wordByWord={node.wordByWord} translation={node.translation}
+                        />
+                    )
+                }
+            </Container>
         </Layout>
     )
 }
