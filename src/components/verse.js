@@ -32,7 +32,7 @@ const RootMeanings = ({ root }) => {
                                 color: "rgb(175, 175, 175)", height: "fit-content", textDecoration: "dashed underline"
                             }}
                         >
-                            <p style={{ fontSize: "20px", paddingRight: "5px", whiteSpace: "nowrap" }}>
+                            <p style={{ fontSize: "19px", paddingRight: "5px", whiteSpace: "nowrap" }}>
                                 {rootPar}
                             </p>
                         </Link>
@@ -150,7 +150,7 @@ const WordByWord = ({ wordByWord }) => {
                     <Row
                         key={index}
                         style={{
-                            fontSize: "20px",
+                            fontSize: "19px",
                             whiteSpace: "pre-wrap",
                             marginLeft: "auto", marginRight: "auto",
                         }}
@@ -210,7 +210,7 @@ const Verse = ({ text, wordByWord, translation }) => {
                         role="presentation"
                         className={verseText}
                         style={{
-                            fontSize: "20px",
+                            fontSize: "19px",
                             paddingBottom: "2px",
                             whiteSpace: "pre-wrap",
                         }}
