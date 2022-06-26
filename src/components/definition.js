@@ -2,6 +2,7 @@ import { Link } from 'gatsby';
 import * as React from 'react';
 import { Container } from 'react-bootstrap';
 import { useTransliterate } from '../components/transliterationHook';
+import useIsMobile from '../util/responsiveness';
 import toUrl from '../util/util';
 
 const style = {
@@ -12,6 +13,9 @@ const style = {
 
 const Root = ({ root, partsOfSpeech }) => {
     const translitRootParts = useTransliterate(root).split("+");
+    const isMobile = useIsMobile();
+
+    const fontSize = isMobile ? "16.5px" : "19px";
 
     if (!root) {
         return (<></>);
@@ -25,7 +29,7 @@ const Root = ({ root, partsOfSpeech }) => {
                 {(index > 0 ? ", " : "")}
                 <Link
                     to={`/dictionary#${toUrl(rootParts[index])}`}
-                    style={{ fontSize: "19px", fontStyle: "normal", whiteSpace: "nowrap" }}
+                    style={{ fontSize: fontSize, fontStyle: "normal", whiteSpace: "nowrap" }}
                     key={index}
                 >
                     {translitRootParts[index]}

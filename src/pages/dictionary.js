@@ -5,17 +5,22 @@ import Definition from '../components/definition'
 import Layout from '../components/layout'
 import OffsetAnchor from '../components/offsetAnchor'
 import { useTransliterate } from '../components/transliterationHook'
+import useIsMobile from '../util/responsiveness'
 import { sortSanskrit, toUrl } from '../util/util'
 
 const allWordsDict = require("../../content/generated/dictionary/all_words.json");
 
 const WordAndDefinitions = ({ location, word, definitions, roots, partsOfSpeeches }) => {
     const translitWord = useTransliterate(word);
+    const isMobile = useIsMobile();
+
     const baseUrl = "/dictionary";
+
+    const fontSize = isMobile ? "17px" : "19.5px";
 
     const wordElements = React.useMemo(() => {
         const wordLinkStyle = {
-            fontSize: "19px", width: "fit-content",
+            fontSize: fontSize, width: "fit-content",
             display: "inline", padding: 0,
             whiteSpace: "nowrap"
         };
@@ -41,7 +46,7 @@ const WordAndDefinitions = ({ location, word, definitions, roots, partsOfSpeeche
             );
         }
         return ret;
-    }, [word, translitWord, baseUrl]);
+    }, [word, translitWord, baseUrl, fontSize]);
 
     const id = toUrl(word);
     const isActive = location.hash === `#${id}`;
@@ -115,10 +120,14 @@ const DictSection = ({ location, sectionName, wordComponents }) => {
 
 const SectionLink = ({ sectionName }) => {
     const translitSectionName = useTransliterate(sectionName);
+    const isMobile = useIsMobile();
+
     const baseUrl = "/dictionary";
 
+    const fontSize = isMobile ? "19.5px" : "22px";
+
     const sectionLinkStyle = {
-        fontSize: "22px", width: "fit-content",
+        fontSize: fontSize, width: "fit-content",
         display: "inline", padding: 0,
     };
 
