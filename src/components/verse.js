@@ -182,11 +182,11 @@ const Verse = ({ text, wordByWord, translation }) => {
     const { showTranslation } = React.useContext(SettingsContext);
 
     const colStyle = {
-        paddingBottom: isMobile ? "15px" : "7px",
         paddingLeft: "0px",
         paddingRight: "0px",
         marginLeft: "auto", marginRight: "auto",
         marginTop: showTranslation ? "0px" : "15px",
+        marginBottom: "8px",
     };
 
     const fontSize = isMobile ? "17px" : "19.5px";
