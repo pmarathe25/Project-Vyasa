@@ -6,6 +6,7 @@ import toUrl from '../util/util';
 import Definition from './definition';
 import { useTransliterate } from './transliterationHook';
 import { clickableText, verseText } from "./verse.module.css";
+import { SettingsContext } from './settingsContext';
 
 const allWordsDict = require("../../content/generated/dictionary/all_words.json");
 
@@ -175,60 +176,69 @@ const Verse = ({ text, wordByWord, translation }) => {
     text = useTransliterate(text);
     const isMobile = useIsMobile();
     const [showWordByWord, setShowWordByWord] = React.useState(false);
-
-    const style = {
-        fontSize: "20px",
-        paddingBottom: "2px",
-    };
+    const { showTranslation, } = React.useContext(SettingsContext);
 
     const colStyle = {
         paddingBottom: isMobile ? "15px" : "7px",
         paddingLeft: "0px",
         paddingRight: "0px",
+        marginLeft: "auto", marginRight: "auto",
+        marginTop: showTranslation ? "0px" : "15px",
     };
+
+    const verseTextComp = (
+        <Col style={colStyle}>
+            {
+                showWordByWord ?
+                    <>
+                        <WordByWord wordByWord={wordByWord} />
+                        <p
+                            role="presentation"
+                            onClick={() => setShowWordByWord(false)}
+                            className={clickableText}
+                            style={{
+                                width: "fit-content",
+                                marginTop: "10px",
+                            }}>
+                            Show Original Text
+                        </p>
+                    </>
+                    :
+                    <p
+                        role="presentation"
+                        className={verseText}
+                        style={{
+                            fontSize: "20px",
+                            paddingBottom: "2px",
+                            whiteSpace: "pre-wrap",
+                        }}
+                        onClick={() => { setShowWordByWord(true); }}>
+                        {text}
+                    </p >
+            }
+        </Col>
+    );
+
+    if (!showTranslation) {
+        return verseTextComp;
+    }
 
     return (
         <Row className={isMobile ? "row-cols-1" : "row-cols-2"} style={{
             maxWidth: "var(--content-max-width)",
-            marginRight: "auto", marginLeft: "auto",
             marginTop: "15px",
+            marginLeft: "auto", marginRight: "auto",
         }}>
+            {
+                verseTextComp
+            }
             <Col style={colStyle}>
-                {
-                    showWordByWord ?
-                        <>
-                            <WordByWord wordByWord={wordByWord} />
-                            <p
-                                role="presentation"
-                                onClick={() => setShowWordByWord(false)}
-                                className={clickableText}
-                                style={{
-                                    width: "fit-content",
-                                    marginTop: "10px",
-                                }}>
-                                Show Original Text
-                            </p>
-                        </>
-                        :
-                        <p
-                            role="presentation"
-                            className={verseText}
-                            style={{
-                                ...style,
-                                whiteSpace: "pre-wrap",
-                            }}
-                            onClick={() => { setShowWordByWord(true); }}>
-                            {text}
-                        </p >
-                }
-            </Col>
-            <Col style={{
-                ...style,
-                ...colStyle,
-                fontSize: "16px",
-                color: "var(--text-gray-color)",
-            }}>
-                {translation}
+                <p style={{
+                    fontSize: "16px",
+                    color: "var(--text-gray-color)",
+                }}>
+                    {translation}
+                </p>
             </Col>
         </Row >
     );
