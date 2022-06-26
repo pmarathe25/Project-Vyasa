@@ -235,6 +235,7 @@ const Verse = ({ text, wordByWord, translation }) => {
             maxWidth: "var(--content-max-width)",
             marginTop: "15px",
             marginLeft: "auto", marginRight: "auto",
+            borderBottom: isMobile ? "1px solid rgb(95, 95, 95)" : "",
         }}>
             {
                 verseTextComp
