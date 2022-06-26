@@ -17,7 +17,7 @@ const Chapter = ({ location, data }) => {
             <Container
                 style={{
                     marginLeft: "auto", marginRight: "auto",
-                    maxWidth: showTranslation ? "inherit" : "650px",
+                    maxWidth: showTranslation ? "inherit" : "var(--no-translation-content-max-width)",
                     padding: "0px"
                 }}
             >

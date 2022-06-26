@@ -27,12 +27,19 @@ const ResponsiveBreadcrumbs = ({ location }) => {
     return (
         <Breadcrumb
             style={{
-                width: "fit-content", height: "fit-content",
+                maxWidth: "var(--no-translation-content-max-width)",
+                height: "fit-content",
                 marginLeft: "auto", marginRight: "auto",
-                marginBottom: "8px",
-                borderBottom: "1px solid rgb(115, 115, 115)",
+                marginBottom: "10px",
+                borderBottom: "1px solid rgb(125, 125, 125)",
             }}
-            listProps={{ style: { marginBottom: "8px" } }}
+            listProps={{
+                style: {
+                    width: "fit-content",
+                    marginBottom: "10px",
+                    marginLeft: "auto", marginRight: "auto",
+                }
+            }}
         >
             {breadcrumbs}
         </Breadcrumb>
