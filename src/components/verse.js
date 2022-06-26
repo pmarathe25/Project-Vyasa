@@ -118,7 +118,7 @@ const WordWithPopover = ({ word, definition, root, parts_of_speech }) => {
                         width: "fit-content",
                         marginLeft: "auto", marginRight: "auto",
                         backgroundColor: "var(--text-highlight-color)",
-                        color: "rgb(85, 170, 255)",
+                        color: "rgb(110, 220, 255)",
                         borderRadius: "2px",
                     }}
                 >
@@ -202,8 +202,12 @@ const Verse = ({ text, wordByWord, translation }) => {
                                 role="presentation"
                                 onClick={() => setShowWordByWord(false)}
                                 className={clickableText}
-                            >
-                                [Show Original Text]
+                                style={{
+                                    width: "fit-content",
+                                    marginTop: "10px",
+                                    marginBottom: "10px",
+                                }}>
+                                Show Original Text
                             </p>
                         </>
                         :
