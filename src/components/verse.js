@@ -192,6 +192,7 @@ const Verse = ({ text, wordByWord, translation }) => {
             maxWidth: "var(--content-max-width)",
             marginRight: "auto", marginLeft: "auto",
             marginBottom: "20px",
+            borderBottom: "1px solid rgb(55, 55, 55)",
         }}>
             <Col style={colStyle} sm={7}>
                 {
