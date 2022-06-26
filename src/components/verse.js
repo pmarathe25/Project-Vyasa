@@ -205,7 +205,6 @@ const Verse = ({ text, wordByWord, translation }) => {
                                 style={{
                                     width: "fit-content",
                                     marginTop: "10px",
-                                    marginBottom: "10px",
                                 }}>
                                 Show Original Text
                             </p>
