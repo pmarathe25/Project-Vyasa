@@ -10,7 +10,7 @@ import { SettingsContext } from './settingsContext';
 
 const allWordsDict = require("../../content/generated/dictionary/all_words.json");
 
-const RootMeanings = ({ root }) => {
+const RootMeanings = ({ root, fontSize }) => {
     const roots = root.split("+");
     const translitRoots = useTransliterate(root).split("+");
 
@@ -32,7 +32,7 @@ const RootMeanings = ({ root }) => {
                                 color: "rgb(175, 175, 175)", height: "fit-content", textDecoration: "dashed underline"
                             }}
                         >
-                            <p style={{ fontSize: "19px", paddingRight: "5px", whiteSpace: "nowrap" }}>
+                            <p style={{ fontSize: fontSize, paddingRight: "5px", whiteSpace: "nowrap" }}>
                                 {rootPar}
                             </p>
                         </Link>
@@ -48,7 +48,7 @@ const RootMeanings = ({ root }) => {
     )
 }
 
-const WordWithPopover = ({ word, definition, root, parts_of_speech }) => {
+const WordWithPopover = ({ word, definition, root, parts_of_speech, fontSize }) => {
     const translitWord = useTransliterate(word);
 
     const [showPopover, setShowPopover] = React.useState(false);
@@ -79,7 +79,7 @@ const WordWithPopover = ({ word, definition, root, parts_of_speech }) => {
     }, []);
 
     if (!definition && !root && !parts_of_speech) {
-        return (<p style={{ padding: "0px", margin: "0px", width: "fit-content", fontSize: "18px" }}>
+        return (<p style={{ padding: "0px", margin: "0px", width: "fit-content", fontSize: fontSize }}>
             {translitWord}
         </p>);
 
@@ -100,7 +100,7 @@ const WordWithPopover = ({ word, definition, root, parts_of_speech }) => {
                     >
                         <Popover.Body ref={popoverRef} style={{ paddingTop: "10px", paddingBottom: "10px" }}>
                             <Col>
-                                <RootMeanings root={root} />
+                                <RootMeanings root={root} fontSize={fontSize} />
                                 <p style={{ fontSize: "15px" }}>
                                     {parts_of_speech}
                                 </p>
@@ -142,7 +142,7 @@ const WordWithPopover = ({ word, definition, root, parts_of_speech }) => {
     )
 }
 
-const WordByWord = ({ wordByWord }) => {
+const WordByWord = ({ wordByWord, fontSize }) => {
     return (
         <>
             {
@@ -150,7 +150,7 @@ const WordByWord = ({ wordByWord }) => {
                     <Row
                         key={index}
                         style={{
-                            fontSize: "19px",
+                            fontSize: fontSize,
                             whiteSpace: "pre-wrap",
                             marginLeft: "auto", marginRight: "auto",
                         }}
@@ -164,6 +164,7 @@ const WordByWord = ({ wordByWord }) => {
                                     definition={definition}
                                     root={root}
                                     parts_of_speech={parts_of_speech}
+                                    fontSize={fontSize}
                                 />
                             )
                         }
@@ -178,7 +179,7 @@ const Verse = ({ text, wordByWord, translation }) => {
     text = useTransliterate(text);
     const isMobile = useIsMobile();
     const [showWordByWord, setShowWordByWord] = React.useState(false);
-    const { showTranslation, } = React.useContext(SettingsContext);
+    const { showTranslation } = React.useContext(SettingsContext);
 
     const colStyle = {
         paddingBottom: isMobile ? "15px" : "7px",
@@ -188,17 +189,21 @@ const Verse = ({ text, wordByWord, translation }) => {
         marginTop: showTranslation ? "0px" : "15px",
     };
 
+    const fontSize = isMobile ? "18px" : "19.5px";
+    const translationFontSize = isMobile ? "14.75px" : "16px";
+
     const verseTextComp = (
         <Col style={colStyle}>
             {
                 showWordByWord ?
                     <>
-                        <WordByWord wordByWord={wordByWord} />
+                        <WordByWord wordByWord={wordByWord} fontSize={fontSize} />
                         <p
                             role="presentation"
                             onClick={() => setShowWordByWord(false)}
                             className={clickableText}
                             style={{
+                                fontSize: translationFontSize,
                                 width: "fit-content",
                                 marginTop: "10px",
                             }}>
@@ -210,7 +215,7 @@ const Verse = ({ text, wordByWord, translation }) => {
                         role="presentation"
                         className={verseText}
                         style={{
-                            fontSize: "19px",
+                            fontSize: fontSize,
                             paddingBottom: "2px",
                             whiteSpace: "pre-wrap",
                         }}
@@ -236,7 +241,7 @@ const Verse = ({ text, wordByWord, translation }) => {
             }
             <Col style={colStyle}>
                 <p style={{
-                    fontSize: "16px",
+                    fontSize: translationFontSize,
                     color: "var(--text-gray-color)",
                 }}>
                     {translation}
