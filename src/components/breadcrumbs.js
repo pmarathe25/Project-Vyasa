@@ -29,7 +29,7 @@ const ResponsiveBreadcrumbs = ({ location }) => {
             style={{
                 width: "fit-content", height: "fit-content",
                 marginLeft: "auto", marginRight: "auto",
-                marginBottom: "5px",
+                marginBottom: "8px",
                 borderBottom: "1px solid rgb(115, 115, 115)",
             }}
         >

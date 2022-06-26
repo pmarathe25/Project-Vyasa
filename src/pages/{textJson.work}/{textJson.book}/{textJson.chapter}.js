@@ -7,7 +7,7 @@ const Chapter = ({ location, data }) => {
     return (
         <Layout location={location} pageTitle={data.textJson.chapter}>
             <p style={{ textAlign: "center", paddingBottom: "10px", color: "var(--text-dark-gray-color)" }}>
-                Click or tap on verses to see a detailed breakdown
+                Click or tap on verses to see a detailed breakdown.
             </p>
             {
                 data.textJson.verses.map((node, index) =>
