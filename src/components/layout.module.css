@@ -1,12 +1,12 @@
 .container {
-  font-family:-apple-system, 'BlinkMacSystemFont', 'Oxygen', 'Cantarell', 'Segoe UI', 'Roboto', 'Open Sans', 'Helvetica Neue', 'Ubuntu', sans-serif;
+  font-family: -apple-system, 'BlinkMacSystemFont', 'Oxygen', 'Cantarell', 'Segoe UI', 'Roboto', 'Open Sans', 'Helvetica Neue', 'Ubuntu', sans-serif;
   padding-bottom: 500px;
 }
 
 .brand-link {
   padding: 5px 5px;
   text-decoration: none;
-  font-size: 25px;
+  font-size: 22px;
   width: fit-content;
   padding: 0;
   border-radius: 2px;
@@ -20,7 +20,7 @@
 
 .nav-link {
   width: fit-content;
-  margin-top: auto; 
+  margin-top: auto;
   margin-bottom: auto;
   margin-left: 15px;
   border-radius: 2px;
