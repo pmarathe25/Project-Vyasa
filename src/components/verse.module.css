@@ -1,6 +1,10 @@
 .clickable-text {
     font-size: 15.5px;
     cursor: pointer;
+    color: rgba(255, 255, 255, 0.85);
+    width: "fit-content";
+    margin-top: "5px";
+    margin-bottom: "15px";
 }
 
 .clickable-text:hover {
