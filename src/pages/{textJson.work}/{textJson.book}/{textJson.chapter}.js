@@ -1,17 +1,26 @@
 import { graphql } from 'gatsby'
 import * as React from 'react'
-import Layout from '../../../components/layout'
-import Verse from '../../../components/verse'
 import { Container } from 'react-bootstrap'
+import Layout from '../../../components/layout'
+import { SettingsContext } from '../../../components/settingsContext'
+import Verse from '../../../components/verse'
 
 const Chapter = ({ location, data }) => {
+    const { showTranslation, } = React.useContext(SettingsContext);
+
     return (
         <Layout location={location} pageTitle={data.textJson.chapter}>
             <p style={{ textAlign: "center", color: "var(--text-dark-gray-color)" }}>
                 Click or tap on verses to see a detailed breakdown.
             </p>
 
-            <Container style={{ marginLeft: "auto", marginRight: "auto", width: "fit-content", padding: "0px" }}>
+            <Container
+                style={{
+                    marginLeft: "auto", marginRight: "auto",
+                    maxWidth: showTranslation ? "inherit" : "650px",
+                    padding: "0px"
+                }}
+            >
                 {
                     data.textJson.verses.map((node, index) =>
                         <Verse
