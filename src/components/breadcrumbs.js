@@ -32,6 +32,7 @@ const ResponsiveBreadcrumbs = ({ location }) => {
                 marginBottom: "8px",
                 borderBottom: "1px solid rgb(115, 115, 115)",
             }}
+            listProps={{ style: { marginBottom: "8px" } }}
         >
             {breadcrumbs}
         </Breadcrumb>

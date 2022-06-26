@@ -191,13 +191,13 @@ const Verse = ({ text, wordByWord, translation }) => {
         <Row className={isMobile ? "row-cols-1" : "row-cols-2"} style={{
             maxWidth: "var(--content-max-width)",
             marginRight: "auto", marginLeft: "auto",
-            marginBottom: "20px",
-            borderBottom: "1px solid rgb(55, 55, 55)",
+            marginTop: "15px",
         }}>
-            <Col style={colStyle} sm={7}>
+            <Col style={colStyle}>
                 {
                     showWordByWord ?
                         <>
+                            <WordByWord wordByWord={wordByWord} />
                             <p
                                 role="presentation"
                                 onClick={() => setShowWordByWord(false)}
@@ -210,7 +210,6 @@ const Verse = ({ text, wordByWord, translation }) => {
                                 }}>
                                 Show Original Text
                             </p>
-                            <WordByWord wordByWord={wordByWord} />
                         </>
                         :
                         <p
@@ -225,7 +224,7 @@ const Verse = ({ text, wordByWord, translation }) => {
                         </p >
                 }
             </Col>
-            <Col sm={5} style={{
+            <Col style={{
                 ...style,
                 ...colStyle,
                 fontSize: "16px",
