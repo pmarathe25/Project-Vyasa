@@ -1,19 +1,7 @@
 import * as React from "react";
 import { Nav, ToggleButton, ToggleButtonGroup } from "react-bootstrap";
+import { SettingsContext } from "./settingsContext";
 
-
-export const TranslitModeContext = React.createContext({ mode: 0, setMode: () => { } });
-
-export const TranslitModeContextProvider = (props) => {
-    // 0: Devanagari, 1: IAST
-    const [mode, setMode] = React.useState(0);
-
-    return (
-        <TranslitModeContext.Provider value={{ mode: mode, setMode: setMode }}>
-            {props.children}
-        </TranslitModeContext.Provider>
-    )
-}
 
 export const TransliterationModeSelect = ({ navExpanded }) => {
     const style = {
@@ -26,13 +14,13 @@ export const TransliterationModeSelect = ({ navExpanded }) => {
 
     return (
         <Nav.Item style={style}>
-            <TranslitModeContext.Consumer>
-                {({ mode, setMode }) =>
+            <SettingsContext.Consumer>
+                {({ translitMode, setTranslitMode }) =>
                     <ToggleButtonGroup
                         type="radio"
                         name="options"
-                        defaultValue={mode}
-                        onChange={(val) => { setMode(val) }}
+                        defaultValue={translitMode}
+                        onChange={(val) => { setTranslitMode(val) }}
                         vertical={false}
                     >
                         <ToggleButton id="translit-select-dev" value={0} size="sm">
@@ -47,8 +35,7 @@ export const TransliterationModeSelect = ({ navExpanded }) => {
                         </ToggleButton>
                     </ToggleButtonGroup>
                 }
-            </TranslitModeContext.Consumer >
+            </SettingsContext.Consumer >
         </Nav.Item>
     )
 }
-
