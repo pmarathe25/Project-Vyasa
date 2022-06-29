@@ -240,13 +240,12 @@ const Verse = ({ text, wordByWord, translation }) => {
             {
                 verseTextComp
             }
-            <Col style={colStyle}>
-                <p style={{
-                    fontSize: translationFontSize,
-                    color: "var(--text-gray-color)",
-                }}>
-                    {translation}
-                </p>
+            <Col style={{
+                ...colStyle,
+                fontSize: translationFontSize,
+                color: "var(--text-gray-color)",
+            }}>
+                {translation}
             </Col>
         </Row >
     );
