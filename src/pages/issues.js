@@ -3,7 +3,6 @@ import Layout from '../components/layout'
 
 const Issues = ({ location }) => {
     const headerStyle = {
-        width: "80%",
         margin: "auto",
         color: "white"
     }
@@ -11,7 +10,6 @@ const Issues = ({ location }) => {
     const textStyle = {
         marginBottom: "30px",
         marginTop: "10px",
-        width: "80%",
         marginLeft: "auto",
         marginRight: "auto",
         fontSize: "18px",

@@ -232,7 +232,7 @@ const Verse = ({ text, wordByWord, translation }) => {
 
     return (
         <Row className={isMobile ? "row-cols-1" : "row-cols-2"} style={{
-            maxWidth: "var(--content-max-width)",
+            maxWidth: "1100px",
             marginTop: "15px",
             marginLeft: "auto", marginRight: "auto",
             borderBottom: isMobile ? "1px solid rgb(95, 95, 95)" : "",

@@ -182,7 +182,7 @@ const Dictionary = ({ location }) => {
     };
 
     return (
-        <Layout location={location} pageTitle="Dictionary">
+        <Layout location={location} pageTitle="Dictionary" maxWidth="var(--max-content-width)">
             <Row style={{ marginBottom: "20px" }}>
                 {sectionLinks}
             </Row>

@@ -1,31 +1,15 @@
 import { graphql, Link, useStaticQuery } from 'gatsby'
 import * as React from 'react'
-import { Container, Nav, Navbar } from 'react-bootstrap'
-import { GoMarkGithub } from "react-icons/go"
-import { toUrl } from '../util/util'
+import { Container, Navbar } from 'react-bootstrap'
 import AutohidingNavbar from './autohidingNavbar'
 import ResponsiveBreadcrumbs from './breadcrumbs'
-import { brandLink, container, navLink } from './layout.module.css'
+import { brandLink, container } from './layout.module.css'
 import Seo from './seo'
 import { TranslationToggle } from './translationToggle'
 import { TransliterationModeSelect } from './transliterationModeSelect'
+import NavMenu from './navMenu'
 
-const TopBarNavItem = (props) => {
-    return (
-        <Nav.Item
-            style={{
-                paddingBottom: props.navExpanded ? "10px" : 0,
-                height: "fit-content",
-                marginTop: "auto", marginBottom: "auto"
-            }}
-            key={props.keyName}
-        >
-            {props.children}
-        </Nav.Item>
-    );
-}
-
-const Layout = ({ location, pageTitle, children }) => {
+const Layout = ({ location, pageTitle, children, maxWidth = "var(--centered-content-width)" }) => {
     const data = useStaticQuery(graphql`
         query {
         site {
@@ -48,33 +32,7 @@ const Layout = ({ location, pageTitle, children }) => {
                     </Link>
 
                     <Navbar.Collapse id="responsive-navbar-nav">
-                        <Nav className="top-bar-links">
-                            <TopBarNavItem navExpanded={navExpanded} keyName="dictionary">
-                                <Link to={toUrl("/dictionary")} className={navLink}>
-                                    Dictionary
-                                </Link>
-                            </TopBarNavItem>
-                            <TopBarNavItem navExpanded={navExpanded} keyName="about">
-                                <Link to={toUrl("/about")} className={navLink}>
-                                    About
-                                </Link>
-                            </TopBarNavItem>
-                            <TopBarNavItem navExpanded={navExpanded} keyName="issues">
-                                <Link to={toUrl("/issues")} className={navLink}>
-                                    Issues?
-                                </Link>
-                            </TopBarNavItem>
-                            <TopBarNavItem navExpanded={navExpanded} keyName="github" >
-                                <a
-                                    href="https://github.com/pmarathe25/Project-Vyasa"
-                                    style={{ marginLeft: "12px" }}
-                                    target="_blank"
-                                    rel="noreferrer"
-                                >
-                                    <GoMarkGithub size={30} />
-                                </a>
-                            </TopBarNavItem>
-                        </Nav>
+                        <NavMenu navExpanded={navExpanded} useClass="top-bar-links" />
                         <TransliterationModeSelect navExpanded={navExpanded} />
                     </Navbar.Collapse>
 
@@ -83,7 +41,7 @@ const Layout = ({ location, pageTitle, children }) => {
                     <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                 </Container>
             </AutohidingNavbar>
-            <Container>
+            <Container style={{ maxWidth: maxWidth }}>
                 <ResponsiveBreadcrumbs location={location} />
                 {children}
             </Container>
