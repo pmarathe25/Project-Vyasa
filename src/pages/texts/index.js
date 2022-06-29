@@ -1,6 +1,6 @@
 import { graphql, Link } from 'gatsby'
 import * as React from 'react'
-import { Container, Row } from 'react-bootstrap'
+import { Row } from 'react-bootstrap'
 import Layout from '../../components/layout'
 import toUrl from '../../util/util'
 
