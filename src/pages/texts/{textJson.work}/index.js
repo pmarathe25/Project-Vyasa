@@ -1,8 +1,8 @@
 import { graphql, Link } from 'gatsby'
 import * as React from 'react'
 import { Row, Col } from 'react-bootstrap'
-import Layout from '../../components/layout'
-import toUrl from '../../util/util'
+import Layout from '../../../components/layout'
+import toUrl from '../../../util/util'
 
 const SectionLink = ({ section }) => {
     return (
@@ -20,13 +20,7 @@ const SectionIndex = ({ location, data, pageContext }) => {
     for (let index in data.allTextJson.group) {
         const group = data.allTextJson.group[index];
         rows.push(
-            <Row
-                key={index}
-                sm="auto" style={{
-                    maxWidth: "var(--inner-content-max-width)",
-                    marginRight: "auto", marginLeft: "auto",
-                    borderRadius: "7px",
-                }}>
+            <Row key={index} sm="auto">
                 {
                     group.nodes.map(node =>
                         <SectionLink key={node.section} section={node.section} />
@@ -39,6 +33,7 @@ const SectionIndex = ({ location, data, pageContext }) => {
 
     return (
         <Layout location={location} pageTitle={pageContext.work}>
+            <h2>{pageContext.work}</h2>
             {rows}
         </Layout >
     )
