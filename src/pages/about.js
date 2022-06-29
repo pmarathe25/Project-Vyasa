@@ -14,14 +14,14 @@ const About = ({ location }) => {
             <h2>About Project Vyasa</h2>
             <p style={textStyle}>
                 The goal of this project is to provide a high-quality Sanskrit-English reader
-                for the Mahabharata in a modern web interface. That includes literal word-by-word
+                for various Sanskrit texts in a modern web interface. That includes literal word-by-word
                 translations, word-level grammatical analysis, as well as a complete translation for
                 each verse.
                 <br />
                 <br />
                 It is <b>not</b> the aim to provide anything more than a
                 literally correct translation; that is, the included translations do not
-                consider the broader cultural, historical, and philosophical context of the text.
+                consider the broader cultural, historical, and philosophical context of the texts.
             </p>
             <h2>Contributing</h2>
             <p style={textStyle}>
