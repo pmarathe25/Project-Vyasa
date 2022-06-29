@@ -4,6 +4,7 @@
 
 - [Introduction](#introduction)
   - [An Example](#an-example)
+- [Public Website](#public-website)
 - [Contributing](#contributing)
 
 ## Introduction
@@ -25,27 +26,9 @@ It is *not* the aim to provide anything more than a literally correct translatio
 that is, the included translations do not consider the broader cultural, historical,
 and philosophical context of the text.
 
+## Public Website
+
 The public website is [currently hosted here](https://projectvyasa.gatsbyjs.io/).
-
-### An Example
-
-Without further ado, here's an example of what the final product looks like.
-*Note that although the screenshots here use Devanagari exclusively, the frontend*
-*is also capable of rendering IAST with the push of a button!*
-
-Verse Text and Translation:
-
-![Verse Text and Translation](./_res/example_verse_text.png)
-
-Word by word breakdown:
-
-![Word-by-word Breakdown](./_res/example_word_by_word.png)
-
-And finally, grammatical analysis in the form of a pop-out that appears on hover (or touch on mobile).
-Each word is broken down into its roots, which can be clicked to go to the corresponding dictionary entry:
-
-![Grammatical Analysis Pop-out](./_res/example_pop_out.png)
-
 
 ## Contributing
 
