@@ -21,12 +21,11 @@ UTIL_FILE := $(SCRIPTS_DIR)/util.py
 GEN_RULE_SETS := $(patsubst $(RAW_RULE_SET_DIR)/%.json,$(GEN_RULE_SET_DIR)/%.json,$(wildcard $(RAW_RULE_SET_DIR)/*.json))
 
 RAW_TEXT = $(wildcard $(RAW_TEXT_DIR)/*/*/*.txt)
-GEN_TEXT := $(addprefix $(GEN_TEXT_DIR)/,$(subst /,_,$(patsubst $(RAW_TEXT_DIR)/%.txt,%.json,$(RAW_TEXT))))
 
 RAW_DICTIONARY_FILES = $(wildcard $(RAW_DICTIONARY_DIR)/*.txt)
 GEN_DICTIONARY_FILE = $(GEN_DICTIONARY_DIR)/all_words.json
 
-all: $(GEN_RULE_SETS) $(GEN_TEXT) $(GEN_DICTIONARY_FILE)
+all: $(GEN_RULE_SETS) process_text $(GEN_DICTIONARY_FILE)
 
 $(BUILD_RULE_SET_SCRIPT): $(UTIL_FILE)
 	touch $@
@@ -55,10 +54,11 @@ $(GEN_DICTIONARY_FILE): $(RAW_DICTIONARY_FILES) $(BUILD_DICTIONARY_SCRIPT) | $(G
 # Automatic rules don't work well when we want to go from a nested input structure
 # to a flattened output structure, so we'll manage timestamps within the script.
 # This rule will trigger for *every* output file when *any* input file is touched.
-$(GEN_TEXT_DIR)/%.json: $(RAW_TEXT) $(PROCESS_TEXT_SCRIPT) $(GEN_DICTIONARY_FILE) | $(GEN_TEXT_DIR)
-	@ python3 $(PROCESS_TEXT_SCRIPT) $< -o $@ --transliteration-ruleset $(RAW_RULE_SET_DIR)/devanagari.json -d $(GEN_DICTIONARY_FILE)
+.PHONY: process_text
+process_text: $(RAW_TEXT) $(PROCESS_TEXT_SCRIPT) $(GEN_DICTIONARY_FILE) | $(GEN_TEXT_DIR)
+	@ python3 $(PROCESS_TEXT_SCRIPT) $(RAW_TEXT_DIR) -o $(GEN_TEXT_DIR) --transliteration-ruleset $(RAW_RULE_SET_DIR)/devanagari.json -d $(GEN_DICTIONARY_FILE)
 
-launch: $(GEN_RULE_SETS) $(GEN_TEXT) $(GEN_DICTIONARY_FILE)
+launch: $(GEN_RULE_SETS) $(GEN_DICTIONARY_FILE) process_text
 	gatsby develop
 
 test: $(GEN_RULE_SETS) $(GEN_DICTIONARY_FILE)

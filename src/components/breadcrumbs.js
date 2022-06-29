@@ -32,7 +32,7 @@ const ResponsiveBreadcrumbs = ({ location }) => {
     return (
         <Breadcrumb
             style={{
-                maxWidth: "var(--no-translation-content-max-width)",
+                maxWidth: "var(--inner-content-max-width)",
                 height: "fit-content",
                 marginLeft: "auto", marginRight: "auto",
                 marginBottom: "10px",
