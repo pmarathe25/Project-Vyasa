@@ -374,11 +374,6 @@ def parse_word_grammar(line, verse_num, line_num, dictionary):
     )
 
 
-def extract_title(str):
-    parts = str.split("_")
-    return f"{int(parts[0]):02d}: {' '.join(parts[1:]).title()}"
-
-
 def is_str_verse_end_marker(inp):
     return inp.startswith("||")
 
@@ -393,7 +388,7 @@ def main():
     )
     parser.add_argument(
         "input_file",
-        help="Path to the input text file. Path format: <book_num>_<book_title>/<chapter_num>_<chapter_title>.txt",
+        help="Path to the input text file.",
     )
     parser.add_argument(
         "-r",
@@ -424,14 +419,21 @@ def main():
     TRANSLIT_RULESET = json.load(open(args.transliteration_ruleset))
     DICTIONARY = json.load(open(args.dictionary))
 
+    # TODO: This logic makes many assumptions about the structure of content/raw/text.
+    # Need to make it more generic.
     dirname = os.path.dirname(args.input_file)
-    work = os.path.basename(os.path.realpath(os.path.join(dirname, os.path.pardir))).title()
-    book = extract_title(os.path.basename(dirname))
-    chapter = extract_title(os.path.splitext(os.path.basename(args.input_file))[0])
+    work_path = os.path.realpath(os.path.join(dirname, os.path.pardir))
+    work = os.path.basename(work_path).title()
+
+    def extract_num(part):
+        return str(int(part.split("_")[0]))
+
+    section = ".".join(
+        extract_num(path_component) for path_component in os.path.split(os.path.relpath(args.input_file, work_path))
+    )
     processed = {
         "work": work,
-        "book": book,
-        "chapter": chapter,
+        "section": section,
         "verses": [],
     }
 

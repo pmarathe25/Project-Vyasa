@@ -8,6 +8,7 @@ export function toUrl(str) {
     return str
         .replaceAll(": ", "-")
         .replaceAll(" ", "-")
+        .replaceAll(".", "-")
         .replaceAll("√", "rt")
         .replaceAll("<", "lt")
         .replaceAll(">", "gt")
@@ -16,15 +17,29 @@ export function toUrl(str) {
         .toLowerCase();
 }
 
+function isNumber(obj) {
+    return obj && !isNaN(obj);
+}
+
 // Converts a string converted by `toUrl` to title case
 export function titleCaseFromUrl(str) {
     let titleCase = [];
-    for (let substr of str.split("-")) {
+
+    // Special case for Home
+    if (str === "/") {
+        return "Home";
+    }
+
+    const str_parts = str.split("-");
+
+    // Special case for purely numerical titles, which should be joined by a '.'
+    if (str_parts.every(isNumber)) {
+        return str_parts.join(".")
+    }
+
+    for (let substr of str_parts) {
         for (let word of substr.split("_")) {
-            titleCase.push(word.charAt(0).toUpperCase() + word.slice(1)
-                // HACK: Insert colons in breadcrumbs between book/chapter numbers and titles.
-                + (word && !isNaN(word) ? ":" : "")
-            );
+            titleCase.push(word.charAt(0).toUpperCase() + word.slice(1));
         }
     }
     return titleCase.join(" ");

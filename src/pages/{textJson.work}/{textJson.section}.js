@@ -1,15 +1,15 @@
 import { graphql } from 'gatsby'
 import * as React from 'react'
 import { Container } from 'react-bootstrap'
-import Layout from '../../../components/layout'
-import { SettingsContext } from '../../../components/settingsContext'
-import Verse from '../../../components/verse'
+import Layout from '../../components/layout'
+import { SettingsContext } from '../../components/settingsContext'
+import Verse from '../../components/verse'
 
-const Chapter = ({ location, data }) => {
+const Section = ({ location, data }) => {
     const { showTranslation, } = React.useContext(SettingsContext);
 
     return (
-        <Layout location={location} pageTitle={data.textJson.chapter}>
+        <Layout location={location} pageTitle={data.textJson.section}>
             <p style={{ textAlign: "center", color: "var(--text-dark-gray-color)" }}>
                 Click or tap on verses to see a detailed breakdown.
             </p>
@@ -39,7 +39,7 @@ export const query = graphql`
 query ($id: String) {
     textJson(id: {eq: $id}) {
         id
-        chapter
+        section
         verses {
             text
             wordByWord
@@ -49,4 +49,4 @@ query ($id: String) {
   }
 `
 
-export default Chapter;
+export default Section;

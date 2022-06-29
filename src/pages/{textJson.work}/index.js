@@ -4,19 +4,19 @@ import { ListGroup } from 'react-bootstrap'
 import Layout from '../../components/layout'
 import toUrl from '../../util/util'
 
-const BookLink = ({ book }) => {
+const SectionLink = ({ section }) => {
     return (
-        <Link to={toUrl(book)} style={{ textDecoration: "none" }}>
-            <ListGroup.Item variant="dark" eventKey={book}>
+        <Link to={toUrl(section)} style={{ textDecoration: "none" }}>
+            <ListGroup.Item variant="dark" eventKey={section}>
                 <p style={{ fontSize: "17px" }}>
-                    {book}
+                    {section}
                 </p>
             </ListGroup.Item>
         </Link>
     )
 }
 
-const BookIndex = ({ location, data, pageContext }) => {
+const SectionIndex = ({ location, data, pageContext }) => {
     return (
         <Layout location={location} pageTitle={pageContext.work}>
             <ListGroup style={{
@@ -26,7 +26,7 @@ const BookIndex = ({ location, data, pageContext }) => {
             }}>
                 {
                     data.allTextJson.nodes.map(node => (
-                        <BookLink key={node.book} book={node.book} />
+                        <SectionLink key={node.section} section={node.section} />
                     ))
                 }
             </ListGroup>
@@ -38,10 +38,10 @@ export const query = graphql`
 query ($work: String) {
     allTextJson(filter: {work: {eq: $work}}) {
       nodes {
-        book
+        section
       }
     }
   }
 `
 
-export default BookIndex
+export default SectionIndex
