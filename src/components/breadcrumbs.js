@@ -5,23 +5,28 @@ import { titleCaseFromUrl } from '../util/util'
 
 
 const ResponsiveBreadcrumbs = ({ location }) => {
-    const breadcrumbStyle = {
-        fontSize: "16px"
-    };
-    let breadcrumbs = [
-        <Breadcrumb.Item key="/" linkProps={{ "to": "/" }} linkAs={Link} style={breadcrumbStyle}>
-            Home
-        </Breadcrumb.Item>
-    ];
-    let curPath = "/";
-    for (let pathElement of location.pathname.split("/").slice(1)) {
+    let curPath = "";
+
+    let pathElements = location.pathname.split("/").slice(1).filter((value) => { return value; });
+    pathElements.splice(0, 0, "/");
+
+    let breadcrumbs = [];
+    for (const [index, pathElement] of pathElements.entries()) {
         curPath += pathElement;
         breadcrumbs.push(
-            <Breadcrumb.Item key={"nested" + curPath} linkProps={{ "to": curPath }} linkAs={Link} style={breadcrumbStyle}>
+            <Breadcrumb.Item
+                key={"nested" + curPath}
+                linkProps={{ "to": curPath }}
+                linkAs={Link}
+                style={{ fontSize: "16px" }}
+                active={index === (pathElements.length - 1)}
+            >
                 {titleCaseFromUrl(pathElement)}
             </Breadcrumb.Item>
         );
-        curPath += "/";
+        if (curPath !== "/") {
+            curPath += "/";
+        }
     }
 
     return (

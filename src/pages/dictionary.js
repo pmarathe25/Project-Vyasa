@@ -31,18 +31,21 @@ const WordAndDefinitions = ({ location, word, definitions, roots, partsOfSpeeche
         for (let index = 0; index < wordParts.length; ++index) {
             const part = translitWordParts[index];
             ret.push(
-                <>
-                    <Link key={index} to={`${baseUrl}#${toUrl(wordParts[index])}`} style={wordLinkStyle}>
+                <div key={word + index + "div"}>
+                    <Link
+                        key={word + index}
+                        to={`${baseUrl}#${toUrl(wordParts[index])}`}
+                        style={wordLinkStyle}
+                    >
                         {part}
                     </Link>
-                    {(wordParts.length > 1 ?
-
-                        <p style={wordLinkStyle} key={index}>
+                    {(wordParts.length > 1 && index !== wordParts.length - 1 ?
+                        <p style={wordLinkStyle} key={word + index + "dash"}>
                             -
                         </p>
                         :
                         <></>)}
-                </>
+                </div>
             );
         }
         return ret;
@@ -52,7 +55,7 @@ const WordAndDefinitions = ({ location, word, definitions, roots, partsOfSpeeche
     const isActive = location.hash === `#${id}`;
 
     return (
-        <OffsetAnchor id={id}>
+        <OffsetAnchor id={id} key={word}>
             <div style={{
                 backgroundColor: isActive ? "var(--blue-highlight-color)" : "inherit",
                 borderRadius: isActive ? "5px" : "inherit",
@@ -80,7 +83,7 @@ const DictSection = ({ location, sectionName, wordComponents }) => {
     for (const [word, definitions, roots, partsOfSpeeches] of wordComponents) {
         entries.push(
             <WordAndDefinitions
-                key={word}
+                key={word + "WordAndDefinitions"}
                 location={location}
                 word={word}
                 definitions={definitions}
@@ -98,7 +101,7 @@ const DictSection = ({ location, sectionName, wordComponents }) => {
         const end = start + columnLength;
         let columnEntries = entries.slice(start, end);
         sectionColumns.push(
-            <Col key={col}>
+            <Col key={sectionName + col}>
                 {columnEntries}
             </Col>
         );
@@ -170,7 +173,7 @@ const Dictionary = ({ location }) => {
         )
         sections.push(
             <DictSection
-                key={sectionName}
+                key={sectionName + "dictSection"}
                 location={location}
                 sectionName={sectionName}
                 wordComponents={wordComponents}
