@@ -1,18 +1,16 @@
 import { graphql, Link } from 'gatsby'
 import * as React from 'react'
-import { ListGroup } from 'react-bootstrap'
+import { Container, Row } from 'react-bootstrap'
 import Layout from '../components/layout'
 import toUrl from '../util/util'
 
 const WorkLink = ({ work }) => {
     return (
-        <Link to={toUrl(work)} style={{ textDecoration: "none" }}>
-            <ListGroup.Item variant="dark" eventKey={work}>
-                <p style={{ fontSize: "17px" }}>
-                    {work}
-                </p>
-            </ListGroup.Item>
-        </Link>
+        <Row>
+            <Link to={toUrl(work)} style={{ fontSize: "20px" }}>
+                {work}
+            </Link>
+        </Row>
     )
 }
 
@@ -28,31 +26,32 @@ const Index = ({ location, data }) => {
                 the <Link to={toUrl("/about")}>About</Link> page.
                 Otherwise, click on one of the works below to get started.
             </p>
-            <ListGroup style={{
-                maxWidth: "var(--content-max-width)",
+            <Container style={{
+                maxWidth: "var(--inner-content-max-width)",
                 marginRight: "auto", marginLeft: "auto",
                 borderRadius: "7px",
             }}>
                 {
-                    data.allTextJson.nodes.map(node => (
-                        <WorkLink key={node.work} work={node.work} />
+                    data.allTextJson.group.map(group => (
+                        <WorkLink key={group.nodes[0].work} work={group.nodes[0].work} />
                     ))
                 }
-            </ListGroup>
+            </Container>
         </Layout >
     )
 }
 
 
 export const query = graphql`
-query {
+{
     allTextJson {
+      group(field: work) {
         nodes {
-            work
-            id
+              work
         }
+      }
     }
-}
+  }
 `
 
 export default Index

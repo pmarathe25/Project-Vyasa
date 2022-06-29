@@ -1,35 +1,45 @@
 import { graphql, Link } from 'gatsby'
 import * as React from 'react'
-import { ListGroup } from 'react-bootstrap'
+import { Row, Col } from 'react-bootstrap'
 import Layout from '../../components/layout'
 import toUrl from '../../util/util'
 
 const SectionLink = ({ section }) => {
     return (
-        <Link to={toUrl(section)} style={{ textDecoration: "none" }}>
-            <ListGroup.Item variant="dark" eventKey={section}>
-                <p style={{ fontSize: "17px" }}>
-                    {section}
-                </p>
-            </ListGroup.Item>
-        </Link>
+        <Col>
+            <Link to={toUrl(section)} style={{ fontSize: "20px" }}>
+                {section}
+            </Link>
+        </Col>
     )
 }
 
 const SectionIndex = ({ location, data, pageContext }) => {
+    // Sections are split up into groups. Each group gets its own row.
+    let rows = [];
+    for (let index in data.allTextJson.group) {
+        const group = data.allTextJson.group[index];
+        rows.push(
+            <Row
+                key={index}
+                sm="auto" style={{
+                    maxWidth: "var(--inner-content-max-width)",
+                    marginRight: "auto", marginLeft: "auto",
+                    borderRadius: "7px",
+                }}>
+                {
+                    group.nodes.map(node =>
+                        <SectionLink key={node.section} section={node.section} />
+                    )
+                }
+            </Row>
+        );
+    }
+
+
     return (
         <Layout location={location} pageTitle={pageContext.work}>
-            <ListGroup style={{
-                maxWidth: "var(--content-max-width)",
-                marginRight: "auto", marginLeft: "auto",
-                borderRadius: "7px",
-            }}>
-                {
-                    data.allTextJson.nodes.map(node => (
-                        <SectionLink key={node.section} section={node.section} />
-                    ))
-                }
-            </ListGroup>
+            {rows}
         </Layout >
     )
 }
@@ -37,8 +47,10 @@ const SectionIndex = ({ location, data, pageContext }) => {
 export const query = graphql`
 query ($work: String) {
     allTextJson(filter: {work: {eq: $work}}) {
-      nodes {
-        section
+      group(field: group) {
+        nodes {
+              section
+        }
       }
     }
   }

@@ -17,7 +17,7 @@ const Section = ({ location, data }) => {
             <Container
                 style={{
                     marginLeft: "auto", marginRight: "auto",
-                    maxWidth: showTranslation ? "inherit" : "var(--no-translation-content-max-width)",
+                    maxWidth: showTranslation ? "inherit" : "var(--inner-content-max-width)",
                     padding: "0px"
                 }}
             >
