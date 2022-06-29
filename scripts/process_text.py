@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
 import argparse
+import glob
 import json
 import os
 from collections import defaultdict
@@ -382,46 +383,20 @@ def is_str_end_marker(inp):
     return is_str_verse_end_marker(inp) or inp == "|"
 
 
-def main():
-    parser = argparse.ArgumentParser(
-        description="Processes raw verse-text files into JSON files that can be queried by the front-end"
-    )
-    parser.add_argument(
-        "input_file",
-        help="Path to the input text file.",
-    )
-    parser.add_argument(
-        "-r",
-        "--transliteration-ruleset",
-        required=True,
-        help="Path to the raw transliteration ruleset, used to apply sandhi.",
-    )
-    parser.add_argument(
-        "-d",
-        "--dictionary",
-        required=True,
-        help="Path to the dictionary, used to check that all words have definitions.",
-    )
-
-    parser.add_argument("-o", "--output", help="Path to output JSON file in which to save the processed verse text")
-
-    args, _ = parser.parse_known_args()
-
+def process_files(input_path, output_path, transliteration_ruleset, dictionary):
     # Early exit when nothing has been modified.
     if (
-        os.path.exists(args.output)
-        and util.get_mtime(args.input_file) <= util.get_mtime(args.output)
+        os.path.exists(output_path)
+        and util.get_mtime(input_path) <= util.get_mtime(output_path)
         # Skip nothing if the script has changed
-        and util.get_mtime(__file__) < util.get_mtime(args.output)
+        and util.get_mtime(__file__) < util.get_mtime(output_path)
     ):
         return
 
-    TRANSLIT_RULESET = json.load(open(args.transliteration_ruleset))
-    DICTIONARY = json.load(open(args.dictionary))
+    TRANSLIT_RULESET = json.load(open(transliteration_ruleset))
+    DICTIONARY = json.load(open(dictionary))
 
-    # TODO: This logic makes many assumptions about the structure of content/raw/text.
-    # Need to make it more generic.
-    dirname = os.path.dirname(args.input_file)
+    dirname = os.path.dirname(input_path)
     work_path = os.path.realpath(os.path.join(dirname, os.path.pardir))
     work = os.path.basename(work_path).title()
 
@@ -429,15 +404,17 @@ def main():
         return str(int(part.split("_")[0]))
 
     section = ".".join(
-        extract_num(path_component) for path_component in os.path.split(os.path.relpath(args.input_file, work_path))
+        extract_num(path_component) for path_component in os.path.split(os.path.relpath(input_path, work_path))
     )
+
     processed = {
         "work": work,
+        "group": section.split(".")[0],
         "section": section,
         "verses": [],
     }
 
-    contents = open(args.input_file).read().strip()
+    contents = open(input_path).read().strip()
 
     # Strip trailing whitespace at the ends of lines
     contents = "\n".join(map(lambda x: x.strip(), contents.splitlines()))
@@ -476,9 +453,41 @@ def main():
             }
         )
 
-    os.makedirs(os.path.dirname(args.output), exist_ok=True)
-    print(f"Writing to: {args.output}")
-    json.dump(processed, open(args.output, "w"), separators=(",\n", ":"))
+    os.makedirs(os.path.dirname(output_path), exist_ok=True)
+    print(f"Writing to: {output_path}")
+    json.dump(processed, open(output_path, "w"), separators=(",\n", ":"))
+
+
+def main():
+    parser = argparse.ArgumentParser(
+        description="Processes raw verse-text files into JSON files that can be queried by the front-end"
+    )
+    parser.add_argument(
+        "input_dir",
+        help="Path to the directory containing all the raw content files..",
+    )
+    parser.add_argument(
+        "-r",
+        "--transliteration-ruleset",
+        required=True,
+        help="Path to the raw transliteration ruleset, used to apply sandhi.",
+    )
+    parser.add_argument(
+        "-d",
+        "--dictionary",
+        required=True,
+        help="Path to the dictionary, used to check that all words have definitions.",
+    )
+
+    parser.add_argument("-o", "--output", help="Path to output directory in which to save the processed content files")
+
+    args, _ = parser.parse_known_args()
+
+    for path in glob.iglob(os.path.join(args.input_dir, "**", "*.txt"), recursive=True):
+        output_path = "_".join(os.path.relpath(path, args.input_dir).split(os.path.sep))
+        output_path = os.path.splitext(output_path)[0] + ".json"
+        output_path = os.path.join(args.output, output_path)
+        process_files(path, output_path, args.transliteration_ruleset, args.dictionary)
 
 
 if __name__ == "__main__":
