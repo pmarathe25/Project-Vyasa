@@ -1,3 +1,4 @@
+import glob
 import json
 import os
 import subprocess as sp
@@ -312,18 +313,19 @@ def test_process_text(content, expected_output):
         inp.write(dedent(content))
 
     expected_output["work"] = "Work"
-    expected_output["book"] = "01: Example Book"
-    expected_output["chapter"] = "01: Example Chapter"
+    expected_output["group"] = "1"
+    expected_output["section"] = "1.1"
 
-    out_file = os.path.join(root_dir.name, "processed.json")
+    out_dir = os.path.join(root_dir.name, "processed")
 
     process_text = os.path.join(SCRIPTS_DIR, "process_text.py")
 
-    cmd = ["python3", process_text, chapter_file, "-o", out_file, "-r", TRANSLITERATION_RULESET, "-d", DICTIONARY]
+    cmd = ["python3", process_text, root_dir.name, "-o", out_dir, "-r", TRANSLITERATION_RULESET, "-d", DICTIONARY]
     print(f"Running command: {' '.join(cmd)}")
     status = sp.run(cmd)
     assert status.returncode == 0, f"Error in {process_text}"
 
+    out_file = glob.glob(os.path.join(out_dir, "*.json"))[0]
     output = json.load(open(out_file))
 
     assert output == expected_output
