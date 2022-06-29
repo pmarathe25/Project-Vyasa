@@ -12,7 +12,7 @@ export const TranslationToggle = ({ navExpanded }) => {
         marginLeft: navExpanded ? 0 : "auto",
         marginRight: navExpanded ? 0 : "auto",
         paddingLeft: "2px", paddingRight: "2px",
-        paddingTop: "2px", paddingBottom: "2px",
+        paddingTop: "3px", paddingBottom: "3px",
     };
 
     return (
