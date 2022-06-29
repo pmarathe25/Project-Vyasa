@@ -5,11 +5,11 @@ import { SettingsContext } from "./settingsContext";
 
 export const TransliterationModeSelect = ({ navExpanded }) => {
     const style = {
-        paddingBottom: navExpanded ? "10px" : 0,
+        paddingBottom: navExpanded ? "10px" : "0px",
         height: "fit-content",
         marginTop: "auto", marginBottom: "auto",
-        marginLeft: navExpanded ? 0 : "auto",
-        marginRight: navExpanded ? 0 : "auto"
+        marginLeft: navExpanded ? "0px" : "auto",
+        marginRight: navExpanded ? "0px" : "auto",
     };
 
     return (

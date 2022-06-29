@@ -6,11 +6,13 @@ import { SettingsContext } from "./settingsContext";
 export const TranslationToggle = ({ navExpanded }) => {
     const style = {
         fontSize: "13.75px",
+        width: "fit-content",
+        minWidth: "110px",
         height: "fit-content",
         marginTop: "auto",
         marginBottom: navExpanded ? "10px" : "auto",
-        marginLeft: navExpanded ? 0 : "auto",
-        marginRight: navExpanded ? 0 : "auto",
+        marginLeft: navExpanded ? "0px" : "auto",
+        marginRight: navExpanded ? "0px" : "auto",
         paddingLeft: "2px", paddingRight: "2px",
         paddingTop: "3px", paddingBottom: "3px",
     };

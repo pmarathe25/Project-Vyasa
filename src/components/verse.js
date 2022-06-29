@@ -189,7 +189,7 @@ const Verse = ({ text, wordByWord, translation }) => {
         marginBottom: "8px",
     };
 
-    const fontSize = isMobile ? "17px" : "19.5px";
+    const fontSize = isMobile ? "17px" : "19px";
     const translationFontSize = isMobile ? "14.75px" : "16px";
 
     const verseTextComp = (

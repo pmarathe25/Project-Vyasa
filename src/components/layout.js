@@ -9,7 +9,7 @@ import { TranslationToggle } from './translationToggle'
 import { TransliterationModeSelect } from './transliterationModeSelect'
 import NavMenu from './navMenu'
 
-const Layout = ({ location, pageTitle, children, maxWidth = "var(--centered-content-width)" }) => {
+const Layout = ({ location, pageTitle, children, maxWidth = "var(--centered-content-width)", showTextSettings = false }) => {
     const data = useStaticQuery(graphql`
         query {
         site {
@@ -26,17 +26,17 @@ const Layout = ({ location, pageTitle, children, maxWidth = "var(--centered-cont
             <title>{pageTitle} | {data.site.siteMetadata.title}</title>
             <Seo location={location} title={pageTitle} />
             <AutohidingNavbar isExpanded={navExpanded} setIsExpanded={setNavExpanded}>
-                <Container>
+                <Container style={{ maxWidth: "var(--centered-content-width)" }}>
                     <Link to="/" className={brandLink}>
                         Project Vyasa
                     </Link>
 
                     <Navbar.Collapse id="responsive-navbar-nav">
                         <NavMenu navExpanded={navExpanded} useClass="top-bar-links" />
-                        <TransliterationModeSelect navExpanded={navExpanded} />
+                        {showTextSettings ? <TransliterationModeSelect navExpanded={navExpanded} /> : <></>}
                     </Navbar.Collapse>
 
-                    <TranslationToggle navExpanded={navExpanded} />
+                    {showTextSettings ? <TranslationToggle navExpanded={navExpanded} /> : <></>}
 
                     <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                 </Container>
