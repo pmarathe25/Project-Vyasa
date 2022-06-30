@@ -11,6 +11,7 @@ const Index = ({ location }) => {
             <br />
             <NavMenu navExpanded={true} useClass="justify-content-center" />
             <p style={{
+                marginTop: "10px",
                 marginBottom: "40px",
                 marginLeft: "auto", marginRight: "auto",
                 fontSize: "18px",
