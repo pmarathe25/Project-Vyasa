@@ -16,7 +16,7 @@ const Index = ({ location }) => {
                 fontSize: "18px",
                 whiteSpace: "pre-wrap"
             }}>
-                The goal of this project is to create a high quality Sanskrit-English reader for various different texts.
+                Project Vyasa's goal is to create a high quality Sanskrit-English reader for various texts.
                 <br />
                 If this is your first time here, you may want to check out
                 the <Link to={toUrl("/about")}>About</Link> page.
