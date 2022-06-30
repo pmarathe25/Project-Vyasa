@@ -4,10 +4,10 @@ import { Container, Navbar } from 'react-bootstrap'
 import AutohidingNavbar from './autohidingNavbar'
 import ResponsiveBreadcrumbs from './breadcrumbs'
 import { brandLink, container } from './layout.module.css'
+import NavMenu from './navMenu'
 import Seo from './seo'
 import { TranslationToggle } from './translationToggle'
 import { TransliterationModeSelect } from './transliterationModeSelect'
-import NavMenu from './navMenu'
 
 const Layout = ({ location, pageTitle, children, maxWidth = "var(--centered-content-width)", showTextSettings = false }) => {
     const data = useStaticQuery(graphql`
