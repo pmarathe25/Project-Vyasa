@@ -1,6 +1,7 @@
 import { Link } from 'gatsby'
 import * as React from 'react'
 import { Col, Row } from 'react-bootstrap'
+import allWordsDict from "../../content/generated/dictionary/all_words.json"
 import Definition from '../components/definition'
 import Layout from '../components/layout'
 import OffsetAnchor from '../components/offsetAnchor'
@@ -8,7 +9,6 @@ import { useTransliterate } from '../components/transliterationHook'
 import useIsMobile from '../util/responsiveness'
 import { sortSanskrit, toUrl } from '../util/util'
 
-const allWordsDict = require("../../content/generated/dictionary/all_words.json");
 
 const WordAndDefinitions = ({ location, word, definitions, roots, partsOfSpeeches }) => {
     const translitWord = useTransliterate(word);
