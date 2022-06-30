@@ -2,12 +2,11 @@ import { graphql, Link } from 'gatsby'
 import * as React from 'react'
 import { Row } from 'react-bootstrap'
 import Layout from '../../components/layout'
-import toUrl from '../../util/util'
 
-const WorkLink = ({ work }) => {
+const WorkLink = ({ work, to }) => {
     return (
         <Row style={{ margin: "0px", padding: "0px" }}>
-            <Link to={toUrl(work)} style={{ fontSize: "20px", padding: "0px", margin: "0px" }}>
+            <Link to={to} style={{ fontSize: "20px", padding: "0px", margin: "0px" }}>
                 {work}
             </Link>
         </Row>
@@ -20,7 +19,7 @@ const Texts = ({ location, data }) => {
             <h2>Texts</h2>
             {
                 data.allTextJson.group.map(group => (
-                    <WorkLink key={group.nodes[0].work} work={group.nodes[0].work} />
+                    <WorkLink key={group.nodes[0].work} work={group.nodes[0].work} to={group.nodes[0].workPath} />
                 ))
             }
         </Layout >)
@@ -34,6 +33,7 @@ export const query = graphql`
       group(field: work) {
         nodes {
               work
+              workPath: gatsbyPath(filePath: "/texts/{textJson.work}")
         }
       }
     }

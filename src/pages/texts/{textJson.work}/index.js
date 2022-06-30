@@ -1,13 +1,12 @@
 import { graphql, Link } from 'gatsby'
 import * as React from 'react'
-import { Row, Col } from 'react-bootstrap'
+import { Col, Row } from 'react-bootstrap'
 import Layout from '../../../components/layout'
-import toUrl from '../../../util/util'
 
-const SectionLink = ({ section }) => {
+const SectionLink = ({ section, to }) => {
     return (
         <Col>
-            <Link to={toUrl(section)} style={{ fontSize: "20px" }}>
+            <Link to={to} style={{ fontSize: "20px" }}>
                 {section}
             </Link>
         </Col>
@@ -23,7 +22,7 @@ const SectionIndex = ({ location, data, pageContext }) => {
             <Row key={index} sm="auto">
                 {
                     group.nodes.map(node =>
-                        <SectionLink key={node.section} section={node.section} />
+                        <SectionLink key={node.section} section={node.section} to={node.sectionPath} />
                     )
                 }
             </Row>
@@ -45,6 +44,7 @@ query ($work: String) {
       group(field: group) {
         nodes {
               section
+              sectionPath: gatsbyPath(filePath: "/texts/{textJson.work}/{textJson.section}")
         }
       }
     }
