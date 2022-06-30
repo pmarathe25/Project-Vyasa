@@ -3,10 +3,8 @@ import Layout from '../components/layout'
 
 const About = ({ location }) => {
     const textStyle = {
-        marginBottom: "30px",
         marginTop: "10px",
         fontSize: "18px",
-        whiteSpace: "pre-wrap"
     };
 
     return (
