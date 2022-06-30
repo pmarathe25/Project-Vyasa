@@ -8,12 +8,10 @@ const Issues = ({ location }) => {
     }
 
     const textStyle = {
-        marginBottom: "30px",
         marginTop: "10px",
         marginLeft: "auto",
         marginRight: "auto",
         fontSize: "18px",
-        whiteSpace: "pre-wrap"
     };
 
     return (
@@ -34,6 +32,7 @@ const Issues = ({ location }) => {
                 <br />
                 For any bugs you experience on the website, leave as much detail as
                 you can on what triggers the bug and how to reproduce it.
+                <br />
                 <br />
                 For content inaccuracies, specify where the error is (a link to the verse
                 is ideal) and, if possible, what correction needs to be made.
