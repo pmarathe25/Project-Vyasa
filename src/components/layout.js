@@ -9,7 +9,12 @@ import Seo from './seo'
 import { TranslationToggle } from './translationToggle'
 import { TransliterationModeSelect } from './transliterationModeSelect'
 
-const Layout = ({ location, pageTitle, children, maxWidth = "var(--centered-content-width)", showTextSettings = false }) => {
+const Layout = ({
+    location, pageTitle, children,
+    maxWidth = "var(--centered-content-width)",
+    showTranslitButton = false,
+    showTranslationButton = false,
+}) => {
     const data = useStaticQuery(graphql`
         query {
         site {
@@ -33,10 +38,10 @@ const Layout = ({ location, pageTitle, children, maxWidth = "var(--centered-cont
 
                     <Navbar.Collapse id="responsive-navbar-nav">
                         <NavMenu navExpanded={navExpanded} useClass="top-bar-links" />
-                        {showTextSettings ? <TransliterationModeSelect navExpanded={navExpanded} /> : <></>}
+                        {showTranslitButton ? <TransliterationModeSelect navExpanded={navExpanded} /> : <></>}
                     </Navbar.Collapse>
 
-                    {showTextSettings ? <TranslationToggle navExpanded={navExpanded} /> : <></>}
+                    {showTranslationButton ? <TranslationToggle navExpanded={navExpanded} /> : <></>}
 
                     <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                 </Container>
