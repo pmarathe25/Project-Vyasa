@@ -182,7 +182,11 @@ const Dictionary = ({ location }) => {
     };
 
     return (
-        <Layout location={location} pageTitle="Dictionary" maxWidth="var(--max-content-width)">
+        <Layout
+            location={location} pageTitle="Dictionary"
+            maxWidth="var(--max-content-width)"
+            showTranslitButton={true}
+        >
             <Row style={{ marginBottom: "20px" }}>
                 {sectionLinks}
             </Row>
