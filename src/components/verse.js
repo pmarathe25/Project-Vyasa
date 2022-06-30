@@ -1,14 +1,14 @@
 import { Link } from 'gatsby';
 import * as React from 'react';
 import { Col, OverlayTrigger, Popover, Row } from 'react-bootstrap';
+import allWordsDict from "../../content/generated/dictionary/all_words.json";
 import useIsMobile from "../util/responsiveness";
 import toUrl from '../util/util';
 import Definition from './definition';
+import { SettingsContext } from './settingsContext';
 import { useTransliterate } from './transliterationHook';
 import { clickableText, verseText } from "./verse.module.css";
-import { SettingsContext } from './settingsContext';
 
-const allWordsDict = require("../../content/generated/dictionary/all_words.json");
 
 const RootMeanings = ({ root, fontSize }) => {
     const roots = root.split("+");
