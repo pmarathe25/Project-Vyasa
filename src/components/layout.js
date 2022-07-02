@@ -14,6 +14,7 @@ const Layout = ({
     maxWidth = "var(--centered-content-width)",
     showTranslitButton = false,
     showTranslationButton = false,
+    showCurrentPageInBreadcrumbs = true,
 }) => {
     const data = useStaticQuery(graphql`
         query {
@@ -47,7 +48,7 @@ const Layout = ({
                 </Container>
             </AutohidingNavbar>
             <Container style={{ maxWidth: maxWidth }}>
-                <ResponsiveBreadcrumbs location={location} />
+                <ResponsiveBreadcrumbs location={location} showCurrentPage={showCurrentPageInBreadcrumbs} />
                 {children}
             </Container>
         </div >

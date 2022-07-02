@@ -4,7 +4,7 @@ import { Breadcrumb } from 'react-bootstrap'
 import { titleCaseFromUrl } from '../util/util'
 
 
-const ResponsiveBreadcrumbs = ({ location }) => {
+const ResponsiveBreadcrumbs = ({ location, showCurrentPage = true }) => {
     let curPath = "";
 
     let pathElements = location.pathname.split("/").slice(1).filter((value) => { return value; });
@@ -12,6 +12,12 @@ const ResponsiveBreadcrumbs = ({ location }) => {
 
     let breadcrumbs = [];
     for (const [index, pathElement] of pathElements.entries()) {
+        const isCurrentPage = index === (pathElements.length - 1);
+
+        if (!showCurrentPage && isCurrentPage) {
+            continue;
+        }
+
         curPath += pathElement;
         breadcrumbs.push(
             <Breadcrumb.Item
@@ -19,7 +25,7 @@ const ResponsiveBreadcrumbs = ({ location }) => {
                 linkProps={{ "to": curPath }}
                 linkAs={Link}
                 style={{ fontSize: "16px" }}
-                active={index === (pathElements.length - 1)}
+                active={isCurrentPage}
             >
                 {titleCaseFromUrl(pathElement)}
             </Breadcrumb.Item>
