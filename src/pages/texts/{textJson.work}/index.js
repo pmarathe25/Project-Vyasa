@@ -6,7 +6,7 @@ import Layout from '../../../components/layout'
 const SectionLink = ({ section, to }) => {
     return (
         <Col>
-            <Link to={to} style={{ fontSize: "20px" }}>
+            <Link to={to} style={{ fontSize: "18px" }}>
                 {section}
             </Link>
         </Col>
