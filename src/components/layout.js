@@ -34,7 +34,6 @@ const Layout = ({
             <AutohidingNavbar isExpanded={navExpanded} setIsExpanded={setNavExpanded}>
                 <Container style={{
                     maxWidth: "var(--centered-content-width)",
-                    paddingLeft: "5px", paddingRight: "5px"
                 }}>
                     <Link to="/" className={brandLink}>
                         Project Vyasa
@@ -52,7 +51,6 @@ const Layout = ({
             </AutohidingNavbar>
             <Container style={{
                 maxWidth: maxWidth,
-                paddingLeft: "5px", paddingRight: "5px"
             }}>
                 <ResponsiveBreadcrumbs location={location} showCurrentPage={showCurrentPageInBreadcrumbs} />
                 {children}
