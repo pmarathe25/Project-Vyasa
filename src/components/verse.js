@@ -229,7 +229,7 @@ const Verse = ({ text, wordByWord, translation }) => {
             <Col style={{
                 ...colStyle,
                 fontSize: translationFontSize,
-                color: "var(--text-gray-color)",
+                color: "var(--text-dark-gray-color)",
             }}>
                 {translation}
             </Col>

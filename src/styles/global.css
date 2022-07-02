@@ -1,8 +1,8 @@
 :root {
     --blue-highlight-color: rgb(63, 113, 205);
     --text-highlight-color: rgb(75, 75, 75);
-    --text-gray-color: rgba(255, 255, 255, 0.85);
-    --text-dark-gray-color: rgba(255, 255, 255, 0.75);
+    --text-gray-color: rgb(225, 225, 225);
+    --text-dark-gray-color: rgb(185, 185, 185);
     --max-content-width: 1100px;
     --centered-content-width: 800px;
     --desktop-text-font-size: 19px;
