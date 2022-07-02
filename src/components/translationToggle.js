@@ -5,16 +5,14 @@ import { SettingsContext } from "./settingsContext";
 
 export const TranslationToggle = ({ navExpanded }) => {
     const style = {
-        fontSize: "13.75px",
         width: "fit-content",
         minWidth: "110px",
         height: "fit-content",
-        marginTop: "auto",
-        marginBottom: navExpanded ? "10px" : "auto",
-        marginLeft: navExpanded ? "0px" : "auto",
-        marginRight: navExpanded ? "0px" : "auto",
+        marginBottom: navExpanded ? "10px" : "unset",
+        marginLeft: navExpanded ? "3px" : "unset",
         paddingLeft: "2px", paddingRight: "2px",
-        paddingTop: "3px", paddingBottom: "3px",
+        paddingTop: "2px", paddingBottom: "2px",
+        fontSize: "13.75px"
     };
 
     return (

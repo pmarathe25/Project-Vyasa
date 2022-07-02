@@ -32,7 +32,10 @@ const Layout = ({
             <title>{pageTitle} | {data.site.siteMetadata.title}</title>
             <Seo location={location} title={pageTitle} />
             <AutohidingNavbar isExpanded={navExpanded} setIsExpanded={setNavExpanded}>
-                <Container style={{ maxWidth: "var(--centered-content-width)" }}>
+                <Container style={{
+                    maxWidth: "var(--centered-content-width)",
+                    paddingLeft: "5px", paddingRight: "5px"
+                }}>
                     <Link to="/" className={brandLink}>
                         Project Vyasa
                     </Link>
@@ -47,7 +50,10 @@ const Layout = ({
                     <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                 </Container>
             </AutohidingNavbar>
-            <Container style={{ maxWidth: maxWidth }}>
+            <Container style={{
+                maxWidth: maxWidth,
+                paddingLeft: "5px", paddingRight: "5px"
+            }}>
                 <ResponsiveBreadcrumbs location={location} showCurrentPage={showCurrentPageInBreadcrumbs} />
                 {children}
             </Container>

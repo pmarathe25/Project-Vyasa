@@ -5,12 +5,17 @@ import { SettingsContext } from "./settingsContext";
 
 export const TransliterationModeSelect = ({ navExpanded }) => {
     const style = {
-        paddingBottom: navExpanded ? "10px" : "0px",
         height: "fit-content",
-        marginTop: "auto", marginBottom: "auto",
-        marginLeft: navExpanded ? "0px" : "auto",
-        marginRight: navExpanded ? "0px" : "auto",
+        marginTop: "auto",
+        marginBottom: navExpanded ? "10px" : "auto",
+        marginLeft: navExpanded ? "10px" : "15px",
+        marginRight: navExpanded ? "0px" : "0px",
     };
+
+    const buttonStyle = {
+        paddingLeft: "5px", paddingRight: "5px",
+        paddingTop: "1px", paddingBottom: "1px",
+    }
 
     return (
         <Nav.Item style={style}>
@@ -23,15 +28,11 @@ export const TransliterationModeSelect = ({ navExpanded }) => {
                         onChange={(val) => { setTranslitMode(val) }}
                         vertical={false}
                     >
-                        <ToggleButton id="translit-select-dev" value={0} size="sm">
-                            <p style={{ fontSize: "16px" }}>
-                                देवनागरी
-                            </p>
+                        <ToggleButton id="translit-select-dev" value={0} size="sm" style={{ ...buttonStyle, fontSize: "16px" }}>
+                            देवनागरी
                         </ToggleButton>
-                        <ToggleButton id="translit-select-iast" value={1} size="sm">
-                            <p style={{ fontSize: "15px" }}>
-                                IAST
-                            </p>
+                        <ToggleButton id="translit-select-iast" value={1} size="sm" style={{ ...buttonStyle, fontSize: "15px" }}>
+                            IAST
                         </ToggleButton>
                     </ToggleButtonGroup>
                 }
