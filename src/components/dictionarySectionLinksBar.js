@@ -30,7 +30,7 @@ const SectionLink = ({ sectionName }) => {
     };
 
     return (
-        <Link to={`/dictionary_${sectionName}`} style={sectionLinkStyle}>
+        <Link to={`/dictionary/${sectionName}`} style={sectionLinkStyle}>
             {translitSectionName}
         </Link>
     )
