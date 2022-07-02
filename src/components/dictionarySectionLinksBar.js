@@ -22,7 +22,6 @@ Object.freeze(sortedSectionNames);
 const SectionLink = ({ sectionName }) => {
     const translitSectionName = useTransliterate(sectionName);
     const isMobile = useIsMobile();
-    const baseUrl = "/dictionary";
 
     const fontSize = isMobile ? "19.5px" : "22px";
     const sectionLinkStyle = {
@@ -31,7 +30,7 @@ const SectionLink = ({ sectionName }) => {
     };
 
     return (
-        <Link to={`${baseUrl}/${sectionName}`} style={sectionLinkStyle}>
+        <Link to={`/dictionary_${sectionName}`} style={sectionLinkStyle}>
             {translitSectionName}
         </Link>
     )

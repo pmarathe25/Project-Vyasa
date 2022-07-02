@@ -18,7 +18,7 @@ export function toUrl(str) {
 
 // Generates the dictionary URL for a given word
 export function toDictUrl(word) {
-    return `/dictionary/${allWordsDict[word][[0]]}#${toUrl(word)}`;
+    return `/dictionary_${allWordsDict[word][[0]]}#${toUrl(word)}`;
 }
 
 function isNumber(obj) {
