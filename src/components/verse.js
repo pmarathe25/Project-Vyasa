@@ -1,9 +1,8 @@
 import { Link } from 'gatsby';
 import * as React from 'react';
 import { Col, OverlayTrigger, Popover, Row } from 'react-bootstrap';
-import allWordsDict from "../../content/generated/dictionary/all_words.json";
 import useIsMobile from "../util/responsiveness";
-import toUrl from '../util/util';
+import { toDictUrl } from '../util/util';
 import Definition from './definition';
 import { SettingsContext } from './settingsContext';
 import { useTransliterate } from './transliterationHook';
@@ -14,20 +13,12 @@ const RootMeanings = ({ root, fontSize }) => {
     const roots = root.split("+");
     const translitRoots = useTransliterate(root).split("+");
 
-    const rootDefs = React.useMemo(() => {
-        let ret = [];
-        for (let rootComp of roots) {
-            ret.push(allWordsDict[rootComp]);
-        }
-        return ret;
-    }, [roots]);
-
     return (
         <>
             {
                 translitRoots.map((rootPar, index) =>
                     <div style={{ display: "flex" }} key={index}>
-                        <Link to={`/dictionary#${toUrl(roots[index])}`} target="_blank"
+                        <Link to={toDictUrl(roots[index])} target="_blank"
                             style={{
                                 color: "rgb(175, 175, 175)", height: "fit-content", textDecoration: "dashed underline"
                             }}
@@ -36,11 +27,7 @@ const RootMeanings = ({ root, fontSize }) => {
                                 {rootPar}
                             </p>
                         </Link>
-                        <Definition
-                            definitions={rootDefs[index][1]}
-                            roots={rootDefs[index][2]}
-                            partsOfSpeeches={rootDefs[index][3]}
-                        />
+                        <Definition word={roots[index]} />
                     </div>
                 )
             }

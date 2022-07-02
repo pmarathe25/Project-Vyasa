@@ -1,15 +1,17 @@
 import { Link } from 'gatsby';
 import * as React from 'react';
 import { Container } from 'react-bootstrap';
+import allWordsDict from "../../content/generated/dictionary/all_words.json";
 import { useTransliterate } from '../components/transliterationHook';
 import useIsMobile from '../util/responsiveness';
-import toUrl from '../util/util';
+import { toDictUrl } from '../util/util';
 
 const style = {
     color: "var(--text-gray-color)",
     padding: 0,
-    fontSize: "14.5px",
+    fontSize: "15px",
 };
+
 
 const Root = ({ root, partsOfSpeech }) => {
     const translitRootParts = useTransliterate(root).split("+");
@@ -28,7 +30,7 @@ const Root = ({ root, partsOfSpeech }) => {
             <div style={{ marginLeft: "4px", display: "inline-block", ...style }} key={index}>
                 {(index > 0 ? ", " : "")}
                 <Link
-                    to={`/dictionary#${toUrl(rootParts[index])}`}
+                    to={toDictUrl(rootParts[index])}
                     style={{ fontSize: fontSize, fontStyle: "normal", whiteSpace: "nowrap" }}
                     key={index}
                 >
@@ -59,7 +61,11 @@ const Root = ({ root, partsOfSpeech }) => {
 
 }
 
-const Definition = ({ definitions, roots, partsOfSpeeches }) => {
+const Definition = ({ word }) => {
+    const [, definitions, roots, partsOfSpeeches] = React.useMemo(() => {
+        return allWordsDict[word];
+    }, [word]);
+
     let definitionElements = [];
 
     for (let index = 0; index < definitions.length; ++index) {
