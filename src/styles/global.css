@@ -5,6 +5,10 @@
     --text-dark-gray-color: rgba(255, 255, 255, 0.75);
     --max-content-width: 1200px;
     --centered-content-width: 800px;
+    --desktop-text-font-size: 19px;
+    --mobile-text-font-size: 17px;
+    --desktop-translation-font-size: 16px;
+    --mobile-translation-font-size: 14.75px;
 }
 
 html,

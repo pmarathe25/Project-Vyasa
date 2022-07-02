@@ -15,7 +15,7 @@ const WordAndDefinitions = ({ location, word }) => {
     const translitWord = useTransliterate(word);
     const isMobile = useIsMobile();
 
-    const fontSize = isMobile ? "17px" : "19.5px";
+    const fontSize = isMobile ? "var(--mobile-text-font-size)" : "var(--desktop-text-font-size)";
 
     const wordElements = React.useMemo(() => {
         const wordLinkStyle = {
@@ -62,9 +62,7 @@ const WordAndDefinitions = ({ location, word }) => {
                 display: "flex",
             }}>
                 {wordElements}
-                <Definition
-                    word={word}
-                />
+                <Definition word={word} makeDefinitionLink={true} />
             </div>
         </OffsetAnchor>
     )
@@ -127,7 +125,7 @@ const DictSection = ({ location, pageContext }) => {
         >
             <SectionLinksBar />
             <Link to={pageUrl}>
-                <h2>{translitSectionName}</h2>
+                <h2 style={{ marginBottom: "10px" }}>{translitSectionName}</h2>
             </Link>
             <Row xs={1} lg={2} xxl={3} key={sectionName} style={{ marginBottom: "20px" }}>
                 {sectionColumns}

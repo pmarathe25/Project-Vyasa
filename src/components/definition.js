@@ -9,7 +9,7 @@ import { toDictUrl } from '../util/util';
 const style = {
     color: "var(--text-gray-color)",
     padding: 0,
-    fontSize: "15px",
+    fontSize: "var(--mobile-translation-font-size)",
 };
 
 
@@ -17,7 +17,7 @@ const Root = ({ root, partsOfSpeech }) => {
     const translitRootParts = useTransliterate(root).split("+");
     const isMobile = useIsMobile();
 
-    const fontSize = isMobile ? "16.5px" : "19px";
+    const fontSize = isMobile ? "var(--mobile-text-font-size)" : "var(--desktop-text-font-size)";
 
     if (!root) {
         return (<></>);
@@ -61,7 +61,7 @@ const Root = ({ root, partsOfSpeech }) => {
 
 }
 
-const Definition = ({ word }) => {
+const Definition = ({ word, makeDefinitionLink = false }) => {
     const [, definitions, roots, partsOfSpeeches] = React.useMemo(() => {
         return allWordsDict[word];
     }, [word]);
@@ -80,7 +80,17 @@ const Definition = ({ word }) => {
                     display: "inline-block",
                     ...style
                 }}>
-                {definition}
+                {
+                    makeDefinitionLink
+                        ?
+                        <Link to={toDictUrl(word)} style={{ textDecoration: "none", cursor: "pointer" }}>
+                            {definition}
+                        </Link>
+                        :
+                        <>
+                            {definition}
+                        </>
+                }
                 <Root root={root} partsOfSpeech={partsOfSpeech} />
             </div>
         );
