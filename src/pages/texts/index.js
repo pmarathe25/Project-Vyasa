@@ -6,7 +6,7 @@ import Layout from '../../components/layout'
 const WorkLink = ({ work, to }) => {
     return (
         <Row style={{ margin: "0px", padding: "0px" }}>
-            <Link to={to} style={{ fontSize: "20px", padding: "0px", margin: "0px" }}>
+            <Link to={to} style={{ fontSize: "18px", padding: "0px", margin: "0px" }}>
                 {work}
             </Link>
         </Row>

@@ -4,7 +4,6 @@ import Layout from '../components/layout'
 const About = ({ location }) => {
     const textStyle = {
         marginTop: "10px",
-        fontSize: "18px",
     };
 
     return (

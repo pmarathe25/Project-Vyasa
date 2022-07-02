@@ -11,7 +11,6 @@ const Issues = ({ location }) => {
         marginTop: "10px",
         marginLeft: "auto",
         marginRight: "auto",
-        fontSize: "18px",
     };
 
     return (
