@@ -1,7 +1,7 @@
 .clickable-text {
     cursor: pointer;
-    color: rgb(115, 145, 195);
-    text-decoration: dashed underline;
+    color: rgb(120, 150, 180);
+    text-decoration: underline;
 }
 
 .clickable-text:hover {

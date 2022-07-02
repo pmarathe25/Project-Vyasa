@@ -20,7 +20,7 @@ const RootMeanings = ({ root, fontSize }) => {
                     <div style={{ display: "flex" }} key={index}>
                         <Link to={toDictUrl(roots[index])} target="_blank"
                             style={{
-                                color: "rgb(175, 175, 175)", height: "fit-content", textDecoration: "dashed underline"
+                                color: "rgb(175, 175, 175)", height: "fit-content", textDecoration: "underline"
                             }}
                         >
                             <p style={{ fontSize: fontSize, paddingRight: "5px", whiteSpace: "nowrap" }}>
