@@ -98,6 +98,7 @@ const WordWithPopover = ({ word, definition, root, parts_of_speech, fontSize }) 
                 show={showPopover}
             >
                 <p
+                    lang="sa"
                     ref={ref}
                     role="presentation"
                     onMouseEnter={() => setShowPopover(true)}
@@ -199,6 +200,7 @@ const Verse = ({ text, wordByWord, translation }) => {
                     </>
                     :
                     <p
+                        lang="sa"
                         role="presentation"
                         className={verseText}
                         style={{
