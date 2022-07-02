@@ -89,7 +89,7 @@ const DictSection = ({ location, pageContext }) => {
     const words = getSortedSectionWords(sectionName);
 
     const translitSectionName = useTransliterate(sectionName);
-    const pageUrl = `/dictionary_${sectionName}`;
+    const pageUrl = `/dictionary/${sectionName}`;
 
     let entries = []
     for (const word of words) {
