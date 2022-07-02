@@ -1,7 +1,6 @@
+import allWordsDict from "../../content/generated/dictionary/all_words.json";
+import devanagari from "../../content/generated/transliteration_rulesets/devanagari.json";
 import { transliterate } from "./transliterator";
-
-const devanagari = require("../../content/generated/transliteration_rulesets/devanagari.json");
-
 
 // Converts a string to a URL compatible format
 export function toUrl(str) {
@@ -15,6 +14,11 @@ export function toUrl(str) {
         .replaceAll("(", "lparen")
         .replaceAll(")", "rparen")
         .toLowerCase();
+}
+
+// Generates the dictionary URL for a given word
+export function toDictUrl(word) {
+    return `/dictionary/${allWordsDict[word][[0]]}#${toUrl(word)}`;
 }
 
 function isNumber(obj) {
@@ -46,7 +50,7 @@ export function titleCaseFromUrl(str) {
 }
 
 export function sortSanskrit(word, otherWord) {
-    return transliterate(word[0].replace("√", ""), devanagari) > transliterate(otherWord[0].replace("√", ""), devanagari) ? 1 : -1;
+    return transliterate(word.replace("√", ""), devanagari) > transliterate(otherWord.replace("√", ""), devanagari) ? 1 : -1;
 }
 
 export default toUrl;
