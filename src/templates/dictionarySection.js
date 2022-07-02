@@ -79,7 +79,7 @@ function getSortedSectionWords(targetSectionName) {
 
         wordList.push(word);
     }
-    return wordList.sort(([word0], [word1]) => { return sortSanskrit(word0, word1); });
+    return wordList.sort(sortSanskrit);
 }
 
 
