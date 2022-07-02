@@ -193,7 +193,7 @@ const Verse = ({ text, wordByWord, translation }) => {
                                 fontSize: translationFontSize,
                                 width: "fit-content",
                                 marginTop: "10px",
-                                color: "rgb(150, 215, 255)"
+                                color: "rgb(140, 185, 255)"
                             }}>
                             Show Original Text
                         </p>
