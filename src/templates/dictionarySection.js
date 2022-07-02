@@ -30,7 +30,7 @@ const WordAndDefinitions = ({ location, word }) => {
         for (let index = 0; index < wordParts.length; ++index) {
             const part = translitWordParts[index];
             ret.push(
-                <div key={word + index + "div"}>
+                <div lang="sa" key={word + index + "div"}>
                     <Link
                         key={word + index}
                         to={toDictUrl(wordParts[index])}

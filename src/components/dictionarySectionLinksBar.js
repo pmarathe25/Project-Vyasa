@@ -39,7 +39,7 @@ const SectionLink = ({ sectionName }) => {
 // Top-bar with links to each section
 const SectionLinksBar = React.memo(() => {
     return (
-        <Row style={{ marginBottom: "20px" }}>
+        <Row lang="sa" style={{ marginBottom: "20px" }}>
             {
                 sortedSectionNames.map((sectionName) =>
                     <Col key={sectionName}>
