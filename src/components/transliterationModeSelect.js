@@ -17,26 +17,24 @@ export const TransliterationModeSelect = ({ navExpanded }) => {
         paddingTop: "1px", paddingBottom: "1px",
     }
 
+    const { translitMode, setTranslitMode } = React.useContext(SettingsContext);
+
     return (
         <Nav.Item style={style}>
-            <SettingsContext.Consumer>
-                {({ translitMode, setTranslitMode }) =>
-                    <ToggleButtonGroup
-                        type="radio"
-                        name="options"
-                        defaultValue={translitMode}
-                        onChange={(val) => { setTranslitMode(val) }}
-                        vertical={false}
-                    >
-                        <ToggleButton id="translit-select-dev" value={0} size="sm" style={{ ...buttonStyle, fontSize: "16px" }}>
-                            देवनागरी
-                        </ToggleButton>
-                        <ToggleButton id="translit-select-iast" value={1} size="sm" style={{ ...buttonStyle, fontSize: "15px" }}>
-                            IAST
-                        </ToggleButton>
-                    </ToggleButtonGroup>
-                }
-            </SettingsContext.Consumer >
+            <ToggleButtonGroup
+                type="radio"
+                name="options"
+                defaultValue={translitMode}
+                onChange={(val) => { setTranslitMode(val) }}
+                vertical={false}
+            >
+                <ToggleButton id="translit-select-dev" value="devanagari" size="sm" style={{ ...buttonStyle, fontSize: "16px" }}>
+                    देवनागरी
+                </ToggleButton>
+                <ToggleButton id="translit-select-iast" value="iast" size="sm" style={{ ...buttonStyle, fontSize: "15px" }}>
+                    IAST
+                </ToggleButton>
+            </ToggleButtonGroup>
         </Nav.Item>
     )
 }

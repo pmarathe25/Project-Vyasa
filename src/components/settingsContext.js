@@ -1,15 +1,12 @@
 import * as React from "react";
+import { useLocalStorage } from "./localStorage";
 
-
-export const SettingsContext = React.createContext({
-    translitMode: 0, setTranslitMode: () => { },
-    showTranslation: true, setShowTranslation: () => { },
-});
+export const SettingsContext = React.createContext();
 
 export const SettingsContextProvider = (props) => {
     // 0: Devanagari, 1: IAST
-    const [translitMode, setTranslitMode] = React.useState(0);
-    const [showTranslation, setShowTranslation] = React.useState(true);
+    const [translitMode, setTranslitMode] = useLocalStorage("translit-mode", "devanagari");
+    const [showTranslation, setShowTranslation] = useLocalStorage("toggle-translation", true);
 
     return (
         <SettingsContext.Provider value={{

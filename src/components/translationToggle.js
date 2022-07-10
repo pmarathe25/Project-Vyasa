@@ -15,21 +15,19 @@ export const TranslationToggle = ({ navExpanded }) => {
         fontSize: "13.75px"
     };
 
+    const { showTranslation, setShowTranslation } = React.useContext(SettingsContext);
+
     return (
         <Nav.Item style={style}>
-            <SettingsContext.Consumer>
-                {({ showTranslation, setShowTranslation }) =>
-                    <ToggleButton
-                        size="sm"
-                        type="checkbox"
-                        onClick={() => setShowTranslation(!showTranslation)}
-                        checked={showTranslation}
-                        style={style}
-                    >
-                        {showTranslation ? "Hide" : "Show"} Translation
-                    </ToggleButton>
-                }
-            </SettingsContext.Consumer >
+            <ToggleButton
+                size="sm"
+                type="checkbox"
+                onClick={() => setShowTranslation(!showTranslation)}
+                checked={showTranslation}
+                style={style}
+            >
+                {showTranslation ? "Hide" : "Show"} Translation
+            </ToggleButton>
         </Nav.Item >
     )
 }
