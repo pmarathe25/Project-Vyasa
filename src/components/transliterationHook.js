@@ -9,7 +9,7 @@ export function useTransliterate(text) {
     const { translitMode, } = React.useContext(SettingsContext);
 
     const output = React.useMemo(() => {
-        const translitRuleset = translitMode ? iast : devanagari;
+        const translitRuleset = translitMode === "devanagari" ? devanagari : iast;
         return transliterate(text, translitRuleset);
     }, [text, translitMode]);
     return output;
