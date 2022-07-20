@@ -44,6 +44,7 @@ export const SettingsPanel = ({ show, setShow, variant, showTranslitButton, show
                 backgroundColor: "var(--navbar-background)",
                 color: "var(--text-primary)",
                 paddingLeft: "20px",
+                paddingBottom: "0px",
             }}>
                 <Form>
                     {
