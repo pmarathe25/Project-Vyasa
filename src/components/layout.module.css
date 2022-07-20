@@ -1,6 +1,7 @@
 .container {
   font-family: -apple-system, 'BlinkMacSystemFont', 'Oxygen', 'Cantarell', 'Segoe UI', 'Roboto', 'Open Sans', 'Helvetica Neue', 'Ubuntu', sans-serif;
   padding-bottom: 500px;
+  background-color: var(--background);
 }
 
 .brand-link {

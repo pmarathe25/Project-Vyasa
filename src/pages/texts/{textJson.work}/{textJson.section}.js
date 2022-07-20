@@ -14,7 +14,7 @@ const Section = ({ location, data }) => {
             showTranslitButton={true}
             showTranslationButton={true}
         >
-            < p style={{ textAlign: "center", color: "var(--text-dark-gray-color)", fontSize: "14.75px" }}>
+            < p style={{ textAlign: "center", color: "var(--text-tertiary)", fontSize: "14.75px" }}>
                 Click or tap on verses to see word-level analysis.
             </p >
             {

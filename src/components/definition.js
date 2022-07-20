@@ -7,7 +7,7 @@ import useIsMobile from '../util/responsiveness';
 import { toDictUrl } from '../util/util';
 
 const style = {
-    color: "var(--text-gray-color)",
+    color: "var(--text-secondary)",
     padding: 0,
     fontSize: "var(--mobile-translation-font-size)",
 };

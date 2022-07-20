@@ -56,7 +56,7 @@ const WordAndDefinitions = ({ location, word }) => {
     return (
         <OffsetAnchor id={id} key={word}>
             <div style={{
-                backgroundColor: isActive ? "var(--blue-highlight-color)" : "inherit",
+                backgroundColor: isActive ? "var(--accent-color)" : "inherit",
                 borderRadius: isActive ? "5px" : "inherit",
                 paddingBottom: "5px",
                 display: "flex",

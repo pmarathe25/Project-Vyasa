@@ -28,7 +28,7 @@ const Layout = ({
     const [navExpanded, setNavExpanded] = React.useState(false);
 
     return (
-        <div className={container}>
+        <div className={container} data-theme="dark">
             <title>{pageTitle} | {data.site.siteMetadata.title}</title>
             <Seo location={location} title={pageTitle} />
             <AutohidingNavbar isExpanded={navExpanded} setIsExpanded={setNavExpanded}>
