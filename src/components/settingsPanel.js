@@ -3,10 +3,14 @@ import { Dropdown, Form } from "react-bootstrap";
 import { GoSettings } from "react-icons/go";
 import { useLocalStorage } from "./localStorage";
 
-export const SettingsContext = React.createContext();
-
 export const DEVANAGARI_MODE = "devanagari";
 export const IAST_MODE = "iast";
+
+export const SettingsContext = React.createContext({
+    translitMode: DEVANAGARI_MODE, setTranslitMode: () => { },
+    showTranslation: true, setShowTranslation: () => { },
+    useDarkMode: false, setUseDarkMode: () => { },
+});
 
 export const SettingsContextProvider = (props) => {
     const [translitMode, setTranslitMode] = useLocalStorage("translit-mode", DEVANAGARI_MODE);
