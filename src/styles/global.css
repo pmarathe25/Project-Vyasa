@@ -98,7 +98,12 @@ a:hover {
     box-shadow: none !important;
 }
 
-
 .navbar-toggler {
     box-shadow: none !important;
+}
+
+.form-check {
+    scale: 1.15;
+    padding-bottom: 7px;
+    font-size: var(--tertiary-font-size);
 }
