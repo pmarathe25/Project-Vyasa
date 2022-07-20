@@ -10,7 +10,7 @@ import SiteHelmet from './siteHelmet'
 
 const Layout = ({
     location, pageTitle, children,
-    maxWidth = "var(--centered-content-width)",
+    maxWidth = "var(--small-content-width)",
     showTranslitButton = false,
     showTranslationButton = false,
     showCurrentPageInBreadcrumbs = true,
@@ -40,7 +40,7 @@ const Layout = ({
                 variant={variant}
             >
                 <Container style={{
-                    maxWidth: "var(--centered-content-width)",
+                    maxWidth: "var(--navbar-width)",
                 }}>
                     <Link to="/" className={brandLink}>
                         Project Vyasa

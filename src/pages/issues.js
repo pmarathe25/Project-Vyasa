@@ -2,11 +2,6 @@ import * as React from 'react'
 import Layout from '../components/layout'
 
 const Issues = ({ location }) => {
-    const headerStyle = {
-        margin: "auto",
-        color: "white"
-    }
-
     const textStyle = {
         marginTop: "10px",
         marginLeft: "auto",
@@ -15,7 +10,7 @@ const Issues = ({ location }) => {
 
     return (
         <Layout location={location} pageTitle={"Issues?"}>
-            <h2 style={headerStyle}>Experiencing Issues or Want to Leave Feedback?</h2>
+            <h2>Experiencing Issues or Want to Leave Feedback?</h2>
             <p style={textStyle}>
                 If you encounter any issues on this website or inaccuracies in the content,
                 or you want to request a new feature, don't hesitate

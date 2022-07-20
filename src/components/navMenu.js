@@ -46,7 +46,7 @@ const NavMenu = ({ navExpanded, useClass = "links" }) => {
             <TopBarNavItem navExpanded={navExpanded} keyName="github" >
                 <a
                     href="https://github.com/pmarathe25/Project-Vyasa"
-                    style={{ marginLeft: "12px" }}
+                    style={{ marginLeft: "15px" }}
                     target="_blank"
                     rel="noreferrer"
                 >
