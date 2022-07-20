@@ -1,5 +1,6 @@
 import * as React from "react";
-import { Form } from "react-bootstrap";
+import { Dropdown, Form } from "react-bootstrap";
+import { GoSettings } from "react-icons/go";
 import { useLocalStorage } from "./localStorage";
 
 export const SettingsContext = React.createContext();
@@ -23,33 +24,42 @@ export const SettingsContextProvider = (props) => {
     )
 }
 
-export const SettingsPanel = () => {
+export const SettingsPanel = ({ show, setShow, variant }) => {
     const {
         translitMode, setTranslitMode,
         showTranslation, setShowTranslation,
         useDarkMode, setUseDarkMode
     } = React.useContext(SettingsContext);
 
-    const style = { color: "var(--text-primary)", };
-
     return (
-        <Form>
-            <Form.Check type="switch" label="Dark Mode" checked={useDarkMode} style={style}
-                onChange={(event) => { setUseDarkMode(event.target.checked) }}
-            />
-            <Form.Check type="switch" label="Translation" checked={showTranslation} style={style}
-                onChange={(event) => { setShowTranslation(event.target.checked) }}
-            />
-            <div>
-                <Form.Check name="translit-select" inline type="radio" label="देवनागरी"
-                    value={DEVANAGARI_MODE} checked={translitMode === DEVANAGARI_MODE} style={style}
-                    onChange={(event) => { setTranslitMode(event.target.value) }}
-                />
-                <Form.Check name="translit-select" inline type="radio" label="IAST_MODE"
-                    value={IAST_MODE} checked={translitMode === IAST_MODE} style={style}
-                    onChange={(event) => { setTranslitMode(event.target.value) }}
-                />
-            </div>
-        </Form>
+        <Dropdown onToggle={() => setShow(!show)} show={show}>
+            <Dropdown.Toggle variant={variant}>
+                <GoSettings />
+            </Dropdown.Toggle>
+            <Dropdown.Menu variant={variant} renderOnMount={true} style={{
+                backgroundColor: "var(--navbar-background)",
+                color: "var(--text-primary)",
+                padding: "10px",
+            }}>
+                <Form>
+                    <div style={{ display: "flex" }}>
+                        <Form.Check name="translit-select" inline type="radio" label="देवनागरी"
+                            value={DEVANAGARI_MODE} checked={translitMode === DEVANAGARI_MODE}
+                            onChange={(event) => { setTranslitMode(event.target.value) }}
+                        />
+                        <Form.Check name="translit-select" inline type="radio" label="IAST"
+                            value={IAST_MODE} checked={translitMode === IAST_MODE}
+                            onChange={(event) => { setTranslitMode(event.target.value) }}
+                        />
+                    </div>
+                    <Form.Check type="switch" label="Translation" checked={showTranslation}
+                        onChange={(event) => { setShowTranslation(event.target.checked) }}
+                    />
+                    <Form.Check type="switch" label="Dark Mode" checked={useDarkMode}
+                        onChange={(event) => { setUseDarkMode(event.target.checked) }}
+                    />
+                </Form>
+            </Dropdown.Menu>
+        </Dropdown>
     );
 }
