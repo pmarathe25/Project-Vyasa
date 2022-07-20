@@ -21,14 +21,14 @@ const SiteHelmet = ({ location, title, description }) => {
         url: `${siteUrl}${location.pathname}`,
     }
 
-    const { useDarkMode } = React.useContext(SettingsContext);
+    const { useDarkMode, translitMode } = React.useContext(SettingsContext);
     const theme = useDarkMode ? "dark" : "light";
 
     return (
         <Helmet title={seo.title} titleTemplate={titleTemplate} htmlAttributes={{
             lang: "en",
             "data-theme": theme,
-            "data-font-size": isMobile ? "mobile" : "desktop",
+            "data-font-size": (isMobile ? "mobile" : "desktop") + "-" + translitMode,
         }}>
             <meta name="description" content={seo.description} />
             {seo.url && <meta property="og:url" content={seo.url} />}
@@ -45,14 +45,14 @@ const SiteHelmet = ({ location, title, description }) => {
 export default SiteHelmet;
 
 const query = graphql`
-  query {
+query {
     site {
-      siteMetadata {
-        defaultTitle: title
-        titleTemplate
-        defaultDescription: description
-        siteUrl: url
-      }
+        siteMetadata {
+            defaultTitle: title
+            titleTemplate
+            defaultDescription: description
+            siteUrl: url
+        }
     }
-  }
+}
 `

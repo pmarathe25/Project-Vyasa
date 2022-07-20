@@ -70,10 +70,10 @@ const AutohidingNavbar = (props) => {
     return (
         <Navbar variant={props.variant} sticky="top" expand="md"
             style={{
-                marginBottom: "20px",
+                marginBottom: "30px",
                 boxShadow: "0px 1px 1px var(--shadow-color)",
                 backgroundColor: "var(--navbar-background)",
-                minHeight: "60px",
+                minHeight: "65px",
                 ...navbarStyle
             }}
             onToggle={(expanded) => {

@@ -17,18 +17,17 @@ const RootMeanings = ({ root }) => {
         <>
             {
                 translitRoots.map((rootPar, index) =>
-                    <div style={{ display: "flex" }} key={index}>
+                    <div key={index}>
                         <Link to={toDictUrl(roots[index])} target="_blank"
                             style={{
-                                fontSize: "var(--primary-font-size)",
-                                paddingRight: "5px",
+                                fontSize: "var(--sanskrit-font-size)",
                                 whiteSpace: "nowrap",
                                 height: "fit-content",
                             }}
                         >
                             {rootPar}
                         </Link>
-                        <Definition word={roots[index]} />
+                        <Definition word={roots[index]} marginLeft="15px" />
                     </div>
                 )
             }
@@ -69,7 +68,7 @@ const WordWithPopover = ({ word, definition, root, parts_of_speech }) => {
     }, []);
 
     if (!definition && !root && !parts_of_speech) {
-        return (<p style={{ padding: "0px", margin: "0px", width: "fit-content", fontSize: "var(--primary-font-size)" }}>
+        return (<p style={{ padding: "0px", margin: "0px", width: "fit-content", fontSize: "var(--sanskrit-font-size)" }}>
             {translitWord}
         </p>);
 
@@ -113,10 +112,10 @@ const WordWithPopover = ({ word, definition, root, parts_of_speech }) => {
                     onTouchStart={() => setShowPopover(true)}
                     onTouchMove={() => setShowPopover(false)}
                 >
-                    <Popover.Body ref={popoverRef} style={{ paddingTop: "10px", paddingBottom: "10px" }}>
+                    <Popover.Body ref={popoverRef} style={{ paddingTop: "7px", paddingBottom: "7px" }}>
                         <Col>
                             <RootMeanings root={root} />
-                            <p style={{ fontSize: "var(--tertiary-font-size)" }}>
+                            <p style={{ fontSize: "var(--tertiary-font-size)", marginTop: "5px" }}>
                                 {parts_of_speech}
                             </p>
                         </Col>
@@ -146,7 +145,7 @@ const WordByWord = ({ wordByWord }) => {
                     <Row
                         key={index}
                         style={{
-                            fontSize: "var(--primary-font-size)",
+                            fontSize: "var(--sanskrit-font-size)",
                             whiteSpace: "pre-wrap",
                             marginLeft: "auto", marginRight: "auto",
                         }}
@@ -184,7 +183,6 @@ const Verse = ({ text, wordByWord, translation }) => {
         marginBottom: "8px",
     };
 
-    const fontSize = "var(--primary-font-size)";
     const translationFontSize = "var(--secondary-font-size)";
 
     const verseTextComp = (
@@ -211,7 +209,7 @@ const Verse = ({ text, wordByWord, translation }) => {
                         role="presentation"
                         className={verseText}
                         style={{
-                            fontSize: fontSize,
+                            fontSize: "var(--sanskrit-font-size)",
                             paddingBottom: "2px",
                             whiteSpace: "pre-wrap",
                         }}
