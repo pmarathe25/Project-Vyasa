@@ -10,7 +10,7 @@ const Section = ({ location, data }) => {
     return (
         <Layout
             location={location} pageTitle={data.textJson.section}
-            maxWidth={showTranslation ? "var(--max-content-width)" : "var(--centered-content-width)"}
+            maxWidth={showTranslation ? "var(--max-content-width)" : "var(--centered-verse-content-width)"}
             showTranslitButton={true}
             showTranslationButton={true}
         >

@@ -34,7 +34,7 @@ export const SettingsPanel = ({ show, setShow, variant, showTranslitButton, show
     return (
         <Dropdown onToggle={() => setShow(!show)} show={show}>
             <Dropdown.Toggle variant={variant}>
-                <GoSettings />
+                <GoSettings size={20} />
             </Dropdown.Toggle>
             <Dropdown.Menu variant={variant} renderOnMount={true} style={{
                 backgroundColor: "var(--navbar-background)",
