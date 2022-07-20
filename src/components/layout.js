@@ -11,6 +11,8 @@ import SiteHelmet from './siteHelmet'
 const Layout = ({
     location, pageTitle, children,
     maxWidth = "var(--centered-content-width)",
+    showTranslitButton = false,
+    showTranslationButton = false,
     showCurrentPageInBreadcrumbs = true,
 }) => {
     const data = useStaticQuery(graphql`
@@ -50,7 +52,10 @@ const Layout = ({
 
                     <SettingsPanel
                         show={showSettingsPanel} setShow={setShowSettingsPanel}
-                        variant={variant} />
+                        variant={variant}
+                        showTranslitButton={showTranslitButton}
+                        showTranslationButton={showTranslationButton}
+                    />
 
                     <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                 </Container>
