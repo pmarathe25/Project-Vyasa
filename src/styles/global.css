@@ -1,8 +1,4 @@
 :root {
-    --blue-highlight-color: rgb(63, 113, 205);
-    --text-highlight-color: rgb(85, 85, 85);
-    --text-gray-color: rgb(235, 235, 235);
-    --text-dark-gray-color: rgb(185, 185, 185);
     --max-content-width: 1100px;
     --centered-content-width: 800px;
     --desktop-text-font-size: 19.5px;
@@ -11,9 +7,24 @@
     --mobile-translation-font-size: 14.75px;
 }
 
-html,
-body {
-    background-color: rgb(70, 70, 70);
+[data-theme="dark"] {
+    --background: rgb(55, 55, 55);
+    --accent-color: rgb(63, 113, 205);
+    --highlight-color: rgb(85, 85, 85);
+    --text-primary: rgb(255, 255, 255);
+    --text-secondary: rgb(235, 235, 235);
+    --text-tertiary: rgb(185, 185, 185);
+    --text-alternate: rgb(215, 235, 255);
+}
+
+[data-theme="light"] {
+    --background: rgb(245, 245, 245);
+    --accent-color: rgb(157, 191, 255);
+    --highlight-color: rgb(245, 243, 166);
+    --text-primary: rgb(0, 0, 0);
+    --text-secondary: rgb(50, 50, 50);
+    --text-tertiary: rgb(100, 100, 100);
+    --text-alternate: rgb(0, 121, 46);
 }
 
 h1,
@@ -22,7 +33,7 @@ h3,
 h4,
 h5,
 p {
-    color: white;
+    color: var(--text-primary);
     padding: 0;
     margin: 0;
 }
@@ -61,8 +72,8 @@ a:active {
 }
 
 .btn-primary {
-    background-color: var(--blue-highlight-color);
-    border-color: var(--blue-highlight-color);
+    background-color: var(--accent-color);
+    border-color: var(--accent-color);
     box-shadow: none !important;
 }
 
