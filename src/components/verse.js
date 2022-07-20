@@ -1,6 +1,6 @@
 import { Link } from 'gatsby';
 import * as React from 'react';
-import { Col, Overlay, Popover, Row } from 'react-bootstrap';
+import { Col, OverlayTrigger, Popover, Row } from 'react-bootstrap';
 import useIsMobile from "../util/responsiveness";
 import { toDictUrl } from '../util/util';
 import Definition from './definition';
@@ -38,8 +38,6 @@ const RootMeanings = ({ root }) => {
 const WordWithPopover = ({ word, definition, root, parts_of_speech }) => {
     const translitWord = useTransliterate(word);
 
-    const containerRef = React.useRef(null);
-
     const [showPopover, setShowPopover] = React.useState(false);
 
     // Detect clicks outside the word and popover to make the
@@ -68,63 +66,61 @@ const WordWithPopover = ({ word, definition, root, parts_of_speech }) => {
     }, []);
 
     if (!definition && !root && !parts_of_speech) {
-        return (<p style={{ padding: "0px", margin: "0px", width: "fit-content", fontSize: "var(--sanskrit-font-size)" }}>
-            {translitWord}
-        </p>);
-
+        return (
+            <p style={{ padding: "0px", margin: "0px", width: "fit-content", fontSize: "var(--sanskrit-font-size)" }}>
+                {translitWord}
+            </p>
+        );
     }
 
-    const wordElement = (<p
-        lang="sa"
-        ref={ref}
-        role="presentation"
-        onMouseEnter={() => { setShowPopover(true); }}
-        onMouseLeave={() => { setShowPopover(false); }}
-        onTouchStart={() => { setShowPopover(true); }}
-        onTouchMove={() => { setShowPopover(false); }}
-        style={{
-            width: "fit-content",
-            marginLeft: "auto", marginRight: "auto",
-            backgroundColor: "var(--highlight-color)",
-            color: "var(--text-alternate)",
-            borderRadius: "2px",
-        }}
-    >
-        {translitWord}
-    </p>);
-
     return (
-        <Col ref={containerRef} style={{ padding: "0px", marginLeft: "5px", marginRight: "5px", width: "fit-content" }}>
-            {wordElement}
-            <Overlay
+        <Col style={{ padding: "0px", marginLeft: "5px", marginRight: "5px", width: "fit-content" }}>
+            <OverlayTrigger
                 placement="top"
-                target={ref}
                 show={showPopover}
-                container={containerRef}
+                overlay={
+                    <Popover
+                        id={`${word}-popover`}
+                        style={{ backgroundColor: "var(--accent-color)" }}
+                        onMouseEnter={() => setShowPopover(true)}
+                        onMouseLeave={() => setShowPopover(false)}
+                        onTouchStart={() => setShowPopover(true)}
+                        onTouchMove={() => setShowPopover(false)}
+                        show={showPopover}
+                    >
+                        <Popover.Body ref={popoverRef} style={{ paddingTop: "7px", paddingBottom: "7px" }}>
+                            <Col>
+                                <RootMeanings root={root} />
+                                <p style={{ fontSize: "var(--tertiary-font-size)" }}>
+                                    {parts_of_speech}
+                                </p>
+                            </Col>
+                        </Popover.Body>
+                    </Popover>
+                }
             >
-                <Popover
-                    id={`${word}-popover`}
-                    style={{
-                        backgroundColor: "var(--accent-color)"
-                    }}
+                <p
+                    lang="sa"
+                    ref={ref}
+                    role="presentation"
                     onMouseEnter={() => setShowPopover(true)}
                     onMouseLeave={() => setShowPopover(false)}
                     onTouchStart={() => setShowPopover(true)}
                     onTouchMove={() => setShowPopover(false)}
+                    style={{
+                        width: "fit-content",
+                        marginLeft: "auto", marginRight: "auto",
+                        backgroundColor: "var(--highlight-color)",
+                        color: "var(--text-alternate)",
+                        borderRadius: "2px",
+                    }}
                 >
-                    <Popover.Body ref={popoverRef} style={{ paddingTop: "7px", paddingBottom: "7px" }}>
-                        <Col>
-                            <RootMeanings root={root} />
-                            <p style={{ fontSize: "var(--tertiary-font-size)", marginTop: "5px" }}>
-                                {parts_of_speech}
-                            </p>
-                        </Col>
-                    </Popover.Body>
-                </Popover>
+                    {translitWord}
+                </p>
+            </OverlayTrigger>
 
-            </Overlay>
             <p style={{
-                fontSize: "14.5px",
+                fontSize: "var(--tertiary-font-size)",
                 color: "var(--text-tertiary)",
                 width: "fit-content",
                 maxWidth: "110px",
