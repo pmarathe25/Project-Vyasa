@@ -1,11 +1,14 @@
 import { graphql, Link, useStaticQuery } from 'gatsby'
 import * as React from 'react'
 import { Container, Navbar } from 'react-bootstrap'
+import useIsMobile from '../util/responsiveness'
 import AutohidingNavbar from './autohidingNavbar'
 import ResponsiveBreadcrumbs from './breadcrumbs'
 import { brandLink, container } from './layout.module.css'
 import NavMenu from './navMenu'
 import Seo from './seo'
+import { SettingsContext } from './settingsPanel'
+import { ThemeToggle } from './themeToggle'
 import { TranslationToggle } from './translationToggle'
 import { TransliterationModeSelect } from './transliterationModeSelect'
 
@@ -27,11 +30,16 @@ const Layout = ({
 
     const [navExpanded, setNavExpanded] = React.useState(false);
 
+    const isMobile = useIsMobile();
+
+    const { useDarkMode } = React.useContext(SettingsContext);
+    const theme = useDarkMode ? "dark" : "light";
+
     return (
-        <div className={container} data-theme="dark">
+        <div className={container} data-theme={theme} data-font-size={isMobile ? "mobile" : "desktop"}>
             <title>{pageTitle} | {data.site.siteMetadata.title}</title>
             <Seo location={location} title={pageTitle} />
-            <AutohidingNavbar isExpanded={navExpanded} setIsExpanded={setNavExpanded}>
+            <AutohidingNavbar isExpanded={navExpanded} setIsExpanded={setNavExpanded} variant={theme}>
                 <Container style={{
                     maxWidth: "var(--centered-content-width)",
                 }}>
@@ -46,6 +54,7 @@ const Layout = ({
 
                     {showTranslationButton ? <TranslationToggle navExpanded={navExpanded} /> : <></>}
 
+                    <ThemeToggle />
                     <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                 </Container>
             </AutohidingNavbar>

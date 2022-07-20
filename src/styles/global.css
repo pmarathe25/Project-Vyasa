@@ -1,30 +1,42 @@
 :root {
     --max-content-width: 1100px;
     --centered-content-width: 800px;
-    --desktop-text-font-size: 19.5px;
-    --mobile-text-font-size: 17px;
-    --desktop-translation-font-size: 16px;
-    --mobile-translation-font-size: 14.75px;
+}
+
+[data-font-size="desktop"] {
+    --primary-font-size: 19px;
+    --secondary-font-size: 16px;
+    --tertiary-font-size: 14.5px;
+}
+
+[data-font-size="mobile"] {
+    --primary-font-size: 17px;
+    --secondary-font-size: 14.75px;
+    --tertiary-font-size: 14.5px;
 }
 
 [data-theme="dark"] {
     --background: rgb(55, 55, 55);
+    --navbar-background: rgb(35, 35, 35);
     --accent-color: rgb(63, 113, 205);
     --highlight-color: rgb(85, 85, 85);
     --text-primary: rgb(255, 255, 255);
     --text-secondary: rgb(235, 235, 235);
     --text-tertiary: rgb(185, 185, 185);
-    --text-alternate: rgb(215, 235, 255);
+    --text-alternate: rgb(25, 78, 177);
+    --shadow-color: rgb(10, 10, 10);
 }
 
 [data-theme="light"] {
-    --background: rgb(245, 245, 245);
-    --accent-color: rgb(157, 191, 255);
-    --highlight-color: rgb(245, 243, 166);
+    --background: rgb(255, 255, 255);
+    --navbar-background: rgb(238, 235, 241);
+    --accent-color: rgb(175, 203, 255);
+    --highlight-color: rgb(215, 215, 215);
     --text-primary: rgb(0, 0, 0);
     --text-secondary: rgb(50, 50, 50);
     --text-tertiary: rgb(100, 100, 100);
-    --text-alternate: rgb(0, 121, 46);
+    --text-alternate: rgb(85, 135, 228);
+    --shadow-color: rgb(180, 180, 180);
 }
 
 h1,
@@ -47,28 +59,15 @@ h5 {
 }
 
 a:link {
-    color: rgb(238, 238, 238);
+    color: var(--text-primary);
 }
 
 a:visited {
-    color: rgb(218, 218, 218);
+    color: var(--text-secondary);
 }
 
 a:hover {
-    color: rgb(245, 226, 226);
-}
-
-a:active {
-    color: rgb(230, 230, 230);
-}
-
-.list-group-item-dark {
-    background-color: rgb(85, 89, 87);
-}
-
-.list-group-item-dark:hover {
-    background-color: rgb(111, 117, 116);
-    cursor: pointer;
+    color: var(--text-alternate);
 }
 
 .btn-primary {

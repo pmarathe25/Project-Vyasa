@@ -3,7 +3,7 @@ import { Nav, ToggleButton } from "react-bootstrap";
 import { SettingsContext } from "./settingsPanel";
 
 
-export const TranslationToggle = ({ navExpanded }) => {
+export const ThemeToggle = ({ navExpanded }) => {
     const style = {
         width: "fit-content",
         minWidth: "110px",
@@ -15,18 +15,18 @@ export const TranslationToggle = ({ navExpanded }) => {
         fontSize: "13.75px"
     };
 
-    const { showTranslation, setShowTranslation } = React.useContext(SettingsContext);
+    const { useDarkMode, setUseDarkMode } = React.useContext(SettingsContext);
 
     return (
         <Nav.Item style={style}>
             <ToggleButton
                 size="sm"
                 type="checkbox"
-                onClick={() => setShowTranslation(!showTranslation)}
-                checked={showTranslation}
+                onClick={() => setUseDarkMode(!useDarkMode)}
+                checked={useDarkMode}
                 style={style}
             >
-                {showTranslation ? "Hide" : "Show"} Translation
+                {useDarkMode ? "Disable" : "Enable"} Dark Mode
             </ToggleButton>
         </Nav.Item >
     )
