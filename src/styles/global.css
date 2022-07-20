@@ -23,7 +23,7 @@
     --text-primary: rgb(255, 255, 255);
     --text-secondary: rgb(235, 235, 235);
     --text-tertiary: rgb(185, 185, 185);
-    --text-alternate: rgb(25, 78, 177);
+    --text-alternate: rgb(209, 224, 255);
     --shadow-color: rgb(10, 10, 10);
 }
 
@@ -35,8 +35,14 @@
     --text-primary: rgb(0, 0, 0);
     --text-secondary: rgb(50, 50, 50);
     --text-tertiary: rgb(100, 100, 100);
-    --text-alternate: rgb(85, 135, 228);
+    --text-alternate: rgb(42, 101, 211);
     --shadow-color: rgb(180, 180, 180);
+}
+
+html,
+body {
+    height: 100%;
+    background-color: var(--background);
 }
 
 h1,

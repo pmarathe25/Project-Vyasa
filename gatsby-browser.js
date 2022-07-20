@@ -4,5 +4,7 @@ import 'bootstrap/dist/css/bootstrap.min.css'
 import "./src/styles/global.css"
 
 export const wrapRootElement = ({ element }) => (
-    <SettingsContextProvider>{element}</SettingsContextProvider>
+    <SettingsContextProvider>
+        {element}
+    </SettingsContextProvider>
 );
