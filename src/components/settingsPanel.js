@@ -24,7 +24,7 @@ export const SettingsContextProvider = (props) => {
     )
 }
 
-export const SettingsPanel = ({ show, setShow, variant }) => {
+export const SettingsPanel = ({ show, setShow, variant, showTranslitButton, showTranslationButton }) => {
     const {
         translitMode, setTranslitMode,
         showTranslation, setShowTranslation,
@@ -42,19 +42,29 @@ export const SettingsPanel = ({ show, setShow, variant }) => {
                 padding: "10px",
             }}>
                 <Form>
-                    <div style={{ display: "flex" }}>
-                        <Form.Check name="translit-select" inline type="radio" label="देवनागरी"
-                            value={DEVANAGARI_MODE} checked={translitMode === DEVANAGARI_MODE}
-                            onChange={(event) => { setTranslitMode(event.target.value) }}
-                        />
-                        <Form.Check name="translit-select" inline type="radio" label="IAST"
-                            value={IAST_MODE} checked={translitMode === IAST_MODE}
-                            onChange={(event) => { setTranslitMode(event.target.value) }}
-                        />
-                    </div>
-                    <Form.Check type="switch" label="Translation" checked={showTranslation}
-                        onChange={(event) => { setShowTranslation(event.target.checked) }}
-                    />
+                    {
+                        showTranslitButton ?
+                            <div style={{ display: "flex" }}>
+                                <Form.Check name="translit-select" inline type="radio" label="देवनागरी"
+                                    value={DEVANAGARI_MODE} checked={translitMode === DEVANAGARI_MODE}
+                                    onChange={(event) => { setTranslitMode(event.target.value) }}
+                                />
+                                <Form.Check name="translit-select" inline type="radio" label="IAST"
+                                    value={IAST_MODE} checked={translitMode === IAST_MODE}
+                                    onChange={(event) => { setTranslitMode(event.target.value) }}
+                                />
+                            </div>
+                            :
+                            <></>
+                    }
+                    {
+                        showTranslationButton ?
+                            <Form.Check type="switch" label="Translation" checked={showTranslation}
+                                onChange={(event) => { setShowTranslation(event.target.checked) }}
+                            />
+                            :
+                            <></>
+                    }
                     <Form.Check type="switch" label="Dark Mode" checked={useDarkMode}
                         onChange={(event) => { setUseDarkMode(event.target.checked) }}
                     />
