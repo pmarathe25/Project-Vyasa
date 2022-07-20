@@ -2,14 +2,11 @@ import { Link } from 'gatsby'
 import * as React from 'react'
 import Layout from '../components/layout'
 import toUrl from '../util/util'
-import NavMenu from '../components/navMenu'
 
 const Index = ({ location }) => {
     return (
         <Layout location={location} pageTitle="Project Vyasa">
             <h2>Project Vyasa</h2>
-            <br />
-            <NavMenu navExpanded={true} useClass="justify-content-center" />
             <p style={{
                 marginTop: "10px",
                 marginBottom: "40px",

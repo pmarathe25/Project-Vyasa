@@ -27,7 +27,7 @@ const Root = ({ root, partsOfSpeech }) => {
                 {(index > 0 ? ", " : "")}
                 <Link
                     to={toDictUrl(rootParts[index])}
-                    style={{ fontSize: "var(--primary-font-size)", fontStyle: "normal", whiteSpace: "nowrap" }}
+                    style={{ fontSize: "var(--secondary-font-size)", fontStyle: "normal", whiteSpace: "nowrap" }}
                     key={index}
                 >
                     {translitRootParts[index]}
@@ -57,7 +57,7 @@ const Root = ({ root, partsOfSpeech }) => {
 
 }
 
-const Definition = ({ word, makeDefinitionLink = false }) => {
+const Definition = ({ word, makeDefinitionLink = false, marginLeft = "5px" }) => {
     const [, definitions, roots, partsOfSpeeches] = React.useMemo(() => {
         return allWordsDict[word];
     }, [word]);
@@ -72,7 +72,7 @@ const Definition = ({ word, makeDefinitionLink = false }) => {
         definitionElements.push(
             <div key={index}
                 style={{
-                    width: "100%", marginLeft: "5px",
+                    width: "100%", marginLeft: marginLeft,
                     display: "inline-block",
                     ...commonStyle
                 }}>

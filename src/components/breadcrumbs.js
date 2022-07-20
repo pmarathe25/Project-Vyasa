@@ -24,7 +24,7 @@ const ResponsiveBreadcrumbs = ({ location, showCurrentPage = true }) => {
                 key={"nested" + curPath}
                 linkProps={{ "to": curPath }}
                 linkAs={Link}
-                style={{ fontSize: "16px" }}
+                style={{ fontSize: "var(--secondary-font-size)" }}
                 active={isCurrentPage}
             >
                 {titleCaseFromUrl(pathElement)}
@@ -41,13 +41,13 @@ const ResponsiveBreadcrumbs = ({ location, showCurrentPage = true }) => {
                 maxWidth: "var(--small-content-width)",
                 height: "fit-content",
                 marginLeft: "auto", marginRight: "auto",
-                marginBottom: "10px",
+                marginBottom: "20px",
                 borderBottom: "1px solid var(--highlight-color)",
             }}
             listProps={{
                 style: {
                     width: "fit-content",
-                    marginBottom: "10px",
+                    marginBottom: "20px",
                     marginLeft: "auto", marginRight: "auto",
                 }
             }}
