@@ -1,6 +1,6 @@
 import React from "react";
 import { transliterate } from "../util/transliterator";
-import { SettingsContext } from "./settingsContext";
+import { SettingsContext } from "./settingsPanel";
 
 const devanagari = require("../../content/generated/transliteration_rulesets/devanagari.json");
 const iast = require("../../content/generated/transliteration_rulesets/iast.json");

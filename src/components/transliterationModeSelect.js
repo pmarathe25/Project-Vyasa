@@ -1,6 +1,6 @@
 import * as React from "react";
 import { Nav, ToggleButton, ToggleButtonGroup } from "react-bootstrap";
-import { SettingsContext } from "./settingsContext";
+import { SettingsContext } from "./settingsPanel";
 
 
 export const TransliterationModeSelect = ({ navExpanded }) => {

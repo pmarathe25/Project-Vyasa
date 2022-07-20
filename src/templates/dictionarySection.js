@@ -7,15 +7,13 @@ import SectionLinksBar from "../components/dictionarySectionLinksBar"
 import Layout from '../components/layout'
 import OffsetAnchor from '../components/offsetAnchor'
 import { useTransliterate } from '../components/transliterationHook'
-import useIsMobile from '../util/responsiveness'
 import { sortSanskrit, toDictUrl, toUrl } from '../util/util'
 
 
 const WordAndDefinitions = ({ location, word }) => {
     const translitWord = useTransliterate(word);
-    const isMobile = useIsMobile();
 
-    const fontSize = isMobile ? "var(--mobile-text-font-size)" : "var(--desktop-text-font-size)";
+    const fontSize = "var(--primary-font-size)";
 
     const wordElements = React.useMemo(() => {
         const wordLinkStyle = {

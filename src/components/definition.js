@@ -3,21 +3,17 @@ import * as React from 'react';
 import { Container } from 'react-bootstrap';
 import allWordsDict from "../../content/generated/dictionary/all_words.json";
 import { useTransliterate } from '../components/transliterationHook';
-import useIsMobile from '../util/responsiveness';
 import { toDictUrl } from '../util/util';
 
-const style = {
+const commonStyle = {
     color: "var(--text-secondary)",
     padding: 0,
-    fontSize: "var(--mobile-translation-font-size)",
+    fontSize: "var(--tertiary-font-size)",
 };
 
 
 const Root = ({ root, partsOfSpeech }) => {
     const translitRootParts = useTransliterate(root).split("+");
-    const isMobile = useIsMobile();
-
-    const fontSize = isMobile ? "var(--mobile-text-font-size)" : "var(--desktop-text-font-size)";
 
     if (!root) {
         return (<></>);
@@ -27,11 +23,11 @@ const Root = ({ root, partsOfSpeech }) => {
     const rootParts = root.split("+");
     for (let index in translitRootParts) {
         refLinks.push(
-            <div lang="sa" style={{ marginLeft: "4px", display: "inline-block", ...style }} key={index}>
+            <div lang="sa" style={{ marginLeft: "4px", display: "inline-block", ...commonStyle }} key={index}>
                 {(index > 0 ? ", " : "")}
                 <Link
                     to={toDictUrl(rootParts[index])}
-                    style={{ fontSize: fontSize, fontStyle: "normal", whiteSpace: "nowrap" }}
+                    style={{ fontSize: "var(--primary-font-size)", fontStyle: "normal", whiteSpace: "nowrap" }}
                     key={index}
                 >
                     {translitRootParts[index]}
@@ -41,7 +37,7 @@ const Root = ({ root, partsOfSpeech }) => {
     }
 
     return (
-        <div style={{ marginLeft: "4px", display: "inline-block", ...style }}>
+        <div style={{ marginLeft: "4px", display: "inline-block", ...commonStyle }}>
             {
                 partsOfSpeech
                     ?
@@ -78,7 +74,7 @@ const Definition = ({ word, makeDefinitionLink = false }) => {
                 style={{
                     width: "100%", marginLeft: "5px",
                     display: "inline-block",
-                    ...style
+                    ...commonStyle
                 }}>
                 {
                     makeDefinitionLink

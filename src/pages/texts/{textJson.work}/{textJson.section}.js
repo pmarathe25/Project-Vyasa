@@ -1,7 +1,7 @@
 import { graphql } from 'gatsby'
 import * as React from 'react'
 import Layout from '../../../components/layout'
-import { SettingsContext } from '../../../components/settingsContext'
+import { SettingsContext } from '../../../components/settingsPanel'
 import Verse from '../../../components/verse'
 
 const Section = ({ location, data }) => {

@@ -4,12 +4,12 @@ import { Col, Overlay, Popover, Row } from 'react-bootstrap';
 import useIsMobile from "../util/responsiveness";
 import { toDictUrl } from '../util/util';
 import Definition from './definition';
-import { SettingsContext } from './settingsContext';
+import { SettingsContext } from './settingsPanel';
 import { useTransliterate } from './transliterationHook';
 import { clickableText, verseText } from "./verse.module.css";
 
 
-const RootMeanings = ({ root, fontSize }) => {
+const RootMeanings = ({ root }) => {
     const roots = root.split("+");
     const translitRoots = useTransliterate(root).split("+");
 
@@ -20,12 +20,13 @@ const RootMeanings = ({ root, fontSize }) => {
                     <div style={{ display: "flex" }} key={index}>
                         <Link to={toDictUrl(roots[index])} target="_blank"
                             style={{
-                                color: "rgb(175, 175, 175)", height: "fit-content", textDecoration: "underline"
+                                fontSize: "var(--primary-font-size)",
+                                paddingRight: "5px",
+                                whiteSpace: "nowrap",
+                                height: "fit-content",
                             }}
                         >
-                            <p style={{ fontSize: fontSize, paddingRight: "5px", whiteSpace: "nowrap" }}>
-                                {rootPar}
-                            </p>
+                            {rootPar}
                         </Link>
                         <Definition word={roots[index]} />
                     </div>
@@ -35,7 +36,7 @@ const RootMeanings = ({ root, fontSize }) => {
     )
 }
 
-const WordWithPopover = ({ word, definition, root, parts_of_speech, fontSize }) => {
+const WordWithPopover = ({ word, definition, root, parts_of_speech }) => {
     const translitWord = useTransliterate(word);
 
     const containerRef = React.useRef(null);
@@ -68,7 +69,7 @@ const WordWithPopover = ({ word, definition, root, parts_of_speech, fontSize }) 
     }, []);
 
     if (!definition && !root && !parts_of_speech) {
-        return (<p style={{ padding: "0px", margin: "0px", width: "fit-content", fontSize: fontSize }}>
+        return (<p style={{ padding: "0px", margin: "0px", width: "fit-content", fontSize: "var(--primary-font-size)" }}>
             {translitWord}
         </p>);
 
@@ -114,8 +115,8 @@ const WordWithPopover = ({ word, definition, root, parts_of_speech, fontSize }) 
                 >
                     <Popover.Body ref={popoverRef} style={{ paddingTop: "10px", paddingBottom: "10px" }}>
                         <Col>
-                            <RootMeanings root={root} fontSize={fontSize} />
-                            <p style={{ fontSize: "15px" }}>
+                            <RootMeanings root={root} />
+                            <p style={{ fontSize: "var(--tertiary-font-size)" }}>
                                 {parts_of_speech}
                             </p>
                         </Col>
@@ -137,7 +138,7 @@ const WordWithPopover = ({ word, definition, root, parts_of_speech, fontSize }) 
     )
 }
 
-const WordByWord = ({ wordByWord, fontSize }) => {
+const WordByWord = ({ wordByWord }) => {
     return (
         <>
             {
@@ -145,7 +146,7 @@ const WordByWord = ({ wordByWord, fontSize }) => {
                     <Row
                         key={index}
                         style={{
-                            fontSize: fontSize,
+                            fontSize: "var(--primary-font-size)",
                             whiteSpace: "pre-wrap",
                             marginLeft: "auto", marginRight: "auto",
                         }}
@@ -159,7 +160,6 @@ const WordByWord = ({ wordByWord, fontSize }) => {
                                     definition={definition}
                                     root={root}
                                     parts_of_speech={parts_of_speech}
-                                    fontSize={fontSize}
                                 />
                             )
                         }
@@ -184,15 +184,15 @@ const Verse = ({ text, wordByWord, translation }) => {
         marginBottom: "8px",
     };
 
-    const fontSize = isMobile ? "var(--mobile-text-font-size)" : "var(--desktop-text-font-size)";
-    const translationFontSize = isMobile ? "var(--mobile-translation-font-size)" : "var(--desktop-translation-font-size)";
+    const fontSize = "var(--primary-font-size)";
+    const translationFontSize = "var(--secondary-font-size)";
 
     const verseTextComp = (
         <Col style={colStyle}>
             {
                 showWordByWord ?
                     <>
-                        <WordByWord wordByWord={wordByWord} fontSize={fontSize} />
+                        <WordByWord wordByWord={wordByWord} />
                         <p
                             role="presentation"
                             onClick={() => setShowWordByWord(false)}
@@ -230,7 +230,7 @@ const Verse = ({ text, wordByWord, translation }) => {
         <Row className={isMobile ? "row-cols-1" : "row-cols-2"} style={{
             marginTop: "15px",
             marginLeft: "auto", marginRight: "auto",
-            borderBottom: isMobile ? "1px solid rgb(95, 95, 95)" : "",
+            borderBottom: isMobile ? "1px solid var(--highlight-color)" : "",
         }}>
             {
                 verseTextComp
