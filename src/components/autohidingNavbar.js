@@ -23,6 +23,11 @@ const AutohidingNavbar = (props) => {
         }
 
         const onScroll = () => {
+            if (!props.allowCollapse) {
+                setIsVisible(true);
+                return;
+            }
+
             setOffset([offset[1], window.pageYOffset]);
 
             // Always enable the navbar when at the top of the page
@@ -52,8 +57,10 @@ const AutohidingNavbar = (props) => {
         window.removeEventListener('scroll', onScroll);
         window.addEventListener('scroll', onScroll, { passive: true });
         return () => window.removeEventListener('scroll', onScroll);
-    }, [offset, scrollDownTotal, scrollUpTotal,
-        isMobile, props.isExpanded]);
+    },
+        [offset, scrollDownTotal, scrollUpTotal,
+            isMobile, props.isExpanded, props.allowCollapse]
+    );
 
     const navbarSlideOffStyle = { top: -100, transition: "all 0.5s ease" };
     const navbarSlideOnStyle = { top: 0, transition: "all 0.2s ease" };

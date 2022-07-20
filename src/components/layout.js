@@ -5,18 +5,12 @@ import AutohidingNavbar from './autohidingNavbar'
 import ResponsiveBreadcrumbs from './breadcrumbs'
 import { brandLink, container } from './layout.module.css'
 import NavMenu from './navMenu'
-import { SettingsContext } from './settingsPanel'
+import { SettingsContext, SettingsPanel } from './settingsPanel'
 import SiteHelmet from './siteHelmet'
-import { ThemeToggle } from './themeToggle'
-import { TranslationToggle } from './translationToggle'
-import { TransliterationModeSelect } from './transliterationModeSelect'
-
 
 const Layout = ({
     location, pageTitle, children,
     maxWidth = "var(--centered-content-width)",
-    showTranslitButton = false,
-    showTranslationButton = false,
     showCurrentPageInBreadcrumbs = true,
 }) => {
     const data = useStaticQuery(graphql`
@@ -29,14 +23,20 @@ const Layout = ({
     }`)
 
     const [navExpanded, setNavExpanded] = React.useState(false);
+    const [showSettingsPanel, setShowSettingsPanel] = React.useState(false);
 
     const { useDarkMode } = React.useContext(SettingsContext);
+    const variant = useDarkMode ? "dark" : "light";
 
     return (
         <div className={container}>
             <title>{pageTitle} | {data.site.siteMetadata.title}</title>
             <SiteHelmet location={location} title={pageTitle} />
-            <AutohidingNavbar isExpanded={navExpanded} setIsExpanded={setNavExpanded} variant={useDarkMode ? "dark" : "light"}>
+            <AutohidingNavbar
+                isExpanded={navExpanded} setIsExpanded={setNavExpanded}
+                allowCollapse={!showSettingsPanel}
+                variant={variant}
+            >
                 <Container style={{
                     maxWidth: "var(--centered-content-width)",
                 }}>
@@ -46,12 +46,12 @@ const Layout = ({
 
                     <Navbar.Collapse id="responsive-navbar-nav">
                         <NavMenu navExpanded={navExpanded} useClass="top-bar-links" />
-                        {showTranslitButton ? <TransliterationModeSelect navExpanded={navExpanded} /> : <></>}
                     </Navbar.Collapse>
 
-                    {showTranslationButton ? <TranslationToggle navExpanded={navExpanded} /> : <></>}
+                    <SettingsPanel
+                        show={showSettingsPanel} setShow={setShowSettingsPanel}
+                        variant={variant} />
 
-                    <ThemeToggle />
                     <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                 </Container>
             </AutohidingNavbar>

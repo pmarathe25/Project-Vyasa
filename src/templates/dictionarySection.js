@@ -118,7 +118,6 @@ const DictSection = ({ location, pageContext }) => {
         <Layout
             location={location} pageTitle="Dictionary"
             maxWidth="var(--max-content-width)"
-            showTranslitButton={true}
             showCurrentPageInBreadcrumbs={false}
         >
             <SectionLinksBar />

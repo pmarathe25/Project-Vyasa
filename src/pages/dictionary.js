@@ -7,7 +7,6 @@ const Dictionary = ({ location }) => {
         <Layout
             location={location} pageTitle="Dictionary"
             maxWidth="var(--max-content-width)"
-            showTranslitButton={true}
         >
             <SectionLinksBar />
             <p style={{ textAlign: "center" }}>
