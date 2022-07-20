@@ -20,6 +20,7 @@ const About = ({ location }) => {
                 literally correct translation; that is, the included translations do not
                 consider the broader cultural, historical, and philosophical context of the texts.
             </p>
+            <br />
             <h2>Contributing</h2>
             <p style={textStyle}>
                 If you'd like to help with this project, there are several ways to do so.
