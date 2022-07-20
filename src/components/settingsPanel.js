@@ -43,7 +43,7 @@ export const SettingsPanel = ({ show, setShow, variant, showTranslitButton, show
             <Dropdown.Menu variant={variant} renderOnMount={true} style={{
                 backgroundColor: "var(--navbar-background)",
                 color: "var(--text-primary)",
-                padding: "10px",
+                paddingLeft: "20px",
             }}>
                 <Form>
                     {
