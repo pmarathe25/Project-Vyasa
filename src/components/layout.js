@@ -1,16 +1,16 @@
 import { graphql, Link, useStaticQuery } from 'gatsby'
 import * as React from 'react'
 import { Container, Navbar } from 'react-bootstrap'
-import useIsMobile from '../util/responsiveness'
 import AutohidingNavbar from './autohidingNavbar'
 import ResponsiveBreadcrumbs from './breadcrumbs'
 import { brandLink, container } from './layout.module.css'
 import NavMenu from './navMenu'
-import Seo from './seo'
 import { SettingsContext } from './settingsPanel'
+import SiteHelmet from './siteHelmet'
 import { ThemeToggle } from './themeToggle'
 import { TranslationToggle } from './translationToggle'
 import { TransliterationModeSelect } from './transliterationModeSelect'
+
 
 const Layout = ({
     location, pageTitle, children,
@@ -30,16 +30,13 @@ const Layout = ({
 
     const [navExpanded, setNavExpanded] = React.useState(false);
 
-    const isMobile = useIsMobile();
-
     const { useDarkMode } = React.useContext(SettingsContext);
-    const theme = useDarkMode ? "dark" : "light";
 
     return (
-        <div className={container} data-theme={theme} data-font-size={isMobile ? "mobile" : "desktop"}>
+        <div className={container}>
             <title>{pageTitle} | {data.site.siteMetadata.title}</title>
-            <Seo location={location} title={pageTitle} />
-            <AutohidingNavbar isExpanded={navExpanded} setIsExpanded={setNavExpanded} variant={theme}>
+            <SiteHelmet location={location} title={pageTitle} />
+            <AutohidingNavbar isExpanded={navExpanded} setIsExpanded={setNavExpanded} variant={useDarkMode ? "dark" : "light"}>
                 <Container style={{
                     maxWidth: "var(--centered-content-width)",
                 }}>

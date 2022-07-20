@@ -1,9 +1,12 @@
+import { graphql, useStaticQuery } from "gatsby"
 import React from "react"
 import { Helmet } from "react-helmet"
-import { useStaticQuery, graphql } from "gatsby"
+import useIsMobile from "../util/responsiveness"
+import { SettingsContext } from './settingsPanel'
 
-const Seo = ({ location, title, description }) => {
+const SiteHelmet = ({ location, title, description }) => {
     const { site } = useStaticQuery(query)
+    const isMobile = useIsMobile();
 
     const {
         defaultTitle,
@@ -18,21 +21,28 @@ const Seo = ({ location, title, description }) => {
         url: `${siteUrl}${location.pathname}`,
     }
 
+    const { useDarkMode } = React.useContext(SettingsContext);
+    const theme = useDarkMode ? "dark" : "light";
+
     return (
         <Helmet title={seo.title} titleTemplate={titleTemplate} htmlAttributes={{
             lang: "en",
+            "data-theme": theme,
+            "data-font-size": isMobile ? "mobile" : "desktop",
         }}>
             <meta name="description" content={seo.description} />
             {seo.url && <meta property="og:url" content={seo.url} />}
             {seo.title && <meta property="og:title" content={seo.title} />}
-            {seo.description && (
-                <meta property="og:description" content={seo.description} />
-            )}
-        </Helmet>
+            {
+                seo.description && (
+                    <meta property="og:description" content={seo.description} />
+                )
+            }
+        </Helmet >
     )
 }
 
-export default Seo;
+export default SiteHelmet;
 
 const query = graphql`
   query {

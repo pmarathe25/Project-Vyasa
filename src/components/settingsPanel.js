@@ -4,9 +4,11 @@ import { useLocalStorage } from "./localStorage";
 
 export const SettingsContext = React.createContext();
 
+export const DEVANAGARI_MODE = "devanagari";
+export const IAST_MODE = "iast";
+
 export const SettingsContextProvider = (props) => {
-    // 0: Devanagari, 1: IAST
-    const [translitMode, setTranslitMode] = useLocalStorage("translit-mode", "devanagari");
+    const [translitMode, setTranslitMode] = useLocalStorage("translit-mode", DEVANAGARI_MODE);
     const [showTranslation, setShowTranslation] = useLocalStorage("toggle-translation", true);
     const [useDarkMode, setUseDarkMode] = useLocalStorage("toggle-dark-mode", window.matchMedia('(prefers-color-scheme: dark)').matches);
 
@@ -28,9 +30,6 @@ export const SettingsPanel = () => {
         useDarkMode, setUseDarkMode
     } = React.useContext(SettingsContext);
 
-    const devanagari = "devanagari";
-    const iast = "iast";
-
     const style = { color: "var(--text-primary)", };
 
     return (
@@ -43,11 +42,11 @@ export const SettingsPanel = () => {
             />
             <div>
                 <Form.Check name="translit-select" inline type="radio" label="देवनागरी"
-                    value={devanagari} checked={translitMode === devanagari} style={style}
+                    value={DEVANAGARI_MODE} checked={translitMode === DEVANAGARI_MODE} style={style}
                     onChange={(event) => { setTranslitMode(event.target.value) }}
                 />
-                <Form.Check name="translit-select" inline type="radio" label="IAST"
-                    value={iast} checked={translitMode === iast} style={style}
+                <Form.Check name="translit-select" inline type="radio" label="IAST_MODE"
+                    value={IAST_MODE} checked={translitMode === IAST_MODE} style={style}
                     onChange={(event) => { setTranslitMode(event.target.value) }}
                 />
             </div>
