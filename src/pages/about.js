@@ -12,8 +12,7 @@ const About = ({ location }) => {
             <p style={textStyle}>
                 The goal of this project is to provide a high-quality Sanskrit-English reader
                 for various Sanskrit texts in a modern web interface. That includes literal word-by-word
-                translations, word-level grammatical analysis, as well as a complete translation for
-                each verse.
+                translations, word-level grammatical analysis, as well as a complete translation.
                 <br />
                 <br />
                 It is <b>not</b> the aim to provide anything more than a

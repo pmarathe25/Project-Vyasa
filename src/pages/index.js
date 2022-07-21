@@ -9,16 +9,11 @@ const Index = ({ location }) => {
             <h2>Project Vyasa</h2>
             <p style={{
                 marginTop: "10px",
-                marginBottom: "40px",
-                marginLeft: "auto", marginRight: "auto",
-                fontSize: "18px",
                 whiteSpace: "pre-wrap"
             }}>
                 Project Vyasa's goal is to create a high quality Sanskrit-English reader for various texts.
-                <br />
                 If this is your first time here, you may want to check out
                 the <Link to={toUrl("/about")}>About</Link> page.
-                <br />
                 Otherwise, see the <Link to={toUrl("/texts")}>Texts</Link> page to get started.
             </p>
         </Layout >

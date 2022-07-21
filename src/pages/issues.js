@@ -28,7 +28,7 @@ const Issues = ({ location }) => {
                 you can on what triggers the bug and how to reproduce it.
                 <br />
                 <br />
-                For content inaccuracies, specify where the error is (a link to the verse
+                For content inaccuracies, specify where the error is (a link to the page
                 is ideal) and, if possible, what correction needs to be made.
             </p>
         </Layout >
