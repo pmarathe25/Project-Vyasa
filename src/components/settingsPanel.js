@@ -6,6 +6,7 @@ import { useLocalStorage } from "./localStorage";
 export const DEVANAGARI_MODE = "devanagari";
 export const IAST_MODE = "iast";
 
+// Need to pre-populate the context in order for this to work in production builds.
 export const SettingsContext = React.createContext({
     translitMode: DEVANAGARI_MODE, setTranslitMode: () => { },
     showTranslation: true, setShowTranslation: () => { },
