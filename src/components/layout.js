@@ -10,7 +10,7 @@ import SiteHelmet from './siteHelmet'
 
 const Layout = ({
     location, pageTitle, children,
-    maxWidth = "var(--small-content-width)",
+    maxWidth = "var(--medium-content-width)",
     showTranslitButton = false,
     showTranslationButton = false,
     showCurrentPageInBreadcrumbs = true,

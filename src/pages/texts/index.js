@@ -18,7 +18,10 @@ const WorkLink = ({ workSanskritName, to }) => {
 
 const Texts = ({ location, data }) => {
     return (
-        <Layout location={location} pageTitle="Texts" showTranslitButton={true}>
+        <Layout location={location} pageTitle="Texts"
+            showTranslitButton={true}
+            maxWidth="var(--small-content-width)"
+        >
             <h2>Texts</h2>
             {
                 data.allTextJson.group.map(group => (

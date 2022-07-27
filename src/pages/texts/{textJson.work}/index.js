@@ -36,7 +36,10 @@ const SectionIndex = ({ location, data, pageContext }) => {
 
 
     return (
-        <Layout location={location} pageTitle={pageContext.work} showTranslitButton={true}>
+        <Layout location={location} pageTitle={pageContext.work}
+            showTranslitButton={true}
+            maxWidth="var(--small-content-width)"
+        >
             <h2>{translitWork}</h2>
             {rows}
         </Layout >
