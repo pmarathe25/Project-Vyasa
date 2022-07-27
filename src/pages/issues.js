@@ -10,7 +10,7 @@ const Issues = ({ location }) => {
 
     return (
         <Layout location={location} pageTitle={"Issues?"}>
-            <h2>Experiencing Issues or Want to Leave Feedback?</h2>
+            <h2 style={{ textAlign: "left" }}>Experiencing Issues or Want to Leave Feedback?</h2>
             <p style={textStyle}>
                 If you encounter any issues on this website or inaccuracies in the content,
                 or you want to request a new feature, don't hesitate
@@ -22,12 +22,10 @@ const Issues = ({ location }) => {
                     file a GitHub issue
                 </a>
                 .
-                <br />
-                <br />
+            </p>
+            <p style={textStyle}>
                 For any bugs you experience on the website, leave as much detail as
                 you can on what triggers the bug and how to reproduce it.
-                <br />
-                <br />
                 For content inaccuracies, specify where the error is (a link to the page
                 is ideal) and, if possible, what correction needs to be made.
             </p>

@@ -36,9 +36,9 @@ export function titleCaseFromUrl(str) {
 
     const str_parts = str.split("-");
 
-    // Special case for purely numerical titles, which should be joined by a '.'
+    // Special case for purely numerical titles, which should be joined by a '-' instead of a space.
     if (str_parts.every(isNumber)) {
-        return str_parts.join(".")
+        return str_parts.join("-")
     }
 
     for (let substr of str_parts) {

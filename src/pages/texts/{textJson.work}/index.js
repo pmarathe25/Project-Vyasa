@@ -2,12 +2,15 @@ import { graphql, Link } from 'gatsby'
 import * as React from 'react'
 import { Col, Row } from 'react-bootstrap'
 import Layout from '../../../components/layout'
+import { useTransliterate } from '../../../components/transliterationHook'
 
 const SectionLink = ({ section, to }) => {
+    const tranlistSection = useTransliterate(section);
+
     return (
         <Col>
             <Link to={to} style={{ fontSize: "18px" }}>
-                {section}
+                {tranlistSection}
             </Link>
         </Col>
     )

@@ -403,7 +403,7 @@ def process_files(input_path, output_path, transliteration_ruleset, dictionary):
     def extract_num(part):
         return str(int(part.split("_")[0]))
 
-    section = ".".join(
+    section = "-".join(
         extract_num(path_component) for path_component in os.path.split(os.path.relpath(input_path, work_path))
     )
 
