@@ -34,7 +34,7 @@ const Section = ({ location, data }) => {
             <SectionTitle data={data} />
             <SectionSubtitle data={data} />
             < p style={{ textAlign: "center", color: "var(--text-alternate)", fontSize: "var(--tertiary-font-size", marginBottom: "30px" }}>
-                Click or tap on verses to see word-level analysis.
+                Click or tap on Sanskrit text to see word-level analysis
             </p >
             {
                 data.textJson.verses.map((node, index) =>
