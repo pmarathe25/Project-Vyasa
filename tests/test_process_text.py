@@ -321,6 +321,7 @@ def test_process_text(content, expected_output):
         inp.write(dedent(content))
 
     expected_output["work"] = "Work"
+    expected_output["workSanskritName"] = "Work"
     expected_output["group"] = "01_example_book"
     expected_output["section"] = "01_example_book-01_example_chapter"
     expected_output["sectionName"] = TEST_SECTION_NAME
