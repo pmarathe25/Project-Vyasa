@@ -1,7 +1,7 @@
 SOURCE_DIR := src
 SCRIPTS_DIR := scripts
 
-CONTENT_DIR := content/
+CONTENT_DIR := content
 
 RAW_CONTENT_DIR := $(CONTENT_DIR)/raw
 RAW_RULE_SET_DIR := $(RAW_CONTENT_DIR)/transliteration_rulesets

@@ -5,18 +5,20 @@ import Layout from '../../../components/layout'
 import { useTransliterate } from '../../../components/transliterationHook'
 
 const SectionLink = ({ section, to }) => {
-    const tranlistSection = useTransliterate(section);
+    const translitSection = useTransliterate(section);
 
     return (
         <Col>
-            <Link to={to} style={{ fontSize: "18px" }}>
-                {tranlistSection}
+            <Link to={to} style={{ fontSize: "var(--sanskrit-large-font-size)" }}>
+                {translitSection}
             </Link>
         </Col>
     )
 }
 
 const SectionIndex = ({ location, data, pageContext }) => {
+    const translitWork = useTransliterate(data.allTextJson.group[0].nodes[0].workSanskritName);
+
     // Sections are split up into groups. Each group gets its own row.
     let rows = [];
     for (let index in data.allTextJson.group) {
@@ -34,8 +36,8 @@ const SectionIndex = ({ location, data, pageContext }) => {
 
 
     return (
-        <Layout location={location} pageTitle={pageContext.work}>
-            <h2>{pageContext.work}</h2>
+        <Layout location={location} pageTitle={pageContext.work} showTranslitButton={true}>
+            <h2>{translitWork}</h2>
             {rows}
         </Layout >
     )
@@ -44,14 +46,15 @@ const SectionIndex = ({ location, data, pageContext }) => {
 export const query = graphql`
 query ($work: String) {
     allTextJson(filter: {work: {eq: $work}}) {
-      group(field: group) {
-        nodes {
-              section
-              sectionPath: gatsbyPath(filePath: "/texts/{textJson.work}/{textJson.section}")
+        group(field: group) {
+            nodes {
+                section
+                sectionPath: gatsbyPath(filePath: "/texts/{textJson.work}/{textJson.section}")
+                workSanskritName
+            }
         }
-      }
     }
-  }
+}
 `
 
 export default SectionIndex

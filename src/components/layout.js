@@ -62,7 +62,6 @@ const Layout = ({
             </AutohidingNavbar>
             <Container style={{
                 maxWidth: maxWidth,
-                marginTop: "40px",
             }}>
                 <ResponsiveBreadcrumbs location={location} showCurrentPage={showCurrentPageInBreadcrumbs} />
                 {children}

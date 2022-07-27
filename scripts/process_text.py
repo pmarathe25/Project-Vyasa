@@ -383,7 +383,7 @@ def is_str_end_marker(inp):
     return is_str_verse_end_marker(inp) or inp == "|"
 
 
-def process_files(input_path, output_path, transliteration_ruleset, dictionary):
+def process_files(input_dir, input_path, output_path, transliteration_ruleset, dictionary):
     # Early exit when nothing has been modified.
     if (
         os.path.exists(output_path)
@@ -396,28 +396,43 @@ def process_files(input_path, output_path, transliteration_ruleset, dictionary):
     TRANSLIT_RULESET = json.load(open(transliteration_ruleset))
     DICTIONARY = json.load(open(dictionary))
 
-    dirname = os.path.dirname(input_path)
-    work_path = os.path.realpath(os.path.join(dirname, os.path.pardir))
-    work = os.path.basename(work_path).title()
+    work_dir = os.path.join(input_dir, os.path.relpath(input_path, input_dir).split(os.path.sep)[0])
+    work = os.path.basename(work_dir).title()
 
-    def extract_num(part):
-        return str(int(part.split("_")[0]))
+    def normalize_if_num(name):
+        try:
+            return str(int(name))
+        except ValueError:
+            return name
 
-    section = "-".join(
-        extract_num(path_component) for path_component in os.path.split(os.path.relpath(input_path, work_path))
+    SECTION_SEP = "-"
+
+    section = SECTION_SEP.join(
+        normalize_if_num(os.path.splitext(path_component)[0])
+        for path_component in os.path.relpath(input_path, work_dir).split(os.path.sep)
     )
-
-    processed = {
-        "work": work,
-        "group": section.split(".")[0],
-        "section": section,
-        "verses": [],
-    }
 
     contents = open(input_path).read().strip()
 
     # Strip trailing whitespace at the ends of lines
     contents = "\n".join(map(lambda x: x.strip(), contents.splitlines()))
+
+    # Extract the name of the section.
+    title, _, contents = contents.partition("\n\n")
+
+    work_sanskrit_name = work
+    META_PATH = os.path.join(work_dir, "meta.json")
+    if os.path.exists(META_PATH):
+        work_sanskrit_name = json.load(open(META_PATH))["name"]
+
+    processed = {
+        "work": work,
+        "workSanskritName": work_sanskrit_name,
+        "group": section.split(SECTION_SEP)[0],
+        "section": section,
+        "sectionName": title,
+        "verses": [],
+    }
 
     # Parses input file according to format outlined in CONTRIBUTING.md.
     # To have the front-end handle newlines, we need a bit of weirdness in the word-by-word translation - specifically,
@@ -487,7 +502,7 @@ def main():
         output_path = "_".join(os.path.relpath(path, args.input_dir).split(os.path.sep))
         output_path = os.path.splitext(output_path)[0] + ".json"
         output_path = os.path.join(args.output, output_path)
-        process_files(path, output_path, args.transliteration_ruleset, args.dictionary)
+        process_files(args.input_dir, path, output_path, args.transliteration_ruleset, args.dictionary)
 
 
 if __name__ == "__main__":

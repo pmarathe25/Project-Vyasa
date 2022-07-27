@@ -110,7 +110,10 @@ def test_build_sandhied_text(words, expected_output, transliteration_ruleset):
     assert build_sandhied_text(words, transliteration_ruleset) == expected_output
 
 
-def build_expected(verse_num, verses_text, translations, word_lists):
+TEST_SECTION_NAME = "test"
+
+
+def build_expected(verses_text, translations, word_lists):
     """
     Args:
         verses_text (List[str]):
@@ -156,7 +159,9 @@ def build_expected(verse_num, verses_text, translations, word_lists):
     [
         # Basic
         (
-            """
+            f"""
+            {TEST_SECTION_NAME}
+
             ca (ca,) and
             aiva (aiva,) just so
             |
@@ -164,7 +169,6 @@ def build_expected(verse_num, verses_text, translations, word_lists):
             And so
             """,
             build_expected(
-                "1",
                 ["caaiva |"],
                 ["And so"],
                 [
@@ -182,7 +186,9 @@ def build_expected(verse_num, verses_text, translations, word_lists):
         ),
         # Alternate syntax omitting explicit root and parts of speech
         (
-            """
+            f"""
+            {TEST_SECTION_NAME}
+
             ca and
             aiva just so
             |
@@ -190,7 +196,6 @@ def build_expected(verse_num, verses_text, translations, word_lists):
             And so
             """,
             build_expected(
-                "1",
                 ["caaiva |"],
                 ["And so"],
                 [
@@ -208,7 +213,9 @@ def build_expected(verse_num, verses_text, translations, word_lists):
         ),
         # Multi-line - no sandhi should happen
         (
-            """
+            f"""
+            {TEST_SECTION_NAME}
+
             ca (ca,) and
             |
             aiva (aiva,) just so
@@ -217,7 +224,6 @@ def build_expected(verse_num, verses_text, translations, word_lists):
             And so
             """,
             build_expected(
-                "1",
                 ["ca |\naiva || 0 ||"],
                 ["And so"],
                 [
@@ -239,14 +245,15 @@ def build_expected(verse_num, verses_text, translations, word_lists):
         ),
         # Check parts of speech ordering
         (
-            """
+            f"""
+            {TEST_SECTION_NAME}
+
             prastaavayan (pra-!stu, nom sing m pres act part caus) causing to start, starting
             |
 
             Starting
             """,
             build_expected(
-                "1",
                 ["prastaavayan |"],
                 ["Starting"],
                 [
@@ -268,7 +275,9 @@ def build_expected(verse_num, verses_text, translations, word_lists):
         ),
         # Verb classes
         (
-            """
+            f"""
+            {TEST_SECTION_NAME}
+
             ca (ca,) and
             aiva (aiva,) just so
             ks<ayati (!ks<i=VI, 3 sing pres act ind) it is destroyed
@@ -277,7 +286,6 @@ def build_expected(verse_num, verses_text, translations, word_lists):
             And so it is destroyed
             """,
             build_expected(
-                "1",
                 ["caaiva ks<ayati |"],
                 ["And so it is destroyed"],
                 [
@@ -313,8 +321,9 @@ def test_process_text(content, expected_output):
         inp.write(dedent(content))
 
     expected_output["work"] = "Work"
-    expected_output["group"] = "1"
-    expected_output["section"] = "1.1"
+    expected_output["group"] = "01_example_book"
+    expected_output["section"] = "01_example_book-01_example_chapter"
+    expected_output["sectionName"] = TEST_SECTION_NAME
 
     out_dir = os.path.join(root_dir.name, "processed")
 
