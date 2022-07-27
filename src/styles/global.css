@@ -6,6 +6,7 @@
 }
 
 [data-font-size="desktop-devanagari"] {
+    --sanskrit-large-font-size: 22.5px;
     --sanskrit-font-size: 19px;
     --primary-font-size: 19px;
     --secondary-font-size: 16px;
@@ -13,6 +14,7 @@
 }
 
 [data-font-size="desktop-iast"] {
+    --sanskrit-large-font-size: 21px;
     --sanskrit-font-size: 17.5px;
     --primary-font-size: 19px;
     --secondary-font-size: 16px;
@@ -20,6 +22,7 @@
 }
 
 [data-font-size="mobile-devanagari"] {
+    --sanskrit-large-font-size: 19px;
     --sanskrit-font-size: 16.5px;
     --primary-font-size: 16.5px;
     --secondary-font-size: 14.75px;
@@ -27,6 +30,7 @@
 }
 
 [data-font-size="mobile-iast"] {
+    --sanskrit-large-font-size: 18.5px;
     --sanskrit-font-size: 16px;
     --primary-font-size: 16.5px;
     --secondary-font-size: 14.75px;
@@ -41,7 +45,7 @@
     --text-primary: rgb(255, 255, 255);
     --text-secondary: rgb(235, 235, 235);
     --text-tertiary: rgb(185, 185, 185);
-    --text-alternate: rgb(211, 224, 253);
+    --text-alternate: rgb(179, 203, 255);
     --shadow-color: rgb(10, 10, 10);
 }
 

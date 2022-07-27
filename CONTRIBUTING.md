@@ -122,10 +122,20 @@ The specifics of the format can be found under
 
 ## Content Format
 
+Each top level directory under `content/raw/text/` may include a `meta.json` file containing the
+Sanskrit name of the work/text. For example:
+```json
+{
+    "name": "grantha"
+}
+```
+
 The content for each chapter is stored in separate text file: `content/raw/text/{book}/{chapter}.txt`.
 
 The format of each file is:
 ```
+<section_name>
+
 <word0> (<base-form>, <parts of speech>) <literal translation>
 <word1> (<base-form>, <parts of speech>) <literal translation>
 ...
@@ -143,7 +153,8 @@ The format of each file is:
 ... (more verses)
 ```
 
-For example, consider the following example input text, given here in IAST:
+For example, consider the following example input text, given here in IAST,
+from some hypothetical work titled `vacana`:
 ```
 nara eva gacchati
 ```
@@ -156,6 +167,8 @@ naraḥ eva gacchati
 The corresponding content file might look like this
 (*note: this [transliteration format](#transliteration-methodology) is* not *IAST!*):
 ```
+vacana
+
 nara: (nara, nom sing) man
 aiva indeed
 gacchati (!gam, 3 sing pres act ind) goes
@@ -169,6 +182,8 @@ The format must conform to the following rules:
 - Any Sanskrit text must use a special transliteration format that the front-end can
   ingest and convert into either Devanagari or IAST.
   See the [transliteration](#transliteration-methodology) section for details.
+
+- The first line of the file should specify the name of the text or section of text in Sanskrit.
 
 - Sections must be separated by a single blank line.
 

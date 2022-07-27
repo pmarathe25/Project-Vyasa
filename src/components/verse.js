@@ -179,8 +179,6 @@ const Verse = ({ text, wordByWord, translation }) => {
         marginBottom: "8px",
     };
 
-    const translationFontSize = "var(--secondary-font-size)";
-
     const verseTextComp = (
         <Col style={colStyle}>
             {
@@ -192,9 +190,10 @@ const Verse = ({ text, wordByWord, translation }) => {
                             onClick={() => setShowWordByWord(false)}
                             className={clickableText}
                             style={{
-                                fontSize: translationFontSize,
+                                fontSize: "var(--tertiary-font-size)",
                                 width: "fit-content",
-                                marginTop: "10px",
+                                marginTop: "15px",
+                                marginBottom: "5px",
                             }}>
                             Show Original Text
                         </p>
@@ -231,7 +230,7 @@ const Verse = ({ text, wordByWord, translation }) => {
             }
             <Col style={{
                 ...colStyle,
-                fontSize: translationFontSize,
+                fontSize: "var(--secondary-font-size)",
                 color: "var(--text-tertiary)",
             }}>
                 {translation}
