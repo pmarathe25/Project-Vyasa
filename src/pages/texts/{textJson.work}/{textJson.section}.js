@@ -35,7 +35,7 @@ const Section = ({ location, data }) => {
         >
             <SectionTitle data={data} />
             <SectionSubtitle data={data} />
-            < p style={{ textAlign: "center", color: "var(--text-alternate)", fontSize: "var(--tertiary-font-size", marginBottom: "30px" }}>
+            < p style={{ textAlign: "center", color: "var(--text-alternate)", fontSize: "var(--tertiary-font-size", marginBottom: "20px" }}>
                 {isMobile ? "Tap" : "Click"} on Sanskrit text to see word-level analysis
             </p >
             {
