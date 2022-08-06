@@ -8,6 +8,7 @@ import { toUrl } from '../util/util'
 const NavMenu = ({ useClass = "" }) => {
     const linkStyle = {
         marginTop: "auto", marginBottom: "auto",
+        width: "fit-content", height: "fit-content",
         padding: useClass !== "" ? 8 : "default",
     }
 
