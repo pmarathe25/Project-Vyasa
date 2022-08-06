@@ -44,6 +44,7 @@ const Layout = ({
         }
     }`)
 
+    const [navExpanded, setNavExpanded] = React.useState(false);
     const [showSettingsPanel, setShowSettingsPanel] = React.useState(false);
 
     const { useDarkMode } = React.useContext(SettingsContext);
@@ -59,6 +60,7 @@ const Layout = ({
             <title>{pageTitle} | {data.site.siteMetadata.title}</title>
             <SiteHelmet location={location} title={pageTitle} />
             <AutohidingNavbar
+                isExpanded={navExpanded} setIsExpanded={setNavExpanded}
                 allowCollapse={!showSettingsPanel}
                 variant={variant}
             >
