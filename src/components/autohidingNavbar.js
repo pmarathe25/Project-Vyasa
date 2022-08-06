@@ -66,7 +66,6 @@ const AutohidingNavbar = (props) => {
     const navbarSlideOnStyle = { top: 0, transition: "all 0.2s ease" };
     const navbarStyle = isVisible ? navbarSlideOnStyle : navbarSlideOffStyle;
 
-    // Navbar is not collapsible on non-mobile, so it's never considered "expanded"
     return (
         <Navbar variant={props.variant} sticky="top" expand="md"
             style={{
