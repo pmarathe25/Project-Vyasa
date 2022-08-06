@@ -10,7 +10,13 @@ const SectionTitle = ({ data }) => {
     const tranlistSection = useTransliterate(data.textJson.section);
 
     return (
-        <h2 style={{ marginBottom: "5px" }}>{tranlistSection}</h2>
+        <h2
+            style={{
+                marginBottom: "5px",
+            }}
+        >
+            {tranlistSection}
+        </h2>
     );
 }
 
@@ -18,7 +24,14 @@ const SectionSubtitle = ({ data }) => {
     const tranlistSectionName = useTransliterate(data.textJson.sectionName);
 
     return (
-        <h3 style={{ color: "var(--text-tertiary)", marginBottom: "5px", fontSize: "var(--sanskrit-small-font-size)" }}>{tranlistSectionName}</h3>
+        <h3
+            style={{
+                color: "var(--text-tertiary)", marginBottom: "5px",
+                fontSize: "var(--sanskrit-small-font-size)"
+            }}
+        >
+            {tranlistSectionName}
+        </h3>
     );
 }
 
