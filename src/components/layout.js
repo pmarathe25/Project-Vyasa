@@ -73,7 +73,7 @@ const Layout = ({
                         first={
                             <>
                                 <Navbar.Toggle aria-controls="responsive-navbar-nav"
-                                    style={{ border: "none", marginLeft: "auto" }}
+                                    style={{ border: "none", marginLeft: "auto", boxShadow: "none", }}
                                 />
                                 <Navbar.Collapse id="responsive-navbar-nav">
                                     <NavMenu />
