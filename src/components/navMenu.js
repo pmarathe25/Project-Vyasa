@@ -28,7 +28,7 @@ const NavMenu = ({ useClass = "" }) => {
             </Nav.Link>
             <Nav.Link style={linkStyle}
                 href="https://github.com/pmarathe25/Project-Vyasa" target="_blank"
-                rel="noreferrer" keyName="github"
+                rel="noreferrer" key="github"
             >
                 <GoMarkGithub size={27} />
             </Nav.Link>

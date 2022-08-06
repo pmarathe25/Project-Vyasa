@@ -39,8 +39,16 @@ export const SettingsPanel = ({ show, setShow, variant, showTranslitButton, show
     const formCheckStyle = { paddingTop: "3px", paddingBottom: "5px" };
 
     return (
-        <Dropdown style={{ marginLeft: "auto", marginRight: "auto" }} onToggle={() => setShow(!show)} show={show}>
-            <Dropdown.Toggle variant={variant}>
+        <Dropdown
+            style={{
+                marginLeft: "auto", marginRight: "auto",
+                backgroundColor: "var(--navbar-background)",
+            }}
+            onToggle={() => setShow(!show)} show={show}>
+            <Dropdown.Toggle
+                variant={variant}
+                style={{ backgroundColor: "var(--navbar-background)", }}
+            >
                 <GoSettings size={20} />
             </Dropdown.Toggle>
             <Dropdown.Menu variant={variant} renderOnMount={true} style={{
