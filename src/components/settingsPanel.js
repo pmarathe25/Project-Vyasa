@@ -36,14 +36,17 @@ export const SettingsPanel = ({ show, setShow, variant, showTranslitButton, show
         useDarkMode, setUseDarkMode
     } = React.useContext(SettingsContext);
 
+    const formCheckStyle = { paddingTop: "3px", paddingBottom: "5px" };
+
     return (
-        <Dropdown onToggle={() => setShow(!show)} show={show}>
+        <Dropdown style={{ marginLeft: "auto", marginRight: "auto" }} onToggle={() => setShow(!show)} show={show}>
             <Dropdown.Toggle variant={variant}>
                 <GoSettings size={20} />
             </Dropdown.Toggle>
             <Dropdown.Menu variant={variant} renderOnMount={true} style={{
                 backgroundColor: "var(--navbar-background)",
                 color: "var(--text-primary)",
+                fontSize: "var(--secondary-font-size)",
                 paddingLeft: "20px",
                 paddingBottom: "0px",
             }}>
@@ -51,11 +54,11 @@ export const SettingsPanel = ({ show, setShow, variant, showTranslitButton, show
                     {
                         showTranslitButton ?
                             <div style={{ display: "flex" }}>
-                                <Form.Check name="translit-select" inline type="radio" label="देवनागरी"
+                                <Form.Check style={formCheckStyle} name="translit-select" inline type="radio" label="देवनागरी"
                                     value={DEVANAGARI_MODE} checked={translitMode === DEVANAGARI_MODE}
                                     onChange={(event) => { setTranslitMode(event.target.value) }}
                                 />
-                                <Form.Check name="translit-select" inline type="radio" label="IAST"
+                                <Form.Check style={formCheckStyle} name="translit-select" inline type="radio" label="IAST"
                                     value={IAST_MODE} checked={translitMode === IAST_MODE}
                                     onChange={(event) => { setTranslitMode(event.target.value) }}
                                 />
@@ -65,13 +68,13 @@ export const SettingsPanel = ({ show, setShow, variant, showTranslitButton, show
                     }
                     {
                         showTranslationButton ?
-                            <Form.Check type="switch" label="Translation" checked={showTranslation}
+                            <Form.Check style={formCheckStyle} type="switch" label="Translation" checked={showTranslation}
                                 onChange={(event) => { setShowTranslation(event.target.checked) }}
                             />
                             :
                             <></>
                     }
-                    <Form.Check type="switch" label="Dark Mode" checked={useDarkMode}
+                    <Form.Check style={formCheckStyle} type="switch" label="Dark Mode" checked={useDarkMode}
                         onChange={(event) => { setUseDarkMode(event.target.checked) }}
                     />
                 </Form>

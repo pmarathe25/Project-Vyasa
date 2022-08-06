@@ -13,11 +13,9 @@ import { sortSanskrit, toDictUrl, toUrl } from '../util/util'
 const WordAndDefinitions = ({ location, word }) => {
     const translitWord = useTransliterate(word);
 
-    const fontSize = "var(--primary-font-size)";
-
     const wordElements = React.useMemo(() => {
         const wordLinkStyle = {
-            fontSize: fontSize, width: "fit-content",
+            fontSize: "var(--sanskrit-font-size)", width: "fit-content",
             display: "inline", padding: 0,
             whiteSpace: "nowrap"
         };
@@ -46,7 +44,7 @@ const WordAndDefinitions = ({ location, word }) => {
             );
         }
         return ret;
-    }, [word, translitWord, fontSize]);
+    }, [word, translitWord]);
 
     const id = toUrl(word);
     const isActive = location.hash === `#${id}`;

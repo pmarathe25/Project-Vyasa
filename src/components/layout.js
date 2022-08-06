@@ -1,12 +1,32 @@
 import { graphql, Link, useStaticQuery } from 'gatsby'
 import * as React from 'react'
 import { Container, Navbar } from 'react-bootstrap'
+import useIsMobile from '../util/responsiveness'
 import AutohidingNavbar from './autohidingNavbar'
 import ResponsiveBreadcrumbs from './breadcrumbs'
-import { brandLink, container } from './layout.module.css'
 import NavMenu from './navMenu'
 import { SettingsContext, SettingsPanel } from './settingsPanel'
 import SiteHelmet from './siteHelmet'
+
+// Swaps the order of two components on mobile displays
+const FlipOnMobile = ({ first, second }) => {
+    const isMobile = useIsMobile();
+
+    return (
+        isMobile ?
+            <>
+                {second}
+                {first}
+            </>
+
+            :
+            <>
+                {first}
+                {second}
+            </>
+
+    );
+}
 
 const Layout = ({
     location, pageTitle, children,
@@ -24,40 +44,51 @@ const Layout = ({
         }
     }`)
 
-    const [navExpanded, setNavExpanded] = React.useState(false);
     const [showSettingsPanel, setShowSettingsPanel] = React.useState(false);
 
     const { useDarkMode } = React.useContext(SettingsContext);
     const variant = useDarkMode ? "dark" : "light";
 
     return (
-        <div className={container}>
+        <div style={{
+            fontFamily: "-apple-system, 'BlinkMacSystemFont', 'Oxygen', 'Cantarell', 'Segoe UI', 'Roboto', 'Open Sans', 'Helvetica Neue', 'Ubuntu', 'DejaVu Sans', sans-serif",
+            paddingBottom: "500px",
+            backgroundColor: "var(--background)",
+            height: "100%",
+        }}>
             <title>{pageTitle} | {data.site.siteMetadata.title}</title>
             <SiteHelmet location={location} title={pageTitle} />
             <AutohidingNavbar
-                isExpanded={navExpanded} setIsExpanded={setNavExpanded}
                 allowCollapse={!showSettingsPanel}
                 variant={variant}
             >
                 <Container style={{
                     maxWidth: "var(--navbar-width)",
                 }}>
-                    <Link to="/" className={brandLink}>
+                    <Navbar.Brand as={Link} to="/" >
                         Project Vyasa
-                    </Link>
+                    </Navbar.Brand>
 
-                    <Navbar.Collapse id="responsive-navbar-nav">
-                        <NavMenu navExpanded={navExpanded} useClass="top-bar-links" />
-                    </Navbar.Collapse>
+                    <FlipOnMobile
+                        first={
+                            <>
+                                <Navbar.Toggle aria-controls="responsive-navbar-nav" style={{ border: "none", marginLeft: "auto" }} />
 
-                    <SettingsPanel
-                        show={showSettingsPanel} setShow={setShowSettingsPanel}
-                        variant={variant}
-                        showTranslitButton={showTranslitButton}
-                        showTranslationButton={showTranslationButton}
+                                <Navbar.Collapse id="responsive-navbar-nav">
+                                    <NavMenu />
+                                </Navbar.Collapse>
+                            </>
+                        }
+                        second={
+                            <SettingsPanel
+                                show={showSettingsPanel} setShow={setShowSettingsPanel}
+                                variant={variant}
+                                showTranslitButton={showTranslitButton}
+                                showTranslationButton={showTranslationButton}
+                            />
+                        }
                     />
 
-                    <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                 </Container>
             </AutohidingNavbar>
             <Container style={{
