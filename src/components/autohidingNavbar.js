@@ -73,11 +73,7 @@ const AutohidingNavbar = (props) => {
                 marginBottom: "30px",
                 boxShadow: "0px 1px 1px var(--shadow-color)",
                 backgroundColor: "var(--navbar-background)",
-                minHeight: "65px",
                 ...navbarStyle
-            }}
-            onToggle={(expanded) => {
-                props.setIsExpanded(isMobile ? expanded : false);
             }}
         >
             {props.children}

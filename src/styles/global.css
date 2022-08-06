@@ -8,6 +8,7 @@
 [data-font-size="desktop-devanagari"] {
     --sanskrit-large-font-size: 22.5px;
     --sanskrit-font-size: 19px;
+    --sanskrit-small-font-size: 17.75px;
     --primary-font-size: 19px;
     --secondary-font-size: 16px;
     --tertiary-font-size: 14.5px;
@@ -16,6 +17,7 @@
 [data-font-size="desktop-iast"] {
     --sanskrit-large-font-size: 21px;
     --sanskrit-font-size: 17.5px;
+    --sanskrit-small-font-size: 16px;
     --primary-font-size: 19px;
     --secondary-font-size: 16px;
     --tertiary-font-size: 14.5px;
@@ -24,6 +26,7 @@
 [data-font-size="mobile-devanagari"] {
     --sanskrit-large-font-size: 19px;
     --sanskrit-font-size: 16.5px;
+    --sanskrit-small-font-size: 15.75px;
     --primary-font-size: 16.5px;
     --secondary-font-size: 14.75px;
     --tertiary-font-size: 14.5px;
@@ -32,6 +35,7 @@
 [data-font-size="mobile-iast"] {
     --sanskrit-large-font-size: 18.5px;
     --sanskrit-font-size: 16px;
+    --sanskrit-small-font-size: 15.25px;
     --primary-font-size: 16.5px;
     --secondary-font-size: 14.75px;
     --tertiary-font-size: 14.5px;
@@ -105,10 +109,4 @@ a:hover {
 
 .navbar-toggler {
     box-shadow: none !important;
-}
-
-.form-check {
-    scale: 1.15;
-    padding-bottom: 7px;
-    font-size: var(--tertiary-font-size);
 }

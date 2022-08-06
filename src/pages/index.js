@@ -13,7 +13,7 @@ const Index = ({ location }) => {
             <h2>Project Vyasa</h2>
             {
                 isMobile ?
-                    <NavMenu navExpanded={true} useClass="justify-content-center" />
+                    <NavMenu useClass="justify-content-center" />
                     :
                     <></>
             }
