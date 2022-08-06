@@ -72,8 +72,9 @@ const Layout = ({
                     <FlipOnMobile
                         first={
                             <>
-                                <Navbar.Toggle aria-controls="responsive-navbar-nav" style={{ border: "none", marginLeft: "auto" }} />
-
+                                <Navbar.Toggle aria-controls="responsive-navbar-nav"
+                                    style={{ border: "none", marginLeft: "auto" }}
+                                />
                                 <Navbar.Collapse id="responsive-navbar-nav">
                                     <NavMenu />
                                 </Navbar.Collapse>
