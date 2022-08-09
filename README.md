@@ -3,7 +3,6 @@
 ## Table Of Contents
 
 - [Introduction](#introduction)
-  - [An Example](#an-example)
 - [Public Website](#public-website)
 - [Contributing](#contributing)
 
