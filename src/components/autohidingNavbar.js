@@ -1,6 +1,5 @@
 import * as React from 'react';
 import { Navbar } from 'react-bootstrap';
-import useIsMobile from '../util/responsiveness';
 import { clamp } from '../util/util';
 
 
