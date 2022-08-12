@@ -4,6 +4,19 @@ import { Helmet } from "react-helmet"
 import useIsMobile from "../util/responsiveness"
 import { SettingsContext } from './settingsPanel'
 
+const query = graphql`
+query {
+    site {
+        siteMetadata {
+            defaultTitle: title
+            titleTemplate
+            defaultDescription: description
+            siteUrl: url
+        }
+    }
+}
+`;
+
 const SiteHelmet = ({ location, title, description }) => {
     const { site } = useStaticQuery(query)
     const isMobile = useIsMobile();
@@ -43,16 +56,3 @@ const SiteHelmet = ({ location, title, description }) => {
 }
 
 export default SiteHelmet;
-
-const query = graphql`
-query {
-    site {
-        siteMetadata {
-            defaultTitle: title
-            titleTemplate
-            defaultDescription: description
-            siteUrl: url
-        }
-    }
-}
-`
