@@ -21,6 +21,10 @@ export function toDictUrl(word) {
     return `/dictionary/${allWordsDict[word][[0]]}#${toUrl(word)}`;
 }
 
+export function clamp(num, min, max) {
+    return Math.max(Math.min(num, max), min)
+}
+
 function isNumber(obj) {
     return obj && !isNaN(obj);
 }
