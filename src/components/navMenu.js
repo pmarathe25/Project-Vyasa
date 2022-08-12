@@ -1,10 +1,10 @@
 import { graphql, Link, useStaticQuery } from 'gatsby'
 import * as React from 'react'
-import { Nav, NavDropdown } from 'react-bootstrap'
+import { Dropdown, Nav } from 'react-bootstrap'
 import { GoMarkGithub } from "react-icons/go"
-import { useTransliterate } from './transliterationHook'
-import { toUrl } from '../util/util'
 import useIsMobile from '../util/responsiveness'
+import { toUrl } from '../util/util'
+import { useTransliterate } from './transliterationHook'
 
 
 const query = graphql`
@@ -24,9 +24,9 @@ const DropdownLink = ({ workSanskritName, to, eventKey }) => {
     const translitWorkSanskritName = useTransliterate(workSanskritName);
 
     return (
-        <NavDropdown.Item as={Link} to={to} eventKey={eventKey}>
+        <Dropdown.Item as={Link} to={to} eventKey={eventKey}>
             {translitWorkSanskritName}
-        </NavDropdown.Item>
+        </Dropdown.Item>
     );
 }
 
@@ -50,22 +50,27 @@ const NavMenu = ({ useClass = "" }) => {
                         Texts
                     </Nav.Link>
                     :
-                    <NavDropdown
-                        title="Texts"
-                        style={{ ...linkStyle, paddingLeft: "0px" }}
-                        renderMenuOnMount={true}
-                    >
-                        {
-                            allTextJson.group.map(group =>
-                                <DropdownLink
-                                    workSanskritName={group.nodes[0].workSanskritName}
-                                    to={group.nodes[0].workPath}
-                                    eventKey={group.nodes[0].work}
-                                    key={group.nodes[0].work}
-                                />
-                            )
-                        }
-                    </NavDropdown >
+                    <Dropdown style={{ display: "flex", border: "1px solid var(--muted-highlight-color)" }}>
+                        <Nav.Link style={linkStyle} as={Link} to={toUrl("/texts")} key="texts" >
+                            Texts
+                        </Nav.Link>
+                        <Dropdown.Toggle as={Nav.Link} style={{ ...linkStyle, borderLeft: "1px solid var(--muted-highlight-color)" }} />
+                        <Dropdown.Menu
+                            style={{ ...linkStyle, paddingLeft: "0px" }}
+                            renderMenuOnMount={true}
+                        >
+                            {
+                                allTextJson.group.map(group =>
+                                    <DropdownLink
+                                        workSanskritName={group.nodes[0].workSanskritName}
+                                        to={group.nodes[0].workPath}
+                                        eventKey={group.nodes[0].work}
+                                        key={group.nodes[0].work}
+                                    />
+                                )
+                            }
+                        </Dropdown.Menu>
+                    </Dropdown>
             }
 
             <Nav.Link style={linkStyle} as={Link} to={toUrl("/dictionary")} key="dictionary">

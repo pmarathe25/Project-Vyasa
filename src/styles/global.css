@@ -42,10 +42,11 @@
 }
 
 [data-theme="dark"] {
-    --background: rgb(55, 55, 55);
+    --background: rgb(45, 45, 45);
     --navbar-background: rgb(35, 35, 35);
     --accent-color: rgb(63, 113, 205);
     --highlight-color: rgb(85, 85, 85);
+    --muted-highlight-color: rgb(55, 55, 55);
     --text-primary: rgb(255, 255, 255);
     --text-secondary: rgb(235, 235, 235);
     --text-tertiary: rgb(185, 185, 185);
@@ -58,6 +59,7 @@
     --navbar-background: rgb(245, 245, 245);
     --accent-color: rgb(217, 230, 255);
     --highlight-color: rgb(225, 225, 225);
+    --muted-highlight-color: rgb(235, 235, 235);
     --text-primary: rgb(0, 0, 0);
     --text-secondary: rgb(30, 30, 30);
     --text-tertiary: rgb(70, 70, 70);
