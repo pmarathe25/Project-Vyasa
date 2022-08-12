@@ -28,6 +28,15 @@ const FlipOnMobile = ({ first, second }) => {
     );
 }
 
+const query = graphql`
+query {
+    site {
+        siteMetadata {
+        title
+        }
+    }
+}`;
+
 const Layout = ({
     location, pageTitle, children,
     maxWidth = "var(--medium-content-width)",
@@ -35,14 +44,7 @@ const Layout = ({
     showTranslationButton = false,
     showCurrentPageInBreadcrumbs = true,
 }) => {
-    const data = useStaticQuery(graphql`
-        query {
-        site {
-            siteMetadata {
-            title
-            }
-        }
-    }`)
+    const data = useStaticQuery(query);
 
     const [showSettingsPanel, setShowSettingsPanel] = React.useState(false);
 
@@ -51,7 +53,9 @@ const Layout = ({
 
     return (
         <div style={{
-            fontFamily: "-apple-system, 'BlinkMacSystemFont', 'Oxygen', 'Cantarell', 'Segoe UI', 'Roboto', 'Open Sans', 'Helvetica Neue', 'Ubuntu', 'DejaVu Sans', sans-serif",
+            fontFamily:
+                "-apple-system, 'BlinkMacSystemFont', 'Oxygen', 'Cantarell', 'Segoe UI',"
+                + " 'Roboto', 'Open Sans', 'Helvetica Neue', 'Ubuntu', 'DejaVu Sans', sans-serif",
             paddingBottom: "500px",
             backgroundColor: "var(--background)",
             height: "100%",

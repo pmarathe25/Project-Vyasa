@@ -110,3 +110,7 @@ a:hover {
 .form-check-input {
     box-shadow: none !important;
 }
+
+.dropdown-menu {
+    background-color: var(--background);
+}
