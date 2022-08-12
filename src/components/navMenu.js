@@ -57,7 +57,7 @@ const NavMenu = ({ useClass = "" }) => {
                         <Dropdown.Toggle as={Nav.Link} style={{ ...linkStyle, borderLeft: "1px solid var(--highlight-color)" }} />
                         <Dropdown.Menu
                             style={{ ...linkStyle, paddingLeft: "0px" }}
-                            renderMenuOnMount={true}
+                            renderOnMount={true}
                         >
                             {
                                 allTextJson.group.map(group =>
