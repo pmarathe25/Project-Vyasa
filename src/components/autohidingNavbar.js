@@ -7,7 +7,7 @@ export const NAVBAR_HEIGHT = 60;
 
 
 const AutohidingNavbar = (props) => {
-    const [previousYOffset, setPreviousYOffset] = React.useState(window.pageYOffset ?? 0);
+    const [previousYOffset, setPreviousYOffset] = React.useState(typeof window === "undefined" ? 0 : window.pageYOffset);
 
     const [scrollLocation, setScrollLocation] = React.useState(0);
 
