@@ -2,7 +2,7 @@ import { graphql, Link, useStaticQuery } from 'gatsby'
 import * as React from 'react'
 import { Container, Navbar } from 'react-bootstrap'
 import useIsMobile from '../util/responsiveness'
-import AutohidingNavbar from './autohidingNavbar'
+import AutohidingNavbar, { NAVBAR_HEIGHT } from './autohidingNavbar'
 import ResponsiveBreadcrumbs from './breadcrumbs'
 import NavMenu from './navMenu'
 import { SettingsContext, SettingsPanel } from './settingsPanel'
@@ -44,7 +44,6 @@ const Layout = ({
         }
     }`)
 
-    const [navExpanded, setNavExpanded] = React.useState(false);
     const [showSettingsPanel, setShowSettingsPanel] = React.useState(false);
 
     const { useDarkMode } = React.useContext(SettingsContext);
@@ -60,8 +59,7 @@ const Layout = ({
             <title>{pageTitle} | {data.site.siteMetadata.title}</title>
             <SiteHelmet location={location} title={pageTitle} />
             <AutohidingNavbar
-                isExpanded={navExpanded} setIsExpanded={setNavExpanded}
-                allowCollapse={!showSettingsPanel}
+                allowHide={!showSettingsPanel}
                 variant={variant}
             >
                 <Container style={{
@@ -96,6 +94,7 @@ const Layout = ({
             </AutohidingNavbar>
             <Container style={{
                 maxWidth: maxWidth,
+                marginTop: `${NAVBAR_HEIGHT + 25}px`,
             }}>
                 <ResponsiveBreadcrumbs location={location} showCurrentPage={showCurrentPageInBreadcrumbs} />
                 {children}
