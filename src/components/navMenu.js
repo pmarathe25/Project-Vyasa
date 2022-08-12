@@ -50,11 +50,11 @@ const NavMenu = ({ useClass = "" }) => {
                         Texts
                     </Nav.Link>
                     :
-                    <Dropdown style={{ display: "flex", border: "1px solid var(--muted-highlight-color)" }}>
+                    <Dropdown style={{ display: "flex", border: "1px solid var(--highlight-color)" }}>
                         <Nav.Link style={linkStyle} as={Link} to={toUrl("/texts")} key="texts" >
                             Texts
                         </Nav.Link>
-                        <Dropdown.Toggle as={Nav.Link} style={{ ...linkStyle, borderLeft: "1px solid var(--muted-highlight-color)" }} />
+                        <Dropdown.Toggle as={Nav.Link} style={{ ...linkStyle, borderLeft: "1px solid var(--highlight-color)" }} />
                         <Dropdown.Menu
                             style={{ ...linkStyle, paddingLeft: "0px" }}
                             renderMenuOnMount={true}
