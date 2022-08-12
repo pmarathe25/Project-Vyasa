@@ -50,7 +50,13 @@ const NavMenu = ({ useClass = "" }) => {
                         Texts
                     </Nav.Link>
                     :
-                    <Dropdown style={{ display: "flex", border: "1px solid var(--highlight-color)", ...linkStyle }}>
+                    <Dropdown style={{
+                        display: "flex",
+                        border: "1px solid var(--highlight-color)",
+                        borderRadius: "4px",
+                        ...linkStyle,
+                        marginRight: "8px",
+                    }}>
                         <Nav.Link style={linkStyle} as={Link} to={toUrl("/texts")} key="texts" >
                             Texts
                         </Nav.Link>
