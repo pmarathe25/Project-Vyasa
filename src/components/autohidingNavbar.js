@@ -23,7 +23,9 @@ const AutohidingNavbar = (props) => {
 
             const onScroll = () => {
                 const delta = (previousYOffset - window.pageYOffset);
-                setScrollLocation(clamp(scrollLocation + delta, -NAVBAR_HEIGHT, 0));
+                if (!forceVisible) {
+                    setScrollLocation(clamp(scrollLocation + delta, -NAVBAR_HEIGHT, 0));
+                }
                 setPreviousYOffset(window.pageYOffset);
             };
 
