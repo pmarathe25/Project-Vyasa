@@ -37,6 +37,10 @@ const NavMenu = ({ useClass = "" }) => {
         padding: useClass !== "" ? 8 : "default",
     }
 
+    const dropdownStyle = {
+        paddingTop: "2px", paddingBottom: "2px",
+    }
+
     const isMobile = useIsMobile();
 
     const { allTextJson } = useStaticQuery(query);
@@ -56,11 +60,20 @@ const NavMenu = ({ useClass = "" }) => {
                         borderRadius: "4px",
                         ...linkStyle,
                         marginRight: "8px",
+                        ...dropdownStyle,
                     }}>
-                        <Nav.Link style={linkStyle} as={Link} to={toUrl("/texts")} key="texts" >
+                        <Nav.Link as={Link} to={toUrl("/texts")} key="texts"
+                            style={{
+                                ...linkStyle,
+                                ...dropdownStyle,
+                            }}
+                        >
                             Texts
                         </Nav.Link>
-                        <Dropdown.Toggle as={Nav.Link} style={{ ...linkStyle, borderLeft: "1px solid var(--highlight-color)" }} />
+                        <Dropdown.Toggle as={Nav.Link} style={{
+                            ...linkStyle, borderLeft: "1px solid var(--highlight-color)",
+                            ...dropdownStyle,
+                        }} />
                         <Dropdown.Menu
                             style={{ ...linkStyle, paddingLeft: "0px" }}
                             renderOnMount={true}
