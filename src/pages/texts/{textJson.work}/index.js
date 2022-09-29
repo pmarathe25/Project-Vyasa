@@ -9,7 +9,7 @@ const SectionLink = ({ section, to }) => {
 
     return (
         <Col>
-            <Link to={to} style={{ fontSize: "var(--sanskrit-large-font-size)" }}>
+            <Link to={to} style={{ fontSize: "var(--sanskrit-extra-large-font-size)" }}>
                 {translitSection}
             </Link>
         </Col>

@@ -6,46 +6,51 @@
 }
 
 [data-font-size="desktop-devanagari"] {
-    --sanskrit-large-font-size: 23.5px;
+    --sanskrit-extra-large-font-size: 23px;
+    --sanskrit-large-font-size: 20.5px;
     --sanskrit-font-size: 19px;
-    --sanskrit-small-font-size: 17.75px;
+    --sanskrit-small-font-size: 17px;
     --primary-font-size: 19px;
     --secondary-font-size: 16px;
     --tertiary-font-size: 14.5px;
 }
 
 [data-font-size="desktop-iast"] {
-    --sanskrit-large-font-size: 22px;
+    --sanskrit-extra-large-font-size: 21.5px;
+    --sanskrit-large-font-size: 19px;
     --sanskrit-font-size: 17.5px;
-    --sanskrit-small-font-size: 16px;
+    --sanskrit-small-font-size: 15.5px;
     --primary-font-size: 19px;
     --secondary-font-size: 16px;
     --tertiary-font-size: 14.5px;
 }
 
 [data-font-size="mobile-devanagari"] {
-    --sanskrit-large-font-size: 20px;
+    --sanskrit-extra-large-font-size: 20px;
+    --sanskrit-large-font-size: 18.5px;
     --sanskrit-font-size: 16.5px;
-    --sanskrit-small-font-size: 15.75px;
+    --sanskrit-small-font-size: 15.5px;
     --primary-font-size: 16.5px;
-    --secondary-font-size: 14.75px;
-    --tertiary-font-size: 14.5px;
+    --secondary-font-size: 14.5px;
+    --tertiary-font-size: 14px;
 }
 
 [data-font-size="mobile-iast"] {
-    --sanskrit-large-font-size: 19.5px;
+    --sanskrit-extra-large-font-size: 29.5px;
+    --sanskrit-large-font-size: 18px;
     --sanskrit-font-size: 16px;
-    --sanskrit-small-font-size: 15.25px;
+    --sanskrit-small-font-size: 15px;
     --primary-font-size: 16.5px;
-    --secondary-font-size: 14.75px;
-    --tertiary-font-size: 14.5px;
+    --secondary-font-size: 14.5px;
+    --tertiary-font-size: 14px;
 }
 
 [data-theme="dark"] {
     --background: rgb(45, 45, 45);
     --navbar-background: rgb(35, 35, 35);
     --accent-color: rgb(63, 113, 205);
-    --highlight-color: rgb(65, 65, 65);
+    --border-color: rgb(65, 65, 65);
+    --highlight-color: rgba(255, 255, 255, 0.15);
     --text-primary: rgb(255, 255, 255);
     --text-secondary: rgb(235, 235, 235);
     --text-tertiary: rgb(185, 185, 185);
@@ -57,7 +62,8 @@
     --background: rgb(255, 255, 255);
     --navbar-background: rgb(245, 245, 245);
     --accent-color: rgb(217, 230, 255);
-    --highlight-color: rgb(225, 225, 225);
+    --border-color: rgb(225, 225, 225);
+    --highlight-color: rgba(0, 0, 0, 0.15);
     --text-primary: rgb(0, 0, 0);
     --text-secondary: rgb(30, 30, 30);
     --text-tertiary: rgb(70, 70, 70);

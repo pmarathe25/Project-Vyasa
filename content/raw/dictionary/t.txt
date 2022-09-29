@@ -13,4 +13,4 @@ tri (adj) three
 tri.s~at (f) thirty
 tu (indc) but, and
 tus<t<i (f) satisfaction, contentment
-tvam you
+tvam (d) you

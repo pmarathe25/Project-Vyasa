@@ -460,6 +460,12 @@ def process_files(input_dir, input_path, output_path, transliteration_ruleset, d
         word_by_word_sections.pop()
         to_sandhi_word_lines.pop()
 
+        if not word_by_word_sections:
+            raise RuntimeError(
+                f"Word-by-word section is empty. Did you forget to close it with a pipe ('|') character?"
+                f"\nNote: Raw word-by-word section is:\n{word_by_word}"
+            )
+
         processed["verses"].append(
             {
                 "text": "\n".join(build_sandhied_text(line, TRANSLIT_RULESET) for line in to_sandhi_word_lines),

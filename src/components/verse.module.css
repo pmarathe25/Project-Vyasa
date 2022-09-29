@@ -16,5 +16,5 @@
 }
 
 .verse-text:hover {
-    background-color: var(--highlight-color);
+    background-color: var(--border-color);
 }

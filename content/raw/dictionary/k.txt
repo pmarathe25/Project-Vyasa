@@ -19,7 +19,7 @@ kim (n) what?
 kr>s<n<a (adj) dark, black
 kr>ta (adj) done, made, accomplished [!kr>, perf pass part]
 krama (m) a step [!kram]
-kramaat (indc) in regular course, by degrees, gradually [krama, abl sing]
+kramaat (indc) in regular course, by degrees, gradually [krama, abl sing m]
 ks<aya (m) (in compound) loss, destruction, decay [!ks<i=I]
 ks<it () (in compound) ruling, dwelling [!ks<i=VI]
 kula (m) family

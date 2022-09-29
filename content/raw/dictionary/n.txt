@@ -1,4 +1,5 @@
 !nam to bend, to bow
+!niram to rest, to cease [ni+!ram]
 naaimis<a (m) Naimisha, a sacred forest
 naaman (n) name
 naanaa (indc) various
@@ -12,6 +13,7 @@ ni-!saiv to visit, to frequent, to honor [!saiv]
 nidhana (n) conclusion, end, death
 nimitta (n) cause, reason
 niraalauka (adj) deprived of light, dark, blind [nis+aalauka]
+nirata (adj) pleased, satisfied, devoted to, intent upon, deeply engaged in [!niram, perf pass part]
 nirdis<t<a (adj) pointed out, shown, appointed [nis-!dis~, perf pass part]
 nis (indc) out, forth, away; () (as prefix) out of, away from, without, destitute of, free from
 nis-!dis~ to point out, to assign, to indicate

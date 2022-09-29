@@ -12,4 +12,4 @@ chandas (n) poetic meter, metrical science
 chandauvr>tta (n) poetic meter [chandas+vr>tta]
 cintya (adj) questionable, contestable [!cint]
 cit (indc) as a suffix, makes a definite pronoun indefinite, e.g. who -> someone/whoever
-citra (mn) varied, manifold, strange, wonderful
+citra (adj) varied, manifold, strange, wonderful

@@ -1,5 +1,5 @@
 """
-Processes dictionary files to create a single file containing all entries. 
+Processes dictionary files to create a single file containing all entries.
 The format of the dictionary is: Dict[str, Tuple[str, str, str, str]]
 That is, it maps words to tuples of (meanings, reference/root, parts of speech of reference/root, section name)
 The section name indicates which section of the dictionary the word should be rendered under.
@@ -150,7 +150,7 @@ def main():
                         is_adj = True
                         detail += "."
                     elif detail:
-                        if not all(elem in "mfn" for elem in detail):
+                        if not all(elem in "mfnd" for elem in detail):
                             raise RuntimeError(
                                 "Unrecognized item in word details: '{:}'\nNote: Line was: {:}"
                                 "\nHint: If no details (e.g. gender) are required, use an empty set of "

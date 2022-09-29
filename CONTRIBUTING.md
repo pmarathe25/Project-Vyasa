@@ -220,9 +220,11 @@ Valid entries are as follows:
 - `sup`: Superlative
 
 Additionally, for adjectives and participles, gender must be provided
-(for other words, this is recorded in the dictionary instead):
+(for other words, this is recorded in the dictionary instead; note, however,
+that it may still be required if the dictionary entries are ambiguous):
 
-- `m/f/n`: Masculine/Feminine/Neuter gender
+- `m/f/n/d`: Masculine/Feminine/Neuter/Deictic gender.
+  Use `d` for words like `tvam` and `aham`, whose gender depends on the context.
 
 
 ## Dictionary Format

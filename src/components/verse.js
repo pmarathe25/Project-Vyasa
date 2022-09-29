@@ -1,7 +1,7 @@
 import { Link } from 'gatsby';
 import * as React from 'react';
 import { Col, OverlayTrigger, Popover, Row } from 'react-bootstrap';
-import useIsMobile from "../util/responsiveness";
+import useIsMobile, { getWindowWidth } from "../util/responsiveness";
 import { toDictUrl } from '../util/util';
 import Definition from './definition';
 import { SettingsContext } from './settingsPanel';
@@ -23,6 +23,7 @@ const RootMeanings = ({ root }) => {
                                 fontSize: "var(--sanskrit-font-size)",
                                 whiteSpace: "nowrap",
                                 height: "fit-content",
+                                textDecorationThickness: "1px",
                             }}
                         >
                             {rootPar}
@@ -73,6 +74,8 @@ const WordWithPopover = ({ word, definition, root, parts_of_speech }) => {
         );
     }
 
+    const maxPopoverWidth = `${Math.min(getWindowWidth() - 50, 500)}px`;
+
     return (
         <Col style={{ padding: "0px", marginLeft: "5px", marginRight: "5px", width: "fit-content" }}>
             <OverlayTrigger
@@ -81,17 +84,27 @@ const WordWithPopover = ({ word, definition, root, parts_of_speech }) => {
                 overlay={
                     <Popover
                         id={`${word}-popover`}
-                        style={{ backgroundColor: "var(--accent-color)" }}
+                        style={{ backgroundColor: "var(--accent-color)", maxWidth: maxPopoverWidth }}
                         onMouseEnter={() => setShowPopover(true)}
                         onMouseLeave={() => setShowPopover(false)}
                         onTouchStart={() => setShowPopover(true)}
                         onTouchMove={() => setShowPopover(false)}
                         show={showPopover}
                     >
-                        <Popover.Body ref={popoverRef} style={{ paddingTop: "7px", paddingBottom: "7px" }}>
+                        <Popover.Body ref={popoverRef} style={{
+                            paddingTop: "7px", paddingBottom: "7px",
+                            paddingLeft: "8px", paddingRight: "8px",
+                        }}>
                             <Col>
                                 <RootMeanings root={root} />
-                                <p style={{ fontSize: "var(--tertiary-font-size)" }}>
+                                <p style={{
+                                    width: "fit-content",
+                                    marginLeft: "auto", marginRight: "auto",
+                                    fontSize: "var(--tertiary-font-size)",
+                                    marginTop: "6px",
+                                    borderTop: "1px solid var(--highlight-color)",
+                                    fontWeight: 275,
+                                }}>
                                     {parts_of_speech}
                                 </p>
                             </Col>
@@ -110,7 +123,7 @@ const WordWithPopover = ({ word, definition, root, parts_of_speech }) => {
                     style={{
                         width: "fit-content",
                         marginLeft: "auto", marginRight: "auto",
-                        backgroundColor: "var(--highlight-color)",
+                        backgroundColor: "var(--border-color)",
                         color: "var(--text-alternate)",
                         borderRadius: "2px",
                     }}
@@ -223,7 +236,7 @@ const Verse = ({ text, wordByWord, translation }) => {
         <Row className={isMobile ? "row-cols-1" : "row-cols-2"} style={{
             marginTop: "15px",
             marginLeft: "auto", marginRight: "auto",
-            borderBottom: isMobile ? "1px solid var(--highlight-color)" : "",
+            borderBottom: isMobile ? "1px solid var(--border-color)" : "",
         }}>
             {
                 verseTextComp
