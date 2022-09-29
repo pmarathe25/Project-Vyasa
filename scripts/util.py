@@ -127,7 +127,8 @@ def process_parts_of_speech(
     # In the first case, we simply return an empty string, whereas in the second case,
     # we populate the parts of speech with an entry for "Indeclinable".
     if not parts_of_speech:
-        if dictionary_entries is not None and all(definitions_with_part_of_speech("(indeclinable)")):
+        defs = definitions_with_part_of_speech("(indeclinable)")
+        if dictionary_entries is not None and defs and all(defs):
             sorted_parts["other"] = "indc"
             return make_human_readable_parts(sorted_parts)
 

@@ -23,7 +23,7 @@ const Root = ({ root, partsOfSpeech }) => {
     const rootParts = root.split("+");
     for (let index in translitRootParts) {
         refLinks.push(
-            <div lang="sa" style={{ marginLeft: "4px", display: "inline-block", ...commonStyle }} key={index}>
+            <div lang="sa" style={{ marginLeft: "2px", display: "inline-block", ...commonStyle }} key={index}>
                 {(index > 0 ? ", " : "")}
                 <Link
                     to={toDictUrl(rootParts[index])}
