@@ -23,7 +23,7 @@ laumahars<an<aputra: (laumahars<an<a+putra, nom sing m) Lomaharshana's son
 ugras~ravaa: (ugras~ravas, nom sing) Ugrasravas
 saauti: (saauti, nom sing) Sauti
 paauraan<ika: (paauraan<ika, nom sing m) well-versed in the Puranas
-naaimis<aaran<yai (naaimis<a+aran<ya, loc sing) in the Naimisha forest
+naaimis<aaran<yai (naaimis<a+aran<ya, loc sing n) in the Naimisha forest
 |
 s~aaunakasya (s~aaunaka, gen sing) of Shaunaka
 kulapatai: (kula+pati, gen sing) of the head of the family
@@ -32,7 +32,7 @@ satrai (satra, loc sing) at the sacrifice
 ||
 sukhaasiinaan (sukha+!aas, acc pl m pres mid part) sitting blissfully
 abhyagacchat (abhi-!gam, 3 sing imp act ind) he approached
-brahmars<iin (brahman+r>s<i, acc pl) the Brahman sages
+brahmars<iin (brahman+r>s<i, acc pl m) the Brahman sages
 sa.s~itavrataan (sa.s~ita+vrata, acc pl m) rigid-vowed (firm in their vows)
 |
 vinayaavanata: (vinaya+ava-!nam, nom sing m perf pass part) having humbly bowed
@@ -46,11 +46,11 @@ of Suta, well-versed in the Puranas, having (become) humbly bowed, approached th
 rigid-vowed Brahman sages in the Naimisha forest at the 12-yearly sacrifice of Kulapati Shaunaka.
 
 tam (sa, acc sing) him
-aas~ramam (aas~rama, acc sing) hermitage
+aas~ramam (aas~rama, acc sing n) hermitage
 anupraaptam (anu-pra-!aap, acc sing m perf pass part) having reached
-naaimis<aaran<yavaasinaam (naaimis<a+aran<ya+vaasin, gen pl) of those living in the Naimisha forest
+naaimis<aaran<yavaasinaam (naaimis<a+aran<ya+vaasin, gen pl m) of those living in the Naimisha forest
 |
-citraa: (citra, acc pl) wonderful
+citraa: (citra, acc pl f) wonderful
 s~rautum (!s~ru, inf) to hear
 kathaa: (kathaa, acc pl) stories
 tatra then
@@ -71,7 +71,7 @@ kr>taan~jali: (kr>ta+an~jali, nom sing m) having joined hands
 |
 apr>cchat (!prach, 3 sing imp act ind) he asked
 sa (sa, nom sing) he
-tapauvr>ddhim (tapas+vr>ddhi, acc sing) progress of asceticism
+tapauvr>ddhim (tapas+vr>ddhi, acc sing f) progress of asceticism
 sadbhi: (sat, inst pl m) by the true ones (i.e. the sages)
 ca and
 aiva indeed
@@ -102,7 +102,7 @@ sukhaasiinam (sukha+!aas, acc sing m pres mid part) sitting blissfully/comfortab
 tata: (tatas) thus
 tam (sa, acc sing) him
 tu and
-vis~raantam (vis~raanta, acc sing) rested
+vis~raantam (vis~raanta, acc sing m) rested
 upalaks<ya (upa-!laks<, abs) having noticed
 ca and
 |
@@ -110,7 +110,7 @@ atha then
 apr>cchat (!prach, 3 sing imp act ind) he asked
 r>s<i: (r>s<i, nom sing) a sage
 tatra there
-kas~cit (ka+cit, nom sing) one
+kas~cit (ka+cit, nom sing m) one
 prastaavayan (pra-!stu, nom sing m pres act part caus) causing to start, starting
 kathaa: (kathaa, acc pl) the stories, i.e. the conversation
 ||
@@ -128,7 +128,7 @@ vihr>ta: (vi-!hr>, nom sing m perf pass part) was spent
 tvayaa (tvam, inst sing) by you
 |
 kaala: (kaala, nom sing) time
-kamalapatraaks<a (kamala+patra+aks<a, voc sing) lotus-petal-eyed
+kamalapatraaks<a (kamala+patra+aks<a, voc sing m) lotus-petal-eyed
 s~a.sa (!s~a.s, 2 sing pres act impv) tell
 aitat (aitad, acc sing) that
 pr>cchata: (!prach, gen sing m pres act part) of the asking
@@ -149,11 +149,11 @@ vaakyam (vaakya, acc sing) statement
 vacanasa.panna: (vacana+sa.panna, nom sing m) endowed with (good) speech
 tais<aam (sa, gen pl) of them
 ca and
-caritaas~rayam (carita+aas~rayam, acc sing) going (to be) sheltered, seeking shelter
+caritaas~rayam (carita+aas~rayam, acc sing m) going (to be) sheltered, seeking shelter
 ||
-tasmin (sa, loc sing) in that
+tasmin (tad, loc sing) in that
 sadasi (sadas, loc sing) assembly
-vistiirn<ai (vistiirn<a, loc sing) broad, great
+vistiirn<ai (vistiirn<a, loc sing n) broad, great
 muniinaam (muni, gen pl) of sages
 bhaavitaatmanaam (bhaavita+aatman, m gen pl) of self-realized, lit. "soul-manifested"
 |
@@ -167,7 +167,7 @@ uvaaca (!vac, 3 sing perf act ind) said
 |
 janamaijayasya (janamaijaya, gen sing) of Janamejaya
 raajars<ai: (raajan+r>s<i, gen sing) of the royal sage
-sarpasatrai (sarpa+satra, loc sing) in the snake sacrifice
+sarpasatrai (sarpa+satra, loc sing n) in the snake sacrifice
 mahaatmana: (mahat+aatman, gen sing m) of the great souled
 ||
 samiipai (samiipa, loc sing) at, lit. "in the vicinity"
@@ -298,7 +298,7 @@ puraan<am (puraan<a, acc sing n) Purana
 paramars<in<aa (parama+r>s<i, inst sing m) by the greatest sage
 |
 suraai: (sura, inst pl) by deities
-brahmars<ibhi: (brahman+r>s<i, inst pl) by the Brahman sages
+brahmars<ibhi: (brahman+r>s<i, inst pl m) by the Brahman sages
 ca and
 aiva indeed
 s~rutvaa (!s~ru, abs) having heard
@@ -315,7 +315,7 @@ aakhyaanavaris<th<asya (aakhyaana+varis<th<a, gen sing n) of the most extensive 
 vicitrapadaparvan<a: (vicitra+pada+parvan, gen sing n) of (something) having various words and sections
 |
 suuks<maarthanyaayayuktasya (suuks<ma+artha+nyaaya+yukta, gen sing n) of (something) having subtle and logical meaning
-vaidaarthaai: (vaida+artha, inst pl) by the meaning of the Vedas
+vaidaarthaai: (vaida+artha, inst pl m) by the meaning of the Vedas
 bhuus<itasya (!bhuus<, gen sing perf pass part n) of (something) enriched, lit. "decorated by"
 ca and
 ||
@@ -347,7 +347,7 @@ sa: (sa, nom sing) he/that
 r>s<i: (r>s<i, nom sing) the sage
 tus<t<yaa (tus<t<i, inst sing) with satisfaction
 satrai (satra, loc sing) in the sacrifice
-dvaaipaayanaajn~ayaa (dvaaipaayana+aajn~aa, inst sing) at Vyasa's behest, lit. "islander-command"
+dvaaipaayanaajn~ayaa (dvaaipaayana+aajn~aa, inst sing f) at Vyasa's behest, lit. "islander-command"
 ||
 
 "Which that sage, Vaishampayana, narrated properly [and] with satisfaction
@@ -379,7 +379,7 @@ puruhuutam (puru+huuta, acc sing m) called upon by many
 purus<t<utam (puru+stuta, acc sing m) praised by many
 |
 r>tam (r>ta, acc sing m) true
-aikaaks<aram (aikaaks<ara, acc sing) the imperishable one
+aikaaks<aram (aikaaks<ara, acc sing m) the imperishable one
 brahma (brahman, acc sing) Brahma
 vyaktaavyaktam (vyakta+avyakta, acc sing m) perceptible and imperceptible
 sanaatanam (sanaatana, acc sing m) eternal
@@ -438,7 +438,7 @@ the great-souled great sage, honored by everyone here.
 
 aacakhyu: (aa-!khyaa, 3 pl perf act ind) they told
 kavaya: (kavi, nom pl) the bards
-kaicit (ka+cit, nom pl) some
+kaicit (ka+cit, nom pl m) some
 sa.pratyaacaks<atai (sam-prati-aa-!caks<=II, 3 pl pres mid ind) they are teaching
 parai (para, nom pl m) others
 |
@@ -636,7 +636,7 @@ tathaa so also
 ||
 sa.vatsarartava: (sa.vatsara+r>tu, nom pl) the years [and] seasons
 maasaa: (maasa, nom pl) the months
-paks<aahauraatraya: (paks<a+ahauraatri, nom pl) the fortnights, the days [and] nights
+paks<aahauraatraya: (paks<a+ahauraatri, nom pl f) the fortnights, the days [and] nights
 kramaat gradually
 |
 yat (yat, nom sing) what[ever]
@@ -664,7 +664,7 @@ puna: (punar,) again
 sa.ks<ipyatai (sam-!ks<ip, 3 sing pres pass ind) is diminished
 sarvam (sarva, nom sing n) all
 jagatpraaptai (jagat+praapta, loc sing n) at the end of the world, lit. "at world-complete"
-yugaks<ayai (yuga+ks<aya, loc sing) at the destruction of the age, lit. "at age-destruction"
+yugaks<ayai (yuga+ks<aya, loc sing m) at the destruction of the age, lit. "at age-destruction"
 ||
 
 "What is seen, whatever [is] created, [both] stationary and moving,
@@ -672,8 +672,8 @@ all that is diminished again at the end of the world, at the destruction of the 
 
 yathaa just as
 r>taau (r>tu, loc sing) in a season
-r>tulin^gaani (r>tu+lin^ga, nom pl) [things] characteristic of a season
-naanaaruupaan<i (naanaa+ruupa, nom pl) various features
+r>tulin^gaani (r>tu+lin^ga, nom pl n) [things] characteristic of a season
+naanaaruupaan<i (naanaa+ruupa, nom pl n) various features
 paryayai (paryaya, loc sing) at the change
 |
 dr>s~yantai (!dr>s~, 3 pl pres pass ind) are seen
@@ -682,7 +682,7 @@ taani (tad, nom sing) these [things (listed in the previous verses)]
 aiva indeed
 tathaa in that manner
 bhaavaa: (bhaava, nom pl) arise, lit. "[are] arising"
-yugaadis<u (yuga+aadi, loc pl) at the beginnings of ages, lit. "at age-beginnings"
+yugaadis<u (yuga+aadi, loc pl m) at the beginnings of ages, lit. "at age-beginnings"
 ||
 
 "Just as at the change [of] a season, those various features characteristic of the [new] season
@@ -712,16 +712,16 @@ trayastri.s~at (trayastri.s~at, nom sing) thirty-three
 ca and
 daivaanaam (daiva, gen pl) of gods
 sr>s<t<i: (sr>s<t<i, nom sing) the generation
-sa.ks<aipalaks<an<aa (sa.ks<aipa+laks<an<aa, nom sing) a brief indication
+sa.ks<aipalaks<an<aa (sa.ks<aipa+laks<an<aa, nom sing f) a brief indication
 ||
 
 "[To give] a brief indication, the generation of the gods [was]
 thirty-three thousand, thirty-three hundred, and thirty-three.
 
-divasputra: (diva+putra, nom sing) son of Diva, lit. "Diva-son"
+divasputra: (diva+putra, nom sing m) son of Diva, lit. "Diva-son"
 br>hadbhaanu: (br>hadbhaanu, nom sing m) Brhadbhanu
 caks<u: (caks<us, nom sing m) Cakshus
-aatmaa (aatman, nom sing) Atma
+aatmaa (aatman, nom sing m) Atma
 vibhaavasu: (vibhaavasu, nom sing m) Vibhavasu
 |
 savitaa (savitr>, nom sing) Savita

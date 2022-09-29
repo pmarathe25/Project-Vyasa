@@ -17,7 +17,8 @@ const WordAndDefinitions = ({ location, word }) => {
         const wordLinkStyle = {
             fontSize: "var(--sanskrit-font-size)", width: "fit-content",
             display: "inline", padding: 0,
-            whiteSpace: "nowrap"
+            whiteSpace: "nowrap",
+            textDecorationThickness: "1px",
         };
 
         const wordParts = word.split("-");

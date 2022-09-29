@@ -12,6 +12,7 @@ const SectionTitle = ({ data }) => {
     return (
         <h2
             style={{
+                marginTop: "30px",
                 marginBottom: "5px",
             }}
         >
@@ -27,7 +28,7 @@ const SectionSubtitle = ({ data }) => {
         <h3
             style={{
                 color: "var(--text-tertiary)", marginBottom: "5px",
-                fontSize: "var(--sanskrit-small-font-size)"
+                fontSize: "var(--sanskrit-large-font-size)"
             }}
         >
             {tranlistSectionName}
@@ -51,8 +52,8 @@ const Section = ({ location, data }) => {
             < p style={{
                 textAlign: "center",
                 color: "var(--text-alternate)",
-                fontSize: "var(--tertiary-font-size",
-                marginBottom: "20px"
+                fontSize: "var(--tertiary-font-size)",
+                marginBottom: "50px"
             }}>
                 {isMobile ? "Tap" : "Click"} on Sanskrit text to see word-level analysis
             </p >

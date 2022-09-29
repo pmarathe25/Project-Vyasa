@@ -34,10 +34,11 @@ abhis<aika (m) consecration, religious bathing [saika]
 acara (adj) not moving, immovable
 acintya (adj) inconceivable, incomprehensible, unexpected [a+cintya]
 adbhuta (adj) extraordinary, wonderful
+adhyaaya (m) lesson, lecture, reading, chapter [!dhyaai]
 aditi (f) destitution
 agha (adj) bad, dangerous, sinful
 agni (m) fire
-aham I (1st person pronoun)
+aham (d) I (1st person pronoun)
 ahar (n) a day
 ahauraatri (f) day and night [ahar+raatri]
 aika (adj) one, single, solitary

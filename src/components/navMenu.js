@@ -56,7 +56,7 @@ const NavMenu = ({ useClass = "" }) => {
                     :
                     <Dropdown style={{
                         display: "flex",
-                        border: "1px solid var(--highlight-color)",
+                        border: "1px solid var(--border-color)",
                         borderRadius: "4px",
                         ...linkStyle,
                         marginRight: "8px",
@@ -71,7 +71,7 @@ const NavMenu = ({ useClass = "" }) => {
                             Texts
                         </Nav.Link>
                         <Dropdown.Toggle as={Nav.Link} style={{
-                            ...linkStyle, borderLeft: "1px solid var(--highlight-color)",
+                            ...linkStyle, borderLeft: "1px solid var(--border-color)",
                             ...dropdownStyle,
                         }} />
                         <Dropdown.Menu

@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 
-function getWindowWidth() {
+export function getWindowWidth() {
     if (typeof window === "undefined") {
         return 0;
     }

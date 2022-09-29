@@ -27,7 +27,7 @@ const Root = ({ root, partsOfSpeech }) => {
                 {(index > 0 ? ", " : "")}
                 <Link
                     to={toDictUrl(rootParts[index])}
-                    style={{ fontSize: "var(--secondary-font-size)", fontStyle: "normal", whiteSpace: "nowrap" }}
+                    style={{ fontSize: "var(--sanskrit-small-font-size)", fontStyle: "normal", whiteSpace: "nowrap" }}
                     key={index}
                 >
                     {translitRootParts[index]}

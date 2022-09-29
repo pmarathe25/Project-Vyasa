@@ -9,7 +9,7 @@ const WorkLink = ({ workSanskritName, to }) => {
 
     return (
         <Link to={to} style={{
-            fontSize: "var(--sanskrit-large-font-size)",
+            fontSize: "var(--sanskrit-extra-large-font-size)",
             padding: "0px", margin: "0px"
         }}>
             {translitWorkSanskritName}

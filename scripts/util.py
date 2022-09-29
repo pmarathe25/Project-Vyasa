@@ -41,6 +41,7 @@ PARTS_OF_SPEECH_MAPPING = OrderedDict(
         ("m", ("masculine", "gender")),
         ("f", ("feminine", "gender")),
         ("n", ("neuter", "gender")),
+        ("d", ("deictic", "gender")),
         ("pres", ("present", "tense")),
         ("perf", ("perfect", "tense")),
         ("imp", ("imperfect", "tense")),
@@ -52,22 +53,28 @@ PARTS_OF_SPEECH_MAPPING = OrderedDict(
         ("ind", ("indicative", "mood")),
         ("pot", ("potential", "mood")),
         ("impv", ("imperative", "mood")),
-        ("caus", ("causative", "other")),
-        ("des", ("desiderative", "other")),
-        ("desadj", ("desiderative", "other")),
+        ("caus", ("causative", "verb-form")),
+        ("des", ("desiderative", "verb-form")),
+        ("desadj", ("desiderative", "verb-form")),
         ("abs", ("absolutive", "form")),
         ("part", ("participle", "form")),
         ("ger", ("gerund", "form")),
         ("inf", ("Infinitive", "form")),
         ("adv", ("Adverb", "form")),
         ("sup", ("Superlative", "degree")),
+        ("indc", ("Indeclinable", "other")),
     ]
 )
 
-NOUN_PARTS = set(["case", "number"])
+NOUN_PARTS = set(["case", "number", "gender"])
 VERB_PARTS = set(["person", "number", "tense", "voice", "mood"])
 PARTICIPLE_PARTS = NOUN_PARTS | {"tense", "voice", "form", "gender"}
 DESIDERATIVE_ADJECTIVE_PARTS = NOUN_PARTS
+
+
+def make_human_readable_parts(sorted_parts):
+    new_parts = [PARTS_OF_SPEECH_MAPPING[part][0] for part in sorted_parts.values()]
+    return " ".join(new_parts).title()
 
 
 def process_parts_of_speech(
@@ -94,17 +101,43 @@ def process_parts_of_speech(
     Returns:
         str: The parts of speech in their full form.
     """
-    if not parts_of_speech:
-        return parts_of_speech
-
     dictionary_entries = dictionary_entries or []
+
+    sorted_parts = OrderedDict()  # Dict[str, str]
+
+    # Returns whether each definition has the specified part of speech specified.
+    def definitions_with_part_of_speech(start):
+        return [
+            definition.startswith(start)
+            for (_, definitions, _, _) in dictionary_entries
+            for definition in definitions
+            # Skip meta-entries
+            if definition
+            and not any(definition.startswith(meta_prefix) for meta_prefix in ["()", "(in compound)", "(as prefix)"])
+        ]
+
+    # parts_of_speech may be empty in two scenarios:
+    #
+    # 1. This function is being called from `build_dictionary.py` for a reference entry
+    #   without a specific form specified. For example:
+    #         aakhyaana (n) communication, story, tale, narrative [aa-!khyaa]
+    #
+    # 2. The word is indeclinable.
+    #
+    # In the first case, we simply return an empty string, whereas in the second case,
+    # we populate the parts of speech with an entry for "Indeclinable".
+    if not parts_of_speech:
+        if dictionary_entries is not None and all(definitions_with_part_of_speech("(indeclinable)")):
+            sorted_parts["other"] = "indc"
+            return make_human_readable_parts(sorted_parts)
+
+        return ""
 
     orig_parts_of_speech = copy.copy(parts_of_speech)
 
     def show_error(msg):
         raise RuntimeError(err_prefix + msg + f"\nNote: parts of speech were: {orig_parts_of_speech}")
 
-    sorted_parts = OrderedDict()
     part_functions = set()
     parts_of_speech = set(filter(lambda x: x, parts_of_speech.strip().split(" ")))
     for part in PARTS_OF_SPEECH_MAPPING:
@@ -131,35 +164,40 @@ def process_parts_of_speech(
             show_error(f"Expected parts of speech: {err_parts}, but received: {part_functions}")
 
     # Validate that part functions are ok
-    if "other" in part_functions:
+    if "verb-form" in part_functions:
         if not is_verb:
-            show_error(f"Cannot use parts of speech: {sorted_parts['other']} for non-verbs!")
-        part_functions.remove("other")
+            show_error(f"Cannot use parts of speech: {sorted_parts['verb-form']} for non-verbs!")
+        part_functions.remove("verb-form")
 
     if "form" in sorted_parts and sorted_parts["form"] == "adv":
         # Adverbs only have form.
         check_parts({"form"})
     elif is_verb:
-        if "other" in sorted_parts and sorted_parts["other"] == "desadj":
+        if "verb-form" in sorted_parts and sorted_parts["verb-form"] == "desadj":
             check_parts(DESIDERATIVE_ADJECTIVE_PARTS)
         elif "form" in sorted_parts:
             if sorted_parts["form"] == "part":
                 check_parts(PARTICIPLE_PARTS)
             else:
-                # Otherwise form must be the only part
+                # verb-formwise form must be the only part
                 check_parts({"form"})
         else:
             check_parts(VERB_PARTS)
     elif sorted_parts:
-        is_adj = is_adj or any(
-            "(adj.)" in definition for (_, definitions, _, _) in dictionary_entries for definition in definitions
-        )
+        is_adj = is_adj or any(definitions_with_part_of_speech("(adj.)"))
         if "degree" in part_functions:
             if not is_adj:
                 show_error(f"Cannot use parts of speech: {sorted_parts['degree']} for non-adjectives!")
             part_functions.remove("degree")
 
-        check_parts(NOUN_PARTS | ({"gender"} if is_adj else set()))
+        if not is_adj:
+            # Determine gender using dictionary entries
+            genders = [val for val in PARTS_OF_SPEECH_MAPPING if PARTS_OF_SPEECH_MAPPING[val][1] == "gender"]
+            for gender in genders:
+                if all(definitions_with_part_of_speech(f"({gender}.)")):
+                    sorted_parts["gender"] = gender
+                    part_functions.add("gender")
 
-    new_parts = [PARTS_OF_SPEECH_MAPPING[part][0] for part in sorted_parts.values()]
-    return " ".join(new_parts).title()
+        check_parts(NOUN_PARTS)
+
+    return make_human_readable_parts(sorted_parts)
