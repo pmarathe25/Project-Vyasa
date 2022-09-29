@@ -6,6 +6,7 @@
 - [Public Website](#public-website)
 - [Contributing](#contributing)
 
+
 ## Introduction
 
 Welcome to Project Vyasa!
@@ -18,16 +19,18 @@ Many excellent resources are freely available online
 and [Ambuda](https://ambuda.org/)!)
 but I've yet to find one that has all the following properties:
 - Word-by-word translation
-- Detailed and accurate word-level grammatical explanation
+- Detailed word-level grammatical explanation
 - A minimal, easy-to-navigate, and clean web interface
 
-It is *not* the aim to provide anything more than a literally correct translation;
+It is *not* the aim to provide anything more than literally correct translations;
 that is, the included translations do not consider the broader cultural, historical,
-and philosophical context of the text.
+and philosophical context of the texts.
+
 
 ## Public Website
 
 The public website is [currently hosted here](https://projectvyasa.gatsbyjs.io/).
+
 
 ## Contributing
 

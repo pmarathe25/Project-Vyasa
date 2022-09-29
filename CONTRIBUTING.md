@@ -26,38 +26,11 @@ There are three main ways you can contribute to Project Vyasa:
 3. Improving the website itself; to do so, follow the [set up instructions](#setting-up)
     below, make your changes, then [integrate them](#integrating-your-changes) to the main repository.
 
-To add new content or make changes to the website, you'll need to follow the instructions
-below to [set up the repository](#setting-up) for local development.
 
-## Setting Up
+## Setting Up For Local Development
 
-Before you can start contributing, you'll need to set up the repository for local development:
-To do so, you will need to:
-
-1. [Install `npm`](https://docs.npmjs.com/downloading-and-installing-node-js-and-npm)
-
-2. Navigate to the repository directory and install required packages:
-    ```
-    npm i
-    ```
-
-3. Install the Gatsby CLI client:
-    ```
-    npm i -g gatsby-cli
-    ```
-
-4. Install packages required for testing:
-    ```
-    python3 -m pip install -r tests/requirements.txt
-    ```
-
-5. Launch the local web server:
-    ```
-    make launch
-    ```
-
-At this point, you should be able to navigate to http://localhost:8000/ in your
-browser to view your local copy of the site.
+Before you can add new content or make changes to the website, you'll need to set up the
+repository for local development. Refer to [INSTALL.md](./INSTALL.md) for instructions on how to do so.
 
 
 ## Adding New Content
