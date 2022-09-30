@@ -1,13 +1,14 @@
 import { Link } from 'gatsby';
 import * as React from 'react';
-import { Container } from 'react-bootstrap';
+import { Container, Row } from 'react-bootstrap';
 import allWordsDict from "../../content/generated/dictionary/all_words.json";
 import { useTransliterate } from '../components/transliterationHook';
 import { toDictUrl } from '../util/util';
 
 const commonStyle = {
-    color: "var(--text-secondary)",
     padding: 0,
+    width: "fit-content",
+    color: "var(--text-secondary)",
     fontSize: "var(--tertiary-font-size)",
 };
 
@@ -57,7 +58,7 @@ const Root = ({ root, partsOfSpeech }) => {
 
 }
 
-const Definition = ({ word, makeDefinitionLink = false, marginLeft = "5px" }) => {
+const Definition = ({ word }) => {
     const [, definitions, roots, partsOfSpeeches] = React.useMemo(() => {
         return allWordsDict[word];
     }, [word]);
@@ -70,30 +71,23 @@ const Definition = ({ word, makeDefinitionLink = false, marginLeft = "5px" }) =>
         const partsOfSpeech = partsOfSpeeches[index];
 
         definitionElements.push(
-            <div key={index}
+            <Row key={index}
                 style={{
-                    width: "100%", marginLeft: marginLeft,
-                    display: "inline-block",
-                    ...commonStyle
+                    marginLeft: "5px",
+                    marginRight: "0px",
+                    ...commonStyle,
                 }}>
-                {
-                    makeDefinitionLink
-                        ?
-                        <Link to={toDictUrl(word)} style={{ textDecoration: "none", cursor: "pointer" }}>
-                            {definition}
-                        </Link>
-                        :
-                        <>
-                            {definition}
-                        </>
-                }
+                <p style={commonStyle}>
+                    {definition}
+                </p>
                 <Root root={root} partsOfSpeech={partsOfSpeech} />
-            </div>
+            </Row>
         );
     }
 
     return (
         <Container style={{
+            // display: "inline-block",
             marginTop: "auto", marginBottom: "auto",
             padding: "0px",
             paddingLeft: "0px", paddingRight: "5px"

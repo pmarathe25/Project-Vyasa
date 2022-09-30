@@ -3,7 +3,7 @@ import { Navbar } from 'react-bootstrap';
 import { clamp } from '../util/util';
 
 
-export const NAVBAR_HEIGHT = 60;
+export const NAVBAR_HEIGHT = 65;
 
 
 const AutohidingNavbar = (props) => {
@@ -46,6 +46,7 @@ const AutohidingNavbar = (props) => {
                 position: "fixed",
                 width: "100%",
                 zIndex: 2,
+                padding: 0,
             }}
             // Navbar is never expandable on desktop
             onToggle={(expanded) => {

@@ -68,6 +68,7 @@ const Layout = ({
             >
                 <Container style={{
                     maxWidth: "var(--navbar-width)",
+                    minHeight: NAVBAR_HEIGHT,
                 }}>
                     <Navbar.Brand as={Link} to="/" >
                         Project Vyasa
@@ -98,7 +99,7 @@ const Layout = ({
             </AutohidingNavbar>
             <Container style={{
                 maxWidth: maxWidth,
-                marginTop: `${NAVBAR_HEIGHT + 25}px`,
+                marginTop: `${NAVBAR_HEIGHT + 35}px`,
             }}>
                 <ResponsiveBreadcrumbs location={location} showCurrentPage={showCurrentPageInBreadcrumbs} />
                 {children}
