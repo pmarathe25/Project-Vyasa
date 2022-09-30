@@ -56,7 +56,7 @@ const Layout = ({
             fontFamily:
                 "-apple-system, 'BlinkMacSystemFont', 'Oxygen', 'Cantarell', 'Segoe UI',"
                 + " 'Roboto', 'Open Sans', 'Helvetica Neue', 'Ubuntu', 'DejaVu Sans', sans-serif",
-            paddingBottom: "500px",
+            paddingBottom: "600px",
             backgroundColor: "var(--background)",
             height: "100%",
         }}>
@@ -99,7 +99,7 @@ const Layout = ({
             </AutohidingNavbar>
             <Container style={{
                 maxWidth: maxWidth,
-                marginTop: `${NAVBAR_HEIGHT + 35}px`,
+                marginTop: `${NAVBAR_HEIGHT + 40}px`,
             }}>
                 <ResponsiveBreadcrumbs location={location} showCurrentPage={showCurrentPageInBreadcrumbs} />
                 {children}

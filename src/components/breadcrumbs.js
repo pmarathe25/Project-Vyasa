@@ -41,7 +41,7 @@ const ResponsiveBreadcrumbs = ({ location, showCurrentPage = true }) => {
                 maxWidth: "var(--medium-content-width)",
                 height: "fit-content",
                 marginLeft: "auto", marginRight: "auto",
-                marginBottom: "30px",
+                marginBottom: "40px",
                 borderBottom: "1px solid var(--border-color)",
             }}
             listProps={{
