@@ -3,6 +3,7 @@
     --medium-content-width: 800px;
     --small-content-width: 600px;
     --navbar-width: 800px;
+    --bold-font-weight: 500;
 }
 
 [data-font-size="desktop-devanagari"] {
@@ -12,7 +13,7 @@
     --sanskrit-small-font-size: 17px;
     --primary-font-size: 19px;
     --secondary-font-size: 16px;
-    --tertiary-font-size: 14.5px;
+    --tertiary-font-size: 15px;
 }
 
 [data-font-size="desktop-iast"] {
@@ -22,7 +23,7 @@
     --sanskrit-small-font-size: 15.5px;
     --primary-font-size: 19px;
     --secondary-font-size: 16px;
-    --tertiary-font-size: 14.5px;
+    --tertiary-font-size: 15px;
 }
 
 [data-font-size="mobile-devanagari"] {
@@ -32,7 +33,7 @@
     --sanskrit-small-font-size: 15.5px;
     --primary-font-size: 16.5px;
     --secondary-font-size: 14.5px;
-    --tertiary-font-size: 14px;
+    --tertiary-font-size: 14.5px;
 }
 
 [data-font-size="mobile-iast"] {
@@ -42,7 +43,7 @@
     --sanskrit-small-font-size: 15px;
     --primary-font-size: 16.5px;
     --secondary-font-size: 14.5px;
-    --tertiary-font-size: 14px;
+    --tertiary-font-size: 14.5px;
 }
 
 [data-theme="dark"] {
@@ -52,8 +53,8 @@
     --border-color: rgb(65, 65, 65);
     --highlight-color: rgba(255, 255, 255, 0.15);
     --text-primary: rgb(255, 255, 255);
-    --text-secondary: rgb(235, 235, 235);
-    --text-tertiary: rgb(185, 185, 185);
+    --text-secondary: rgb(215, 215, 215);
+    --text-tertiary: rgb(200, 200, 200);
     --text-alternate: rgb(179, 203, 255);
     --shadow-color: rgb(10, 10, 10);
 }
@@ -65,8 +66,8 @@
     --border-color: rgb(225, 225, 225);
     --highlight-color: rgba(0, 0, 0, 0.15);
     --text-primary: rgb(0, 0, 0);
-    --text-secondary: rgb(30, 30, 30);
-    --text-tertiary: rgb(70, 70, 70);
+    --text-secondary: rgb(75, 75, 75);
+    --text-tertiary: rgb(90, 90, 90);
     --text-alternate: rgb(42, 101, 211);
     --shadow-color: rgb(180, 180, 180);
 }
@@ -102,7 +103,7 @@ a:link {
 }
 
 a:visited {
-    color: var(--text-secondary);
+    color: var(--text-primary);
 }
 
 a:hover {

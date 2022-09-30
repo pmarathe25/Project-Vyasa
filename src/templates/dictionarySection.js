@@ -59,7 +59,7 @@ const WordAndDefinitions = ({ location, word }) => {
                 display: "flex",
             }}>
                 {wordElements}
-                <Definition word={word} makeDefinitionLink={true} />
+                <Definition word={word} />
             </div>
         </OffsetAnchor>
     )

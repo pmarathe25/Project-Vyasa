@@ -10,12 +10,7 @@ const SectionTitle = ({ data }) => {
     const tranlistSection = useTransliterate(data.textJson.section);
 
     return (
-        <h2
-            style={{
-                marginTop: "30px",
-                marginBottom: "5px",
-            }}
-        >
+        <h2 style={{ marginBottom: "5px" }}>
             {tranlistSection}
         </h2>
     );
@@ -27,7 +22,7 @@ const SectionSubtitle = ({ data }) => {
     return (
         <h3
             style={{
-                color: "var(--text-tertiary)", marginBottom: "5px",
+                color: "var(--text-secondary)", marginBottom: "15px",
                 fontSize: "var(--sanskrit-large-font-size)"
             }}
         >
@@ -53,7 +48,7 @@ const Section = ({ location, data }) => {
                 textAlign: "center",
                 color: "var(--text-alternate)",
                 fontSize: "var(--tertiary-font-size)",
-                marginBottom: "50px"
+                marginBottom: "60px"
             }}>
                 {isMobile ? "Tap" : "Click"} on Sanskrit text to see word-level analysis
             </p >

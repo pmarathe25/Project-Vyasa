@@ -17,7 +17,9 @@ const RootMeanings = ({ root }) => {
         <>
             {
                 translitRoots.map((rootPar, index) =>
-                    <div key={index}>
+                    <div key={index}
+                        style={{ display: "flex" }}
+                    >
                         <Link to={toDictUrl(roots[index])} target="_blank"
                             style={{
                                 fontSize: "var(--sanskrit-font-size)",
@@ -28,7 +30,7 @@ const RootMeanings = ({ root }) => {
                         >
                             {rootPar}
                         </Link>
-                        <Definition word={roots[index]} marginLeft="15px" />
+                        <Definition word={roots[index]} />
                     </div>
                 )
             }
@@ -101,9 +103,10 @@ const WordWithPopover = ({ word, definition, root, parts_of_speech }) => {
                                     width: "fit-content",
                                     marginLeft: "auto", marginRight: "auto",
                                     fontSize: "var(--tertiary-font-size)",
-                                    marginTop: "6px",
+                                    marginTop: "5px",
+                                    paddingTop: "1px",
                                     borderTop: "1px solid var(--highlight-color)",
-                                    fontWeight: 275,
+                                    fontWeight: "var(--bold-font-weight)",
                                 }}>
                                     {parts_of_speech}
                                 </p>
