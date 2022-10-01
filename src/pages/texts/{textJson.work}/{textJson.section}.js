@@ -22,7 +22,7 @@ const SectionSubtitle = ({ data }) => {
     return (
         <h3
             style={{
-                color: "var(--text-secondary)", marginBottom: "20px",
+                color: "var(--text-secondary)", marginBottom: "30px",
                 fontSize: "var(--sanskrit-large-font-size)"
             }}
         >
@@ -48,7 +48,7 @@ const Section = ({ location, data }) => {
                 textAlign: "center",
                 color: "var(--text-alternate)",
                 fontSize: "var(--tertiary-font-size)",
-                marginBottom: "40px"
+                marginBottom: "35px"
             }}>
                 {isMobile ? "Tap" : "Click"} on Sanskrit text to see word-level analysis
             </p >
