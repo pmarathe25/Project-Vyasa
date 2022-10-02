@@ -23,12 +23,14 @@ saa (f) she, this that
 saadhya (m) (plural) a class of celestial beings
 saaks<ika (adj) (in compound) witnessed [saaks<in]
 saaks<in (adj) observing, witnessing, eye-witness [sa+aks<a]
+saamprata (adj) fit, proper, correct, belonging to the present time
+saampratam fitly, properly, presently, at the present time [saamprata, adv]
 saauti (m) Sauti, the narrator of the Mahabharata
 sadas (n) assembly, seat, residence
 sahasra (n) a thousand
 sahasrajyautis (m) Sahasrajyoti [sahasra+jyautis]
 saika (m) effusion, emission, offering
-sam () (as prefix) with, together, along with, altogether
+sam () (as prefix) with, together, along with, altogether, same
 sam-!aas to sit together, to assemble
 sam-!bhuu to be or come together, to be born or produced
 sam-!hr> to bring together, to compress, to abridge; to crumple up, to destroy
@@ -43,6 +45,7 @@ sam-prati-aa-!caks<=II to explain, to teach
 sam-ud-!i=I to rise up together, to come together or prepare
 samaasa (m) aggregation, union, [sam-!aas]; (m) succinctness, brevity, conciseness
 samantapan~caka (n) Samantapancaka, a district of Kurukshetra
+samartha (adj) competent, capable, able [sam+artha]
 samataa (f) sameness of level, equality
 samaya (m) agreement, engagement [sam-!i=I]; (m) a speech, a declaration
 sambhuuta (adj) united, born, produced [sam-!bhuu, perf pass part]
