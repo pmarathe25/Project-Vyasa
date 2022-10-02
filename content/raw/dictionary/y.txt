@@ -13,4 +13,4 @@ yatra (indc) where (relative pronoun)
 yayaati (m) Yayati
 yuddha (n) a battle, a fight, a war [!yudh]
 yuga (n) an age of the world
-yukta (adj) joined, yoked, (in compound) endowed with [!yuj=VII, perf pass part]
+yukta (adj) joined, yoked, (in compound) endowed with (+inst) [!yuj=VII, perf pass part]
