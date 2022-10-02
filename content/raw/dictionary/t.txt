@@ -2,7 +2,7 @@ tad (n) this, that
 tamas (n) darkness, gloom
 tanaya (m) son
 tapas (n) heat, pain, penance, religious austerity
-tapasvin (m) ascetic, poor
+tapasvin (m) ascetic, poor [tapas]
 tatas (indc) thus, thence, then, afterwards, further, beyond that
 tathaa (indc) in that manner, so also, thus, and
 tatra (indc) there, in that place, then, therefore

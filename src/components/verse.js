@@ -142,6 +142,7 @@ const WordWithPopover = ({ word, definition, root, parts_of_speech }) => {
                 maxWidth: "110px",
                 textAlign: "center",
                 marginRight: "auto", marginLeft: "auto",
+                marginBottom: "8px",
             }}>
                 {definition}
             </p>

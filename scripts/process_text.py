@@ -456,15 +456,17 @@ def process_files(input_dir, input_path, output_path, transliteration_ruleset, d
                 word_by_word_sections.append([])
                 to_sandhi_word_lines.append([])
 
+        # If the last section is non-empty, it means there's an unclosed line
+        if word_by_word_sections[-1]:
+            sep = "\n\t"
+            raise RuntimeError(
+                f"Final word-by-word section is not closed. Please close each line with either `|` or `||`. "
+                f"\nNote: Raw word-by-word content was:{sep}{sep.join(word_by_word.splitlines())}"
+            )
+
         # Remove the final empty section
         word_by_word_sections.pop()
         to_sandhi_word_lines.pop()
-
-        if not word_by_word_sections:
-            raise RuntimeError(
-                f"Word-by-word section is empty. Did you forget to close it with a pipe ('|') character?"
-                f"\nNote: Raw word-by-word section is:\n{word_by_word}"
-            )
 
         processed["verses"].append(
             {
