@@ -11,15 +11,18 @@
 !vr>dh to increase
 !vr>t to turn, to advance, to be
 va.s~a (m) lineage, race, family, stock
+vaac (f) speech, voice [!vac]
 vaai (indc) indeed
 vaais~ampaayana (m) Vaishampayana
 vaakya (n) speech, statement, sentence
+vaalmiiki (m) Valmiki, author of the Ramayana
 vaars<ika (mn) yearly, annual [vars<a]
 vaasin (mn) staying, dwelling [!vas=I]
 vaayu (m) the wind, the air [!vaa]
 vacana (mn) speech, sentence, word
 vaha (adj) (in compound) carrying, bearing, conveying [!vah]
 vaida (m) true knowledge; (m) one of the Vedas, a set of four formative literary works originating in ancient India
+vara (adj) select, choicest, best, most excellent or eminent
 varain<ya (adj) desirable, excellent, best
 varcas (adj) power, vigor, energy
 varis<th<a (adj) widest, broadest, most extensive
@@ -32,6 +35,7 @@ vi.s~ati (f) twenty
 vibhaa () [!bhaa]; (adj) shining, bright; (f) light, splendor
 vibhaavasu () [vibhaa+vasu]; (adj) abounding in light; (m) fire or the god of fire; (m) the sun; (m) the moon; (m) Vibhavasu
 vicitra (adj) strange, wonderful, varied
+vid (adj) knowing, understanding [!vid=II]
 vidhivat (indc) according to rule, duty
 vidvas (adj) one who knows, wise, learned, lit. "having understood" [!vid=II, perf act part]
 vinaya (m) humility

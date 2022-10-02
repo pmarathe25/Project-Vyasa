@@ -28,13 +28,20 @@ const WordAndDefinitions = ({ location, word }) => {
             const part = translitWordParts[index];
             ret.push(
                 <div lang="sa" key={word + index + "div"}>
-                    <Link
-                        key={word + index}
-                        to={toDictUrl(wordParts[index])}
-                        style={wordLinkStyle}
-                    >
-                        {part}
-                    </Link>
+                    {
+                        wordParts.length > 1 ?
+                            <Link
+                                key={word + index}
+                                to={toDictUrl(wordParts[index])}
+                                style={wordLinkStyle}
+                            >
+                                {part}
+                            </Link>
+                            :
+                            <p style={wordLinkStyle}>
+                                {part}
+                            </p>
+                    }
                     {(wordParts.length > 1 && index !== wordParts.length - 1 ?
                         <p style={wordLinkStyle} key={word + index + "dash"}>
                             -

@@ -13,7 +13,7 @@
     --sanskrit-small-font-size: 17px;
     --primary-font-size: 19px;
     --secondary-font-size: 16px;
-    --tertiary-font-size: 15px;
+    --tertiary-font-size: 14.5px;
 }
 
 [data-font-size="desktop-iast"] {
@@ -23,7 +23,7 @@
     --sanskrit-small-font-size: 15.5px;
     --primary-font-size: 19px;
     --secondary-font-size: 16px;
-    --tertiary-font-size: 15px;
+    --tertiary-font-size: 14.5px;
 }
 
 [data-font-size="mobile-devanagari"] {
@@ -50,11 +50,11 @@
     --background: rgb(45, 45, 45);
     --navbar-background: rgb(35, 35, 35);
     --accent-color: rgb(63, 113, 205);
-    --border-color: rgb(65, 65, 65);
+    --border-color: rgba(255, 255, 255, 0.10);
     --highlight-color: rgba(255, 255, 255, 0.15);
     --text-primary: rgb(255, 255, 255);
-    --text-secondary: rgb(215, 215, 215);
-    --text-tertiary: rgb(200, 200, 200);
+    --text-secondary: rgb(220, 220, 220);
+    --text-tertiary: rgb(205, 205, 205);
     --text-alternate: rgb(179, 203, 255);
     --shadow-color: rgb(10, 10, 10);
 }
@@ -62,8 +62,8 @@
 [data-theme="light"] {
     --background: rgb(255, 255, 255);
     --navbar-background: rgb(245, 245, 245);
-    --accent-color: rgb(217, 230, 255);
-    --border-color: rgb(225, 225, 225);
+    --accent-color: rgb(193, 214, 255);
+    --border-color: rgba(0, 0, 0, 0.10);
     --highlight-color: rgba(0, 0, 0, 0.15);
     --text-primary: rgb(0, 0, 0);
     --text-secondary: rgb(75, 75, 75);
