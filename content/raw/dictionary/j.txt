@@ -1,14 +1,17 @@
 !jan to be born, to arise
 !jap to mutter in a low voice, to repeat internally
+!ji to win or acquire, to conquer, to vanquish
 !jn~aa to know, to perceive
 !jyut to shine [!dyut]
 ja () (in compound) born, born of [!jan]
+jaata (adj) (in compound) to be born, brought into existence by (+loc), engendered by (+inst/abl) [!jan, perf pass part]
 jaati (f) birth, position, rank, or class assigned by birth
 jagat (n) the world
 jan^gama (adj) moving, locomotive [!gam]
 janamaijaya (m) "causing men to tremble"; (m) Janamejaya
 japya (n) meditation, muttered prayer, chanting a mantra [!jap, ger]
 jaya (m) conquest, victory
+jita (adj) won, conquered, acquired, subdued [!ji, perf pass part]
 jn~a (adj) knowing, familiar with [!jn~aa]
 jn~aana (n) knowledge [!jn~aa]
 jyautis (n) light, brightness

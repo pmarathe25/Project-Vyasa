@@ -1,6 +1,7 @@
 !aap to reach
 !aas to sit
 !as to be
+!asuuya to envy, to be jealous, to be displeased
 a () (as prefix) negates/inverts the meaning of a word
 aa () (as prefix) near, near to, towards
 aa-!gam to come
@@ -22,6 +23,7 @@ aas~rayam (mn) sheltered
 aatmaja (adj) self-originated, born from oneself, a child [aatman+ja]
 aatmaka (adj) belonging to or forming the nature of, composed of
 aatman (n) soul, essence, nature, character; (m) Atma
+aatmavat (adj) having a soul, composed, prudent [aatman]
 aavr>ta (adj) covered, enveloped [aa-!vr>, perf pass part]
 aayatana (n) altar, resting place, sanctuary
 aayus (n) life, vital power, vigor
@@ -56,6 +58,7 @@ alam-!kr> to adorn, to decorate, to embellish
 an () (as prefix) negates/inverts the meaning of a word
 an<d<a (n) egg
 anagha (adj) sinless, faultless [an+agha]
+anasuuyaka (adj) not envious or spiteful [an+asuuyaka]
 anta (m) end, limit, boundary
 antar (indc) within, between
 antariks<a (n) the atmosphere or sky, the intermediate space between the earth and the heavens
@@ -74,6 +77,7 @@ aran<ya (n) a forest, a wilderness
 arka (m) one who praises [!r>c]; (m) Arka
 artha (mn) reason, substance, wealth, manner, kind
 asat (adj) not being, not existing
+asuuyaka (adj) discontented, displeased, envious [!asuuya]
 as~va (m) horse
 as~vin (adj) consisting of horses, mounted on horseback; (m) a horse tamer; (m) (dual) "the two charioteers", name of two divinities
 atha (indc) then

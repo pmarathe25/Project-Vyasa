@@ -55,3 +55,21 @@ aikapriyadars~ana: (aika+priya+dars~ana, nom sing m) [one possessing a] singular
 
 "And who [is] endowed with good conduct, [and] who [is] agreeable to all beings,
 who [is] wise, and who [is] competent, and who [is one possessing a] singularly pleasant appearance?
+
+aatmavaan (aatmavat, nom sing m) composed
+ka: (ka, nom sing m) who
+jitakraudha: (jita+kraudha, nom sing m) [one possessing] controlled temper, lit. "conquered-anger"
+dyutimaan (dyutimat, nom sing m) majestic
+ka: (ka, nom sing m) who
+anasuuyaka: (anasuuyaka, nom sing m) not spiteful
+|
+kasya (ka, gen sing m) whom
+bibhyati (!bhii, 3 pl pres act ind) they fear
+daivaa: (daiva, nom pl m) the gods
+ca and
+jaataraus<asya (jaata+raus<a, gen sing m) [one whose] wrath is brought about, lit. "born-wrath"
+sa.yugai (sa.yuga, loc sing m) by battle
+||
+
+"Who [is] composed, [possessing] a controlled temper, who [is] majestic, not spiteful,
+and whom the gods fear, [when his] wrath is brought about by battle?

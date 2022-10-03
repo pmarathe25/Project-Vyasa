@@ -2,6 +2,7 @@
 !khyaa to tell
 !kr> to do, to make
 !kram to step, to walk
+!krudh to become angry or wrathful
 !ks<ar to ooze, to flow, to melt away, to perish
 !ks<i=I to decay, to waste away
 !ks<i=VI to dwell
@@ -21,6 +22,7 @@ kr>ta (adj) done, made, accomplished [!kr>, perf pass part]
 kr>tajn~a (adj) knowing what is right, correct in conduct, mindful of former aid, grateful [kr>ta+jn~a]
 krama (m) a step [!kram]
 kramaat (indc) in regular course, by degrees, gradually [krama, abl sing m]
+kraudha (m) anger, wrath, passion [!krudh]
 ks<aya (m) (in compound) loss, destruction, decay [!ks<i=I]
 ks<it () (in compound) ruling, dwelling [!ks<i=VI]
 kula (m) family
