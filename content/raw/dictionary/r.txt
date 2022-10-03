@@ -1,5 +1,6 @@
 !r>c to praise
 !ram to stop, to stay; to delight, to make happy; to rest, to abide
+!rus< to be angry, to injure
 r>ciika () [!r>c]; (m) Rcika
 r>s<i (m) a seer, a sage
 r>ta (adj) true, honest, worshipped, respected
@@ -7,5 +8,6 @@ r>tam (indc) rightly, properly, duly
 r>tu (m) epoch, period, season
 raajan (m) a king
 raatri (f) night
+raus<a (m) anger, wrath, passion, fury [!rus<]
 ravi (m) the sun; (m) a mountain; (m) Ravi
 ruupa (n) form, shape, figure, feature
