@@ -30,7 +30,8 @@ def transliteration_ruleset():
         # Visarga
         (["tata:", "aiva"], "tata aiva"),
         (["pr>s<t<a:", "abraviit"], "pr>s<t<au'braviit"),
-        (["tvam", "artha:", "asi"], "tvam arthau'si"),
+        (["tvam", "samartha:", "asi"], "tva. samarthau'si"),
+        (["dyutimaan", "ka:", "anasuuyaka:"], "dyutimaankau'nasuuyaka:"),
         (["tata:", "gam"], "tatau gam"),
         (["tata:", "na"], "tatau na"),
         (["pati:", "gam"], "patirgam"),

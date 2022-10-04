@@ -281,6 +281,10 @@ def build_sandhied_text(words, translit_ruleset):
         (matches(["au"], but_not=["aau"]), matches(VOWELS, but_not=["a"]), replace("end", [("au", "a")])),
     ]
 
+    def remove_empty(words):
+        # Remove any empty strings left over as a result of merging/joining.
+        return list(filter(lambda word: word.strip(), words))
+
     def apply_sandhi(words, conditions):
         index = 0
         # Use a dummy "word" to avoid edge case handling
@@ -290,7 +294,7 @@ def build_sandhied_text(words, translit_ruleset):
                 if trailing_cond(words[index], mode="ends") and leading_cond(words[index + 1], mode="starts"):
                     words[index], words[index + 1] = strat(words[index], words[index + 1])
             index += 1
-        return words
+        return remove_empty(words)
 
     def apply_merge(words):
         merged = [words.pop(0)]
@@ -303,14 +307,13 @@ def build_sandhied_text(words, translit_ruleset):
             else:
                 merged.append(words.pop(0))
                 index += 1
-        return merged
+        return remove_empty(merged)
 
     words = apply_sandhi(words, PRE_MERGE_SANDHI)
     words = apply_merge(words)
     words = apply_sandhi(words, POST_MERGE_SANDHI)
 
-    # Remove any empty strings left over as a result of merging/joining.
-    return " ".join(filter(lambda word: word.strip(), words)).strip()
+    return " ".join(words).strip()
 
 
 def parse_word_grammar(line, verse_num, line_num, dictionary):
