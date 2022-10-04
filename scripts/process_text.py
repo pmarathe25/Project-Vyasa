@@ -236,16 +236,28 @@ def build_sandhied_text(words, translit_ruleset):
             ),
         ),
         (
-            matches(["ai", "au"], but_not=["aai", "aau"]),
-            matches(["a"], but_not=["aa", "ai", "au"]),
-            replace("start", [("a", "'")]),
-        ),
-        (
             matches(["a", "aa"]),
             matches(["r>"]),
             compose(
                 replace("end", [("aa", "a")]),
                 replace("start", [("r>", "r")]),
+                join(),
+            ),
+        ),
+        (
+            matches(["ai", "au"], but_not=["aai", "aau"]),
+            matches(["a"], but_not=["aa", "ai", "au"]),
+            compose(
+                replace("start", [("a", "'")]),
+                join(),
+            ),
+        ),
+        (
+            matches(["a:"]),
+            matches(["a"], but_not=["aa", "au", "ai"]),
+            compose(
+                replace("end", [("a:", "au")]),
+                replace("start", [("a", "'")]),
                 join(),
             ),
         ),
@@ -261,14 +273,6 @@ def build_sandhied_text(words, translit_ruleset):
     POST_MERGE_SANDHI = [
         # Visarga rules
         (matches(["aa:"]), matches(ALL_VOICED), replace("end", [("aa:", "aa")])),
-        (
-            matches(["a:"]),
-            matches(["a"], but_not=["aa", "au", "ai"]),
-            compose(
-                replace("end", [("a:", "au")]),
-                replace("start", [("a", "'")]),
-            ),
-        ),
         (matches(["a:"]), matches(VOWELS), replace("end", [("a:", "a")])),
         (matches(["a:"]), matches(ALL_VOICED), replace("end", [("a:", "au")])),
         # Vowel rules
@@ -305,7 +309,8 @@ def build_sandhied_text(words, translit_ruleset):
     words = apply_merge(words)
     words = apply_sandhi(words, POST_MERGE_SANDHI)
 
-    return " ".join(words).strip()
+    # Remove any empty strings left over as a result of merging/joining.
+    return " ".join(filter(lambda word: word.strip(), words)).strip()
 
 
 def parse_word_grammar(line, verse_num, line_num, dictionary):
