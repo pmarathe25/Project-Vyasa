@@ -180,7 +180,7 @@ def process_parts_of_speech(
             if sorted_parts["form"] == "part":
                 check_parts(PARTICIPLE_PARTS)
             else:
-                # verb-formwise form must be the only part
+                # otherwise this is a non-finite verb and form must be the only part
                 check_parts({"form"})
         else:
             check_parts(VERB_PARTS)

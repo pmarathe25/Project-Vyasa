@@ -29,7 +29,8 @@ def transliteration_ruleset():
     [
         # Visarga
         (["tata:", "aiva"], "tata aiva"),
-        (["pr>s<t<a:", "abraviit"], "pr>s<t<au 'braviit"),
+        (["pr>s<t<a:", "abraviit"], "pr>s<t<au'braviit"),
+        (["tvam", "artha:", "asi"], "tvam arthau'si"),
         (["tata:", "gam"], "tatau gam"),
         (["tata:", "na"], "tatau na"),
         (["pati:", "gam"], "patirgam"),
@@ -44,10 +45,10 @@ def transliteration_ruleset():
         # Vowels
         (["ca", "aiva"], "caaiva"),
         (["tathaa", "aiva"], "tathaaiva"),
-        (["prabhai", "asmin"], "prabhai 'smin"),
         (["prabhai", "aadi"], "prabha aadi"),
         (["prabhaai", "asmin"], "prabhaa asmin"),
-        (["prabhau", "asmin"], "prabhau 'smin"),
+        (["prabhai", "asmin"], "prabhai'smin"),
+        (["prabhau", "asmin"], "prabhau'smin"),
         (["prabhau", "aadi"], "prabha aadi"),
         (["prabhaau", "asmin"], "prabhaavasmin"),
         # Special 'm' rules
@@ -176,8 +177,8 @@ def build_expected(verses_text, translations, word_lists):
                     [
                         # Line 1
                         [
-                            ["ca", "and", "ca", ""],
-                            ["aiva", "just so", "aiva", ""],
+                            ["ca", "and", "ca", "Indeclinable"],
+                            ["aiva", "just so", "aiva", "Indeclinable"],
                             ["|", None, None, None],
                         ]
                     ]
@@ -203,8 +204,8 @@ def build_expected(verses_text, translations, word_lists):
                     [
                         # Line 1
                         [
-                            ["ca", "and", "ca", ""],
-                            ["aiva", "just so", "aiva", ""],
+                            ["ca", "and", "ca", "Indeclinable"],
+                            ["aiva", "just so", "aiva", "Indeclinable"],
                             ["|", None, None, None],
                         ]
                     ]
@@ -231,12 +232,12 @@ def build_expected(verses_text, translations, word_lists):
                     [
                         # Line 1
                         [
-                            ["ca", "and", "ca", ""],
+                            ["ca", "and", "ca", "Indeclinable"],
                             ["|", None, None, None],
                         ],
                         # Line 2
                         [
-                            ["aiva", "just so", "aiva", ""],
+                            ["aiva", "just so", "aiva", "Indeclinable"],
                             ["|| 0 ||", None, None, None],
                         ],
                     ]
@@ -293,8 +294,8 @@ def build_expected(verses_text, translations, word_lists):
                     [
                         # Line 1
                         [
-                            ["ca", "and", "ca", ""],
-                            ["aiva", "just so", "aiva", ""],
+                            ["ca", "and", "ca", "Indeclinable"],
+                            ["aiva", "just so", "aiva", "Indeclinable"],
                             [
                                 "ks<ayati",
                                 "it is destroyed",
