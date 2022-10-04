@@ -36,6 +36,7 @@ vibhaa () [!bhaa]; (adj) shining, bright; (f) light, splendor
 vibhaavasu () [vibhaa+vasu]; (adj) abounding in light; (m) fire or the god of fire; (m) the sun; (m) the moon; (m) Vibhavasu
 vicitra (adj) strange, wonderful, varied
 vid (adj) knowing, understanding [!vid=II]
+vidha (m) measure, form, kind
 vidhivat (indc) according to rule, duty
 vidvas (adj) one who knows, wise, learned, lit. "having understood" [!vid=II, perf act part]
 viira (m) man, brave man, hero, chief
@@ -48,7 +49,7 @@ vis~raanta (adj) rested, taking rest
 vis~va (adj) all, every, whole, universal, all-pervading [!vis~]
 vis~vaidaiva (m) Vishvedeva, a particular class of deities [vis~va+daiva]
 vivasvat (adj) shining forth; (m) "the brilliant one", name for the Sun; (m) Vivasvan
-vividha (adj) manifold, varied
+vividha (adj) manifold, varied [vidha]
 vr>ddhi (f) growth, increase [!vr>dh]
 vr>tta (adj) occurred, happened, turned, set in motion [!vr>t, perf pass part]; (n) poetic meter containing a fixed number of syllables
 vrata (n) law, vow
