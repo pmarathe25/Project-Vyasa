@@ -73,3 +73,24 @@ sa.yugai (sa.yuga, loc sing m) by battle
 
 "Who [is] composed, [possessing] a controlled temper, who [is] majestic, not spiteful,
 and whom the gods fear, [when his] wrath is brought about by battle?
+
+aitad (aitad, acc sing) that
+icchaami (!is<, 1 sing pres act ind) I want
+aham (aham, nom sing) I
+s~rautum (!s~ru, inf) to hear
+param (para, nom sing n) very high
+kaautuuhalam (kaautuuhalam, nom sing) curiousity
+hi indeed
+mai (aham, gen sing) my
+|
+mahars<ai (mahat+r>s<i, voc sing m) great sage
+tvam (tvam, nom sing) you
+samartha: (samartha, nom sing m) able
+asi (!as, 2 sing pres act ind) you are
+jn~aatum (!jn~aa, inf) to know
+aiva.vidham (aiva.vidham, acc sing m) this kind [of]
+naram (nara, acc sing) man
+||
+
+"I want to hear that; My curiousity [is] very high indeed.
+Great sage, you are able to know this kind [of] man.
