@@ -127,6 +127,7 @@ def main():
                         dict_entry[2].append(reference.strip())
                         dict_entry[3].append(
                             util.process_parts_of_speech(
+                                reference,
                                 reference_parts_of_speech,
                                 is_verb=is_reference_verb,
                                 err_prefix=f"In file: {path} on line: {line_num}: ",

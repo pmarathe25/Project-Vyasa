@@ -14,12 +14,13 @@ va.s~a (m) lineage, race, family, stock
 vaac (f) speech, voice [!vac]
 vaai (indc) indeed
 vaais~ampaayana (m) Vaishampayana
-vaakya (n) speech, statement, sentence
+vaakya (n) speech, statement, sentence, words
 vaalmiiki (m) Valmiki, author of the Ramayana
 vaars<ika (mn) yearly, annual [vars<a]
 vaasin (mn) staying, dwelling [!vas=I]
 vaayu (m) the wind, the air [!vaa]
 vacana (mn) speech, sentence, word
+vacas (n) speech, voice, word
 vaha (adj) (in compound) carrying, bearing, conveying [!vah]
 vaida (m) true knowledge; (m) one of the Vedas, a set of four formative literary works originating in ancient India
 vara (adj) select, choicest, best, most excellent or eminent
