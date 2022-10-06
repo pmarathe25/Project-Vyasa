@@ -14,7 +14,7 @@ function transliterate(text, translitRuleset) {
             curSequence += curChar;
         }
         else {
-            // Append unknown character as they are.
+            // Append unknown characters as they are.
             output += curChar;
         }
 

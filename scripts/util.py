@@ -78,7 +78,7 @@ def make_human_readable_parts(sorted_parts):
 
 
 def process_parts_of_speech(
-    parts_of_speech, is_verb, err_prefix, is_declined=True, is_adj=None, dictionary_entries=None
+    word, parts_of_speech, is_verb, err_prefix, is_declined=True, is_adj=None, dictionary_entries=None
 ):
     """
     Processes a space separate sequence of parts of speech, validates it, then returns
@@ -132,6 +132,10 @@ def process_parts_of_speech(
             sorted_parts["other"] = "indc"
             return make_human_readable_parts(sorted_parts)
 
+        # If we're looking at a word outside the dictionary, then it must have parts of speech.
+        # Within the dictionary, reference words can be provided without any parts of speech.
+        if word and dictionary_entries:
+            raise RuntimeError(f"No parts of speech were provided for word: '{word}'")
         return ""
 
     orig_parts_of_speech = copy.copy(parts_of_speech)
@@ -165,40 +169,45 @@ def process_parts_of_speech(
             show_error(f"Expected parts of speech: {err_parts}, but received: {part_functions}")
 
     # Validate that part functions are ok
-    if "verb-form" in part_functions:
-        if not is_verb:
-            show_error(f"Cannot use parts of speech: {sorted_parts['verb-form']} for non-verbs!")
-        part_functions.remove("verb-form")
+    if "other" in part_functions and sorted_parts["other"] == "indc":
+        indec_defs = definitions_with_part_of_speech("(indeclinable)")
+        if indec_defs and not any(indec_defs):
+            show_error(f"Word: {word} is marked indeclinable, but none of the dictionary entries mark it as such!")
+    else:
+        if "verb-form" in part_functions:
+            if not is_verb:
+                show_error(f"Cannot use parts of speech: {sorted_parts['verb-form']} for non-verbs!")
+            part_functions.remove("verb-form")
 
-    if "form" in sorted_parts and sorted_parts["form"] == "adv":
-        # Adverbs only have form.
-        check_parts({"form"})
-    elif is_verb:
-        if "verb-form" in sorted_parts and sorted_parts["verb-form"] == "desadj":
-            check_parts(DESIDERATIVE_ADJECTIVE_PARTS)
-        elif "form" in sorted_parts:
-            if sorted_parts["form"] == "part":
-                check_parts(PARTICIPLE_PARTS)
+        if "form" in sorted_parts and sorted_parts["form"] == "adv":
+            # Adverbs only have form.
+            check_parts({"form"})
+        elif is_verb:
+            if "verb-form" in sorted_parts and sorted_parts["verb-form"] == "desadj":
+                check_parts(DESIDERATIVE_ADJECTIVE_PARTS)
+            elif "form" in sorted_parts:
+                if sorted_parts["form"] == "part":
+                    check_parts(PARTICIPLE_PARTS)
+                else:
+                    # otherwise this is a non-finite verb and form must be the only part
+                    check_parts({"form"})
             else:
-                # otherwise this is a non-finite verb and form must be the only part
-                check_parts({"form"})
-        else:
-            check_parts(VERB_PARTS)
-    elif sorted_parts:
-        is_adj = is_adj or any(definitions_with_part_of_speech("(adj.)"))
-        if "degree" in part_functions:
+                check_parts(VERB_PARTS)
+        elif sorted_parts:
+            is_adj = is_adj or any(definitions_with_part_of_speech("(adj.)"))
+            if "degree" in part_functions:
+                if not is_adj:
+                    show_error(f"Cannot use parts of speech: {sorted_parts['degree']} for non-adjectives!")
+                part_functions.remove("degree")
+
             if not is_adj:
-                show_error(f"Cannot use parts of speech: {sorted_parts['degree']} for non-adjectives!")
-            part_functions.remove("degree")
+                # Determine gender using dictionary entries
+                genders = [val for val in PARTS_OF_SPEECH_MAPPING if PARTS_OF_SPEECH_MAPPING[val][1] == "gender"]
+                for gender in genders:
+                    if all(definitions_with_part_of_speech(f"({gender}.)")):
+                        sorted_parts["gender"] = gender
+                        part_functions.add("gender")
 
-        if not is_adj:
-            # Determine gender using dictionary entries
-            genders = [val for val in PARTS_OF_SPEECH_MAPPING if PARTS_OF_SPEECH_MAPPING[val][1] == "gender"]
-            for gender in genders:
-                if all(definitions_with_part_of_speech(f"({gender}.)")):
-                    sorted_parts["gender"] = gender
-                    part_functions.add("gender")
-
-        check_parts(NOUN_PARTS)
+            check_parts(NOUN_PARTS)
 
     return make_human_readable_parts(sorted_parts)

@@ -74,7 +74,7 @@ sa.yugai (sa.yuga, loc sing m) by battle
 "Who [is] composed, [possessing] a controlled temper, who [is] majestic, not spiteful,
 and [one] whom the gods fear, [whose] wrath is brought about by battle?
 
-aitad (aitad, acc sing) that
+aitat (aitad, acc sing) that
 icchaami (!is<, 1 sing pres act ind) I want
 aham (aham, nom sing) I
 s~rautum (!s~ru, inf) to hear
@@ -94,3 +94,23 @@ naram (nara, acc sing) man
 
 "I want to hear that; My curiousity [is] very high indeed.
 Great sage, you are able to know such a man."
+
+s~rutvaa (!s~ru, abs) having heard
+ca and
+aitat (aitad, acc sing) that
+trilaukajn~a: (tri+lauka+jn~a, nom sing m) the knower of the three worlds, lit. "three-world-knower"
+vaalmiikai: (vaalmiiki, gen sing) of Valmiki
+naarada: (naarada, nom sing) Narada
+vaca: (vacas, acc sing) speech
+|
+s~ruuyataam (!s~ru, 3 sing pres pass impv) let it be heard
+iti thus
+ca and
+aamantrya (aamantrya, indc) addressed
+prahr>s<t<a: (prahr>s<t<a, nom sing m) delighted
+vaakyam (vaakya, acc sing) words
+abraviit (!bruu, 3 sing imp act ind) he spoke
+||
+
+And having heard that speech of Valmiki, Narada, the knower of the three worlds,
+addressed [Valimiki] this: "Let it be heard..." and, delighted, he spoke [these] words:

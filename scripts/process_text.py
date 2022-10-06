@@ -357,6 +357,10 @@ def parse_word_grammar(line, verse_num, line_num, dictionary):
         word, _, meaning = rest.partition(" ")
         root = word
 
+    word = word.strip()
+    meaning = meaning.strip()
+    root = root.strip()
+
     # Insert sqrt sign for verbal roots
     is_verb = "!" in root
     if is_verb:
@@ -368,12 +372,46 @@ def parse_word_grammar(line, verse_num, line_num, dictionary):
             raise RuntimeError(f"Could not find: {root_part} in the dictionary. Is an entry missing?")
         dictionary_entries.append(dictionary[root_part])
 
+    # Only some letter are valid ending letters in Sanskrit.
+    # If the word doesn't end in one of these, there's probably a mistake!
+    VALID_END_SEQUENCES = [
+        "k",
+        "t<",
+        "t",
+        "p",
+        "n^",
+        "n",
+        "m",
+        ":",
+        "aa:",
+        "a:",
+        "a",
+        "aa",
+        "i",
+        "ii",
+        "u",
+        "uu",
+        "r>",
+        "r>r>",
+        "ai",
+        "aai",
+        "au",
+        "aau",
+    ]
+    if not any(word.endswith(valid_end) for valid_end in VALID_END_SEQUENCES):
+        raise RuntimeError(
+            f"In verse: {verse_num}, line: {line_num} ({line}): "
+            f"\nWord: '{word}' does not end with a valid sequence of letters!"
+            f"\nNote: Valid ending sequences are: {VALID_END_SEQUENCES}"
+        )
+
     return strip(
         [
             word,
             meaning,
             root,
             util.process_parts_of_speech(
+                word,
                 parts_of_speech,
                 is_verb,
                 f"In verse: {verse_num}, line: {line_num} ({line}): ",
@@ -478,7 +516,7 @@ def process_files(input_dir, input_path, output_path, transliteration_ruleset, d
 
         processed["verses"].append(
             {
-                "text": "\n".join(build_sandhied_text(line, TRANSLIT_RULESET) for line in to_sandhi_word_lines),
+                "text": "\n".join(build_sandhied_text(words, TRANSLIT_RULESET) for words in to_sandhi_word_lines),
                 "translation": translation,
                 "wordByWord": word_by_word_sections,
             }

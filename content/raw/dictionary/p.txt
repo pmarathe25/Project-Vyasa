@@ -28,6 +28,7 @@ pra () (as prefix) excessively, very much; () (as prefix) forward, in front
 pra-!aap to attain, to arrive at
 pra-!bhuu to spring forth, to originate, to appear, to surpass, to be powerful
 pra-!caks<=II to call, to name, to tell, to declare
+pra-!hr>s< to rejoice, to be glad or cheerful
 pra-!jan to generate, to procreate, to beget
 pra-!stu to praise, to begin, to commence
 pra-!suu=II to beget, to produce, to obtain offspring to bear fruit
@@ -37,6 +38,7 @@ praapta (adj) attained, reached, accomplished, complete [pra-!aap, perf pass par
 prabhaa (f) light, splendor, radiance [!bhaa]
 prabhu [pra-!bhuu]; (adj) mighty, powerful; (m) lord, king, chief, leader
 pracaitas (adj) attentive, observant, mindful, clever, wise [pra+caitas]; (m) Pracetas
+prahr>s<t<a (adj) bristling, thrilled with delight, exceedingly pleased, delighted [pra-!hr>s<, perf pass part]
 prajaa (f) offspring, descendant, person, creature [pra-!jan]
 prajaapati (m) lord of creatures, protector of life [prajaa+pati]
 prajaavat (adj) having offspring, prolific, fruitful [prajaa]
