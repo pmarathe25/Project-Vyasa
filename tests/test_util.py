@@ -26,7 +26,7 @@ def lookup(*words):
 )
 def test_process_parts_of_speech(parts, is_verb, is_declined, dictionary_entries, expected):
     assert expected == process_parts_of_speech(
-        parts, is_verb, err_prefix="", is_declined=is_declined, dictionary_entries=dictionary_entries
+        "vacana", parts, is_verb, err_prefix="", is_declined=is_declined, dictionary_entries=dictionary_entries
     )
 
 
@@ -42,5 +42,5 @@ def test_process_parts_of_speech(parts, is_verb, is_declined, dictionary_entries
 def test_process_parts_of_speech_negative(parts, is_verb, is_declined, dictionary_entries, expected_err):
     with pytest.raises(Exception, match=expected_err):
         process_parts_of_speech(
-            parts, is_verb, err_prefix="", is_declined=is_declined, dictionary_entries=dictionary_entries
+            "vacana", parts, is_verb, err_prefix="", is_declined=is_declined, dictionary_entries=dictionary_entries
         )
