@@ -126,7 +126,7 @@ const WordWithPopover = ({ word, definition, root, parts_of_speech }) => {
                     style={{
                         width: "fit-content",
                         marginLeft: "auto", marginRight: "auto",
-                        backgroundColor: "var(--border-color)",
+                        backgroundColor: "var(--highlight-color)",
                         color: "var(--text-alternate)",
                         borderRadius: "2px",
                     }}
