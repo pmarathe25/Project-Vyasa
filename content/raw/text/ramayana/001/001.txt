@@ -79,7 +79,7 @@ icchaami (!is<, 1 sing pres act ind) I want
 aham (aham, nom sing) I
 s~rautum (!s~ru, inf) to hear
 param (para, nom sing n) very high
-kaautuuhalam (kaautuuhalam, nom sing) curiousity
+kaautuuhalam (kaautuuhala, nom sing) curiousity
 hi indeed
 mai (aham, gen sing) my
 |

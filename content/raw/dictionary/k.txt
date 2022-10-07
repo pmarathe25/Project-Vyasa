@@ -12,7 +12,7 @@ ka (m) who?; (m) of Vishnu
 kaala (m) time
 kaaraka (adj) (in compound) doer of an action [!kr>]
 kaaran<a (n) cause, reason
-kaautuuhalam (n) curiousity, interest, vehement desire for (+loc/acc/inf)
+kaautuuhala (n) curiousity, interest, vehement desire for (+loc/acc/inf) [kutuuhala]
 kadaa (indc) when
 kamala (mn) lotus
 karman () [!kr>]; (n) act, action; () (in compound) one who acts or one who is acted upon
@@ -31,4 +31,5 @@ ks<it () (in compound) ruling, dwelling [!ks<i=VI]
 kula (m) family
 kuru (m) Kuru, ancestor of Pandu and Dhritarashtra, but "kuru" generally refers to descendants of only the latter
 kutas (indc) from where? whence?
+kutuuhala (n) curiousity, interest, inclination, eagerness [kutas+hala]
 kva (indc) where? in what place?
