@@ -4,6 +4,7 @@
 !vah to carry, to convey
 !vas=I to live, to dwell
 !vas=VI to shine, to grow bright
+!vas~ to will, to command, to desire, to wish, to like
 !vibhaa to shine or gleam forth, to illuminate [!bhaa]
 !vid=II to know, to understand, to perceive
 !vis~ to enter
@@ -29,6 +30,8 @@ varcas (adj) power, vigor, energy
 varis<th<a (adj) widest, broadest, most extensive
 vars<a (m) a year
 vasu (adj) excellent, good, beneficial; (mn) a particular class of gods; (f) light, radiance [!vas=VI]
+vas~a () [!vas~]; (m) will, desire; (m) authority, power, control
+vas~in () [vas~a]; (adj) having will or power, having authority; (adj) compliant, obedient; (adj) master of one's self or passions
 vi () (as prefix) apart, away, out, in different directions
 vi-!hr> to distribute, to dispose, to set
 vi-!str> to stretch, to scatter
@@ -41,6 +44,7 @@ vidha (m) measure, form, kind
 vidhivat (indc) according to rule, duty
 vidvas (adj) one who knows, wise, learned, lit. "having understood" [!vid=II, perf act part]
 viira (m) man, brave man, hero, chief
+viirya () [viira]; (n) (in compound) valor, vigor, strength, power; (n) heroism
 viiryavat (adj) possessing vigor or might, strong, powerful [viira]
 vinaya (m) humility
 vis<n<u (m) Vishnu, one of the principal Hindu deities
