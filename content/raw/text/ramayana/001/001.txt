@@ -137,7 +137,7 @@ nara: (nara, nom sing m) man
 "O seer, I will tell [you], having known [such a man]; Let [the story] be heard [of] the man
 endowed by those many and indeed difficult to obtain virtues, which were mentioned by you.
 
-iks<vaakuva.s~aprabhava: (iks<vaaku+va.s~a+prabhava, nom sing m) Born in the Ikshvaku family, lit. "[one having] Ikshvaku-family-origin"
+iks<vaakuva.s~aprabhava: (iks<vaaku+va.s~a+prabhava, nom sing m) Born in the Ikshvaku lineage, lit. "[one having] Ikshvaku-lineage-origin"
 raama: (raama, nom sing m) Rama
 naama by name, lit. "named"
 janaai: (jana, inst pl) by people
@@ -150,5 +150,5 @@ dhr>timaan (dhr>timat, nom sing m) steadfast
 vas~ii (vas~in, nom sing m) master of his passions
 ||
 
-"Born in the Ikshvaku family, [he is] known by the people [as] Rama by name,
+"Born in the Ikshvaku lineage, [he is] known by the people [as] Rama by name,
 [and is] self-controlled, very powerful, resplendent, steadfast, [and] master of his passions.
