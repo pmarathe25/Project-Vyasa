@@ -1,5 +1,6 @@
 !aap to reach
 !aas to sit
+!aij to stir, to tremble, to shake
 !as to be
 !asuuya to envy, to be jealous, to be displeased
 a () (as prefix) negates/inverts the meaning of a word
@@ -23,7 +24,7 @@ aas~rama (mn) asylum, hermitage
 aas~rayam (mn) sheltered
 aatmaja (adj) self-originated, born from oneself, a child [aatman+ja]
 aatmaka (adj) belonging to or forming the nature of, composed of
-aatman (n) soul, essence, nature, character; (m) Atma
+aatman (n) soul, essence, nature, character, self; (m) Atma
 aatmavat (adj) having a soul, composed, prudent [aatman]
 aavr>ta (adj) covered, enveloped [aa-!vr>, perf pass part]
 aayatana (n) altar, resting place, sanctuary
@@ -44,6 +45,7 @@ agni (m) fire
 aham (d) I (1st person pronoun)
 ahar (n) a day
 ahauraatri (f) day and night [ahar+raatri]
+aijaya (adj) causing to shake or tremble [!aij, caus]
 aika (adj) one, single, solitary
 aikaaks<ara () [aika+aks<ara]; (n) the sole imperishable thing; (n) the sacred syllable 'Om'
 aikavi.s~ati (f) twenty-one [aika+vi.s~ati]

@@ -14,6 +14,8 @@ das~ajyauti (m) Dashajyoti [das~an+jyautis]
 das~an (adj) ten
 dharma (m) right, justice, moral obligation, religious duty [!dhr>=I]
 dharmya (adj) righteous, just, legitimate [dharma]
+dhr>ti (f) resolution, will, command, firmness [!dhr>=I]
+dhr>timat () [dhr>ti]; (adj) steadfast, calm, resolute; (adj) satisfied, content
 didr>ks<u (adj) wanting to see [!dr>s~, des]
 dis~ (f) region, cardinal point, quarter (of the sky, i.e. cardinal direction) [!dis~]
 div (m) the heavens, the sky

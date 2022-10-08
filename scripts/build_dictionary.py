@@ -133,6 +133,7 @@ def main():
                                 err_prefix=f"In file: {path} on line: {line_num}: ",
                                 is_declined=False,
                                 is_adj=is_adj,
+                                do_check=False,
                             ).strip()
                         )
 

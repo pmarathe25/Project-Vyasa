@@ -8,7 +8,8 @@ jaata (adj) (in compound) born, brought into existence by (+loc), engendered by 
 jaati (f) birth, position, rank, or class assigned by birth
 jagat (n) the world
 jan^gama (adj) moving, locomotive [!gam]
-janamaijaya (m) "causing men to tremble"; (m) Janamejaya
+jana () [!jan]; (m) a common person; (m) creature, living being, man, person
+janamaijaya (m) "causing men to tremble" [jana+aijaya]; (m) Janamejaya
 japya (n) meditation, muttered prayer, chanting a mantra [!jap, ger]
 jaya (m) conquest, victory
 jita (adj) won, conquered, acquired, subdued [!ji, perf pass part]
