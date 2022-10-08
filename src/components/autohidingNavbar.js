@@ -3,7 +3,7 @@ import { Navbar } from 'react-bootstrap';
 import { clamp } from '../util/util';
 
 
-export const NAVBAR_HEIGHT = 65;
+export const NAVBAR_HEIGHT = 70;
 
 
 const AutohidingNavbar = (props) => {
