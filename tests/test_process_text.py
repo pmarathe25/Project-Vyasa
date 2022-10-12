@@ -59,6 +59,7 @@ def transliteration_ruleset():
         (["bhavan", "aika"], "bhavannaika"),
         (["bhavin", "aika"], "bhavinnaika"),
         (["bhavun", "aika"], "bhavunnaika"),
+        (["an", "s~a"], "an~s~a"),
         # 'n' with long or compound vowels should not double
         (["bhavaan", "aika"], "bhavaanaika"),
         (["bhaviin", "aika"], "bhaviinaika"),

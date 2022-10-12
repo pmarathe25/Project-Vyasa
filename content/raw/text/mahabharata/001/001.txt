@@ -330,7 +330,7 @@ granthaarthasa.yutaam (grantha+artha+sa.yuta, acc sing f) containing (lit. "unit
 |
 sa.skaaraupagataam (sa.skaara+upagata, acc sing f) possessing purity
 braahmiim (braahmii, acc sing) speech
-naanaas~aastraupabr>.hitaam (naanaa+s~aastra+upabr>.hita, acc sing f) augmented by various Shastras
+naanaas~aastraupabr>hitaam (naanaa+s~aastra+upabr>hita, acc sing f) augmented by various Shastras
 ||
 
 "Of the Bharata, the sacred history containing the meanings of [many] books,

@@ -91,7 +91,10 @@ s~aaunaka (m) Shaunaka, a Sanskrit grammarian
 s~abda (m) word
 s~ata (n) a hundred
 s~atajyauti (m) Shatajyoti [s~ata+jyautis]
+s~atru (m) enemy, foe, rival
 s~is<t<a (adj) disciplined, cultured, learned, eminent [!s~is<=VII, perf pass part]
+s~rii (f) light, radiance; (f) properity, welfare, good fortune
+s~riimat () [s~rii]; (adj) charming, pleasant; (adj) fortunate, wealthy, prosperous, eminent, illustrious
 s~ruta heard, listened to, known, famous [!s~ru, perf pass part]
 s~ubha (adj) splendid, bright, pleasant, eminent
 s~uci (adj) gleaming, shining, radiant, pure

@@ -13,6 +13,7 @@
 !vr>t to turn, to advance, to be
 va.s~a (m) lineage, race, family, stock
 vaac (f) speech, voice [!vac]
+vaagmin (adj) eloquent [vaac]
 vaai (indc) indeed
 vaais~ampaayana (m) Vaishampayana
 vaakya (n) speech, statement, sentence, words
@@ -47,6 +48,7 @@ viira (m) man, brave man, hero, chief
 viirya () [viira]; (n) (in compound) valor, vigor, strength, power; (n) heroism
 viiryavat (adj) possessing vigor or might, strong, powerful [viira]
 vinaya (m) humility
+vipula (adj) large, extensive, wide, thick, abundant [vi+pula]
 vis<n<u (m) Vishnu, one of the principal Hindu deities
 vistara (adj) extensive, long [vi-!str>]
 vistiirn<a (mn) strewn, spread out, broad, extensive [vi-!str>]

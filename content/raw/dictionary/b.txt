@@ -1,14 +1,19 @@
+!ba.h to grow, to increase
+!bah [!ba.h]
 !bhaa to shine
 !bhaj to distribute, to obtain, to receive
 !bhii to fear
 !bhraaj to shine, to beam, to sparkle, to glitter
 !bhuu to be
 !bhuus< to adorn, to decorate
-!br>.h=I to increase, to strengthen, to promote
+!br>h=I to increase, to strengthen, to promote
+!br>h=VI to tear, to pluck, to uproot
 !bruu to speak
 !budh to wake, to be awake; to learn, to understand, to know
+baahu (mf) arm, forearm [!bah]
 bahu (adj) much, many
 bahus~ruta (adj) very learned, one who has studied much [bahu+s~ruta]
+barhan<a (adj) tearing, pulling out [!br>h=VI]
 bhaaga (m) a part, a portion, a share
 bhaanu (m) appearance, brighness [!bhaa]; (m) Bhanu
 bhaarata () [bharata]; (adj) relating to/descended from Bharata; (n) India
@@ -23,6 +28,8 @@ bhuuta (adj) having become, existing, any living being, created thing [!bhuu, pe
 bhuuyas (indc) more, most, very much, exceedingly
 biija (n) seed, germ
 br>hadbhaanu () [br>hat+bhaanu]; (adj) shining brightly; (m) fire or the god of fire; (m) Brhadbhanu
-br>hat (adj) great, vast, abundant [!br>.h=I, pres act part]
+br>hat (adj) great, vast, abundant [!br>h=I, pres act part]
 braahmii (f) speech or the goddess of speech (Sarasvati)
 brahman (n) the self-existent One, the Absolute, the Creator
+buddhi (f) intellect, reason, mind, judgement [!budh]
+buddhimat (adj) intelligent, learned, wise [buddhi]

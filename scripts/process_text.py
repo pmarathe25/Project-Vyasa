@@ -59,10 +59,13 @@ def build_sandhied_text(words, translit_ruleset):
         "dental-semivowels",
         "bilabial-semivowels",
     )
-
-    CONSONANTS = (
-        UNVOICED_CONSONANTS + VOICED_CONSONANTS + NASAL_CONSONANTS + keys_of("sibilants") + keys_of("approximants")
+    SIBILANTS = keys_of(
+        "palatal-sibilants",
+        "retroflex-sibilants",
+        "dental-sibilants",
     )
+
+    CONSONANTS = UNVOICED_CONSONANTS + VOICED_CONSONANTS + NASAL_CONSONANTS + SIBILANTS + keys_of("approximants")
     ALL_VOICED = VOICED_CONSONANTS + VOWELS + SEMI_VOWELS + NASAL_CONSONANTS + keys_of("approximants")
     ALL = CONSONANTS + VOWELS + SEMI_VOWELS
 
@@ -207,6 +210,7 @@ def build_sandhied_text(words, translit_ruleset):
         (matches(["n"]), matches(keys_of("unvoiced-palatal-consonants")), replace("end", [("n", ".s~")])),
         (matches(["n"]), matches(keys_of("unvoiced-retroflex-consonants")), replace("end", [("n", ".s<")])),
         (matches(["n"]), matches(keys_of("unvoiced-dental-consonants")), replace("end", [("n", ".s")])),
+        (matches(["n"]), matches(keys_of("palatal-sibilants")), replace("end", [("n", "n~")])),
         # Final 'n' is doubled when preceded by a short vowel and followed by any vowel.
         (
             matches(

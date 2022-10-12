@@ -97,9 +97,13 @@
         "bilabial-semivowels": {
             "v": "v"
         },
-        "sibilants": {
-            "s~": "ś",
-            "s<": "ṣ",
+        "palatal-sibilants": {
+            "s~": "ś"
+        },
+        "retroflex-sibilants": {
+            "s<": "ṣ"
+        },
+        "dental-sibilants": {
             "s": "s"
         },
         "approximants": {
