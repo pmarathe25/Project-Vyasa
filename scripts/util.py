@@ -16,6 +16,11 @@ def adjust_verb(verb):
     verb = verb.replace("!", "√")
     if "=" in verb:
         verb, _, cls = verb.partition("=")
+
+        # There are only 10 verb classes
+        if set(cls).difference({"I", "V", "X"}):
+            raise RuntimeError(f"Unexpected verb class: {cls}. Expected a Roman numeral! Note: Verb was: {verb}")
+
         verb = f"{verb} ({cls})"
     return verb
 

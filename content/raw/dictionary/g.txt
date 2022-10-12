@@ -1,6 +1,7 @@
 !gam to go
 !granth=X to write, to compose
 grantha (m) a binding, a knot, a composition, a book [!granth=X]
+griiva (m) neck
 guhyaka (m) a class of demigods
 gun<a (m) good quality, virtue, merit; (m) a multiplier, coefficient
 gun<avat (adj) endowed with good qualities or virtues [gun<a]
