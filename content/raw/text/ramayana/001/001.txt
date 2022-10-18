@@ -134,8 +134,8 @@ s~ruuyataam (!s~ru, 3 sing pres pass impv) let [it] be heard
 nara: (nara, nom sing m) man
 ||
 
-"O seer, I will tell [you], having known [such a man]; Let [the story] be heard [of] the man
-endowed by those many and indeed difficult to obtain virtues, which were mentioned by you.
+"Many and indeed difficult to obtain [are] the virtues which [were] mentioned by you.
+O seer, I will tell [you], having known [such a man]; Let it be heard: the man endowed with those [virtues]...
 
 iks<vaakuva.s~aprabhava: (iks<vaaku+va.s~a+prabhava, nom sing m) Born in the Ikshvaku lineage, lit. "[one having] Ikshvaku-lineage-origin"
 raama: (raama, nom sing m) Rama
@@ -150,7 +150,7 @@ dhr>timaan (dhr>timat, nom sing m) steadfast
 vas~ii (vas~in, nom sing m) master of his passions
 ||
 
-"Born in the Ikshvaku lineage, [he is] known by the people [as] Rama by name,
+"... [was] born in the Ikshvaku lineage, [he is] known by the people [as] Rama by name,
 [and is] self-controlled, very powerful, resplendent, steadfast, [and] master of his passions.
 
 buddhimaan (buddhimat, nom sing m) wise
