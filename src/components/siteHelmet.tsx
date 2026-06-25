@@ -49,7 +49,8 @@ const SiteHelmet = ({ location, title, description }: SiteHelmetProps) => {
     url: `${siteUrl}${location.pathname}`,
   };
 
-  const { useDarkMode, translitMode } = React.useContext(SettingsContext);
+  const { state } = React.useContext(SettingsContext);
+  const { useDarkMode, translitMode } = state;
   const theme = useDarkMode ? 'dark' : 'light';
 
   return (

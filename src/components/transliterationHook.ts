@@ -11,12 +11,12 @@ rulesetCache.set('devanagari', devanagari);
 rulesetCache.set('iast', iast);
 
 export function useTransliterate(text: string): string {
-  const { translitMode } = React.useContext(SettingsContext);
+  const { state } = React.useContext(SettingsContext);
 
   const output = React.useMemo(() => {
-    const translitRuleset = rulesetCache.get(translitMode) || devanagari;
+    const translitRuleset = rulesetCache.get(state.translitMode) || devanagari;
     return transliterate(text, translitRuleset);
-  }, [text, translitMode]);
+  }, [text, state.translitMode]);
 
   return output;
 }
