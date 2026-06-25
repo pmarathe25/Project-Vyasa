@@ -1,12 +1,14 @@
 import { Link } from 'gatsby';
 import * as React from 'react';
+import { Suspense } from 'react';
 import { Col, Row } from 'react-bootstrap';
-import Definition from '../components/definition';
 import SectionLinksBar from '../components/dictionarySectionLinksBar';
 import Layout from '../components/layout';
 import OffsetAnchor from '../components/offsetAnchor';
 import { useTransliterate } from '../components/transliterationHook';
 import { sortSanskrit, toDictUrl, toUrl } from '../util/util';
+
+const Definition = React.lazy(() => import('../components/definition').then((mod) => ({ default: mod.default })));
 
 interface PageContext {
   sectionName: string;
@@ -33,7 +35,7 @@ const WordAndDefinitions = ({ location, word }: WordAndDefinitionsProps) => {
 
     const wordParts = word.split('-');
     const translitWordParts = translitWord.split('-');
-    let ret: React.ReactElement[] = [];
+    const ret: React.ReactElement[] = [];
     for (let index = 0; index < wordParts.length; ++index) {
       const part = translitWordParts[index];
       ret.push(
@@ -72,7 +74,9 @@ const WordAndDefinitions = ({ location, word }: WordAndDefinitionsProps) => {
         }}
       >
         {wordElements}
-        <Definition word={word} />
+        <Suspense fallback={<div style={{ padding: '5px' }}>Loading definition...</div>}>
+          <Definition word={word} />
+        </Suspense>
       </div>
     </OffsetAnchor>
   );
@@ -95,7 +99,7 @@ const DictSection = ({ location, pageContext }: DictSectionProps) => {
     <WordAndDefinitions key={`${word}WordAndDefinitions`} location={location} word={word} />
   ));
 
-  let sectionColumns: React.ReactElement[] = [];
+  const sectionColumns: React.ReactElement[] = [];
   const maxColumns = 3;
   const columnLength = entries.length / maxColumns + 1;
   for (let colIndex = 0; colIndex < maxColumns; colIndex++) {

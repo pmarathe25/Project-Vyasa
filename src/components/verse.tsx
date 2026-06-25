@@ -12,7 +12,7 @@ interface RootMeaningsProps {
   root: string;
 }
 
-const RootMeanings = React.memo(({ root }: RootMeaningsProps) => {
+const RootMeanings = React.memo(function RootMeanings({ root }: RootMeaningsProps) {
   const roots = root.split('+');
   const translitRoots = useTransliterate(root).split('+');
 
@@ -108,7 +108,7 @@ const WordWithPopover = ({ word, definition, root, parts_of_speech }: WordWithPo
             onTouchMove={() => setShowPopover(false)}
             show={showPopover}
           >
-            <Popover.Body ref={popoverRef} style={{ paddingTop: '7px', paddingBottom: '7px', paddingLeft: '8px', paddingRight: '8px' }}>
+            <Popover.Body ref={popoverRef} id={`${word}-popover-body`} style={{ paddingTop: '7px', paddingBottom: '7px', paddingLeft: '8px', paddingRight: '8px' }}>
               <Col>
                 <RootMeanings root={root} />
                 <p style={{
@@ -135,6 +135,7 @@ const WordWithPopover = ({ word, definition, root, parts_of_speech }: WordWithPo
           tabIndex={0}
           aria-haspopup="dialog"
           aria-expanded={showPopover}
+          aria-describedby={showPopover ? `${word}-popover-body` : undefined}
           onMouseEnter={() => setShowPopover(true)}
           onMouseLeave={() => setShowPopover(false)}
           onTouchStart={() => setShowPopover(true)}

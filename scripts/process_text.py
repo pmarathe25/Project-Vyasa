@@ -1,9 +1,12 @@
 #!/usr/bin/env python3
 import argparse
+import fcntl
 import glob
 import json
 import os
+import tempfile
 from collections import defaultdict
+from contextlib import contextmanager
 
 import util
 from exceptions import (
@@ -12,6 +15,18 @@ from exceptions import (
     GrammarError,
     DictionaryError,
 )
+
+
+@contextmanager
+def file_lock(lock_path):
+    """Context manager for file-based locking to prevent race conditions."""
+    lock_file = open(lock_path, 'w')
+    try:
+        fcntl.flock(lock_file.fileno(), fcntl.LOCK_EX)
+        yield
+    finally:
+        fcntl.flock(lock_file.fileno(), fcntl.LOCK_UN)
+        lock_file.close()
 
 
 def build_sandhied_text(words, translit_ruleset):
@@ -547,7 +562,23 @@ def process_files(input_dir, input_path, output_path, translit_ruleset, dictiona
 
     os.makedirs(os.path.dirname(output_path), exist_ok=True)
     print(f"Writing to: {output_path}")
-    json.dump(processed, open(output_path, "w"), separators=(",\n", ":"))
+    # Use atomic write with file lock to prevent race conditions
+    lock_path = output_path + '.lock'
+    with file_lock(lock_path):
+        # Double-check after acquiring lock
+        if (
+            os.path.exists(output_path)
+            and util.get_mtime(input_path) <= util.get_mtime(output_path)
+            and util.get_mtime(__file__) < util.get_mtime(output_path)
+        ):
+            return
+        # Write to temp file first, then atomically rename
+        with tempfile.NamedTemporaryFile(
+            mode='w', dir=os.path.dirname(output_path), delete=False, suffix='.tmp'
+        ) as tmp:
+            json.dump(processed, tmp, separators=(",\n", ":"))
+            tmp_path = tmp.name
+        os.replace(tmp_path, output_path)
 
 
 def main():

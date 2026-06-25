@@ -17,7 +17,7 @@ const Index = ({ location }: IndexProps) => {
       <h2>Project Vyasa</h2>
       {isMobile ? <NavMenu useClass="justify-content-center" /> : null}
       <p style={{ marginTop: '10px', whiteSpace: 'pre-wrap' }}>
-        Project Vyasa's goal is to create a high quality Sanskrit-English reader for various texts.
+        Project Vyasa&#39;s goal is to create a high quality Sanskrit-English reader for various texts.
         If this is your first time here, you may want to check out
         the <Link to={toUrl('/about')}>About</Link> page.
       </p>

@@ -1,10 +1,12 @@
 import { graphql } from 'gatsby';
 import * as React from 'react';
+import { Suspense } from 'react';
 import Layout from '../../../components/layout';
 import { SettingsContext } from '../../../components/settingsPanel';
 import { useTransliterate } from '../../../components/transliterationHook';
-import Verse from '../../../components/verse';
 import useIsMobile from '../../../util/responsiveness';
+
+const Verse = React.lazy(() => import('../../../components/verse').then((mod) => ({ default: mod.default })));
 
 interface SectionTitleProps {
   data: {
@@ -90,7 +92,9 @@ const Section = ({ location, data }: SectionProps) => {
         {isMobile ? 'Tap' : 'Click'} on Sanskrit text to see word-level analysis
       </p>
       {data.textJson.verses.map((node, index) => (
-        <Verse key={index} text={node.text} wordByWord={node.wordByWord} translation={node.translation} />
+        <Suspense key={index} fallback={<div style={{ padding: '20px', textAlign: 'center' }}>Loading verse...</div>}>
+          <Verse text={node.text} wordByWord={node.wordByWord} translation={node.translation} />
+        </Suspense>
       ))}
     </Layout>
   );
