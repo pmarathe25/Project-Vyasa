@@ -10,6 +10,18 @@ interface AllWordsDict {
 
 const typedAllWordsDict = allWordsDict as unknown as AllWordsDict;
 
+// Cache for transliteration results to avoid repeated computation
+const transliterationCache = new Map<string, string>();
+
+function getCachedTransliteration(text: string): string {
+  if (transliterationCache.has(text)) {
+    return transliterationCache.get(text)!;
+  }
+  const result = transliterate(text, devanagari);
+  transliterationCache.set(text, result);
+  return result;
+}
+
 // Converts a string to a URL compatible format
 export function toUrl(str: string): string {
   return str
@@ -66,7 +78,9 @@ export function titleCaseFromUrl(str: string): string {
 }
 
 export function sortSanskrit(word: string, otherWord: string): number {
-  return transliterate(word.replace('√', ''), devanagari) > transliterate(otherWord.replace('√', ''), devanagari) ? 1 : -1;
+  const wordClean = word.replace('√', '');
+  const otherClean = otherWord.replace('√', '');
+  return getCachedTransliteration(wordClean) > getCachedTransliteration(otherClean) ? 1 : -1;
 }
 
 export default toUrl;

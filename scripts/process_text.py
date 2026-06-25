@@ -6,6 +6,12 @@ import os
 from collections import defaultdict
 
 import util
+from exceptions import (
+    SandhiError,
+    ContentFormatError,
+    GrammarError,
+    DictionaryError,
+)
 
 
 def build_sandhied_text(words, translit_ruleset):
@@ -334,9 +340,10 @@ def parse_word_grammar(line, verse_num, line_num, dictionary):
 
     def check(elem, elem_name):
         if not elem:
-            raise RuntimeError(
-                f"In verse: {verse_num}, line: {line_num}, expected a '{elem_name}' field but none was provided."
-                f"\nNote: Line was: {line}"
+            raise ContentFormatError(
+                f"In verse: {verse_num}, line: {line_num}, expected a '{elem_name}' field but none was provided.",
+                line_num=line_num,
+                line=line
             )
 
     # Note that we could use regex here, but manually parsing it is easy enough
@@ -349,10 +356,11 @@ def parse_word_grammar(line, verse_num, line_num, dictionary):
         if "," not in rest:
             root, _, meaning = rest.partition(")")
             if root not in dictionary or any("(indeclinable)" not in entry for entry in dictionary[root][1]):
-                raise RuntimeError(
-                    f"In verse: {verse_num}, line: {line_num}, expected a comma separating the root from parts of speech!"
-                    "Parts of speech may only be omitted for indeclinables!"
-                    f"\nNote: Line was: {line}"
+                raise ContentFormatError(
+                    f"In verse: {verse_num}, line: {line_num}, expected a comma separating the root from parts of speech! "
+                    "Parts of speech may only be omitted for indeclinables!",
+                    line_num=line_num,
+                    line=line
                 )
         else:
             root, _, rest = rest.partition(",")
@@ -378,7 +386,10 @@ def parse_word_grammar(line, verse_num, line_num, dictionary):
     dictionary_entries = []
     for root_part in root.split("+"):
         if root_part not in dictionary:
-            raise RuntimeError(f"Could not find: {root_part} in the dictionary. Is an entry missing?")
+            raise DictionaryError(
+                f"Could not find: {root_part} in the dictionary. Is an entry missing?",
+                word=root_part
+            )
         dictionary_entries.append(dictionary[root_part])
 
     # Only some letter are valid ending letters in Sanskrit.
@@ -408,10 +419,13 @@ def parse_word_grammar(line, verse_num, line_num, dictionary):
         "aau",
     ]
     if not any(word.endswith(valid_end) for valid_end in VALID_END_SEQUENCES):
-        raise RuntimeError(
+        raise GrammarError(
             f"In verse: {verse_num}, line: {line_num} ({line}): "
             f"\nWord: '{word}' does not end with a valid sequence of letters!"
-            f"\nNote: Valid ending sequences are: {VALID_END_SEQUENCES}"
+            f"\nNote: Valid ending sequences are: {VALID_END_SEQUENCES}",
+            verse_num=verse_num,
+            line_num=line_num,
+            word=word
         )
 
     return strip(

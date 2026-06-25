@@ -13,21 +13,42 @@ import os
 from typing import List, Tuple
 
 import util
+from exceptions import DictionaryError, ValidationError
 
 
 def validate_dictionary(dct):
+    errors = []
     for word, (section_name, _, references, _) in dct.items():
         is_verb = "√" in word
 
         for part in word.split("-"):
-            assert part in dct, "Part ({:}) of word: {:} is not present in the dictionary!".format(part, word)
+            if part not in dct:
+                errors.append(DictionaryError(
+                    f"Part ({part}) of word: {word} is not present in the dictionary!",
+                    word=part
+                ))
 
         for reference in references:
-            assert not reference or all(
-                (ref_part if not is_verb else util.adjust_verb(ref_part)) in dct for ref_part in reference.split("+")
-            ), f"Word: {word} refers to: {reference}, but the latter is not present in the dictionary!"
+            if reference:
+                ref_parts = reference.split("+")
+                for ref_part in ref_parts:
+                    adjusted_part = ref_part if not is_verb else util.adjust_verb(ref_part)
+                    if adjusted_part not in dct:
+                        errors.append(DictionaryError(
+                            f"Word: {word} refers to: {reference}, but the latter is not present in the dictionary!",
+                            word=adjusted_part
+                        ))
 
-            assert word.strip("√").startswith(section_name), f"Word: {word} is in the wrong section: {section_name}"
+            if not word.strip("√").startswith(section_name):
+                errors.append(ValidationError(
+                    f"Word: {word} is in the wrong section: {section_name}"
+                ))
+
+    if errors:
+        raise ValidationError(
+            f"Dictionary validation failed with {len(errors)} errors:\n" +
+            "\n".join(f"  - {e}" for e in errors)
+        )
 
 
 def main():

@@ -20,7 +20,7 @@ interface RootProps {
   partsOfSpeech: string;
 }
 
-const Root = ({ root, partsOfSpeech }: RootProps) => {
+const Root = React.memo(({ root, partsOfSpeech }: RootProps) => {
   const translitRootParts = useTransliterate(root).split('+');
 
   if (!root) {
@@ -54,13 +54,13 @@ const Root = ({ root, partsOfSpeech }: RootProps) => {
       )}
     </div>
   );
-};
+});
 
 interface DefinitionProps {
   word: string;
 }
 
-const Definition = ({ word }: DefinitionProps) => {
+const Definition = React.memo(({ word }: DefinitionProps) => {
   const entry = React.useMemo(() => {
     return typedAllWordsDict[word];
   }, [word]);
@@ -83,6 +83,6 @@ const Definition = ({ word }: DefinitionProps) => {
       {definitionElements}
     </Container>
   );
-};
+});
 
 export default Definition;

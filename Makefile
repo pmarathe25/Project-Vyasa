@@ -25,7 +25,8 @@ RAW_TEXT = $(wildcard $(RAW_TEXT_DIR)/*/*/*.txt)
 RAW_DICTIONARY_FILES = $(wildcard $(RAW_DICTIONARY_DIR)/*.txt)
 GEN_DICTIONARY_FILE = $(GEN_DICTIONARY_DIR)/all_words.json
 
-all: $(GEN_RULE_SETS) process_text $(GEN_DICTIONARY_FILE)
+# Build all generated content (transliteration rulesets, dictionary, processed text)
+build: $(GEN_RULE_SETS) process_text $(GEN_DICTIONARY_FILE)
 
 $(BUILD_RULE_SET_SCRIPT): $(UTIL_FILE)
 	touch $@
@@ -58,12 +59,19 @@ $(GEN_DICTIONARY_FILE): $(RAW_DICTIONARY_FILES) $(BUILD_DICTIONARY_SCRIPT) | $(G
 process_text: $(RAW_TEXT) $(PROCESS_TEXT_SCRIPT) $(GEN_DICTIONARY_FILE) | $(GEN_TEXT_DIR)
 	@ python3 $(PROCESS_TEXT_SCRIPT) $(RAW_TEXT_DIR) -o $(GEN_TEXT_DIR) --transliteration-ruleset $(RAW_RULE_SET_DIR)/devanagari.json -d $(GEN_DICTIONARY_FILE)
 
-launch: $(GEN_RULE_SETS) $(GEN_DICTIONARY_FILE) process_text
+# Run development server (requires build first)
+dev: build
 	gatsby develop
 
-test: $(GEN_RULE_SETS) $(GEN_DICTIONARY_FILE)
+# Run tests (requires build first)
+test: build
 	python3 -m pytest tests/ -vv -x
 	npm test
 
+# Clean generated content
 clean:
 	rm -rf $(GEN_CONTENT_DIR)
+
+# Default target
+.PHONY: all
+all: build

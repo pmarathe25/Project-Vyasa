@@ -8,7 +8,7 @@ interface OffsetAnchorProps {
 
 // An anchor that is offset from its contents. This way, the anchor
 // is not potentially hidden behind the top bar when the browser scrolls to it.
-const OffsetAnchor = ({ id, children, style }: OffsetAnchorProps) => {
+const OffsetAnchor = React.memo(({ id, children, style }: OffsetAnchorProps) => {
   return (
     <span
       id={id}
@@ -25,6 +25,6 @@ const OffsetAnchor = ({ id, children, style }: OffsetAnchorProps) => {
       {children}
     </span>
   );
-};
+});
 
 export default OffsetAnchor;
