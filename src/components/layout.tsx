@@ -7,6 +7,7 @@ import ResponsiveBreadcrumbs from './breadcrumbs';
 import NavMenu from './navMenu';
 import { SettingsContext, SettingsPanel } from './settingsPanel';
 import SiteHelmet from './siteHelmet';
+import ErrorBoundary from './ErrorBoundary';
 
 // Swaps the order of two components on mobile displays
 const FlipOnMobile = ({ first, second }: { first: React.ReactNode; second: React.ReactNode }) => {
@@ -111,7 +112,7 @@ const Layout = ({
       </AutohidingNavbar>
       <Container style={{ maxWidth, marginTop: `${NAVBAR_HEIGHT + 40}px` }}>
         <ResponsiveBreadcrumbs location={location} showCurrentPage={showCurrentPageInBreadcrumbs} />
-        {children}
+        <ErrorBoundary>{children}</ErrorBoundary>
       </Container>
     </div>
   );

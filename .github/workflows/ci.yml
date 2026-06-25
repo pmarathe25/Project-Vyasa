@@ -26,6 +26,9 @@ jobs:
       - name: Type check
         run: npm run typecheck
 
+      - name: Lint
+        run: npm run lint
+
       - name: Run tests
         run: npm test
 
@@ -71,3 +74,9 @@ jobs:
         run: npm run build
         env:
           GATSBY_TELEMETRY_DISABLED: 1
+
+      - name: Check bundle size
+        run: |
+          echo "Checking bundle sizes..."
+          find public -name "*.js" -exec gzip -c {} \; | wc -c | awk '{print "Total gzipped JS: " $1/1024/1024 " MB"}'
+          find public -name "*.js" -exec gzip -c {} \; | wc -c | awk '{if ($1 > 2000000) {print "ERROR: Bundle size exceeds 2MB limit"; exit 1} else {print "Bundle size OK"} }'

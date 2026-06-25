@@ -15,7 +15,8 @@
     "clean": "gatsby clean",
     "test": "jest",
     "test:watch": "jest --watch",
-    "typecheck": "tsc --noEmit"
+    "typecheck": "tsc --noEmit",
+    "lint": "eslint src --ext .ts,.tsx"
   },
   "dependencies": {
     "bootstrap": "^5.2.1",

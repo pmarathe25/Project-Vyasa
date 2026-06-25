@@ -8,13 +8,14 @@ interface ResponsiveBreadcrumbsProps {
   showCurrentPage?: boolean;
 }
 
-const ResponsiveBreadcrumbs = React.memo(({ location, showCurrentPage = true }: ResponsiveBreadcrumbsProps) => {
+const ResponsiveBreadcrumbs = React.memo(
+  function ResponsiveBreadcrumbs({ location, showCurrentPage = true }: ResponsiveBreadcrumbsProps) {
   let curPath = '';
 
-  let pathElements = location.pathname.split('/').slice(1).filter((value) => value);
+  const pathElements = location.pathname.split('/').slice(1).filter((value) => value);
   pathElements.splice(0, 0, '/');
 
-  let breadcrumbs: React.ReactElement[] = [];
+  const breadcrumbs: React.ReactElement[] = [];
   for (const [index, pathElement] of pathElements.entries()) {
     const isCurrentPage = index === pathElements.length - 1;
 
@@ -61,6 +62,7 @@ const ResponsiveBreadcrumbs = React.memo(({ location, showCurrentPage = true }: 
       {breadcrumbs}
     </Breadcrumb>
   );
-});
+}
+);
 
 export default ResponsiveBreadcrumbs;

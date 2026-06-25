@@ -1,4 +1,5 @@
 import allWordsDict from '../../content/generated/dictionary/all_words.json';
+import devanagari from '../../content/generated/transliteration_rulesets/devanagari.json';
 import { transliterate } from './transliterator';
 import { globalTransliterationCache, getCacheKey } from '../components/transliterationHook';
 
@@ -13,13 +14,14 @@ const typedAllWordsDict = allWordsDict as unknown as AllWordsDict;
 // Use global cache for devanagari mode
 function getCachedTransliteration(text: string): string {
   const cacheKey = getCacheKey(text, 'devanagari');
-  if (globalTransliterationCache.has(cacheKey)) {
-    return globalTransliterationCache.get(cacheKey)!;
+  const cached = globalTransliterationCache.get(cacheKey);
+  if (cached) {
+    cached.timestamp = Date.now();
+    return cached.value;
   }
-  // Fallback - load devanagari ruleset and transliterate
-  const devanagari = require('../../content/generated/transliteration_rulesets/devanagari.json');
+  // Fallback - use imported devanagari ruleset and transliterate
   const result = transliterate(text, devanagari);
-  globalTransliterationCache.set(cacheKey, result);
+  globalTransliterationCache.set(cacheKey, { value: result, timestamp: Date.now() });
   return result;
 }
 
@@ -56,7 +58,7 @@ function isNumber(obj: unknown): boolean {
 
 // Converts a string converted by `toUrl` to title case
 export function titleCaseFromUrl(str: string): string {
-  let titleCase: string[] = [];
+  const titleCase: string[] = [];
 
   // Special case for Home
   if (str === '/') {

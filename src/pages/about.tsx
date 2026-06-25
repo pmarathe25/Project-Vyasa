@@ -25,7 +25,7 @@ const About = ({ location }: AboutProps) => {
       </p>
       <h2 style={{ textAlign: 'left', marginTop: '20px' }}>Contributing</h2>
       <p style={textStyle}>
-        If you'd like to help with this project, there are several ways to do so.
+        If you&#39;d like to help with this project, there are several ways to do so.
         See the <a
           href="https://github.com/pmarathe25/Project-Vyasa/blob/main/CONTRIBUTING.md"
           target="_blank"
