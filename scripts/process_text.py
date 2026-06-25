@@ -293,11 +293,16 @@ def build_sandhied_text(words, translit_ruleset):
         index = 0
         # Use a dummy "word" to avoid edge case handling
         words += ["  "]
-        while index < len(words):
+        while index < len(words) - 1:
+            joined = False
             for trailing_cond, leading_cond, strat in conditions:
                 if trailing_cond(words[index], mode="ends") and leading_cond(words[index + 1], mode="starts"):
                     words[index], words[index + 1] = strat(words[index], words[index + 1])
-            index += 1
+                    if not words[index]:
+                        joined = True
+                    break
+            if not joined:
+                index += 1
         return remove_empty(words)
 
     def apply_merge(words):
