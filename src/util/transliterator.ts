@@ -1,7 +1,7 @@
 export interface TransliterationRuleset {
   sequence_map: TrieNode;
   rules: {
-    'replace-sequence': Record<string, string>;
+    'replace-sequence'?: Record<string, string>;
   };
   compiledReplacePatterns?: Array<{ pattern: RegExp; replacement: string }>;
 }
