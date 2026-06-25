@@ -452,7 +452,7 @@ def is_str_end_marker(inp):
     return is_str_verse_end_marker(inp) or inp == "|"
 
 
-def process_files(input_dir, input_path, output_path, transliteration_ruleset, dictionary):
+def process_files(input_dir, input_path, output_path, translit_ruleset, dictionary):
     # Early exit when nothing has been modified.
     if (
         os.path.exists(output_path)
@@ -462,8 +462,8 @@ def process_files(input_dir, input_path, output_path, transliteration_ruleset, d
     ):
         return
 
-    TRANSLIT_RULESET = json.load(open(transliteration_ruleset))
-    DICTIONARY = json.load(open(dictionary))
+    TRANSLIT_RULESET = translit_ruleset
+    DICTIONARY = dictionary
 
     work_dir = os.path.join(input_dir, os.path.relpath(input_path, input_dir).split(os.path.sep)[0])
     work = os.path.basename(work_dir).title()
@@ -575,11 +575,14 @@ def main():
 
     args, _ = parser.parse_known_args()
 
+    TRANSLIT_RULESET = json.load(open(args.transliteration_ruleset))
+    DICTIONARY = json.load(open(args.dictionary))
+
     for path in glob.iglob(os.path.join(args.input_dir, "**", "*.txt"), recursive=True):
         output_path = "_".join(os.path.relpath(path, args.input_dir).split(os.path.sep))
         output_path = os.path.splitext(output_path)[0] + ".json"
         output_path = os.path.join(args.output, output_path)
-        process_files(args.input_dir, path, output_path, args.transliteration_ruleset, args.dictionary)
+        process_files(args.input_dir, path, output_path, TRANSLIT_RULESET, DICTIONARY)
 
 
 if __name__ == "__main__":

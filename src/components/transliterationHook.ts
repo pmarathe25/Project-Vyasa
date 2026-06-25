@@ -10,12 +10,27 @@ const rulesetCache = new Map<string, typeof devanagari>();
 rulesetCache.set('devanagari', devanagari);
 rulesetCache.set('iast', iast);
 
+// Global transliteration cache shared across components, keyed by text + mode
+export const globalTransliterationCache = new Map<string, string>();
+
+export function getCacheKey(text: string, mode: string): string {
+  return `${mode}:${text}`;
+}
+
 export function useTransliterate(text: string): string {
   const { state } = React.useContext(SettingsContext);
 
   const output = React.useMemo(() => {
     const translitRuleset = rulesetCache.get(state.translitMode) || devanagari;
-    return transliterate(text, translitRuleset);
+    const cacheKey = getCacheKey(text, state.translitMode);
+    
+    if (globalTransliterationCache.has(cacheKey)) {
+      return globalTransliterationCache.get(cacheKey)!;
+    }
+    
+    const result = transliterate(text, translitRuleset);
+    globalTransliterationCache.set(cacheKey, result);
+    return result;
   }, [text, state.translitMode]);
 
   return output;
