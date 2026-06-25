@@ -65,7 +65,8 @@ interface SectionProps {
 }
 
 const Section = ({ location, data }: SectionProps) => {
-  const { showTranslation } = React.useContext(SettingsContext);
+  const { state } = React.useContext(SettingsContext);
+  const { showTranslation } = state;
   const isMobile = useIsMobile();
 
   return (
