@@ -2,6 +2,8 @@ import React from 'react';
 import { transliterate } from '../util/transliterator';
 import { SettingsContext } from './settingsPanel';
 import { TransliterationRuleset } from '../util/transliterator';
+import devanagari from '../../content/generated/transliteration_rulesets/devanagari.json';
+import iast from '../../content/generated/transliteration_rulesets/iast.json';
 
 const MAX_CACHE_SIZE = 1000;
 
@@ -9,9 +11,6 @@ interface LRUCacheEntry {
   value: string;
   timestamp: number;
 }
-
-const devanagari = require('../../content/generated/transliteration_rulesets/devanagari.json') as TransliterationRuleset;
-const iast = require('../../content/generated/transliteration_rulesets/iast.json') as TransliterationRuleset;
 
 const rulesetCache = new Map<string, TransliterationRuleset>();
 rulesetCache.set('devanagari', devanagari);
