@@ -8,43 +8,81 @@ export const IAST_MODE = 'iast';
 
 export type TranslitMode = typeof DEVANAGARI_MODE | typeof IAST_MODE;
 
-export interface SettingsContextValue {
+export interface SettingsState {
   translitMode: TranslitMode;
-  setTranslitMode: (mode: TranslitMode) => void;
   showTranslation: boolean;
-  setShowTranslation: (show: boolean) => void;
   useDarkMode: boolean;
-  setUseDarkMode: (use: boolean) => void;
 }
 
-export const SettingsContext = React.createContext<SettingsContextValue>({
+type SettingsAction =
+  | { type: 'SET_TRANSLIT_MODE'; payload: TranslitMode }
+  | { type: 'SET_SHOW_TRANSLATION'; payload: boolean }
+  | { type: 'SET_DARK_MODE'; payload: boolean };
+
+function settingsReducer(state: SettingsState, action: SettingsAction): SettingsState {
+  switch (action.type) {
+    case 'SET_TRANSLIT_MODE':
+      return { ...state, translitMode: action.payload };
+    case 'SET_SHOW_TRANSLATION':
+      return { ...state, showTranslation: action.payload };
+    case 'SET_DARK_MODE':
+      return { ...state, useDarkMode: action.payload };
+    default:
+      return state;
+  }
+}
+
+function getInitialDarkMode(): boolean {
+  if (typeof window === 'undefined') {
+    return false;
+  }
+  try {
+    return window.matchMedia('(prefers-color-scheme: dark)').matches;
+  } catch {
+    return false;
+  }
+}
+
+const initialState: SettingsState = {
   translitMode: DEVANAGARI_MODE,
-  setTranslitMode: () => {},
   showTranslation: true,
-  setShowTranslation: () => {},
-  useDarkMode: false,
-  setUseDarkMode: () => {},
+  useDarkMode: getInitialDarkMode(),
+};
+
+export const SettingsContext = React.createContext<{
+  state: SettingsState;
+  dispatch: React.Dispatch<SettingsAction>;
+}>({
+  state: initialState,
+  dispatch: () => {},
 });
 
 export const SettingsContextProvider = (props: { children: React.ReactNode }) => {
-  const [translitMode, setTranslitMode] = useLocalStorage<TranslitMode>('translit-mode', DEVANAGARI_MODE);
-  const [showTranslation, setShowTranslation] = useLocalStorage('toggle-translation', true);
-  const [useDarkMode, setUseDarkMode] = useLocalStorage(
-    'toggle-dark-mode',
-    typeof window !== 'undefined' ? window.matchMedia('(prefers-color-scheme: dark)').matches : false
-  );
+  const [translitMode, setTranslitModeStorage] = useLocalStorage<TranslitMode>('translit-mode', DEVANAGARI_MODE);
+  const [showTranslation, setShowTranslationStorage] = useLocalStorage('toggle-translation', true);
+  const [useDarkMode, setUseDarkModeStorage] = useLocalStorage('toggle-dark-mode', initialState.useDarkMode);
+
+  const [state, dispatch] = React.useReducer(settingsReducer, {
+    translitMode,
+    showTranslation,
+    useDarkMode,
+  });
+
+  // Sync state changes to localStorage
+  React.useEffect(() => {
+    setTranslitModeStorage(state.translitMode);
+  }, [state.translitMode, setTranslitModeStorage]);
+
+  React.useEffect(() => {
+    setShowTranslationStorage(state.showTranslation);
+  }, [state.showTranslation, setShowTranslationStorage]);
+
+  React.useEffect(() => {
+    setUseDarkModeStorage(state.useDarkMode);
+  }, [state.useDarkMode, setUseDarkModeStorage]);
 
   return (
-    <SettingsContext.Provider
-      value={{
-        translitMode,
-        setTranslitMode,
-        showTranslation,
-        setShowTranslation,
-        useDarkMode,
-        setUseDarkMode,
-      }}
-    >
+    <SettingsContext.Provider value={{ state, dispatch }}>
       {props.children}
     </SettingsContext.Provider>
   );
@@ -65,14 +103,7 @@ export const SettingsPanel = ({
   showTranslitButton,
   showTranslationButton,
 }: SettingsPanelProps) => {
-  const {
-    translitMode,
-    setTranslitMode,
-    showTranslation,
-    setShowTranslation,
-    useDarkMode,
-    setUseDarkMode,
-  } = React.useContext(SettingsContext);
+  const { state, dispatch } = React.useContext(SettingsContext);
 
   const formCheckStyle = { paddingTop: '3px', paddingBottom: '5px' };
 
@@ -110,8 +141,8 @@ export const SettingsPanel = ({
                 type="radio"
                 label="देवनागरी"
                 value={DEVANAGARI_MODE}
-                checked={translitMode === DEVANAGARI_MODE}
-                onChange={(event) => setTranslitMode(event.target.value as TranslitMode)}
+                checked={state.translitMode === DEVANAGARI_MODE}
+                onChange={(event) => dispatch({ type: 'SET_TRANSLIT_MODE', payload: event.target.value as TranslitMode })}
               />
               <Form.Check
                 style={formCheckStyle}
@@ -120,8 +151,8 @@ export const SettingsPanel = ({
                 type="radio"
                 label="IAST"
                 value={IAST_MODE}
-                checked={translitMode === IAST_MODE}
-                onChange={(event) => setTranslitMode(event.target.value as TranslitMode)}
+                checked={state.translitMode === IAST_MODE}
+                onChange={(event) => dispatch({ type: 'SET_TRANSLIT_MODE', payload: event.target.value as TranslitMode })}
               />
             </div>
           ) : null}
@@ -130,16 +161,16 @@ export const SettingsPanel = ({
               style={formCheckStyle}
               type="switch"
               label="Translation"
-              checked={showTranslation}
-              onChange={(event) => setShowTranslation(event.target.checked)}
+              checked={state.showTranslation}
+              onChange={(event) => dispatch({ type: 'SET_SHOW_TRANSLATION', payload: event.target.checked })}
             />
           ) : null}
           <Form.Check
             style={formCheckStyle}
             type="switch"
             label="Dark Mode"
-            checked={useDarkMode}
-            onChange={(event) => setUseDarkMode(event.target.checked)}
+            checked={state.useDarkMode}
+            onChange={(event) => dispatch({ type: 'SET_DARK_MODE', payload: event.target.checked })}
           />
         </Form>
       </Dropdown.Menu>

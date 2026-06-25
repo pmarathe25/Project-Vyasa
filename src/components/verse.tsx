@@ -12,7 +12,7 @@ interface RootMeaningsProps {
   root: string;
 }
 
-const RootMeanings = ({ root }: RootMeaningsProps) => {
+const RootMeanings = React.memo(({ root }: RootMeaningsProps) => {
   const roots = root.split('+');
   const translitRoots = useTransliterate(root).split('+');
 
@@ -35,7 +35,7 @@ const RootMeanings = ({ root }: RootMeaningsProps) => {
       ))}
     </>
   );
-};
+});
 
 interface WordWithPopoverProps {
   word: string;

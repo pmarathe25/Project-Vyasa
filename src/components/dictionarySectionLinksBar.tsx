@@ -26,7 +26,7 @@ interface SectionLinkProps {
   sectionName: string;
 }
 
-const SectionLink = ({ sectionName }: SectionLinkProps) => {
+const SectionLink = React.memo(({ sectionName }: SectionLinkProps) => {
   const translitSectionName = useTransliterate(sectionName);
   const isMobile = useIsMobile();
 
@@ -43,7 +43,7 @@ const SectionLink = ({ sectionName }: SectionLinkProps) => {
       {translitSectionName}
     </Link>
   );
-};
+});
 
 // Top-bar with links to each section
 const SectionLinksBar = React.memo(() => {
