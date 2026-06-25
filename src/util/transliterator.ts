@@ -3,6 +3,7 @@ export interface TransliterationRuleset {
   rules: {
     'replace-sequence': Record<string, string>;
   };
+  compiledReplacePatterns?: Array<{ pattern: RegExp; replacement: string }>;
 }
 
 interface TrieNode {
@@ -11,6 +12,17 @@ interface TrieNode {
 
 function escapeRegExp(string: string): string {
   return string.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+}
+
+function compileReplacePatterns(ruleset: TransliterationRuleset): void {
+  if (ruleset.rules['replace-sequence'] && !ruleset.compiledReplacePatterns) {
+    ruleset.compiledReplacePatterns = Object.entries(ruleset.rules['replace-sequence']).map(
+      ([inpSeq, outSeq]) => ({
+        pattern: new RegExp(escapeRegExp(inpSeq), 'g'),
+        replacement: outSeq,
+      })
+    );
+  }
 }
 
 export function transliterate(text: string, translitRuleset: TransliterationRuleset): string {
@@ -44,9 +56,11 @@ export function transliterate(text: string, translitRuleset: TransliterationRule
   }
 
   if (rules['replace-sequence']) {
-    for (const inpSeq of Object.keys(rules['replace-sequence'])) {
-      const outSeq = rules['replace-sequence'][inpSeq];
-      output = output.replace(new RegExp(escapeRegExp(inpSeq), 'g'), outSeq);
+    compileReplacePatterns(translitRuleset);
+    if (translitRuleset.compiledReplacePatterns) {
+      for (const { pattern, replacement } of translitRuleset.compiledReplacePatterns || []) {
+        output = output.replace(pattern, replacement);
+      }
     }
   }
 
