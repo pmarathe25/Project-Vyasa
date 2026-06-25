@@ -26,7 +26,7 @@ interface SectionLinkProps {
   sectionName: string;
 }
 
-const SectionLink = React.memo(({ sectionName }: SectionLinkProps) => {
+const SectionLink = React.memo(function SectionLink({ sectionName }: SectionLinkProps) {
   const translitSectionName = useTransliterate(sectionName);
   const isMobile = useIsMobile();
 
@@ -46,7 +46,7 @@ const SectionLink = React.memo(({ sectionName }: SectionLinkProps) => {
 });
 
 // Top-bar with links to each section
-const SectionLinksBar = React.memo(() => {
+const SectionLinksBar = React.memo(function SectionLinksBar() {
   return (
     <Row lang="sa" style={{ marginBottom: '20px' }}>
       {sortedSectionNames.map((sectionName) => (

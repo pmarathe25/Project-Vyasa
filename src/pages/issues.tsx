@@ -17,7 +17,7 @@ const Issues = ({ location }: IssuesProps) => {
       <h2 style={{ textAlign: 'left' }}>Experiencing Issues or Want to Leave Feedback?</h2>
       <p style={textStyle}>
         If you encounter any issues on this website or inaccuracies in the content,
-        or you want to request a new feature, don't hesitate
+        or you want to request a new feature, don&#39;t hesitate
         to <a
           href="https://github.com/pmarathe25/Project-Vyasa/issues/new/choose"
           target="_blank"

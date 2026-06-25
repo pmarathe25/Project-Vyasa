@@ -1,17 +1,41 @@
 import React from 'react';
 import { transliterate } from '../util/transliterator';
 import { SettingsContext } from './settingsPanel';
+import { TransliterationRuleset } from '../util/transliterator';
 
-const devanagari = require('../../content/generated/transliteration_rulesets/devanagari.json');
-const iast = require('../../content/generated/transliteration_rulesets/iast.json');
+const MAX_CACHE_SIZE = 1000;
 
-// Memoize rulesets to avoid re-creating on each render
-const rulesetCache = new Map<string, typeof devanagari>();
+interface LRUCacheEntry {
+  value: string;
+  timestamp: number;
+}
+
+const devanagari = require('../../content/generated/transliteration_rulesets/devanagari.json') as TransliterationRuleset;
+const iast = require('../../content/generated/transliteration_rulesets/iast.json') as TransliterationRuleset;
+
+const rulesetCache = new Map<string, TransliterationRuleset>();
 rulesetCache.set('devanagari', devanagari);
 rulesetCache.set('iast', iast);
 
-// Global transliteration cache shared across components, keyed by text + mode
-export const globalTransliterationCache = new Map<string, string>();
+export const globalTransliterationCache = new Map<string, LRUCacheEntry>();
+
+function evictOldest(): void {
+  if (globalTransliterationCache.size >= MAX_CACHE_SIZE) {
+    let oldestKey: string | null = null;
+    let oldestTime = Infinity;
+    
+    for (const [key, entry] of globalTransliterationCache.entries()) {
+      if (entry.timestamp < oldestTime) {
+        oldestTime = entry.timestamp;
+        oldestKey = key;
+      }
+    }
+    
+    if (oldestKey) {
+      globalTransliterationCache.delete(oldestKey);
+    }
+  }
+}
 
 export function getCacheKey(text: string, mode: string): string {
   return `${mode}:${text}`;
@@ -24,12 +48,16 @@ export function useTransliterate(text: string): string {
     const translitRuleset = rulesetCache.get(state.translitMode) || devanagari;
     const cacheKey = getCacheKey(text, state.translitMode);
     
-    if (globalTransliterationCache.has(cacheKey)) {
-      return globalTransliterationCache.get(cacheKey)!;
+    const cached = globalTransliterationCache.get(cacheKey);
+    if (cached) {
+      cached.timestamp = Date.now();
+      return cached.value;
     }
     
+    evictOldest();
+    
     const result = transliterate(text, translitRuleset);
-    globalTransliterationCache.set(cacheKey, result);
+    globalTransliterationCache.set(cacheKey, { value: result, timestamp: Date.now() });
     return result;
   }, [text, state.translitMode]);
 
