@@ -1,6 +1,11 @@
 import copy
 import os
+import sys
 from collections import OrderedDict
+
+# Add scripts directory to path for imports
+sys.path.insert(0, os.path.dirname(__file__))
+from exceptions import GrammarError, ValidationError
 
 
 def get_mtime(path):
@@ -19,7 +24,7 @@ def adjust_verb(verb):
 
         # There are only 10 verb classes
         if set(cls).difference({"I", "V", "X"}):
-            raise RuntimeError(f"Unexpected verb class: {cls}. Expected a Roman numeral! Note: Verb was: {verb}")
+            raise GrammarError(f"Unexpected verb class: {cls}. Expected a Roman numeral!", word=verb)
 
         verb = f"{verb} ({cls})"
     return verb
@@ -146,7 +151,12 @@ def process_parts_of_speech(
     orig_parts_of_speech = copy.copy(parts_of_speech)
 
     def show_error(msg):
-        raise RuntimeError(err_prefix + msg + f"\nNote: parts of speech were: {orig_parts_of_speech}")
+        raise GrammarError(
+            err_prefix + msg,
+            verse_num=0,
+            line_num=0,
+            word=word
+        )
 
     part_functions = set()
     parts_of_speech = set(filter(lambda x: x, parts_of_speech.strip().split(" ")))
