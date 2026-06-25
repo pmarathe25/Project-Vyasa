@@ -60,7 +60,8 @@ const Layout = ({
 
   const [showSettingsPanel, setShowSettingsPanel] = React.useState(false);
 
-  const { useDarkMode } = React.useContext(SettingsContext);
+  const { state } = React.useContext(SettingsContext);
+  const { useDarkMode } = state;
   const variant = useDarkMode ? 'dark' : 'light';
 
   return (

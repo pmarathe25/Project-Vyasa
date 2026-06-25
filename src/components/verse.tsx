@@ -220,7 +220,8 @@ const Verse = ({ text, wordByWord, translation }: VerseProps) => {
   const translitText = useTransliterate(text);
   const isMobile = useIsMobile();
   const [showWordByWord, setShowWordByWord] = React.useState(false);
-  const { showTranslation } = React.useContext(SettingsContext);
+  const { state } = React.useContext(SettingsContext);
+  const { showTranslation } = state;
 
   const colStyle = {
     paddingLeft: '0px',

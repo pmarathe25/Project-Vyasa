@@ -2,13 +2,13 @@ import '../jest.setup';
 import React from 'react';
 import { render, screen, fireEvent } from '@testing-library/react';
 import Verse from '../src/components/verse';
-import { SettingsContextProvider, SettingsContext, DEVANAGARI_MODE } from '../src/components/settingsPanel';
+import { SettingsContextProvider } from '../src/components/settingsPanel';
 
-const mockWordByWord = [
+const mockWordByWord: Array<Array<[string, string, string, string]>> = [
   [
     ['dharma', 'duty', 'dharma', 'Nominative Singular Masculine'],
     ['karma', 'action', 'karma', 'Nominative Singular Masculine'],
-    ['|', null, null, null],
+    ['|', 'end', 'end', 'End'],
   ],
 ];
 
@@ -18,7 +18,7 @@ const mockVerse = {
   translation: 'Duty and action',
 };
 
-const renderVerse = (contextValue?: Partial<React.Context<typeof SettingsContext>>) => {
+const renderVerse = () => {
   return render(
     <SettingsContextProvider>
       <Verse {...mockVerse} />
