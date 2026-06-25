@@ -1,6 +1,6 @@
 import allWordsDict from '../../content/generated/dictionary/all_words.json';
-import devanagari from '../../content/generated/transliteration_rulesets/devanagari.json';
 import { transliterate } from './transliterator';
+import { globalTransliterationCache, getCacheKey } from '../components/transliterationHook';
 
 type WordDictEntry = [string, string[], string[], string[]];
 
@@ -10,15 +10,16 @@ interface AllWordsDict {
 
 const typedAllWordsDict = allWordsDict as unknown as AllWordsDict;
 
-// Cache for transliteration results to avoid repeated computation
-const transliterationCache = new Map<string, string>();
-
+// Use global cache for devanagari mode
 function getCachedTransliteration(text: string): string {
-  if (transliterationCache.has(text)) {
-    return transliterationCache.get(text)!;
+  const cacheKey = getCacheKey(text, 'devanagari');
+  if (globalTransliterationCache.has(cacheKey)) {
+    return globalTransliterationCache.get(cacheKey)!;
   }
+  // Fallback - load devanagari ruleset and transliterate
+  const devanagari = require('../../content/generated/transliteration_rulesets/devanagari.json');
   const result = transliterate(text, devanagari);
-  transliterationCache.set(text, result);
+  globalTransliterationCache.set(cacheKey, result);
   return result;
 }
 

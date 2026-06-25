@@ -1,7 +1,6 @@
 import { Link } from 'gatsby';
 import * as React from 'react';
 import { Col, Row } from 'react-bootstrap';
-import allWordsDict from '../../content/generated/dictionary/all_words.json';
 import Definition from '../components/definition';
 import SectionLinksBar from '../components/dictionarySectionLinksBar';
 import Layout from '../components/layout';
@@ -9,8 +8,10 @@ import OffsetAnchor from '../components/offsetAnchor';
 import { useTransliterate } from '../components/transliterationHook';
 import { sortSanskrit, toDictUrl, toUrl } from '../util/util';
 
-type WordDictEntry = [string, string[], string[], string[]];
-const typedAllWordsDict = allWordsDict as unknown as Record<string, WordDictEntry>;
+interface PageContext {
+  sectionName: string;
+  words: string[];
+}
 
 interface WordAndDefinitionsProps {
   location: { hash: string; pathname: string };
@@ -77,27 +78,15 @@ const WordAndDefinitions = ({ location, word }: WordAndDefinitionsProps) => {
   );
 };
 
-function getSortedSectionWords(targetSectionName: string): string[] {
-  const wordList: string[] = [];
-  for (const word in typedAllWordsDict) {
-    const [sectionName] = typedAllWordsDict[word];
-    if (targetSectionName !== sectionName) {
-      continue;
-    }
-    wordList.push(word);
-  }
-  return wordList.sort(sortSanskrit);
-}
-
 // Section for words starting with the same letter
 interface DictSectionProps {
   location: { pathname: string; hash: string };
-  pageContext: { sectionName: string };
+  pageContext: PageContext;
 }
 
 const DictSection = ({ location, pageContext }: DictSectionProps) => {
-  const { sectionName } = pageContext;
-  const words = getSortedSectionWords(sectionName);
+  const { sectionName, words } = pageContext;
+  const sortedWords = words.sort(sortSanskrit);
 
   const translitSectionName = useTransliterate(sectionName);
   const pageUrl = `/dictionary/${sectionName}`;
