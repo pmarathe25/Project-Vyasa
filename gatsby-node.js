@@ -10,7 +10,7 @@ exports.createPages = async function ({ actions }) {
     for (const sectionName of sectionNames) {
         actions.createPage({
             path: `/dictionary/${sectionName}`,
-            component: require.resolve(`./src/templates/dictionarySection.js`),
+            component: require.resolve(`./src/templates/dictionarySection.tsx`),
             context: { sectionName: `${sectionName}` },
         })
     }
